@@ -1,0 +1,11 @@
+#%RAML 1.0 DataType
+type: MyShoppingListUpdateAction
+displayName: MyShoppingListRemoveTextLineItemAction
+
+discriminatorValue: removeTextLineItem
+properties:
+   textLineItemId:
+      type: string
+   quantity:
+      format: int64
+      type: number

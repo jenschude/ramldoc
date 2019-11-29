@@ -1,0 +1,22 @@
+#%RAML 1.0 DataType
+type: object
+displayName: MessagePagedQueryResponse
+
+
+properties:
+   limit:
+      format: int64
+      type: number
+   count:
+      format: int64
+      type: number
+   total:
+      format: int64
+      type: number
+   offset:
+      format: int64
+      type: number
+   results:
+      type: array
+      items:
+        type: Message

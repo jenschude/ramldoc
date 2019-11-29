@@ -1,0 +1,93 @@
+#%RAML 1.0 DataType
+type: object
+displayName: OrderImportDraft
+
+
+properties:
+   orderNumber:
+      description: |-
+        String that unique identifies an order.
+        It can be used to create more human-readable (in contrast to ID) identifier for the order.
+        It should be unique within a project.
+      type: string
+   customerId:
+      description: |-
+        If given the customer with that ID must exist in the project.
+      type: string
+   customerEmail:
+      description: |-
+        The customer email can be used when no check against existing Customers is desired during order import.
+      type: string
+   lineItems:
+      description: |-
+        If not given `customLineItems` must not be empty.
+      type: array
+      items:
+        type: LineItemImportDraft
+   customLineItems:
+      description: |-
+        If not given `lineItems` must not be empty.
+      type: array
+      items:
+        type: CustomLineItemDraft
+   totalPrice:
+      type: Money
+   taxedPrice:
+      description: |-
+        Order Import does not support calculation of taxes.
+        When setting the draft the taxedPrice is to be provided.
+      type: TaxedPriceDraft
+   shippingAddress:
+      type: Address
+   billingAddress:
+      type: Address
+   customerGroup:
+      description: |-
+        Set when the customer is set and the customer is a member of a customer group.
+        Used for product variant price selection.
+      discriminatorValue: customer-group
+      type: CustomerGroupResourceIdentifier
+   country:
+      description: |-
+        A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+        Used for product variant price selection.
+      type: string
+   orderState:
+      description: |-
+        If not given the `Open` state will be assigned by default.
+      type: OrderState
+   shipmentState:
+      type: ShipmentState
+   paymentState:
+      type: PaymentState
+   shippingInfo:
+      description: |-
+        Set if the ShippingMethod is set.
+      type: ShippingInfoImportDraft
+   completedAt:
+      format: rfc3339
+      type: datetime
+   custom:
+      description: |-
+        The custom fields.
+      type: CustomFieldsDraft
+   inventoryMode:
+      description: |-
+        If not given the mode `None` will be assigned by default.
+      type: InventoryMode
+   taxRoundingMode:
+      description: |-
+        If not given the tax rounding mode `HalfEven` will be assigned by default.
+      type: RoundingMode
+   itemShippingAddresses:
+      description: |-
+        Contains addresses for orders with multiple shipping addresses.
+      type: array
+      items:
+        type: Address
+   store:
+      type: StoreResourceIdentifier
+   origin:
+      description: |-
+        The default origin is `Customer`.
+      type: CartOrigin

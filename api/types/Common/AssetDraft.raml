@@ -1,0 +1,22 @@
+#%RAML 1.0 DataType
+type: object
+displayName: AssetDraft
+
+
+properties:
+   sources:
+      type: array
+      items:
+        type: AssetSource
+   name:
+      type: LocalizedString
+   description:
+      type: LocalizedString
+   tags:
+      type: array
+      items:
+        type: string
+   custom:
+      type: CustomFieldsDraft
+   key:
+      type: string

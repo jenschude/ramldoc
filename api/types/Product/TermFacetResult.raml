@@ -1,0 +1,21 @@
+#%RAML 1.0 DataType
+type: FacetResult
+displayName: TermFacetResult
+
+discriminatorValue: terms
+properties:
+   dataType:
+      type: TermFacetResultType
+   missing:
+      format: int64
+      type: number
+   total:
+      format: int64
+      type: number
+   other:
+      format: int64
+      type: number
+   terms:
+      type: array
+      items:
+        type: FacetResultTerm

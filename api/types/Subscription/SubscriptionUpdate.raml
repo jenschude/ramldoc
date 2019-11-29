@@ -1,0 +1,13 @@
+#%RAML 1.0 DataType
+type: object
+displayName: SubscriptionUpdate
+
+
+properties:
+   version:
+      format: int64
+      type: number
+   actions:
+      type: array
+      items:
+        type: SubscriptionUpdateAction

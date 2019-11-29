@@ -1,0 +1,10 @@
+#%RAML 1.0 DataType
+type: Message
+displayName: ProductRevertedStagedChangesMessage
+
+discriminatorValue: ProductRevertedStagedChanges
+properties:
+   removedImageUrls:
+      type: array
+      items:
+        type: string

@@ -1,0 +1,54 @@
+#%RAML 1.0 DataType
+type: object
+displayName: MyCartDraft
+
+
+properties:
+   currency:
+      description: |-
+        A three-digit currency code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+      pattern: ^[A-Z]{3}$
+      type: CurrencyCode
+   customerEmail:
+      type: string
+   country:
+      description: |-
+        A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+      type: string
+   inventoryMode:
+      description: |-
+        Default inventory mode is `None`.
+      type: InventoryMode
+   lineItems:
+      type: array
+      items:
+        type: MyLineItemDraft
+   shippingAddress:
+      type: Address
+   billingAddress:
+      type: Address
+   shippingMethod:
+      type: ShippingMethodResourceIdentifier
+   custom:
+      description: |-
+        The custom fields.
+      type: CustomFieldsDraft
+   locale:
+      type: string
+   taxMode:
+      description: |-
+        The `TaxMode` `Disabled` can not be set on the My Carts endpoint.
+      type: TaxMode
+   deleteDaysAfterLastModification:
+      description: |-
+        The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
+        If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
+      format: int64
+      type: number
+   itemShippingAddresses:
+      description: |-
+        Contains addresses for orders with multiple shipping addresses.
+        Each address must contain a key which is unique in this cart.
+      type: array
+      items:
+        type: Address

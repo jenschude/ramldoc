@@ -1,0 +1,12 @@
+#%RAML 1.0 DataType
+type: ShoppingListUpdateAction
+displayName: ShoppingListSetLineItemCustomTypeAction
+
+discriminatorValue: setLineItemCustomType
+properties:
+   lineItemId:
+      type: string
+   type:
+      type: TypeResourceIdentifier
+   fields:
+      type: FieldContainer

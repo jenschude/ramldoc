@@ -1,0 +1,49 @@
+#%RAML 1.0 DataType
+type: object
+displayName: LineItemImportDraft
+
+
+properties:
+   productId:
+      description: |-
+        ID of the existing product.
+        You also need to specify the ID of the variant if this property is set or alternatively you can just specify SKU of the product variant.
+      type: string
+   name:
+      description: |-
+        The product name.
+      type: LocalizedString
+   variant:
+      type: ProductVariantImportDraft
+   price:
+      type: PriceDraft
+   quantity:
+      format: int16
+      type: number
+   state:
+      type: array
+      items:
+        type: ItemState
+   supplyChannel:
+      description: |-
+        Optional connection to a particular supplier.
+        By providing supply channel information, you can uniquely identify
+        inventory entries that should be reserved.
+        The provided channel should have the
+        InventorySupply role.
+      discriminatorValue: channel
+      type: ChannelResourceIdentifier
+   distributionChannel:
+      description: |-
+        The channel is used to select a ProductPrice.
+        The provided channel should have the ProductDistribution role.
+      discriminatorValue: channel
+      type: ChannelResourceIdentifier
+   taxRate:
+      type: TaxRate
+   custom:
+      description: |-
+        The custom fields.
+      type: CustomFieldsDraft
+   shippingDetails:
+      type: ItemShippingDetailsDraft

@@ -1,0 +1,31 @@
+#%RAML 1.0 DataType
+type: LoggedResource
+displayName: Message
+discriminator: type
+
+properties:
+   id:
+      type: string
+   version:
+      format: int64
+      type: number
+   createdAt:
+      type: datetime
+   lastModifiedAt:
+      type: datetime
+   lastModifiedBy:
+      type: LastModifiedBy
+   createdBy:
+      type: CreatedBy
+   sequenceNumber:
+      format: int64
+      type: number
+   resource:
+      type: Reference
+   resourceVersion:
+      format: int64
+      type: number
+   type:
+      type: string
+   resourceUserProvidedIdentifiers:
+      type: UserProvidedIdentifiers

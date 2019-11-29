@@ -1,0 +1,17 @@
+#%RAML 1.0 DataType
+type: ProductUpdateAction
+displayName: ProductSetImageLabelAction
+
+discriminatorValue: setImageLabel
+properties:
+   sku:
+      type: string
+   variantId:
+      format: int64
+      type: number
+   imageUrl:
+      type: string
+   label:
+      type: string
+   staged:
+      type: boolean

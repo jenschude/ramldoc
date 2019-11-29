@@ -1,0 +1,18 @@
+#%RAML 1.0 DataType
+type: Message
+displayName: ProductPriceExternalDiscountSetMessage
+
+discriminatorValue: ProductPriceExternalDiscountSet
+properties:
+   variantId:
+      type: integer
+   variantKey:
+      type: string
+   sku:
+      type: string
+   priceId:
+      type: string
+   discounted:
+      type: DiscountedPrice
+   staged:
+      type: boolean

@@ -1,0 +1,18 @@
+#%RAML 1.0 DataType
+type: ProductUpdateAction
+displayName: ProductAddAssetAction
+
+discriminatorValue: addAsset
+properties:
+   variantId:
+      format: int64
+      type: number
+   sku:
+      type: string
+   staged:
+      type: boolean
+   asset:
+      type: AssetDraft
+   position:
+      format: int32
+      type: number

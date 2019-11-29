@@ -1,0 +1,65 @@
+#%RAML 1.0 DataType
+type: LoggedResource
+displayName: ShoppingList
+
+
+properties:
+   id:
+      description: |-
+        The unique ID of the shopping list.
+      type: string
+   version:
+      description: |-
+        The current version of the shopping list.
+      format: int64
+      type: number
+   createdAt:
+      format: rfc3339
+      type: datetime
+   lastModifiedAt:
+      format: rfc3339
+      type: datetime
+   lastModifiedBy:
+      description: |-
+        Present on resources updated after 1/02/2019 except for events not tracked.
+      type: LastModifiedBy
+   createdBy:
+      description: |-
+        Present on resources created after 1/02/2019 except for events not tracked.
+      type: CreatedBy
+   custom:
+      type: CustomFields
+   customer:
+      discriminatorValue: customer
+      type: CustomerReference
+   deleteDaysAfterLastModification:
+      description: |-
+        The shopping list will be deleted automatically if it hasn't been modified for the specified amount of days.
+      format: int64
+      type: number
+   description:
+      type: LocalizedString
+   key:
+      description: |-
+        User-specific unique identifier for the shopping list.
+      type: string
+   lineItems:
+      type: array
+      items:
+        type: ShoppingListLineItem
+   name:
+      type: LocalizedString
+   slug:
+      description: |-
+        Human-readable identifiers usually used as deep-link URL to the related shopping list.
+        Each slug is unique across a project, but a shopping list can have the same slug for different languages.
+        The slug must match the pattern [a-zA-Z0-9_-]{2,256}.
+      type: LocalizedString
+   textLineItems:
+      type: array
+      items:
+        type: TextLineItem
+   anonymousId:
+      description: |-
+        Identifies shopping lists belonging to an anonymous session (the customer has not signed up/in yet).
+      type: string

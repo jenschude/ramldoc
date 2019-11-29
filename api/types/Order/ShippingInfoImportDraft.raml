@@ -1,0 +1,34 @@
+#%RAML 1.0 DataType
+type: object
+displayName: ShippingInfoImportDraft
+
+
+properties:
+   shippingMethodName:
+      type: string
+   price:
+      type: Money
+   shippingRate:
+      description: |-
+        The shipping rate used to determine the price.
+      type: ShippingRateDraft
+   taxRate:
+      type: TaxRate
+   taxCategory:
+      type: TaxCategoryResourceIdentifier
+   shippingMethod:
+      description: |-
+        Not set if custom shipping method is used.
+      type: ShippingMethodResourceIdentifier
+   deliveries:
+      description: |-
+        Deliveries are compilations of information on how the articles are being delivered to the customers.
+      type: array
+      items:
+        type: Delivery
+   discountedPrice:
+      type: DiscountedLineItemPriceDraft
+   shippingMethodState:
+      description: |-
+        Indicates whether the ShippingMethod referenced is allowed for the cart or not.
+      type: ShippingMethodState

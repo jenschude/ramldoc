@@ -1,0 +1,73 @@
+#%RAML 1.0 DataType
+type: LoggedResource
+displayName: ProductDiscount
+
+
+properties:
+   id:
+      description: |-
+        The unique ID of the product discount
+      type: string
+   version:
+      description: |-
+        The current version of the product discount.
+      format: int64
+      type: number
+   createdAt:
+      format: rfc3339
+      type: datetime
+   lastModifiedAt:
+      format: rfc3339
+      type: datetime
+   lastModifiedBy:
+      description: |-
+        Present on resources updated after 1/02/2019 except for events not tracked.
+      type: LastModifiedBy
+   createdBy:
+      description: |-
+        Present on resources created after 1/02/2019 except for events not tracked.
+      type: CreatedBy
+   name:
+      type: LocalizedString
+   key:
+      description: |-
+        User-specific unique identifier for a product discount.
+        Must be unique across a project.
+      type: string
+   description:
+      type: LocalizedString
+   value:
+      type: ProductDiscountValue
+   predicate:
+      description: |-
+        A valid ProductDiscount Predicate.
+      type: string
+   sortOrder:
+      description: |-
+        The string contains a number between 0 and 1.
+        A discount with greater sortOrder is prioritized higher than a discount with lower sortOrder.
+        A sortOrder must be unambiguous.
+      type: string
+   isActive:
+      description: |-
+        Only active discount will be applied to product prices.
+      type: boolean
+   references:
+      description: |-
+        The platform will generate this array from the predicate.
+        It contains the references of all the resources that are addressed in the predicate.
+      type: array
+      items:
+        type: Reference
+   validFrom:
+      description: |-
+        The time from which the discount should be effective.
+        Please take Eventual Consistency into account for calculated product discount values.
+      format: rfc3339
+      type: datetime
+   validUntil:
+      description: |-
+        The time from which the discount should be ineffective.
+        Please take Eventual Consistency into account for calculated undiscounted values.
+      format: rfc3339
+      type: datetime

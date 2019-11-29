@@ -1,0 +1,39 @@
+#%RAML 1.0 DataType
+type: LoggedResource
+displayName: Extension
+
+
+properties:
+   id:
+      type: string
+   version:
+      format: int64
+      type: number
+   createdAt:
+      format: rfc3339
+      type: datetime
+   lastModifiedAt:
+      format: rfc3339
+      type: datetime
+   lastModifiedBy:
+      description: |-
+        Present on resources updated after 1/02/2019 except for events not tracked.
+      type: LastModifiedBy
+   createdBy:
+      description: |-
+        Present on resources created after 1/02/2019 except for events not tracked.
+      type: CreatedBy
+   key:
+      type: string
+   destination:
+      type: ExtensionDestination
+   triggers:
+      type: array
+      items:
+        type: ExtensionTrigger
+   timeoutInMs:
+      description: |-
+        The maximum time the commercetools platform waits for a response from the extension.
+        If not present, `2000` (2 seconds) is used.
+      format: int16
+      type: integer

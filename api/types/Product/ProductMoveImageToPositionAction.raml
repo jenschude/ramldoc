@@ -1,0 +1,18 @@
+#%RAML 1.0 DataType
+type: ProductUpdateAction
+displayName: ProductMoveImageToPositionAction
+
+discriminatorValue: moveImageToPosition
+properties:
+   variantId:
+      format: int64
+      type: number
+   sku:
+      type: string
+   imageUrl:
+      type: string
+   position:
+      format: int64
+      type: number
+   staged:
+      type: boolean

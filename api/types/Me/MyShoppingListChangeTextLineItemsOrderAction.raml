@@ -1,0 +1,10 @@
+#%RAML 1.0 DataType
+type: MyShoppingListUpdateAction
+displayName: MyShoppingListChangeTextLineItemsOrderAction
+
+discriminatorValue: changeTextLineItemsOrder
+properties:
+   textLineItemOrder:
+      type: array
+      items:
+        type: string

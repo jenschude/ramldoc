@@ -1,0 +1,18 @@
+#%RAML 1.0 DataType
+type: object
+displayName: SyncInfo
+
+
+properties:
+   channel:
+      description: |-
+        Connection to a particular synchronization destination.
+      discriminatorValue: channel
+      type: ChannelReference
+   externalId:
+      description: |-
+        Can be used to reference an external order instance, file etc.
+      type: string
+   syncedAt:
+      format: rfc3339
+      type: datetime

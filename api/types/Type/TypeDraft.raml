@@ -1,0 +1,22 @@
+#%RAML 1.0 DataType
+type: object
+displayName: TypeDraft
+
+
+properties:
+   key:
+      type: string
+   name:
+      type: LocalizedString
+   description:
+      type: LocalizedString
+   resourceTypeIds:
+      description: |-
+        The IDs of the resources that can be customized with this type.
+      type: array
+      items:
+        type: ResourceTypeId
+   fieldDefinitions:
+      type: array
+      items:
+        type: FieldDefinition

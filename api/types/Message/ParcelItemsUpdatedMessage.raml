@@ -1,0 +1,18 @@
+#%RAML 1.0 DataType
+type: Message
+displayName: ParcelItemsUpdatedMessage
+
+discriminatorValue: ParcelItemsUpdated
+properties:
+   parcelId:
+      type: string
+   deliveryId:
+      type: string
+   items:
+      type: array
+      items:
+        type: DeliveryItem
+   oldItems:
+      type: array
+      items:
+        type: DeliveryItem

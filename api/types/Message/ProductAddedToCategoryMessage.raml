@@ -1,0 +1,10 @@
+#%RAML 1.0 DataType
+type: Message
+displayName: ProductAddedToCategoryMessage
+
+discriminatorValue: ProductAddedToCategory
+properties:
+   category:
+      type: CategoryReference
+   staged:
+      type: boolean

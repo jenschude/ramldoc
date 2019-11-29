@@ -1,0 +1,35 @@
+#%RAML 1.0 DataType
+type: object
+displayName: ApiClient
+
+
+properties:
+   id:
+      description: |-
+        The unique ID of the API client.
+        This is the OAuth2 `client_id` and can be used to obtain a token.
+      type: string
+   name:
+      type: string
+   scope:
+      description: |-
+        A whitespace separated list of the OAuth scopes.
+        This is the OAuth2 `scope` and can be used to obtain a token.
+      type: string
+   createdAt:
+      format: rfc3339
+      type: datetime
+   lastUsedAt:
+      description: |-
+        The last day this API Client was used to obtain a token.
+      type: date-only
+   deleteAt:
+      description: |-
+        If set, the client will be deleted on (or shortly after) this point in time.
+      format: rfc3339
+      type: datetime
+   secret:
+      description: |-
+        The secret is only shown once in the response of creating the API Client.
+        This is the OAuth2 `client_secret` and can be used to obtain a token.
+      type: string

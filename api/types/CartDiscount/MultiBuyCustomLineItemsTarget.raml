@@ -1,0 +1,29 @@
+#%RAML 1.0 DataType
+type: CartDiscountTarget
+displayName: MultiBuyCustomLineItemsTarget
+
+discriminatorValue: multiBuyCustomLineItems
+properties:
+   predicate:
+      description: |-
+        A valid custom line item target predicate. The discount will be applied to custom line items that are
+        matched by the predicate.
+        
+      type: string
+   triggerQuantity:
+      description: |-
+        Quantity of line items that need to be present in order to trigger an application of this discount.
+      format: int16
+      type: integer
+   discountedQuantity:
+      description: |-
+        Quantity of line items that are discounted per application of this discount.
+      format: int16
+      type: integer
+   maxOccurrence:
+      description: |-
+        Maximum number of applications of this discount.
+      format: int16
+      type: integer
+   selectionMode:
+      type: SelectionMode

@@ -1,0 +1,29 @@
+#%RAML 1.0 DataType
+type: object
+displayName: PriceDraft
+
+
+properties:
+   value:
+      type: Money
+   country:
+      description: |-
+        A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+        
+      type: CountryCode
+   customerGroup:
+      type: CustomerGroupResourceIdentifier
+   channel:
+      type: ChannelResourceIdentifier
+   validFrom:
+      type: datetime
+   validUntil:
+      type: datetime
+   custom:
+      type: CustomFieldsDraft
+   tiers:
+      type: array
+      items:
+        type: PriceTierDraft
+   discounted:
+      type: DiscountedPrice

@@ -1,0 +1,12 @@
+#%RAML 1.0 DataType
+type: MessagePayload
+displayName: ProductVariantDeletedMessagePayload
+
+discriminatorValue: ProductVariantDeleted
+properties:
+   removedImageUrls:
+      type: array
+      items:
+        type: string
+   variant:
+      type: ProductVariant

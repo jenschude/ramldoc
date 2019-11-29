@@ -1,0 +1,10 @@
+#%RAML 1.0 DataType
+type: CartUpdateAction
+displayName: CartSetCustomLineItemTaxAmountAction
+
+discriminatorValue: setCustomLineItemTaxAmount
+properties:
+   customLineItemId:
+      type: string
+   externalTaxAmount:
+      type: ExternalTaxAmountDraft

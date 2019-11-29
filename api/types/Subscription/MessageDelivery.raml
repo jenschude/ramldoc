@@ -1,0 +1,23 @@
+#%RAML 1.0 DataType
+type: SubscriptionDelivery
+displayName: MessageDelivery
+
+discriminatorValue: Message
+properties:
+   id:
+      type: string
+   version:
+      format: int64
+      type: number
+   createdAt:
+      type: datetime
+   lastModifiedAt:
+      type: datetime
+   sequenceNumber:
+      format: int64
+      type: number
+   resourceVersion:
+      format: int64
+      type: number
+   payloadNotIncluded:
+      type: PayloadNotIncluded

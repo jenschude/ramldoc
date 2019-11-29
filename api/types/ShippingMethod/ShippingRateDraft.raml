@@ -1,0 +1,20 @@
+#%RAML 1.0 DataType
+type: object
+displayName: ShippingRateDraft
+
+
+properties:
+   price:
+      type: Money
+   freeAbove:
+      description: |-
+        The shipping is free if the order total (the sum of line item prices) exceeds the freeAbove value.
+        Note: `freeAbove` applies before any Cart or Product discounts, and can cause discounts to apply in invalid scenarios.
+        Use a Cart Discount to set the shipping price to 0 to avoid providing free shipping in invalid discount scenarios.
+      type: Money
+   tiers:
+      description: |-
+        A list of shipping rate price tiers.
+      type: array
+      items:
+        type: ShippingRatePriceTier

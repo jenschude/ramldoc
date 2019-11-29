@@ -1,0 +1,36 @@
+#%RAML 1.0 DataType
+type: object
+displayName: ExternalTaxRateDraft
+
+
+properties:
+   name:
+      type: string
+   amount:
+      description: |-
+        Percentage in the range of [0..1].
+        Must be supplied if no `subRates` are specified.
+        If `subRates` are specified
+        then the `amount` can be omitted or it must be the sum of the amounts of all `subRates`.
+      format: int16
+      type: number
+   country:
+      description: |-
+        A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+      type: string
+   state:
+      description: |-
+        The state in the country
+      type: string
+   subRates:
+      description: |-
+        For countries (e.g.
+        the US) where the total tax is a combination of multiple taxes (e.g.
+        state and local taxes).
+      type: array
+      items:
+        type: SubRate
+   includedInPrice:
+      description: |-
+        The default value for `includedInPrice` is FALSE.
+      type: boolean

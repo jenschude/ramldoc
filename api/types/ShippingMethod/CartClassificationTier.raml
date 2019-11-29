@@ -1,0 +1,12 @@
+#%RAML 1.0 DataType
+type: ShippingRatePriceTier
+displayName: CartClassificationTier
+
+discriminatorValue: CartClassification
+properties:
+   value:
+      type: string
+   price:
+      type: Money
+   isMatching:
+      type: boolean

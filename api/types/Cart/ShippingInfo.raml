@@ -1,0 +1,43 @@
+#%RAML 1.0 DataType
+type: object
+displayName: ShippingInfo
+
+
+properties:
+   shippingMethodName:
+      type: string
+   price:
+      description: |-
+        Determined based on the ShippingRate and its tiered prices, and either the sum of LineItem prices or the `shippingRateInput` field.
+      type: TypedMoney
+   shippingRate:
+      description: |-
+        The shipping rate used to determine the price.
+      type: ShippingRate
+   taxedPrice:
+      description: |-
+        Set once the `taxRate` is set.
+      type: TaxedItemPrice
+   taxRate:
+      description: |-
+        Will be set automatically in the `Platform` TaxMode once the shipping address is set is set.
+        For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
+      type: TaxRate
+   taxCategory:
+      type: TaxCategoryReference
+   shippingMethod:
+      description: |-
+        Not set if custom shipping method is used.
+      type: ShippingMethodReference
+   deliveries:
+      description: |-
+        Deliveries are compilations of information on how the articles are being delivered to the customers.
+      type: array
+      items:
+        type: Delivery
+   discountedPrice:
+      type: DiscountedLineItemPrice
+   shippingMethodState:
+      description: |-
+        Indicates whether the ShippingMethod referenced in this ShippingInfo is allowed for the cart or not.
+      type: ShippingMethodState

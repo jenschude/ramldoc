@@ -1,0 +1,49 @@
+#%RAML 1.0 DataType
+type: LoggedResource
+displayName: Product
+
+
+properties:
+   id:
+      description: |-
+        The unique ID of the product.
+      type: string
+   version:
+      description: |-
+        The current version of the product.
+      format: int64
+      type: number
+   createdAt:
+      format: rfc3339
+      type: datetime
+   lastModifiedAt:
+      format: rfc3339
+      type: datetime
+   lastModifiedBy:
+      description: |-
+        Present on resources updated after 1/02/2019 except for events not tracked.
+      type: LastModifiedBy
+   createdBy:
+      description: |-
+        Present on resources created after 1/02/2019 except for events not tracked.
+      type: CreatedBy
+   key:
+      description: |-
+        User-specific unique identifier for the product.
+        *Product keys are different from product variant keys.*
+      type: string
+   productType:
+      discriminatorValue: product-type
+      type: ProductTypeReference
+   masterData:
+      description: |-
+        The product data in the master catalog.
+      type: ProductCatalogData
+   taxCategory:
+      type: TaxCategoryReference
+   state:
+      type: StateReference
+   reviewRatingStatistics:
+      description: |-
+        Statistics about the review ratings taken into account for this product.
+      type: ReviewRatingStatistics
