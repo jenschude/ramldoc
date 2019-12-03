@@ -1,10 +1,10 @@
 #ByProjectKeyOrders
+(resourcePathUri): /{projectKey}/orders
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/orders"
   description: |-
     Query Orders
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: OrderPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/orders"
   description: |-
     Creates an order from a Cart.
     The cart must have a shipping address set before creating an order.

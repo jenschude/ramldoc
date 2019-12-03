@@ -1,4 +1,5 @@
 #ByProjectKeyTaxCategoriesByID
+(resourcePathUri): /{projectKey}/tax-categories/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/tax-categories/{ID}"
   description: |-
     Get TaxCategory by ID
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: TaxCategory
 post:
-  (resourcePathUri): "{projectKey}/tax-categories/{ID}"
   description: |-
     Update TaxCategory by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: TaxCategory
 delete:
-  (resourcePathUri): "{projectKey}/tax-categories/{ID}"
   description: |-
     Delete TaxCategory by ID
   queryParameters:

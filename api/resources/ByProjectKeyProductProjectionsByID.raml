@@ -1,4 +1,5 @@
 #ByProjectKeyProductProjectionsByID
+(resourcePathUri): /{projectKey}/product-projections/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/product-projections/{ID}"
   description: |-
     Gets the current or staged representation of a product in a catalog by ID.
     When used with an API client that has the view_published_products:{projectKey} scope,

@@ -1,10 +1,10 @@
 #ByProjectKeyOrdersEdits
+(resourcePathUri): /{projectKey}/orders/edits
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/orders/edits"
   description: |-
     Query Edits
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: OrderEditPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/orders/edits"
   description: |-
     Create OrderEdit
   queryParameters:

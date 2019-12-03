@@ -1,10 +1,10 @@
 #ByProjectKeyDiscountCodes
+(resourcePathUri): /{projectKey}/discount-codes
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/discount-codes"
   description: |-
     Query DiscountCodes
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: DiscountCodePagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/discount-codes"
   description: |-
     Create DiscountCode
   queryParameters:

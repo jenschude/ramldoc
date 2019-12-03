@@ -1,10 +1,10 @@
 #ByProjectKeyCustomObjects
+(resourcePathUri): /{projectKey}/custom-objects
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/custom-objects"
   description: |-
     The query endpoint allows to retrieve custom objects in a specific container or all custom objects.
     For performance reasons, it is highly advisable to query only for custom objects in a container by using
@@ -30,7 +30,6 @@ get:
         application/json:
           type: CustomObjectPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/custom-objects"
   description: |-
     Creates a new custom object or updates an existing custom object.
     If an object with the given container/key exists,

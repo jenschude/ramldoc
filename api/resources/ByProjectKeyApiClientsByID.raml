@@ -1,4 +1,5 @@
 #ByProjectKeyApiClientsByID
+(resourcePathUri): /{projectKey}/api-clients/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/api-clients/{ID}"
   description: |-
     Get ApiClient by ID
   responses:
@@ -15,7 +15,6 @@ get:
         application/json:
           type: ApiClient
 delete:
-  (resourcePathUri): "{projectKey}/api-clients/{ID}"
   description: |-
     Delete ApiClient by ID
   responses:

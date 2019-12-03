@@ -1,4 +1,5 @@
 #ByProjectKeyInStoreKeyByStoreKeyCustomersByID
+(resourcePathUri): /{projectKey}/in-store/key={storeKey}/customers/{ID}
 
 uriParameters:
   projectKey:
@@ -8,7 +9,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/customers/{ID}"
   description: |-
     Returns a customer by its ID from a specific Store. The {storeKey} path parameter maps to a Store’s key.
     It also considers customers that do not have the stores field.
@@ -23,7 +23,6 @@ get:
         application/json:
           type: Customer
 post:
-  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/customers/{ID}"
   description: |-
     Updates a customer in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store’s key.
     If the customer exists in the commercetools project but the stores field references a different store,
@@ -40,7 +39,6 @@ post:
         application/json:
           type: Customer
 delete:
-  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/customers/{ID}"
   description: |-
     Delete Customer by ID
   queryParameters:

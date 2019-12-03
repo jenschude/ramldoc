@@ -1,4 +1,5 @@
 #ByProjectKeyOrdersOrderNumberByOrderNumber
+(resourcePathUri): /{projectKey}/orders/order-number={orderNumber}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   orderNumber:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/orders/order-number={orderNumber}"
   description: |-
     In case the orderNumber does not match the regular expression [a-zA-Z0-9_-]+,
     it should be provided in URL-encoded format.
@@ -19,7 +19,6 @@ get:
         application/json:
           type: Order
 post:
-  (resourcePathUri): "{projectKey}/orders/order-number={orderNumber}"
   description: |-
     Update Order by orderNumber
   queryParameters:
@@ -34,7 +33,6 @@ post:
         application/json:
           type: Order
 delete:
-  (resourcePathUri): "{projectKey}/orders/order-number={orderNumber}"
   description: |-
     Delete Order by orderNumber
   queryParameters:

@@ -1,4 +1,5 @@
 #ByProjectKeyCategoriesByID
+(resourcePathUri): /{projectKey}/categories/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/categories/{ID}"
   description: |-
     Get Category by ID
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: Category
 post:
-  (resourcePathUri): "{projectKey}/categories/{ID}"
   description: |-
     Update Category by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: Category
 delete:
-  (resourcePathUri): "{projectKey}/categories/{ID}"
   description: |-
     Delete Category by ID
   queryParameters:

@@ -1,4 +1,5 @@
 #ByProjectKeyInventoryByID
+(resourcePathUri): /{projectKey}/inventory/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/inventory/{ID}"
   description: |-
     Get InventoryEntry by ID
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: InventoryEntry
 post:
-  (resourcePathUri): "{projectKey}/inventory/{ID}"
   description: |-
     Update InventoryEntry by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: InventoryEntry
 delete:
-  (resourcePathUri): "{projectKey}/inventory/{ID}"
   description: |-
     Delete InventoryEntry by ID
   queryParameters:

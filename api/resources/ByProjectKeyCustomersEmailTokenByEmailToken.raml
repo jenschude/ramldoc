@@ -1,4 +1,5 @@
 #ByProjectKeyCustomersEmailTokenByEmailToken
+(resourcePathUri): /{projectKey}/customers/email-token={emailToken}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   emailToken:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/customers/email-token={emailToken}"
   description: |-
     Get Customer by emailToken
   queryParameters:

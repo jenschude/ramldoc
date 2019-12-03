@@ -1,4 +1,5 @@
 #ByProjectKeyInStoreKeyByStoreKeyMeCartsByID
+(resourcePathUri): /{projectKey}/in-store/key={storeKey}/me/carts/{ID}
 
 uriParameters:
   projectKey:
@@ -8,7 +9,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/me/carts/{ID}"
   description: |-
     Get Cart by ID
   queryParameters:
@@ -20,7 +20,6 @@ get:
         application/json:
           type: Cart
 post:
-  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/me/carts/{ID}"
   description: |-
     Update Cart by ID
   queryParameters:
@@ -35,7 +34,6 @@ post:
         application/json:
           type: Cart
 delete:
-  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/me/carts/{ID}"
   description: |-
     Delete Cart by ID
   queryParameters:

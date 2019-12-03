@@ -1,4 +1,5 @@
 #ByProjectKeyMePaymentsByID
+(resourcePathUri): /{projectKey}/me/payments/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/me/payments/{ID}"
   description: |-
     Get MyPayment by ID
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: MyPayment
 post:
-  (resourcePathUri): "{projectKey}/me/payments/{ID}"
   description: |-
     Update MyPayment by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: MyPayment
 delete:
-  (resourcePathUri): "{projectKey}/me/payments/{ID}"
   description: |-
     Delete MyPayment by ID
   queryParameters:

@@ -1,4 +1,5 @@
 #ByProjectKeyOrdersByID
+(resourcePathUri): /{projectKey}/orders/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/orders/{ID}"
   description: |-
     Get Order by ID
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: Order
 post:
-  (resourcePathUri): "{projectKey}/orders/{ID}"
   description: |-
     Update Order by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: Order
 delete:
-  (resourcePathUri): "{projectKey}/orders/{ID}"
   description: |-
     Delete Order by ID
   queryParameters:

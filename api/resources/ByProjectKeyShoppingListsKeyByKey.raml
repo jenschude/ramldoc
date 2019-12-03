@@ -1,4 +1,5 @@
 #ByProjectKeyShoppingListsKeyByKey
+(resourcePathUri): /{projectKey}/shopping-lists/key={key}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   key:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/shopping-lists/key={key}"
   description: |-
     Gets a shopping list by Key.
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: ShoppingList
 post:
-  (resourcePathUri): "{projectKey}/shopping-lists/key={key}"
   description: |-
     Update a shopping list found by its Key.
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: ShoppingList
 delete:
-  (resourcePathUri): "{projectKey}/shopping-lists/key={key}"
   description: |-
     Delete ShoppingList by key
   queryParameters:

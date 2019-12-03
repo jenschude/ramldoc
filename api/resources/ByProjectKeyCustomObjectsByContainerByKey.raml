@@ -1,4 +1,5 @@
 #ByProjectKeyCustomObjectsByContainerByKey
+(resourcePathUri): /{projectKey}/custom-objects/{container}/{key}
 
 uriParameters:
   projectKey:
@@ -8,7 +9,6 @@ uriParameters:
   key:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/custom-objects/{container}/{key}"
   description: |-
     Get CustomObject by key
   queryParameters:
@@ -20,7 +20,6 @@ get:
         application/json:
           type: CustomObject
 delete:
-  (resourcePathUri): "{projectKey}/custom-objects/{container}/{key}"
   description: |-
     Delete CustomObject by key
   queryParameters:

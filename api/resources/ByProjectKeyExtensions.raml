@@ -1,10 +1,10 @@
 #ByProjectKeyExtensions
+(resourcePathUri): /{projectKey}/extensions
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/extensions"
   description: |-
     Query Extensions
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: ExtensionPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/extensions"
   description: |-
     Currently, a maximum of 25 extensions can be created per project.
   queryParameters:

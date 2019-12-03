@@ -1,4 +1,5 @@
 #ByProjectKeyOrdersEditsByIDApply
+(resourcePathUri): /{projectKey}/orders/edits/{ID}/apply
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 post:
-  (resourcePathUri): "{projectKey}/orders/edits/{ID}/apply"
   body:
     application/json:
       type: OrderEditApply

@@ -1,10 +1,10 @@
 #ByProjectKeyChannels
+(resourcePathUri): /{projectKey}/channels
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/channels"
   description: |-
     Query Channels
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: ChannelPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/channels"
   description: |-
     Create Channel
   queryParameters:

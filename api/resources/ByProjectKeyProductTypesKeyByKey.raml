@@ -1,4 +1,5 @@
 #ByProjectKeyProductTypesKeyByKey
+(resourcePathUri): /{projectKey}/product-types/key={key}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   key:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/product-types/key={key}"
   description: |-
     Get ProductType by key
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: ProductType
 post:
-  (resourcePathUri): "{projectKey}/product-types/key={key}"
   description: |-
     Update ProductType by key
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: ProductType
 delete:
-  (resourcePathUri): "{projectKey}/product-types/key={key}"
   description: |-
     Delete ProductType by key
   queryParameters:

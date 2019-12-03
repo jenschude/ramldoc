@@ -1,4 +1,5 @@
 #ByProjectKeyCustomObjectsByID
+(resourcePathUri): /{projectKey}/custom-objects/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/custom-objects/{ID}"
   description: |-
     Get CustomObject by container
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: CustomObject
 delete:
-  (resourcePathUri): "{projectKey}/custom-objects/{ID}"
   description: |-
     The version control is optional. If the query contains a version, then it must match the version of the object.
   queryParameters:

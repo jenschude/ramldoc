@@ -1,10 +1,10 @@
 #ByProjectKeyMeOrders
+(resourcePathUri): /{projectKey}/me/orders
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/me/orders"
   description: |-
     Query Orders
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: OrderPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/me/orders"
   description: |-
     Create MyOrder
   queryParameters:

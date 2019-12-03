@@ -1,10 +1,10 @@
 #ByProjectKeyPayments
+(resourcePathUri): /{projectKey}/payments
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/payments"
   description: |-
     Query Payments
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: PaymentPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/payments"
   description: |-
     To create a payment object a payment draft object has to be given with the request.
   queryParameters:

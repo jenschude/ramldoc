@@ -1,10 +1,10 @@
 #ByProjectKeyTaxCategories
+(resourcePathUri): /{projectKey}/tax-categories
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/tax-categories"
   description: |-
     Query TaxCategories
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: TaxCategoryPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/tax-categories"
   description: |-
     Create TaxCategory
   queryParameters:

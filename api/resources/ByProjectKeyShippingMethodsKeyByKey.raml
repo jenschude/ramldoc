@@ -1,4 +1,5 @@
 #ByProjectKeyShippingMethodsKeyByKey
+(resourcePathUri): /{projectKey}/shipping-methods/key={key}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   key:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/shipping-methods/key={key}"
   description: |-
     Get ShippingMethod by key
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: ShippingMethod
 post:
-  (resourcePathUri): "{projectKey}/shipping-methods/key={key}"
   description: |-
     Update ShippingMethod by key
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: ShippingMethod
 delete:
-  (resourcePathUri): "{projectKey}/shipping-methods/key={key}"
   description: |-
     Delete ShippingMethod by key
   queryParameters:

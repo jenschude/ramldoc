@@ -1,10 +1,10 @@
 #ByProjectKeyCarts
+(resourcePathUri): /{projectKey}/carts
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/carts"
   description: |-
     Query Carts
   queryParameters:
@@ -30,7 +30,6 @@ get:
         application/json:
           type: CartPagedQueryResponse | object
 post:
-  (resourcePathUri): "{projectKey}/carts"
   description: |-
     Creating a cart can fail with an InvalidOperation if the referenced shipping method in the
     CartDraft has a predicate which does not match the cart.

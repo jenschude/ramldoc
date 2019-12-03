@@ -1,10 +1,10 @@
 #ByProjectKeyInventory
+(resourcePathUri): /{projectKey}/inventory
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/inventory"
   description: |-
     Query Inventory
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: InventoryPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/inventory"
   description: |-
     Create InventoryEntry
   queryParameters:

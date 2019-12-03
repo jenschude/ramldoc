@@ -1,10 +1,10 @@
 #ByProjectKeyZones
+(resourcePathUri): /{projectKey}/zones
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/zones"
   description: |-
     Query Zones
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: ZonePagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/zones"
   description: |-
     Create Zone
   queryParameters:

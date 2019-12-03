@@ -1,4 +1,5 @@
 #ByProjectKeyCartsByID
+(resourcePathUri): /{projectKey}/carts/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/carts/{ID}"
   description: |-
     The cart may not contain up-to-date prices, discounts etc.
     If you want to ensure they’re up-to-date, send an Update request with the Recalculate update action instead.
@@ -19,7 +19,6 @@ get:
         application/json:
           type: Cart
 post:
-  (resourcePathUri): "{projectKey}/carts/{ID}"
   description: |-
     Update Cart by ID
   queryParameters:
@@ -34,7 +33,6 @@ post:
         application/json:
           type: Cart
 delete:
-  (resourcePathUri): "{projectKey}/carts/{ID}"
   description: |-
     Delete Cart by ID
   queryParameters:

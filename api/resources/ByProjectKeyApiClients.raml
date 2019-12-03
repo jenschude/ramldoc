@@ -1,10 +1,10 @@
 #ByProjectKeyApiClients
+(resourcePathUri): /{projectKey}/api-clients
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/api-clients"
   description: |-
     Query ApiClients
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: ApiClientPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/api-clients"
   description: |-
     Create ApiClient
   queryParameters:

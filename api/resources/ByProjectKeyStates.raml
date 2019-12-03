@@ -1,10 +1,10 @@
 #ByProjectKeyStates
+(resourcePathUri): /{projectKey}/states
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/states"
   description: |-
     Query States
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: StatePagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/states"
   description: |-
     Create State
   queryParameters:

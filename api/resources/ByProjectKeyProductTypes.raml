@@ -1,10 +1,10 @@
 #ByProjectKeyProductTypes
+(resourcePathUri): /{projectKey}/product-types
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/product-types"
   description: |-
     Query ProductTypes
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: ProductTypePagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/product-types"
   description: |-
     Create ProductType
   queryParameters:

@@ -1,10 +1,10 @@
 #ByProjectKeyCustomerGroups
+(resourcePathUri): /{projectKey}/customer-groups
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/customer-groups"
   description: |-
     Query CustomerGroups
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: CustomerGroupPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/customer-groups"
   description: |-
     Create CustomerGroup
   queryParameters:

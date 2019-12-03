@@ -1,10 +1,10 @@
 #ByProjectKeySubscriptions
+(resourcePathUri): /{projectKey}/subscriptions
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/subscriptions"
   description: |-
     Query Subscriptions
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: SubscriptionPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/subscriptions"
   description: |-
     The creation of a Subscription is eventually consistent, it may take up to a minute before it becomes fully active.
     In order to test that the destination is correctly configured, a test message will be put into the queue.

@@ -1,4 +1,5 @@
 #ByProjectKeyOrdersEditsKeyByKey
+(resourcePathUri): /{projectKey}/orders/edits/key={key}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   key:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/orders/edits/key={key}"
   description: |-
     Get OrderEdit by key
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: OrderEdit
 post:
-  (resourcePathUri): "{projectKey}/orders/edits/key={key}"
   description: |-
     Update OrderEdit by key
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: OrderEdit
 delete:
-  (resourcePathUri): "{projectKey}/orders/edits/key={key}"
   description: |-
     Delete OrderEdit by key
   queryParameters:

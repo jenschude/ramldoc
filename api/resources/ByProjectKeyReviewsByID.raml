@@ -1,4 +1,5 @@
 #ByProjectKeyReviewsByID
+(resourcePathUri): /{projectKey}/reviews/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/reviews/{ID}"
   description: |-
     Get Review by ID
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: Review
 post:
-  (resourcePathUri): "{projectKey}/reviews/{ID}"
   description: |-
     Update Review by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: Review
 delete:
-  (resourcePathUri): "{projectKey}/reviews/{ID}"
   description: |-
     Delete Review by ID
   queryParameters:

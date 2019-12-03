@@ -1,4 +1,5 @@
 #ByProjectKeySubscriptionsByID
+(resourcePathUri): /{projectKey}/subscriptions/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/subscriptions/{ID}"
   description: |-
     Retrieves the representation of a subscription by its id.
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: Subscription
 post:
-  (resourcePathUri): "{projectKey}/subscriptions/{ID}"
   description: |-
     Update Subscription by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: Subscription
 delete:
-  (resourcePathUri): "{projectKey}/subscriptions/{ID}"
   description: |-
     Delete Subscription by ID
   queryParameters:

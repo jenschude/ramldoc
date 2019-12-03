@@ -1,10 +1,10 @@
 #ByProjectKeyCustomers
+(resourcePathUri): /{projectKey}/customers
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/customers"
   description: |-
     Query Customers
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: CustomerPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/customers"
   description: |-
     Creates a customer. If an anonymous cart is passed in,
     then the cart is assigned to the created customer and the version number of the Cart will increase.

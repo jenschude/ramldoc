@@ -1,10 +1,10 @@
 #ByProjectKeyMeShoppingLists
+(resourcePathUri): /{projectKey}/me/shopping-lists
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/me/shopping-lists"
   description: |-
     Query ShoppingLists
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: ShoppingListPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/me/shopping-lists"
   description: |-
     Create MyShoppingList
   queryParameters:

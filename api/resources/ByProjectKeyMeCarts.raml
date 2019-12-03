@@ -1,10 +1,10 @@
 #ByProjectKeyMeCarts
+(resourcePathUri): /{projectKey}/me/carts
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/me/carts"
   description: |-
     Query Carts
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: CartPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/me/carts"
   description: |-
     Create MyCart
   queryParameters:

@@ -1,4 +1,5 @@
 #ByProjectKeyZonesByID
+(resourcePathUri): /{projectKey}/zones/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/zones/{ID}"
   description: |-
     Get Zone by ID
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: Zone
 post:
-  (resourcePathUri): "{projectKey}/zones/{ID}"
   description: |-
     Update Zone by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: Zone
 delete:
-  (resourcePathUri): "{projectKey}/zones/{ID}"
   description: |-
     Delete Zone by ID
   queryParameters:

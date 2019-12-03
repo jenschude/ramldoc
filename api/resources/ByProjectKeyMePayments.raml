@@ -1,10 +1,10 @@
 #ByProjectKeyMePayments
+(resourcePathUri): /{projectKey}/me/payments
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/me/payments"
   description: |-
     Query Payments
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: MyPaymentPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/me/payments"
   description: |-
     Create MyPayment
   queryParameters:

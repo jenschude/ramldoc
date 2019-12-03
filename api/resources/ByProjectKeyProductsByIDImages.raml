@@ -1,4 +1,5 @@
 #ByProjectKeyProductsByIDImages
+(resourcePathUri): /{projectKey}/products/{ID}/images
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 post:
-  (resourcePathUri): "{projectKey}/products/{ID}/images"
   description: |-
     Uploads a binary image file to a given product variant. The supported image formats are JPEG, PNG and GIF.
   queryParameters:

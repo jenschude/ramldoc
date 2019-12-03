@@ -1,10 +1,10 @@
 #ByProjectKeyMe
+(resourcePathUri): /{projectKey}/me
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/me"
   queryParameters:
     where:
       type: string
@@ -26,7 +26,6 @@ get:
         application/json:
           type: MyCustomer
 post:
-  (resourcePathUri): "{projectKey}/me"
   description: |-
     Create a customer
   body:
@@ -38,7 +37,6 @@ post:
         application/json:
           type: MyCustomer
 delete:
-  (resourcePathUri): "{projectKey}/me"
   description: |-
     Delete a Customer
   queryParameters:

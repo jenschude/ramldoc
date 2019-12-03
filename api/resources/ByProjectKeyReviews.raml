@@ -1,10 +1,10 @@
 #ByProjectKeyReviews
+(resourcePathUri): /{projectKey}/reviews
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/reviews"
   description: |-
     Query Reviews
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: ReviewPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/reviews"
   description: |-
     Create Review
   queryParameters:

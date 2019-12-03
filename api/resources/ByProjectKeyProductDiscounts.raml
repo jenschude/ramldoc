@@ -1,10 +1,10 @@
 #ByProjectKeyProductDiscounts
+(resourcePathUri): /{projectKey}/product-discounts
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/product-discounts"
   description: |-
     Query ProductDiscounts
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: ProductDiscountPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/product-discounts"
   description: |-
     Create ProductDiscount
   queryParameters:

@@ -1,4 +1,5 @@
 #ByProjectKeyDiscountCodesByID
+(resourcePathUri): /{projectKey}/discount-codes/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/discount-codes/{ID}"
   description: |-
     Get DiscountCode by ID
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: DiscountCode
 post:
-  (resourcePathUri): "{projectKey}/discount-codes/{ID}"
   description: |-
     Update DiscountCode by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: DiscountCode
 delete:
-  (resourcePathUri): "{projectKey}/discount-codes/{ID}"
   description: |-
     Delete DiscountCode by ID
   queryParameters:

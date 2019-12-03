@@ -1,4 +1,5 @@
 #ByProjectKeyProductProjectionsKeyByKey
+(resourcePathUri): /{projectKey}/product-projections/key={key}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   key:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/product-projections/key={key}"
   description: |-
     Gets the current or staged representation of a product found by Key.
     When used with an API client that has the view_published_products:{projectKey} scope,

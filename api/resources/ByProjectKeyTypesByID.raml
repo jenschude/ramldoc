@@ -1,4 +1,5 @@
 #ByProjectKeyTypesByID
+(resourcePathUri): /{projectKey}/types/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/types/{ID}"
   description: |-
     Get Type by ID
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: Type
 post:
-  (resourcePathUri): "{projectKey}/types/{ID}"
   description: |-
     Update Type by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: Type
 delete:
-  (resourcePathUri): "{projectKey}/types/{ID}"
   description: |-
     Delete Type by ID
   queryParameters:

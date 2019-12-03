@@ -1,4 +1,5 @@
 #ByProjectKeyExtensionsByID
+(resourcePathUri): /{projectKey}/extensions/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/extensions/{ID}"
   description: |-
     Retrieves the representation of an extension by its id.
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: Extension
 post:
-  (resourcePathUri): "{projectKey}/extensions/{ID}"
   description: |-
     Update Extension by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: Extension
 delete:
-  (resourcePathUri): "{projectKey}/extensions/{ID}"
   description: |-
     Delete Extension by ID
   queryParameters:

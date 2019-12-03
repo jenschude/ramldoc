@@ -1,10 +1,10 @@
 #ByProjectKeyShippingMethods
+(resourcePathUri): /{projectKey}/shipping-methods
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/shipping-methods"
   description: |-
     Query ShippingMethods
   queryParameters:
@@ -36,7 +36,6 @@ get:
         application/json:
           type: ShippingMethodPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/shipping-methods"
   description: |-
     Create ShippingMethod
   queryParameters:

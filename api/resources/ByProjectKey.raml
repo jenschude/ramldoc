@@ -1,10 +1,10 @@
 #ByProjectKey
+(resourcePathUri): /{projectKey}
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}"
   description: |-
     The Endpoint is responding a limited set of information about settings and configuration of the project.
   responses:
@@ -13,7 +13,6 @@ get:
         application/json:
           type: Project
 post:
-  (resourcePathUri): "{projectKey}"
   description: |-
     Update project
   body:

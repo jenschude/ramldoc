@@ -1,4 +1,5 @@
 #ByProjectKeyCustomersByID
+(resourcePathUri): /{projectKey}/customers/{ID}
 
 uriParameters:
   projectKey:
@@ -6,7 +7,6 @@ uriParameters:
   ID:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/customers/{ID}"
   description: |-
     Get Customer by ID
   queryParameters:
@@ -18,7 +18,6 @@ get:
         application/json:
           type: Customer
 post:
-  (resourcePathUri): "{projectKey}/customers/{ID}"
   description: |-
     Update Customer by ID
   queryParameters:
@@ -33,7 +32,6 @@ post:
         application/json:
           type: Customer
 delete:
-  (resourcePathUri): "{projectKey}/customers/{ID}"
   description: |-
     Delete Customer by ID
   queryParameters:

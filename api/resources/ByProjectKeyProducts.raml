@@ -1,10 +1,10 @@
 #ByProjectKeyProducts
+(resourcePathUri): /{projectKey}/products
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/products"
   description: |-
     You can use the query endpoint to get the full representations of products.
     REMARK: We suggest to use the performance optimized search endpoint which has a bunch functionalities,
@@ -38,7 +38,6 @@ get:
         application/json:
           type: ProductPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/products"
   description: |-
     To create a new product, send a representation that is going to become the initial staged representation
     of the new product in the master catalog. If price selection query parameters are provided,

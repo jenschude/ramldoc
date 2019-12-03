@@ -1,10 +1,10 @@
 #ByProjectKeyCategories
+(resourcePathUri): /{projectKey}/categories
 
 uriParameters:
   projectKey:
     type: string
 get:
-  (resourcePathUri): "{projectKey}/categories"
   description: |-
     Query Categories
   queryParameters:
@@ -28,7 +28,6 @@ get:
         application/json:
           type: CategoryPagedQueryResponse
 post:
-  (resourcePathUri): "{projectKey}/categories"
   description: |-
     Creating a category produces the CategoryCreated message.
   queryParameters:
