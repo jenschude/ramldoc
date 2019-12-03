@@ -1,0 +1,46 @@
+#ByProjectKeyInventory
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/inventory"
+  description: |-
+    Query Inventory
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: InventoryPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/inventory"
+  description: |-
+    Create InventoryEntry
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: InventoryEntryDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: InventoryEntry
+    200:
+      body:

@@ -1,0 +1,49 @@
+#ByProjectKeyStatesByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/states/{ID}"
+  description: |-
+    Get State by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: State
+post:
+  (resourcePathUri): "{projectKey}/states/{ID}"
+  description: |-
+    Update State by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: StateUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: State
+delete:
+  (resourcePathUri): "{projectKey}/states/{ID}"
+  description: |-
+    Delete State by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: State

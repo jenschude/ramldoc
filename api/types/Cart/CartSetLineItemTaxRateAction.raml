@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: CartUpdateAction
+type: object
+(originalType): CartUpdateAction
 displayName: CartSetLineItemTaxRateAction
 
 discriminatorValue: setLineItemTaxRate
 properties:
-   lineItemId:
-      type: string
-   externalTaxRate:
-      type: ExternalTaxRateDraft
+  action:
+    type: string
+  externalTaxRate:
+    type: ExternalTaxRateDraft
+  lineItemId:
+    type: string

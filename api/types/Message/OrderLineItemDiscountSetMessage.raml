@@ -1,16 +1,42 @@
 #%RAML 1.0 DataType
-type: Message
+type: object
+(originalType): Message
 displayName: OrderLineItemDiscountSetMessage
 
 discriminatorValue: OrderLineItemDiscountSet
 properties:
-   lineItemId:
-      type: string
-   discountedPricePerQuantity:
-      type: array
-      items:
-        type: DiscountedLineItemPriceForQuantity
-   totalPrice:
-      type: Money
-   taxedPrice:
-      type: TaxedItemPrice
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  id:
+    type: string
+  version:
+    format: int64
+    type: number
+  createdBy:
+    type: CreatedBy
+  lastModifiedBy:
+    type: LastModifiedBy
+  sequenceNumber:
+    format: int64
+    type: number
+  resource:
+    type: Reference
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+  resourceVersion:
+    format: int64
+    type: number
+  type:
+    type: string
+  totalPrice:
+    type: Money
+  lineItemId:
+    type: string
+  taxedPrice:
+    type: TaxedItemPrice
+  discountedPricePerQuantity:
+    type: array
+    items:
+      type: DiscountedLineItemPriceForQuantity

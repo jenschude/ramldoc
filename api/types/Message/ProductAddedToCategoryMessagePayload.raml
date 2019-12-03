@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: MessagePayload
+type: object
+(originalType): MessagePayload
 displayName: ProductAddedToCategoryMessagePayload
 
 discriminatorValue: ProductAddedToCategory
 properties:
-   category:
-      type: CategoryReference
-   staged:
-      type: boolean
+  type:
+    type: string
+  staged:
+    type: boolean
+  category:
+    type: CategoryReference

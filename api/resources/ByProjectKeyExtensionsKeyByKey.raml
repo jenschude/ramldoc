@@ -1,0 +1,49 @@
+#ByProjectKeyExtensionsKeyByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  key:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/extensions/key={key}"
+  description: |-
+    Retrieves the representation of an extension by its key.
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Extension
+post:
+  (resourcePathUri): "{projectKey}/extensions/key={key}"
+  description: |-
+    Update Extension by key
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ExtensionUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Extension
+delete:
+  (resourcePathUri): "{projectKey}/extensions/key={key}"
+  description: |-
+    Delete Extension by key
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Extension

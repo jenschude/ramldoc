@@ -1,8 +1,13 @@
 #%RAML 1.0 DataType
-type: ErrorObject
+type: object
+(originalType): ErrorObject
 displayName: RequiredFieldError
 
 discriminatorValue: RequiredField
 properties:
-   field:
-      type: string
+  code:
+    type: string
+  message:
+    type: string
+  field:
+    type: string

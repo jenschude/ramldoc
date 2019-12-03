@@ -1,15 +1,16 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: TaxPortionDraft
 
 
 properties:
-   name:
-      type: string
-   rate:
-      format: int16
-      minimum: 0
-      maximum: 1
-      type: number
-   amount:
-      type: TypedMoneyDraft
+  amount:
+    type: TypedMoneyDraft
+  rate:
+    format: int16
+    minimum: 0
+    maximum: 1
+    type: number
+  name:
+    type: string

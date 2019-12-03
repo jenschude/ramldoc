@@ -1,37 +1,38 @@
 #%RAML 1.0 DataType
-type: LoggedResource
+type: object
+(originalType): LoggedResource
 displayName: CustomerGroup
 
 
 properties:
-   id:
-      description: |-
-        The unique ID of the customer group.
-      type: string
-   version:
-      description: |-
-        The current version of the customer group.
-      format: int64
-      type: number
-   createdAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedBy:
-      description: |-
-        Present on resources updated after 1/02/2019 except for events not tracked.
-      type: LastModifiedBy
-   createdBy:
-      description: |-
-        Present on resources created after 1/02/2019 except for events not tracked.
-      type: CreatedBy
-   key:
-      description: |-
-        User-specific unique identifier for the customer group.
-      type: string
-   name:
-      type: string
-   custom:
-      type: CustomFields
+  createdAt:
+    format: rfc3339
+    type: datetime
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+  id:
+    description: |-
+      The unique ID of the customer group.
+    type: string
+  version:
+    description: |-
+      The current version of the customer group.
+    format: int64
+    type: number
+  createdBy:
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    type: CreatedBy
+  lastModifiedBy:
+    description: |-
+      Present on resources updated after 1/02/2019 except for events not tracked.
+    type: LastModifiedBy
+  custom:
+    type: CustomFields
+  name:
+    type: string
+  key:
+    description: |-
+      User-specific unique identifier for the customer group.
+    type: string

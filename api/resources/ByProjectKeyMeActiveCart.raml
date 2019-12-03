@@ -1,0 +1,12 @@
+#ByProjectKeyMeActiveCart
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/me/active-cart"
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyCart

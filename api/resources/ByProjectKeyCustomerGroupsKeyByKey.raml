@@ -1,0 +1,49 @@
+#ByProjectKeyCustomerGroupsKeyByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  key:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/customer-groups/key={key}"
+  description: |-
+    Gets a customer group by Key.
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: CustomerGroup
+post:
+  (resourcePathUri): "{projectKey}/customer-groups/key={key}"
+  description: |-
+    Updates a customer group by Key.
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: CustomerGroupUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: CustomerGroup
+delete:
+  (resourcePathUri): "{projectKey}/customer-groups/key={key}"
+  description: |-
+    Delete CustomerGroup by key
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: CustomerGroup

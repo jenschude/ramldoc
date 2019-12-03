@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: Destination
+type: object
+(originalType): Destination
 displayName: AzureEventGridDestination
 
 discriminatorValue: EventGrid
 properties:
-   uri:
-      type: string
-   accessKey:
-      type: string
+  type:
+    type: string
+  accessKey:
+    type: string
+  uri:
+    type: string

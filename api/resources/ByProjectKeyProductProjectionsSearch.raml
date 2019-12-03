@@ -1,0 +1,59 @@
+#ByProjectKeyProductProjectionsSearch
+
+uriParameters:
+  projectKey:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/product-projections/search"
+  description: |-
+    Search Product Projection
+  responses:
+    200:
+      body:
+get:
+  (resourcePathUri): "{projectKey}/product-projections/search"
+  description: |-
+    Search Product Projection
+  queryParameters:
+    fuzzy:
+      type: boolean
+    fuzzyLevel:
+      format: int16
+      type: number
+    staged:
+      type: boolean
+    filter:
+      type: string
+    filter.facets:
+      type: string
+    filter.query:
+      type: string
+    facet:
+      type: string
+    /text.[a-z]{2}(-[A-Z]{2})?/:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+    priceCurrency:
+      type: string
+    priceCountry:
+      type: string
+    priceCustomerGroup:
+      type: string
+    priceChannel:
+      type: string
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductProjectionPagedSearchResponse

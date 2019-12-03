@@ -1,70 +1,71 @@
 #%RAML 1.0 DataType
-type: LoggedResource
+type: object
+(originalType): LoggedResource
 displayName: Review
 
 
 properties:
-   id:
-      description: |-
-        The unique ID of the review.
-      type: string
-   version:
-      description: |-
-        The current version of the review.
-      format: int64
-      type: number
-   createdAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedBy:
-      description: |-
-        Present on resources updated after 1/02/2019 except for events not tracked.
-      type: LastModifiedBy
-   createdBy:
-      description: |-
-        Present on resources created after 1/02/2019 except for events not tracked.
-      type: CreatedBy
-   key:
-      description: |-
-        User-specific unique identifier for the review.
-      type: string
-   uniquenessValue:
-      type: string
-   locale:
-      type: string
-   authorName:
-      type: string
-   title:
-      type: string
-   text:
-      type: string
-   target:
-      description: |-
-        Identifies the target of the review.
-        Can be a Product or a Channel
-      type: null
-   includedInStatistics:
-      description: |-
-        Indicates if this review is taken into account in the ratings statistics of the target.
-        A review is per default used in the statistics, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
-        If the role of a State is modified after the calculation of this field, the calculation is not updated.
-      type: boolean
-   rating:
-      description: |-
-        Number between -100 and 100 included.
-      format: int8
-      minimum: -100
-      maximum: 100
-      type: number
-   state:
-      type: StateReference
-   customer:
-      description: |-
-        The customer who created the review.
-      discriminatorValue: customer
-      type: CustomerReference
-   custom:
-      type: CustomFields
+  createdAt:
+    format: rfc3339
+    type: datetime
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+  id:
+    description: |-
+      The unique ID of the review.
+    type: string
+  version:
+    description: |-
+      The current version of the review.
+    format: int64
+    type: number
+  createdBy:
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    type: CreatedBy
+  lastModifiedBy:
+    description: |-
+      Present on resources updated after 1/02/2019 except for events not tracked.
+    type: LastModifiedBy
+  uniquenessValue:
+    type: string
+  custom:
+    type: CustomFields
+  rating:
+    description: |-
+      Number between -100 and 100 included.
+    format: int8
+    minimum: -100
+    maximum: 100
+    type: number
+  title:
+    type: string
+  locale:
+    type: string
+  target:
+    description: |-
+      Identifies the target of the review.
+      Can be a Product or a Channel
+    type: ProductReference | ChannelReference
+  includedInStatistics:
+    description: |-
+      Indicates if this review is taken into account in the ratings statistics of the target.
+      A review is per default used in the statistics, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
+      If the role of a State is modified after the calculation of this field, the calculation is not updated.
+    type: boolean
+  authorName:
+    type: string
+  state:
+    type: StateReference
+  text:
+    type: string
+  key:
+    description: |-
+      User-specific unique identifier for the review.
+    type: string
+  customer:
+    description: |-
+      The customer who created the review.
+    discriminatorValue: customer
+    type: CustomerReference

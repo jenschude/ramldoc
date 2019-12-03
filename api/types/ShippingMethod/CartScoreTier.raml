@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: ShippingRatePriceTier
+type: object
+(originalType): ShippingRatePriceTier
 displayName: CartScoreTier
 
 discriminatorValue: CartScore
 properties:
-   score:
-      type: number
-   price:
-      type: Money
-   priceFunction:
-      type: PriceFunction
-   isMatching:
-      type: boolean
+  type:
+    type: ShippingRateTierType
+  score:
+    type: number
+  price:
+    type: Money
+  isMatching:
+    type: boolean
+  priceFunction:
+    type: PriceFunction

@@ -1,12 +1,15 @@
 #%RAML 1.0 DataType
-type: ExtensionDestination
+type: object
+(originalType): ExtensionDestination
 displayName: ExtensionAWSLambdaDestination
 
 discriminatorValue: AWSLambda
 properties:
-   arn:
-      type: string
-   accessKey:
-      type: string
-   accessSecret:
-      type: string
+  type:
+    type: string
+  accessKey:
+    type: string
+  arn:
+    type: string
+  accessSecret:
+    type: string

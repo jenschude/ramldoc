@@ -1,0 +1,49 @@
+#ByProjectKeyMeCartsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/me/carts/{ID}"
+  description: |-
+    Get MyCart by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyCart
+post:
+  (resourcePathUri): "{projectKey}/me/carts/{ID}"
+  description: |-
+    Update MyCart by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: Update
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyCart
+delete:
+  (resourcePathUri): "{projectKey}/me/carts/{ID}"
+  description: |-
+    Delete MyCart by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyCart

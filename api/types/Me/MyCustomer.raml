@@ -1,73 +1,74 @@
 #%RAML 1.0 DataType
-type: LoggedResource
+type: object
+(originalType): LoggedResource
 displayName: MyCustomer
 
 
 properties:
-   id:
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  id:
+    type: string
+  version:
+    format: int64
+    type: number
+  createdBy:
+    type: CreatedBy
+  lastModifiedBy:
+    type: LastModifiedBy
+  lastName:
+    type: string
+  addresses:
+    type: array
+    items:
+      type: Address
+  companyName:
+    type: string
+  vatId:
+    type: string
+  locale:
+    type: string
+  title:
+    type: string
+  isEmailVerified:
+    type: boolean
+  shippingAddressIds:
+    type: array
+    items:
       type: string
-   version:
-      format: int64
-      type: number
-   createdAt:
-      type: datetime
-   lastModifiedAt:
-      type: datetime
-   lastModifiedBy:
-      type: LastModifiedBy
-   createdBy:
-      type: CreatedBy
-   customerNumber:
+  password:
+    type: string
+  key:
+    type: string
+  email:
+    type: string
+  stores:
+    type: array
+    items:
+      type: StoreKeyReference
+  customerGroup:
+    type: CustomerGroupReference
+  custom:
+    type: CustomFields
+  externalId:
+    type: string
+  dateOfBirth:
+    type: date-only
+  billingAddressIds:
+    type: array
+    items:
       type: string
-   email:
-      type: string
-   password:
-      type: string
-   firstName:
-      type: string
-   lastName:
-      type: string
-   middleName:
-      type: string
-   title:
-      type: string
-   dateOfBirth:
-      type: date-only
-   companyName:
-      type: string
-   vatId:
-      type: string
-   addresses:
-      type: array
-      items:
-        type: Address
-   defaultShippingAddressId:
-      type: string
-   shippingAddressIds:
-      type: array
-      items:
-        type: string
-   defaultBillingAddressId:
-      type: string
-   billingAddressIds:
-      type: array
-      items:
-        type: string
-   isEmailVerified:
-      type: boolean
-   externalId:
-      type: string
-   customerGroup:
-      type: CustomerGroupReference
-   custom:
-      type: CustomFields
-   locale:
-      type: string
-   salutation:
-      type: string
-   key:
-      type: string
-   stores:
-      type: array
-      items:
-        type: StoreKeyReference
+  defaultShippingAddressId:
+    type: string
+  customerNumber:
+    type: string
+  defaultBillingAddressId:
+    type: string
+  firstName:
+    type: string
+  middleName:
+    type: string
+  salutation:
+    type: string

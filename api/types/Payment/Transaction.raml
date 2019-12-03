@@ -1,31 +1,32 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: Transaction
 
 
 properties:
-   id:
-      description: |-
-        The unique ID of this object.
-      type: string
-   timestamp:
-      description: |-
-        The time at which the transaction took place.
-      format: rfc3339
-      type: datetime
-   type:
-      description: |-
-        The type of this transaction.
-      type: TransactionType
-   amount:
-      discriminator: type
-      type: TypedMoney
-   interactionId:
-      description: |-
-        The identifier that is used by the interface that managed the transaction (usually the PSP).
-        If a matching interaction was logged in the `interfaceInteractions` array, the corresponding interaction should be findable with this ID.
-      type: string
-   state:
-      description: |-
-        The state of this transaction.
-      type: TransactionState
+  interactionId:
+    description: |-
+      The identifier that is used by the interface that managed the transaction (usually the PSP).
+      If a matching interaction was logged in the `interfaceInteractions` array, the corresponding interaction should be findable with this ID.
+    type: string
+  amount:
+    discriminator: type
+    type: TypedMoney
+  state:
+    description: |-
+      The state of this transaction.
+    type: TransactionState
+  id:
+    description: |-
+      The unique ID of this object.
+    type: string
+  type:
+    description: |-
+      The type of this transaction.
+    type: TransactionType
+  timestamp:
+    description: |-
+      The time at which the transaction took place.
+    format: rfc3339
+    type: datetime

@@ -1,0 +1,46 @@
+#ByProjectKeyTypes
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/types"
+  description: |-
+    Query Types
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: TypePagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/types"
+  description: |-
+    Create Type
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: TypeDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Type
+    200:
+      body:

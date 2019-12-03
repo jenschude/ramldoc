@@ -1,0 +1,15 @@
+#ByProjectKeyCustomersEmailConfirm
+
+uriParameters:
+  projectKey:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/customers/email/confirm"
+  description: |-
+    Verifies customer's email using a token.
+  body:
+    application/json:
+      type: CustomerEmailVerify
+  responses:
+    200:
+      body:

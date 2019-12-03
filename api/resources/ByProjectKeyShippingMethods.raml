@@ -1,0 +1,54 @@
+#ByProjectKeyShippingMethods
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/shipping-methods"
+  description: |-
+    Query ShippingMethods
+  queryParameters:
+    shipping-methodId:
+      type: string
+    country:
+      type: string
+    state:
+      type: string
+    currency:
+      type: string
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: ShippingMethodPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/shipping-methods"
+  description: |-
+    Create ShippingMethod
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ShippingMethodDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: ShippingMethod
+    200:
+      body:

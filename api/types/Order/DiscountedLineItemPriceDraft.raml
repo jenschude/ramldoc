@@ -1,12 +1,13 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: DiscountedLineItemPriceDraft
 
 
 properties:
-   value:
-      type: Money
-   includedDiscounts:
-      type: array
-      items:
-        type: DiscountedLineItemPortion
+  includedDiscounts:
+    type: array
+    items:
+      type: DiscountedLineItemPortion
+  value:
+    type: Money

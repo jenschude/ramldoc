@@ -1,0 +1,46 @@
+#ByProjectKeyProductTypes
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/product-types"
+  description: |-
+    Query ProductTypes
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductTypePagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/product-types"
+  description: |-
+    Create ProductType
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ProductTypeDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: ProductType
+    200:
+      body:

@@ -1,29 +1,30 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: ShoppingListLineItem
 
 
 properties:
-   addedAt:
-      type: datetime
-   custom:
-      type: CustomFields
-   deactivatedAt:
-      type: datetime
-   id:
-      type: string
-   name:
-      type: LocalizedString
-   productId:
-      type: string
-   productSlug:
-      type: LocalizedString
-   productType:
-      type: ProductTypeReference
-   quantity:
-      type: number
-   variant:
-      type: ProductVariant
-   variantId:
-      format: int64
-      type: number
+  addedAt:
+    type: datetime
+  quantity:
+    type: number
+  productId:
+    type: string
+  custom:
+    type: CustomFields
+  variant:
+    type: ProductVariant
+  name:
+    type: LocalizedString
+  variantId:
+    format: int64
+    type: number
+  id:
+    type: string
+  deactivatedAt:
+    type: datetime
+  productSlug:
+    type: LocalizedString
+  productType:
+    type: ProductTypeReference

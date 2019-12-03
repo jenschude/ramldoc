@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: CustomerUpdateAction
+type: object
+(originalType): CustomerUpdateAction
 displayName: CustomerChangeAddressAction
 
 discriminatorValue: changeAddress
 properties:
-   addressId:
-      type: string
-   address:
-      type: Address
+  action:
+    type: string
+  address:
+    type: Address
+  addressId:
+    type: string

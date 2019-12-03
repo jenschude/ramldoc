@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: MessagePayload
+type: object
+(originalType): MessagePayload
 displayName: OrderShippingInfoSetMessagePayload
 
 discriminatorValue: OrderShippingInfoSet
 properties:
-   shippingInfo:
-      type: ShippingInfo
-   oldShippingInfo:
-      type: ShippingInfo
+  type:
+    type: string
+  shippingInfo:
+    type: ShippingInfo
+  oldShippingInfo:
+    type: ShippingInfo

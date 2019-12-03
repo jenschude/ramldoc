@@ -1,0 +1,19 @@
+#ByProjectKeyOrdersImport
+
+uriParameters:
+  projectKey:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/orders/import"
+  description: |-
+    Create an Order by Import
+  body:
+    application/json:
+      type: OrderImportDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Order
+    200:
+      body:

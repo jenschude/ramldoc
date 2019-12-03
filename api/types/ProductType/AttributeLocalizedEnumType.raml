@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: AttributeType
+type: object
+(originalType): AttributeType
 displayName: AttributeLocalizedEnumType
 
 discriminatorValue: lenum
 properties:
-   values:
-      type: array
-      items:
-        type: AttributeLocalizedEnumValue
+  name:
+    type: string
+  values:
+    type: array
+    items:
+      type: AttributeLocalizedEnumValue

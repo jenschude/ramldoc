@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: TypeUpdateAction
+type: object
+(originalType): TypeUpdateAction
 displayName: TypeChangeInputHintAction
 
 discriminatorValue: changeInputHint
 properties:
-   fieldName:
-      type: string
-   inputHint:
-      type: TypeTextInputHint
+  action:
+    type: string
+  fieldName:
+    type: string
+  inputHint:
+    type: TypeTextInputHint

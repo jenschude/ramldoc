@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: StagedOrderUpdateAction
+type: object
+(originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetShippingMethodAction
 
 discriminatorValue: setShippingMethod
 properties:
-   shippingMethod:
-      type: ShippingMethodResourceIdentifier
-   externalTaxRate:
-      type: ExternalTaxRateDraft
+  action:
+    type: string
+  externalTaxRate:
+    type: ExternalTaxRateDraft
+  shippingMethod:
+    type: ShippingMethodResourceIdentifier

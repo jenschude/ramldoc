@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: CartDiscountUpdateAction
+type: object
+(originalType): CartDiscountUpdateAction
 displayName: CartDiscountChangeStackingModeAction
 
 discriminatorValue: changeStackingMode
 properties:
-   stackingMode:
-      type: StackingMode
+  action:
+    type: string
+  stackingMode:
+    type: StackingMode

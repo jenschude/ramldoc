@@ -1,0 +1,15 @@
+#ByProjectKeyOrdersEditsByIDApply
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/orders/edits/{ID}/apply"
+  body:
+    application/json:
+      type: OrderEditApply
+  responses:
+    200:
+      body:

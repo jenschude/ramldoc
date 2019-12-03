@@ -1,14 +1,15 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: CustomerGroupDraft
 
 
 properties:
-   key:
-      description: |-
-        User-specific unique identifier for the customer group.
-      type: string
-   groupName:
-      type: string
-   custom:
-      type: CustomFields
+  groupName:
+    type: string
+  custom:
+    type: CustomFields
+  key:
+    description: |-
+      User-specific unique identifier for the customer group.
+    type: string

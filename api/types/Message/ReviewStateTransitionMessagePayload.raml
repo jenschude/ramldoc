@@ -1,18 +1,21 @@
 #%RAML 1.0 DataType
-type: MessagePayload
+type: object
+(originalType): MessagePayload
 displayName: ReviewStateTransitionMessagePayload
 
 discriminatorValue: ReviewStateTransition
 properties:
-   oldState:
-      type: StateReference
-   newState:
-      type: StateReference
-   oldIncludedInStatistics:
-      type: boolean
-   newIncludedInStatistics:
-      type: boolean
-   target:
-      type: Reference
-   force:
-      type: boolean
+  type:
+    type: string
+  newIncludedInStatistics:
+    type: boolean
+  oldState:
+    type: StateReference
+  force:
+    type: boolean
+  oldIncludedInStatistics:
+    type: boolean
+  newState:
+    type: StateReference
+  target:
+    type: Reference

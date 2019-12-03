@@ -1,0 +1,51 @@
+#ByProjectKeyPaymentsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/payments/{ID}"
+  description: |-
+    Get Payment by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Payment
+post:
+  (resourcePathUri): "{projectKey}/payments/{ID}"
+  description: |-
+    Update Payment by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: PaymentUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Payment
+delete:
+  (resourcePathUri): "{projectKey}/payments/{ID}"
+  description: |-
+    Delete Payment by ID
+  queryParameters:
+    dataErasure:
+      type: boolean
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Payment

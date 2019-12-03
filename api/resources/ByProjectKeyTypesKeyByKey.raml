@@ -1,0 +1,49 @@
+#ByProjectKeyTypesKeyByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  key:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/types/key={key}"
+  description: |-
+    Get Type by key
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Type
+post:
+  (resourcePathUri): "{projectKey}/types/key={key}"
+  description: |-
+    Update Type by key
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: TypeUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Type
+delete:
+  (resourcePathUri): "{projectKey}/types/key={key}"
+  description: |-
+    Delete Type by key
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Type

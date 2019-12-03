@@ -1,10 +1,20 @@
 #%RAML 1.0 DataType
-type: BaseResource
+type: object
+(originalType): BaseResource
 displayName: LoggedResource
 
 
 properties:
-   lastModifiedBy:
-      type: LastModifiedBy
-   createdBy:
-      type: CreatedBy
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  id:
+    type: string
+  version:
+    format: int64
+    type: number
+  createdBy:
+    type: CreatedBy
+  lastModifiedBy:
+    type: LastModifiedBy

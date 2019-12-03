@@ -1,12 +1,13 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: ResourceIdentifier
 discriminator: typeId
 
 properties:
-   typeId:
-      type: ReferenceTypeId
-   id:
-      type: string
-   key:
-      type: string
+  typeId:
+    type: ReferenceTypeId
+  id:
+    type: string
+  key:
+    type: string

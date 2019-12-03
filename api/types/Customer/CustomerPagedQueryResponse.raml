@@ -1,22 +1,23 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: CustomerPagedQueryResponse
 
 
 properties:
-   limit:
-      format: int64
-      type: number
-   count:
-      format: int64
-      type: number
-   total:
-      format: int64
-      type: number
-   offset:
-      format: int64
-      type: number
-   results:
-      type: array
-      items:
-        type: Customer
+  total:
+    format: int64
+    type: number
+  offset:
+    format: int64
+    type: number
+  count:
+    format: int64
+    type: number
+  limit:
+    format: int64
+    type: number
+  results:
+    type: array
+    items:
+      type: Customer

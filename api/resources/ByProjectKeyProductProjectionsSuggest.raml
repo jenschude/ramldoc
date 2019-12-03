@@ -1,0 +1,29 @@
+#ByProjectKeyProductProjectionsSuggest
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/product-projections/suggest"
+  queryParameters:
+    fuzzy:
+      type: boolean
+    staged:
+      type: boolean
+    /searchKeywords.[a-z]{2}(-[A-Z]{2})?/:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: any

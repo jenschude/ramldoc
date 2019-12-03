@@ -1,95 +1,49 @@
 #%RAML 1.0
 ---
 title: Commercetools
+annotationTypes:
+  resourcePathUri:
+    type: string
+    allowedTargets: Method
+  originalType:
+    type: string
+    allowedTargets: TypeDeclaration
 types:
-  PagedQueryResponse: !include types/Common/PagedQueryResponse.raml
-  Update: !include types/Common/Update.raml
-  UpdateAction: !include types/Common/UpdateAction.raml
+  AccessDeniedError: !include types/Error/AccessDeniedError.raml
+  Address: !include types/Common/Address.raml
+  AnonymousCartSignInMode: !include types/Customer/AnonymousCartSignInMode.raml
   ApiClient: !include types/ApiClient/ApiClient.raml
   ApiClientDraft: !include types/ApiClient/ApiClientDraft.raml
   ApiClientPagedQueryResponse: !include types/ApiClient/ApiClientPagedQueryResponse.raml
-  CartDiscount: !include types/CartDiscount/CartDiscount.raml
-  CartDiscountCustomLineItemsTarget: !include types/CartDiscount/CartDiscountCustomLineItemsTarget.raml
-  CartDiscountDraft: !include types/CartDiscount/CartDiscountDraft.raml
-  CartDiscountLineItemsTarget: !include types/CartDiscount/CartDiscountLineItemsTarget.raml
-  CartDiscountPagedQueryResponse: !include types/CartDiscount/CartDiscountPagedQueryResponse.raml
-  CartDiscountReference: !include types/CartDiscount/CartDiscountReference.raml
-  CartDiscountResourceIdentifier: !include types/CartDiscount/CartDiscountResourceIdentifier.raml
-  CartDiscountShippingCostTarget: !include types/CartDiscount/CartDiscountShippingCostTarget.raml
-  CartDiscountTarget: !include types/CartDiscount/CartDiscountTarget.raml
-  CartDiscountUpdate: !include types/CartDiscount/CartDiscountUpdate.raml
-  CartDiscountUpdateAction: !include types/CartDiscount/CartDiscountUpdateAction.raml
-  CartDiscountValue: !include types/CartDiscount/CartDiscountValue.raml
-  CartDiscountValueAbsolute: !include types/CartDiscount/CartDiscountValueAbsolute.raml
-  CartDiscountValueAbsoluteDraft: !include types/CartDiscount/CartDiscountValueAbsoluteDraft.raml
-  CartDiscountValueDraft: !include types/CartDiscount/CartDiscountValueDraft.raml
-  CartDiscountValueGiftLineItem: !include types/CartDiscount/CartDiscountValueGiftLineItem.raml
-  CartDiscountValueGiftLineItemDraft: !include types/CartDiscount/CartDiscountValueGiftLineItemDraft.raml
-  CartDiscountValueRelative: !include types/CartDiscount/CartDiscountValueRelative.raml
-  CartDiscountValueRelativeDraft: !include types/CartDiscount/CartDiscountValueRelativeDraft.raml
-  MultiBuyCustomLineItemsTarget: !include types/CartDiscount/MultiBuyCustomLineItemsTarget.raml
-  MultiBuyLineItemsTarget: !include types/CartDiscount/MultiBuyLineItemsTarget.raml
-  SelectionMode: !include types/CartDiscount/SelectionMode.raml
-  StackingMode: !include types/CartDiscount/StackingMode.raml
-  CartDiscountChangeCartPredicateAction: !include types/CartDiscount/CartDiscountChangeCartPredicateAction.raml
-  CartDiscountChangeIsActiveAction: !include types/CartDiscount/CartDiscountChangeIsActiveAction.raml
-  CartDiscountChangeNameAction: !include types/CartDiscount/CartDiscountChangeNameAction.raml
-  CartDiscountChangeRequiresDiscountCodeAction: !include types/CartDiscount/CartDiscountChangeRequiresDiscountCodeAction.raml
-  CartDiscountChangeSortOrderAction: !include types/CartDiscount/CartDiscountChangeSortOrderAction.raml
-  CartDiscountChangeStackingModeAction: !include types/CartDiscount/CartDiscountChangeStackingModeAction.raml
-  CartDiscountChangeTargetAction: !include types/CartDiscount/CartDiscountChangeTargetAction.raml
-  CartDiscountChangeValueAction: !include types/CartDiscount/CartDiscountChangeValueAction.raml
-  CartDiscountSetCustomFieldAction: !include types/CartDiscount/CartDiscountSetCustomFieldAction.raml
-  CartDiscountSetCustomTypeAction: !include types/CartDiscount/CartDiscountSetCustomTypeAction.raml
-  CartDiscountSetDescriptionAction: !include types/CartDiscount/CartDiscountSetDescriptionAction.raml
-  CartDiscountSetKeyAction: !include types/CartDiscount/CartDiscountSetKeyAction.raml
-  CartDiscountSetValidFromAction: !include types/CartDiscount/CartDiscountSetValidFromAction.raml
-  CartDiscountSetValidFromAndUntilAction: !include types/CartDiscount/CartDiscountSetValidFromAndUntilAction.raml
-  CartDiscountSetValidUntilAction: !include types/CartDiscount/CartDiscountSetValidUntilAction.raml
+  Asset: !include types/Common/Asset.raml
+  AssetDimensions: !include types/Common/AssetDimensions.raml
+  AssetDraft: !include types/Common/AssetDraft.raml
+  AssetSource: !include types/Common/AssetSource.raml
+  Attribute: !include types/Product/Attribute.raml
+  AttributeBooleanType: !include types/ProductType/AttributeBooleanType.raml
+  AttributeConstraintEnum: !include types/ProductType/AttributeConstraintEnum.raml
+  AttributeConstraintEnumDraft: !include types/ProductType/AttributeConstraintEnumDraft.raml
+  AttributeDateTimeType: !include types/ProductType/AttributeDateTimeType.raml
+  AttributeDateType: !include types/ProductType/AttributeDateType.raml
+  AttributeDefinition: !include types/ProductType/AttributeDefinition.raml
+  AttributeDefinitionDraft: !include types/ProductType/AttributeDefinitionDraft.raml
+  AttributeEnumType: !include types/ProductType/AttributeEnumType.raml
+  AttributeLocalizableTextType: !include types/ProductType/AttributeLocalizableTextType.raml
+  AttributeLocalizedEnumType: !include types/ProductType/AttributeLocalizedEnumType.raml
+  AttributeLocalizedEnumValue: !include types/ProductType/AttributeLocalizedEnumValue.raml
+  AttributeMoneyType: !include types/ProductType/AttributeMoneyType.raml
+  AttributeNestedType: !include types/ProductType/AttributeNestedType.raml
+  AttributeNumberType: !include types/ProductType/AttributeNumberType.raml
+  AttributePlainEnumValue: !include types/ProductType/AttributePlainEnumValue.raml
+  AttributeReferenceType: !include types/ProductType/AttributeReferenceType.raml
+  AttributeSetType: !include types/ProductType/AttributeSetType.raml
+  AttributeTextType: !include types/ProductType/AttributeTextType.raml
+  AttributeTimeType: !include types/ProductType/AttributeTimeType.raml
+  AttributeType: !include types/ProductType/AttributeType.raml
+  AzureEventGridDestination: !include types/Subscription/AzureEventGridDestination.raml
+  AzureServiceBusDestination: !include types/Subscription/AzureServiceBusDestination.raml
+  BaseResource: !include types/Common/BaseResource.raml
   Cart: !include types/Cart/Cart.raml
-  CartDraft: !include types/Cart/CartDraft.raml
-  CartOrigin: !include types/Cart/CartOrigin.raml
-  CartPagedQueryResponse: !include types/Cart/CartPagedQueryResponse.raml
-  CartReference: !include types/Cart/CartReference.raml
-  CartResourceIdentifier: !include types/Cart/CartResourceIdentifier.raml
-  CartState: !include types/Cart/CartState.raml
-  CartUpdate: !include types/Cart/CartUpdate.raml
-  CartUpdateAction: !include types/Cart/CartUpdateAction.raml
-  ClassificationShippingRateInput: !include types/Cart/ClassificationShippingRateInput.raml
-  ClassificationShippingRateInputDraft: !include types/Cart/ClassificationShippingRateInputDraft.raml
-  CustomLineItem: !include types/Cart/CustomLineItem.raml
-  CustomLineItemDraft: !include types/Cart/CustomLineItemDraft.raml
-  DiscountCodeInfo: !include types/Cart/DiscountCodeInfo.raml
-  DiscountCodeState: !include types/Cart/DiscountCodeState.raml
-  DiscountedLineItemPortion: !include types/Cart/DiscountedLineItemPortion.raml
-  DiscountedLineItemPrice: !include types/Cart/DiscountedLineItemPrice.raml
-  DiscountedLineItemPriceForQuantity: !include types/Cart/DiscountedLineItemPriceForQuantity.raml
-  ExternalLineItemTotalPrice: !include types/Cart/ExternalLineItemTotalPrice.raml
-  ExternalTaxAmountDraft: !include types/Cart/ExternalTaxAmountDraft.raml
-  ExternalTaxRateDraft: !include types/Cart/ExternalTaxRateDraft.raml
-  InventoryMode: !include types/Cart/InventoryMode.raml
-  ItemShippingDetails: !include types/Cart/ItemShippingDetails.raml
-  ItemShippingDetailsDraft: !include types/Cart/ItemShippingDetailsDraft.raml
-  ItemShippingTarget: !include types/Cart/ItemShippingTarget.raml
-  LineItem: !include types/Cart/LineItem.raml
-  LineItemDraft: !include types/Cart/LineItemDraft.raml
-  LineItemMode: !include types/Cart/LineItemMode.raml
-  LineItemPriceMode: !include types/Cart/LineItemPriceMode.raml
-  ReplicaCartDraft: !include types/Cart/ReplicaCartDraft.raml
-  RoundingMode: !include types/Cart/RoundingMode.raml
-  ScoreShippingRateInput: !include types/Cart/ScoreShippingRateInput.raml
-  ScoreShippingRateInputDraft: !include types/Cart/ScoreShippingRateInputDraft.raml
-  ShippingInfo: !include types/Cart/ShippingInfo.raml
-  ShippingMethodState: !include types/Cart/ShippingMethodState.raml
-  ShippingRateInput: !include types/Cart/ShippingRateInput.raml
-  ShippingRateInputDraft: !include types/Cart/ShippingRateInputDraft.raml
-  TaxCalculationMode: !include types/Cart/TaxCalculationMode.raml
-  TaxMode: !include types/Cart/TaxMode.raml
-  TaxPortion: !include types/Cart/TaxPortion.raml
-  TaxPortionDraft: !include types/Cart/TaxPortionDraft.raml
-  TaxedItemPrice: !include types/Cart/TaxedItemPrice.raml
-  TaxedPrice: !include types/Cart/TaxedPrice.raml
-  TaxedPriceDraft: !include types/Cart/TaxedPriceDraft.raml
   CartAddCustomLineItemAction: !include types/Cart/CartAddCustomLineItemAction.raml
   CartAddDiscountCodeAction: !include types/Cart/CartAddDiscountCodeAction.raml
   CartAddItemShippingAddressAction: !include types/Cart/CartAddItemShippingAddressAction.raml
@@ -104,12 +58,55 @@ types:
   CartChangeTaxCalculationModeAction: !include types/Cart/CartChangeTaxCalculationModeAction.raml
   CartChangeTaxModeAction: !include types/Cart/CartChangeTaxModeAction.raml
   CartChangeTaxRoundingModeAction: !include types/Cart/CartChangeTaxRoundingModeAction.raml
+  CartClassificationTier: !include types/ShippingMethod/CartClassificationTier.raml
+  CartClassificationType: !include types/Project/CartClassificationType.raml
+  CartDiscount: !include types/CartDiscount/CartDiscount.raml
+  CartDiscountChangeCartPredicateAction: !include types/CartDiscount/CartDiscountChangeCartPredicateAction.raml
+  CartDiscountChangeIsActiveAction: !include types/CartDiscount/CartDiscountChangeIsActiveAction.raml
+  CartDiscountChangeNameAction: !include types/CartDiscount/CartDiscountChangeNameAction.raml
+  CartDiscountChangeRequiresDiscountCodeAction: !include types/CartDiscount/CartDiscountChangeRequiresDiscountCodeAction.raml
+  CartDiscountChangeSortOrderAction: !include types/CartDiscount/CartDiscountChangeSortOrderAction.raml
+  CartDiscountChangeStackingModeAction: !include types/CartDiscount/CartDiscountChangeStackingModeAction.raml
+  CartDiscountChangeTargetAction: !include types/CartDiscount/CartDiscountChangeTargetAction.raml
+  CartDiscountChangeValueAction: !include types/CartDiscount/CartDiscountChangeValueAction.raml
+  CartDiscountCustomLineItemsTarget: !include types/CartDiscount/CartDiscountCustomLineItemsTarget.raml
+  CartDiscountDraft: !include types/CartDiscount/CartDiscountDraft.raml
+  CartDiscountLineItemsTarget: !include types/CartDiscount/CartDiscountLineItemsTarget.raml
+  CartDiscountPagedQueryResponse: !include types/CartDiscount/CartDiscountPagedQueryResponse.raml
+  CartDiscountReference: !include types/CartDiscount/CartDiscountReference.raml
+  CartDiscountResourceIdentifier: !include types/CartDiscount/CartDiscountResourceIdentifier.raml
+  CartDiscountSetCustomFieldAction: !include types/CartDiscount/CartDiscountSetCustomFieldAction.raml
+  CartDiscountSetCustomTypeAction: !include types/CartDiscount/CartDiscountSetCustomTypeAction.raml
+  CartDiscountSetDescriptionAction: !include types/CartDiscount/CartDiscountSetDescriptionAction.raml
+  CartDiscountSetKeyAction: !include types/CartDiscount/CartDiscountSetKeyAction.raml
+  CartDiscountSetValidFromAction: !include types/CartDiscount/CartDiscountSetValidFromAction.raml
+  CartDiscountSetValidFromAndUntilAction: !include types/CartDiscount/CartDiscountSetValidFromAndUntilAction.raml
+  CartDiscountSetValidUntilAction: !include types/CartDiscount/CartDiscountSetValidUntilAction.raml
+  CartDiscountShippingCostTarget: !include types/CartDiscount/CartDiscountShippingCostTarget.raml
+  CartDiscountTarget: !include types/CartDiscount/CartDiscountTarget.raml
+  CartDiscountUpdate: !include types/CartDiscount/CartDiscountUpdate.raml
+  CartDiscountUpdateAction: !include types/CartDiscount/CartDiscountUpdateAction.raml
+  CartDiscountValue: !include types/CartDiscount/CartDiscountValue.raml
+  CartDiscountValueAbsolute: !include types/CartDiscount/CartDiscountValueAbsolute.raml
+  CartDiscountValueAbsoluteDraft: !include types/CartDiscount/CartDiscountValueAbsoluteDraft.raml
+  CartDiscountValueDraft: !include types/CartDiscount/CartDiscountValueDraft.raml
+  CartDiscountValueGiftLineItem: !include types/CartDiscount/CartDiscountValueGiftLineItem.raml
+  CartDiscountValueGiftLineItemDraft: !include types/CartDiscount/CartDiscountValueGiftLineItemDraft.raml
+  CartDiscountValueRelative: !include types/CartDiscount/CartDiscountValueRelative.raml
+  CartDiscountValueRelativeDraft: !include types/CartDiscount/CartDiscountValueRelativeDraft.raml
+  CartDraft: !include types/Cart/CartDraft.raml
+  CartOrigin: !include types/Cart/CartOrigin.raml
+  CartPagedQueryResponse: !include types/Cart/CartPagedQueryResponse.raml
   CartRecalculateAction: !include types/Cart/CartRecalculateAction.raml
+  CartReference: !include types/Cart/CartReference.raml
   CartRemoveCustomLineItemAction: !include types/Cart/CartRemoveCustomLineItemAction.raml
   CartRemoveDiscountCodeAction: !include types/Cart/CartRemoveDiscountCodeAction.raml
   CartRemoveItemShippingAddressAction: !include types/Cart/CartRemoveItemShippingAddressAction.raml
   CartRemoveLineItemAction: !include types/Cart/CartRemoveLineItemAction.raml
   CartRemovePaymentAction: !include types/Cart/CartRemovePaymentAction.raml
+  CartResourceIdentifier: !include types/Cart/CartResourceIdentifier.raml
+  CartScoreTier: !include types/ShippingMethod/CartScoreTier.raml
+  CartScoreType: !include types/Project/CartScoreType.raml
   CartSetAnonymousIdAction: !include types/Cart/CartSetAnonymousIdAction.raml
   CartSetBillingAddressAction: !include types/Cart/CartSetBillingAddressAction.raml
   CartSetCartTotalTaxAction: !include types/Cart/CartSetCartTotalTaxAction.raml
@@ -139,14 +136,13 @@ types:
   CartSetShippingMethodTaxAmountAction: !include types/Cart/CartSetShippingMethodTaxAmountAction.raml
   CartSetShippingMethodTaxRateAction: !include types/Cart/CartSetShippingMethodTaxRateAction.raml
   CartSetShippingRateInputAction: !include types/Cart/CartSetShippingRateInputAction.raml
+  CartState: !include types/Cart/CartState.raml
+  CartUpdate: !include types/Cart/CartUpdate.raml
+  CartUpdateAction: !include types/Cart/CartUpdateAction.raml
   CartUpdateItemShippingAddressAction: !include types/Cart/CartUpdateItemShippingAddressAction.raml
+  CartValueTier: !include types/ShippingMethod/CartValueTier.raml
+  CartValueType: !include types/Project/CartValueType.raml
   Category: !include types/Category/Category.raml
-  CategoryDraft: !include types/Category/CategoryDraft.raml
-  CategoryPagedQueryResponse: !include types/Category/CategoryPagedQueryResponse.raml
-  CategoryReference: !include types/Category/CategoryReference.raml
-  CategoryResourceIdentifier: !include types/Category/CategoryResourceIdentifier.raml
-  CategoryUpdate: !include types/Category/CategoryUpdate.raml
-  CategoryUpdateAction: !include types/Category/CategoryUpdateAction.raml
   CategoryAddAssetAction: !include types/Category/CategoryAddAssetAction.raml
   CategoryChangeAssetNameAction: !include types/Category/CategoryChangeAssetNameAction.raml
   CategoryChangeAssetOrderAction: !include types/Category/CategoryChangeAssetOrderAction.raml
@@ -154,7 +150,14 @@ types:
   CategoryChangeOrderHintAction: !include types/Category/CategoryChangeOrderHintAction.raml
   CategoryChangeParentAction: !include types/Category/CategoryChangeParentAction.raml
   CategoryChangeSlugAction: !include types/Category/CategoryChangeSlugAction.raml
+  CategoryCreatedMessage: !include types/Message/CategoryCreatedMessage.raml
+  CategoryCreatedMessagePayload: !include types/Message/CategoryCreatedMessagePayload.raml
+  CategoryDraft: !include types/Category/CategoryDraft.raml
+  CategoryOrderHints: !include types/Product/CategoryOrderHints.raml
+  CategoryPagedQueryResponse: !include types/Category/CategoryPagedQueryResponse.raml
+  CategoryReference: !include types/Category/CategoryReference.raml
   CategoryRemoveAssetAction: !include types/Category/CategoryRemoveAssetAction.raml
+  CategoryResourceIdentifier: !include types/Category/CategoryResourceIdentifier.raml
   CategorySetAssetCustomFieldAction: !include types/Category/CategorySetAssetCustomFieldAction.raml
   CategorySetAssetCustomTypeAction: !include types/Category/CategorySetAssetCustomTypeAction.raml
   CategorySetAssetDescriptionAction: !include types/Category/CategorySetAssetDescriptionAction.raml
@@ -169,100 +172,111 @@ types:
   CategorySetMetaDescriptionAction: !include types/Category/CategorySetMetaDescriptionAction.raml
   CategorySetMetaKeywordsAction: !include types/Category/CategorySetMetaKeywordsAction.raml
   CategorySetMetaTitleAction: !include types/Category/CategorySetMetaTitleAction.raml
+  CategorySlugChangedMessage: !include types/Message/CategorySlugChangedMessage.raml
+  CategorySlugChangedMessagePayload: !include types/Message/CategorySlugChangedMessagePayload.raml
+  CategoryUpdate: !include types/Category/CategoryUpdate.raml
+  CategoryUpdateAction: !include types/Category/CategoryUpdateAction.raml
+  CentPrecisionMoney: !include types/Common/CentPrecisionMoney.raml
+  CentPrecisionMoneyDraft: !include types/Common/CentPrecisionMoneyDraft.raml
+  ChangeSubscription: !include types/Subscription/ChangeSubscription.raml
   Channel: !include types/Channel/Channel.raml
-  ChannelDraft: !include types/Channel/ChannelDraft.raml
-  ChannelPagedQueryResponse: !include types/Channel/ChannelPagedQueryResponse.raml
-  ChannelReference: !include types/Channel/ChannelReference.raml
-  ChannelResourceIdentifier: !include types/Channel/ChannelResourceIdentifier.raml
-  ChannelRoleEnum: !include types/Channel/ChannelRoleEnum.raml
-  ChannelUpdate: !include types/Channel/ChannelUpdate.raml
-  ChannelUpdateAction: !include types/Channel/ChannelUpdateAction.raml
   ChannelAddRolesAction: !include types/Channel/ChannelAddRolesAction.raml
   ChannelChangeDescriptionAction: !include types/Channel/ChannelChangeDescriptionAction.raml
   ChannelChangeKeyAction: !include types/Channel/ChannelChangeKeyAction.raml
   ChannelChangeNameAction: !include types/Channel/ChannelChangeNameAction.raml
+  ChannelDraft: !include types/Channel/ChannelDraft.raml
+  ChannelPagedQueryResponse: !include types/Channel/ChannelPagedQueryResponse.raml
+  ChannelReference: !include types/Channel/ChannelReference.raml
   ChannelRemoveRolesAction: !include types/Channel/ChannelRemoveRolesAction.raml
+  ChannelResourceIdentifier: !include types/Channel/ChannelResourceIdentifier.raml
+  ChannelRoleEnum: !include types/Channel/ChannelRoleEnum.raml
   ChannelSetAddressAction: !include types/Channel/ChannelSetAddressAction.raml
   ChannelSetCustomFieldAction: !include types/Channel/ChannelSetCustomFieldAction.raml
   ChannelSetCustomTypeAction: !include types/Channel/ChannelSetCustomTypeAction.raml
   ChannelSetGeoLocationAction: !include types/Channel/ChannelSetGeoLocationAction.raml
   ChannelSetRolesAction: !include types/Channel/ChannelSetRolesAction.raml
-  Address: !include types/Common/Address.raml
-  Asset: !include types/Common/Asset.raml
-  AssetDimensions: !include types/Common/AssetDimensions.raml
-  AssetDraft: !include types/Common/AssetDraft.raml
-  AssetSource: !include types/Common/AssetSource.raml
-  BaseResource: !include types/Common/BaseResource.raml
-  CentPrecisionMoney: !include types/Common/CentPrecisionMoney.raml
-  CentPrecisionMoneyDraft: !include types/Common/CentPrecisionMoneyDraft.raml
+  ChannelUpdate: !include types/Channel/ChannelUpdate.raml
+  ChannelUpdateAction: !include types/Channel/ChannelUpdateAction.raml
+  ClassificationShippingRateInput: !include types/Cart/ClassificationShippingRateInput.raml
+  ClassificationShippingRateInputDraft: !include types/Cart/ClassificationShippingRateInputDraft.raml
   ClientLogging: !include types/Common/ClientLogging.raml
-  CountryCode: !include 
+  ConcurrentModificationError: !include types/Error/ConcurrentModificationError.raml
+  CountryCode: !include types/CountryCode.raml
   CreatedBy: !include types/Common/CreatedBy.raml
-  CurrencyCode: !include 
-  DiscountedPrice: !include types/Common/DiscountedPrice.raml
-  GeoJson: !include types/Common/GeoJson.raml
-  GeoJsonPoint: !include types/Common/GeoJsonPoint.raml
-  HighPrecisionMoney: !include types/Common/HighPrecisionMoney.raml
-  HighPrecisionMoneyDraft: !include types/Common/HighPrecisionMoneyDraft.raml
-  Image: !include types/Common/Image.raml
-  ImageDimensions: !include types/Common/ImageDimensions.raml
-  KeyReference: !include types/Common/KeyReference.raml
-  LastModifiedBy: !include types/Common/LastModifiedBy.raml
-  Locale: !include 
-  LocalizedString: !include types/Common/LocalizedString.raml
-  LoggedResource: !include types/Common/LoggedResource.raml
-  Money: !include types/Common/Money.raml
-  MoneyType: !include types/Common/MoneyType.raml
-  Price: !include types/Common/Price.raml
-  PriceDraft: !include types/Common/PriceDraft.raml
-  PriceTier: !include types/Common/PriceTier.raml
-  PriceTierDraft: !include types/Common/PriceTierDraft.raml
-  QueryPrice: !include types/Common/QueryPrice.raml
-  Reference: !include types/Common/Reference.raml
-  ReferenceTypeId: !include types/Common/ReferenceTypeId.raml
-  ResourceIdentifier: !include types/Common/ResourceIdentifier.raml
-  ScopedPrice: !include types/Common/ScopedPrice.raml
-  TypedMoney: !include types/Common/TypedMoney.raml
-  TypedMoneyDraft: !include types/Common/TypedMoneyDraft.raml
+  CurrencyCode: !include types/CurrencyCode.raml
+  CustomFieldBooleanType: !include types/Type/CustomFieldBooleanType.raml
+  CustomFieldDateTimeType: !include types/Type/CustomFieldDateTimeType.raml
+  CustomFieldDateType: !include types/Type/CustomFieldDateType.raml
+  CustomFieldEnumType: !include types/Type/CustomFieldEnumType.raml
+  CustomFieldEnumValue: !include types/Type/CustomFieldEnumValue.raml
+  CustomFieldLocalizedEnumType: !include types/Type/CustomFieldLocalizedEnumType.raml
+  CustomFieldLocalizedEnumValue: !include types/Type/CustomFieldLocalizedEnumValue.raml
+  CustomFieldLocalizedStringType: !include types/Type/CustomFieldLocalizedStringType.raml
+  CustomFieldMoneyType: !include types/Type/CustomFieldMoneyType.raml
+  CustomFieldNumberType: !include types/Type/CustomFieldNumberType.raml
+  CustomFieldReferenceType: !include types/Type/CustomFieldReferenceType.raml
+  CustomFieldSetType: !include types/Type/CustomFieldSetType.raml
+  CustomFieldStringType: !include types/Type/CustomFieldStringType.raml
+  CustomFieldTimeType: !include types/Type/CustomFieldTimeType.raml
+  CustomFields: !include types/Type/CustomFields.raml
+  CustomFieldsDraft: !include types/Type/CustomFieldsDraft.raml
+  CustomLineItem: !include types/Cart/CustomLineItem.raml
+  CustomLineItemDraft: !include types/Cart/CustomLineItemDraft.raml
+  CustomLineItemReturnItem: !include types/Order/CustomLineItemReturnItem.raml
+  CustomLineItemStateTransitionMessage: !include types/Message/CustomLineItemStateTransitionMessage.raml
+  CustomLineItemStateTransitionMessagePayload: !include types/Message/CustomLineItemStateTransitionMessagePayload.raml
   CustomObject: !include types/CustomObject/CustomObject.raml
   CustomObjectDraft: !include types/CustomObject/CustomObjectDraft.raml
   CustomObjectPagedQueryResponse: !include types/CustomObject/CustomObjectPagedQueryResponse.raml
   CustomObjectReference: !include types/CustomObject/CustomObjectReference.raml
+  CustomTokenizer: !include types/Product/CustomTokenizer.raml
+  Customer: !include types/Customer/Customer.raml
+  CustomerAddAddressAction: !include types/Customer/CustomerAddAddressAction.raml
+  CustomerAddBillingAddressIdAction: !include types/Customer/CustomerAddBillingAddressIdAction.raml
+  CustomerAddShippingAddressIdAction: !include types/Customer/CustomerAddShippingAddressIdAction.raml
+  CustomerAddressAddedMessage: !include types/Message/CustomerAddressAddedMessage.raml
+  CustomerAddressAddedMessagePayload: !include types/Message/CustomerAddressAddedMessagePayload.raml
+  CustomerAddressChangedMessage: !include types/Message/CustomerAddressChangedMessage.raml
+  CustomerAddressChangedMessagePayload: !include types/Message/CustomerAddressChangedMessagePayload.raml
+  CustomerAddressRemovedMessage: !include types/Message/CustomerAddressRemovedMessage.raml
+  CustomerAddressRemovedMessagePayload: !include types/Message/CustomerAddressRemovedMessagePayload.raml
+  CustomerChangeAddressAction: !include types/Customer/CustomerChangeAddressAction.raml
+  CustomerChangeEmailAction: !include types/Customer/CustomerChangeEmailAction.raml
+  CustomerChangePassword: !include types/Customer/CustomerChangePassword.raml
+  CustomerCompanyNameSetMessage: !include types/Message/CustomerCompanyNameSetMessage.raml
+  CustomerCompanyNameSetMessagePayload: !include types/Message/CustomerCompanyNameSetMessagePayload.raml
+  CustomerCreateEmailToken: !include types/Customer/CustomerCreateEmailToken.raml
+  CustomerCreatePasswordResetToken: !include types/Customer/CustomerCreatePasswordResetToken.raml
+  CustomerCreatedMessage: !include types/Message/CustomerCreatedMessage.raml
+  CustomerCreatedMessagePayload: !include types/Message/CustomerCreatedMessagePayload.raml
+  CustomerDateOfBirthSetMessage: !include types/Message/CustomerDateOfBirthSetMessage.raml
+  CustomerDateOfBirthSetMessagePayload: !include types/Message/CustomerDateOfBirthSetMessagePayload.raml
+  CustomerDraft: !include types/Customer/CustomerDraft.raml
+  CustomerEmailChangedMessage: !include types/Message/CustomerEmailChangedMessage.raml
+  CustomerEmailChangedMessagePayload: !include types/Message/CustomerEmailChangedMessagePayload.raml
+  CustomerEmailVerifiedMessage: !include types/Message/CustomerEmailVerifiedMessage.raml
+  CustomerEmailVerifiedMessagePayload: !include types/Message/CustomerEmailVerifiedMessagePayload.raml
+  CustomerEmailVerify: !include types/Customer/CustomerEmailVerify.raml
   CustomerGroup: !include types/CustomerGroup/CustomerGroup.raml
+  CustomerGroupChangeNameAction: !include types/CustomerGroup/CustomerGroupChangeNameAction.raml
   CustomerGroupDraft: !include types/CustomerGroup/CustomerGroupDraft.raml
   CustomerGroupPagedQueryResponse: !include types/CustomerGroup/CustomerGroupPagedQueryResponse.raml
   CustomerGroupReference: !include types/CustomerGroup/CustomerGroupReference.raml
   CustomerGroupResourceIdentifier: !include types/CustomerGroup/CustomerGroupResourceIdentifier.raml
-  CustomerGroupUpdate: !include types/CustomerGroup/CustomerGroupUpdate.raml
-  CustomerGroupUpdateAction: !include types/CustomerGroup/CustomerGroupUpdateAction.raml
-  CustomerGroupChangeNameAction: !include types/CustomerGroup/CustomerGroupChangeNameAction.raml
   CustomerGroupSetCustomFieldAction: !include types/CustomerGroup/CustomerGroupSetCustomFieldAction.raml
   CustomerGroupSetCustomTypeAction: !include types/CustomerGroup/CustomerGroupSetCustomTypeAction.raml
   CustomerGroupSetKeyAction: !include types/CustomerGroup/CustomerGroupSetKeyAction.raml
-  AnonymousCartSignInMode: !include types/Customer/AnonymousCartSignInMode.raml
-  Customer: !include types/Customer/Customer.raml
-  CustomerChangePassword: !include types/Customer/CustomerChangePassword.raml
-  CustomerCreateEmailToken: !include types/Customer/CustomerCreateEmailToken.raml
-  CustomerCreatePasswordResetToken: !include types/Customer/CustomerCreatePasswordResetToken.raml
-  CustomerDraft: !include types/Customer/CustomerDraft.raml
-  CustomerEmailVerify: !include types/Customer/CustomerEmailVerify.raml
+  CustomerGroupSetMessage: !include types/Message/CustomerGroupSetMessage.raml
+  CustomerGroupSetMessagePayload: !include types/Message/CustomerGroupSetMessagePayload.raml
+  CustomerGroupUpdate: !include types/CustomerGroup/CustomerGroupUpdate.raml
+  CustomerGroupUpdateAction: !include types/CustomerGroup/CustomerGroupUpdateAction.raml
   CustomerPagedQueryResponse: !include types/Customer/CustomerPagedQueryResponse.raml
   CustomerReference: !include types/Customer/CustomerReference.raml
-  CustomerResetPassword: !include types/Customer/CustomerResetPassword.raml
-  CustomerResourceIdentifier: !include types/Customer/CustomerResourceIdentifier.raml
-  CustomerSignInResult: !include types/Customer/CustomerSignInResult.raml
-  CustomerSignin: !include types/Customer/CustomerSignin.raml
-  CustomerToken: !include types/Customer/CustomerToken.raml
-  CustomerUpdate: !include types/Customer/CustomerUpdate.raml
-  CustomerUpdateAction: !include types/Customer/CustomerUpdateAction.raml
-  CustomerAddAddressAction: !include types/Customer/CustomerAddAddressAction.raml
-  CustomerAddBillingAddressIdAction: !include types/Customer/CustomerAddBillingAddressIdAction.raml
-  CustomerAddShippingAddressIdAction: !include types/Customer/CustomerAddShippingAddressIdAction.raml
-  CustomerChangeAddressAction: !include types/Customer/CustomerChangeAddressAction.raml
-  CustomerChangeEmailAction: !include types/Customer/CustomerChangeEmailAction.raml
   CustomerRemoveAddressAction: !include types/Customer/CustomerRemoveAddressAction.raml
   CustomerRemoveBillingAddressIdAction: !include types/Customer/CustomerRemoveBillingAddressIdAction.raml
   CustomerRemoveShippingAddressIdAction: !include types/Customer/CustomerRemoveShippingAddressIdAction.raml
+  CustomerResetPassword: !include types/Customer/CustomerResetPassword.raml
+  CustomerResourceIdentifier: !include types/Customer/CustomerResourceIdentifier.raml
   CustomerSetCompanyNameAction: !include types/Customer/CustomerSetCompanyNameAction.raml
   CustomerSetCustomFieldAction: !include types/Customer/CustomerSetCustomFieldAction.raml
   CustomerSetCustomTypeAction: !include types/Customer/CustomerSetCustomTypeAction.raml
@@ -280,16 +294,35 @@ types:
   CustomerSetSalutationAction: !include types/Customer/CustomerSetSalutationAction.raml
   CustomerSetTitleAction: !include types/Customer/CustomerSetTitleAction.raml
   CustomerSetVatIdAction: !include types/Customer/CustomerSetVatIdAction.raml
+  CustomerSignInResult: !include types/Customer/CustomerSignInResult.raml
+  CustomerSignin: !include types/Customer/CustomerSignin.raml
+  CustomerToken: !include types/Customer/CustomerToken.raml
+  CustomerUpdate: !include types/Customer/CustomerUpdate.raml
+  CustomerUpdateAction: !include types/Customer/CustomerUpdateAction.raml
+  Delivery: !include types/Order/Delivery.raml
+  DeliveryAddedMessage: !include types/Message/DeliveryAddedMessage.raml
+  DeliveryAddedMessagePayload: !include types/Message/DeliveryAddedMessagePayload.raml
+  DeliveryAddressSetMessage: !include types/Message/DeliveryAddressSetMessage.raml
+  DeliveryAddressSetMessagePayload: !include types/Message/DeliveryAddressSetMessagePayload.raml
+  DeliveryCloudEventsFormat: !include types/Subscription/DeliveryCloudEventsFormat.raml
+  DeliveryFormat: !include types/Subscription/DeliveryFormat.raml
+  DeliveryItem: !include types/Order/DeliveryItem.raml
+  DeliveryItemsUpdatedMessage: !include types/Message/DeliveryItemsUpdatedMessage.raml
+  DeliveryItemsUpdatedMessagePayload: !include types/Message/DeliveryItemsUpdatedMessagePayload.raml
+  DeliveryPlatformFormat: !include types/Subscription/DeliveryPlatformFormat.raml
+  DeliveryRemovedMessage: !include types/Message/DeliveryRemovedMessage.raml
+  DeliveryRemovedMessagePayload: !include types/Message/DeliveryRemovedMessagePayload.raml
+  Destination: !include types/Subscription/Destination.raml
   DiscountCode: !include types/DiscountCode/DiscountCode.raml
-  DiscountCodeDraft: !include types/DiscountCode/DiscountCodeDraft.raml
-  DiscountCodePagedQueryResponse: !include types/DiscountCode/DiscountCodePagedQueryResponse.raml
-  DiscountCodeReference: !include types/DiscountCode/DiscountCodeReference.raml
-  DiscountCodeResourceIdentifier: !include types/DiscountCode/DiscountCodeResourceIdentifier.raml
-  DiscountCodeUpdate: !include types/DiscountCode/DiscountCodeUpdate.raml
-  DiscountCodeUpdateAction: !include types/DiscountCode/DiscountCodeUpdateAction.raml
   DiscountCodeChangeCartDiscountsAction: !include types/DiscountCode/DiscountCodeChangeCartDiscountsAction.raml
   DiscountCodeChangeGroupsAction: !include types/DiscountCode/DiscountCodeChangeGroupsAction.raml
   DiscountCodeChangeIsActiveAction: !include types/DiscountCode/DiscountCodeChangeIsActiveAction.raml
+  DiscountCodeDraft: !include types/DiscountCode/DiscountCodeDraft.raml
+  DiscountCodeInfo: !include types/Cart/DiscountCodeInfo.raml
+  DiscountCodeNonApplicableError: !include types/Error/DiscountCodeNonApplicableError.raml
+  DiscountCodePagedQueryResponse: !include types/DiscountCode/DiscountCodePagedQueryResponse.raml
+  DiscountCodeReference: !include types/DiscountCode/DiscountCodeReference.raml
+  DiscountCodeResourceIdentifier: !include types/DiscountCode/DiscountCodeResourceIdentifier.raml
   DiscountCodeSetCartPredicateAction: !include types/DiscountCode/DiscountCodeSetCartPredicateAction.raml
   DiscountCodeSetCustomFieldAction: !include types/DiscountCode/DiscountCodeSetCustomFieldAction.raml
   DiscountCodeSetCustomTypeAction: !include types/DiscountCode/DiscountCodeSetCustomTypeAction.raml
@@ -300,9 +333,14 @@ types:
   DiscountCodeSetValidFromAction: !include types/DiscountCode/DiscountCodeSetValidFromAction.raml
   DiscountCodeSetValidFromAndUntilAction: !include types/DiscountCode/DiscountCodeSetValidFromAndUntilAction.raml
   DiscountCodeSetValidUntilAction: !include types/DiscountCode/DiscountCodeSetValidUntilAction.raml
-  AccessDeniedError: !include types/Error/AccessDeniedError.raml
-  ConcurrentModificationError: !include types/Error/ConcurrentModificationError.raml
-  DiscountCodeNonApplicableError: !include types/Error/DiscountCodeNonApplicableError.raml
+  DiscountCodeState: !include types/Cart/DiscountCodeState.raml
+  DiscountCodeUpdate: !include types/DiscountCode/DiscountCodeUpdate.raml
+  DiscountCodeUpdateAction: !include types/DiscountCode/DiscountCodeUpdateAction.raml
+  DiscountedLineItemPortion: !include types/Cart/DiscountedLineItemPortion.raml
+  DiscountedLineItemPrice: !include types/Cart/DiscountedLineItemPrice.raml
+  DiscountedLineItemPriceDraft: !include types/Order/DiscountedLineItemPriceDraft.raml
+  DiscountedLineItemPriceForQuantity: !include types/Cart/DiscountedLineItemPriceForQuantity.raml
+  DiscountedPrice: !include types/Common/DiscountedPrice.raml
   DuplicateAttributeValueError: !include types/Error/DuplicateAttributeValueError.raml
   DuplicateAttributeValuesError: !include types/Error/DuplicateAttributeValuesError.raml
   DuplicateFieldError: !include types/Error/DuplicateFieldError.raml
@@ -313,9 +351,48 @@ types:
   ErrorByExtension: !include types/Error/ErrorByExtension.raml
   ErrorObject: !include types/Error/ErrorObject.raml
   ErrorResponse: !include types/Error/ErrorResponse.raml
+  Extension: !include types/Extension/Extension.raml
+  ExtensionAWSLambdaDestination: !include types/Extension/ExtensionAWSLambdaDestination.raml
+  ExtensionAction: !include types/Extension/ExtensionAction.raml
+  ExtensionAuthorizationHeaderAuthentication: !include types/Extension/ExtensionAuthorizationHeaderAuthentication.raml
+  ExtensionAzureFunctionsAuthentication: !include types/Extension/ExtensionAzureFunctionsAuthentication.raml
   ExtensionBadResponseError: !include types/Error/ExtensionBadResponseError.raml
+  ExtensionChangeDestinationAction: !include types/Extension/ExtensionChangeDestinationAction.raml
+  ExtensionChangeTriggersAction: !include types/Extension/ExtensionChangeTriggersAction.raml
+  ExtensionDestination: !include types/Extension/ExtensionDestination.raml
+  ExtensionDraft: !include types/Extension/ExtensionDraft.raml
+  ExtensionHttpDestination: !include types/Extension/ExtensionHttpDestination.raml
+  ExtensionHttpDestinationAuthentication: !include types/Extension/ExtensionHttpDestinationAuthentication.raml
+  ExtensionInput: !include types/Extension/ExtensionInput.raml
   ExtensionNoResponseError: !include types/Error/ExtensionNoResponseError.raml
+  ExtensionPagedQueryResponse: !include types/Extension/ExtensionPagedQueryResponse.raml
+  ExtensionResourceTypeId: !include types/Extension/ExtensionResourceTypeId.raml
+  ExtensionSetKeyAction: !include types/Extension/ExtensionSetKeyAction.raml
+  ExtensionSetTimeoutInMsAction: !include types/Extension/ExtensionSetTimeoutInMsAction.raml
+  ExtensionTrigger: !include types/Extension/ExtensionTrigger.raml
+  ExtensionUpdate: !include types/Extension/ExtensionUpdate.raml
+  ExtensionUpdateAction: !include types/Extension/ExtensionUpdateAction.raml
   ExtensionUpdateActionsFailedError: !include types/Error/ExtensionUpdateActionsFailedError.raml
+  ExternalLineItemTotalPrice: !include types/Cart/ExternalLineItemTotalPrice.raml
+  ExternalOAuth: !include types/Project/ExternalOAuth.raml
+  ExternalTaxAmountDraft: !include types/Cart/ExternalTaxAmountDraft.raml
+  ExternalTaxRateDraft: !include types/Cart/ExternalTaxRateDraft.raml
+  FacetResult: !include types/Product/FacetResult.raml
+  FacetResultRange: !include types/Product/FacetResultRange.raml
+  FacetResultTerm: !include types/Product/FacetResultTerm.raml
+  FacetResults: !include types/Product/FacetResults.raml
+  FacetTypes: !include types/Product/FacetTypes.raml
+  FieldContainer: !include types/Type/FieldContainer.raml
+  FieldDefinition: !include types/Type/FieldDefinition.raml
+  FieldType: !include types/Type/FieldType.raml
+  FilteredFacetResult: !include types/Product/FilteredFacetResult.raml
+  GeoJson: !include types/Common/GeoJson.raml
+  GeoJsonPoint: !include types/Common/GeoJsonPoint.raml
+  GoogleCloudPubSubDestination: !include types/Subscription/GoogleCloudPubSubDestination.raml
+  HighPrecisionMoney: !include types/Common/HighPrecisionMoney.raml
+  HighPrecisionMoneyDraft: !include types/Common/HighPrecisionMoneyDraft.raml
+  Image: !include types/Common/Image.raml
+  ImageDimensions: !include types/Common/ImageDimensions.raml
   InsufficientScopeError: !include types/Error/InsufficientScopeError.raml
   InvalidCredentialsError: !include types/Error/InvalidCredentialsError.raml
   InvalidCurrentPasswordError: !include types/Error/InvalidCurrentPasswordError.raml
@@ -326,69 +403,57 @@ types:
   InvalidOperationError: !include types/Error/InvalidOperationError.raml
   InvalidSubjectError: !include types/Error/InvalidSubjectError.raml
   InvalidTokenError: !include types/Error/InvalidTokenError.raml
-  MatchingPriceNotFoundError: !include types/Error/MatchingPriceNotFoundError.raml
-  MissingTaxRateForCountryError: !include types/Error/MissingTaxRateForCountryError.raml
-  NoMatchingProductDiscountFoundError: !include types/Error/NoMatchingProductDiscountFoundError.raml
-  OutOfStockError: !include types/Error/OutOfStockError.raml
-  PriceChangedError: !include types/Error/PriceChangedError.raml
-  ReferenceExistsError: !include types/Error/ReferenceExistsError.raml
-  RequiredFieldError: !include types/Error/RequiredFieldError.raml
-  ResourceNotFoundError: !include types/Error/ResourceNotFoundError.raml
-  ShippingMethodDoesNotMatchCartError: !include types/Error/ShippingMethodDoesNotMatchCartError.raml
-  VariantValues: !include types/Error/VariantValues.raml
-  Extension: !include types/Extension/Extension.raml
-  ExtensionAWSLambdaDestination: !include types/Extension/ExtensionAWSLambdaDestination.raml
-  ExtensionAction: !include types/Extension/ExtensionAction.raml
-  ExtensionAuthorizationHeaderAuthentication: !include types/Extension/ExtensionAuthorizationHeaderAuthentication.raml
-  ExtensionAzureFunctionsAuthentication: !include types/Extension/ExtensionAzureFunctionsAuthentication.raml
-  ExtensionDestination: !include types/Extension/ExtensionDestination.raml
-  ExtensionDraft: !include types/Extension/ExtensionDraft.raml
-  ExtensionHttpDestination: !include types/Extension/ExtensionHttpDestination.raml
-  ExtensionHttpDestinationAuthentication: !include types/Extension/ExtensionHttpDestinationAuthentication.raml
-  ExtensionInput: !include types/Extension/ExtensionInput.raml
-  ExtensionPagedQueryResponse: !include types/Extension/ExtensionPagedQueryResponse.raml
-  ExtensionResourceTypeId: !include types/Extension/ExtensionResourceTypeId.raml
-  ExtensionTrigger: !include types/Extension/ExtensionTrigger.raml
-  ExtensionUpdate: !include types/Extension/ExtensionUpdate.raml
-  ExtensionUpdateAction: !include types/Extension/ExtensionUpdateAction.raml
-  ExtensionChangeDestinationAction: !include types/Extension/ExtensionChangeDestinationAction.raml
-  ExtensionChangeTriggersAction: !include types/Extension/ExtensionChangeTriggersAction.raml
-  ExtensionSetKeyAction: !include types/Extension/ExtensionSetKeyAction.raml
-  ExtensionSetTimeoutInMsAction: !include types/Extension/ExtensionSetTimeoutInMsAction.raml
   InventoryEntry: !include types/Inventory/InventoryEntry.raml
-  InventoryEntryDraft: !include types/Inventory/InventoryEntryDraft.raml
-  InventoryEntryReference: !include types/Inventory/InventoryEntryReference.raml
-  InventoryEntryResourceIdentifier: !include types/Inventory/InventoryEntryResourceIdentifier.raml
-  InventoryEntryUpdate: !include types/Inventory/InventoryEntryUpdate.raml
-  InventoryEntryUpdateAction: !include types/Inventory/InventoryEntryUpdateAction.raml
-  InventoryPagedQueryResponse: !include types/Inventory/InventoryPagedQueryResponse.raml
   InventoryEntryAddQuantityAction: !include types/Inventory/InventoryEntryAddQuantityAction.raml
   InventoryEntryChangeQuantityAction: !include types/Inventory/InventoryEntryChangeQuantityAction.raml
+  InventoryEntryDeletedMessage: !include types/Message/InventoryEntryDeletedMessage.raml
+  InventoryEntryDeletedMessagePayload: !include types/Message/InventoryEntryDeletedMessagePayload.raml
+  InventoryEntryDraft: !include types/Inventory/InventoryEntryDraft.raml
+  InventoryEntryReference: !include types/Inventory/InventoryEntryReference.raml
   InventoryEntryRemoveQuantityAction: !include types/Inventory/InventoryEntryRemoveQuantityAction.raml
+  InventoryEntryResourceIdentifier: !include types/Inventory/InventoryEntryResourceIdentifier.raml
   InventoryEntrySetCustomFieldAction: !include types/Inventory/InventoryEntrySetCustomFieldAction.raml
   InventoryEntrySetCustomTypeAction: !include types/Inventory/InventoryEntrySetCustomTypeAction.raml
   InventoryEntrySetExpectedDeliveryAction: !include types/Inventory/InventoryEntrySetExpectedDeliveryAction.raml
   InventoryEntrySetRestockableInDaysAction: !include types/Inventory/InventoryEntrySetRestockableInDaysAction.raml
   InventoryEntrySetSupplyChannelAction: !include types/Inventory/InventoryEntrySetSupplyChannelAction.raml
+  InventoryEntryUpdate: !include types/Inventory/InventoryEntryUpdate.raml
+  InventoryEntryUpdateAction: !include types/Inventory/InventoryEntryUpdateAction.raml
+  InventoryMode: !include types/Cart/InventoryMode.raml
+  InventoryPagedQueryResponse: !include types/Inventory/InventoryPagedQueryResponse.raml
+  IronMqDestination: !include types/Subscription/IronMqDestination.raml
+  ItemShippingDetails: !include types/Cart/ItemShippingDetails.raml
+  ItemShippingDetailsDraft: !include types/Cart/ItemShippingDetailsDraft.raml
+  ItemShippingTarget: !include types/Cart/ItemShippingTarget.raml
+  ItemState: !include types/Order/ItemState.raml
+  KeyReference: !include types/Common/KeyReference.raml
+  LastModifiedBy: !include types/Common/LastModifiedBy.raml
+  LineItem: !include types/Cart/LineItem.raml
+  LineItemDraft: !include types/Cart/LineItemDraft.raml
+  LineItemImportDraft: !include types/Order/LineItemImportDraft.raml
+  LineItemMode: !include types/Cart/LineItemMode.raml
+  LineItemPriceMode: !include types/Cart/LineItemPriceMode.raml
+  LineItemReturnItem: !include types/Order/LineItemReturnItem.raml
+  LineItemStateTransitionMessage: !include types/Message/LineItemStateTransitionMessage.raml
+  LineItemStateTransitionMessagePayload: !include types/Message/LineItemStateTransitionMessagePayload.raml
+  Locale: !include types/Locale.raml
+  LocalizedString: !include types/Common/LocalizedString.raml
+  Location: !include types/Zone/Location.raml
+  LoggedResource: !include types/Common/LoggedResource.raml
+  MatchingPriceNotFoundError: !include types/Error/MatchingPriceNotFoundError.raml
+  Message: !include types/Message/Message.raml
+  MessageConfiguration: !include types/Message/MessageConfiguration.raml
+  MessageConfigurationDraft: !include types/Message/MessageConfigurationDraft.raml
+  MessageDelivery: !include types/Subscription/MessageDelivery.raml
+  MessagePagedQueryResponse: !include types/Message/MessagePagedQueryResponse.raml
+  MessagePayload: !include types/Message/MessagePayload.raml
+  MessageSubscription: !include types/Subscription/MessageSubscription.raml
+  MissingTaxRateForCountryError: !include types/Error/MissingTaxRateForCountryError.raml
+  Money: !include types/Common/Money.raml
+  MoneyType: !include types/Common/MoneyType.raml
+  MultiBuyCustomLineItemsTarget: !include types/CartDiscount/MultiBuyCustomLineItemsTarget.raml
+  MultiBuyLineItemsTarget: !include types/CartDiscount/MultiBuyLineItemsTarget.raml
   MyCart: !include types/Me/MyCart.raml
-  MyCartDraft: !include types/Me/MyCartDraft.raml
-  MyCartUpdateAction: !include types/Me/MyCartUpdateAction.raml
-  MyCustomer: !include types/Me/MyCustomer.raml
-  MyCustomerDraft: !include types/Me/MyCustomerDraft.raml
-  MyCustomerUpdateAction: !include types/Me/MyCustomerUpdateAction.raml
-  MyLineItemDraft: !include types/Me/MyLineItemDraft.raml
-  MyOrder: !include types/Me/MyOrder.raml
-  MyOrderFromCartDraft: !include types/Me/MyOrderFromCartDraft.raml
-  MyPayment: !include types/Me/MyPayment.raml
-  MyPaymentDraft: !include types/Me/MyPaymentDraft.raml
-  MyPaymentPagedQueryResponse: !include types/Me/MyPaymentPagedQueryResponse.raml
-  MyPaymentUpdate: !include types/Me/MyPaymentUpdate.raml
-  MyPaymentUpdateAction: !include types/Me/MyPaymentUpdateAction.raml
-  MyShoppingList: !include types/ShoppingList/MyShoppingList.raml
-  MyShoppingListDraft: !include types/Me/MyShoppingListDraft.raml
-  MyShoppingListUpdate: !include types/Me/MyShoppingListUpdate.raml
-  MyShoppingListUpdateAction: !include types/Me/MyShoppingListUpdateAction.raml
-  MyTransactionDraft: !include types/Me/MyTransactionDraft.raml
   MyCartAddDiscountCodeAction: !include types/Me/MyCartAddDiscountCodeAction.raml
   MyCartAddItemShippingAddressAction: !include types/Me/MyCartAddItemShippingAddressAction.raml
   MyCartAddLineItemAction: !include types/Me/MyCartAddLineItemAction.raml
@@ -396,6 +461,7 @@ types:
   MyCartApplyDeltaToLineItemShippingDetailsTargetsAction: !include types/Me/MyCartApplyDeltaToLineItemShippingDetailsTargetsAction.raml
   MyCartChangeLineItemQuantityAction: !include types/Me/MyCartChangeLineItemQuantityAction.raml
   MyCartChangeTaxModeAction: !include types/Me/MyCartChangeTaxModeAction.raml
+  MyCartDraft: !include types/Me/MyCartDraft.raml
   MyCartRecalculateAction: !include types/Me/MyCartRecalculateAction.raml
   MyCartRemoveDiscountCodeAction: !include types/Me/MyCartRemoveDiscountCodeAction.raml
   MyCartRemoveItemShippingAddressAction: !include types/Me/MyCartRemoveItemShippingAddressAction.raml
@@ -413,12 +479,15 @@ types:
   MyCartSetLocaleAction: !include types/Me/MyCartSetLocaleAction.raml
   MyCartSetShippingAddressAction: !include types/Me/MyCartSetShippingAddressAction.raml
   MyCartSetShippingMethodAction: !include types/Me/MyCartSetShippingMethodAction.raml
+  MyCartUpdateAction: !include types/Me/MyCartUpdateAction.raml
   MyCartUpdateItemShippingAddressAction: !include types/Me/MyCartUpdateItemShippingAddressAction.raml
+  MyCustomer: !include types/Me/MyCustomer.raml
   MyCustomerAddAddressAction: !include types/Me/MyCustomerAddAddressAction.raml
   MyCustomerAddBillingAddressIdAction: !include types/Me/MyCustomerAddBillingAddressIdAction.raml
   MyCustomerAddShippingAddressIdAction: !include types/Me/MyCustomerAddShippingAddressIdAction.raml
   MyCustomerChangeAddressAction: !include types/Me/MyCustomerChangeAddressAction.raml
   MyCustomerChangeEmailAction: !include types/Me/MyCustomerChangeEmailAction.raml
+  MyCustomerDraft: !include types/Me/MyCustomerDraft.raml
   MyCustomerRemoveAddressAction: !include types/Me/MyCustomerRemoveAddressAction.raml
   MyCustomerRemoveBillingAddressIdAction: !include types/Me/MyCustomerRemoveBillingAddressIdAction.raml
   MyCustomerRemoveShippingAddressIdAction: !include types/Me/MyCustomerRemoveShippingAddressIdAction.raml
@@ -435,12 +504,22 @@ types:
   MyCustomerSetSalutationAction: !include types/Me/MyCustomerSetSalutationAction.raml
   MyCustomerSetTitleAction: !include types/Me/MyCustomerSetTitleAction.raml
   MyCustomerSetVatIdAction: !include types/Me/MyCustomerSetVatIdAction.raml
+  MyCustomerUpdateAction: !include types/Me/MyCustomerUpdateAction.raml
+  MyLineItemDraft: !include types/Me/MyLineItemDraft.raml
+  MyOrder: !include types/Me/MyOrder.raml
+  MyOrderFromCartDraft: !include types/Me/MyOrderFromCartDraft.raml
+  MyPayment: !include types/Me/MyPayment.raml
   MyPaymentAddTransactionAction: !include types/Me/MyPaymentAddTransactionAction.raml
   MyPaymentChangeAmountPlannedAction: !include types/Me/MyPaymentChangeAmountPlannedAction.raml
+  MyPaymentDraft: !include types/Me/MyPaymentDraft.raml
+  MyPaymentPagedQueryResponse: !include types/Me/MyPaymentPagedQueryResponse.raml
   MyPaymentSetCustomFieldAction: !include types/Me/MyPaymentSetCustomFieldAction.raml
   MyPaymentSetMethodInfoInterfaceAction: !include types/Me/MyPaymentSetMethodInfoInterfaceAction.raml
   MyPaymentSetMethodInfoMethodAction: !include types/Me/MyPaymentSetMethodInfoMethodAction.raml
   MyPaymentSetMethodInfoNameAction: !include types/Me/MyPaymentSetMethodInfoNameAction.raml
+  MyPaymentUpdate: !include types/Me/MyPaymentUpdate.raml
+  MyPaymentUpdateAction: !include types/Me/MyPaymentUpdateAction.raml
+  MyShoppingList: !include types/ShoppingList/MyShoppingList.raml
   MyShoppingListAddLineItemAction: !include types/Me/MyShoppingListAddLineItemAction.raml
   MyShoppingListAddTextLineItemAction: !include types/Me/MyShoppingListAddTextLineItemAction.raml
   MyShoppingListChangeLineItemQuantityAction: !include types/Me/MyShoppingListChangeLineItemQuantityAction.raml
@@ -449,6 +528,7 @@ types:
   MyShoppingListChangeTextLineItemNameAction: !include types/Me/MyShoppingListChangeTextLineItemNameAction.raml
   MyShoppingListChangeTextLineItemQuantityAction: !include types/Me/MyShoppingListChangeTextLineItemQuantityAction.raml
   MyShoppingListChangeTextLineItemsOrderAction: !include types/Me/MyShoppingListChangeTextLineItemsOrderAction.raml
+  MyShoppingListDraft: !include types/Me/MyShoppingListDraft.raml
   MyShoppingListRemoveLineItemAction: !include types/Me/MyShoppingListRemoveLineItemAction.raml
   MyShoppingListRemoveTextLineItemAction: !include types/Me/MyShoppingListRemoveTextLineItemAction.raml
   MyShoppingListSetCustomFieldAction: !include types/Me/MyShoppingListSetCustomFieldAction.raml
@@ -460,149 +540,42 @@ types:
   MyShoppingListSetTextLineItemCustomFieldAction: !include types/Me/MyShoppingListSetTextLineItemCustomFieldAction.raml
   MyShoppingListSetTextLineItemCustomTypeAction: !include types/Me/MyShoppingListSetTextLineItemCustomTypeAction.raml
   MyShoppingListSetTextLineItemDescriptionAction: !include types/Me/MyShoppingListSetTextLineItemDescriptionAction.raml
-  CategoryCreatedMessage: !include types/Message/CategoryCreatedMessage.raml
-  CategorySlugChangedMessage: !include types/Message/CategorySlugChangedMessage.raml
-  CustomLineItemStateTransitionMessage: !include types/Message/CustomLineItemStateTransitionMessage.raml
-  CustomerAddressAddedMessage: !include types/Message/CustomerAddressAddedMessage.raml
-  CustomerAddressChangedMessage: !include types/Message/CustomerAddressChangedMessage.raml
-  CustomerAddressRemovedMessage: !include types/Message/CustomerAddressRemovedMessage.raml
-  CustomerCompanyNameSetMessage: !include types/Message/CustomerCompanyNameSetMessage.raml
-  CustomerCreatedMessage: !include types/Message/CustomerCreatedMessage.raml
-  CustomerDateOfBirthSetMessage: !include types/Message/CustomerDateOfBirthSetMessage.raml
-  CustomerEmailChangedMessage: !include types/Message/CustomerEmailChangedMessage.raml
-  CustomerEmailVerifiedMessage: !include types/Message/CustomerEmailVerifiedMessage.raml
-  CustomerGroupSetMessage: !include types/Message/CustomerGroupSetMessage.raml
-  DeliveryAddedMessage: !include types/Message/DeliveryAddedMessage.raml
-  DeliveryAddressSetMessage: !include types/Message/DeliveryAddressSetMessage.raml
-  DeliveryItemsUpdatedMessage: !include types/Message/DeliveryItemsUpdatedMessage.raml
-  DeliveryRemovedMessage: !include types/Message/DeliveryRemovedMessage.raml
-  InventoryEntryDeletedMessage: !include types/Message/InventoryEntryDeletedMessage.raml
-  LineItemStateTransitionMessage: !include types/Message/LineItemStateTransitionMessage.raml
-  Message: !include types/Message/Message.raml
-  MessageConfiguration: !include types/Message/MessageConfiguration.raml
-  MessageConfigurationDraft: !include types/Message/MessageConfigurationDraft.raml
-  MessagePagedQueryResponse: !include types/Message/MessagePagedQueryResponse.raml
+  MyShoppingListUpdate: !include types/Me/MyShoppingListUpdate.raml
+  MyShoppingListUpdateAction: !include types/Me/MyShoppingListUpdateAction.raml
+  MyTransactionDraft: !include types/Me/MyTransactionDraft.raml
+  NoMatchingProductDiscountFoundError: !include types/Error/NoMatchingProductDiscountFoundError.raml
+  Order: !include types/Order/Order.raml
+  OrderAddDeliveryAction: !include types/Order/OrderAddDeliveryAction.raml
+  OrderAddItemShippingAddressAction: !include types/Order/OrderAddItemShippingAddressAction.raml
+  OrderAddParcelToDeliveryAction: !include types/Order/OrderAddParcelToDeliveryAction.raml
+  OrderAddPaymentAction: !include types/Order/OrderAddPaymentAction.raml
+  OrderAddReturnInfoAction: !include types/Order/OrderAddReturnInfoAction.raml
   OrderBillingAddressSetMessage: !include types/Message/OrderBillingAddressSetMessage.raml
-  OrderCreatedMessage: !include types/Message/OrderCreatedMessage.raml
-  OrderCustomLineItemDiscountSetMessage: !include types/Message/OrderCustomLineItemDiscountSetMessage.raml
-  OrderCustomerEmailSetMessage: !include types/Message/OrderCustomerEmailSetMessage.raml
-  OrderCustomerSetMessage: !include types/Message/OrderCustomerSetMessage.raml
-  OrderDeletedMessage: !include types/Message/OrderDeletedMessage.raml
-  OrderDiscountCodeAddedMessage: !include types/Message/OrderDiscountCodeAddedMessage.raml
-  OrderDiscountCodeRemovedMessage: !include types/Message/OrderDiscountCodeRemovedMessage.raml
-  OrderDiscountCodeStateSetMessage: !include types/Message/OrderDiscountCodeStateSetMessage.raml
-  OrderEditAppliedMessage: !include types/Message/OrderEditAppliedMessage.raml
-  OrderImportedMessage: !include types/Message/OrderImportedMessage.raml
-  OrderLineItemAddedMessage: !include types/Message/OrderLineItemAddedMessage.raml
-  OrderLineItemDiscountSetMessage: !include types/Message/OrderLineItemDiscountSetMessage.raml
-  OrderPaymentStateChangedMessage: !include types/Message/OrderPaymentStateChangedMessage.raml
-  OrderReturnInfoAddedMessage: !include types/Message/OrderReturnInfoAddedMessage.raml
-  OrderReturnShipmentStateChangedMessage: !include types/Message/OrderReturnShipmentStateChangedMessage.raml
-  OrderShipmentStateChangedMessage: !include types/Message/OrderShipmentStateChangedMessage.raml
-  OrderShippingAddressSetMessage: !include types/Message/OrderShippingAddressSetMessage.raml
-  OrderShippingInfoSetMessage: !include types/Message/OrderShippingInfoSetMessage.raml
-  OrderShippingRateInputSetMessage: !include types/Message/OrderShippingRateInputSetMessage.raml
-  OrderStateChangedMessage: !include types/Message/OrderStateChangedMessage.raml
-  OrderStateTransitionMessage: !include types/Message/OrderStateTransitionMessage.raml
-  ParcelAddedToDeliveryMessage: !include types/Message/ParcelAddedToDeliveryMessage.raml
-  ParcelItemsUpdatedMessage: !include types/Message/ParcelItemsUpdatedMessage.raml
-  ParcelMeasurementsUpdatedMessage: !include types/Message/ParcelMeasurementsUpdatedMessage.raml
-  ParcelRemovedFromDeliveryMessage: !include types/Message/ParcelRemovedFromDeliveryMessage.raml
-  ParcelTrackingDataUpdatedMessage: !include types/Message/ParcelTrackingDataUpdatedMessage.raml
-  PaymentCreatedMessage: !include types/Message/PaymentCreatedMessage.raml
-  PaymentInteractionAddedMessage: !include types/Message/PaymentInteractionAddedMessage.raml
-  PaymentStatusInterfaceCodeSetMessage: !include types/Message/PaymentStatusInterfaceCodeSetMessage.raml
-  PaymentStatusStateTransitionMessage: !include types/Message/PaymentStatusStateTransitionMessage.raml
-  PaymentTransactionAddedMessage: !include types/Message/PaymentTransactionAddedMessage.raml
-  PaymentTransactionStateChangedMessage: !include types/Message/PaymentTransactionStateChangedMessage.raml
-  ProductAddedToCategoryMessage: !include types/Message/ProductAddedToCategoryMessage.raml
-  ProductCreatedMessage: !include types/Message/ProductCreatedMessage.raml
-  ProductDeletedMessage: !include types/Message/ProductDeletedMessage.raml
-  ProductImageAddedMessage: !include types/Message/ProductImageAddedMessage.raml
-  ProductPriceDiscountsSetMessage: !include types/Message/ProductPriceDiscountsSetMessage.raml
-  ProductPriceDiscountsSetUpdatedPrice: !include types/Message/ProductPriceDiscountsSetUpdatedPrice.raml
-  ProductPriceExternalDiscountSetMessage: !include types/Message/ProductPriceExternalDiscountSetMessage.raml
-  ProductPublishedMessage: !include types/Message/ProductPublishedMessage.raml
-  ProductRemovedFromCategoryMessage: !include types/Message/ProductRemovedFromCategoryMessage.raml
-  ProductRevertedStagedChangesMessage: !include types/Message/ProductRevertedStagedChangesMessage.raml
-  ProductSlugChangedMessage: !include types/Message/ProductSlugChangedMessage.raml
-  ProductStateTransitionMessage: !include types/Message/ProductStateTransitionMessage.raml
-  ProductUnpublishedMessage: !include types/Message/ProductUnpublishedMessage.raml
-  ProductVariantDeletedMessage: !include types/Message/ProductVariantDeletedMessage.raml
-  ReviewCreatedMessage: !include types/Message/ReviewCreatedMessage.raml
-  ReviewRatingSetMessage: !include types/Message/ReviewRatingSetMessage.raml
-  ReviewStateTransitionMessage: !include types/Message/ReviewStateTransitionMessage.raml
-  UserProvidedIdentifiers: !include types/Message/UserProvidedIdentifiers.raml
-  CategoryCreatedMessagePayload: !include types/Message/CategoryCreatedMessagePayload.raml
-  CategorySlugChangedMessagePayload: !include types/Message/CategorySlugChangedMessagePayload.raml
-  CustomLineItemStateTransitionMessagePayload: !include types/Message/CustomLineItemStateTransitionMessagePayload.raml
-  CustomerAddressAddedMessagePayload: !include types/Message/CustomerAddressAddedMessagePayload.raml
-  CustomerAddressChangedMessagePayload: !include types/Message/CustomerAddressChangedMessagePayload.raml
-  CustomerAddressRemovedMessagePayload: !include types/Message/CustomerAddressRemovedMessagePayload.raml
-  CustomerCompanyNameSetMessagePayload: !include types/Message/CustomerCompanyNameSetMessagePayload.raml
-  CustomerCreatedMessagePayload: !include types/Message/CustomerCreatedMessagePayload.raml
-  CustomerDateOfBirthSetMessagePayload: !include types/Message/CustomerDateOfBirthSetMessagePayload.raml
-  CustomerEmailChangedMessagePayload: !include types/Message/CustomerEmailChangedMessagePayload.raml
-  CustomerEmailVerifiedMessagePayload: !include types/Message/CustomerEmailVerifiedMessagePayload.raml
-  CustomerGroupSetMessagePayload: !include types/Message/CustomerGroupSetMessagePayload.raml
-  DeliveryAddedMessagePayload: !include types/Message/DeliveryAddedMessagePayload.raml
-  DeliveryAddressSetMessagePayload: !include types/Message/DeliveryAddressSetMessagePayload.raml
-  DeliveryItemsUpdatedMessagePayload: !include types/Message/DeliveryItemsUpdatedMessagePayload.raml
-  DeliveryRemovedMessagePayload: !include types/Message/DeliveryRemovedMessagePayload.raml
-  InventoryEntryDeletedMessagePayload: !include types/Message/InventoryEntryDeletedMessagePayload.raml
-  LineItemStateTransitionMessagePayload: !include types/Message/LineItemStateTransitionMessagePayload.raml
-  MessagePayload: !include types/Message/MessagePayload.raml
   OrderBillingAddressSetMessagePayload: !include types/Message/OrderBillingAddressSetMessagePayload.raml
+  OrderChangeOrderStateAction: !include types/Order/OrderChangeOrderStateAction.raml
+  OrderChangePaymentStateAction: !include types/Order/OrderChangePaymentStateAction.raml
+  OrderChangeShipmentStateAction: !include types/Order/OrderChangeShipmentStateAction.raml
+  OrderCreatedMessage: !include types/Message/OrderCreatedMessage.raml
   OrderCreatedMessagePayload: !include types/Message/OrderCreatedMessagePayload.raml
+  OrderCustomLineItemDiscountSetMessage: !include types/Message/OrderCustomLineItemDiscountSetMessage.raml
   OrderCustomLineItemDiscountSetMessagePayload: !include types/Message/OrderCustomLineItemDiscountSetMessagePayload.raml
+  OrderCustomerEmailSetMessage: !include types/Message/OrderCustomerEmailSetMessage.raml
   OrderCustomerEmailSetMessagePayload: !include types/Message/OrderCustomerEmailSetMessagePayload.raml
+  OrderCustomerSetMessage: !include types/Message/OrderCustomerSetMessage.raml
   OrderCustomerSetMessagePayload: !include types/Message/OrderCustomerSetMessagePayload.raml
+  OrderDeletedMessage: !include types/Message/OrderDeletedMessage.raml
   OrderDeletedMessagePayload: !include types/Message/OrderDeletedMessagePayload.raml
+  OrderDiscountCodeAddedMessage: !include types/Message/OrderDiscountCodeAddedMessage.raml
   OrderDiscountCodeAddedMessagePayload: !include types/Message/OrderDiscountCodeAddedMessagePayload.raml
+  OrderDiscountCodeRemovedMessage: !include types/Message/OrderDiscountCodeRemovedMessage.raml
   OrderDiscountCodeRemovedMessagePayload: !include types/Message/OrderDiscountCodeRemovedMessagePayload.raml
+  OrderDiscountCodeStateSetMessage: !include types/Message/OrderDiscountCodeStateSetMessage.raml
   OrderDiscountCodeStateSetMessagePayload: !include types/Message/OrderDiscountCodeStateSetMessagePayload.raml
-  OrderEditAppliedMessagePayload: !include types/Message/OrderEditAppliedMessagePayload.raml
-  OrderImportedMessagePayload: !include types/Message/OrderImportedMessagePayload.raml
-  OrderLineItemAddedMessagePayload: !include types/Message/OrderLineItemAddedMessagePayload.raml
-  OrderLineItemDiscountSetMessagePayload: !include types/Message/OrderLineItemDiscountSetMessagePayload.raml
-  OrderPaymentStateChangedMessagePayload: !include types/Message/OrderPaymentStateChangedMessagePayload.raml
-  OrderReturnInfoAddedMessagePayload: !include types/Message/OrderReturnInfoAddedMessagePayload.raml
-  OrderReturnShipmentStateChangedMessagePayload: !include types/Message/OrderReturnShipmentStateChangedMessagePayload.raml
-  OrderShipmentStateChangedMessagePayload: !include types/Message/OrderShipmentStateChangedMessagePayload.raml
-  OrderShippingAddressSetMessagePayload: !include types/Message/OrderShippingAddressSetMessagePayload.raml
-  OrderShippingInfoSetMessagePayload: !include types/Message/OrderShippingInfoSetMessagePayload.raml
-  OrderShippingRateInputSetMessagePayload: !include types/Message/OrderShippingRateInputSetMessagePayload.raml
-  OrderStateChangedMessagePayload: !include types/Message/OrderStateChangedMessagePayload.raml
-  OrderStateTransitionMessagePayload: !include types/Message/OrderStateTransitionMessagePayload.raml
-  ParcelAddedToDeliveryMessagePayload: !include types/Message/ParcelAddedToDeliveryMessagePayload.raml
-  ParcelItemsUpdatedMessagePayload: !include types/Message/ParcelItemsUpdatedMessagePayload.raml
-  ParcelMeasurementsUpdatedMessagePayload: !include types/Message/ParcelMeasurementsUpdatedMessagePayload.raml
-  ParcelRemovedFromDeliveryMessagePayload: !include types/Message/ParcelRemovedFromDeliveryMessagePayload.raml
-  ParcelTrackingDataUpdatedMessagePayload: !include types/Message/ParcelTrackingDataUpdatedMessagePayload.raml
-  PaymentCreatedMessagePayload: !include types/Message/PaymentCreatedMessagePayload.raml
-  PaymentInteractionAddedMessagePayload: !include types/Message/PaymentInteractionAddedMessagePayload.raml
-  PaymentStatusInterfaceCodeSetMessagePayload: !include types/Message/PaymentStatusInterfaceCodeSetMessagePayload.raml
-  PaymentStatusStateTransitionMessagePayload: !include types/Message/PaymentStatusStateTransitionMessagePayload.raml
-  PaymentTransactionAddedMessagePayload: !include types/Message/PaymentTransactionAddedMessagePayload.raml
-  PaymentTransactionStateChangedMessagePayload: !include types/Message/PaymentTransactionStateChangedMessagePayload.raml
-  ProductAddedToCategoryMessagePayload: !include types/Message/ProductAddedToCategoryMessagePayload.raml
-  ProductCreatedMessagePayload: !include types/Message/ProductCreatedMessagePayload.raml
-  ProductDeletedMessagePayload: !include types/Message/ProductDeletedMessagePayload.raml
-  ProductImageAddedMessagePayload: !include types/Message/ProductImageAddedMessagePayload.raml
-  ProductPriceDiscountsSetMessagePayload: !include types/Message/ProductPriceDiscountsSetMessagePayload.raml
-  ProductPriceExternalDiscountSetMessagePayload: !include types/Message/ProductPriceExternalDiscountSetMessagePayload.raml
-  ProductPublishedMessagePayload: !include types/Message/ProductPublishedMessagePayload.raml
-  ProductRemovedFromCategoryMessagePayload: !include types/Message/ProductRemovedFromCategoryMessagePayload.raml
-  ProductRevertedStagedChangesMessagePayload: !include types/Message/ProductRevertedStagedChangesMessagePayload.raml
-  ProductSlugChangedMessagePayload: !include types/Message/ProductSlugChangedMessagePayload.raml
-  ProductStateTransitionMessagePayload: !include types/Message/ProductStateTransitionMessagePayload.raml
-  ProductUnpublishedMessagePayload: !include types/Message/ProductUnpublishedMessagePayload.raml
-  ProductVariantDeletedMessagePayload: !include types/Message/ProductVariantDeletedMessagePayload.raml
-  ReviewCreatedMessagePayload: !include types/Message/ReviewCreatedMessagePayload.raml
-  ReviewRatingSetMessagePayload: !include types/Message/ReviewRatingSetMessagePayload.raml
-  ReviewStateTransitionMessagePayload: !include types/Message/ReviewStateTransitionMessagePayload.raml
   OrderEdit: !include types/OrderEdit/OrderEdit.raml
+  OrderEditAddStagedActionAction: !include types/OrderEdit/OrderEditAddStagedActionAction.raml
   OrderEditApplied: !include types/OrderEdit/OrderEditApplied.raml
+  OrderEditAppliedMessage: !include types/Message/OrderEditAppliedMessage.raml
+  OrderEditAppliedMessagePayload: !include types/Message/OrderEditAppliedMessagePayload.raml
   OrderEditApply: !include types/OrderEdit/OrderEditApply.raml
   OrderEditDraft: !include types/OrderEdit/OrderEditDraft.raml
   OrderEditNotProcessed: !include types/OrderEdit/OrderEditNotProcessed.raml
@@ -612,17 +585,418 @@ types:
   OrderEditReference: !include types/OrderEdit/OrderEditReference.raml
   OrderEditResourceIdentifier: !include types/OrderEdit/OrderEditResourceIdentifier.raml
   OrderEditResult: !include types/OrderEdit/OrderEditResult.raml
-  OrderEditUpdate: !include types/OrderEdit/OrderEditUpdate.raml
-  OrderEditUpdateAction: !include types/OrderEdit/OrderEditUpdateAction.raml
-  OrderExcerpt: !include types/OrderEdit/OrderExcerpt.raml
-  StagedOrder: !include types/OrderEdit/StagedOrder.raml
-  StagedOrderUpdateAction: !include types/Order/StagedOrderUpdateAction.raml
-  OrderEditAddStagedActionAction: !include types/OrderEdit/OrderEditAddStagedActionAction.raml
   OrderEditSetCommentAction: !include types/OrderEdit/OrderEditSetCommentAction.raml
   OrderEditSetCustomFieldAction: !include types/OrderEdit/OrderEditSetCustomFieldAction.raml
   OrderEditSetCustomTypeAction: !include types/OrderEdit/OrderEditSetCustomTypeAction.raml
   OrderEditSetKeyAction: !include types/OrderEdit/OrderEditSetKeyAction.raml
   OrderEditSetStagedActionsAction: !include types/OrderEdit/OrderEditSetStagedActionsAction.raml
+  OrderEditUpdate: !include types/OrderEdit/OrderEditUpdate.raml
+  OrderEditUpdateAction: !include types/OrderEdit/OrderEditUpdateAction.raml
+  OrderExcerpt: !include types/OrderEdit/OrderExcerpt.raml
+  OrderFromCartDraft: !include types/Order/OrderFromCartDraft.raml
+  OrderImportCustomLineItemStateAction: !include types/Order/OrderImportCustomLineItemStateAction.raml
+  OrderImportDraft: !include types/Order/OrderImportDraft.raml
+  OrderImportLineItemStateAction: !include types/Order/OrderImportLineItemStateAction.raml
+  OrderImportedMessage: !include types/Message/OrderImportedMessage.raml
+  OrderImportedMessagePayload: !include types/Message/OrderImportedMessagePayload.raml
+  OrderLineItemAddedMessage: !include types/Message/OrderLineItemAddedMessage.raml
+  OrderLineItemAddedMessagePayload: !include types/Message/OrderLineItemAddedMessagePayload.raml
+  OrderLineItemDiscountSetMessage: !include types/Message/OrderLineItemDiscountSetMessage.raml
+  OrderLineItemDiscountSetMessagePayload: !include types/Message/OrderLineItemDiscountSetMessagePayload.raml
+  OrderPagedQueryResponse: !include types/Order/OrderPagedQueryResponse.raml
+  OrderPaymentStateChangedMessage: !include types/Message/OrderPaymentStateChangedMessage.raml
+  OrderPaymentStateChangedMessagePayload: !include types/Message/OrderPaymentStateChangedMessagePayload.raml
+  OrderReference: !include types/Order/OrderReference.raml
+  OrderRemoveDeliveryAction: !include types/Order/OrderRemoveDeliveryAction.raml
+  OrderRemoveItemShippingAddressAction: !include types/Order/OrderRemoveItemShippingAddressAction.raml
+  OrderRemoveParcelFromDeliveryAction: !include types/Order/OrderRemoveParcelFromDeliveryAction.raml
+  OrderRemovePaymentAction: !include types/Order/OrderRemovePaymentAction.raml
+  OrderResourceIdentifier: !include types/Order/OrderResourceIdentifier.raml
+  OrderReturnInfoAddedMessage: !include types/Message/OrderReturnInfoAddedMessage.raml
+  OrderReturnInfoAddedMessagePayload: !include types/Message/OrderReturnInfoAddedMessagePayload.raml
+  OrderReturnShipmentStateChangedMessage: !include types/Message/OrderReturnShipmentStateChangedMessage.raml
+  OrderReturnShipmentStateChangedMessagePayload: !include types/Message/OrderReturnShipmentStateChangedMessagePayload.raml
+  OrderSetBillingAddressAction: !include types/Order/OrderSetBillingAddressAction.raml
+  OrderSetCustomFieldAction: !include types/Order/OrderSetCustomFieldAction.raml
+  OrderSetCustomLineItemCustomFieldAction: !include types/Order/OrderSetCustomLineItemCustomFieldAction.raml
+  OrderSetCustomLineItemCustomTypeAction: !include types/Order/OrderSetCustomLineItemCustomTypeAction.raml
+  OrderSetCustomLineItemShippingDetailsAction: !include types/Order/OrderSetCustomLineItemShippingDetailsAction.raml
+  OrderSetCustomTypeAction: !include types/Order/OrderSetCustomTypeAction.raml
+  OrderSetCustomerEmailAction: !include types/Order/OrderSetCustomerEmailAction.raml
+  OrderSetCustomerIdAction: !include types/Order/OrderSetCustomerIdAction.raml
+  OrderSetDeliveryAddressAction: !include types/Order/OrderSetDeliveryAddressAction.raml
+  OrderSetDeliveryItemsAction: !include types/Order/OrderSetDeliveryItemsAction.raml
+  OrderSetLineItemCustomFieldAction: !include types/Order/OrderSetLineItemCustomFieldAction.raml
+  OrderSetLineItemCustomTypeAction: !include types/Order/OrderSetLineItemCustomTypeAction.raml
+  OrderSetLineItemShippingDetailsAction: !include types/Order/OrderSetLineItemShippingDetailsAction.raml
+  OrderSetLocaleAction: !include types/Order/OrderSetLocaleAction.raml
+  OrderSetOrderNumberAction: !include types/Order/OrderSetOrderNumberAction.raml
+  OrderSetParcelItemsAction: !include types/Order/OrderSetParcelItemsAction.raml
+  OrderSetParcelMeasurementsAction: !include types/Order/OrderSetParcelMeasurementsAction.raml
+  OrderSetParcelTrackingDataAction: !include types/Order/OrderSetParcelTrackingDataAction.raml
+  OrderSetReturnPaymentStateAction: !include types/Order/OrderSetReturnPaymentStateAction.raml
+  OrderSetReturnShipmentStateAction: !include types/Order/OrderSetReturnShipmentStateAction.raml
+  OrderSetShippingAddressAction: !include types/Order/OrderSetShippingAddressAction.raml
+  OrderShipmentStateChangedMessage: !include types/Message/OrderShipmentStateChangedMessage.raml
+  OrderShipmentStateChangedMessagePayload: !include types/Message/OrderShipmentStateChangedMessagePayload.raml
+  OrderShippingAddressSetMessage: !include types/Message/OrderShippingAddressSetMessage.raml
+  OrderShippingAddressSetMessagePayload: !include types/Message/OrderShippingAddressSetMessagePayload.raml
+  OrderShippingInfoSetMessage: !include types/Message/OrderShippingInfoSetMessage.raml
+  OrderShippingInfoSetMessagePayload: !include types/Message/OrderShippingInfoSetMessagePayload.raml
+  OrderShippingRateInputSetMessage: !include types/Message/OrderShippingRateInputSetMessage.raml
+  OrderShippingRateInputSetMessagePayload: !include types/Message/OrderShippingRateInputSetMessagePayload.raml
+  OrderState: !include types/Order/OrderState.raml
+  OrderStateChangedMessage: !include types/Message/OrderStateChangedMessage.raml
+  OrderStateChangedMessagePayload: !include types/Message/OrderStateChangedMessagePayload.raml
+  OrderStateTransitionMessage: !include types/Message/OrderStateTransitionMessage.raml
+  OrderStateTransitionMessagePayload: !include types/Message/OrderStateTransitionMessagePayload.raml
+  OrderTransitionCustomLineItemStateAction: !include types/Order/OrderTransitionCustomLineItemStateAction.raml
+  OrderTransitionLineItemStateAction: !include types/Order/OrderTransitionLineItemStateAction.raml
+  OrderTransitionStateAction: !include types/Order/OrderTransitionStateAction.raml
+  OrderUpdate: !include types/Order/OrderUpdate.raml
+  OrderUpdateAction: !include types/Order/OrderUpdateAction.raml
+  OrderUpdateItemShippingAddressAction: !include types/Order/OrderUpdateItemShippingAddressAction.raml
+  OrderUpdateSyncInfoAction: !include types/Order/OrderUpdateSyncInfoAction.raml
+  OutOfStockError: !include types/Error/OutOfStockError.raml
+  PagedQueryResponse: !include types/Common/PagedQueryResponse.raml
+  Parcel: !include types/Order/Parcel.raml
+  ParcelAddedToDeliveryMessage: !include types/Message/ParcelAddedToDeliveryMessage.raml
+  ParcelAddedToDeliveryMessagePayload: !include types/Message/ParcelAddedToDeliveryMessagePayload.raml
+  ParcelDraft: !include types/Order/ParcelDraft.raml
+  ParcelItemsUpdatedMessage: !include types/Message/ParcelItemsUpdatedMessage.raml
+  ParcelItemsUpdatedMessagePayload: !include types/Message/ParcelItemsUpdatedMessagePayload.raml
+  ParcelMeasurements: !include types/Order/ParcelMeasurements.raml
+  ParcelMeasurementsUpdatedMessage: !include types/Message/ParcelMeasurementsUpdatedMessage.raml
+  ParcelMeasurementsUpdatedMessagePayload: !include types/Message/ParcelMeasurementsUpdatedMessagePayload.raml
+  ParcelRemovedFromDeliveryMessage: !include types/Message/ParcelRemovedFromDeliveryMessage.raml
+  ParcelRemovedFromDeliveryMessagePayload: !include types/Message/ParcelRemovedFromDeliveryMessagePayload.raml
+  ParcelTrackingDataUpdatedMessage: !include types/Message/ParcelTrackingDataUpdatedMessage.raml
+  ParcelTrackingDataUpdatedMessagePayload: !include types/Message/ParcelTrackingDataUpdatedMessagePayload.raml
+  PayloadNotIncluded: !include types/Subscription/PayloadNotIncluded.raml
+  Payment: !include types/Payment/Payment.raml
+  PaymentAddInterfaceInteractionAction: !include types/Payment/PaymentAddInterfaceInteractionAction.raml
+  PaymentAddTransactionAction: !include types/Payment/PaymentAddTransactionAction.raml
+  PaymentChangeAmountPlannedAction: !include types/Payment/PaymentChangeAmountPlannedAction.raml
+  PaymentChangeTransactionInteractionIdAction: !include types/Payment/PaymentChangeTransactionInteractionIdAction.raml
+  PaymentChangeTransactionStateAction: !include types/Payment/PaymentChangeTransactionStateAction.raml
+  PaymentChangeTransactionTimestampAction: !include types/Payment/PaymentChangeTransactionTimestampAction.raml
+  PaymentCreatedMessage: !include types/Message/PaymentCreatedMessage.raml
+  PaymentCreatedMessagePayload: !include types/Message/PaymentCreatedMessagePayload.raml
+  PaymentDraft: !include types/Payment/PaymentDraft.raml
+  PaymentInfo: !include types/Order/PaymentInfo.raml
+  PaymentInteractionAddedMessage: !include types/Message/PaymentInteractionAddedMessage.raml
+  PaymentInteractionAddedMessagePayload: !include types/Message/PaymentInteractionAddedMessagePayload.raml
+  PaymentMethodInfo: !include types/Payment/PaymentMethodInfo.raml
+  PaymentPagedQueryResponse: !include types/Payment/PaymentPagedQueryResponse.raml
+  PaymentReference: !include types/Payment/PaymentReference.raml
+  PaymentResourceIdentifier: !include types/Payment/PaymentResourceIdentifier.raml
+  PaymentSetAmountPaidAction: !include types/Payment/PaymentSetAmountPaidAction.raml
+  PaymentSetAmountRefundedAction: !include types/Payment/PaymentSetAmountRefundedAction.raml
+  PaymentSetAnonymousIdAction: !include types/Payment/PaymentSetAnonymousIdAction.raml
+  PaymentSetAuthorizationAction: !include types/Payment/PaymentSetAuthorizationAction.raml
+  PaymentSetCustomFieldAction: !include types/Payment/PaymentSetCustomFieldAction.raml
+  PaymentSetCustomTypeAction: !include types/Payment/PaymentSetCustomTypeAction.raml
+  PaymentSetCustomerAction: !include types/Payment/PaymentSetCustomerAction.raml
+  PaymentSetExternalIdAction: !include types/Payment/PaymentSetExternalIdAction.raml
+  PaymentSetInterfaceIdAction: !include types/Payment/PaymentSetInterfaceIdAction.raml
+  PaymentSetKeyAction: !include types/Payment/PaymentSetKeyAction.raml
+  PaymentSetMethodInfoInterfaceAction: !include types/Payment/PaymentSetMethodInfoInterfaceAction.raml
+  PaymentSetMethodInfoMethodAction: !include types/Payment/PaymentSetMethodInfoMethodAction.raml
+  PaymentSetMethodInfoNameAction: !include types/Payment/PaymentSetMethodInfoNameAction.raml
+  PaymentSetStatusInterfaceCodeAction: !include types/Payment/PaymentSetStatusInterfaceCodeAction.raml
+  PaymentSetStatusInterfaceTextAction: !include types/Payment/PaymentSetStatusInterfaceTextAction.raml
+  PaymentState: !include types/Order/PaymentState.raml
+  PaymentStatus: !include types/Payment/PaymentStatus.raml
+  PaymentStatusDraft: !include types/Payment/PaymentStatusDraft.raml
+  PaymentStatusInterfaceCodeSetMessage: !include types/Message/PaymentStatusInterfaceCodeSetMessage.raml
+  PaymentStatusInterfaceCodeSetMessagePayload: !include types/Message/PaymentStatusInterfaceCodeSetMessagePayload.raml
+  PaymentStatusStateTransitionMessage: !include types/Message/PaymentStatusStateTransitionMessage.raml
+  PaymentStatusStateTransitionMessagePayload: !include types/Message/PaymentStatusStateTransitionMessagePayload.raml
+  PaymentTransactionAddedMessage: !include types/Message/PaymentTransactionAddedMessage.raml
+  PaymentTransactionAddedMessagePayload: !include types/Message/PaymentTransactionAddedMessagePayload.raml
+  PaymentTransactionStateChangedMessage: !include types/Message/PaymentTransactionStateChangedMessage.raml
+  PaymentTransactionStateChangedMessagePayload: !include types/Message/PaymentTransactionStateChangedMessagePayload.raml
+  PaymentTransitionStateAction: !include types/Payment/PaymentTransitionStateAction.raml
+  PaymentUpdate: !include types/Payment/PaymentUpdate.raml
+  PaymentUpdateAction: !include types/Payment/PaymentUpdateAction.raml
+  Price: !include types/Common/Price.raml
+  PriceChangedError: !include types/Error/PriceChangedError.raml
+  PriceDraft: !include types/Common/PriceDraft.raml
+  PriceFunction: !include types/ShippingMethod/PriceFunction.raml
+  PriceTier: !include types/Common/PriceTier.raml
+  PriceTierDraft: !include types/Common/PriceTierDraft.raml
+  Product: !include types/Product/Product.raml
+  ProductAddAssetAction: !include types/Product/ProductAddAssetAction.raml
+  ProductAddExternalImageAction: !include types/Product/ProductAddExternalImageAction.raml
+  ProductAddPriceAction: !include types/Product/ProductAddPriceAction.raml
+  ProductAddToCategoryAction: !include types/Product/ProductAddToCategoryAction.raml
+  ProductAddVariantAction: !include types/Product/ProductAddVariantAction.raml
+  ProductAddedToCategoryMessage: !include types/Message/ProductAddedToCategoryMessage.raml
+  ProductAddedToCategoryMessagePayload: !include types/Message/ProductAddedToCategoryMessagePayload.raml
+  ProductCatalogData: !include types/Product/ProductCatalogData.raml
+  ProductChangeAssetNameAction: !include types/Product/ProductChangeAssetNameAction.raml
+  ProductChangeAssetOrderAction: !include types/Product/ProductChangeAssetOrderAction.raml
+  ProductChangeMasterVariantAction: !include types/Product/ProductChangeMasterVariantAction.raml
+  ProductChangeNameAction: !include types/Product/ProductChangeNameAction.raml
+  ProductChangePriceAction: !include types/Product/ProductChangePriceAction.raml
+  ProductChangeSlugAction: !include types/Product/ProductChangeSlugAction.raml
+  ProductCreatedMessage: !include types/Message/ProductCreatedMessage.raml
+  ProductCreatedMessagePayload: !include types/Message/ProductCreatedMessagePayload.raml
+  ProductData: !include types/Product/ProductData.raml
+  ProductDeletedMessage: !include types/Message/ProductDeletedMessage.raml
+  ProductDeletedMessagePayload: !include types/Message/ProductDeletedMessagePayload.raml
+  ProductDiscount: !include types/ProductDiscount/ProductDiscount.raml
+  ProductDiscountChangeIsActiveAction: !include types/ProductDiscount/ProductDiscountChangeIsActiveAction.raml
+  ProductDiscountChangeNameAction: !include types/ProductDiscount/ProductDiscountChangeNameAction.raml
+  ProductDiscountChangePredicateAction: !include types/ProductDiscount/ProductDiscountChangePredicateAction.raml
+  ProductDiscountChangeSortOrderAction: !include types/ProductDiscount/ProductDiscountChangeSortOrderAction.raml
+  ProductDiscountChangeValueAction: !include types/ProductDiscount/ProductDiscountChangeValueAction.raml
+  ProductDiscountDraft: !include types/ProductDiscount/ProductDiscountDraft.raml
+  ProductDiscountMatchQuery: !include types/ProductDiscount/ProductDiscountMatchQuery.raml
+  ProductDiscountPagedQueryResponse: !include types/ProductDiscount/ProductDiscountPagedQueryResponse.raml
+  ProductDiscountReference: !include types/ProductDiscount/ProductDiscountReference.raml
+  ProductDiscountResourceIdentifier: !include types/ProductDiscount/ProductDiscountResourceIdentifier.raml
+  ProductDiscountSetDescriptionAction: !include types/ProductDiscount/ProductDiscountSetDescriptionAction.raml
+  ProductDiscountSetKeyAction: !include types/ProductDiscount/ProductDiscountSetKeyAction.raml
+  ProductDiscountSetValidFromAction: !include types/ProductDiscount/ProductDiscountSetValidFromAction.raml
+  ProductDiscountSetValidFromAndUntilAction: !include types/ProductDiscount/ProductDiscountSetValidFromAndUntilAction.raml
+  ProductDiscountSetValidUntilAction: !include types/ProductDiscount/ProductDiscountSetValidUntilAction.raml
+  ProductDiscountUpdate: !include types/ProductDiscount/ProductDiscountUpdate.raml
+  ProductDiscountUpdateAction: !include types/ProductDiscount/ProductDiscountUpdateAction.raml
+  ProductDiscountValue: !include types/ProductDiscount/ProductDiscountValue.raml
+  ProductDiscountValueAbsolute: !include types/ProductDiscount/ProductDiscountValueAbsolute.raml
+  ProductDiscountValueAbsoluteDraft: !include types/ProductDiscount/ProductDiscountValueAbsoluteDraft.raml
+  ProductDiscountValueDraft: !include types/ProductDiscount/ProductDiscountValueDraft.raml
+  ProductDiscountValueExternal: !include types/ProductDiscount/ProductDiscountValueExternal.raml
+  ProductDiscountValueExternalDraft: !include types/ProductDiscount/ProductDiscountValueExternalDraft.raml
+  ProductDiscountValueRelative: !include types/ProductDiscount/ProductDiscountValueRelative.raml
+  ProductDiscountValueRelativeDraft: !include types/ProductDiscount/ProductDiscountValueRelativeDraft.raml
+  ProductDraft: !include types/Product/ProductDraft.raml
+  ProductImageAddedMessage: !include types/Message/ProductImageAddedMessage.raml
+  ProductImageAddedMessagePayload: !include types/Message/ProductImageAddedMessagePayload.raml
+  ProductLegacySetSkuAction: !include types/Product/ProductLegacySetSkuAction.raml
+  ProductMoveImageToPositionAction: !include types/Product/ProductMoveImageToPositionAction.raml
+  ProductPagedQueryResponse: !include types/Product/ProductPagedQueryResponse.raml
+  ProductPriceDiscountsSetMessage: !include types/Message/ProductPriceDiscountsSetMessage.raml
+  ProductPriceDiscountsSetMessagePayload: !include types/Message/ProductPriceDiscountsSetMessagePayload.raml
+  ProductPriceDiscountsSetUpdatedPrice: !include types/Message/ProductPriceDiscountsSetUpdatedPrice.raml
+  ProductPriceExternalDiscountSetMessage: !include types/Message/ProductPriceExternalDiscountSetMessage.raml
+  ProductPriceExternalDiscountSetMessagePayload: !include types/Message/ProductPriceExternalDiscountSetMessagePayload.raml
+  ProductProjection: !include types/Product/ProductProjection.raml
+  ProductProjectionPagedQueryResponse: !include types/Product/ProductProjectionPagedQueryResponse.raml
+  ProductProjectionPagedSearchResponse: !include types/Product/ProductProjectionPagedSearchResponse.raml
+  ProductPublishAction: !include types/Product/ProductPublishAction.raml
+  ProductPublishScope: !include types/Cart/ProductPublishScope.raml
+  ProductPublishedMessage: !include types/Message/ProductPublishedMessage.raml
+  ProductPublishedMessagePayload: !include types/Message/ProductPublishedMessagePayload.raml
+  ProductReference: !include types/Product/ProductReference.raml
+  ProductRemoveAssetAction: !include types/Product/ProductRemoveAssetAction.raml
+  ProductRemoveFromCategoryAction: !include types/Product/ProductRemoveFromCategoryAction.raml
+  ProductRemoveImageAction: !include types/Product/ProductRemoveImageAction.raml
+  ProductRemovePriceAction: !include types/Product/ProductRemovePriceAction.raml
+  ProductRemoveVariantAction: !include types/Product/ProductRemoveVariantAction.raml
+  ProductRemovedFromCategoryMessage: !include types/Message/ProductRemovedFromCategoryMessage.raml
+  ProductRemovedFromCategoryMessagePayload: !include types/Message/ProductRemovedFromCategoryMessagePayload.raml
+  ProductResourceIdentifier: !include types/Product/ProductResourceIdentifier.raml
+  ProductRevertStagedChangesAction: !include types/Product/ProductRevertStagedChangesAction.raml
+  ProductRevertStagedVariantChangesAction: !include types/Product/ProductRevertStagedVariantChangesAction.raml
+  ProductRevertedStagedChangesMessage: !include types/Message/ProductRevertedStagedChangesMessage.raml
+  ProductRevertedStagedChangesMessagePayload: !include types/Message/ProductRevertedStagedChangesMessagePayload.raml
+  ProductSetAssetCustomFieldAction: !include types/Product/ProductSetAssetCustomFieldAction.raml
+  ProductSetAssetCustomTypeAction: !include types/Product/ProductSetAssetCustomTypeAction.raml
+  ProductSetAssetDescriptionAction: !include types/Product/ProductSetAssetDescriptionAction.raml
+  ProductSetAssetKeyAction: !include types/Product/ProductSetAssetKeyAction.raml
+  ProductSetAssetSourcesAction: !include types/Product/ProductSetAssetSourcesAction.raml
+  ProductSetAssetTagsAction: !include types/Product/ProductSetAssetTagsAction.raml
+  ProductSetAttributeAction: !include types/Product/ProductSetAttributeAction.raml
+  ProductSetAttributeInAllVariantsAction: !include types/Product/ProductSetAttributeInAllVariantsAction.raml
+  ProductSetCategoryOrderHintAction: !include types/Product/ProductSetCategoryOrderHintAction.raml
+  ProductSetDescriptionAction: !include types/Product/ProductSetDescriptionAction.raml
+  ProductSetDiscountedPriceAction: !include types/Product/ProductSetDiscountedPriceAction.raml
+  ProductSetImageLabelAction: !include types/Product/ProductSetImageLabelAction.raml
+  ProductSetKeyAction: !include types/Product/ProductSetKeyAction.raml
+  ProductSetMetaDescriptionAction: !include types/Product/ProductSetMetaDescriptionAction.raml
+  ProductSetMetaKeywordsAction: !include types/Product/ProductSetMetaKeywordsAction.raml
+  ProductSetMetaTitleAction: !include types/Product/ProductSetMetaTitleAction.raml
+  ProductSetPricesAction: !include types/Product/ProductSetPricesAction.raml
+  ProductSetProductPriceCustomFieldAction: !include types/Product/ProductSetProductPriceCustomFieldAction.raml
+  ProductSetProductPriceCustomTypeAction: !include types/Product/ProductSetProductPriceCustomTypeAction.raml
+  ProductSetProductVariantKeyAction: !include types/Product/ProductSetProductVariantKeyAction.raml
+  ProductSetSearchKeywordsAction: !include types/Product/ProductSetSearchKeywordsAction.raml
+  ProductSetSkuAction: !include types/Product/ProductSetSkuAction.raml
+  ProductSetTaxCategoryAction: !include types/Product/ProductSetTaxCategoryAction.raml
+  ProductSlugChangedMessage: !include types/Message/ProductSlugChangedMessage.raml
+  ProductSlugChangedMessagePayload: !include types/Message/ProductSlugChangedMessagePayload.raml
+  ProductStateTransitionMessage: !include types/Message/ProductStateTransitionMessage.raml
+  ProductStateTransitionMessagePayload: !include types/Message/ProductStateTransitionMessagePayload.raml
+  ProductTransitionStateAction: !include types/Product/ProductTransitionStateAction.raml
+  ProductType: !include types/ProductType/ProductType.raml
+  ProductTypeAddAttributeDefinitionAction: !include types/ProductType/ProductTypeAddAttributeDefinitionAction.raml
+  ProductTypeAddLocalizedEnumValueAction: !include types/ProductType/ProductTypeAddLocalizedEnumValueAction.raml
+  ProductTypeAddPlainEnumValueAction: !include types/ProductType/ProductTypeAddPlainEnumValueAction.raml
+  ProductTypeChangeAttributeConstraintAction: !include types/ProductType/ProductTypeChangeAttributeConstraintAction.raml
+  ProductTypeChangeAttributeNameAction: !include types/ProductType/ProductTypeChangeAttributeNameAction.raml
+  ProductTypeChangeAttributeOrderAction: !include types/ProductType/ProductTypeChangeAttributeOrderAction.raml
+  ProductTypeChangeAttributeOrderByNameAction: !include types/ProductType/ProductTypeChangeAttributeOrderByNameAction.raml
+  ProductTypeChangeDescriptionAction: !include types/ProductType/ProductTypeChangeDescriptionAction.raml
+  ProductTypeChangeEnumKeyAction: !include types/ProductType/ProductTypeChangeEnumKeyAction.raml
+  ProductTypeChangeInputHintAction: !include types/ProductType/ProductTypeChangeInputHintAction.raml
+  ProductTypeChangeIsSearchableAction: !include types/ProductType/ProductTypeChangeIsSearchableAction.raml
+  ProductTypeChangeLabelAction: !include types/ProductType/ProductTypeChangeLabelAction.raml
+  ProductTypeChangeLocalizedEnumValueLabelAction: !include types/ProductType/ProductTypeChangeLocalizedEnumValueLabelAction.raml
+  ProductTypeChangeLocalizedEnumValueOrderAction: !include types/ProductType/ProductTypeChangeLocalizedEnumValueOrderAction.raml
+  ProductTypeChangeNameAction: !include types/ProductType/ProductTypeChangeNameAction.raml
+  ProductTypeChangePlainEnumValueLabelAction: !include types/ProductType/ProductTypeChangePlainEnumValueLabelAction.raml
+  ProductTypeChangePlainEnumValueOrderAction: !include types/ProductType/ProductTypeChangePlainEnumValueOrderAction.raml
+  ProductTypeDraft: !include types/ProductType/ProductTypeDraft.raml
+  ProductTypePagedQueryResponse: !include types/ProductType/ProductTypePagedQueryResponse.raml
+  ProductTypeReference: !include types/ProductType/ProductTypeReference.raml
+  ProductTypeRemoveAttributeDefinitionAction: !include types/ProductType/ProductTypeRemoveAttributeDefinitionAction.raml
+  ProductTypeRemoveEnumValuesAction: !include types/ProductType/ProductTypeRemoveEnumValuesAction.raml
+  ProductTypeResourceIdentifier: !include types/ProductType/ProductTypeResourceIdentifier.raml
+  ProductTypeSetInputTipAction: !include types/ProductType/ProductTypeSetInputTipAction.raml
+  ProductTypeSetKeyAction: !include types/ProductType/ProductTypeSetKeyAction.raml
+  ProductTypeUpdate: !include types/ProductType/ProductTypeUpdate.raml
+  ProductTypeUpdateAction: !include types/ProductType/ProductTypeUpdateAction.raml
+  ProductUnpublishAction: !include types/Product/ProductUnpublishAction.raml
+  ProductUnpublishedMessage: !include types/Message/ProductUnpublishedMessage.raml
+  ProductUnpublishedMessagePayload: !include types/Message/ProductUnpublishedMessagePayload.raml
+  ProductUpdate: !include types/Product/ProductUpdate.raml
+  ProductUpdateAction: !include types/Product/ProductUpdateAction.raml
+  ProductVariant: !include types/Product/ProductVariant.raml
+  ProductVariantAvailability: !include types/Product/ProductVariantAvailability.raml
+  ProductVariantChannelAvailability: !include types/Product/ProductVariantChannelAvailability.raml
+  ProductVariantChannelAvailabilityMap: !include types/Product/ProductVariantChannelAvailabilityMap.raml
+  ProductVariantDeletedMessage: !include types/Message/ProductVariantDeletedMessage.raml
+  ProductVariantDeletedMessagePayload: !include types/Message/ProductVariantDeletedMessagePayload.raml
+  ProductVariantDraft: !include types/Product/ProductVariantDraft.raml
+  ProductVariantImportDraft: !include types/Order/ProductVariantImportDraft.raml
+  Project: !include types/Project/Project.raml
+  ProjectChangeCountriesAction: !include types/Project/ProjectChangeCountriesAction.raml
+  ProjectChangeCurrenciesAction: !include types/Project/ProjectChangeCurrenciesAction.raml
+  ProjectChangeLanguagesAction: !include types/Project/ProjectChangeLanguagesAction.raml
+  ProjectChangeMessagesConfigurationAction: !include types/Project/ProjectChangeMessagesConfigurationAction.raml
+  ProjectChangeMessagesEnabledAction: !include types/Project/ProjectChangeMessagesEnabledAction.raml
+  ProjectChangeNameAction: !include types/Project/ProjectChangeNameAction.raml
+  ProjectSetExternalOAuthAction: !include types/Project/ProjectSetExternalOAuthAction.raml
+  ProjectSetShippingRateInputTypeAction: !include types/Project/ProjectSetShippingRateInputTypeAction.raml
+  ProjectUpdate: !include types/Project/ProjectUpdate.raml
+  ProjectUpdateAction: !include types/Project/ProjectUpdateAction.raml
+  QueryPrice: !include types/Common/QueryPrice.raml
+  RangeFacetResult: !include types/Product/RangeFacetResult.raml
+  Reference: !include types/Common/Reference.raml
+  ReferenceExistsError: !include types/Error/ReferenceExistsError.raml
+  ReferenceTypeId: !include types/Common/ReferenceTypeId.raml
+  ReplicaCartDraft: !include types/Cart/ReplicaCartDraft.raml
+  RequiredFieldError: !include types/Error/RequiredFieldError.raml
+  ResourceCreatedDelivery: !include types/Subscription/ResourceCreatedDelivery.raml
+  ResourceDeletedDelivery: !include types/Subscription/ResourceDeletedDelivery.raml
+  ResourceIdentifier: !include types/Common/ResourceIdentifier.raml
+  ResourceNotFoundError: !include types/Error/ResourceNotFoundError.raml
+  ResourceTypeId: !include types/Type/ResourceTypeId.raml
+  ResourceUpdatedDelivery: !include types/Subscription/ResourceUpdatedDelivery.raml
+  ReturnInfo: !include types/Order/ReturnInfo.raml
+  ReturnItem: !include types/Order/ReturnItem.raml
+  ReturnItemDraft: !include types/Order/ReturnItemDraft.raml
+  ReturnPaymentState: !include types/Order/ReturnPaymentState.raml
+  ReturnShipmentState: !include types/Order/ReturnShipmentState.raml
+  Review: !include types/Review/Review.raml
+  ReviewCreatedMessage: !include types/Message/ReviewCreatedMessage.raml
+  ReviewCreatedMessagePayload: !include types/Message/ReviewCreatedMessagePayload.raml
+  ReviewDraft: !include types/Review/ReviewDraft.raml
+  ReviewPagedQueryResponse: !include types/Review/ReviewPagedQueryResponse.raml
+  ReviewRatingSetMessage: !include types/Message/ReviewRatingSetMessage.raml
+  ReviewRatingSetMessagePayload: !include types/Message/ReviewRatingSetMessagePayload.raml
+  ReviewRatingStatistics: !include types/Review/ReviewRatingStatistics.raml
+  ReviewReference: !include types/Review/ReviewReference.raml
+  ReviewResourceIdentifier: !include types/Review/ReviewResourceIdentifier.raml
+  ReviewSetAuthorNameAction: !include types/Review/ReviewSetAuthorNameAction.raml
+  ReviewSetCustomFieldAction: !include types/Review/ReviewSetCustomFieldAction.raml
+  ReviewSetCustomTypeAction: !include types/Review/ReviewSetCustomTypeAction.raml
+  ReviewSetCustomerAction: !include types/Review/ReviewSetCustomerAction.raml
+  ReviewSetKeyAction: !include types/Review/ReviewSetKeyAction.raml
+  ReviewSetLocaleAction: !include types/Review/ReviewSetLocaleAction.raml
+  ReviewSetRatingAction: !include types/Review/ReviewSetRatingAction.raml
+  ReviewSetTargetAction: !include types/Review/ReviewSetTargetAction.raml
+  ReviewSetTextAction: !include types/Review/ReviewSetTextAction.raml
+  ReviewSetTitleAction: !include types/Review/ReviewSetTitleAction.raml
+  ReviewStateTransitionMessage: !include types/Message/ReviewStateTransitionMessage.raml
+  ReviewStateTransitionMessagePayload: !include types/Message/ReviewStateTransitionMessagePayload.raml
+  ReviewTransitionStateAction: !include types/Review/ReviewTransitionStateAction.raml
+  ReviewUpdate: !include types/Review/ReviewUpdate.raml
+  ReviewUpdateAction: !include types/Review/ReviewUpdateAction.raml
+  RoundingMode: !include types/Cart/RoundingMode.raml
+  ScopedPrice: !include types/Common/ScopedPrice.raml
+  ScoreShippingRateInput: !include types/Cart/ScoreShippingRateInput.raml
+  ScoreShippingRateInputDraft: !include types/Cart/ScoreShippingRateInputDraft.raml
+  SearchKeyword: !include types/Product/SearchKeyword.raml
+  SearchKeywords: !include types/Product/SearchKeywords.raml
+  SelectionMode: !include types/CartDiscount/SelectionMode.raml
+  ShipmentState: !include types/Order/ShipmentState.raml
+  ShippingInfo: !include types/Cart/ShippingInfo.raml
+  ShippingInfoImportDraft: !include types/Order/ShippingInfoImportDraft.raml
+  ShippingMethod: !include types/ShippingMethod/ShippingMethod.raml
+  ShippingMethodAddShippingRateAction: !include types/ShippingMethod/ShippingMethodAddShippingRateAction.raml
+  ShippingMethodAddZoneAction: !include types/ShippingMethod/ShippingMethodAddZoneAction.raml
+  ShippingMethodChangeIsDefaultAction: !include types/ShippingMethod/ShippingMethodChangeIsDefaultAction.raml
+  ShippingMethodChangeNameAction: !include types/ShippingMethod/ShippingMethodChangeNameAction.raml
+  ShippingMethodChangeTaxCategoryAction: !include types/ShippingMethod/ShippingMethodChangeTaxCategoryAction.raml
+  ShippingMethodDoesNotMatchCartError: !include types/Error/ShippingMethodDoesNotMatchCartError.raml
+  ShippingMethodDraft: !include types/ShippingMethod/ShippingMethodDraft.raml
+  ShippingMethodPagedQueryResponse: !include types/ShippingMethod/ShippingMethodPagedQueryResponse.raml
+  ShippingMethodReference: !include types/ShippingMethod/ShippingMethodReference.raml
+  ShippingMethodRemoveShippingRateAction: !include types/ShippingMethod/ShippingMethodRemoveShippingRateAction.raml
+  ShippingMethodRemoveZoneAction: !include types/ShippingMethod/ShippingMethodRemoveZoneAction.raml
+  ShippingMethodResourceIdentifier: !include types/ShippingMethod/ShippingMethodResourceIdentifier.raml
+  ShippingMethodSetDescriptionAction: !include types/ShippingMethod/ShippingMethodSetDescriptionAction.raml
+  ShippingMethodSetKeyAction: !include types/ShippingMethod/ShippingMethodSetKeyAction.raml
+  ShippingMethodSetPredicateAction: !include types/ShippingMethod/ShippingMethodSetPredicateAction.raml
+  ShippingMethodState: !include types/Cart/ShippingMethodState.raml
+  ShippingMethodUpdate: !include types/ShippingMethod/ShippingMethodUpdate.raml
+  ShippingMethodUpdateAction: !include types/ShippingMethod/ShippingMethodUpdateAction.raml
+  ShippingRate: !include types/ShippingMethod/ShippingRate.raml
+  ShippingRateDraft: !include types/ShippingMethod/ShippingRateDraft.raml
+  ShippingRateInput: !include types/Cart/ShippingRateInput.raml
+  ShippingRateInputDraft: !include types/Cart/ShippingRateInputDraft.raml
+  ShippingRateInputType: !include types/Project/ShippingRateInputType.raml
+  ShippingRatePriceTier: !include types/ShippingMethod/ShippingRatePriceTier.raml
+  ShippingRateTierType: !include types/ShippingMethod/ShippingRateTierType.raml
+  ShoppingList: !include types/ShoppingList/ShoppingList.raml
+  ShoppingListAddLineItemAction: !include types/ShoppingList/ShoppingListAddLineItemAction.raml
+  ShoppingListAddTextLineItemAction: !include types/ShoppingList/ShoppingListAddTextLineItemAction.raml
+  ShoppingListChangeLineItemQuantityAction: !include types/ShoppingList/ShoppingListChangeLineItemQuantityAction.raml
+  ShoppingListChangeLineItemsOrderAction: !include types/ShoppingList/ShoppingListChangeLineItemsOrderAction.raml
+  ShoppingListChangeNameAction: !include types/ShoppingList/ShoppingListChangeNameAction.raml
+  ShoppingListChangeTextLineItemNameAction: !include types/ShoppingList/ShoppingListChangeTextLineItemNameAction.raml
+  ShoppingListChangeTextLineItemQuantityAction: !include types/ShoppingList/ShoppingListChangeTextLineItemQuantityAction.raml
+  ShoppingListChangeTextLineItemsOrderAction: !include types/ShoppingList/ShoppingListChangeTextLineItemsOrderAction.raml
+  ShoppingListDraft: !include types/ShoppingList/ShoppingListDraft.raml
+  ShoppingListLineItem: !include types/ShoppingList/ShoppingListLineItem.raml
+  ShoppingListLineItemDraft: !include types/ShoppingList/ShoppingListLineItemDraft.raml
+  ShoppingListPagedQueryResponse: !include types/ShoppingList/ShoppingListPagedQueryResponse.raml
+  ShoppingListReference: !include types/ShoppingList/ShoppingListReference.raml
+  ShoppingListRemoveLineItemAction: !include types/ShoppingList/ShoppingListRemoveLineItemAction.raml
+  ShoppingListRemoveTextLineItemAction: !include types/ShoppingList/ShoppingListRemoveTextLineItemAction.raml
+  ShoppingListResourceIdentifier: !include types/ShoppingList/ShoppingListResourceIdentifier.raml
+  ShoppingListSetAnonymousIdAction: !include types/ShoppingList/ShoppingListSetAnonymousIdAction.raml
+  ShoppingListSetCustomFieldAction: !include types/ShoppingList/ShoppingListSetCustomFieldAction.raml
+  ShoppingListSetCustomTypeAction: !include types/ShoppingList/ShoppingListSetCustomTypeAction.raml
+  ShoppingListSetCustomerAction: !include types/ShoppingList/ShoppingListSetCustomerAction.raml
+  ShoppingListSetDeleteDaysAfterLastModificationAction: !include types/ShoppingList/ShoppingListSetDeleteDaysAfterLastModificationAction.raml
+  ShoppingListSetDescriptionAction: !include types/ShoppingList/ShoppingListSetDescriptionAction.raml
+  ShoppingListSetKeyAction: !include types/ShoppingList/ShoppingListSetKeyAction.raml
+  ShoppingListSetLineItemCustomFieldAction: !include types/ShoppingList/ShoppingListSetLineItemCustomFieldAction.raml
+  ShoppingListSetLineItemCustomTypeAction: !include types/ShoppingList/ShoppingListSetLineItemCustomTypeAction.raml
+  ShoppingListSetSlugAction: !include types/ShoppingList/ShoppingListSetSlugAction.raml
+  ShoppingListSetTextLineItemCustomFieldAction: !include types/ShoppingList/ShoppingListSetTextLineItemCustomFieldAction.raml
+  ShoppingListSetTextLineItemCustomTypeAction: !include types/ShoppingList/ShoppingListSetTextLineItemCustomTypeAction.raml
+  ShoppingListSetTextLineItemDescriptionAction: !include types/ShoppingList/ShoppingListSetTextLineItemDescriptionAction.raml
+  ShoppingListUpdate: !include types/ShoppingList/ShoppingListUpdate.raml
+  ShoppingListUpdateAction: !include types/ShoppingList/ShoppingListUpdateAction.raml
+  SnsDestination: !include types/Subscription/SnsDestination.raml
+  SqsDestination: !include types/Subscription/SqsDestination.raml
+  StackingMode: !include types/CartDiscount/StackingMode.raml
+  StagedOrder: !include types/OrderEdit/StagedOrder.raml
   StagedOrderAddCustomLineItemAction: !include types/OrderEdit/StagedOrderAddCustomLineItemAction.raml
   StagedOrderAddDeliveryAction: !include types/OrderEdit/StagedOrderAddDeliveryAction.raml
   StagedOrderAddDiscountCodeAction: !include types/OrderEdit/StagedOrderAddDiscountCodeAction.raml
@@ -690,469 +1064,86 @@ types:
   StagedOrderTransitionCustomLineItemStateAction: !include types/OrderEdit/StagedOrderTransitionCustomLineItemStateAction.raml
   StagedOrderTransitionLineItemStateAction: !include types/OrderEdit/StagedOrderTransitionLineItemStateAction.raml
   StagedOrderTransitionStateAction: !include types/OrderEdit/StagedOrderTransitionStateAction.raml
+  StagedOrderUpdateAction: !include types/Order/StagedOrderUpdateAction.raml
   StagedOrderUpdateItemShippingAddressAction: !include types/OrderEdit/StagedOrderUpdateItemShippingAddressAction.raml
   StagedOrderUpdateSyncInfoAction: !include types/OrderEdit/StagedOrderUpdateSyncInfoAction.raml
-  CustomLineItemReturnItem: !include types/Order/CustomLineItemReturnItem.raml
-  Delivery: !include types/Order/Delivery.raml
-  DeliveryItem: !include types/Order/DeliveryItem.raml
-  DiscountedLineItemPriceDraft: !include types/Order/DiscountedLineItemPriceDraft.raml
-  ItemState: !include types/Order/ItemState.raml
-  LineItemImportDraft: !include types/Order/LineItemImportDraft.raml
-  LineItemReturnItem: !include types/Order/LineItemReturnItem.raml
-  Order: !include types/Order/Order.raml
-  OrderFromCartDraft: !include types/Order/OrderFromCartDraft.raml
-  OrderImportDraft: !include types/Order/OrderImportDraft.raml
-  OrderPagedQueryResponse: !include types/Order/OrderPagedQueryResponse.raml
-  OrderReference: !include types/Order/OrderReference.raml
-  OrderResourceIdentifier: !include types/Order/OrderResourceIdentifier.raml
-  OrderState: !include types/Order/OrderState.raml
-  OrderUpdate: !include types/Order/OrderUpdate.raml
-  OrderUpdateAction: !include types/Order/OrderUpdateAction.raml
-  Parcel: !include types/Order/Parcel.raml
-  ParcelDraft: !include types/Order/ParcelDraft.raml
-  ParcelMeasurements: !include types/Order/ParcelMeasurements.raml
-  PaymentInfo: !include types/Order/PaymentInfo.raml
-  PaymentState: !include types/Order/PaymentState.raml
-  ProductVariantImportDraft: !include types/Order/ProductVariantImportDraft.raml
-  ReturnInfo: !include types/Order/ReturnInfo.raml
-  ReturnItem: !include types/Order/ReturnItem.raml
-  ReturnItemDraft: !include types/Order/ReturnItemDraft.raml
-  ReturnPaymentState: !include types/Order/ReturnPaymentState.raml
-  ReturnShipmentState: !include types/Order/ReturnShipmentState.raml
-  ShipmentState: !include types/Order/ShipmentState.raml
-  ShippingInfoImportDraft: !include types/Order/ShippingInfoImportDraft.raml
-  SyncInfo: !include types/Order/SyncInfo.raml
-  TaxedItemPriceDraft: !include types/Order/TaxedItemPriceDraft.raml
-  TrackingData: !include types/Order/TrackingData.raml
-  OrderAddDeliveryAction: !include types/Order/OrderAddDeliveryAction.raml
-  OrderAddItemShippingAddressAction: !include types/Order/OrderAddItemShippingAddressAction.raml
-  OrderAddParcelToDeliveryAction: !include types/Order/OrderAddParcelToDeliveryAction.raml
-  OrderAddPaymentAction: !include types/Order/OrderAddPaymentAction.raml
-  OrderAddReturnInfoAction: !include types/Order/OrderAddReturnInfoAction.raml
-  OrderChangeOrderStateAction: !include types/Order/OrderChangeOrderStateAction.raml
-  OrderChangePaymentStateAction: !include types/Order/OrderChangePaymentStateAction.raml
-  OrderChangeShipmentStateAction: !include types/Order/OrderChangeShipmentStateAction.raml
-  OrderImportCustomLineItemStateAction: !include types/Order/OrderImportCustomLineItemStateAction.raml
-  OrderImportLineItemStateAction: !include types/Order/OrderImportLineItemStateAction.raml
-  OrderRemoveDeliveryAction: !include types/Order/OrderRemoveDeliveryAction.raml
-  OrderRemoveItemShippingAddressAction: !include types/Order/OrderRemoveItemShippingAddressAction.raml
-  OrderRemoveParcelFromDeliveryAction: !include types/Order/OrderRemoveParcelFromDeliveryAction.raml
-  OrderRemovePaymentAction: !include types/Order/OrderRemovePaymentAction.raml
-  OrderSetBillingAddressAction: !include types/Order/OrderSetBillingAddressAction.raml
-  OrderSetCustomFieldAction: !include types/Order/OrderSetCustomFieldAction.raml
-  OrderSetCustomLineItemCustomFieldAction: !include types/Order/OrderSetCustomLineItemCustomFieldAction.raml
-  OrderSetCustomLineItemCustomTypeAction: !include types/Order/OrderSetCustomLineItemCustomTypeAction.raml
-  OrderSetCustomLineItemShippingDetailsAction: !include types/Order/OrderSetCustomLineItemShippingDetailsAction.raml
-  OrderSetCustomTypeAction: !include types/Order/OrderSetCustomTypeAction.raml
-  OrderSetCustomerEmailAction: !include types/Order/OrderSetCustomerEmailAction.raml
-  OrderSetCustomerIdAction: !include types/Order/OrderSetCustomerIdAction.raml
-  OrderSetDeliveryAddressAction: !include types/Order/OrderSetDeliveryAddressAction.raml
-  OrderSetDeliveryItemsAction: !include types/Order/OrderSetDeliveryItemsAction.raml
-  OrderSetLineItemCustomFieldAction: !include types/Order/OrderSetLineItemCustomFieldAction.raml
-  OrderSetLineItemCustomTypeAction: !include types/Order/OrderSetLineItemCustomTypeAction.raml
-  OrderSetLineItemShippingDetailsAction: !include types/Order/OrderSetLineItemShippingDetailsAction.raml
-  OrderSetLocaleAction: !include types/Order/OrderSetLocaleAction.raml
-  OrderSetOrderNumberAction: !include types/Order/OrderSetOrderNumberAction.raml
-  OrderSetParcelItemsAction: !include types/Order/OrderSetParcelItemsAction.raml
-  OrderSetParcelMeasurementsAction: !include types/Order/OrderSetParcelMeasurementsAction.raml
-  OrderSetParcelTrackingDataAction: !include types/Order/OrderSetParcelTrackingDataAction.raml
-  OrderSetReturnPaymentStateAction: !include types/Order/OrderSetReturnPaymentStateAction.raml
-  OrderSetReturnShipmentStateAction: !include types/Order/OrderSetReturnShipmentStateAction.raml
-  OrderSetShippingAddressAction: !include types/Order/OrderSetShippingAddressAction.raml
-  OrderTransitionCustomLineItemStateAction: !include types/Order/OrderTransitionCustomLineItemStateAction.raml
-  OrderTransitionLineItemStateAction: !include types/Order/OrderTransitionLineItemStateAction.raml
-  OrderTransitionStateAction: !include types/Order/OrderTransitionStateAction.raml
-  OrderUpdateItemShippingAddressAction: !include types/Order/OrderUpdateItemShippingAddressAction.raml
-  OrderUpdateSyncInfoAction: !include types/Order/OrderUpdateSyncInfoAction.raml
-  Payment: !include types/Payment/Payment.raml
-  PaymentDraft: !include types/Payment/PaymentDraft.raml
-  PaymentMethodInfo: !include types/Payment/PaymentMethodInfo.raml
-  PaymentPagedQueryResponse: !include types/Payment/PaymentPagedQueryResponse.raml
-  PaymentReference: !include types/Payment/PaymentReference.raml
-  PaymentResourceIdentifier: !include types/Payment/PaymentResourceIdentifier.raml
-  PaymentStatus: !include types/Payment/PaymentStatus.raml
-  PaymentStatusDraft: !include types/Payment/PaymentStatusDraft.raml
-  PaymentUpdate: !include types/Payment/PaymentUpdate.raml
-  PaymentUpdateAction: !include types/Payment/PaymentUpdateAction.raml
-  Transaction: !include types/Payment/Transaction.raml
-  TransactionDraft: !include types/Payment/TransactionDraft.raml
-  TransactionState: !include types/Payment/TransactionState.raml
-  TransactionType: !include types/Payment/TransactionType.raml
-  PaymentAddInterfaceInteractionAction: !include types/Payment/PaymentAddInterfaceInteractionAction.raml
-  PaymentAddTransactionAction: !include types/Payment/PaymentAddTransactionAction.raml
-  PaymentChangeAmountPlannedAction: !include types/Payment/PaymentChangeAmountPlannedAction.raml
-  PaymentChangeTransactionInteractionIdAction: !include types/Payment/PaymentChangeTransactionInteractionIdAction.raml
-  PaymentChangeTransactionStateAction: !include types/Payment/PaymentChangeTransactionStateAction.raml
-  PaymentChangeTransactionTimestampAction: !include types/Payment/PaymentChangeTransactionTimestampAction.raml
-  PaymentSetAmountPaidAction: !include types/Payment/PaymentSetAmountPaidAction.raml
-  PaymentSetAmountRefundedAction: !include types/Payment/PaymentSetAmountRefundedAction.raml
-  PaymentSetAnonymousIdAction: !include types/Payment/PaymentSetAnonymousIdAction.raml
-  PaymentSetAuthorizationAction: !include types/Payment/PaymentSetAuthorizationAction.raml
-  PaymentSetCustomFieldAction: !include types/Payment/PaymentSetCustomFieldAction.raml
-  PaymentSetCustomTypeAction: !include types/Payment/PaymentSetCustomTypeAction.raml
-  PaymentSetCustomerAction: !include types/Payment/PaymentSetCustomerAction.raml
-  PaymentSetExternalIdAction: !include types/Payment/PaymentSetExternalIdAction.raml
-  PaymentSetInterfaceIdAction: !include types/Payment/PaymentSetInterfaceIdAction.raml
-  PaymentSetKeyAction: !include types/Payment/PaymentSetKeyAction.raml
-  PaymentSetMethodInfoInterfaceAction: !include types/Payment/PaymentSetMethodInfoInterfaceAction.raml
-  PaymentSetMethodInfoMethodAction: !include types/Payment/PaymentSetMethodInfoMethodAction.raml
-  PaymentSetMethodInfoNameAction: !include types/Payment/PaymentSetMethodInfoNameAction.raml
-  PaymentSetStatusInterfaceCodeAction: !include types/Payment/PaymentSetStatusInterfaceCodeAction.raml
-  PaymentSetStatusInterfaceTextAction: !include types/Payment/PaymentSetStatusInterfaceTextAction.raml
-  PaymentTransitionStateAction: !include types/Payment/PaymentTransitionStateAction.raml
-  ProductDiscount: !include types/ProductDiscount/ProductDiscount.raml
-  ProductDiscountDraft: !include types/ProductDiscount/ProductDiscountDraft.raml
-  ProductDiscountMatchQuery: !include types/ProductDiscount/ProductDiscountMatchQuery.raml
-  ProductDiscountPagedQueryResponse: !include types/ProductDiscount/ProductDiscountPagedQueryResponse.raml
-  ProductDiscountReference: !include types/ProductDiscount/ProductDiscountReference.raml
-  ProductDiscountResourceIdentifier: !include types/ProductDiscount/ProductDiscountResourceIdentifier.raml
-  ProductDiscountUpdate: !include types/ProductDiscount/ProductDiscountUpdate.raml
-  ProductDiscountUpdateAction: !include types/ProductDiscount/ProductDiscountUpdateAction.raml
-  ProductDiscountValue: !include types/ProductDiscount/ProductDiscountValue.raml
-  ProductDiscountValueAbsolute: !include types/ProductDiscount/ProductDiscountValueAbsolute.raml
-  ProductDiscountValueAbsoluteDraft: !include types/ProductDiscount/ProductDiscountValueAbsoluteDraft.raml
-  ProductDiscountValueDraft: !include types/ProductDiscount/ProductDiscountValueDraft.raml
-  ProductDiscountValueExternal: !include types/ProductDiscount/ProductDiscountValueExternal.raml
-  ProductDiscountValueExternalDraft: !include types/ProductDiscount/ProductDiscountValueExternalDraft.raml
-  ProductDiscountValueRelative: !include types/ProductDiscount/ProductDiscountValueRelative.raml
-  ProductDiscountValueRelativeDraft: !include types/ProductDiscount/ProductDiscountValueRelativeDraft.raml
-  ProductDiscountChangeIsActiveAction: !include types/ProductDiscount/ProductDiscountChangeIsActiveAction.raml
-  ProductDiscountChangeNameAction: !include types/ProductDiscount/ProductDiscountChangeNameAction.raml
-  ProductDiscountChangePredicateAction: !include types/ProductDiscount/ProductDiscountChangePredicateAction.raml
-  ProductDiscountChangeSortOrderAction: !include types/ProductDiscount/ProductDiscountChangeSortOrderAction.raml
-  ProductDiscountChangeValueAction: !include types/ProductDiscount/ProductDiscountChangeValueAction.raml
-  ProductDiscountSetDescriptionAction: !include types/ProductDiscount/ProductDiscountSetDescriptionAction.raml
-  ProductDiscountSetKeyAction: !include types/ProductDiscount/ProductDiscountSetKeyAction.raml
-  ProductDiscountSetValidFromAction: !include types/ProductDiscount/ProductDiscountSetValidFromAction.raml
-  ProductDiscountSetValidFromAndUntilAction: !include types/ProductDiscount/ProductDiscountSetValidFromAndUntilAction.raml
-  ProductDiscountSetValidUntilAction: !include types/ProductDiscount/ProductDiscountSetValidUntilAction.raml
-  AttributeBooleanType: !include types/ProductType/AttributeBooleanType.raml
-  AttributeConstraintEnum: !include types/ProductType/AttributeConstraintEnum.raml
-  AttributeConstraintEnumDraft: !include types/ProductType/AttributeConstraintEnumDraft.raml
-  AttributeDateTimeType: !include types/ProductType/AttributeDateTimeType.raml
-  AttributeDateType: !include types/ProductType/AttributeDateType.raml
-  AttributeDefinition: !include types/ProductType/AttributeDefinition.raml
-  AttributeDefinitionDraft: !include types/ProductType/AttributeDefinitionDraft.raml
-  AttributeEnumType: !include types/ProductType/AttributeEnumType.raml
-  AttributeLocalizableTextType: !include types/ProductType/AttributeLocalizableTextType.raml
-  AttributeLocalizedEnumType: !include types/ProductType/AttributeLocalizedEnumType.raml
-  AttributeLocalizedEnumValue: !include types/ProductType/AttributeLocalizedEnumValue.raml
-  AttributeMoneyType: !include types/ProductType/AttributeMoneyType.raml
-  AttributeNestedType: !include types/ProductType/AttributeNestedType.raml
-  AttributeNumberType: !include types/ProductType/AttributeNumberType.raml
-  AttributePlainEnumValue: !include types/ProductType/AttributePlainEnumValue.raml
-  AttributeReferenceType: !include types/ProductType/AttributeReferenceType.raml
-  AttributeSetType: !include types/ProductType/AttributeSetType.raml
-  AttributeTextType: !include types/ProductType/AttributeTextType.raml
-  AttributeTimeType: !include types/ProductType/AttributeTimeType.raml
-  AttributeType: !include types/ProductType/AttributeType.raml
-  ProductType: !include types/ProductType/ProductType.raml
-  ProductTypeDraft: !include types/ProductType/ProductTypeDraft.raml
-  ProductTypePagedQueryResponse: !include types/ProductType/ProductTypePagedQueryResponse.raml
-  ProductTypeReference: !include types/ProductType/ProductTypeReference.raml
-  ProductTypeResourceIdentifier: !include types/ProductType/ProductTypeResourceIdentifier.raml
-  ProductTypeUpdate: !include types/ProductType/ProductTypeUpdate.raml
-  ProductTypeUpdateAction: !include types/ProductType/ProductTypeUpdateAction.raml
-  TextInputHint: !include types/ProductType/TextInputHint.raml
-  ProductTypeAddAttributeDefinitionAction: !include types/ProductType/ProductTypeAddAttributeDefinitionAction.raml
-  ProductTypeAddLocalizedEnumValueAction: !include types/ProductType/ProductTypeAddLocalizedEnumValueAction.raml
-  ProductTypeAddPlainEnumValueAction: !include types/ProductType/ProductTypeAddPlainEnumValueAction.raml
-  ProductTypeChangeAttributeConstraintAction: !include types/ProductType/ProductTypeChangeAttributeConstraintAction.raml
-  ProductTypeChangeAttributeNameAction: !include types/ProductType/ProductTypeChangeAttributeNameAction.raml
-  ProductTypeChangeAttributeOrderAction: !include types/ProductType/ProductTypeChangeAttributeOrderAction.raml
-  ProductTypeChangeAttributeOrderByNameAction: !include types/ProductType/ProductTypeChangeAttributeOrderByNameAction.raml
-  ProductTypeChangeDescriptionAction: !include types/ProductType/ProductTypeChangeDescriptionAction.raml
-  ProductTypeChangeEnumKeyAction: !include types/ProductType/ProductTypeChangeEnumKeyAction.raml
-  ProductTypeChangeInputHintAction: !include types/ProductType/ProductTypeChangeInputHintAction.raml
-  ProductTypeChangeIsSearchableAction: !include types/ProductType/ProductTypeChangeIsSearchableAction.raml
-  ProductTypeChangeLabelAction: !include types/ProductType/ProductTypeChangeLabelAction.raml
-  ProductTypeChangeLocalizedEnumValueLabelAction: !include types/ProductType/ProductTypeChangeLocalizedEnumValueLabelAction.raml
-  ProductTypeChangeLocalizedEnumValueOrderAction: !include types/ProductType/ProductTypeChangeLocalizedEnumValueOrderAction.raml
-  ProductTypeChangeNameAction: !include types/ProductType/ProductTypeChangeNameAction.raml
-  ProductTypeChangePlainEnumValueLabelAction: !include types/ProductType/ProductTypeChangePlainEnumValueLabelAction.raml
-  ProductTypeChangePlainEnumValueOrderAction: !include types/ProductType/ProductTypeChangePlainEnumValueOrderAction.raml
-  ProductTypeRemoveAttributeDefinitionAction: !include types/ProductType/ProductTypeRemoveAttributeDefinitionAction.raml
-  ProductTypeRemoveEnumValuesAction: !include types/ProductType/ProductTypeRemoveEnumValuesAction.raml
-  ProductTypeSetInputTipAction: !include types/ProductType/ProductTypeSetInputTipAction.raml
-  ProductTypeSetKeyAction: !include types/ProductType/ProductTypeSetKeyAction.raml
-  Attribute: !include types/Product/Attribute.raml
-  AttributeValue: !include types/Product/AttributeValue.raml
-  CategoryOrderHints: !include types/Product/CategoryOrderHints.raml
-  CustomTokenizer: !include types/Product/CustomTokenizer.raml
-  FacetResult: !include types/Product/FacetResult.raml
-  FacetResultRange: !include types/Product/FacetResultRange.raml
-  FacetResultTerm: !include types/Product/FacetResultTerm.raml
-  FacetResults: !include types/Product/FacetResults.raml
-  FacetTypes: !include types/Product/FacetTypes.raml
-  FilteredFacetResult: !include types/Product/FilteredFacetResult.raml
-  Product: !include types/Product/Product.raml
-  ProductCatalogData: !include types/Product/ProductCatalogData.raml
-  ProductData: !include types/Product/ProductData.raml
-  ProductDraft: !include types/Product/ProductDraft.raml
-  ProductPagedQueryResponse: !include types/Product/ProductPagedQueryResponse.raml
-  ProductProjection: !include types/Product/ProductProjection.raml
-  ProductProjectionPagedQueryResponse: !include types/Product/ProductProjectionPagedQueryResponse.raml
-  ProductProjectionPagedSearchResponse: !include types/Product/ProductProjectionPagedSearchResponse.raml
-  ProductPublishScope: !include types/Cart/ProductPublishScope.raml
-  ProductReference: !include types/Product/ProductReference.raml
-  ProductResourceIdentifier: !include types/Product/ProductResourceIdentifier.raml
-  ProductUpdate: !include types/Product/ProductUpdate.raml
-  ProductUpdateAction: !include types/Product/ProductUpdateAction.raml
-  ProductVariant: !include types/Product/ProductVariant.raml
-  ProductVariantAvailability: !include types/Product/ProductVariantAvailability.raml
-  ProductVariantChannelAvailability: !include types/Product/ProductVariantChannelAvailability.raml
-  ProductVariantChannelAvailabilityMap: !include types/Product/ProductVariantChannelAvailabilityMap.raml
-  ProductVariantDraft: !include types/Product/ProductVariantDraft.raml
-  RangeFacetResult: !include types/Product/RangeFacetResult.raml
-  SearchKeyword: !include types/Product/SearchKeyword.raml
-  SearchKeywords: !include types/Product/SearchKeywords.raml
-  SuggestTokenizer: !include types/Product/SuggestTokenizer.raml
-  Suggestion: !include types/Product/Suggestion.raml
-  SuggestionResult: !include types/Product/SuggestionResult.raml
-  TermFacetResult: !include types/Product/TermFacetResult.raml
-  TermFacetResultType: !include types/Product/TermFacetResultType.raml
-  WhitespaceTokenizer: !include types/Product/WhitespaceTokenizer.raml
-  ProductAddAssetAction: !include types/Product/ProductAddAssetAction.raml
-  ProductAddExternalImageAction: !include types/Product/ProductAddExternalImageAction.raml
-  ProductAddPriceAction: !include types/Product/ProductAddPriceAction.raml
-  ProductAddToCategoryAction: !include types/Product/ProductAddToCategoryAction.raml
-  ProductAddVariantAction: !include types/Product/ProductAddVariantAction.raml
-  ProductChangeAssetNameAction: !include types/Product/ProductChangeAssetNameAction.raml
-  ProductChangeAssetOrderAction: !include types/Product/ProductChangeAssetOrderAction.raml
-  ProductChangeMasterVariantAction: !include types/Product/ProductChangeMasterVariantAction.raml
-  ProductChangeNameAction: !include types/Product/ProductChangeNameAction.raml
-  ProductChangePriceAction: !include types/Product/ProductChangePriceAction.raml
-  ProductChangeSlugAction: !include types/Product/ProductChangeSlugAction.raml
-  ProductLegacySetSkuAction: !include types/Product/ProductLegacySetSkuAction.raml
-  ProductMoveImageToPositionAction: !include types/Product/ProductMoveImageToPositionAction.raml
-  ProductPublishAction: !include types/Product/ProductPublishAction.raml
-  ProductRemoveAssetAction: !include types/Product/ProductRemoveAssetAction.raml
-  ProductRemoveFromCategoryAction: !include types/Product/ProductRemoveFromCategoryAction.raml
-  ProductRemoveImageAction: !include types/Product/ProductRemoveImageAction.raml
-  ProductRemovePriceAction: !include types/Product/ProductRemovePriceAction.raml
-  ProductRemoveVariantAction: !include types/Product/ProductRemoveVariantAction.raml
-  ProductRevertStagedChangesAction: !include types/Product/ProductRevertStagedChangesAction.raml
-  ProductRevertStagedVariantChangesAction: !include types/Product/ProductRevertStagedVariantChangesAction.raml
-  ProductSetAssetCustomFieldAction: !include types/Product/ProductSetAssetCustomFieldAction.raml
-  ProductSetAssetCustomTypeAction: !include types/Product/ProductSetAssetCustomTypeAction.raml
-  ProductSetAssetDescriptionAction: !include types/Product/ProductSetAssetDescriptionAction.raml
-  ProductSetAssetKeyAction: !include types/Product/ProductSetAssetKeyAction.raml
-  ProductSetAssetSourcesAction: !include types/Product/ProductSetAssetSourcesAction.raml
-  ProductSetAssetTagsAction: !include types/Product/ProductSetAssetTagsAction.raml
-  ProductSetAttributeAction: !include types/Product/ProductSetAttributeAction.raml
-  ProductSetAttributeInAllVariantsAction: !include types/Product/ProductSetAttributeInAllVariantsAction.raml
-  ProductSetCategoryOrderHintAction: !include types/Product/ProductSetCategoryOrderHintAction.raml
-  ProductSetDescriptionAction: !include types/Product/ProductSetDescriptionAction.raml
-  ProductSetDiscountedPriceAction: !include types/Product/ProductSetDiscountedPriceAction.raml
-  ProductSetImageLabelAction: !include types/Product/ProductSetImageLabelAction.raml
-  ProductSetKeyAction: !include types/Product/ProductSetKeyAction.raml
-  ProductSetMetaDescriptionAction: !include types/Product/ProductSetMetaDescriptionAction.raml
-  ProductSetMetaKeywordsAction: !include types/Product/ProductSetMetaKeywordsAction.raml
-  ProductSetMetaTitleAction: !include types/Product/ProductSetMetaTitleAction.raml
-  ProductSetPricesAction: !include types/Product/ProductSetPricesAction.raml
-  ProductSetProductPriceCustomFieldAction: !include types/Product/ProductSetProductPriceCustomFieldAction.raml
-  ProductSetProductPriceCustomTypeAction: !include types/Product/ProductSetProductPriceCustomTypeAction.raml
-  ProductSetProductVariantKeyAction: !include types/Product/ProductSetProductVariantKeyAction.raml
-  ProductSetSearchKeywordsAction: !include types/Product/ProductSetSearchKeywordsAction.raml
-  ProductSetSkuAction: !include types/Product/ProductSetSkuAction.raml
-  ProductSetTaxCategoryAction: !include types/Product/ProductSetTaxCategoryAction.raml
-  ProductTransitionStateAction: !include types/Product/ProductTransitionStateAction.raml
-  ProductUnpublishAction: !include types/Product/ProductUnpublishAction.raml
-  CartClassificationType: !include types/Project/CartClassificationType.raml
-  CartScoreType: !include types/Project/CartScoreType.raml
-  CartValueType: !include types/Project/CartValueType.raml
-  ExternalOAuth: !include types/Project/ExternalOAuth.raml
-  Project: !include types/Project/Project.raml
-  ProjectUpdate: !include types/Project/ProjectUpdate.raml
-  ProjectUpdateAction: !include types/Project/ProjectUpdateAction.raml
-  ShippingRateInputType: !include types/Project/ShippingRateInputType.raml
-  ProjectChangeCountriesAction: !include types/Project/ProjectChangeCountriesAction.raml
-  ProjectChangeCurrenciesAction: !include types/Project/ProjectChangeCurrenciesAction.raml
-  ProjectChangeLanguagesAction: !include types/Project/ProjectChangeLanguagesAction.raml
-  ProjectChangeMessagesConfigurationAction: !include types/Project/ProjectChangeMessagesConfigurationAction.raml
-  ProjectChangeMessagesEnabledAction: !include types/Project/ProjectChangeMessagesEnabledAction.raml
-  ProjectChangeNameAction: !include types/Project/ProjectChangeNameAction.raml
-  ProjectSetExternalOAuthAction: !include types/Project/ProjectSetExternalOAuthAction.raml
-  ProjectSetShippingRateInputTypeAction: !include types/Project/ProjectSetShippingRateInputTypeAction.raml
-  Review: !include types/Review/Review.raml
-  ReviewDraft: !include types/Review/ReviewDraft.raml
-  ReviewPagedQueryResponse: !include types/Review/ReviewPagedQueryResponse.raml
-  ReviewRatingStatistics: !include types/Review/ReviewRatingStatistics.raml
-  ReviewReference: !include types/Review/ReviewReference.raml
-  ReviewResourceIdentifier: !include types/Review/ReviewResourceIdentifier.raml
-  ReviewUpdate: !include types/Review/ReviewUpdate.raml
-  ReviewUpdateAction: !include types/Review/ReviewUpdateAction.raml
-  ReviewSetAuthorNameAction: !include types/Review/ReviewSetAuthorNameAction.raml
-  ReviewSetCustomFieldAction: !include types/Review/ReviewSetCustomFieldAction.raml
-  ReviewSetCustomTypeAction: !include types/Review/ReviewSetCustomTypeAction.raml
-  ReviewSetCustomerAction: !include types/Review/ReviewSetCustomerAction.raml
-  ReviewSetKeyAction: !include types/Review/ReviewSetKeyAction.raml
-  ReviewSetLocaleAction: !include types/Review/ReviewSetLocaleAction.raml
-  ReviewSetRatingAction: !include types/Review/ReviewSetRatingAction.raml
-  ReviewSetTargetAction: !include types/Review/ReviewSetTargetAction.raml
-  ReviewSetTextAction: !include types/Review/ReviewSetTextAction.raml
-  ReviewSetTitleAction: !include types/Review/ReviewSetTitleAction.raml
-  ReviewTransitionStateAction: !include types/Review/ReviewTransitionStateAction.raml
-  CartClassificationTier: !include types/ShippingMethod/CartClassificationTier.raml
-  CartScoreTier: !include types/ShippingMethod/CartScoreTier.raml
-  CartValueTier: !include types/ShippingMethod/CartValueTier.raml
-  PriceFunction: !include types/ShippingMethod/PriceFunction.raml
-  ShippingMethod: !include types/ShippingMethod/ShippingMethod.raml
-  ShippingMethodDraft: !include types/ShippingMethod/ShippingMethodDraft.raml
-  ShippingMethodPagedQueryResponse: !include types/ShippingMethod/ShippingMethodPagedQueryResponse.raml
-  ShippingMethodReference: !include types/ShippingMethod/ShippingMethodReference.raml
-  ShippingMethodResourceIdentifier: !include types/ShippingMethod/ShippingMethodResourceIdentifier.raml
-  ShippingMethodUpdate: !include types/ShippingMethod/ShippingMethodUpdate.raml
-  ShippingMethodUpdateAction: !include types/ShippingMethod/ShippingMethodUpdateAction.raml
-  ShippingRate: !include types/ShippingMethod/ShippingRate.raml
-  ShippingRateDraft: !include types/ShippingMethod/ShippingRateDraft.raml
-  ShippingRatePriceTier: !include types/ShippingMethod/ShippingRatePriceTier.raml
-  ShippingRateTierType: !include types/ShippingMethod/ShippingRateTierType.raml
-  ZoneRate: !include types/ShippingMethod/ZoneRate.raml
-  ZoneRateDraft: !include types/ShippingMethod/ZoneRateDraft.raml
-  ShippingMethodAddShippingRateAction: !include types/ShippingMethod/ShippingMethodAddShippingRateAction.raml
-  ShippingMethodAddZoneAction: !include types/ShippingMethod/ShippingMethodAddZoneAction.raml
-  ShippingMethodChangeIsDefaultAction: !include types/ShippingMethod/ShippingMethodChangeIsDefaultAction.raml
-  ShippingMethodChangeNameAction: !include types/ShippingMethod/ShippingMethodChangeNameAction.raml
-  ShippingMethodChangeTaxCategoryAction: !include types/ShippingMethod/ShippingMethodChangeTaxCategoryAction.raml
-  ShippingMethodRemoveShippingRateAction: !include types/ShippingMethod/ShippingMethodRemoveShippingRateAction.raml
-  ShippingMethodRemoveZoneAction: !include types/ShippingMethod/ShippingMethodRemoveZoneAction.raml
-  ShippingMethodSetDescriptionAction: !include types/ShippingMethod/ShippingMethodSetDescriptionAction.raml
-  ShippingMethodSetKeyAction: !include types/ShippingMethod/ShippingMethodSetKeyAction.raml
-  ShippingMethodSetPredicateAction: !include types/ShippingMethod/ShippingMethodSetPredicateAction.raml
-  ShoppingList: !include types/ShoppingList/ShoppingList.raml
-  ShoppingListDraft: !include types/ShoppingList/ShoppingListDraft.raml
-  ShoppingListLineItem: !include types/ShoppingList/ShoppingListLineItem.raml
-  ShoppingListLineItemDraft: !include types/ShoppingList/ShoppingListLineItemDraft.raml
-  ShoppingListPagedQueryResponse: !include types/ShoppingList/ShoppingListPagedQueryResponse.raml
-  ShoppingListReference: !include types/ShoppingList/ShoppingListReference.raml
-  ShoppingListResourceIdentifier: !include types/ShoppingList/ShoppingListResourceIdentifier.raml
-  ShoppingListUpdate: !include types/ShoppingList/ShoppingListUpdate.raml
-  ShoppingListUpdateAction: !include types/ShoppingList/ShoppingListUpdateAction.raml
-  TextLineItem: !include types/ShoppingList/TextLineItem.raml
-  TextLineItemDraft: !include types/ShoppingList/TextLineItemDraft.raml
-  ShoppingListAddLineItemAction: !include types/ShoppingList/ShoppingListAddLineItemAction.raml
-  ShoppingListAddTextLineItemAction: !include types/ShoppingList/ShoppingListAddTextLineItemAction.raml
-  ShoppingListChangeLineItemQuantityAction: !include types/ShoppingList/ShoppingListChangeLineItemQuantityAction.raml
-  ShoppingListChangeLineItemsOrderAction: !include types/ShoppingList/ShoppingListChangeLineItemsOrderAction.raml
-  ShoppingListChangeNameAction: !include types/ShoppingList/ShoppingListChangeNameAction.raml
-  ShoppingListChangeTextLineItemNameAction: !include types/ShoppingList/ShoppingListChangeTextLineItemNameAction.raml
-  ShoppingListChangeTextLineItemQuantityAction: !include types/ShoppingList/ShoppingListChangeTextLineItemQuantityAction.raml
-  ShoppingListChangeTextLineItemsOrderAction: !include types/ShoppingList/ShoppingListChangeTextLineItemsOrderAction.raml
-  ShoppingListRemoveLineItemAction: !include types/ShoppingList/ShoppingListRemoveLineItemAction.raml
-  ShoppingListRemoveTextLineItemAction: !include types/ShoppingList/ShoppingListRemoveTextLineItemAction.raml
-  ShoppingListSetAnonymousIdAction: !include types/ShoppingList/ShoppingListSetAnonymousIdAction.raml
-  ShoppingListSetCustomFieldAction: !include types/ShoppingList/ShoppingListSetCustomFieldAction.raml
-  ShoppingListSetCustomTypeAction: !include types/ShoppingList/ShoppingListSetCustomTypeAction.raml
-  ShoppingListSetCustomerAction: !include types/ShoppingList/ShoppingListSetCustomerAction.raml
-  ShoppingListSetDeleteDaysAfterLastModificationAction: !include types/ShoppingList/ShoppingListSetDeleteDaysAfterLastModificationAction.raml
-  ShoppingListSetDescriptionAction: !include types/ShoppingList/ShoppingListSetDescriptionAction.raml
-  ShoppingListSetKeyAction: !include types/ShoppingList/ShoppingListSetKeyAction.raml
-  ShoppingListSetLineItemCustomFieldAction: !include types/ShoppingList/ShoppingListSetLineItemCustomFieldAction.raml
-  ShoppingListSetLineItemCustomTypeAction: !include types/ShoppingList/ShoppingListSetLineItemCustomTypeAction.raml
-  ShoppingListSetSlugAction: !include types/ShoppingList/ShoppingListSetSlugAction.raml
-  ShoppingListSetTextLineItemCustomFieldAction: !include types/ShoppingList/ShoppingListSetTextLineItemCustomFieldAction.raml
-  ShoppingListSetTextLineItemCustomTypeAction: !include types/ShoppingList/ShoppingListSetTextLineItemCustomTypeAction.raml
-  ShoppingListSetTextLineItemDescriptionAction: !include types/ShoppingList/ShoppingListSetTextLineItemDescriptionAction.raml
   State: !include types/State/State.raml
-  StateDraft: !include types/State/StateDraft.raml
-  StatePagedQueryResponse: !include types/State/StatePagedQueryResponse.raml
-  StateReference: !include types/State/StateReference.raml
-  StateResourceIdentifier: !include types/State/StateResourceIdentifier.raml
-  StateRoleEnum: !include types/State/StateRoleEnum.raml
-  StateTypeEnum: !include types/State/StateTypeEnum.raml
-  StateUpdate: !include types/State/StateUpdate.raml
-  StateUpdateAction: !include types/State/StateUpdateAction.raml
   StateAddRolesAction: !include types/State/StateAddRolesAction.raml
   StateChangeInitialAction: !include types/State/StateChangeInitialAction.raml
   StateChangeKeyAction: !include types/State/StateChangeKeyAction.raml
   StateChangeTypeAction: !include types/State/StateChangeTypeAction.raml
+  StateDraft: !include types/State/StateDraft.raml
+  StatePagedQueryResponse: !include types/State/StatePagedQueryResponse.raml
+  StateReference: !include types/State/StateReference.raml
   StateRemoveRolesAction: !include types/State/StateRemoveRolesAction.raml
+  StateResourceIdentifier: !include types/State/StateResourceIdentifier.raml
+  StateRoleEnum: !include types/State/StateRoleEnum.raml
   StateSetDescriptionAction: !include types/State/StateSetDescriptionAction.raml
   StateSetNameAction: !include types/State/StateSetNameAction.raml
   StateSetRolesAction: !include types/State/StateSetRolesAction.raml
   StateSetTransitionsAction: !include types/State/StateSetTransitionsAction.raml
+  StateTypeEnum: !include types/State/StateTypeEnum.raml
+  StateUpdate: !include types/State/StateUpdate.raml
+  StateUpdateAction: !include types/State/StateUpdateAction.raml
   Store: !include types/Store/Store.raml
   StoreDraft: !include types/Store/StoreDraft.raml
   StoreKeyReference: !include types/Store/StoreKeyReference.raml
   StorePagedQueryResponse: !include types/Store/StorePagedQueryResponse.raml
   StoreReference: !include types/Store/StoreReference.raml
   StoreResourceIdentifier: !include types/Store/StoreResourceIdentifier.raml
+  StoreSetNameAction: !include types/Store/StoreSetNameAction.raml
   StoreUpdate: !include types/Store/StoreUpdate.raml
   StoreUpdateAction: !include types/Store/StoreUpdateAction.raml
-  StoreSetNameAction: !include types/Store/StoreSetNameAction.raml
-  AzureEventGridDestination: !include types/Subscription/AzureEventGridDestination.raml
-  AzureServiceBusDestination: !include types/Subscription/AzureServiceBusDestination.raml
-  ChangeSubscription: !include types/Subscription/ChangeSubscription.raml
-  DeliveryCloudEventsFormat: !include types/Subscription/DeliveryCloudEventsFormat.raml
-  DeliveryFormat: !include types/Subscription/DeliveryFormat.raml
-  DeliveryPlatformFormat: !include types/Subscription/DeliveryPlatformFormat.raml
-  Destination: !include types/Subscription/Destination.raml
-  GoogleCloudPubSubDestination: !include types/Subscription/GoogleCloudPubSubDestination.raml
-  IronMqDestination: !include types/Subscription/IronMqDestination.raml
-  MessageDelivery: !include types/Subscription/MessageDelivery.raml
-  MessageSubscription: !include types/Subscription/MessageSubscription.raml
-  PayloadNotIncluded: !include types/Subscription/PayloadNotIncluded.raml
-  ResourceCreatedDelivery: !include types/Subscription/ResourceCreatedDelivery.raml
-  ResourceDeletedDelivery: !include types/Subscription/ResourceDeletedDelivery.raml
-  ResourceUpdatedDelivery: !include types/Subscription/ResourceUpdatedDelivery.raml
-  SnsDestination: !include types/Subscription/SnsDestination.raml
-  SqsDestination: !include types/Subscription/SqsDestination.raml
+  SubRate: !include types/TaxCategory/SubRate.raml
   Subscription: !include types/Subscription/Subscription.raml
+  SubscriptionChangeDestinationAction: !include types/Subscription/SubscriptionChangeDestinationAction.raml
   SubscriptionDelivery: !include types/Subscription/SubscriptionDelivery.raml
   SubscriptionDraft: !include types/Subscription/SubscriptionDraft.raml
   SubscriptionHealthStatus: !include types/Subscription/SubscriptionHealthStatus.raml
   SubscriptionPagedQueryResponse: !include types/Subscription/SubscriptionPagedQueryResponse.raml
-  SubscriptionUpdate: !include types/Subscription/SubscriptionUpdate.raml
-  SubscriptionUpdateAction: !include types/Subscription/SubscriptionUpdateAction.raml
-  SubscriptionChangeDestinationAction: !include types/Subscription/SubscriptionChangeDestinationAction.raml
   SubscriptionSetChangesAction: !include types/Subscription/SubscriptionSetChangesAction.raml
   SubscriptionSetKeyAction: !include types/Subscription/SubscriptionSetKeyAction.raml
   SubscriptionSetMessagesAction: !include types/Subscription/SubscriptionSetMessagesAction.raml
-  SubRate: !include types/TaxCategory/SubRate.raml
+  SubscriptionUpdate: !include types/Subscription/SubscriptionUpdate.raml
+  SubscriptionUpdateAction: !include types/Subscription/SubscriptionUpdateAction.raml
+  SuggestTokenizer: !include types/Product/SuggestTokenizer.raml
+  Suggestion: !include types/Product/Suggestion.raml
+  SuggestionResult: !include types/Product/SuggestionResult.raml
+  SyncInfo: !include types/Order/SyncInfo.raml
+  TaxCalculationMode: !include types/Cart/TaxCalculationMode.raml
   TaxCategory: !include types/TaxCategory/TaxCategory.raml
+  TaxCategoryAddTaxRateAction: !include types/TaxCategory/TaxCategoryAddTaxRateAction.raml
+  TaxCategoryChangeNameAction: !include types/TaxCategory/TaxCategoryChangeNameAction.raml
   TaxCategoryDraft: !include types/TaxCategory/TaxCategoryDraft.raml
   TaxCategoryPagedQueryResponse: !include types/TaxCategory/TaxCategoryPagedQueryResponse.raml
   TaxCategoryReference: !include types/TaxCategory/TaxCategoryReference.raml
-  TaxCategoryResourceIdentifier: !include types/TaxCategory/TaxCategoryResourceIdentifier.raml
-  TaxCategoryUpdate: !include types/TaxCategory/TaxCategoryUpdate.raml
-  TaxCategoryUpdateAction: !include types/TaxCategory/TaxCategoryUpdateAction.raml
-  TaxRate: !include types/TaxCategory/TaxRate.raml
-  TaxRateDraft: !include types/TaxCategory/TaxRateDraft.raml
-  TaxCategoryAddTaxRateAction: !include types/TaxCategory/TaxCategoryAddTaxRateAction.raml
-  TaxCategoryChangeNameAction: !include types/TaxCategory/TaxCategoryChangeNameAction.raml
   TaxCategoryRemoveTaxRateAction: !include types/TaxCategory/TaxCategoryRemoveTaxRateAction.raml
   TaxCategoryReplaceTaxRateAction: !include types/TaxCategory/TaxCategoryReplaceTaxRateAction.raml
+  TaxCategoryResourceIdentifier: !include types/TaxCategory/TaxCategoryResourceIdentifier.raml
   TaxCategorySetDescriptionAction: !include types/TaxCategory/TaxCategorySetDescriptionAction.raml
   TaxCategorySetKeyAction: !include types/TaxCategory/TaxCategorySetKeyAction.raml
-  CustomFieldBooleanType: !include types/Type/CustomFieldBooleanType.raml
-  CustomFieldDateTimeType: !include types/Type/CustomFieldDateTimeType.raml
-  CustomFieldDateType: !include types/Type/CustomFieldDateType.raml
-  CustomFieldEnumType: !include types/Type/CustomFieldEnumType.raml
-  CustomFieldEnumValue: !include types/Type/CustomFieldEnumValue.raml
-  CustomFieldLocalizedEnumType: !include types/Type/CustomFieldLocalizedEnumType.raml
-  CustomFieldLocalizedEnumValue: !include types/Type/CustomFieldLocalizedEnumValue.raml
-  CustomFieldLocalizedStringType: !include types/Type/CustomFieldLocalizedStringType.raml
-  CustomFieldMoneyType: !include types/Type/CustomFieldMoneyType.raml
-  CustomFieldNumberType: !include types/Type/CustomFieldNumberType.raml
-  CustomFieldReferenceType: !include types/Type/CustomFieldReferenceType.raml
-  CustomFieldSetType: !include types/Type/CustomFieldSetType.raml
-  CustomFieldStringType: !include types/Type/CustomFieldStringType.raml
-  CustomFieldTimeType: !include types/Type/CustomFieldTimeType.raml
-  CustomFields: !include types/Type/CustomFields.raml
-  CustomFieldsDraft: !include types/Type/CustomFieldsDraft.raml
-  FieldContainer: !include types/Type/FieldContainer.raml
-  FieldDefinition: !include types/Type/FieldDefinition.raml
-  FieldType: !include types/Type/FieldType.raml
-  ResourceTypeId: !include types/Type/ResourceTypeId.raml
+  TaxCategoryUpdate: !include types/TaxCategory/TaxCategoryUpdate.raml
+  TaxCategoryUpdateAction: !include types/TaxCategory/TaxCategoryUpdateAction.raml
+  TaxMode: !include types/Cart/TaxMode.raml
+  TaxPortion: !include types/Cart/TaxPortion.raml
+  TaxPortionDraft: !include types/Cart/TaxPortionDraft.raml
+  TaxRate: !include types/TaxCategory/TaxRate.raml
+  TaxRateDraft: !include types/TaxCategory/TaxRateDraft.raml
+  TaxedItemPrice: !include types/Cart/TaxedItemPrice.raml
+  TaxedItemPriceDraft: !include types/Order/TaxedItemPriceDraft.raml
+  TaxedPrice: !include types/Cart/TaxedPrice.raml
+  TaxedPriceDraft: !include types/Cart/TaxedPriceDraft.raml
+  TermFacetResult: !include types/Product/TermFacetResult.raml
+  TermFacetResultType: !include types/Product/TermFacetResultType.raml
+  TextInputHint: !include types/ProductType/TextInputHint.raml
+  TextLineItem: !include types/ShoppingList/TextLineItem.raml
+  TextLineItemDraft: !include types/ShoppingList/TextLineItemDraft.raml
+  TrackingData: !include types/Order/TrackingData.raml
+  Transaction: !include types/Payment/Transaction.raml
+  TransactionDraft: !include types/Payment/TransactionDraft.raml
+  TransactionState: !include types/Payment/TransactionState.raml
+  TransactionType: !include types/Payment/TransactionType.raml
   Type: !include types/Type/Type.raml
-  TypeDraft: !include types/Type/TypeDraft.raml
-  TypePagedQueryResponse: !include types/Type/TypePagedQueryResponse.raml
-  TypeReference: !include types/Type/TypeReference.raml
-  TypeResourceIdentifier: !include types/Type/TypeResourceIdentifier.raml
-  TypeTextInputHint: !include types/Type/TypeTextInputHint.raml
-  TypeUpdate: !include types/Type/TypeUpdate.raml
-  TypeUpdateAction: !include types/Type/TypeUpdateAction.raml
   TypeAddEnumValueAction: !include types/Type/TypeAddEnumValueAction.raml
   TypeAddFieldDefinitionAction: !include types/Type/TypeAddFieldDefinitionAction.raml
   TypeAddLocalizedEnumValueAction: !include types/Type/TypeAddLocalizedEnumValueAction.raml
@@ -1166,18 +1157,173 @@ types:
   TypeChangeLocalizedEnumValueLabelAction: !include types/Type/TypeChangeLocalizedEnumValueLabelAction.raml
   TypeChangeLocalizedEnumValueOrderAction: !include types/Type/TypeChangeLocalizedEnumValueOrderAction.raml
   TypeChangeNameAction: !include types/Type/TypeChangeNameAction.raml
+  TypeDraft: !include types/Type/TypeDraft.raml
+  TypePagedQueryResponse: !include types/Type/TypePagedQueryResponse.raml
+  TypeReference: !include types/Type/TypeReference.raml
   TypeRemoveFieldDefinitionAction: !include types/Type/TypeRemoveFieldDefinitionAction.raml
+  TypeResourceIdentifier: !include types/Type/TypeResourceIdentifier.raml
   TypeSetDescriptionAction: !include types/Type/TypeSetDescriptionAction.raml
-  Location: !include types/Zone/Location.raml
+  TypeTextInputHint: !include types/Type/TypeTextInputHint.raml
+  TypeUpdate: !include types/Type/TypeUpdate.raml
+  TypeUpdateAction: !include types/Type/TypeUpdateAction.raml
+  TypedMoney: !include types/Common/TypedMoney.raml
+  TypedMoneyDraft: !include types/Common/TypedMoneyDraft.raml
+  Update: !include types/Common/Update.raml
+  UpdateAction: !include types/Common/UpdateAction.raml
+  UserProvidedIdentifiers: !include types/Message/UserProvidedIdentifiers.raml
+  VariantValues: !include types/Error/VariantValues.raml
+  WhitespaceTokenizer: !include types/Product/WhitespaceTokenizer.raml
   Zone: !include types/Zone/Zone.raml
-  ZoneDraft: !include types/Zone/ZoneDraft.raml
-  ZonePagedQueryResponse: !include types/Zone/ZonePagedQueryResponse.raml
-  ZoneReference: !include types/Zone/ZoneReference.raml
-  ZoneResourceIdentifier: !include types/Zone/ZoneResourceIdentifier.raml
-  ZoneUpdate: !include types/Zone/ZoneUpdate.raml
-  ZoneUpdateAction: !include types/Zone/ZoneUpdateAction.raml
   ZoneAddLocationAction: !include types/Zone/ZoneAddLocationAction.raml
   ZoneChangeNameAction: !include types/Zone/ZoneChangeNameAction.raml
+  ZoneDraft: !include types/Zone/ZoneDraft.raml
+  ZonePagedQueryResponse: !include types/Zone/ZonePagedQueryResponse.raml
+  ZoneRate: !include types/ShippingMethod/ZoneRate.raml
+  ZoneRateDraft: !include types/ShippingMethod/ZoneRateDraft.raml
+  ZoneReference: !include types/Zone/ZoneReference.raml
   ZoneRemoveLocationAction: !include types/Zone/ZoneRemoveLocationAction.raml
+  ZoneResourceIdentifier: !include types/Zone/ZoneResourceIdentifier.raml
   ZoneSetDescriptionAction: !include types/Zone/ZoneSetDescriptionAction.raml
   ZoneSetKeyAction: !include types/Zone/ZoneSetKeyAction.raml
+  ZoneUpdate: !include types/Zone/ZoneUpdate.raml
+  ZoneUpdateAction: !include types/Zone/ZoneUpdateAction.raml
+  
+/{projectKey}: !include resources/ByProjectKey.raml
+/{projectKey}/api-clients: !include resources/ByProjectKeyApiClients.raml
+/{projectKey}/api-clients/{ID}: !include resources/ByProjectKeyApiClientsByID.raml
+/{projectKey}/cart-discounts: !include resources/ByProjectKeyCartDiscounts.raml
+/{projectKey}/cart-discounts/key={key}: !include resources/ByProjectKeyCartDiscountsKeyByKey.raml
+/{projectKey}/cart-discounts/{ID}: !include resources/ByProjectKeyCartDiscountsByID.raml
+/{projectKey}/carts: !include resources/ByProjectKeyCarts.raml
+/{projectKey}/carts/replicate: !include resources/ByProjectKeyCartsReplicate.raml
+/{projectKey}/carts/{ID}: !include resources/ByProjectKeyCartsByID.raml
+/{projectKey}/categories: !include resources/ByProjectKeyCategories.raml
+/{projectKey}/categories/key={key}: !include resources/ByProjectKeyCategoriesKeyByKey.raml
+/{projectKey}/categories/{ID}: !include resources/ByProjectKeyCategoriesByID.raml
+/{projectKey}/channels: !include resources/ByProjectKeyChannels.raml
+/{projectKey}/channels/{ID}: !include resources/ByProjectKeyChannelsByID.raml
+/{projectKey}/custom-objects: !include resources/ByProjectKeyCustomObjects.raml
+/{projectKey}/custom-objects/{ID}: !include resources/ByProjectKeyCustomObjectsByID.raml
+/{projectKey}/custom-objects/{container}/{key}: !include resources/ByProjectKeyCustomObjectsByContainerByKey.raml
+/{projectKey}/customer-groups: !include resources/ByProjectKeyCustomerGroups.raml
+/{projectKey}/customer-groups/key={key}: !include resources/ByProjectKeyCustomerGroupsKeyByKey.raml
+/{projectKey}/customer-groups/{ID}: !include resources/ByProjectKeyCustomerGroupsByID.raml
+/{projectKey}/customers: !include resources/ByProjectKeyCustomers.raml
+/{projectKey}/customers/email: !include resources/ByProjectKeyCustomersEmail.raml
+/{projectKey}/customers/email-token: !include resources/ByProjectKeyCustomersEmailToken.raml
+/{projectKey}/customers/email-token={emailToken}: !include resources/ByProjectKeyCustomersEmailTokenByEmailToken.raml
+/{projectKey}/customers/email/confirm: !include resources/ByProjectKeyCustomersEmailConfirm.raml
+/{projectKey}/customers/key={key}: !include resources/ByProjectKeyCustomersKeyByKey.raml
+/{projectKey}/customers/password: !include resources/ByProjectKeyCustomersPassword.raml
+/{projectKey}/customers/password-token: !include resources/ByProjectKeyCustomersPasswordToken.raml
+/{projectKey}/customers/password-token={passwordToken}: !include resources/ByProjectKeyCustomersPasswordTokenByPasswordToken.raml
+/{projectKey}/customers/password/reset: !include resources/ByProjectKeyCustomersPasswordReset.raml
+/{projectKey}/customers/{ID}: !include resources/ByProjectKeyCustomersByID.raml
+/{projectKey}/discount-codes: !include resources/ByProjectKeyDiscountCodes.raml
+/{projectKey}/discount-codes/{ID}: !include resources/ByProjectKeyDiscountCodesByID.raml
+/{projectKey}/extensions: !include resources/ByProjectKeyExtensions.raml
+/{projectKey}/extensions/key={key}: !include resources/ByProjectKeyExtensionsKeyByKey.raml
+/{projectKey}/extensions/{ID}: !include resources/ByProjectKeyExtensionsByID.raml
+/{projectKey}/graphql: !include resources/ByProjectKeyGraphql.raml
+/{projectKey}/in-store/key={storeKey}: !include resources/ByProjectKeyInStoreKeyByStoreKey.raml
+/{projectKey}/in-store/key={storeKey}/carts: !include resources/ByProjectKeyInStoreKeyByStoreKeyCarts.raml
+/{projectKey}/in-store/key={storeKey}/carts/{ID}: !include resources/ByProjectKeyInStoreKeyByStoreKeyCartsByID.raml
+/{projectKey}/in-store/key={storeKey}/customers: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomers.raml
+/{projectKey}/in-store/key={storeKey}/customers/email: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomersEmail.raml
+/{projectKey}/in-store/key={storeKey}/customers/email-token: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomersEmailToken.raml
+/{projectKey}/in-store/key={storeKey}/customers/email-token={emailToken}: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomersEmailTokenByEmailToken.raml
+/{projectKey}/in-store/key={storeKey}/customers/email/confirm: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomersEmailConfirm.raml
+/{projectKey}/in-store/key={storeKey}/customers/key={key}: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomersKeyByKey.raml
+/{projectKey}/in-store/key={storeKey}/customers/password: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomersPassword.raml
+/{projectKey}/in-store/key={storeKey}/customers/password-token: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomersPasswordToken.raml
+/{projectKey}/in-store/key={storeKey}/customers/password-token={passwordToken}: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomersPasswordTokenByPasswordToken.raml
+/{projectKey}/in-store/key={storeKey}/customers/password/reset: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomersPasswordReset.raml
+/{projectKey}/in-store/key={storeKey}/customers/{ID}: !include resources/ByProjectKeyInStoreKeyByStoreKeyCustomersByID.raml
+/{projectKey}/in-store/key={storeKey}/login: !include resources/ByProjectKeyInStoreKeyByStoreKeyLogin.raml
+/{projectKey}/in-store/key={storeKey}/me: !include resources/ByProjectKeyInStoreKeyByStoreKeyMe.raml
+/{projectKey}/in-store/key={storeKey}/me/active-cart: !include resources/ByProjectKeyInStoreKeyByStoreKeyMeActiveCart.raml
+/{projectKey}/in-store/key={storeKey}/me/carts: !include resources/ByProjectKeyInStoreKeyByStoreKeyMeCarts.raml
+/{projectKey}/in-store/key={storeKey}/me/carts/{ID}: !include resources/ByProjectKeyInStoreKeyByStoreKeyMeCartsByID.raml
+/{projectKey}/in-store/key={storeKey}/me/orders: !include resources/ByProjectKeyInStoreKeyByStoreKeyMeOrders.raml
+/{projectKey}/in-store/key={storeKey}/me/orders/{ID}: !include resources/ByProjectKeyInStoreKeyByStoreKeyMeOrdersByID.raml
+/{projectKey}/in-store/key={storeKey}/orders: !include resources/ByProjectKeyInStoreKeyByStoreKeyOrders.raml
+/{projectKey}/in-store/key={storeKey}/orders/order-number={orderNumber}: !include resources/ByProjectKeyInStoreKeyByStoreKeyOrdersOrderNumberByOrderNumber.raml
+/{projectKey}/in-store/key={storeKey}/orders/{ID}: !include resources/ByProjectKeyInStoreKeyByStoreKeyOrdersByID.raml
+/{projectKey}/inventory: !include resources/ByProjectKeyInventory.raml
+/{projectKey}/inventory/{ID}: !include resources/ByProjectKeyInventoryByID.raml
+/{projectKey}/login: !include resources/ByProjectKeyLogin.raml
+/{projectKey}/me: !include resources/ByProjectKeyMe.raml
+/{projectKey}/me/active-cart: !include resources/ByProjectKeyMeActiveCart.raml
+/{projectKey}/me/carts: !include resources/ByProjectKeyMeCarts.raml
+/{projectKey}/me/carts/{ID}: !include resources/ByProjectKeyMeCartsByID.raml
+/{projectKey}/me/email: !include resources/ByProjectKeyMeEmail.raml
+/{projectKey}/me/email/confirm: !include resources/ByProjectKeyMeEmailConfirm.raml
+/{projectKey}/me/login: !include resources/ByProjectKeyMeLogin.raml
+/{projectKey}/me/orders: !include resources/ByProjectKeyMeOrders.raml
+/{projectKey}/me/orders/{ID}: !include resources/ByProjectKeyMeOrdersByID.raml
+/{projectKey}/me/password: !include resources/ByProjectKeyMePassword.raml
+/{projectKey}/me/password/reset: !include resources/ByProjectKeyMePasswordReset.raml
+/{projectKey}/me/payment: !include resources/ByProjectKeyMePayment.raml
+/{projectKey}/me/payment/key={key}: !include resources/ByProjectKeyMePaymentKeyByKey.raml
+/{projectKey}/me/payment/{ID}: !include resources/ByProjectKeyMePaymentByID.raml
+/{projectKey}/me/payments: !include resources/ByProjectKeyMePayments.raml
+/{projectKey}/me/payments/{ID}: !include resources/ByProjectKeyMePaymentsByID.raml
+/{projectKey}/me/shopping-lists: !include resources/ByProjectKeyMeShoppingLists.raml
+/{projectKey}/me/shopping-lists/key={key}: !include resources/ByProjectKeyMeShoppingListsKeyByKey.raml
+/{projectKey}/me/shopping-lists/{ID}: !include resources/ByProjectKeyMeShoppingListsByID.raml
+/{projectKey}/me/signup: !include resources/ByProjectKeyMeSignup.raml
+/{projectKey}/messages: !include resources/ByProjectKeyMessages.raml
+/{projectKey}/messages/{ID}: !include resources/ByProjectKeyMessagesByID.raml
+/{projectKey}/orders: !include resources/ByProjectKeyOrders.raml
+/{projectKey}/orders/edits: !include resources/ByProjectKeyOrdersEdits.raml
+/{projectKey}/orders/edits/key={key}: !include resources/ByProjectKeyOrdersEditsKeyByKey.raml
+/{projectKey}/orders/edits/{ID}: !include resources/ByProjectKeyOrdersEditsByID.raml
+/{projectKey}/orders/edits/{ID}/apply: !include resources/ByProjectKeyOrdersEditsByIDApply.raml
+/{projectKey}/orders/import: !include resources/ByProjectKeyOrdersImport.raml
+/{projectKey}/orders/order-number={orderNumber}: !include resources/ByProjectKeyOrdersOrderNumberByOrderNumber.raml
+/{projectKey}/orders/{ID}: !include resources/ByProjectKeyOrdersByID.raml
+/{projectKey}/payments: !include resources/ByProjectKeyPayments.raml
+/{projectKey}/payments/key={key}: !include resources/ByProjectKeyPaymentsKeyByKey.raml
+/{projectKey}/payments/{ID}: !include resources/ByProjectKeyPaymentsByID.raml
+/{projectKey}/product-discounts: !include resources/ByProjectKeyProductDiscounts.raml
+/{projectKey}/product-discounts/key={key}: !include resources/ByProjectKeyProductDiscountsKeyByKey.raml
+/{projectKey}/product-discounts/matching: !include resources/ByProjectKeyProductDiscountsMatching.raml
+/{projectKey}/product-discounts/{ID}: !include resources/ByProjectKeyProductDiscountsByID.raml
+/{projectKey}/product-projections: !include resources/ByProjectKeyProductProjections.raml
+/{projectKey}/product-projections/key={key}: !include resources/ByProjectKeyProductProjectionsKeyByKey.raml
+/{projectKey}/product-projections/search: !include resources/ByProjectKeyProductProjectionsSearch.raml
+/{projectKey}/product-projections/suggest: !include resources/ByProjectKeyProductProjectionsSuggest.raml
+/{projectKey}/product-projections/{ID}: !include resources/ByProjectKeyProductProjectionsByID.raml
+/{projectKey}/product-types: !include resources/ByProjectKeyProductTypes.raml
+/{projectKey}/product-types/key={key}: !include resources/ByProjectKeyProductTypesKeyByKey.raml
+/{projectKey}/product-types/{ID}: !include resources/ByProjectKeyProductTypesByID.raml
+/{projectKey}/products: !include resources/ByProjectKeyProducts.raml
+/{projectKey}/products/key={key}: !include resources/ByProjectKeyProductsKeyByKey.raml
+/{projectKey}/products/{ID}: !include resources/ByProjectKeyProductsByID.raml
+/{projectKey}/products/{ID}/images: !include resources/ByProjectKeyProductsByIDImages.raml
+/{projectKey}/reviews: !include resources/ByProjectKeyReviews.raml
+/{projectKey}/reviews/key={key}: !include resources/ByProjectKeyReviewsKeyByKey.raml
+/{projectKey}/reviews/{ID}: !include resources/ByProjectKeyReviewsByID.raml
+/{projectKey}/shipping-methods: !include resources/ByProjectKeyShippingMethods.raml
+/{projectKey}/shipping-methods/key={key}: !include resources/ByProjectKeyShippingMethodsKeyByKey.raml
+/{projectKey}/shipping-methods/{ID}: !include resources/ByProjectKeyShippingMethodsByID.raml
+/{projectKey}/shopping-lists: !include resources/ByProjectKeyShoppingLists.raml
+/{projectKey}/shopping-lists/key={key}: !include resources/ByProjectKeyShoppingListsKeyByKey.raml
+/{projectKey}/shopping-lists/{ID}: !include resources/ByProjectKeyShoppingListsByID.raml
+/{projectKey}/states: !include resources/ByProjectKeyStates.raml
+/{projectKey}/states/{ID}: !include resources/ByProjectKeyStatesByID.raml
+/{projectKey}/stores: !include resources/ByProjectKeyStores.raml
+/{projectKey}/stores/key={key}: !include resources/ByProjectKeyStoresKeyByKey.raml
+/{projectKey}/stores/{ID}: !include resources/ByProjectKeyStoresByID.raml
+/{projectKey}/subscriptions: !include resources/ByProjectKeySubscriptions.raml
+/{projectKey}/subscriptions/key={key}: !include resources/ByProjectKeySubscriptionsKeyByKey.raml
+/{projectKey}/subscriptions/{ID}: !include resources/ByProjectKeySubscriptionsByID.raml
+/{projectKey}/tax-categories: !include resources/ByProjectKeyTaxCategories.raml
+/{projectKey}/tax-categories/key={key}: !include resources/ByProjectKeyTaxCategoriesKeyByKey.raml
+/{projectKey}/tax-categories/{ID}: !include resources/ByProjectKeyTaxCategoriesByID.raml
+/{projectKey}/types: !include resources/ByProjectKeyTypes.raml
+/{projectKey}/types/key={key}: !include resources/ByProjectKeyTypesKeyByKey.raml
+/{projectKey}/types/{ID}: !include resources/ByProjectKeyTypesByID.raml
+/{projectKey}/zones: !include resources/ByProjectKeyZones.raml
+/{projectKey}/zones/key={key}: !include resources/ByProjectKeyZonesKeyByKey.raml
+/{projectKey}/zones/{ID}: !include resources/ByProjectKeyZonesByID.raml

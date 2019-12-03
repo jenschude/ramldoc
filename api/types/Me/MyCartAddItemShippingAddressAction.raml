@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: MyCartUpdateAction
+type: object
+(originalType): MyCartUpdateAction
 displayName: MyCartAddItemShippingAddressAction
 
 discriminatorValue: addItemShippingAddress
 properties:
-   address:
-      type: Address
+  action:
+    type: string
+  address:
+    type: Address

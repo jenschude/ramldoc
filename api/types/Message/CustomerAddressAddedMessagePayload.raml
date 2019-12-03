@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: MessagePayload
+type: object
+(originalType): MessagePayload
 displayName: CustomerAddressAddedMessagePayload
 
 discriminatorValue: CustomerAddressAdded
 properties:
-   address:
-      type: Address
+  type:
+    type: string
+  address:
+    type: Address

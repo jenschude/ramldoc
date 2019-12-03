@@ -1,12 +1,38 @@
 #%RAML 1.0 DataType
-type: Message
+type: object
+(originalType): Message
 displayName: DeliveryAddressSetMessage
 
 discriminatorValue: DeliveryAddressSet
 properties:
-   deliveryId:
-      type: string
-   address:
-      type: Address
-   oldAddress:
-      type: Address
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  id:
+    type: string
+  version:
+    format: int64
+    type: number
+  createdBy:
+    type: CreatedBy
+  lastModifiedBy:
+    type: LastModifiedBy
+  sequenceNumber:
+    format: int64
+    type: number
+  resource:
+    type: Reference
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+  resourceVersion:
+    format: int64
+    type: number
+  type:
+    type: string
+  oldAddress:
+    type: Address
+  deliveryId:
+    type: string
+  address:
+    type: Address

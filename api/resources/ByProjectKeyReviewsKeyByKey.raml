@@ -1,0 +1,51 @@
+#ByProjectKeyReviewsKeyByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  key:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/reviews/key={key}"
+  description: |-
+    Get Review by key
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Review
+post:
+  (resourcePathUri): "{projectKey}/reviews/key={key}"
+  description: |-
+    Update Review by key
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ReviewUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Review
+delete:
+  (resourcePathUri): "{projectKey}/reviews/key={key}"
+  description: |-
+    Delete Review by key
+  queryParameters:
+    dataErasure:
+      type: boolean
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Review

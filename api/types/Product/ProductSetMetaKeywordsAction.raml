@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: ProductUpdateAction
+type: object
+(originalType): ProductUpdateAction
 displayName: ProductSetMetaKeywordsAction
 
 discriminatorValue: setMetaKeywords
 properties:
-   metaKeywords:
-      type: LocalizedString
-   staged:
-      type: boolean
+  action:
+    type: string
+  metaKeywords:
+    type: LocalizedString
+  staged:
+    type: boolean

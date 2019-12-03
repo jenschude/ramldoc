@@ -1,12 +1,15 @@
 #%RAML 1.0 DataType
-type: OrderUpdateAction
+type: object
+(originalType): OrderUpdateAction
 displayName: OrderImportLineItemStateAction
 
 discriminatorValue: importLineItemState
 properties:
-   lineItemId:
-      type: string
-   state:
-      type: array
-      items:
-        type: ItemState
+  action:
+    type: string
+  lineItemId:
+    type: string
+  state:
+    type: array
+    items:
+      type: ItemState

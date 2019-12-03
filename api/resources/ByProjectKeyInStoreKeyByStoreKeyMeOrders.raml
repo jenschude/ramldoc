@@ -1,0 +1,48 @@
+#ByProjectKeyInStoreKeyByStoreKeyMeOrders
+
+uriParameters:
+  projectKey:
+    type: string
+  storeKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/me/orders"
+  description: |-
+    Query Orders
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: OrderPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/me/orders"
+  description: |-
+    Create Order
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: MyOrderFromCartDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Order
+    200:
+      body:

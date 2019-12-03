@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: CartDiscountUpdateAction
+type: object
+(originalType): CartDiscountUpdateAction
 displayName: CartDiscountChangeNameAction
 
 discriminatorValue: changeName
 properties:
-   name:
-      type: LocalizedString
+  action:
+    type: string
+  name:
+    type: LocalizedString

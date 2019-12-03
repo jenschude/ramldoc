@@ -1,0 +1,52 @@
+#ByProjectKeyMe
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/me"
+  queryParameters:
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyCustomer
+post:
+  (resourcePathUri): "{projectKey}/me"
+  description: |-
+    Create a customer
+  body:
+    application/json:
+      type: Update
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyCustomer
+delete:
+  (resourcePathUri): "{projectKey}/me"
+  description: |-
+    Delete a Customer
+  queryParameters:
+    version:
+      format: int64
+      type: number
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyCustomer

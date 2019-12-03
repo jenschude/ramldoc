@@ -1,0 +1,46 @@
+#ByProjectKeyMeShoppingLists
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/me/shopping-lists"
+  description: |-
+    Query ShoppingLists
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: ShoppingListPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/me/shopping-lists"
+  description: |-
+    Create MyShoppingList
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: MyShoppingListDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: MyShoppingList
+    200:
+      body:

@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: ShippingMethodUpdateAction
+type: object
+(originalType): ShippingMethodUpdateAction
 displayName: ShippingMethodChangeTaxCategoryAction
 
 discriminatorValue: changeTaxCategory
 properties:
-   taxCategory:
-      type: TaxCategoryResourceIdentifier
+  action:
+    type: string
+  taxCategory:
+    type: TaxCategoryResourceIdentifier

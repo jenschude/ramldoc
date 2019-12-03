@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: DiscountCodeUpdateAction
+type: object
+(originalType): DiscountCodeUpdateAction
 displayName: DiscountCodeSetCustomFieldAction
 
 discriminatorValue: setCustomField
 properties:
-   name:
-      type: string
-   value:
-      type: any
+  action:
+    type: string
+  name:
+    type: string
+  value:
+    type: any

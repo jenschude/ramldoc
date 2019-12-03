@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: MessagePayload
+type: object
+(originalType): MessagePayload
 displayName: ProductCreatedMessagePayload
 
 discriminatorValue: ProductCreated
 properties:
-   productProjection:
-      type: ProductProjection
+  type:
+    type: string
+  productProjection:
+    type: ProductProjection

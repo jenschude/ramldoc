@@ -1,0 +1,15 @@
+#ByProjectKeyProductDiscountsMatching
+
+uriParameters:
+  projectKey:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/product-discounts/matching"
+  body:
+    application/json:
+      type: ProductDiscountMatchQuery
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductDiscount

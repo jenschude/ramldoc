@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: StagedOrderUpdateAction
+type: object
+(originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetLocaleAction
 
 discriminatorValue: setLocale
 properties:
-   locale:
-      type: string
+  action:
+    type: string
+  locale:
+    type: string

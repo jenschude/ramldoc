@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: CartUpdateAction
+type: object
+(originalType): CartUpdateAction
 displayName: CartSetCustomerIdAction
 
 discriminatorValue: setCustomerId
 properties:
-   customerId:
-      type: string
+  action:
+    type: string
+  customerId:
+    type: string

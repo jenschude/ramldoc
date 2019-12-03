@@ -1,11 +1,12 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: PriceTier
 
 
 properties:
-   minimumQuantity:
-      format: int64
-      type: number
-   value:
-      type: TypedMoney
+  value:
+    type: TypedMoney
+  minimumQuantity:
+    format: int64
+    type: number

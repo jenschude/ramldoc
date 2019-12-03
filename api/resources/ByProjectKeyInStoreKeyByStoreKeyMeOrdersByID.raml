@@ -1,0 +1,21 @@
+#ByProjectKeyInStoreKeyByStoreKeyMeOrdersByID
+
+uriParameters:
+  projectKey:
+    type: string
+  storeKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/me/orders/{ID}"
+  description: |-
+    Get Order by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Order

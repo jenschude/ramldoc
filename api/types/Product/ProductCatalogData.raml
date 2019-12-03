@@ -1,14 +1,15 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: ProductCatalogData
 
 
 properties:
-   published:
-      type: boolean
-   current:
-      type: ProductData
-   staged:
-      type: ProductData
-   hasStagedChanges:
-      type: boolean
+  current:
+    type: ProductData
+  staged:
+    type: ProductData
+  published:
+    type: boolean
+  hasStagedChanges:
+    type: boolean

@@ -1,6 +1,16 @@
 #%RAML 1.0 DataType
-type: TypedMoneyDraft
+type: object
+(originalType): TypedMoneyDraft
 displayName: CentPrecisionMoneyDraft
 
 discriminatorValue: centPrecision
 properties:
+  centAmount:
+    format: int64
+    type: number
+  currencyCode:
+    description: |-
+      The currency code compliant to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+    type: CurrencyCode
+  type:
+    type: MoneyType

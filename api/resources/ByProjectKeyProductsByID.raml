@@ -1,0 +1,73 @@
+#ByProjectKeyProductsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/products/{ID}"
+  description: |-
+    Gets the full representation of a product by ID.
+  queryParameters:
+    priceCurrency:
+      type: string
+    priceCountry:
+      type: string
+    priceCustomerGroup:
+      type: string
+    priceChannel:
+      type: string
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Product
+post:
+  (resourcePathUri): "{projectKey}/products/{ID}"
+  description: |-
+    Update Product by ID
+  queryParameters:
+    priceCurrency:
+      type: string
+    priceCountry:
+      type: string
+    priceCustomerGroup:
+      type: string
+    priceChannel:
+      type: string
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ProductUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Product
+delete:
+  (resourcePathUri): "{projectKey}/products/{ID}"
+  description: |-
+    Delete Product by ID
+  queryParameters:
+    priceCurrency:
+      type: string
+    priceCountry:
+      type: string
+    priceCustomerGroup:
+      type: string
+    priceChannel:
+      type: string
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Product

@@ -1,12 +1,15 @@
 #%RAML 1.0 DataType
-type: ProductTypeUpdateAction
+type: object
+(originalType): ProductTypeUpdateAction
 displayName: ProductTypeRemoveEnumValuesAction
 
 discriminatorValue: removeEnumValues
 properties:
-   attributeName:
+  action:
+    type: string
+  keys:
+    type: array
+    items:
       type: string
-   keys:
-      type: array
-      items:
-        type: string
+  attributeName:
+    type: string

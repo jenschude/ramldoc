@@ -1,0 +1,38 @@
+#ByProjectKeyCustomObjectsByContainerByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  container:
+    type: string
+  key:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/custom-objects/{container}/{key}"
+  description: |-
+    Get CustomObject by key
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: CustomObject
+delete:
+  (resourcePathUri): "{projectKey}/custom-objects/{container}/{key}"
+  description: |-
+    Delete CustomObject by key
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    dataErasure:
+      type: boolean
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: CustomObject

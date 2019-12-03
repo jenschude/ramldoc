@@ -1,26 +1,27 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: MyTransactionDraft
 
 
 properties:
-   timestamp:
-      description: |-
-        The time at which the transaction took place.
-      format: rfc3339
-      type: datetime
-   type:
-      description: |-
-        The type of this transaction.
-        Only the `Authorization` or `Charge`
-        TransactionTypes are allowed here.
-      type: TransactionType
-   amount:
-      type: Money
-   interactionId:
-      description: |-
-        The identifier that is used by the interface that managed the transaction (usually the PSP).
-        If a matching interaction was logged in the interfaceInteractions array,
-        the corresponding interaction should be findable with this ID.
-        The `state` is set to the `Initial` TransactionState.
-      type: string
+  interactionId:
+    description: |-
+      The identifier that is used by the interface that managed the transaction (usually the PSP).
+      If a matching interaction was logged in the interfaceInteractions array,
+      the corresponding interaction should be findable with this ID.
+      The `state` is set to the `Initial` TransactionState.
+    type: string
+  amount:
+    type: Money
+  type:
+    description: |-
+      The type of this transaction.
+      Only the `Authorization` or `Charge`
+      TransactionTypes are allowed here.
+    type: TransactionType
+  timestamp:
+    description: |-
+      The time at which the transaction took place.
+    format: rfc3339
+    type: datetime

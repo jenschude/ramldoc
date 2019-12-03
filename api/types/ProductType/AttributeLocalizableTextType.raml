@@ -1,6 +1,9 @@
 #%RAML 1.0 DataType
-type: AttributeType
+type: object
+(originalType): AttributeType
 displayName: AttributeLocalizableTextType
 
 discriminatorValue: ltext
 properties:
+  name:
+    type: string

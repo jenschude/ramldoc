@@ -1,0 +1,46 @@
+#ByProjectKeyCustomerGroups
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/customer-groups"
+  description: |-
+    Query CustomerGroups
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: CustomerGroupPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/customer-groups"
+  description: |-
+    Create CustomerGroup
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: CustomerGroupDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: CustomerGroup
+    200:
+      body:

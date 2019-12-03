@@ -1,0 +1,46 @@
+#ByProjectKeyApiClients
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/api-clients"
+  description: |-
+    Query ApiClients
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: ApiClientPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/api-clients"
+  description: |-
+    Create ApiClient
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ApiClientDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: ApiClient
+    200:
+      body:

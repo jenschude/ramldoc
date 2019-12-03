@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: CategoryUpdateAction
+type: object
+(originalType): CategoryUpdateAction
 displayName: CategoryChangeParentAction
 
 discriminatorValue: changeParent
 properties:
-   parent:
-      type: CategoryResourceIdentifier
+  action:
+    type: string
+  parent:
+    type: CategoryResourceIdentifier

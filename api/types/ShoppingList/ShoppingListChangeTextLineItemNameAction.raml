@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: ShoppingListUpdateAction
+type: object
+(originalType): ShoppingListUpdateAction
 displayName: ShoppingListChangeTextLineItemNameAction
 
 discriminatorValue: changeTextLineItemName
 properties:
-   textLineItemId:
-      type: string
-   name:
-      type: LocalizedString
+  action:
+    type: string
+  name:
+    type: LocalizedString
+  textLineItemId:
+    type: string

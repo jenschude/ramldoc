@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: ProductTypeUpdateAction
+type: object
+(originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangeAttributeConstraintAction
 
 discriminatorValue: changeAttributeConstraint
 properties:
-   attributeName:
-      type: string
-   newValue:
-      type: AttributeConstraintEnumDraft
+  action:
+    type: string
+  newValue:
+    type: AttributeConstraintEnumDraft
+  attributeName:
+    type: string

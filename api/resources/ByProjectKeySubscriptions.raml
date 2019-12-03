@@ -1,0 +1,50 @@
+#ByProjectKeySubscriptions
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/subscriptions"
+  description: |-
+    Query Subscriptions
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: SubscriptionPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/subscriptions"
+  description: |-
+    The creation of a Subscription is eventually consistent, it may take up to a minute before it becomes fully active.
+    In order to test that the destination is correctly configured, a test message will be put into the queue.
+    If the message could not be delivered, the subscription will not be created.
+    The payload of the test message is a notification of type ResourceCreated for the resourceTypeId subscription.
+    Currently, a maximum of 25 subscriptions can be created per project.
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: SubscriptionDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Subscription
+    200:
+      body:

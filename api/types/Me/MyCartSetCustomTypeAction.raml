@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: MyCartUpdateAction
+type: object
+(originalType): MyCartUpdateAction
 displayName: MyCartSetCustomTypeAction
 
 discriminatorValue: setCustomType
 properties:
-   type:
-      type: TypeResourceIdentifier
-   fields:
-      type: FieldContainer
+  action:
+    type: string
+  fields:
+    type: FieldContainer
+  type:
+    type: TypeResourceIdentifier

@@ -1,20 +1,21 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: ProductTypeDraft
 
 
 properties:
-   key:
-      description: |-
-        User-specific unique identifier for the product type (min.
-        2 and max.
-        256 characters).
-      type: string
-   name:
-      type: string
-   description:
-      type: string
-   attributes:
-      type: array
-      items:
-        type: AttributeDefinitionDraft
+  name:
+    type: string
+  description:
+    type: string
+  attributes:
+    type: array
+    items:
+      type: AttributeDefinitionDraft
+  key:
+    description: |-
+      User-specific unique identifier for the product type (min.
+      2 and max.
+      256 characters).
+    type: string

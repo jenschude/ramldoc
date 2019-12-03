@@ -1,29 +1,30 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: FacetResultRange
 
 
 properties:
-   from:
-      type: number
-   fromStr:
-      type: string
-   to:
-      type: number
-   toStr:
-      type: string
-   count:
-      format: int64
-      type: number
-   productCount:
-      format: int64
-      type: number
-   total:
-      format: int64
-      type: number
-   min:
-      type: number
-   max:
-      type: number
-   mean:
-      type: number
+  toStr:
+    type: string
+  total:
+    format: int64
+    type: number
+  min:
+    type: number
+  fromStr:
+    type: string
+  max:
+    type: number
+  mean:
+    type: number
+  count:
+    format: int64
+    type: number
+  from:
+    type: number
+  to:
+    type: number
+  productCount:
+    format: int64
+    type: number

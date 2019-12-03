@@ -1,0 +1,46 @@
+#ByProjectKeyZones
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/zones"
+  description: |-
+    Query Zones
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: ZonePagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/zones"
+  description: |-
+    Create Zone
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ZoneDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Zone
+    200:
+      body:

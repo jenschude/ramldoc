@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: ShippingRateInput
+type: object
+(originalType): ShippingRateInput
 displayName: ScoreShippingRateInput
 
 discriminatorValue: Score
 properties:
-   score:
-      type: number
+  type:
+    type: string
+  score:
+    type: number

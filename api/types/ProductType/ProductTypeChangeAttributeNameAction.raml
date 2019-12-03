@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: ProductTypeUpdateAction
+type: object
+(originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangeAttributeNameAction
 
 discriminatorValue: changeAttributeName
 properties:
-   attributeName:
-      type: string
-   newAttributeName:
-      type: string
+  action:
+    type: string
+  newAttributeName:
+    type: string
+  attributeName:
+    type: string

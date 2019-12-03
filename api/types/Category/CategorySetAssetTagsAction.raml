@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: CategoryUpdateAction
+type: object
+(originalType): CategoryUpdateAction
 displayName: CategorySetAssetTagsAction
 
 discriminatorValue: setAssetTags
 properties:
-   assetId:
+  action:
+    type: string
+  assetId:
+    type: string
+  assetKey:
+    type: string
+  tags:
+    type: array
+    items:
       type: string
-   assetKey:
-      type: string
-   tags:
-      type: array
-      items:
-        type: string

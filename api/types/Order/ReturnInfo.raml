@@ -1,17 +1,18 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: ReturnInfo
 
 
 properties:
-   items:
-      type: array
-      items:
-        type: ReturnItem
-   returnTrackingId:
-      description: |-
-        Identifies, which return tracking ID is connected to this particular return.
-      type: string
-   returnDate:
-      format: rfc3339
-      type: datetime
+  returnDate:
+    format: rfc3339
+    type: datetime
+  returnTrackingId:
+    description: |-
+      Identifies, which return tracking ID is connected to this particular return.
+    type: string
+  items:
+    type: array
+    items:
+      type: ReturnItem

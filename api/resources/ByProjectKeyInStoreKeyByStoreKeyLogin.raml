@@ -1,0 +1,21 @@
+#ByProjectKeyInStoreKeyByStoreKeyLogin
+
+uriParameters:
+  projectKey:
+    type: string
+  storeKey:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/login"
+  description: |-
+    Authenticate Customer (Sign In)
+  body:
+    application/json:
+      type: CustomerSignin
+  responses:
+    201:
+      body:
+        application/json:
+          type: CustomerSignInResult
+    200:
+      body:

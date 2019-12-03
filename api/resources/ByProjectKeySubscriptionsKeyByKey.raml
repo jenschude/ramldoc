@@ -1,0 +1,49 @@
+#ByProjectKeySubscriptionsKeyByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  key:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/subscriptions/key={key}"
+  description: |-
+    Retrieves the representation of a subscription by its key.
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Subscription
+post:
+  (resourcePathUri): "{projectKey}/subscriptions/key={key}"
+  description: |-
+    Update Subscription by key
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: SubscriptionUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Subscription
+delete:
+  (resourcePathUri): "{projectKey}/subscriptions/key={key}"
+  description: |-
+    Delete Subscription by key
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Subscription

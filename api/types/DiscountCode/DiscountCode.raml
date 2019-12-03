@@ -1,86 +1,87 @@
 #%RAML 1.0 DataType
-type: LoggedResource
+type: object
+(originalType): LoggedResource
 displayName: DiscountCode
 
 
 properties:
-   id:
-      description: |-
-        The unique ID of the discount code.
+  createdAt:
+    format: rfc3339
+    type: datetime
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+  id:
+    description: |-
+      The unique ID of the discount code.
+    type: string
+  version:
+    format: int64
+    type: number
+  createdBy:
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    type: CreatedBy
+  lastModifiedBy:
+    description: |-
+      Present on resources updated after 1/02/2019 except for events not tracked.
+    type: LastModifiedBy
+  cartDiscounts:
+    description: |-
+      The referenced matching cart discounts can be applied to the cart once the DiscountCode is added.
+    type: array
+    items:
+      type: CartDiscountReference
+  code:
+    description: |-
+      Unique identifier of this discount code.
+      This value is added to the cart
+      to enable the related cart discounts in the cart.
+    type: string
+  references:
+    description: |-
+      The platform will generate this array from the cart predicate.
+      It contains the references of all the resources that are addressed in the predicate.
+    type: array
+    items:
+      type: Reference
+  cartPredicate:
+    description: |-
+      The discount code can only be applied to carts that match this predicate.
+    type: string
+  custom:
+    type: CustomFields
+  groups:
+    description: |-
+      The groups to which this discount code belong.
+    type: array
+    items:
       type: string
-   version:
-      format: int64
-      type: number
-   createdAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedBy:
-      description: |-
-        Present on resources updated after 1/02/2019 except for events not tracked.
-      type: LastModifiedBy
-   createdBy:
-      description: |-
-        Present on resources created after 1/02/2019 except for events not tracked.
-      type: CreatedBy
-   name:
-      type: LocalizedString
-   description:
-      type: LocalizedString
-   code:
-      description: |-
-        Unique identifier of this discount code.
-        This value is added to the cart
-        to enable the related cart discounts in the cart.
-      type: string
-   cartDiscounts:
-      description: |-
-        The referenced matching cart discounts can be applied to the cart once the DiscountCode is added.
-      type: array
-      items:
-        type: CartDiscountReference
-   cartPredicate:
-      description: |-
-        The discount code can only be applied to carts that match this predicate.
-      type: string
-   isActive:
-      type: boolean
-   references:
-      description: |-
-        The platform will generate this array from the cart predicate.
-        It contains the references of all the resources that are addressed in the predicate.
-      type: array
-      items:
-        type: Reference
-   maxApplications:
-      description: |-
-        The discount code can only be applied `maxApplications` times.
-      format: int64
-      type: number
-   maxApplicationsPerCustomer:
-      description: |-
-        The discount code can only be applied `maxApplicationsPerCustomer` times per customer.
-      format: int64
-      type: number
-   custom:
-      type: CustomFields
-   groups:
-      description: |-
-        The groups to which this discount code belong.
-      type: array
-      items:
-        type: string
-   validFrom:
-      description: |-
-        The time from which the discount can be applied on a cart.
-        Before that time the code is invalid.
-      format: rfc3339
-      type: datetime
-   validUntil:
-      description: |-
-        The time until the discount can be applied on a cart.
-        After that time the code is invalid.
-      format: rfc3339
-      type: datetime
+  description:
+    type: LocalizedString
+  validFrom:
+    description: |-
+      The time from which the discount can be applied on a cart.
+      Before that time the code is invalid.
+    format: rfc3339
+    type: datetime
+  isActive:
+    type: boolean
+  maxApplications:
+    description: |-
+      The discount code can only be applied `maxApplications` times.
+    format: int64
+    type: number
+  name:
+    type: LocalizedString
+  validUntil:
+    description: |-
+      The time until the discount can be applied on a cart.
+      After that time the code is invalid.
+    format: rfc3339
+    type: datetime
+  maxApplicationsPerCustomer:
+    description: |-
+      The discount code can only be applied `maxApplicationsPerCustomer` times per customer.
+    format: int64
+    type: number

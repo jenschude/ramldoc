@@ -1,0 +1,49 @@
+#ByProjectKeyInventoryByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/inventory/{ID}"
+  description: |-
+    Get InventoryEntry by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: InventoryEntry
+post:
+  (resourcePathUri): "{projectKey}/inventory/{ID}"
+  description: |-
+    Update InventoryEntry by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: InventoryEntryUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: InventoryEntry
+delete:
+  (resourcePathUri): "{projectKey}/inventory/{ID}"
+  description: |-
+    Delete InventoryEntry by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: InventoryEntry

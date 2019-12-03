@@ -1,0 +1,46 @@
+#ByProjectKeyOrdersEdits
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/orders/edits"
+  description: |-
+    Query Edits
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: OrderEditPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/orders/edits"
+  description: |-
+    Create OrderEdit
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: OrderEditDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: OrderEdit
+    200:
+      body:

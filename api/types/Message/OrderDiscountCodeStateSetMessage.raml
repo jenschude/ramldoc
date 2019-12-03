@@ -1,12 +1,38 @@
 #%RAML 1.0 DataType
-type: Message
+type: object
+(originalType): Message
 displayName: OrderDiscountCodeStateSetMessage
 
 discriminatorValue: OrderDiscountCodeStateSet
 properties:
-   discountCode:
-      type: DiscountCodeReference
-   state:
-      type: DiscountCodeState
-   oldState:
-      type: DiscountCodeState
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  id:
+    type: string
+  version:
+    format: int64
+    type: number
+  createdBy:
+    type: CreatedBy
+  lastModifiedBy:
+    type: LastModifiedBy
+  sequenceNumber:
+    format: int64
+    type: number
+  resource:
+    type: Reference
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+  resourceVersion:
+    format: int64
+    type: number
+  type:
+    type: string
+  discountCode:
+    type: DiscountCodeReference
+  oldState:
+    type: DiscountCodeState
+  state:
+    type: DiscountCodeState

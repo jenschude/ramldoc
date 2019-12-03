@@ -1,0 +1,49 @@
+#ByProjectKeyCategoriesKeyByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  key:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/categories/key={key}"
+  description: |-
+    Get Category by key
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Category
+post:
+  (resourcePathUri): "{projectKey}/categories/key={key}"
+  description: |-
+    Update Category by key
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: CategoryUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Category
+delete:
+  (resourcePathUri): "{projectKey}/categories/key={key}"
+  description: |-
+    Delete Category by key
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Category

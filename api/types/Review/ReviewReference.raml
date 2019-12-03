@@ -1,8 +1,13 @@
 #%RAML 1.0 DataType
-type: Reference
+type: object
+(originalType): Reference
 displayName: ReviewReference
 
 discriminatorValue: review
 properties:
-   obj:
-      type: Review
+  typeId:
+    type: ReferenceTypeId
+  id:
+    type: string
+  obj:
+    type: Review

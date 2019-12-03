@@ -1,14 +1,23 @@
 #%RAML 1.0 DataType
-type: SubscriptionDelivery
+type: object
+(originalType): SubscriptionDelivery
 displayName: ResourceUpdatedDelivery
 
 discriminatorValue: ResourceUpdated
 properties:
-   version:
-      format: int64
-      type: number
-   oldVersion:
-      format: int64
-      type: number
-   modifiedAt:
-      type: datetime
+  projectKey:
+    type: string
+  resource:
+    type: Reference
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+  notificationType:
+    type: string
+  modifiedAt:
+    type: datetime
+  oldVersion:
+    format: int64
+    type: number
+  version:
+    format: int64
+    type: number

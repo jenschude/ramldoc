@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: CartDiscountTarget
+type: object
+(originalType): CartDiscountTarget
 displayName: CartDiscountCustomLineItemsTarget
 
 discriminatorValue: customLineItems
 properties:
-   predicate:
-      type: string
+  type:
+    type: string
+  predicate:
+    type: string

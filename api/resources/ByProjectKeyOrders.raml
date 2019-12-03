@@ -1,0 +1,48 @@
+#ByProjectKeyOrders
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/orders"
+  description: |-
+    Query Orders
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: OrderPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/orders"
+  description: |-
+    Creates an order from a Cart.
+    The cart must have a shipping address set before creating an order.
+    When using the Platform TaxMode, the shipping address is used for tax calculation.
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: OrderFromCartDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Order
+    200:
+      body:

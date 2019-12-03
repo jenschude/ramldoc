@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: MessagePayload
+type: object
+(originalType): MessagePayload
 displayName: OrderBillingAddressSetMessagePayload
 
 discriminatorValue: OrderBillingAddressSet
 properties:
-   address:
-      type: Address
-   oldAddress:
-      type: Address
+  type:
+    type: string
+  oldAddress:
+    type: Address
+  address:
+    type: Address

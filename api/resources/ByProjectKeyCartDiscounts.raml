@@ -1,0 +1,46 @@
+#ByProjectKeyCartDiscounts
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/cart-discounts"
+  description: |-
+    Query CartDiscounts
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: CartDiscountPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/cart-discounts"
+  description: |-
+    Create CartDiscount
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: CartDiscountDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: CartDiscount
+    200:
+      body:

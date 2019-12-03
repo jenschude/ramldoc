@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: MessagePayload
+type: object
+(originalType): MessagePayload
 displayName: DeliveryAddedMessagePayload
 
 discriminatorValue: DeliveryAdded
 properties:
-   delivery:
-      type: Delivery
+  type:
+    type: string
+  delivery:
+    type: Delivery

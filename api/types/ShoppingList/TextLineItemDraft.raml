@@ -1,24 +1,25 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: TextLineItemDraft
 
 
 properties:
-   addedAt:
-      description: |-
-        Defaults to the current date and time.
-      format: rfc3339
-      type: datetime
-   custom:
-      description: |-
-        The custom fields.
-      type: CustomFieldsDraft
-   description:
-      type: LocalizedString
-   name:
-      type: LocalizedString
-   quantity:
-      description: |-
-        Defaults to `1`.
-      format: int16
-      type: number
+  addedAt:
+    description: |-
+      Defaults to the current date and time.
+    format: rfc3339
+    type: datetime
+  quantity:
+    description: |-
+      Defaults to `1`.
+    format: int16
+    type: number
+  custom:
+    description: |-
+      The custom fields.
+    type: CustomFieldsDraft
+  name:
+    type: LocalizedString
+  description:
+    type: LocalizedString

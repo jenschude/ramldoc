@@ -1,0 +1,49 @@
+#ByProjectKeyZonesByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/zones/{ID}"
+  description: |-
+    Get Zone by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Zone
+post:
+  (resourcePathUri): "{projectKey}/zones/{ID}"
+  description: |-
+    Update Zone by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ZoneUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Zone
+delete:
+  (resourcePathUri): "{projectKey}/zones/{ID}"
+  description: |-
+    Delete Zone by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Zone

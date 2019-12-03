@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: OrderEditUpdateAction
+type: object
+(originalType): OrderEditUpdateAction
 displayName: OrderEditSetStagedActionsAction
 
 discriminatorValue: setStagedActions
 properties:
-   stagedActions:
-      type: array
-      items:
-        type: StagedOrderUpdateAction
+  action:
+    type: string
+  stagedActions:
+    type: array
+    items:
+      type: StagedOrderUpdateAction

@@ -1,0 +1,49 @@
+#ByProjectKeyShippingMethodsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/shipping-methods/{ID}"
+  description: |-
+    Get ShippingMethod by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: ShippingMethod
+post:
+  (resourcePathUri): "{projectKey}/shipping-methods/{ID}"
+  description: |-
+    Update ShippingMethod by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ShippingMethodUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: ShippingMethod
+delete:
+  (resourcePathUri): "{projectKey}/shipping-methods/{ID}"
+  description: |-
+    Delete ShippingMethod by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: ShippingMethod

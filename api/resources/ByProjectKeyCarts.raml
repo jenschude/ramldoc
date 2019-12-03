@@ -1,0 +1,49 @@
+#ByProjectKeyCarts
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/carts"
+  description: |-
+    Query Carts
+  queryParameters:
+    customerId:
+      type: string
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: CartPagedQueryResponse | object
+post:
+  (resourcePathUri): "{projectKey}/carts"
+  description: |-
+    Creating a cart can fail with an InvalidOperation if the referenced shipping method in the
+    CartDraft has a predicate which does not match the cart.
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: CartDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Cart
+    200:
+      body:

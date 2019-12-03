@@ -1,0 +1,46 @@
+#ByProjectKeyTaxCategories
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/tax-categories"
+  description: |-
+    Query TaxCategories
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: TaxCategoryPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/tax-categories"
+  description: |-
+    Create TaxCategory
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: TaxCategoryDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: TaxCategory
+    200:
+      body:

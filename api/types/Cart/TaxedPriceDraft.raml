@@ -1,14 +1,15 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: TaxedPriceDraft
 
 
 properties:
-   totalNet:
-      type: TypedMoneyDraft
-   totalGross:
-      type: TypedMoneyDraft
-   taxPortions:
-      type: array
-      items:
-        type: TaxPortionDraft
+  taxPortions:
+    type: array
+    items:
+      type: TaxPortionDraft
+  totalGross:
+    type: TypedMoneyDraft
+  totalNet:
+    type: TypedMoneyDraft

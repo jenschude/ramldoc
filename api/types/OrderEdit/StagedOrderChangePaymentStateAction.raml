@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: StagedOrderUpdateAction
+type: object
+(originalType): StagedOrderUpdateAction
 displayName: StagedOrderChangePaymentStateAction
 
 discriminatorValue: changePaymentState
 properties:
-   paymentState:
-      type: PaymentState
+  action:
+    type: string
+  paymentState:
+    type: PaymentState

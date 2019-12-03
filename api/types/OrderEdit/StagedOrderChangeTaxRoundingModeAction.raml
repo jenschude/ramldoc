@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: StagedOrderUpdateAction
+type: object
+(originalType): StagedOrderUpdateAction
 displayName: StagedOrderChangeTaxRoundingModeAction
 
 discriminatorValue: changeTaxRoundingMode
 properties:
-   taxRoundingMode:
-      type: RoundingMode
+  action:
+    type: string
+  taxRoundingMode:
+    type: RoundingMode

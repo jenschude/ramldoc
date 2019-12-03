@@ -1,18 +1,23 @@
 #%RAML 1.0 DataType
-type: ErrorObject
+type: object
+(originalType): ErrorObject
 displayName: DiscountCodeNonApplicableError
 
 discriminatorValue: DiscountCodeNonApplicable
 properties:
-   discountCode:
-      type: string
-   reason:
-      type: string
-   dicountCodeId:
-      type: string
-   validFrom:
-      type: datetime
-   validUntil:
-      type: datetime
-   validityCheckTime:
-      type: datetime
+  code:
+    type: string
+  message:
+    type: string
+  reason:
+    type: string
+  validityCheckTime:
+    type: datetime
+  discountCode:
+    type: string
+  validUntil:
+    type: datetime
+  validFrom:
+    type: datetime
+  dicountCodeId:
+    type: string

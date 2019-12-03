@@ -1,48 +1,49 @@
 #%RAML 1.0 DataType
-type: LoggedResource
+type: object
+(originalType): LoggedResource
 displayName: Type
 
 
 properties:
-   id:
-      description: |-
-        The unique ID of the type.
-      type: string
-   version:
-      description: |-
-        The current version of the type.
-      format: int64
-      type: number
-   createdAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedBy:
-      description: |-
-        Present on resources updated after 1/02/2019 except for events not tracked.
-      type: LastModifiedBy
-   createdBy:
-      description: |-
-        Present on resources created after 1/02/2019 except for events not tracked.
-      type: CreatedBy
-   key:
-      description: |-
-        Identifier for the type (max.
-        256 characters).
-      type: string
-   name:
-      type: LocalizedString
-   description:
-      type: LocalizedString
-   resourceTypeIds:
-      description: |-
-        Defines for which resource(s) the type is valid.
-      type: array
-      items:
-        type: ResourceTypeId
-   fieldDefinitions:
-      type: array
-      items:
-        type: FieldDefinition
+  createdAt:
+    format: rfc3339
+    type: datetime
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+  id:
+    description: |-
+      The unique ID of the type.
+    type: string
+  version:
+    description: |-
+      The current version of the type.
+    format: int64
+    type: number
+  createdBy:
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    type: CreatedBy
+  lastModifiedBy:
+    description: |-
+      Present on resources updated after 1/02/2019 except for events not tracked.
+    type: LastModifiedBy
+  name:
+    type: LocalizedString
+  fieldDefinitions:
+    type: array
+    items:
+      type: FieldDefinition
+  description:
+    type: LocalizedString
+  key:
+    description: |-
+      Identifier for the type (max.
+      256 characters).
+    type: string
+  resourceTypeIds:
+    description: |-
+      Defines for which resource(s) the type is valid.
+    type: array
+    items:
+      type: ResourceTypeId

@@ -1,0 +1,12 @@
+#ByProjectKeyMePaymentKeyByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  key:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/me/payment/key={key}"
+  body:
+    application/json:
+      type: MyPaymentUpdate

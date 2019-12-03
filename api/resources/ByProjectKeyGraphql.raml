@@ -1,0 +1,17 @@
+#ByProjectKeyGraphql
+
+uriParameters:
+  projectKey:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/graphql"
+  description: |-
+    Execute a GraphQL query
+  body:
+    application/graphql:
+      type: any
+  responses:
+    200:
+      body:
+        application/json:
+          type: any

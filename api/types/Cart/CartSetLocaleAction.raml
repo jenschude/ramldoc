@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: CartUpdateAction
+type: object
+(originalType): CartUpdateAction
 displayName: CartSetLocaleAction
 
 discriminatorValue: setLocale
 properties:
-   locale:
-      type: string
+  action:
+    type: string
+  locale:
+    type: string

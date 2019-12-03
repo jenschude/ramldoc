@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: StagedOrderUpdateAction
+type: object
+(originalType): StagedOrderUpdateAction
 displayName: StagedOrderChangeTaxCalculationModeAction
 
 discriminatorValue: changeTaxCalculationMode
 properties:
-   taxCalculationMode:
-      type: TaxCalculationMode
+  action:
+    type: string
+  taxCalculationMode:
+    type: TaxCalculationMode

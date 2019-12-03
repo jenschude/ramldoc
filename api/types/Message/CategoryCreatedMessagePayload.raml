@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: MessagePayload
+type: object
+(originalType): MessagePayload
 displayName: CategoryCreatedMessagePayload
 
 discriminatorValue: CategoryCreated
 properties:
-   category:
-      type: Category
+  type:
+    type: string
+  category:
+    type: Category

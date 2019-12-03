@@ -1,11 +1,20 @@
 #%RAML 1.0 DataType
-type: SubscriptionDelivery
+type: object
+(originalType): SubscriptionDelivery
 displayName: ResourceDeletedDelivery
 
 discriminatorValue: ResourceDeleted
 properties:
-   version:
-      format: int64
-      type: number
-   modifiedAt:
-      type: datetime
+  projectKey:
+    type: string
+  resource:
+    type: Reference
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+  notificationType:
+    type: string
+  modifiedAt:
+    type: datetime
+  version:
+    format: int64
+    type: number

@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: DiscountCodeUpdateAction
+type: object
+(originalType): DiscountCodeUpdateAction
 displayName: DiscountCodeSetDescriptionAction
 
 discriminatorValue: setDescription
 properties:
-   description:
-      type: LocalizedString
+  action:
+    type: string
+  description:
+    type: LocalizedString

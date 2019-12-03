@@ -1,14 +1,19 @@
 #%RAML 1.0 DataType
-type: ErrorObject
+type: object
+(originalType): ErrorObject
 displayName: InvalidFieldError
 
 discriminatorValue: InvalidField
 properties:
-   field:
-      type: string
-   invalidValue:
+  code:
+    type: string
+  message:
+    type: string
+  allowedValues:
+    type: array
+    items:
       type: any
-   allowedValues:
-      type: array
-      items:
-        type: any
+  field:
+    type: string
+  invalidValue:
+    type: any

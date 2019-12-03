@@ -1,0 +1,49 @@
+#ByProjectKeyTaxCategoriesKeyByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  key:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/tax-categories/key={key}"
+  description: |-
+    Get TaxCategory by key
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: TaxCategory
+post:
+  (resourcePathUri): "{projectKey}/tax-categories/key={key}"
+  description: |-
+    Update TaxCategory by key
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: TaxCategoryUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: TaxCategory
+delete:
+  (resourcePathUri): "{projectKey}/tax-categories/key={key}"
+  description: |-
+    Delete TaxCategory by key
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: TaxCategory

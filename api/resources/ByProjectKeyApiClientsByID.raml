@@ -1,0 +1,25 @@
+#ByProjectKeyApiClientsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/api-clients/{ID}"
+  description: |-
+    Get ApiClient by ID
+  responses:
+    200:
+      body:
+        application/json:
+          type: ApiClient
+delete:
+  (resourcePathUri): "{projectKey}/api-clients/{ID}"
+  description: |-
+    Delete ApiClient by ID
+  responses:
+    200:
+      body:
+        application/json:
+          type: ApiClient

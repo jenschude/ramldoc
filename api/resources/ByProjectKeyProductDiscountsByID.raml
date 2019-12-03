@@ -1,0 +1,49 @@
+#ByProjectKeyProductDiscountsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/product-discounts/{ID}"
+  description: |-
+    Get ProductDiscount by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductDiscount
+post:
+  (resourcePathUri): "{projectKey}/product-discounts/{ID}"
+  description: |-
+    Update ProductDiscount by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ProductDiscountUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductDiscount
+delete:
+  (resourcePathUri): "{projectKey}/product-discounts/{ID}"
+  description: |-
+    Delete ProductDiscount by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductDiscount

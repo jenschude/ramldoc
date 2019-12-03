@@ -1,55 +1,56 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: DiscountCodeDraft
 
 
 properties:
-   name:
-      type: LocalizedString
-   description:
-      type: LocalizedString
-   code:
-      description: |-
-        Unique identifier of this discount code.
-        This value is added to the cart
-        to enable the related cart discounts in the cart.
+  cartDiscounts:
+    description: |-
+      The referenced matching cart discounts can be applied to the cart once the discount code is added.
+      The number of cart discounts in a discount code is limited to **10**.
+    type: array
+    items:
+      type: CartDiscountResourceIdentifier
+  code:
+    description: |-
+      Unique identifier of this discount code.
+      This value is added to the cart
+      to enable the related cart discounts in the cart.
+    type: string
+  cartPredicate:
+    description: |-
+      The discount code can only be applied to carts that match this predicate.
+    type: string
+  custom:
+    type: CustomFieldsDraft
+  name:
+    type: LocalizedString
+  validUntil:
+    description: |-
+      The time until the discount can be applied on a cart.
+      After that time the code is invalid.
+    format: rfc3339
+    type: datetime
+  groups:
+    description: |-
+      The groups to which this discount code shall belong to.
+    type: array
+    items:
       type: string
-   cartDiscounts:
-      description: |-
-        The referenced matching cart discounts can be applied to the cart once the discount code is added.
-        The number of cart discounts in a discount code is limited to **10**.
-      type: array
-      items:
-        type: CartDiscountResourceIdentifier
-   cartPredicate:
-      description: |-
-        The discount code can only be applied to carts that match this predicate.
-      type: string
-   isActive:
-      type: boolean
-   maxApplications:
-      format: int64
-      type: number
-   maxApplicationsPerCustomer:
-      format: int64
-      type: number
-   custom:
-      type: CustomFieldsDraft
-   groups:
-      description: |-
-        The groups to which this discount code shall belong to.
-      type: array
-      items:
-        type: string
-   validFrom:
-      description: |-
-        The time from which the discount can be applied on a cart.
-        Before that time the code is invalid.
-      format: rfc3339
-      type: datetime
-   validUntil:
-      description: |-
-        The time until the discount can be applied on a cart.
-        After that time the code is invalid.
-      format: rfc3339
-      type: datetime
+  description:
+    type: LocalizedString
+  validFrom:
+    description: |-
+      The time from which the discount can be applied on a cart.
+      Before that time the code is invalid.
+    format: rfc3339
+    type: datetime
+  maxApplicationsPerCustomer:
+    format: int64
+    type: number
+  isActive:
+    type: boolean
+  maxApplications:
+    format: int64
+    type: number

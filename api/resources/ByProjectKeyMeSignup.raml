@@ -1,0 +1,17 @@
+#ByProjectKeyMeSignup
+
+uriParameters:
+  projectKey:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/me/signup"
+  body:
+    application/json:
+      type: MyCustomerDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: CustomerSignInResult
+    200:
+      body:

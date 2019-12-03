@@ -1,29 +1,30 @@
 #%RAML 1.0 DataType
-type: LoggedResource
+type: object
+(originalType): LoggedResource
 displayName: CustomObject
 
 
 properties:
-   id:
-      type: string
-   version:
-      format: int64
-      type: number
-   createdAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedBy:
-      type: LastModifiedBy
-   createdBy:
-      type: CreatedBy
-   container:
-      description: |-
-        A namespace to group custom objects.
-      type: string
-   key:
-      type: string
-   value:
-      type: any
+  createdAt:
+    format: rfc3339
+    type: datetime
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+  id:
+    type: string
+  version:
+    format: int64
+    type: number
+  createdBy:
+    type: CreatedBy
+  lastModifiedBy:
+    type: LastModifiedBy
+  container:
+    description: |-
+      A namespace to group custom objects.
+    type: string
+  value:
+    type: any
+  key:
+    type: string

@@ -1,12 +1,15 @@
 #%RAML 1.0 DataType
-type: MessagePayload
+type: object
+(originalType): MessagePayload
 displayName: DeliveryAddressSetMessagePayload
 
 discriminatorValue: DeliveryAddressSet
 properties:
-   deliveryId:
-      type: string
-   address:
-      type: Address
-   oldAddress:
-      type: Address
+  type:
+    type: string
+  oldAddress:
+    type: Address
+  deliveryId:
+    type: string
+  address:
+    type: Address

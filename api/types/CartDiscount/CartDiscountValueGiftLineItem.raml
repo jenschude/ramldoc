@@ -1,15 +1,18 @@
 #%RAML 1.0 DataType
-type: CartDiscountValue
+type: object
+(originalType): CartDiscountValue
 displayName: CartDiscountValueGiftLineItem
 
 discriminatorValue: giftLineItem
 properties:
-   product:
-      type: ProductReference
-   variantId:
-      format: int64
-      type: number
-   supplyChannel:
-      type: ChannelReference
-   distributionChannel:
-      type: ChannelReference
+  type:
+    type: string
+  product:
+    type: ProductReference
+  supplyChannel:
+    type: ChannelReference
+  variantId:
+    format: int64
+    type: number
+  distributionChannel:
+    type: ChannelReference

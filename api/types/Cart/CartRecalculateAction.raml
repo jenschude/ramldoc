@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: CartUpdateAction
+type: object
+(originalType): CartUpdateAction
 displayName: CartRecalculateAction
 
 discriminatorValue: recalculate
 properties:
-   updateProductData:
-      type: boolean
+  action:
+    type: string
+  updateProductData:
+    type: boolean

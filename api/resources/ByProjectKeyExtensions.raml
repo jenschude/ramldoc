@@ -1,0 +1,46 @@
+#ByProjectKeyExtensions
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/extensions"
+  description: |-
+    Query Extensions
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: ExtensionPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/extensions"
+  description: |-
+    Currently, a maximum of 25 extensions can be created per project.
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ExtensionDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Extension
+    200:
+      body:

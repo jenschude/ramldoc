@@ -1,0 +1,49 @@
+#ByProjectKeyProductTypesByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/product-types/{ID}"
+  description: |-
+    Get ProductType by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductType
+post:
+  (resourcePathUri): "{projectKey}/product-types/{ID}"
+  description: |-
+    Update ProductType by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ProductTypeUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductType
+delete:
+  (resourcePathUri): "{projectKey}/product-types/{ID}"
+  description: |-
+    Delete ProductType by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductType

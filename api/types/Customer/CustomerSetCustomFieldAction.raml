@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: CustomerUpdateAction
+type: object
+(originalType): CustomerUpdateAction
 displayName: CustomerSetCustomFieldAction
 
 discriminatorValue: setCustomField
 properties:
-   name:
-      type: string
-   value:
-      type: any
+  action:
+    type: string
+  name:
+    type: string
+  value:
+    type: any

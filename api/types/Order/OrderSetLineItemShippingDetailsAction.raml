@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: OrderUpdateAction
+type: object
+(originalType): OrderUpdateAction
 displayName: OrderSetLineItemShippingDetailsAction
 
 discriminatorValue: setLineItemShippingDetails
 properties:
-   lineItemId:
-      type: string
-   shippingDetails:
-      type: ItemShippingDetailsDraft
+  action:
+    type: string
+  shippingDetails:
+    type: ItemShippingDetailsDraft
+  lineItemId:
+    type: string

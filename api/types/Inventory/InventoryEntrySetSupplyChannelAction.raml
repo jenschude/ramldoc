@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: InventoryEntryUpdateAction
+type: object
+(originalType): InventoryEntryUpdateAction
 displayName: InventoryEntrySetSupplyChannelAction
 
 discriminatorValue: setSupplyChannel
 properties:
-   supplyChannel:
-      type: ChannelResourceIdentifier
+  action:
+    type: string
+  supplyChannel:
+    type: ChannelResourceIdentifier

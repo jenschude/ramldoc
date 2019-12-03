@@ -1,39 +1,40 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: ProductVariantImportDraft
 
 
 properties:
-   id:
-      description: |-
-        The sequential ID of the variant within the product.
-        The variant with provided ID should exist in some existing product, so you also need to specify the productId if this property is set,
-        or alternatively you can just specify SKU of the product variant.
-      format: int64
-      type: number
-   sku:
-      description: |-
-        The SKU of the existing variant.
-      type: string
-   prices:
-      description: |-
-        The prices of the variant.
-        The prices should not contain two prices for the same price scope (same currency, country and customer group).
-        If this property is defined, then it will override the `prices` property from the original product variant, otherwise `prices` property from the original product variant would be copied in the resulting order.
-      type: array
-      items:
-        type: PriceDraft
-   attributes:
-      description: |-
-        If this property is defined, then it will override the `attributes` property from the original
-        product variant, otherwise `attributes` property from the original product variant would be copied in the resulting order.
-      type: array
-      items:
-        type: Attribute
-   images:
-      description: |-
-        If this property is defined, then it will override the `images` property from the original
-        product variant, otherwise `images` property from the original product variant would be copied in the resulting order.
-      type: array
-      items:
-        type: Image
+  images:
+    description: |-
+      If this property is defined, then it will override the `images` property from the original
+      product variant, otherwise `images` property from the original product variant would be copied in the resulting order.
+    type: array
+    items:
+      type: Image
+  attributes:
+    description: |-
+      If this property is defined, then it will override the `attributes` property from the original
+      product variant, otherwise `attributes` property from the original product variant would be copied in the resulting order.
+    type: array
+    items:
+      type: Attribute
+  id:
+    description: |-
+      The sequential ID of the variant within the product.
+      The variant with provided ID should exist in some existing product, so you also need to specify the productId if this property is set,
+      or alternatively you can just specify SKU of the product variant.
+    format: int64
+    type: number
+  prices:
+    description: |-
+      The prices of the variant.
+      The prices should not contain two prices for the same price scope (same currency, country and customer group).
+      If this property is defined, then it will override the `prices` property from the original product variant, otherwise `prices` property from the original product variant would be copied in the resulting order.
+    type: array
+    items:
+      type: PriceDraft
+  sku:
+    description: |-
+      The SKU of the existing variant.
+    type: string

@@ -1,0 +1,41 @@
+#ByProjectKeyProductProjections
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/product-projections"
+  description: |-
+    You can use the product projections query endpoint to get the current or staged representations of Products.
+    When used with an API client that has the view_published_products:{projectKey} scope,
+    this endpoint only returns published (current) product projections.
+  queryParameters:
+    staged:
+      type: boolean
+    priceCurrency:
+      type: string
+    priceCountry:
+      type: string
+    priceCustomerGroup:
+      type: string
+    priceChannel:
+      type: string
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductProjectionPagedQueryResponse

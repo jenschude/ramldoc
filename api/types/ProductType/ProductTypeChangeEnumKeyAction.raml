@@ -1,12 +1,15 @@
 #%RAML 1.0 DataType
-type: ProductTypeUpdateAction
+type: object
+(originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangeEnumKeyAction
 
 discriminatorValue: changeEnumKey
 properties:
-   attributeName:
-      type: string
-   key:
-      type: string
-   newKey:
-      type: string
+  action:
+    type: string
+  newKey:
+    type: string
+  attributeName:
+    type: string
+  key:
+    type: string

@@ -1,10 +1,36 @@
 #%RAML 1.0 DataType
-type: Message
+type: object
+(originalType): Message
 displayName: OrderPaymentStateChangedMessage
 
 discriminatorValue: OrderPaymentStateChanged
 properties:
-   paymentState:
-      type: PaymentState
-   oldPaymentState:
-      type: PaymentState
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  id:
+    type: string
+  version:
+    format: int64
+    type: number
+  createdBy:
+    type: CreatedBy
+  lastModifiedBy:
+    type: LastModifiedBy
+  sequenceNumber:
+    format: int64
+    type: number
+  resource:
+    type: Reference
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+  resourceVersion:
+    format: int64
+    type: number
+  type:
+    type: string
+  oldPaymentState:
+    type: PaymentState
+  paymentState:
+    type: PaymentState

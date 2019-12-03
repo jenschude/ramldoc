@@ -1,0 +1,49 @@
+#ByProjectKeyChannelsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/channels/{ID}"
+  description: |-
+    Get Channel by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Channel
+post:
+  (resourcePathUri): "{projectKey}/channels/{ID}"
+  description: |-
+    Update Channel by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ChannelUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Channel
+delete:
+  (resourcePathUri): "{projectKey}/channels/{ID}"
+  description: |-
+    Delete Channel by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Channel

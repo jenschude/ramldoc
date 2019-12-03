@@ -1,31 +1,32 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: OrderFromCartDraft
 
 
 properties:
-   id:
-      description: |-
-        The unique id of the cart from which an order is created.
-      type: string
-   version:
-      format: int64
-      type: number
-   orderNumber:
-      description: |-
-        String that uniquely identifies an order.
-        It can be used to create more human-readable (in contrast to ID) identifier for the order.
-        It should be unique across a project.
-        Once it's set it cannot be changed.
-        For easier use on Get, Update and Delete actions we suggest assigning order numbers that match the regular expression `[a-z0-9_-]{2,36}`.
-      type: string
-   paymentState:
-      type: PaymentState
-   shipmentState:
-      type: ShipmentState
-   orderState:
-      description: |-
-        Order will be created with `Open` status by default.
-      type: OrderState
-   state:
-      type: StateResourceIdentifier
+  shipmentState:
+    type: ShipmentState
+  orderNumber:
+    description: |-
+      String that uniquely identifies an order.
+      It can be used to create more human-readable (in contrast to ID) identifier for the order.
+      It should be unique across a project.
+      Once it's set it cannot be changed.
+      For easier use on Get, Update and Delete actions we suggest assigning order numbers that match the regular expression `[a-z0-9_-]{2,36}`.
+    type: string
+  state:
+    type: StateResourceIdentifier
+  id:
+    description: |-
+      The unique id of the cart from which an order is created.
+    type: string
+  paymentState:
+    type: PaymentState
+  version:
+    format: int64
+    type: number
+  orderState:
+    description: |-
+      Order will be created with `Open` status by default.
+    type: OrderState

@@ -1,0 +1,31 @@
+#ByProjectKeyProductProjectionsKeyByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  key:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/product-projections/key={key}"
+  description: |-
+    Gets the current or staged representation of a product found by Key.
+    When used with an API client that has the view_published_products:{projectKey} scope,
+    this endpoint only returns published (current) product projections.
+  queryParameters:
+    staged:
+      type: boolean
+    priceCurrency:
+      type: string
+    priceCountry:
+      type: string
+    priceCustomerGroup:
+      type: string
+    priceChannel:
+      type: string
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: ProductProjection

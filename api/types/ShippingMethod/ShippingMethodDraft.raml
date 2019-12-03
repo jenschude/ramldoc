@@ -1,26 +1,27 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: ShippingMethodDraft
 
 
 properties:
-   key:
-      type: string
-   name:
-      type: string
-   description:
-      type: string
-   taxCategory:
-      type: TaxCategoryResourceIdentifier
-   zoneRates:
-      type: array
-      items:
-        type: ZoneRateDraft
-   isDefault:
-      description: |-
-        If `true` the shipping method will be the default one in a project.
-      type: boolean
-   predicate:
-      description: |-
-        A Cart predicate which can be used to more precisely select a shipping method for a cart.
-      type: string
+  zoneRates:
+    type: array
+    items:
+      type: ZoneRateDraft
+  predicate:
+    description: |-
+      A Cart predicate which can be used to more precisely select a shipping method for a cart.
+    type: string
+  isDefault:
+    description: |-
+      If `true` the shipping method will be the default one in a project.
+    type: boolean
+  name:
+    type: string
+  description:
+    type: string
+  key:
+    type: string
+  taxCategory:
+    type: TaxCategoryResourceIdentifier

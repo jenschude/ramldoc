@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: MyPaymentUpdateAction
+type: object
+(originalType): MyPaymentUpdateAction
 displayName: MyPaymentSetMethodInfoMethodAction
 
 discriminatorValue: setMethodInfoMethod
 properties:
-   method:
-      type: string
+  action:
+    type: string
+  method:
+    type: string

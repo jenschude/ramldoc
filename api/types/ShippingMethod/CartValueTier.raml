@@ -1,13 +1,16 @@
 #%RAML 1.0 DataType
-type: ShippingRatePriceTier
+type: object
+(originalType): ShippingRatePriceTier
 displayName: CartValueTier
 
 discriminatorValue: CartValue
 properties:
-   minimumCentAmount:
-      format: int64
-      type: integer
-   price:
-      type: Money
-   isMatching:
-      type: boolean
+  type:
+    type: ShippingRateTierType
+  minimumCentAmount:
+    format: int64
+    type: integer
+  price:
+    type: Money
+  isMatching:
+    type: boolean

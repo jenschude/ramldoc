@@ -1,18 +1,44 @@
 #%RAML 1.0 DataType
-type: Message
+type: object
+(originalType): Message
 displayName: ParcelItemsUpdatedMessage
 
 discriminatorValue: ParcelItemsUpdated
 properties:
-   parcelId:
-      type: string
-   deliveryId:
-      type: string
-   items:
-      type: array
-      items:
-        type: DeliveryItem
-   oldItems:
-      type: array
-      items:
-        type: DeliveryItem
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  id:
+    type: string
+  version:
+    format: int64
+    type: number
+  createdBy:
+    type: CreatedBy
+  lastModifiedBy:
+    type: LastModifiedBy
+  sequenceNumber:
+    format: int64
+    type: number
+  resource:
+    type: Reference
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+  resourceVersion:
+    format: int64
+    type: number
+  type:
+    type: string
+  deliveryId:
+    type: string
+  oldItems:
+    type: array
+    items:
+      type: DeliveryItem
+  items:
+    type: array
+    items:
+      type: DeliveryItem
+  parcelId:
+    type: string

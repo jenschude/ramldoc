@@ -1,0 +1,49 @@
+#ByProjectKeyCartDiscountsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/cart-discounts/{ID}"
+  description: |-
+    Get CartDiscount by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: CartDiscount
+post:
+  (resourcePathUri): "{projectKey}/cart-discounts/{ID}"
+  description: |-
+    Update CartDiscount by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: CartDiscountUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: CartDiscount
+delete:
+  (resourcePathUri): "{projectKey}/cart-discounts/{ID}"
+  description: |-
+    Delete CartDiscount by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: CartDiscount

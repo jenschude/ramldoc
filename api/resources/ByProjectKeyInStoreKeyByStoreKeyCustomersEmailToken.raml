@@ -1,0 +1,19 @@
+#ByProjectKeyInStoreKeyByStoreKeyCustomersEmailToken
+
+uriParameters:
+  projectKey:
+    type: string
+  storeKey:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/customers/email-token"
+  description: |-
+    Create a Token for verifying the Customer's Email
+  body:
+    application/json:
+      type: CustomerCreateEmailToken
+  responses:
+    200:
+      body:
+        application/json:
+          type: CustomerToken

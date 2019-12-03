@@ -1,22 +1,23 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: TrackingData
 
 
 properties:
-   trackingId:
-      description: |-
-        The ID to track one parcel.
-      type: string
-   carrier:
-      description: |-
-        The carrier that delivers the parcel.
-      type: string
-   provider:
-      type: string
-   providerTransaction:
-      type: string
-   isReturn:
-      description: |-
-        Flag to distinguish if the parcel is on the way to the customer (false) or on the way back (true).
-      type: boolean
+  isReturn:
+    description: |-
+      Flag to distinguish if the parcel is on the way to the customer (false) or on the way back (true).
+    type: boolean
+  carrier:
+    description: |-
+      The carrier that delivers the parcel.
+    type: string
+  providerTransaction:
+    type: string
+  provider:
+    type: string
+  trackingId:
+    description: |-
+      The ID to track one parcel.
+    type: string

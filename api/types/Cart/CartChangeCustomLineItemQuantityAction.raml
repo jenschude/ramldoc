@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: CartUpdateAction
+type: object
+(originalType): CartUpdateAction
 displayName: CartChangeCustomLineItemQuantityAction
 
 discriminatorValue: changeCustomLineItemQuantity
 properties:
-   customLineItemId:
-      type: string
-   quantity:
-      type: number
+  action:
+    type: string
+  customLineItemId:
+    type: string
+  quantity:
+    type: number

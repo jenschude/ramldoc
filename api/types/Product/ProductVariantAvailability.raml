@@ -1,16 +1,17 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: ProductVariantAvailability
 
 
 properties:
-   isOnStock:
-      type: boolean
-   restockableInDays:
-      format: int64
-      type: number
-   availableQuantity:
-      format: int64
-      type: number
-   channels:
-      type: ProductVariantChannelAvailabilityMap
+  availableQuantity:
+    format: int64
+    type: number
+  channels:
+    type: ProductVariantChannelAvailabilityMap
+  restockableInDays:
+    format: int64
+    type: number
+  isOnStock:
+    type: boolean

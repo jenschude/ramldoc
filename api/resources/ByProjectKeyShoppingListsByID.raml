@@ -1,0 +1,51 @@
+#ByProjectKeyShoppingListsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/shopping-lists/{ID}"
+  description: |-
+    Gets a shopping list by ID.
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: ShoppingList
+post:
+  (resourcePathUri): "{projectKey}/shopping-lists/{ID}"
+  description: |-
+    Update ShoppingList by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ShoppingListUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: ShoppingList
+delete:
+  (resourcePathUri): "{projectKey}/shopping-lists/{ID}"
+  description: |-
+    Delete ShoppingList by ID
+  queryParameters:
+    dataErasure:
+      type: boolean
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: ShoppingList

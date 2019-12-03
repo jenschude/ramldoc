@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: ProductUpdateAction
+type: object
+(originalType): ProductUpdateAction
 displayName: ProductSetProductPriceCustomTypeAction
 
 discriminatorValue: setProductPriceCustomType
 properties:
-   priceId:
-      type: string
-   staged:
-      type: boolean
-   type:
-      type: TypeResourceIdentifier
-   fields:
-      type: FieldContainer
+  action:
+    type: string
+  staged:
+    type: boolean
+  fields:
+    type: FieldContainer
+  type:
+    type: TypeResourceIdentifier
+  priceId:
+    type: string

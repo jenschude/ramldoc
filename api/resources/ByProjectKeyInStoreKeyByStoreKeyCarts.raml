@@ -1,0 +1,53 @@
+#ByProjectKeyInStoreKeyByStoreKeyCarts
+
+uriParameters:
+  projectKey:
+    type: string
+  storeKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/carts"
+  description: |-
+    Queries carts in a specific Store. The {storeKey} path parameter maps to a Store’s key.
+  queryParameters:
+    customerId:
+      type: string
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: CartPagedQueryResponse | object
+post:
+  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/carts"
+  description: |-
+    Creates a cart in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store’s key.
+    When using this endpoint the cart’s store field is always set to the store specified in the path parameter.
+    Creating a cart can fail with an InvalidOperation if the referenced shipping method
+    in the CartDraft has a predicate which does not match the cart.
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: CartDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Cart
+    200:
+      body:

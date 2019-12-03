@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: MyCustomerUpdateAction
+type: object
+(originalType): MyCustomerUpdateAction
 displayName: MyCustomerSetLastNameAction
 
 discriminatorValue: setLastName
 properties:
-   lastName:
-      type: string
+  action:
+    type: string
+  lastName:
+    type: string

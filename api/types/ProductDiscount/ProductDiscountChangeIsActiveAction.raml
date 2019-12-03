@@ -1,8 +1,11 @@
 #%RAML 1.0 DataType
-type: ProductDiscountUpdateAction
+type: object
+(originalType): ProductDiscountUpdateAction
 displayName: ProductDiscountChangeIsActiveAction
 
 discriminatorValue: changeIsActive
 properties:
-   isActive:
-      type: boolean
+  action:
+    type: string
+  isActive:
+    type: boolean

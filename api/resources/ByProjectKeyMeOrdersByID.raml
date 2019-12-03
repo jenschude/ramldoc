@@ -1,0 +1,34 @@
+#ByProjectKeyMeOrdersByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/me/orders/{ID}"
+  description: |-
+    Get MyOrder by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyOrder
+post:
+  (resourcePathUri): "{projectKey}/me/orders/{ID}"
+  description: |-
+    Update MyOrder by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: Update
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyOrder

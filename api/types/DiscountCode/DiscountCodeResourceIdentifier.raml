@@ -1,6 +1,13 @@
 #%RAML 1.0 DataType
-type: ResourceIdentifier
+type: object
+(originalType): ResourceIdentifier
 displayName: DiscountCodeResourceIdentifier
 
 discriminatorValue: discount-code
 properties:
+  typeId:
+    type: ReferenceTypeId
+  id:
+    type: string
+  key:
+    type: string

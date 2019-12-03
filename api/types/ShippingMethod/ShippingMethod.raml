@@ -1,47 +1,48 @@
 #%RAML 1.0 DataType
-type: LoggedResource
+type: object
+(originalType): LoggedResource
 displayName: ShippingMethod
 
 
 properties:
-   id:
-      description: |-
-        The unique ID of the shipping method.
-      type: string
-   version:
-      description: |-
-        The current version of the shipping method.
-      format: int64
-      type: number
-   createdAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedBy:
-      type: LastModifiedBy
-   createdBy:
-      type: CreatedBy
-   key:
-      description: |-
-        User-specific unique identifier for the shipping method.
-      type: string
-   name:
-      type: string
-   description:
-      type: string
-   taxCategory:
-      type: TaxCategoryReference
-   zoneRates:
-      type: array
-      items:
-        type: ZoneRate
-   isDefault:
-      description: |-
-        One shipping method in a project can be default.
-      type: boolean
-   predicate:
-      description: |-
-        A Cart predicate which can be used to more precisely select a shipping method for a cart.
-      type: string
+  createdAt:
+    format: rfc3339
+    type: datetime
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+  id:
+    description: |-
+      The unique ID of the shipping method.
+    type: string
+  version:
+    description: |-
+      The current version of the shipping method.
+    format: int64
+    type: number
+  createdBy:
+    type: CreatedBy
+  lastModifiedBy:
+    type: LastModifiedBy
+  zoneRates:
+    type: array
+    items:
+      type: ZoneRate
+  predicate:
+    description: |-
+      A Cart predicate which can be used to more precisely select a shipping method for a cart.
+    type: string
+  isDefault:
+    description: |-
+      One shipping method in a project can be default.
+    type: boolean
+  name:
+    type: string
+  description:
+    type: string
+  key:
+    description: |-
+      User-specific unique identifier for the shipping method.
+    type: string
+  taxCategory:
+    type: TaxCategoryReference

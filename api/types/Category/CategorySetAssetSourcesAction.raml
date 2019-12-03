@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: CategoryUpdateAction
+type: object
+(originalType): CategoryUpdateAction
 displayName: CategorySetAssetSourcesAction
 
 discriminatorValue: setAssetSources
 properties:
-   assetId:
-      type: string
-   assetKey:
-      type: string
-   sources:
-      type: array
-      items:
-        type: AssetSource
+  action:
+    type: string
+  sources:
+    type: array
+    items:
+      type: AssetSource
+  assetId:
+    type: string
+  assetKey:
+    type: string

@@ -1,0 +1,46 @@
+#ByProjectKeyCategories
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/categories"
+  description: |-
+    Query Categories
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: CategoryPagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/categories"
+  description: |-
+    Creating a category produces the CategoryCreated message.
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: CategoryDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Category
+    200:
+      body:

@@ -1,158 +1,159 @@
 #%RAML 1.0 DataType
-type: LoggedResource
+type: object
+(originalType): LoggedResource
 displayName: Order
 
 
 properties:
-   id:
-      description: |-
-        The unique ID of the order.
-      type: string
-   version:
-      description: |-
-        The current version of the order.
-      format: int64
-      type: number
-   createdAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedAt:
-      format: rfc3339
-      type: datetime
-   lastModifiedBy:
-      description: |-
-        Present on resources updated after 1/02/2019 except for events not tracked.
-      type: LastModifiedBy
-   createdBy:
-      description: |-
-        Present on resources created after 1/02/2019 except for events not tracked.
-      type: CreatedBy
-   completedAt:
-      description: |-
-        This field will only be present if it was set for Order Import
-      format: rfc3339
-      type: datetime
-   orderNumber:
-      description: |-
-        String that uniquely identifies an order.
-        It can be used to create more human-readable (in contrast to ID) identifier for the order.
-        It should be unique across a project.
-        Once it's set it cannot be changed.
-      type: string
-   customerId:
-      type: string
-   customerEmail:
-      type: string
-   anonymousId:
-      description: |-
-        Identifies carts and orders belonging to an anonymous session (the customer has not signed up/in yet).
-      type: string
-   store:
-      type: StoreKeyReference
-   lineItems:
-      type: array
-      items:
-        type: LineItem
-   customLineItems:
-      type: array
-      items:
-        type: CustomLineItem
-   totalPrice:
-      discriminator: type
-      type: TypedMoney
-   taxedPrice:
-      description: |-
-        The taxes are calculated based on the shipping address.
-      type: TaxedPrice
-   shippingAddress:
+  createdAt:
+    format: rfc3339
+    type: datetime
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+  id:
+    description: |-
+      The unique ID of the order.
+    type: string
+  version:
+    description: |-
+      The current version of the order.
+    format: int64
+    type: number
+  createdBy:
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    type: CreatedBy
+  lastModifiedBy:
+    description: |-
+      Present on resources updated after 1/02/2019 except for events not tracked.
+    type: LastModifiedBy
+  shipmentState:
+    type: ShipmentState
+  country:
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+      Used for product variant price selection.
+    type: string
+  orderNumber:
+    description: |-
+      String that uniquely identifies an order.
+      It can be used to create more human-readable (in contrast to ID) identifier for the order.
+      It should be unique across a project.
+      Once it's set it cannot be changed.
+    type: string
+  totalPrice:
+    discriminator: type
+    type: TypedMoney
+  shippingRateInput:
+    description: |-
+      The shippingRateInput is used as an input to select a ShippingRatePriceTier.
+    discriminator: type
+    type: ShippingRateInput
+  taxedPrice:
+    description: |-
+      The taxes are calculated based on the shipping address.
+    type: TaxedPrice
+  origin:
+    type: CartOrigin
+  shippingInfo:
+    description: |-
+      Set if the ShippingMethod is set.
+    type: ShippingInfo
+  refusedGifts:
+    description: |-
+      Automatically filled when a line item with LineItemMode `GiftLineItem` is removed from this order.
+    type: array
+    items:
+      type: CartDiscountReference
+  locale:
+    type: string
+  cart:
+    description: |-
+      Set when this order was created from a cart.
+      The cart will have the state `Ordered`.
+    discriminatorValue: cart
+    type: CartReference
+  inventoryMode:
+    type: InventoryMode
+  orderState:
+    description: |-
+      One of the four predefined OrderStates.
+    type: OrderState
+  returnInfo:
+    type: array
+    items:
+      type: ReturnInfo
+  lineItems:
+    type: array
+    items:
+      type: LineItem
+  customLineItems:
+    type: array
+    items:
+      type: CustomLineItem
+  itemShippingAddresses:
+    description: |-
+      Contains addresses for orders with multiple shipping addresses.
+    type: array
+    items:
       type: Address
-   billingAddress:
-      type: Address
-   taxMode:
-      type: TaxMode
-   taxRoundingMode:
-      description: |-
-        When calculating taxes for `taxedPrice`, the selected mode is used for rouding.
-      type: RoundingMode
-   customerGroup:
-      description: |-
-        Set when the customer is set and the customer is a member of a customer group.
-        Used for product variant price selection.
-      discriminatorValue: customer-group
-      type: CustomerGroupReference
-   country:
-      description: |-
-        A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-        Used for product variant price selection.
-      type: string
-   orderState:
-      description: |-
-        One of the four predefined OrderStates.
-      type: OrderState
-   state:
-      description: |-
-        This reference can point to a state in a custom workflow.
-      type: StateReference
-   shipmentState:
-      type: ShipmentState
-   paymentState:
-      type: PaymentState
-   shippingInfo:
-      description: |-
-        Set if the ShippingMethod is set.
-      type: ShippingInfo
-   syncInfo:
-      type: array
-      items:
-        type: SyncInfo
-   returnInfo:
-      type: array
-      items:
-        type: ReturnInfo
-   discountCodes:
-      type: array
-      items:
-        type: DiscountCodeInfo
-   lastMessageSequenceNumber:
-      description: |-
-        The sequence number of the last order message produced by changes to this order.
-        `0` means, that no messages were created yet.
-      format: int64
-      type: number
-   cart:
-      description: |-
-        Set when this order was created from a cart.
-        The cart will have the state `Ordered`.
-      discriminatorValue: cart
-      type: CartReference
-   custom:
-      type: CustomFields
-   paymentInfo:
-      type: PaymentInfo
-   locale:
-      type: string
-   inventoryMode:
-      type: InventoryMode
-   origin:
-      type: CartOrigin
-   taxCalculationMode:
-      description: |-
-        When calculating taxes for `taxedPrice`, the selected mode is used for calculating the price with LineItemLevel (horizontally) or UnitPriceLevel (vertically) calculation mode.
-      type: TaxCalculationMode
-   shippingRateInput:
-      description: |-
-        The shippingRateInput is used as an input to select a ShippingRatePriceTier.
-      discriminator: type
-      type: ShippingRateInput
-   itemShippingAddresses:
-      description: |-
-        Contains addresses for orders with multiple shipping addresses.
-      type: array
-      items:
-        type: Address
-   refusedGifts:
-      description: |-
-        Automatically filled when a line item with LineItemMode `GiftLineItem` is removed from this order.
-      type: array
-      items:
-        type: CartDiscountReference
+  customerEmail:
+    type: string
+  customerId:
+    type: string
+  state:
+    description: |-
+      This reference can point to a state in a custom workflow.
+    type: StateReference
+  paymentState:
+    type: PaymentState
+  anonymousId:
+    description: |-
+      Identifies carts and orders belonging to an anonymous session (the customer has not signed up/in yet).
+    type: string
+  discountCodes:
+    type: array
+    items:
+      type: DiscountCodeInfo
+  completedAt:
+    description: |-
+      This field will only be present if it was set for Order Import
+    format: rfc3339
+    type: datetime
+  customerGroup:
+    description: |-
+      Set when the customer is set and the customer is a member of a customer group.
+      Used for product variant price selection.
+    discriminatorValue: customer-group
+    type: CustomerGroupReference
+  custom:
+    type: CustomFields
+  taxCalculationMode:
+    description: |-
+      When calculating taxes for `taxedPrice`, the selected mode is used for calculating the price with LineItemLevel (horizontally) or UnitPriceLevel (vertically) calculation mode.
+    type: TaxCalculationMode
+  store:
+    type: StoreKeyReference
+  lastMessageSequenceNumber:
+    description: |-
+      The sequence number of the last order message produced by changes to this order.
+      `0` means, that no messages were created yet.
+    format: int64
+    type: number
+  syncInfo:
+    type: array
+    items:
+      type: SyncInfo
+  taxRoundingMode:
+    description: |-
+      When calculating taxes for `taxedPrice`, the selected mode is used for rouding.
+    type: RoundingMode
+  taxMode:
+    type: TaxMode
+  shippingAddress:
+    type: Address
+  billingAddress:
+    type: Address
+  paymentInfo:
+    type: PaymentInfo

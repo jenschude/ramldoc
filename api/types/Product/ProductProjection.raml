@@ -1,62 +1,67 @@
 #%RAML 1.0 DataType
-type: BaseResource
+type: object
+(originalType): BaseResource
 displayName: ProductProjection
 
 
 properties:
-   id:
-      description: |-
-        The unique ID of the Product.
-      type: string
-   version:
-      description: |-
-        The current version of the Product.
-      format: int64
-      type: number
-   key:
-      description: |-
-        User-specific unique identifier of the Product.
-      type: string
-   productType:
-      discriminatorValue: product-type
-      type: ProductTypeReference
-   name:
-      type: LocalizedString
-   description:
-      type: LocalizedString
-   slug:
-      type: LocalizedString
-   categories:
-      description: |-
-        References to categories the product is in.
-      type: array
-      items:
-        type: CategoryReference
-   categoryOrderHints:
-      type: CategoryOrderHints
-   metaTitle:
-      type: LocalizedString
-   metaDescription:
-      type: LocalizedString
-   metaKeywords:
-      type: LocalizedString
-   searchKeywords:
-      type: SearchKeywords
-   hasStagedChanges:
-      type: boolean
-   published:
-      type: boolean
-   masterVariant:
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  id:
+    description: |-
+      The unique ID of the Product.
+    type: string
+  version:
+    description: |-
+      The current version of the Product.
+    format: int64
+    type: number
+  searchKeywords:
+    type: SearchKeywords
+  description:
+    type: LocalizedString
+  variants:
+    type: array
+    items:
       type: ProductVariant
-   variants:
-      type: array
-      items:
-        type: ProductVariant
-   taxCategory:
-      type: TaxCategoryReference
-   state:
-      type: StateReference
-   reviewRatingStatistics:
-      description: |-
-        Statistics about the review ratings taken into account for this product.
-      type: ReviewRatingStatistics
+  published:
+    type: boolean
+  hasStagedChanges:
+    type: boolean
+  metaDescription:
+    type: LocalizedString
+  taxCategory:
+    type: TaxCategoryReference
+  metaKeywords:
+    type: LocalizedString
+  categoryOrderHints:
+    type: CategoryOrderHints
+  metaTitle:
+    type: LocalizedString
+  name:
+    type: LocalizedString
+  state:
+    type: StateReference
+  masterVariant:
+    type: ProductVariant
+  categories:
+    description: |-
+      References to categories the product is in.
+    type: array
+    items:
+      type: CategoryReference
+  reviewRatingStatistics:
+    description: |-
+      Statistics about the review ratings taken into account for this product.
+    type: ReviewRatingStatistics
+  slug:
+    type: LocalizedString
+  productType:
+    discriminatorValue: product-type
+    type: ProductTypeReference
+  key:
+    description: |-
+      User-specific unique identifier of the Product.
+    type: string

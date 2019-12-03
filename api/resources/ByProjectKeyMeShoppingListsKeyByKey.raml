@@ -1,0 +1,12 @@
+#ByProjectKeyMeShoppingListsKeyByKey
+
+uriParameters:
+  projectKey:
+    type: string
+  key:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/me/shopping-lists/key={key}"
+  body:
+    application/json:
+      type: MyShoppingListUpdate

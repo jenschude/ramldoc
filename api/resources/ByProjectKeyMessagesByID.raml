@@ -1,0 +1,20 @@
+#ByProjectKeyMessagesByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/messages/{ID}"
+  description: |-
+    Get Message by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          discriminator: type
+          type: Message

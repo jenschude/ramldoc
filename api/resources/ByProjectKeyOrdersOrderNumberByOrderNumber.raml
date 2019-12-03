@@ -1,0 +1,52 @@
+#ByProjectKeyOrdersOrderNumberByOrderNumber
+
+uriParameters:
+  projectKey:
+    type: string
+  orderNumber:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/orders/order-number={orderNumber}"
+  description: |-
+    In case the orderNumber does not match the regular expression [a-zA-Z0-9_-]+,
+    it should be provided in URL-encoded format.
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Order
+post:
+  (resourcePathUri): "{projectKey}/orders/order-number={orderNumber}"
+  description: |-
+    Update Order by orderNumber
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: OrderUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Order
+delete:
+  (resourcePathUri): "{projectKey}/orders/order-number={orderNumber}"
+  description: |-
+    Delete Order by orderNumber
+  queryParameters:
+    dataErasure:
+      type: boolean
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Order

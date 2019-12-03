@@ -1,17 +1,43 @@
 #%RAML 1.0 DataType
-type: Message
+type: object
+(originalType): Message
 displayName: CustomLineItemStateTransitionMessage
 
 discriminatorValue: CustomLineItemStateTransition
 properties:
-   customLineItemId:
-      type: string
-   transitionDate:
-      type: datetime
-   quantity:
-      format: int64
-      type: number
-   fromState:
-      type: StateReference
-   toState:
-      type: StateReference
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  id:
+    type: string
+  version:
+    format: int64
+    type: number
+  createdBy:
+    type: CreatedBy
+  lastModifiedBy:
+    type: LastModifiedBy
+  sequenceNumber:
+    format: int64
+    type: number
+  resource:
+    type: Reference
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+  resourceVersion:
+    format: int64
+    type: number
+  type:
+    type: string
+  toState:
+    type: StateReference
+  fromState:
+    type: StateReference
+  customLineItemId:
+    type: string
+  quantity:
+    format: int64
+    type: number
+  transitionDate:
+    type: datetime

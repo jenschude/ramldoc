@@ -1,15 +1,16 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: BaseResource
 
 
 properties:
-   id:
-      type: string
-   version:
-      format: int64
-      type: number
-   createdAt:
-      type: datetime
-   lastModifiedAt:
-      type: datetime
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  id:
+    type: string
+  version:
+    format: int64
+    type: number

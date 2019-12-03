@@ -1,0 +1,49 @@
+#ByProjectKeyOrdersEditsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/orders/edits/{ID}"
+  description: |-
+    Get OrderEdit by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: OrderEdit
+post:
+  (resourcePathUri): "{projectKey}/orders/edits/{ID}"
+  description: |-
+    Update OrderEdit by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: OrderEditUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: OrderEdit
+delete:
+  (resourcePathUri): "{projectKey}/orders/edits/{ID}"
+  description: |-
+    Delete OrderEdit by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: OrderEdit

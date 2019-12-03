@@ -1,0 +1,46 @@
+#ByProjectKeyDiscountCodes
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/discount-codes"
+  description: |-
+    Query DiscountCodes
+  queryParameters:
+    expand:
+      type: string
+    where:
+      type: string
+    sort:
+      type: string
+    limit:
+      format: int16
+      type: number
+    offset:
+      format: int16
+      type: number
+    withTotal:
+      type: boolean
+  responses:
+    200:
+      body:
+        application/json:
+          type: DiscountCodePagedQueryResponse
+post:
+  (resourcePathUri): "{projectKey}/discount-codes"
+  description: |-
+    Create DiscountCode
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: DiscountCodeDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: DiscountCode
+    200:
+      body:

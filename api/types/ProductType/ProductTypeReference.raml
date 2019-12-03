@@ -1,8 +1,13 @@
 #%RAML 1.0 DataType
-type: Reference
+type: object
+(originalType): Reference
 displayName: ProductTypeReference
 
 discriminatorValue: product-type
 properties:
-   obj:
-      type: ProductType
+  typeId:
+    type: ReferenceTypeId
+  id:
+    type: string
+  obj:
+    type: ProductType

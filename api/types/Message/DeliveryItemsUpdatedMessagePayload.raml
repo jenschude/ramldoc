@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: MessagePayload
+type: object
+(originalType): MessagePayload
 displayName: DeliveryItemsUpdatedMessagePayload
 
 discriminatorValue: DeliveryItemsUpdated
 properties:
-   deliveryId:
-      type: string
-   items:
-      type: array
-      items:
-        type: DeliveryItem
-   oldItems:
-      type: array
-      items:
-        type: DeliveryItem
+  type:
+    type: string
+  deliveryId:
+    type: string
+  oldItems:
+    type: array
+    items:
+      type: DeliveryItem
+  items:
+    type: array
+    items:
+      type: DeliveryItem

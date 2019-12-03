@@ -1,0 +1,21 @@
+#ByProjectKeyInStoreKeyByStoreKeyCustomersEmailTokenByEmailToken
+
+uriParameters:
+  projectKey:
+    type: string
+  storeKey:
+    type: string
+  emailToken:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/in-store/key={storeKey}/customers/email-token={emailToken}"
+  description: |-
+    Get Customer by emailToken
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Customer

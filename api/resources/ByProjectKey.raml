@@ -1,0 +1,26 @@
+#ByProjectKey
+
+uriParameters:
+  projectKey:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}"
+  description: |-
+    The Endpoint is responding a limited set of information about settings and configuration of the project.
+  responses:
+    200:
+      body:
+        application/json:
+          type: Project
+post:
+  (resourcePathUri): "{projectKey}"
+  description: |-
+    Update project
+  body:
+    application/json:
+      type: ProjectUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Project

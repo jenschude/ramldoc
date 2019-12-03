@@ -1,0 +1,49 @@
+#ByProjectKeyMePaymentsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/me/payments/{ID}"
+  description: |-
+    Get MyPayment by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyPayment
+post:
+  (resourcePathUri): "{projectKey}/me/payments/{ID}"
+  description: |-
+    Update MyPayment by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: Update
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyPayment
+delete:
+  (resourcePathUri): "{projectKey}/me/payments/{ID}"
+  description: |-
+    Delete MyPayment by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: MyPayment

@@ -1,13 +1,14 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: ProductTypeUpdate
 
 
 properties:
-   version:
-      format: int64
-      type: number
-   actions:
-      type: array
-      items:
-        type: ProductTypeUpdateAction
+  actions:
+    type: array
+    items:
+      type: ProductTypeUpdateAction
+  version:
+    format: int64
+    type: number

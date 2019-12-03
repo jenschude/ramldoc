@@ -1,0 +1,49 @@
+#ByProjectKeyExtensionsByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/extensions/{ID}"
+  description: |-
+    Retrieves the representation of an extension by its id.
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Extension
+post:
+  (resourcePathUri): "{projectKey}/extensions/{ID}"
+  description: |-
+    Update Extension by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: ExtensionUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: Extension
+delete:
+  (resourcePathUri): "{projectKey}/extensions/{ID}"
+  description: |-
+    Delete Extension by ID
+  queryParameters:
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: Extension

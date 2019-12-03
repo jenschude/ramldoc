@@ -1,18 +1,19 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: ErrorResponse
 
 
 properties:
-   statusCode:
-      type: integer
-   message:
-      type: string
-   error:
-      type: string
-   error_description:
-      type: string
-   errors:
-      type: array
-      items:
-        type: ErrorObject
+  error_description:
+    type: string
+  error:
+    type: string
+  message:
+    type: string
+  errors:
+    type: array
+    items:
+      type: ErrorObject
+  statusCode:
+    type: integer

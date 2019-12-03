@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: ProductTypeUpdateAction
+type: object
+(originalType): ProductTypeUpdateAction
 displayName: ProductTypeAddPlainEnumValueAction
 
 discriminatorValue: addPlainEnumValue
 properties:
-   attributeName:
-      type: string
-   value:
-      type: AttributePlainEnumValue
+  action:
+    type: string
+  attributeName:
+    type: string
+  value:
+    type: AttributePlainEnumValue

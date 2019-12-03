@@ -1,0 +1,51 @@
+#ByProjectKeyDiscountCodesByID
+
+uriParameters:
+  projectKey:
+    type: string
+  ID:
+    type: string
+get:
+  (resourcePathUri): "{projectKey}/discount-codes/{ID}"
+  description: |-
+    Get DiscountCode by ID
+  queryParameters:
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: DiscountCode
+post:
+  (resourcePathUri): "{projectKey}/discount-codes/{ID}"
+  description: |-
+    Update DiscountCode by ID
+  queryParameters:
+    expand:
+      type: string
+  body:
+    application/json:
+      type: DiscountCodeUpdate
+  responses:
+    200:
+      body:
+        application/json:
+          type: DiscountCode
+delete:
+  (resourcePathUri): "{projectKey}/discount-codes/{ID}"
+  description: |-
+    Delete DiscountCode by ID
+  queryParameters:
+    dataErasure:
+      type: boolean
+    version:
+      format: int64
+      type: number
+    expand:
+      type: string
+  responses:
+    200:
+      body:
+        application/json:
+          type: DiscountCode

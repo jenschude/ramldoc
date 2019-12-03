@@ -1,0 +1,17 @@
+#ByProjectKeyCartsReplicate
+
+uriParameters:
+  projectKey:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/carts/replicate"
+  body:
+    application/json:
+      type: ReplicaCartDraft
+  responses:
+    201:
+      body:
+        application/json:
+          type: Cart
+    200:
+      body:

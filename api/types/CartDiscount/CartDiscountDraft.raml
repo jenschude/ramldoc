@@ -1,55 +1,56 @@
 #%RAML 1.0 DataType
 type: object
+(originalType): object
 displayName: CartDiscountDraft
 
 
 properties:
-   name:
-      type: LocalizedString
-   key:
-      description: |-
-        User-specific unique identifier for a cart discount.
-        Must be unique across a project.
-        The field can be reset using the Set Key UpdateAction.
-      type: string
-   description:
-      type: LocalizedString
-   value:
-      type: CartDiscountValueDraft
-   cartPredicate:
-      description: |-
-        A valid Cart predicate.
-      type: string
-   target:
-      description: |-
-        Must not be set when the `value` has type `giftLineItem`, otherwise a CartDiscountTarget must be set.
-      type: CartDiscountTarget
-   sortOrder:
-      description: |-
-        The string must contain a number between 0 and 1.
-        A discount with greater sort order is prioritized higher than a discount with lower sort order.
-        The sort order must be unambiguous among all cart discounts.
-      type: string
-   isActive:
-      description: |-
-        Only active discount can be applied to the cart.
-        Defaults to `true`.
-      type: boolean
-   validFrom:
-      format: rfc3339
-      type: datetime
-   validUntil:
-      format: rfc3339
-      type: datetime
-   requiresDiscountCode:
-      description: |-
-        States whether the discount can only be used in a connection with a DiscountCode.
-        Defaults to `false`.
-      type: boolean
-   stackingMode:
-      description: |-
-        Specifies whether the application of this discount causes the following discounts to be ignored.
-        Defaults to Stacking.
-      type: StackingMode
-   custom:
-      type: CustomFields
+  requiresDiscountCode:
+    description: |-
+      States whether the discount can only be used in a connection with a DiscountCode.
+      Defaults to `false`.
+    type: boolean
+  cartPredicate:
+    description: |-
+      A valid Cart predicate.
+    type: string
+  custom:
+    type: CustomFields
+  stackingMode:
+    description: |-
+      Specifies whether the application of this discount causes the following discounts to be ignored.
+      Defaults to Stacking.
+    type: StackingMode
+  sortOrder:
+    description: |-
+      The string must contain a number between 0 and 1.
+      A discount with greater sort order is prioritized higher than a discount with lower sort order.
+      The sort order must be unambiguous among all cart discounts.
+    type: string
+  name:
+    type: LocalizedString
+  validUntil:
+    format: rfc3339
+    type: datetime
+  description:
+    type: LocalizedString
+  validFrom:
+    format: rfc3339
+    type: datetime
+  isActive:
+    description: |-
+      Only active discount can be applied to the cart.
+      Defaults to `true`.
+    type: boolean
+  value:
+    type: CartDiscountValueDraft
+  key:
+    description: |-
+      User-specific unique identifier for a cart discount.
+      Must be unique across a project.
+      The field can be reset using the Set Key UpdateAction.
+    type: string
+  target:
+    description: |-
+      Must not be set when the `value` has type `giftLineItem`, otherwise a CartDiscountTarget must be set.
+    type: CartDiscountTarget

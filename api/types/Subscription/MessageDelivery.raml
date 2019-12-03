@@ -1,23 +1,32 @@
 #%RAML 1.0 DataType
-type: SubscriptionDelivery
+type: object
+(originalType): SubscriptionDelivery
 displayName: MessageDelivery
 
 discriminatorValue: Message
 properties:
-   id:
-      type: string
-   version:
-      format: int64
-      type: number
-   createdAt:
-      type: datetime
-   lastModifiedAt:
-      type: datetime
-   sequenceNumber:
-      format: int64
-      type: number
-   resourceVersion:
-      format: int64
-      type: number
-   payloadNotIncluded:
-      type: PayloadNotIncluded
+  projectKey:
+    type: string
+  resource:
+    type: Reference
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+  notificationType:
+    type: string
+  sequenceNumber:
+    format: int64
+    type: number
+  createdAt:
+    type: datetime
+  lastModifiedAt:
+    type: datetime
+  resourceVersion:
+    format: int64
+    type: number
+  payloadNotIncluded:
+    type: PayloadNotIncluded
+  id:
+    type: string
+  version:
+    format: int64
+    type: number

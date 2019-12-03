@@ -1,6 +1,11 @@
 #%RAML 1.0 DataType
-type: ErrorObject
+type: object
+(originalType): ErrorObject
 displayName: InvalidInputError
 
 discriminatorValue: InvalidInput
 properties:
+  code:
+    type: string
+  message:
+    type: string

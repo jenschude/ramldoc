@@ -1,0 +1,12 @@
+#ByProjectKeyMeLogin
+
+uriParameters:
+  projectKey:
+    type: string
+post:
+  (resourcePathUri): "{projectKey}/me/login"
+  responses:
+    200:
+      body:
+        application/json:
+          type: CustomerSignInResult

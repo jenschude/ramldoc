@@ -1,10 +1,13 @@
 #%RAML 1.0 DataType
-type: StagedOrderUpdateAction
+type: object
+(originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetLineItemPriceAction
 
 discriminatorValue: setLineItemPrice
 properties:
-   lineItemId:
-      type: string
-   externalPrice:
-      type: Money
+  action:
+    type: string
+  lineItemId:
+    type: string
+  externalPrice:
+    type: Money

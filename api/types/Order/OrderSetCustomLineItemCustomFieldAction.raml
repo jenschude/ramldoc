@@ -1,12 +1,15 @@
 #%RAML 1.0 DataType
-type: OrderUpdateAction
+type: object
+(originalType): OrderUpdateAction
 displayName: OrderSetCustomLineItemCustomFieldAction
 
 discriminatorValue: setCustomLineItemCustomField
 properties:
-   customLineItemId:
-      type: string
-   name:
-      type: string
-   value:
-      type: any
+  action:
+    type: string
+  customLineItemId:
+    type: string
+  name:
+    type: string
+  value:
+    type: any
