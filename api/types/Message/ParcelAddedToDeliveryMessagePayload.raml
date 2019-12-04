@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: ParcelAddedToDeliveryMessagePayload
-# discriminator: type
-# discriminatorValue: ParcelAddedToDelivery
+discriminator: type
+discriminatorValue: ParcelAddedToDelivery
 properties:
   type:
-    default: ParcelAddedToDelivery
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - ParcelAddedToDelivery
+    required: true
   delivery:
-    required: true
     type: Delivery
-  parcel:
+    (builtinType): object
     required: true
+  parcel:
     type: Parcel
+    (builtinType): object
+    required: true

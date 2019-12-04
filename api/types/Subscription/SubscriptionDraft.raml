@@ -1,28 +1,31 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: SubscriptionDraft
-# 
-# 
 properties:
   format:
-    required: false
     discriminator: type
     type: DeliveryFormat
+    (builtinType): object
+    required: false
   destination:
-    required: true
     discriminator: type
     type: Destination
+    (builtinType): object
+    required: true
   changes:
-    required: false
     type: array
     items:
       type: ChangeSubscription
-  messages:
+    (builtinType): array
     required: false
+  messages:
     type: array
     items:
       type: MessageSubscription
-  key:
+    (builtinType): array
     required: false
+  key:
     type: string
+    (builtinType): string
+    required: false

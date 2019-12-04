@@ -1,20 +1,25 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StagedOrderUpdateAction
+(builtinType): object
+type: StagedOrderUpdateAction
 displayName: StagedOrderSetLineItemCustomFieldAction
-# discriminator: action
-# discriminatorValue: setLineItemCustomField
+discriminator: action
+discriminatorValue: setLineItemCustomField
 properties:
   action:
-    default: setLineItemCustomField
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setLineItemCustomField
+    required: true
   lineItemId:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   name:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   value:
-    required: false
     type: any
+    (builtinType): any
+    required: false

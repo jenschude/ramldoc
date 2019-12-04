@@ -1,20 +1,25 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): OrderEditResult
+(builtinType): object
+type: OrderEditResult
 displayName: OrderEditApplied
-# discriminator: type
-# discriminatorValue: Applied
+discriminator: type
+discriminatorValue: Applied
 properties:
   type:
-    default: Applied
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - Applied
+    required: true
   excerptAfterEdit:
-    required: true
     type: OrderExcerpt
+    (builtinType): object
+    required: true
   excerptBeforeEdit:
-    required: true
     type: OrderExcerpt
-  appliedAt:
+    (builtinType): object
     required: true
+  appliedAt:
     type: datetime
+    (builtinType): datetime
+    required: true

@@ -1,77 +1,89 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: State
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   id:
-    required: true
     type: string
-  version:
+    (builtinType): string
     required: true
+  version:
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
+    required: false
   initial:
-    required: true
+    type: boolean
+    (builtinType): boolean
     description: |-
       A state can be declared as an initial state for any state machine.
-      When a workflow starts, this first state must be an `initial` state.
-    type: boolean
+               When a workflow starts, this first state must be an `initial` state.
+    required: true
   roles:
-    required: false
     type: array
     items:
       type: StateRoleEnum
+    (builtinType): array
+    required: false
   builtIn:
-    required: true
+    type: boolean
+    (builtinType): boolean
     description: |-
       Builtin states are integral parts of the project that cannot be deleted nor the key can be changed.
-    type: boolean
+    required: true
   description:
-    required: false
+    type: LocalizedString
+    (builtinType): object
     description: |-
       A human-readable description of the state.
-    type: LocalizedString
-  transitions:
     required: false
-    description: |-
-      Transitions are a way to describe possible transformations of the current state to other states of the same `type` (e.g.: _Initial_ -> _Shipped_).
-      When performing a `transitionState` update action and `transitions` is set, the currently referenced state must have a transition to the new state.
-      If `transitions` is an empty list, it means the current state is a final state and no further transitions are allowed.
-      If `transitions` is not set, the validation is turned off.
-      When performing a `transitionState` update action, any other state of the same `type` can be transitioned to.
+  transitions:
     type: array
     items:
       type: StateReference
-  type:
-    required: true
-    type: StateTypeEnum
-  name:
+    (builtinType): array
+    description: |-
+      Transitions are a way to describe possible transformations of the current state to other states of the same `type` (e.g.: _Initial_ -> _Shipped_).
+               When performing a `transitionState` update action and `transitions` is set, the currently referenced state must have a transition to the new state.
+               If `transitions` is an empty list, it means the current state is a final state and no further transitions are allowed.
+               If `transitions` is not set, the validation is turned off.
+               When performing a `transitionState` update action, any other state of the same `type` can be transitioned to.
     required: false
+  type:
+    type: StateTypeEnum
+    (builtinType): string
+    required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
     description: |-
       A human-readable name of the state.
-    type: LocalizedString
+    required: false
   key:
-    required: true
+    type: string
+    (builtinType): string
     description: |-
       A unique identifier for the state.
-    type: string
+    required: true

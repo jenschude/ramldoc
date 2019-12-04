@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CartUpdateAction
+(builtinType): object
+type: CartUpdateAction
 displayName: CartSetLineItemTaxRateAction
-# discriminator: action
-# discriminatorValue: setLineItemTaxRate
+discriminator: action
+discriminatorValue: setLineItemTaxRate
 properties:
   action:
-    default: setLineItemTaxRate
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setLineItemTaxRate
+    required: true
   externalTaxRate:
-    required: false
     type: ExternalTaxRateDraft
+    (builtinType): object
+    required: false
   lineItemId:
-    required: true
     type: string
+    (builtinType): string
+    required: true

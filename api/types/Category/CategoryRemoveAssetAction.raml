@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CategoryUpdateAction
+(builtinType): object
+type: CategoryUpdateAction
 displayName: CategoryRemoveAssetAction
-# discriminator: action
-# discriminatorValue: removeAsset
+discriminator: action
+discriminatorValue: removeAsset
 properties:
   action:
-    default: removeAsset
+    type: string
+    (builtinType): string
+    enum:
+    - removeAsset
     required: true
-    type: string
   assetId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   assetKey:
-    required: false
     type: string
+    (builtinType): string
+    required: false

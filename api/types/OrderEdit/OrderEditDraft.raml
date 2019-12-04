@@ -1,39 +1,43 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: OrderEditDraft
-# 
-# 
 properties:
   dryRun:
-    required: false
+    type: boolean
+    (builtinType): boolean
     description: |-
       When set to `true` the edit is applied on the Order without persisting it.
-    type: boolean
+    required: false
   resource:
-    required: true
+    type: OrderReference
+    (builtinType): object
     description: |-
       The order to be updated with this edit.
-    type: OrderReference
+    required: true
   custom:
-    required: false
+    type: CustomFieldsDraft
+    (builtinType): object
     description: |-
       The custom fields.
-    type: CustomFieldsDraft
-  comment:
     required: false
+  comment:
+    type: string
+    (builtinType): string
     description: |-
       This field can be used to add additional textual information regarding the edit.
-    type: string
-  stagedActions:
     required: false
-    description: |-
-      The actions to apply to `resource`.
+  stagedActions:
     type: array
     items:
       type: StagedOrderUpdateAction
-  key:
+    (builtinType): array
+    description: |-
+      The actions to apply to `resource`.
     required: false
+  key:
+    type: string
+    (builtinType): string
     description: |-
       Unique identifier for this edit.
-    type: string
+    required: false

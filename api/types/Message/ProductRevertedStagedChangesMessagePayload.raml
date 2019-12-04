@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: ProductRevertedStagedChangesMessagePayload
-# discriminator: type
-# discriminatorValue: ProductRevertedStagedChanges
+discriminator: type
+discriminatorValue: ProductRevertedStagedChanges
 properties:
   type:
-    default: ProductRevertedStagedChanges
-    required: true
     type: string
-  removedImageUrls:
+    (builtinType): string
+    enum:
+    - ProductRevertedStagedChanges
     required: true
+  removedImageUrls:
     type: array
     items:
       type: string
+    (builtinType): array
+    required: true

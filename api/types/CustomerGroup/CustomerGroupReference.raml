@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Reference
+(builtinType): object
+type: Reference
 displayName: CustomerGroupReference
-# discriminator: typeId
-# discriminatorValue: customer-group
+discriminator: typeId
+discriminatorValue: customer-group
 properties:
   typeId:
-    default: customer-group
-    required: true
     type: ReferenceTypeId
-  id:
+    (builtinType): string
+    enum:
+    - customer-group
     required: true
+  id:
     type: string
+    (builtinType): string
+    required: true
   obj:
-    required: false
     type: CustomerGroup
+    (builtinType): object
+    required: false

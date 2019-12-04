@@ -1,140 +1,167 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: Customer
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the customer.
-    type: string
-  version:
     required: true
-    description: |-
-      The current version of the customer.
+  version:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The current version of the customer.
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
-  lastName:
     required: false
+  lastName:
     type: string
+    (builtinType): string
+    required: false
   addresses:
-    required: true
-    description: |-
-      The addresses have unique IDs in the addresses list
     type: array
     items:
       type: Address
-  companyName:
-    required: false
-    type: string
-  vatId:
-    required: false
-    type: string
-  locale:
-    required: false
-    type: string
-  title:
-    required: false
-    type: string
-  isEmailVerified:
-    required: true
-    type: boolean
-  shippingAddressIds:
-    required: false
+    (builtinType): array
     description: |-
-      The IDs from the addresses list which are used as shipping addresses
+      The addresses have unique IDs in the addresses list
+    required: true
+  companyName:
+    type: string
+    (builtinType): string
+    required: false
+  vatId:
+    type: string
+    (builtinType): string
+    required: false
+  locale:
+    type: string
+    (builtinType): string
+    required: false
+  title:
+    type: string
+    (builtinType): string
+    required: false
+  isEmailVerified:
+    type: boolean
+    (builtinType): boolean
+    required: true
+  shippingAddressIds:
     type: array
     items:
       type: string
-  password:
-    required: true
-    type: string
-  key:
+    (builtinType): array
+    description: |-
+      The IDs from the addresses list which are used as shipping addresses
     required: false
+  password:
+    type: string
+    (builtinType): string
+    required: true
+  key:
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for a customer.
-      Must be unique across a project.
-      The field can be reset using the Set Key UpdateAction
-    type: string
+               Must be unique across a project.
+               The field can be reset using the Set Key UpdateAction
+    required: false
   email:
-    required: true
+    type: string
+    (builtinType): string
     description: |-
       The customer's email address and the main identifier of uniqueness for a customer account.
-      Email addresses are either unique to the store they're specified for, _or_ for the entire project.
-      For more information, see Email uniquenes.
-    type: string
+               Email addresses are either unique to the store they're specified for, _or_ for the entire project.
+               For more information, see Email uniquenes.
+    required: true
   stores:
-    required: false
-    description: |-
-      References to the stores the customer account is associated with.
-      If no stores are specified, the customer is a global customer, and can log in using the Password Flow for global Customers.
-      If one or more stores are specified, the customer can only log in using the Password Flow for Customers in a Store for those specific stores.
     type: array
     items:
       type: StoreKeyReference
-  customerGroup:
+    (builtinType): array
+    description: |-
+      References to the stores the customer account is associated with.
+               If no stores are specified, the customer is a global customer, and can log in using the Password Flow for global Customers.
+               If one or more stores are specified, the customer can only log in using the Password Flow for Customers in a Store for those specific stores.
     required: false
+  customerGroup:
     discriminatorValue: customer-group
     type: CustomerGroupReference
+    (builtinType): object
+    required: false
   custom:
-    required: false
     type: CustomFields
+    (builtinType): object
+    required: false
   externalId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   dateOfBirth:
-    required: false
     type: date-only
-  billingAddressIds:
+    (builtinType): date-only
     required: false
-    description: |-
-      The IDs from the addresses list which are used as billing addresses
+  billingAddressIds:
     type: array
     items:
       type: string
-  defaultShippingAddressId:
+    (builtinType): array
+    description: |-
+      The IDs from the addresses list which are used as billing addresses
     required: false
+  defaultShippingAddressId:
+    type: string
+    (builtinType): string
     description: |-
       The address ID in the addresses list
-    type: string
-  customerNumber:
     required: false
+  customerNumber:
+    type: string
+    (builtinType): string
     description: |-
       The customer number can be used to create a more human-readable (in contrast to ID) identifier for the customer.
-      It should be unique across a project.
-      Once the field was set it cannot be changed anymore.
-    type: string
-  defaultBillingAddressId:
+               It should be unique across a project.
+               Once the field was set it cannot be changed anymore.
     required: false
+  defaultBillingAddressId:
+    type: string
+    (builtinType): string
     description: |-
       The address ID in the addresses list
-    type: string
+    required: false
   firstName:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   middleName:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   salutation:
-    required: false
     type: string
+    (builtinType): string
+    required: false

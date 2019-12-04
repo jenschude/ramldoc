@@ -1,78 +1,91 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: PaymentDraft
-# 
-# 
 properties:
   amountAuthorized:
-    required: false
     type: Money
-  anonymousId:
+    (builtinType): object
     required: false
+  anonymousId:
+    type: string
+    (builtinType): string
     description: |-
       Identifies payments belonging to an anonymous session (the customer has not signed up/in yet).
-    type: string
+    required: false
   paymentMethodInfo:
-    required: false
     type: PaymentMethodInfo
+    (builtinType): object
+    required: false
   custom:
-    required: false
     type: CustomFieldsDraft
+    (builtinType): object
+    required: false
   authorizedUntil:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   externalId:
-    required: false
     type: string
-  transactions:
+    (builtinType): string
     required: false
-    description: |-
-      A list of financial transactions of different TransactionTypes with different TransactionStates.
+  transactions:
     type: array
     items:
       type: TransactionDraft
+    (builtinType): array
+    description: |-
+      A list of financial transactions of different TransactionTypes with different TransactionStates.
+    required: false
   amountPaid:
-    required: false
     type: Money
+    (builtinType): object
+    required: false
   amountRefunded:
-    required: false
     type: Money
+    (builtinType): object
+    required: false
   amountPlanned:
-    required: true
+    type: Money
+    (builtinType): object
     description: |-
       How much money this payment intends to receive from the customer.
-      The value usually matches the cart or order gross total.
-    type: Money
+               The value usually matches the cart or order gross total.
+    required: true
   interfaceInteractions:
-    required: false
-    description: |-
-      Interface interactions can be requests send to the PSP, responses received from the PSP or notifications received from the PSP.
-      Some interactions may result in a transaction.
-      If so, the `interactionId` in the Transaction should be set to match the ID of the PSP for the interaction.
-      Interactions are managed by the PSP integration and are usually neither written nor read by the user facing frontends or other services.
     type: array
     items:
       type: CustomFieldsDraft
-  interfaceId:
+    (builtinType): array
+    description: |-
+      Interface interactions can be requests send to the PSP, responses received from the PSP or notifications received from the PSP.
+               Some interactions may result in a transaction.
+               If so, the `interactionId` in the Transaction should be set to match the ID of the PSP for the interaction.
+               Interactions are managed by the PSP integration and are usually neither written nor read by the user facing frontends or other services.
     required: false
+  interfaceId:
+    type: string
+    (builtinType): string
     description: |-
       The identifier that is used by the interface that manages the payment (usually the PSP).
-      Cannot be changed once it has been set.
-      The combination of this ID and the PaymentMethodInfo `paymentInterface` must be unique.
-    type: string
-  key:
+               Cannot be changed once it has been set.
+               The combination of this ID and the PaymentMethodInfo `paymentInterface` must be unique.
     required: false
+  key:
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for the payment (max.
-      256 characters).
-    type: string
+               256 characters).
+    required: false
   paymentStatus:
-    required: false
     type: PaymentStatusDraft
-  customer:
+    (builtinType): object
     required: false
-    description: |-
-      A reference to the customer this payment belongs to.
+  customer:
     discriminatorValue: customer
     type: CustomerResourceIdentifier
+    (builtinType): object
+    description: |-
+      A reference to the customer this payment belongs to.
+    required: false

@@ -1,32 +1,41 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ErrorObject
+(builtinType): object
+type: ErrorObject
 displayName: MatchingPriceNotFoundError
-# discriminator: code
-# discriminatorValue: MatchingPriceNotFound
+discriminator: code
+discriminatorValue: MatchingPriceNotFound
 properties:
   code:
-    default: MatchingPriceNotFound
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - MatchingPriceNotFound
+    required: true
   message:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   country:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   productId:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   customerGroup:
-    required: false
     type: CustomerGroupReference
+    (builtinType): object
+    required: false
   channel:
-    required: false
     type: ChannelReference
-  currency:
+    (builtinType): object
     required: false
+  currency:
     type: string
+    (builtinType): string
+    required: false
   variantId:
-    required: true
     type: integer
+    (builtinType): integer
+    required: true

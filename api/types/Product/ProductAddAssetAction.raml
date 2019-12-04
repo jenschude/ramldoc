@@ -1,28 +1,35 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductAddAssetAction
-# discriminator: action
-# discriminatorValue: addAsset
+discriminator: action
+discriminatorValue: addAsset
 properties:
   action:
-    default: addAsset
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - addAsset
+    required: true
   position:
-    required: false
     format: int32
     type: number
+    (builtinType): number
+    required: false
   staged:
-    required: false
     type: boolean
-  variantId:
+    (builtinType): boolean
     required: false
+  variantId:
     format: int64
     type: number
-  asset:
-    required: true
-    type: AssetDraft
-  sku:
+    (builtinType): number
     required: false
+  asset:
+    type: AssetDraft
+    (builtinType): object
+    required: true
+  sku:
     type: string
+    (builtinType): string
+    required: false

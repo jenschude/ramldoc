@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StagedOrderUpdateAction
+(builtinType): object
+type: StagedOrderUpdateAction
 displayName: StagedOrderSetOrderNumberAction
-# discriminator: action
-# discriminatorValue: setOrderNumber
+discriminator: action
+discriminatorValue: setOrderNumber
 properties:
   action:
-    default: setOrderNumber
+    type: string
+    (builtinType): string
+    enum:
+    - setOrderNumber
     required: true
-    type: string
   orderNumber:
-    required: false
     type: string
+    (builtinType): string
+    required: false

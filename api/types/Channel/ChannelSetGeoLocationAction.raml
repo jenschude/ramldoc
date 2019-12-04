@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ChannelUpdateAction
+(builtinType): object
+type: ChannelUpdateAction
 displayName: ChannelSetGeoLocationAction
-# discriminator: action
-# discriminatorValue: setGeoLocation
+discriminator: action
+discriminatorValue: setGeoLocation
 properties:
   action:
-    default: setGeoLocation
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setGeoLocation
+    required: true
   geoLocation:
-    required: false
     type: GeoJson
+    (builtinType): object
+    required: false

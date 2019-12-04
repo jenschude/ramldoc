@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProjectUpdateAction
+(builtinType): object
+type: ProjectUpdateAction
 displayName: ProjectSetExternalOAuthAction
-# discriminator: action
-# discriminatorValue: setExternalOAuth
+discriminator: action
+discriminatorValue: setExternalOAuth
 properties:
   action:
-    default: setExternalOAuth
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setExternalOAuth
+    required: true
   externalOAuth:
-    required: false
     type: ExternalOAuth
+    (builtinType): object
+    required: false

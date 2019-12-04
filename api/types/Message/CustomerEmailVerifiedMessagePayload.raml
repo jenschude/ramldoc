@@ -1,11 +1,13 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: CustomerEmailVerifiedMessagePayload
-# discriminator: type
-# discriminatorValue: CustomerEmailVerified
+discriminator: type
+discriminatorValue: CustomerEmailVerified
 properties:
   type:
-    default: CustomerEmailVerified
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - CustomerEmailVerified
+    required: true

@@ -1,23 +1,26 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ReturnItemDraft
-# 
-# 
 properties:
   shipmentState:
-    required: true
     type: ReturnShipmentState
-  customLineItemId:
-    required: false
-    type: string
-  quantity:
+    (builtinType): string
     required: true
+  customLineItemId:
+    type: string
+    (builtinType): string
+    required: false
+  quantity:
     format: int64
     type: number
+    (builtinType): number
+    required: true
   lineItemId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   comment:
-    required: false
     type: string
+    (builtinType): string
+    required: false

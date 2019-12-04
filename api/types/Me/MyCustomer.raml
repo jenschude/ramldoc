@@ -1,103 +1,130 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: MyCustomer
-# 
-# 
 properties:
   createdAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   id:
-    required: true
     type: string
-  version:
+    (builtinType): string
     required: true
+  version:
     format: int64
     type: number
-  createdBy:
-    required: false
-    type: CreatedBy
-  lastModifiedBy:
-    required: false
-    type: LastModifiedBy
-  lastName:
-    required: false
-    type: string
-  addresses:
+    (builtinType): number
     required: true
+  createdBy:
+    type: CreatedBy
+    (builtinType): object
+    required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
+    required: false
+  lastName:
+    type: string
+    (builtinType): string
+    required: false
+  addresses:
     type: array
     items:
       type: Address
-  companyName:
-    required: false
-    type: string
-  vatId:
-    required: false
-    type: string
-  locale:
-    required: false
-    type: string
-  title:
-    required: false
-    type: string
-  isEmailVerified:
+    (builtinType): array
     required: true
-    type: boolean
-  shippingAddressIds:
+  companyName:
+    type: string
+    (builtinType): string
     required: false
+  vatId:
+    type: string
+    (builtinType): string
+    required: false
+  locale:
+    type: string
+    (builtinType): string
+    required: false
+  title:
+    type: string
+    (builtinType): string
+    required: false
+  isEmailVerified:
+    type: boolean
+    (builtinType): boolean
+    required: true
+  shippingAddressIds:
     type: array
     items:
       type: string
+    (builtinType): array
+    required: false
   password:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   key:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   email:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   stores:
-    required: false
     type: array
     items:
       type: StoreKeyReference
+    (builtinType): array
+    required: false
   customerGroup:
-    required: false
     type: CustomerGroupReference
+    (builtinType): object
+    required: false
   custom:
-    required: false
     type: CustomFields
+    (builtinType): object
+    required: false
   externalId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   dateOfBirth:
-    required: false
     type: date-only
-  billingAddressIds:
+    (builtinType): date-only
     required: false
+  billingAddressIds:
     type: array
     items:
       type: string
+    (builtinType): array
+    required: false
   defaultShippingAddressId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   customerNumber:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   defaultBillingAddressId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   firstName:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   middleName:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   salutation:
-    required: false
     type: string
+    (builtinType): string
+    required: false

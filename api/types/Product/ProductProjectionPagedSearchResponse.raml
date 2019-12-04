@@ -1,27 +1,30 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ProductProjectionPagedSearchResponse
-# 
-# 
 properties:
   total:
+    format: int64
+    type: number
+    (builtinType): number
     required: false
-    format: int64
-    type: number
   offset:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   count:
-    required: true
     format: int64
     type: number
-  results:
+    (builtinType): number
     required: true
+  results:
     type: array
     items:
       type: ProductProjection
-  facets:
+    (builtinType): array
     required: true
+  facets:
     type: FacetResults
+    (builtinType): object
+    required: true

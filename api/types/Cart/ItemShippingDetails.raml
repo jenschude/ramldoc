@@ -1,22 +1,22 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ItemShippingDetails
-# 
-# 
 properties:
   valid:
-    required: true
+    type: boolean
+    (builtinType): boolean
     description: |-
       `true` if the quantity of the (custom) line item is equal to the sum of the sub-quantities in `targets`, `false` otherwise.
-      A cart cannot be ordered when the value is `false`.
-      The error InvalidItemShippingDetails will be triggered.
-    type: boolean
-  targets:
+               A cart cannot be ordered when the value is `false`.
+               The error InvalidItemShippingDetails will be triggered.
     required: true
-    description: |-
-      Used to map what sub-quantity should be shipped to which address.
-      Duplicate address keys are not allowed.
+  targets:
     type: array
     items:
       type: ItemShippingTarget
+    (builtinType): array
+    description: |-
+      Used to map what sub-quantity should be shipped to which address.
+               Duplicate address keys are not allowed.
+    required: true

@@ -1,31 +1,39 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ShoppingListUpdateAction
+(builtinType): object
+type: ShoppingListUpdateAction
 displayName: ShoppingListAddLineItemAction
-# discriminator: action
-# discriminatorValue: addLineItem
+discriminator: action
+discriminatorValue: addLineItem
 properties:
   action:
-    default: addLineItem
+    type: string
+    (builtinType): string
+    enum:
+    - addLineItem
     required: true
-    type: string
   addedAt:
-    required: false
     type: datetime
+    (builtinType): datetime
+    required: false
   quantity:
-    required: false
     format: int64
     type: number
+    (builtinType): number
+    required: false
   productId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   custom:
-    required: false
     type: CustomFieldsDraft
-  variantId:
+    (builtinType): object
     required: false
+  variantId:
     format: int64
     type: number
-  sku:
+    (builtinType): number
     required: false
+  sku:
     type: string
+    (builtinType): string
+    required: false

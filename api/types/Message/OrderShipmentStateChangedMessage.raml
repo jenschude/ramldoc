@@ -1,50 +1,64 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Message
+(builtinType): object
+type: Message
 displayName: OrderShipmentStateChangedMessage
-# discriminator: type
-# discriminatorValue: OrderShipmentStateChanged
+discriminator: type
+discriminatorValue: OrderShipmentStateChanged
 properties:
   createdAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   id:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   version:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdBy:
-    required: false
     type: CreatedBy
+    (builtinType): object
+    required: false
   lastModifiedBy:
-    required: false
     type: LastModifiedBy
+    (builtinType): object
+    required: false
   sequenceNumber:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   resource:
-    required: true
     type: Reference
-  resourceUserProvidedIdentifiers:
-    required: false
-    type: UserProvidedIdentifiers
-  resourceVersion:
+    (builtinType): object
     required: true
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+    (builtinType): object
+    required: false
+  resourceVersion:
     format: int64
     type: number
+    (builtinType): number
+    required: true
   type:
-    default: OrderShipmentStateChanged
-    required: true
     type: string
-  shipmentState:
+    (builtinType): string
+    enum:
+    - OrderShipmentStateChanged
     required: true
+  shipmentState:
     type: ShipmentState
+    (builtinType): string
+    required: true
   oldShipmentState:
-    required: false
     type: ShipmentState
+    (builtinType): string
+    required: false

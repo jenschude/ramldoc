@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductSetTaxCategoryAction
-# discriminator: action
-# discriminatorValue: setTaxCategory
+discriminator: action
+discriminatorValue: setTaxCategory
 properties:
   action:
-    default: setTaxCategory
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setTaxCategory
+    required: true
   taxCategory:
-    required: false
     type: TaxCategoryResourceIdentifier
+    (builtinType): object
+    required: false

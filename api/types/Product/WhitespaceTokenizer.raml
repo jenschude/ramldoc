@@ -1,11 +1,13 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): SuggestTokenizer
+(builtinType): object
+type: SuggestTokenizer
 displayName: WhitespaceTokenizer
-# discriminator: type
-# discriminatorValue: whitespace
+discriminator: type
+discriminatorValue: whitespace
 properties:
   type:
-    default: whitespace
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - whitespace
+    required: true

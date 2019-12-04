@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ShippingRateInputDraft
+(builtinType): object
+type: ShippingRateInputDraft
 displayName: ScoreShippingRateInputDraft
-# discriminator: type
-# discriminatorValue: Score
+discriminator: type
+discriminatorValue: Score
 properties:
   type:
-    default: Score
-    required: true
     type: string
-  score:
+    (builtinType): string
+    enum:
+    - Score
     required: true
+  score:
     type: number
+    (builtinType): number
+    required: true

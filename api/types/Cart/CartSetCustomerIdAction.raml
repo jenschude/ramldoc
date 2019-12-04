@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CartUpdateAction
+(builtinType): object
+type: CartUpdateAction
 displayName: CartSetCustomerIdAction
-# discriminator: action
-# discriminatorValue: setCustomerId
+discriminator: action
+discriminatorValue: setCustomerId
 properties:
   action:
-    default: setCustomerId
+    type: string
+    (builtinType): string
+    enum:
+    - setCustomerId
     required: true
-    type: string
   customerId:
-    required: false
     type: string
+    (builtinType): string
+    required: false

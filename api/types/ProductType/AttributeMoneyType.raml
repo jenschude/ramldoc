@@ -1,11 +1,13 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): AttributeType
+(builtinType): object
+type: AttributeType
 displayName: AttributeMoneyType
-# discriminator: name
-# discriminatorValue: money
+discriminator: name
+discriminatorValue: money
 properties:
   name:
-    default: money
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - money
+    required: true

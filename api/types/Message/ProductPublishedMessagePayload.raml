@@ -1,22 +1,27 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: ProductPublishedMessagePayload
-# discriminator: type
-# discriminatorValue: ProductPublished
+discriminator: type
+discriminatorValue: ProductPublished
 properties:
   type:
-    default: ProductPublished
-    required: true
     type: string
-  removedImageUrls:
+    (builtinType): string
+    enum:
+    - ProductPublished
     required: true
+  removedImageUrls:
     type: array
     items:
       type: string
+    (builtinType): array
+    required: true
   productProjection:
-    required: true
     type: ProductProjection
-  scope:
+    (builtinType): object
     required: true
+  scope:
     type: ProductPublishScope
+    (builtinType): string
+    required: true

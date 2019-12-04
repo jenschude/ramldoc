@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductSetMetaTitleAction
-# discriminator: action
-# discriminatorValue: setMetaTitle
+discriminator: action
+discriminatorValue: setMetaTitle
 properties:
   action:
-    default: setMetaTitle
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setMetaTitle
+    required: true
   metaTitle:
-    required: false
     type: LocalizedString
-  staged:
+    (builtinType): object
     required: false
+  staged:
     type: boolean
+    (builtinType): boolean
+    required: false

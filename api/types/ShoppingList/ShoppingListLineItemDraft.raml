@@ -1,26 +1,30 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ShoppingListLineItemDraft
-# 
-# 
 properties:
   addedAt:
-    required: false
     type: datetime
+    (builtinType): datetime
+    required: false
   quantity:
-    required: false
     type: number
+    (builtinType): number
+    required: false
   productId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   custom:
-    required: false
     type: CustomFieldsDraft
-  variantId:
+    (builtinType): object
     required: false
+  variantId:
     format: int64
     type: number
-  sku:
+    (builtinType): number
     required: false
+  sku:
     type: string
+    (builtinType): string
+    required: false

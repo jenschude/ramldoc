@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ShippingMethodUpdateAction
+(builtinType): object
+type: ShippingMethodUpdateAction
 displayName: ShippingMethodChangeTaxCategoryAction
-# discriminator: action
-# discriminatorValue: changeTaxCategory
+discriminator: action
+discriminatorValue: changeTaxCategory
 properties:
   action:
-    default: changeTaxCategory
-    required: true
     type: string
-  taxCategory:
+    (builtinType): string
+    enum:
+    - changeTaxCategory
     required: true
+  taxCategory:
     type: TaxCategoryResourceIdentifier
+    (builtinType): object
+    required: true

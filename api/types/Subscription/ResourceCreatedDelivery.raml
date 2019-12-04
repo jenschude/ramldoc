@@ -1,27 +1,34 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): SubscriptionDelivery
+(builtinType): object
+type: SubscriptionDelivery
 displayName: ResourceCreatedDelivery
-# discriminator: notificationType
-# discriminatorValue: ResourceCreated
+discriminator: notificationType
+discriminatorValue: ResourceCreated
 properties:
   projectKey:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   resource:
-    required: true
     type: Reference
+    (builtinType): object
+    required: true
   resourceUserProvidedIdentifiers:
-    required: false
     type: UserProvidedIdentifiers
+    (builtinType): object
+    required: false
   notificationType:
-    default: ResourceCreated
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - ResourceCreated
+    required: true
   modifiedAt:
-    required: true
     type: datetime
-  version:
+    (builtinType): datetime
     required: true
+  version:
     format: int64
     type: number
+    (builtinType): number
+    required: true

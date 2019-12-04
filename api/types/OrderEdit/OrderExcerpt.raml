@@ -1,18 +1,19 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: OrderExcerpt
-# 
-# 
 properties:
   totalPrice:
-    required: true
     discriminator: type
     type: TypedMoney
-  taxedPrice:
-    required: false
-    type: TaxedPrice
-  version:
+    (builtinType): object
     required: true
+  taxedPrice:
+    type: TaxedPrice
+    (builtinType): object
+    required: false
+  version:
     format: int16
     type: integer
+    (builtinType): integer
+    required: true

@@ -1,19 +1,23 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): TypeUpdateAction
+(builtinType): object
+type: TypeUpdateAction
 displayName: TypeChangeLocalizedEnumValueOrderAction
-# discriminator: action
-# discriminatorValue: changeLocalizedEnumValueOrder
+discriminator: action
+discriminatorValue: changeLocalizedEnumValueOrder
 properties:
   action:
-    default: changeLocalizedEnumValueOrder
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changeLocalizedEnumValueOrder
+    required: true
   fieldName:
-    required: true
     type: string
-  keys:
+    (builtinType): string
     required: true
+  keys:
     type: array
     items:
       type: string
+    (builtinType): array
+    required: true

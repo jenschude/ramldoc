@@ -1,53 +1,60 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ProductDiscountDraft
-# 
-# 
 properties:
   predicate:
-    required: true
+    type: string
+    (builtinType): string
     description: |-
       A valid ProductDiscount Predicate.
-    type: string
-  sortOrder:
     required: true
+  sortOrder:
+    type: string
+    (builtinType): string
     description: |-
       The string must contain a decimal number between 0 and 1.
-      A discount with greater sortOrder is prioritized higher than a discount with lower sortOrder.
-    type: string
+               A discount with greater sortOrder is prioritized higher than a discount with lower sortOrder.
+    required: true
   name:
-    required: true
     type: LocalizedString
+    (builtinType): object
+    required: true
   validUntil:
-    required: false
-    description: |-
-      The time from which the discount should be effective.
-      Please take Eventual Consistency into account for calculated undiscounted values.
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    description: |-
+      The time from which the discount should be effective.
+               Please take Eventual Consistency into account for calculated undiscounted values.
+    required: false
   description:
-    required: false
     type: LocalizedString
-  validFrom:
+    (builtinType): object
     required: false
-    description: |-
-      The time from which the discount should be effective.
-      Please take Eventual Consistency into account for calculated product discount values.
+  validFrom:
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    description: |-
+      The time from which the discount should be effective.
+               Please take Eventual Consistency into account for calculated product discount values.
+    required: false
   isActive:
-    required: true
+    type: boolean
+    (builtinType): boolean
     description: |-
       If set to `true` the discount will be applied to product prices.
-    type: boolean
-  value:
     required: true
+  value:
     type: ProductDiscountValueDraft
+    (builtinType): object
+    required: true
   key:
-    required: false
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for a product discount.
-      Must be unique across a project.
-      The field can be reset using the Set Key UpdateAction
-    type: string
+               Must be unique across a project.
+               The field can be reset using the Set Key UpdateAction
+    required: false

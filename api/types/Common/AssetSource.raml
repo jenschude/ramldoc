@@ -1,19 +1,21 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: AssetSource
-# 
-# 
 properties:
   contentType:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   uri:
+    type: string
+    (builtinType): string
     required: true
-    type: string
   key:
-    required: false
     type: string
-  dimensions:
+    (builtinType): string
     required: false
+  dimensions:
     type: AssetDimensions
+    (builtinType): object
+    required: false

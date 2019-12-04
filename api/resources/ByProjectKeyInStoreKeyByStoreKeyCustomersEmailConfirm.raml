@@ -4,8 +4,12 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
   storeKey:
     type: string
+    (builtinType): string
 post:
   securedBy:
   - oauth_2_0:
@@ -18,6 +22,7 @@ post:
   body:
     application/json:
       type: CustomerEmailVerify
+      (builtinType): object
   responses:
     200:
       body:

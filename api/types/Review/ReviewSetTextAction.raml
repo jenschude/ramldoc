@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ReviewUpdateAction
+(builtinType): object
+type: ReviewUpdateAction
 displayName: ReviewSetTextAction
-# discriminator: action
-# discriminatorValue: setText
+discriminator: action
+discriminatorValue: setText
 properties:
   action:
-    default: setText
+    type: string
+    (builtinType): string
+    enum:
+    - setText
     required: true
-    type: string
   text:
-    required: false
     type: string
+    (builtinType): string
+    required: false

@@ -1,13 +1,13 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ErrorByExtension
-# 
-# 
 properties:
   id:
+    type: string
+    (builtinType): string
     required: true
-    type: string
   key:
-    required: false
     type: string
+    (builtinType): string
+    required: false

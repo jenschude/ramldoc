@@ -1,57 +1,63 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: AttributeDefinition
-# 
-# 
 properties:
   isRequired:
-    required: true
+    type: boolean
+    (builtinType): boolean
     description: |-
       Whether the attribute is required to have a value.
-    type: boolean
-  attributeConstraint:
     required: true
+  attributeConstraint:
+    type: AttributeConstraintEnum
+    (builtinType): string
     description: |-
       Describes how an attribute or a set of attributes should be validated across all variants of a product.
-    type: AttributeConstraintEnum
-  name:
     required: true
+  name:
+    type: string
+    (builtinType): string
     description: |-
       The unique name of the attribute used in the API.
-      The name must be between two and 256 characters long and can contain the ASCII letters A to Z in lowercase or uppercase, digits, underscores (`_`) and the hyphen-minus (`-`).
-      When using the same `name` for an attribute in two or more product types all fields of the AttributeDefinition of this attribute need to be the same across the product types, otherwise an AttributeDefinitionAlreadyExists error code will be returned.
-      An exception to this are the values of an `enum` or `lenum` type and sets thereof.
-    type: string
-  inputHint:
+               The name must be between two and 256 characters long and can contain the ASCII letters A to Z in lowercase or uppercase, digits, underscores (`_`) and the hyphen-minus (`-`).
+               When using the same `name` for an attribute in two or more product types all fields of the AttributeDefinition of this attribute need to be the same across the product types, otherwise an AttributeDefinitionAlreadyExists error code will be returned.
+               An exception to this are the values of an `enum` or `lenum` type and sets thereof.
     required: true
+  inputHint:
+    type: TextInputHint
+    (builtinType): string
     description: |-
       Provides a visual representation type for this attribute.
-      only relevant for text-based attribute types
-      like TextType and LocalizableTextType.
-    type: TextInputHint
-  isSearchable:
+               only relevant for text-based attribute types
+               like TextType and LocalizableTextType.
     required: true
+  isSearchable:
+    type: boolean
+    (builtinType): boolean
     description: |-
       Whether the attribute's values should generally be enabled in product search.
-      This determines whether the value is stored in products for matching terms in the context of full-text search queries  and can be used in facets & filters as part of product search queries.
-      The exact features that are enabled/disabled with this flag depend on the concrete attribute type and are described there.
-      The max size of a searchable field is **restricted to 10922 characters**.
-      This constraint is enforced at both product creation and product update.
-      If the length of the input exceeds the maximum size an InvalidField error is returned.
-    type: boolean
-  label:
+               This determines whether the value is stored in products for matching terms in the context of full-text search queries  and can be used in facets & filters as part of product search queries.
+               The exact features that are enabled/disabled with this flag depend on the concrete attribute type and are described there.
+               The max size of a searchable field is **restricted to 10922 characters**.
+               This constraint is enforced at both product creation and product update.
+               If the length of the input exceeds the maximum size an InvalidField error is returned.
     required: true
+  label:
+    type: LocalizedString
+    (builtinType): object
     description: |-
       A human-readable label for the attribute.
-    type: LocalizedString
-  type:
     required: true
+  type:
+    type: AttributeType
+    (builtinType): object
     description: |-
       Describes the type of the attribute.
-    type: AttributeType
+    required: true
   inputTip:
-    required: false
+    type: LocalizedString
+    (builtinType): object
     description: |-
       Additional information about the attribute that aids content managers when setting product details.
-    type: LocalizedString
+    required: false

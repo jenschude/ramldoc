@@ -1,20 +1,25 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: OrderDiscountCodeStateSetMessagePayload
-# discriminator: type
-# discriminatorValue: OrderDiscountCodeStateSet
+discriminator: type
+discriminatorValue: OrderDiscountCodeStateSet
 properties:
   type:
-    default: OrderDiscountCodeStateSet
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - OrderDiscountCodeStateSet
+    required: true
   discountCode:
-    required: true
     type: DiscountCodeReference
-  oldState:
-    required: false
-    type: DiscountCodeState
-  state:
+    (builtinType): object
     required: true
+  oldState:
     type: DiscountCodeState
+    (builtinType): string
+    required: false
+  state:
+    type: DiscountCodeState
+    (builtinType): string
+    required: true

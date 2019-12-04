@@ -1,21 +1,22 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ReturnInfo
-# 
-# 
 properties:
   returnDate:
-    required: false
     format: rfc3339
     type: datetime
-  returnTrackingId:
+    (builtinType): datetime
     required: false
+  returnTrackingId:
+    type: string
+    (builtinType): string
     description: |-
       Identifies, which return tracking ID is connected to this particular return.
-    type: string
+    required: false
   items:
-    required: true
     type: array
     items:
       type: ReturnItem
+    (builtinType): array
+    required: true

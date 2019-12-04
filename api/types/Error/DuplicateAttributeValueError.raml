@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ErrorObject
+(builtinType): object
+type: ErrorObject
 displayName: DuplicateAttributeValueError
-# discriminator: code
-# discriminatorValue: DuplicateAttributeValue
+discriminator: code
+discriminatorValue: DuplicateAttributeValue
 properties:
   code:
-    default: DuplicateAttributeValue
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - DuplicateAttributeValue
+    required: true
   message:
-    required: true
     type: string
-  attribute:
+    (builtinType): string
     required: true
+  attribute:
     type: Attribute
+    (builtinType): object
+    required: true

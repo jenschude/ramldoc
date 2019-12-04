@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: InventoryEntryDeletedMessagePayload
-# discriminator: type
-# discriminatorValue: InventoryEntryDeleted
+discriminator: type
+discriminatorValue: InventoryEntryDeleted
 properties:
   type:
-    default: InventoryEntryDeleted
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - InventoryEntryDeleted
+    required: true
   supplyChannel:
-    required: true
     type: ChannelReference
-  sku:
+    (builtinType): object
     required: true
+  sku:
     type: string
+    (builtinType): string
+    required: true

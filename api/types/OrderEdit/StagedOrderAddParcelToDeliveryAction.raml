@@ -1,25 +1,31 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StagedOrderUpdateAction
+(builtinType): object
+type: StagedOrderUpdateAction
 displayName: StagedOrderAddParcelToDeliveryAction
-# discriminator: action
-# discriminatorValue: addParcelToDelivery
+discriminator: action
+discriminatorValue: addParcelToDelivery
 properties:
   action:
-    default: addParcelToDelivery
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - addParcelToDelivery
+    required: true
   deliveryId:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   items:
-    required: false
     type: array
     items:
       type: DeliveryItem
+    (builtinType): array
+    required: false
   trackingData:
-    required: false
     type: TrackingData
-  measurements:
+    (builtinType): object
     required: false
+  measurements:
     type: ParcelMeasurements
+    (builtinType): object
+    required: false

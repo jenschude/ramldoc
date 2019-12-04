@@ -4,10 +4,15 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
   storeKey:
     type: string
+    (builtinType): string
   ID:
     type: string
+    (builtinType): string
 get:
   securedBy:
   - oauth_2_0:
@@ -20,11 +25,13 @@ get:
     expand:
       required: false
       type: string
+      (builtinType): string
   responses:
     200:
       body:
         application/json:
           type: Cart
+          (builtinType): object
 post:
   securedBy:
   - oauth_2_0:
@@ -37,14 +44,17 @@ post:
     expand:
       required: false
       type: string
+      (builtinType): string
   body:
     application/json:
       type: Update
+      (builtinType): object
   responses:
     200:
       body:
         application/json:
           type: Cart
+          (builtinType): object
 delete:
   securedBy:
   - oauth_2_0:
@@ -58,11 +68,16 @@ delete:
       required: true
       format: int64
       type: number
+      (builtinType): number
+      description: |-
+        Last seen version of the resource
     expand:
       required: false
       type: string
+      (builtinType): string
   responses:
     200:
       body:
         application/json:
           type: Cart
+          (builtinType): object

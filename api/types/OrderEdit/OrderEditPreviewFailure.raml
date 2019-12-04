@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): OrderEditResult
+(builtinType): object
+type: OrderEditResult
 displayName: OrderEditPreviewFailure
-# discriminator: type
-# discriminatorValue: PreviewFailure
+discriminator: type
+discriminatorValue: PreviewFailure
 properties:
   type:
-    default: PreviewFailure
-    required: true
     type: string
-  errors:
+    (builtinType): string
+    enum:
+    - PreviewFailure
     required: true
+  errors:
     type: array
     items:
       type: ErrorObject
+    (builtinType): array
+    required: true

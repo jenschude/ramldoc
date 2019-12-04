@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductTypeUpdateAction
+(builtinType): object
+type: ProductTypeUpdateAction
 displayName: ProductTypeChangePlainEnumValueLabelAction
-# discriminator: action
-# discriminatorValue: changePlainEnumValueLabel
+discriminator: action
+discriminatorValue: changePlainEnumValueLabel
 properties:
   action:
-    default: changePlainEnumValueLabel
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changePlainEnumValueLabel
+    required: true
   newValue:
-    required: true
     type: AttributePlainEnumValue
-  attributeName:
+    (builtinType): object
     required: true
+  attributeName:
     type: string
+    (builtinType): string
+    required: true

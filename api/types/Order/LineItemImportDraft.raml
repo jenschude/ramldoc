@@ -1,61 +1,70 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: LineItemImportDraft
-# 
-# 
 properties:
   taxRate:
-    required: false
     type: TaxRate
+    (builtinType): object
+    required: false
   quantity:
-    required: true
     format: int16
     type: number
+    (builtinType): number
+    required: true
   shippingDetails:
-    required: false
     type: ItemShippingDetailsDraft
-  productId:
+    (builtinType): object
     required: false
+  productId:
+    type: string
+    (builtinType): string
     description: |-
       ID of the existing product.
-      You also need to specify the ID of the variant if this property is set or alternatively you can just specify SKU of the product variant.
-    type: string
-  price:
-    required: true
-    type: PriceDraft
-  custom:
+               You also need to specify the ID of the variant if this property is set or alternatively you can just specify SKU of the product variant.
     required: false
+  price:
+    type: PriceDraft
+    (builtinType): object
+    required: true
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
     description: |-
       The custom fields.
-    type: CustomFieldsDraft
+    required: false
   variant:
-    required: true
     type: ProductVariantImportDraft
-  name:
+    (builtinType): object
     required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
     description: |-
       The product name.
-    type: LocalizedString
+    required: true
   supplyChannel:
-    required: false
-    description: |-
-      Optional connection to a particular supplier.
-      By providing supply channel information, you can uniquely identify
-      inventory entries that should be reserved.
-      The provided channel should have the
-      InventorySupply role.
     discriminatorValue: channel
     type: ChannelResourceIdentifier
-  state:
+    (builtinType): object
+    description: |-
+      Optional connection to a particular supplier.
+               By providing supply channel information, you can uniquely identify
+               inventory entries that should be reserved.
+               The provided channel should have the
+               InventorySupply role.
     required: false
+  state:
     type: array
     items:
       type: ItemState
-  distributionChannel:
+    (builtinType): array
     required: false
-    description: |-
-      The channel is used to select a ProductPrice.
-      The provided channel should have the ProductDistribution role.
+  distributionChannel:
     discriminatorValue: channel
     type: ChannelResourceIdentifier
+    (builtinType): object
+    description: |-
+      The channel is used to select a ProductPrice.
+               The provided channel should have the ProductDistribution role.
+    required: false

@@ -4,8 +4,12 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
   emailToken:
     type: string
+    (builtinType): string
 get:
   securedBy:
   - oauth_2_0:
@@ -18,8 +22,10 @@ get:
     expand:
       required: false
       type: string
+      (builtinType): string
   responses:
     200:
       body:
         application/json:
           type: Customer
+          (builtinType): object

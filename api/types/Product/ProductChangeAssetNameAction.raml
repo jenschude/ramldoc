@@ -1,30 +1,38 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductChangeAssetNameAction
-# discriminator: action
-# discriminatorValue: changeAssetName
+discriminator: action
+discriminatorValue: changeAssetName
 properties:
   action:
-    default: changeAssetName
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changeAssetName
+    required: true
   assetId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   name:
-    required: true
     type: LocalizedString
+    (builtinType): object
+    required: true
   staged:
-    required: false
     type: boolean
-  variantId:
+    (builtinType): boolean
     required: false
+  variantId:
     format: int64
     type: number
+    (builtinType): number
+    required: false
   sku:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   assetKey:
-    required: false
     type: string
+    (builtinType): string
+    required: false

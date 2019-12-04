@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ErrorObject
+(builtinType): object
+type: ErrorObject
 displayName: DuplicateVariantValuesError
-# discriminator: code
-# discriminatorValue: DuplicateVariantValues
+discriminator: code
+discriminatorValue: DuplicateVariantValues
 properties:
   code:
-    default: DuplicateVariantValues
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - DuplicateVariantValues
+    required: true
   message:
-    required: true
     type: string
-  variantValues:
+    (builtinType): string
     required: true
+  variantValues:
     type: VariantValues
+    (builtinType): object
+    required: true

@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): TaxCategoryUpdateAction
+(builtinType): object
+type: TaxCategoryUpdateAction
 displayName: TaxCategoryReplaceTaxRateAction
-# discriminator: action
-# discriminatorValue: replaceTaxRate
+discriminator: action
+discriminatorValue: replaceTaxRate
 properties:
   action:
-    default: replaceTaxRate
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - replaceTaxRate
+    required: true
   taxRate:
-    required: true
     type: TaxRateDraft
-  taxRateId:
+    (builtinType): object
     required: true
+  taxRateId:
     type: string
+    (builtinType): string
+    required: true

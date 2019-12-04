@@ -4,6 +4,9 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
 get:
   securedBy:
   - oauth_2_0:
@@ -16,6 +19,7 @@ get:
       body:
         application/json:
           type: Project
+          (builtinType): object
 post:
   securedBy:
   - oauth_2_0:
@@ -26,8 +30,10 @@ post:
   body:
     application/json:
       type: ProjectUpdate
+      (builtinType): object
   responses:
     200:
       body:
         application/json:
           type: Project
+          (builtinType): object

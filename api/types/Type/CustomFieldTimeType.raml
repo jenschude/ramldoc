@@ -1,11 +1,13 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): FieldType
+(builtinType): object
+type: FieldType
 displayName: CustomFieldTimeType
-# discriminator: name
-# discriminatorValue: Time
+discriminator: name
+discriminatorValue: Time
 properties:
   name:
-    default: Time
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - Time
+    required: true

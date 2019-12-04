@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CategoryUpdateAction
+(builtinType): object
+type: CategoryUpdateAction
 displayName: CategoryChangeParentAction
-# discriminator: action
-# discriminatorValue: changeParent
+discriminator: action
+discriminatorValue: changeParent
 properties:
   action:
-    default: changeParent
-    required: true
     type: string
-  parent:
+    (builtinType): string
+    enum:
+    - changeParent
     required: true
+  parent:
     type: CategoryResourceIdentifier
+    (builtinType): object
+    required: true

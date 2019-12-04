@@ -1,10 +1,78 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: MessagePayload
-# discriminator: type
-# 
+discriminator: type
+(subTypes):
+- OrderBillingAddressSetMessagePayload
+- OrderCreatedMessagePayload
+- OrderCustomLineItemDiscountSetMessagePayload
+- OrderCustomerEmailSetMessagePayload
+- OrderCustomerSetMessagePayload
+- OrderDeletedMessagePayload
+- OrderDiscountCodeAddedMessagePayload
+- OrderDiscountCodeRemovedMessagePayload
+- OrderDiscountCodeStateSetMessagePayload
+- OrderEditAppliedMessagePayload
+- OrderImportedMessagePayload
+- OrderLineItemAddedMessagePayload
+- OrderLineItemDiscountSetMessagePayload
+- OrderPaymentStateChangedMessagePayload
+- OrderReturnInfoAddedMessagePayload
+- OrderReturnShipmentStateChangedMessagePayload
+- OrderShipmentStateChangedMessagePayload
+- OrderShippingAddressSetMessagePayload
+- OrderShippingInfoSetMessagePayload
+- OrderShippingRateInputSetMessagePayload
+- OrderStateChangedMessagePayload
+- OrderStateTransitionMessagePayload
+- ParcelAddedToDeliveryMessagePayload
+- ParcelItemsUpdatedMessagePayload
+- ParcelMeasurementsUpdatedMessagePayload
+- ParcelRemovedFromDeliveryMessagePayload
+- ParcelTrackingDataUpdatedMessagePayload
+- PaymentCreatedMessagePayload
+- PaymentInteractionAddedMessagePayload
+- PaymentStatusInterfaceCodeSetMessagePayload
+- PaymentStatusStateTransitionMessagePayload
+- PaymentTransactionAddedMessagePayload
+- PaymentTransactionStateChangedMessagePayload
+- ProductAddedToCategoryMessagePayload
+- ProductCreatedMessagePayload
+- ProductDeletedMessagePayload
+- ProductImageAddedMessagePayload
+- ProductPriceDiscountsSetMessagePayload
+- ProductPriceExternalDiscountSetMessagePayload
+- ProductPublishedMessagePayload
+- ProductRemovedFromCategoryMessagePayload
+- ProductRevertedStagedChangesMessagePayload
+- ProductSlugChangedMessagePayload
+- ProductStateTransitionMessagePayload
+- ProductUnpublishedMessagePayload
+- ProductVariantDeletedMessagePayload
+- ReviewCreatedMessagePayload
+- ReviewRatingSetMessagePayload
+- ReviewStateTransitionMessagePayload
+- CategoryCreatedMessagePayload
+- CategorySlugChangedMessagePayload
+- CustomLineItemStateTransitionMessagePayload
+- CustomerAddressAddedMessagePayload
+- CustomerAddressChangedMessagePayload
+- CustomerAddressRemovedMessagePayload
+- CustomerCompanyNameSetMessagePayload
+- CustomerCreatedMessagePayload
+- CustomerDateOfBirthSetMessagePayload
+- CustomerEmailChangedMessagePayload
+- CustomerEmailVerifiedMessagePayload
+- CustomerGroupSetMessagePayload
+- DeliveryAddedMessagePayload
+- DeliveryAddressSetMessagePayload
+- DeliveryItemsUpdatedMessagePayload
+- DeliveryRemovedMessagePayload
+- InventoryEntryDeletedMessagePayload
+- LineItemStateTransitionMessagePayload
 properties:
   type:
-    required: true
     type: string
+    (builtinType): string
+    required: true

@@ -1,41 +1,49 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: Price
-# 
-# 
 properties:
   discounted:
-    required: false
     type: DiscountedPrice
-  country:
+    (builtinType): object
     required: false
+  country:
+    type: CountryCode
+    (builtinType): string
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-    type: CountryCode
-  tiers:
     required: false
+  tiers:
     type: array
     items:
       type: PriceTier
+    (builtinType): array
+    required: false
   customerGroup:
-    required: false
     type: CustomerGroupReference
+    (builtinType): object
+    required: false
   custom:
-    required: false
     type: CustomFields
+    (builtinType): object
+    required: false
   channel:
-    required: false
     type: ChannelReference
+    (builtinType): object
+    required: false
   validUntil:
-    required: false
     type: datetime
+    (builtinType): datetime
+    required: false
   validFrom:
-    required: false
     type: datetime
+    (builtinType): datetime
+    required: false
   id:
-    required: true
     type: string
-  value:
+    (builtinType): string
     required: true
+  value:
     type: TypedMoney
+    (builtinType): object
+    required: true

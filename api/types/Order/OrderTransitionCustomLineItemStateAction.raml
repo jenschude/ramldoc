@@ -1,27 +1,34 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): OrderUpdateAction
+(builtinType): object
+type: OrderUpdateAction
 displayName: OrderTransitionCustomLineItemStateAction
-# discriminator: action
-# discriminatorValue: transitionCustomLineItemState
+discriminator: action
+discriminatorValue: transitionCustomLineItemState
 properties:
   action:
-    default: transitionCustomLineItemState
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - transitionCustomLineItemState
+    required: true
   toState:
-    required: true
     type: StateResourceIdentifier
+    (builtinType): object
+    required: true
   fromState:
-    required: true
     type: StateResourceIdentifier
+    (builtinType): object
+    required: true
   customLineItemId:
-    required: true
     type: string
-  quantity:
+    (builtinType): string
     required: true
+  quantity:
     format: int64
     type: number
+    (builtinType): number
+    required: true
   actualTransitionDate:
-    required: false
     type: datetime
+    (builtinType): datetime
+    required: false

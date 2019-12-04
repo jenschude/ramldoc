@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: OrderImportedMessagePayload
-# discriminator: type
-# discriminatorValue: OrderImported
+discriminator: type
+discriminatorValue: OrderImported
 properties:
   type:
-    default: OrderImported
-    required: true
     type: string
-  order:
+    (builtinType): string
+    enum:
+    - OrderImported
     required: true
+  order:
     type: Order
+    (builtinType): object
+    required: true

@@ -1,43 +1,121 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: Message
-# discriminator: type
-# 
+discriminator: type
+(subTypes):
+- OrderBillingAddressSetMessage
+- OrderCreatedMessage
+- OrderCustomLineItemDiscountSetMessage
+- OrderCustomerEmailSetMessage
+- OrderCustomerSetMessage
+- OrderDeletedMessage
+- OrderDiscountCodeAddedMessage
+- OrderDiscountCodeRemovedMessage
+- OrderDiscountCodeStateSetMessage
+- OrderEditAppliedMessage
+- OrderImportedMessage
+- OrderLineItemAddedMessage
+- OrderLineItemDiscountSetMessage
+- OrderPaymentStateChangedMessage
+- OrderReturnInfoAddedMessage
+- OrderReturnShipmentStateChangedMessage
+- OrderShipmentStateChangedMessage
+- OrderShippingAddressSetMessage
+- OrderShippingInfoSetMessage
+- OrderShippingRateInputSetMessage
+- OrderStateChangedMessage
+- OrderStateTransitionMessage
+- ParcelAddedToDeliveryMessage
+- ParcelItemsUpdatedMessage
+- ParcelMeasurementsUpdatedMessage
+- ParcelRemovedFromDeliveryMessage
+- ParcelTrackingDataUpdatedMessage
+- PaymentCreatedMessage
+- PaymentInteractionAddedMessage
+- PaymentStatusInterfaceCodeSetMessage
+- PaymentStatusStateTransitionMessage
+- PaymentTransactionAddedMessage
+- PaymentTransactionStateChangedMessage
+- ProductAddedToCategoryMessage
+- ProductCreatedMessage
+- ProductDeletedMessage
+- ProductImageAddedMessage
+- ProductPriceDiscountsSetMessage
+- ProductPriceExternalDiscountSetMessage
+- ProductPublishedMessage
+- ProductRemovedFromCategoryMessage
+- ProductRevertedStagedChangesMessage
+- ProductSlugChangedMessage
+- ProductStateTransitionMessage
+- ProductUnpublishedMessage
+- ProductVariantDeletedMessage
+- ReviewCreatedMessage
+- ReviewRatingSetMessage
+- ReviewStateTransitionMessage
+- CategoryCreatedMessage
+- CategorySlugChangedMessage
+- CustomLineItemStateTransitionMessage
+- CustomerAddressAddedMessage
+- CustomerAddressChangedMessage
+- CustomerAddressRemovedMessage
+- CustomerCompanyNameSetMessage
+- CustomerCreatedMessage
+- CustomerDateOfBirthSetMessage
+- CustomerEmailChangedMessage
+- CustomerEmailVerifiedMessage
+- CustomerGroupSetMessage
+- DeliveryAddedMessage
+- DeliveryAddressSetMessage
+- DeliveryItemsUpdatedMessage
+- DeliveryRemovedMessage
+- InventoryEntryDeletedMessage
+- LineItemStateTransitionMessage
 properties:
   createdAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   id:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   version:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdBy:
-    required: false
     type: CreatedBy
+    (builtinType): object
+    required: false
   lastModifiedBy:
-    required: false
     type: LastModifiedBy
-  sequenceNumber:
-    required: true
-    format: int64
-    type: number
-  resource:
-    required: true
-    type: Reference
-  resourceUserProvidedIdentifiers:
+    (builtinType): object
     required: false
-    type: UserProvidedIdentifiers
-  resourceVersion:
-    required: true
+  sequenceNumber:
     format: int64
     type: number
-  type:
+    (builtinType): number
     required: true
+  resource:
+    type: Reference
+    (builtinType): object
+    required: true
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+    (builtinType): object
+    required: false
+  resourceVersion:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
+  type:
     type: string
+    (builtinType): string
+    required: true

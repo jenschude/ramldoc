@@ -1,54 +1,62 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: TaxCategory
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the category.
-    type: string
-  version:
     required: true
-    description: |-
-      The current version of the category.
+  version:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The current version of the category.
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
+    required: false
   rates:
-    required: true
-    description: |-
-      The tax rates have unique IDs in the rates list
     type: array
     items:
       type: TaxRate
-  name:
+    (builtinType): array
+    description: |-
+      The tax rates have unique IDs in the rates list
     required: true
+  name:
     type: string
+    (builtinType): string
+    required: true
   description:
-    required: false
     type: string
-  key:
+    (builtinType): string
     required: false
+  key:
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for the category.
-    type: string
+    required: false

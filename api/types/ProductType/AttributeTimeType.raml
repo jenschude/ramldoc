@@ -1,11 +1,13 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): AttributeType
+(builtinType): object
+type: AttributeType
 displayName: AttributeTimeType
-# discriminator: name
-# discriminatorValue: time
+discriminator: name
+discriminatorValue: time
 properties:
   name:
-    default: time
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - time
+    required: true

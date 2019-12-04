@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: OrderDiscountCodeAddedMessagePayload
-# discriminator: type
-# discriminatorValue: OrderDiscountCodeAdded
+discriminator: type
+discriminatorValue: OrderDiscountCodeAdded
 properties:
   type:
-    default: OrderDiscountCodeAdded
-    required: true
     type: string
-  discountCode:
+    (builtinType): string
+    enum:
+    - OrderDiscountCodeAdded
     required: true
+  discountCode:
     type: DiscountCodeReference
+    (builtinType): object
+    required: true

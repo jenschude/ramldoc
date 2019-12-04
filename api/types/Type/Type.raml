@@ -1,60 +1,69 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: Type
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the type.
-    type: string
-  version:
     required: true
-    description: |-
-      The current version of the type.
+  version:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The current version of the type.
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
+    required: false
   name:
-    required: true
     type: LocalizedString
-  fieldDefinitions:
+    (builtinType): object
     required: true
+  fieldDefinitions:
     type: array
     items:
       type: FieldDefinition
-  description:
-    required: false
-    type: LocalizedString
-  key:
+    (builtinType): array
     required: true
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  key:
+    type: string
+    (builtinType): string
     description: |-
       Identifier for the type (max.
-      256 characters).
-    type: string
-  resourceTypeIds:
+               256 characters).
     required: true
-    description: |-
-      Defines for which resource(s) the type is valid.
+  resourceTypeIds:
     type: array
     items:
       type: ResourceTypeId
+    (builtinType): array
+    description: |-
+      Defines for which resource(s) the type is valid.
+    required: true

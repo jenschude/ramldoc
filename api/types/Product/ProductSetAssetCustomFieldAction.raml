@@ -1,33 +1,42 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductSetAssetCustomFieldAction
-# discriminator: action
-# discriminatorValue: setAssetCustomField
+discriminator: action
+discriminatorValue: setAssetCustomField
 properties:
   action:
-    default: setAssetCustomField
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setAssetCustomField
+    required: true
   assetId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   name:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   staged:
-    required: false
     type: boolean
-  variantId:
+    (builtinType): boolean
     required: false
+  variantId:
     format: int64
     type: number
+    (builtinType): number
+    required: false
   sku:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   value:
-    required: false
     type: any
-  assetKey:
+    (builtinType): any
     required: false
+  assetKey:
     type: string
+    (builtinType): string
+    required: false

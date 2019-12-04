@@ -1,62 +1,80 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Message
+(builtinType): object
+type: Message
 displayName: ReviewStateTransitionMessage
-# discriminator: type
-# discriminatorValue: ReviewStateTransition
+discriminator: type
+discriminatorValue: ReviewStateTransition
 properties:
   createdAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   id:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   version:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdBy:
-    required: false
     type: CreatedBy
+    (builtinType): object
+    required: false
   lastModifiedBy:
-    required: false
     type: LastModifiedBy
-  sequenceNumber:
-    required: true
-    format: int64
-    type: number
-  resource:
-    required: true
-    type: Reference
-  resourceUserProvidedIdentifiers:
+    (builtinType): object
     required: false
-    type: UserProvidedIdentifiers
-  resourceVersion:
-    required: true
+  sequenceNumber:
     format: int64
     type: number
-  type:
-    default: ReviewStateTransition
+    (builtinType): number
     required: true
-    type: string
-  newIncludedInStatistics:
-    required: true
-    type: boolean
-  oldState:
-    required: true
-    type: StateReference
-  force:
-    required: true
-    type: boolean
-  oldIncludedInStatistics:
-    required: true
-    type: boolean
-  newState:
-    required: true
-    type: StateReference
-  target:
-    required: true
+  resource:
     type: Reference
+    (builtinType): object
+    required: true
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+    (builtinType): object
+    required: false
+  resourceVersion:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
+  type:
+    type: string
+    (builtinType): string
+    enum:
+    - ReviewStateTransition
+    required: true
+  newIncludedInStatistics:
+    type: boolean
+    (builtinType): boolean
+    required: true
+  oldState:
+    type: StateReference
+    (builtinType): object
+    required: true
+  force:
+    type: boolean
+    (builtinType): boolean
+    required: true
+  oldIncludedInStatistics:
+    type: boolean
+    (builtinType): boolean
+    required: true
+  newState:
+    type: StateReference
+    (builtinType): object
+    required: true
+  target:
+    type: Reference
+    (builtinType): object
+    required: true

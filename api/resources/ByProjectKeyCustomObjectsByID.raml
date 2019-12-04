@@ -4,8 +4,12 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
   ID:
     type: string
+    (builtinType): string
 get:
   securedBy:
   - oauth_2_0:
@@ -20,11 +24,13 @@ get:
     expand:
       required: false
       type: string
+      (builtinType): string
   responses:
     200:
       body:
         application/json:
           type: CustomObject
+          (builtinType): object
 delete:
   securedBy:
   - oauth_2_0:
@@ -40,14 +46,20 @@ delete:
       required: false
       format: int64
       type: number
+      (builtinType): number
+      description: |-
+        Last seen version of the resource
     dataErasure:
       required: false
       type: boolean
+      (builtinType): boolean
     expand:
       required: false
       type: string
+      (builtinType): string
   responses:
     200:
       body:
         application/json:
           type: CustomObject
+          (builtinType): object

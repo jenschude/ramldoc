@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MyPaymentUpdateAction
+(builtinType): object
+type: MyPaymentUpdateAction
 displayName: MyPaymentSetMethodInfoMethodAction
-# discriminator: action
-# discriminatorValue: setMethodInfoMethod
+discriminator: action
+discriminatorValue: setMethodInfoMethod
 properties:
   action:
-    default: setMethodInfoMethod
+    type: string
+    (builtinType): string
+    enum:
+    - setMethodInfoMethod
     required: true
-    type: string
   method:
-    required: false
     type: string
+    (builtinType): string
+    required: false

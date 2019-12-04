@@ -1,104 +1,122 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: CartDiscount
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the cart discount.
-    type: string
-  version:
     required: true
-    description: |-
-      The current version of the cart discount.
+  version:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The current version of the cart discount.
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
+    required: false
   requiresDiscountCode:
-    required: true
+    type: boolean
+    (builtinType): boolean
     description: |-
       States whether the discount can only be used in a connection with a DiscountCode.
-    type: boolean
-  references:
     required: true
-    description: |-
-      The platform will generate this array from the predicate.
-      It contains the references of all the resources that are addressed in the predicate.
+  references:
     type: array
     items:
       type: Reference
-  cartPredicate:
+    (builtinType): array
+    description: |-
+      The platform will generate this array from the predicate.
+               It contains the references of all the resources that are addressed in the predicate.
     required: true
+  cartPredicate:
+    type: string
+    (builtinType): string
     description: |-
       A valid Cart predicate.
-    type: string
+    required: true
   custom:
-    required: false
     type: CustomFields
+    (builtinType): object
+    required: false
   description:
-    required: false
     type: LocalizedString
-  validFrom:
+    (builtinType): object
     required: false
+  validFrom:
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: false
   isActive:
-    required: true
+    type: boolean
+    (builtinType): boolean
     description: |-
       Only active discount can be applied to the cart.
-    type: boolean
+    required: true
   target:
-    required: false
+    type: CartDiscountTarget
+    (builtinType): object
     description: |-
       Empty when the `value` has type `giftLineItem`, otherwise a CartDiscountTarget is set.
-    type: CartDiscountTarget
+    required: false
   stackingMode:
-    required: true
+    type: StackingMode
+    (builtinType): string
     description: |-
       Specifies whether the application of this discount causes the following discounts to be ignored.
-      Defaults to Stacking.
-    type: StackingMode
-  sortOrder:
+               Defaults to Stacking.
     required: true
+  sortOrder:
+    type: string
+    (builtinType): string
     description: |-
       The string must contain a number between 0 and 1.
-      All matching cart discounts are applied to a cart in the order defined by this field.
-      A discount with greater sort order is prioritized higher than a discount with lower sort order.
-      The sort order is unambiguous among all cart discounts.
-    type: string
-  name:
+               All matching cart discounts are applied to a cart in the order defined by this field.
+               A discount with greater sort order is prioritized higher than a discount with lower sort order.
+               The sort order is unambiguous among all cart discounts.
     required: true
+  name:
     type: LocalizedString
+    (builtinType): object
+    required: true
   validUntil:
-    required: false
     format: rfc3339
     type: datetime
-  value:
-    required: true
-    type: CartDiscountValue
-  key:
+    (builtinType): datetime
     required: false
+  value:
+    type: CartDiscountValue
+    (builtinType): object
+    required: true
+  key:
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for a cart discount.
-      Must be unique across a project.
-    type: string
+               Must be unique across a project.
+    required: false

@@ -4,6 +4,9 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
 post:
   securedBy:
   - oauth_2_0:
@@ -13,10 +16,12 @@ post:
   body:
     application/json:
       type: ReplicaCartDraft
+      (builtinType): object
   responses:
     201:
       body:
         application/json:
           type: Cart
+          (builtinType): object
     200:
       body:

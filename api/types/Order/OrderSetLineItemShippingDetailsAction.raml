@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): OrderUpdateAction
+(builtinType): object
+type: OrderUpdateAction
 displayName: OrderSetLineItemShippingDetailsAction
-# discriminator: action
-# discriminatorValue: setLineItemShippingDetails
+discriminator: action
+discriminatorValue: setLineItemShippingDetails
 properties:
   action:
-    default: setLineItemShippingDetails
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setLineItemShippingDetails
+    required: true
   shippingDetails:
-    required: false
     type: ItemShippingDetailsDraft
+    (builtinType): object
+    required: false
   lineItemId:
-    required: true
     type: string
+    (builtinType): string
+    required: true

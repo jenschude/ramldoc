@@ -1,18 +1,22 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ShoppingListUpdateAction
+(builtinType): object
+type: ShoppingListUpdateAction
 displayName: ShoppingListChangeTextLineItemQuantityAction
-# discriminator: action
-# discriminatorValue: changeTextLineItemQuantity
+discriminator: action
+discriminatorValue: changeTextLineItemQuantity
 properties:
   action:
-    default: changeTextLineItemQuantity
-    required: true
     type: string
-  quantity:
+    (builtinType): string
+    enum:
+    - changeTextLineItemQuantity
     required: true
+  quantity:
     format: int64
     type: number
-  textLineItemId:
+    (builtinType): number
     required: true
+  textLineItemId:
     type: string
+    (builtinType): string
+    required: true

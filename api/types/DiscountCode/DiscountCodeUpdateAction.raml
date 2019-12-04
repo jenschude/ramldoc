@@ -1,10 +1,24 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: DiscountCodeUpdateAction
-# discriminator: action
-# 
+discriminator: action
+(subTypes):
+- DiscountCodeChangeCartDiscountsAction
+- DiscountCodeChangeGroupsAction
+- DiscountCodeChangeIsActiveAction
+- DiscountCodeSetCartPredicateAction
+- DiscountCodeSetCustomFieldAction
+- DiscountCodeSetCustomTypeAction
+- DiscountCodeSetDescriptionAction
+- DiscountCodeSetMaxApplicationsAction
+- DiscountCodeSetMaxApplicationsPerCustomerAction
+- DiscountCodeSetNameAction
+- DiscountCodeSetValidFromAction
+- DiscountCodeSetValidFromAndUntilAction
+- DiscountCodeSetValidUntilAction
 properties:
   action:
-    required: true
     type: string
+    (builtinType): string
+    required: true

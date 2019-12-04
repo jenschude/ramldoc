@@ -1,11 +1,13 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): AttributeType
+(builtinType): object
+type: AttributeType
 displayName: AttributeNumberType
-# discriminator: name
-# discriminatorValue: number
+discriminator: name
+discriminatorValue: number
 properties:
   name:
-    default: number
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - number
+    required: true

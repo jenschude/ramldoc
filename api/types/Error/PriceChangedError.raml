@@ -1,22 +1,27 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ErrorObject
+(builtinType): object
+type: ErrorObject
 displayName: PriceChangedError
-# discriminator: code
-# discriminatorValue: PriceChanged
+discriminator: code
+discriminatorValue: PriceChanged
 properties:
   code:
-    default: PriceChanged
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - PriceChanged
+    required: true
   message:
-    required: true
     type: string
-  lineItems:
+    (builtinType): string
     required: true
+  lineItems:
     type: array
     items:
       type: string
-  shipping:
+    (builtinType): array
     required: true
+  shipping:
     type: boolean
+    (builtinType): boolean
+    required: true

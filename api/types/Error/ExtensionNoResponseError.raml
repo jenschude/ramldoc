@@ -1,23 +1,29 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ErrorObject
+(builtinType): object
+type: ErrorObject
 displayName: ExtensionNoResponseError
-# discriminator: code
-# discriminatorValue: ExtensionNoResponse
+discriminator: code
+discriminatorValue: ExtensionNoResponse
 properties:
   code:
-    default: ExtensionNoResponse
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - ExtensionNoResponse
+    required: true
   message:
-    required: true
     type: string
-  localizedMessage:
-    required: false
-    type: LocalizedString
-  extensionExtraInfo:
-    required: false
-    type: object
-  errorByExtension:
+    (builtinType): string
     required: true
+  localizedMessage:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  extensionExtraInfo:
+    type: object
+    (builtinType): object
+    required: false
+  errorByExtension:
     type: ErrorByExtension
+    (builtinType): object
+    required: true

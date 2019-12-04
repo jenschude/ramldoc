@@ -4,6 +4,9 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
 get:
   securedBy:
   - oauth_2_0:
@@ -15,28 +18,61 @@ get:
     fuzzy:
       required: false
       type: boolean
+      (builtinType): boolean
+      description: |-
+        Whether to apply fuzzy search on the text to analyze.
     staged:
       required: false
       type: boolean
+      (builtinType): boolean
+      description: |-
+        Whether to query for the current or staged projections.
     /searchKeywords.[a-z]{2}(-[A-Z]{2})?/:
       required: false
       type: string
+      (builtinType): string
     sort:
       required: false
       type: string
+      (builtinType): string
+      description: |-
+        A query endpoint that supports sorting does so through the sort query parameter. The provided value must be
+                 a valid sort expression. The default sort direction is ASC. The allowed sort paths are typically listed on
+                 the specific query endpoints.
+                 
+                 Here are some examples of sort expressions:
+                 
+                     name desc
+                     dog.age asc
+                 
+                 If multiple sort expressions are specified via multiple sort parameters, they are combined into a composed
+                 sort where the results are first sorted by the first expression, followed by equal values being sorted
+                 according to the second expression, and so on.
+                 
+                 Note: The sorting is case sensitive.
     limit:
       required: false
       format: int16
       type: number
+      (builtinType): number
+      description: |-
+        Number of results returned
     offset:
       required: false
       format: int16
       type: number
+      (builtinType): number
+      description: |-
+        Number of results skipped
     withTotal:
       required: false
       type: boolean
+      (builtinType): boolean
+      description: |-
+        Calculate total number of results
   responses:
     200:
       body:
         application/json:
           type: any
+          (builtinType): any

@@ -1,11 +1,13 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): FieldType
+(builtinType): object
+type: FieldType
 displayName: CustomFieldMoneyType
-# discriminator: name
-# discriminatorValue: Money
+discriminator: name
+discriminatorValue: Money
 properties:
   name:
-    default: Money
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - Money
+    required: true

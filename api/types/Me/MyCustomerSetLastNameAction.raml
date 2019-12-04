@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MyCustomerUpdateAction
+(builtinType): object
+type: MyCustomerUpdateAction
 displayName: MyCustomerSetLastNameAction
-# discriminator: action
-# discriminatorValue: setLastName
+discriminator: action
+discriminatorValue: setLastName
 properties:
   action:
-    default: setLastName
+    type: string
+    (builtinType): string
+    enum:
+    - setLastName
     required: true
-    type: string
   lastName:
-    required: false
     type: string
+    (builtinType): string
+    required: false

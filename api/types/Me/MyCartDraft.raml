@@ -1,68 +1,79 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: MyCartDraft
-# 
-# 
 properties:
   lineItems:
-    required: false
     type: array
     items:
       type: MyLineItemDraft
-  country:
+    (builtinType): array
     required: false
+  country:
+    type: string
+    (builtinType): string
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-    type: string
-  itemShippingAddresses:
     required: false
-    description: |-
-      Contains addresses for orders with multiple shipping addresses.
-      Each address must contain a key which is unique in this cart.
+  itemShippingAddresses:
     type: array
     items:
       type: Address
-  taxMode:
+    (builtinType): array
+    description: |-
+      Contains addresses for orders with multiple shipping addresses.
+               Each address must contain a key which is unique in this cart.
     required: false
+  taxMode:
+    type: TaxMode
+    (builtinType): string
     description: |-
       The `TaxMode` `Disabled` can not be set on the My Carts endpoint.
-    type: TaxMode
-  deleteDaysAfterLastModification:
     required: false
-    description: |-
-      The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
-      If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
+  deleteDaysAfterLastModification:
     format: int64
     type: number
-  custom:
+    (builtinType): number
+    description: |-
+      The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
+               If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
     required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
     description: |-
       The custom fields.
-    type: CustomFieldsDraft
+    required: false
   shippingMethod:
-    required: false
     type: ShippingMethodResourceIdentifier
+    (builtinType): object
+    required: false
   customerEmail:
-    required: false
     type: string
-  shippingAddress:
+    (builtinType): string
     required: false
+  shippingAddress:
     type: Address
+    (builtinType): object
+    required: false
   currency:
-    required: true
-    description: |-
-      A three-digit currency code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
     pattern: ^[A-Z]{3}$
     type: CurrencyCode
+    (builtinType): string
+    description: |-
+      A three-digit currency code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+    required: true
   billingAddress:
-    required: false
     type: Address
+    (builtinType): object
+    required: false
   locale:
-    required: false
     type: string
-  inventoryMode:
+    (builtinType): string
     required: false
+  inventoryMode:
+    type: InventoryMode
+    (builtinType): string
     description: |-
       Default inventory mode is `None`.
-    type: InventoryMode
+    required: false

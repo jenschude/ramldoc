@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CustomerUpdateAction
+(builtinType): object
+type: CustomerUpdateAction
 displayName: CustomerAddShippingAddressIdAction
-# discriminator: action
-# discriminatorValue: addShippingAddressId
+discriminator: action
+discriminatorValue: addShippingAddressId
 properties:
   action:
-    default: addShippingAddressId
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - addShippingAddressId
+    required: true
   addressId:
-    required: true
     type: string
+    (builtinType): string
+    required: true

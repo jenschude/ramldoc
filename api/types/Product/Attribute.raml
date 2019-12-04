@@ -1,15 +1,15 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: Attribute
-# 
-# 
 properties:
   name:
-    required: true
     type: string
-  value:
+    (builtinType): string
     required: true
+  value:
+    type: any
+    (builtinType): any
     description: |-
       A valid JSON value, based on an AttributeDefinition.
-    type: any
+    required: true

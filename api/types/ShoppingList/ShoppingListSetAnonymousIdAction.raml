@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ShoppingListUpdateAction
+(builtinType): object
+type: ShoppingListUpdateAction
 displayName: ShoppingListSetAnonymousIdAction
-# discriminator: action
-# discriminatorValue: setAnonymousId
+discriminator: action
+discriminatorValue: setAnonymousId
 properties:
   action:
-    default: setAnonymousId
+    type: string
+    (builtinType): string
+    enum:
+    - setAnonymousId
     required: true
-    type: string
   anonymousId:
-    required: false
     type: string
+    (builtinType): string
+    required: false

@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ErrorObject
+(builtinType): object
+type: ErrorObject
 displayName: ShippingMethodDoesNotMatchCartError
-# discriminator: code
-# discriminatorValue: ShippingMethodDoesNotMatchCart
+discriminator: code
+discriminatorValue: ShippingMethodDoesNotMatchCart
 properties:
   code:
-    default: ShippingMethodDoesNotMatchCart
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - ShippingMethodDoesNotMatchCart
+    required: true
   message:
-    required: true
     type: string
+    (builtinType): string
+    required: true

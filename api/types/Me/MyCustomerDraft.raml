@@ -1,68 +1,81 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: MyCustomerDraft
-# 
-# 
 properties:
   lastName:
-    required: false
     type: string
-  addresses:
+    (builtinType): string
     required: false
-    description: |-
-      Sets the ID of each address to be unique in the addresses list.
+  addresses:
     type: array
     items:
       type: Address
-  defaultShippingAddress:
-    required: false
+    (builtinType): array
     description: |-
-      The index of the address in the addresses array.
-      The `defaultShippingAddressId` of the customer will be set to the ID of that address.
+      Sets the ID of each address to be unique in the addresses list.
+    required: false
+  defaultShippingAddress:
     format: int64
     type: number
-  stores:
+    (builtinType): number
+    description: |-
+      The index of the address in the addresses array.
+               The `defaultShippingAddressId` of the customer will be set to the ID of that address.
     required: false
+  stores:
     type: array
     items:
       type: StoreResourceIdentifier
-  custom:
+    (builtinType): array
     required: false
+  custom:
+    type: CustomFields
+    (builtinType): object
     description: |-
       The custom fields.
-    type: CustomFields
+    required: false
   companyName:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   vatId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   dateOfBirth:
-    required: false
     type: date-only
+    (builtinType): date-only
+    required: false
   locale:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   title:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   firstName:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   password:
+    type: string
+    (builtinType): string
     required: true
-    type: string
   middleName:
-    required: false
     type: string
-  defaultBillingAddress:
+    (builtinType): string
     required: false
-    description: |-
-      The index of the address in the addresses array.
-      The `defaultBillingAddressId` of the customer will be set to the ID of that address.
+  defaultBillingAddress:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The index of the address in the addresses array.
+               The `defaultBillingAddressId` of the customer will be set to the ID of that address.
+    required: false
   email:
-    required: true
     type: string
+    (builtinType): string
+    required: true

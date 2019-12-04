@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductTypeUpdateAction
+(builtinType): object
+type: ProductTypeUpdateAction
 displayName: ProductTypeChangeLabelAction
-# discriminator: action
-# discriminatorValue: changeLabel
+discriminator: action
+discriminatorValue: changeLabel
 properties:
   action:
-    default: changeLabel
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changeLabel
+    required: true
   attributeName:
-    required: true
     type: string
-  label:
+    (builtinType): string
     required: true
+  label:
     type: LocalizedString
+    (builtinType): object
+    required: true

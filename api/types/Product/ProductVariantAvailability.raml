@@ -1,21 +1,23 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ProductVariantAvailability
-# 
-# 
 properties:
   availableQuantity:
-    required: false
     format: int64
     type: number
+    (builtinType): number
+    required: false
   channels:
-    required: false
     type: ProductVariantChannelAvailabilityMap
-  restockableInDays:
+    (builtinType): object
     required: false
+  restockableInDays:
     format: int64
     type: number
-  isOnStock:
+    (builtinType): number
     required: false
+  isOnStock:
     type: boolean
+    (builtinType): boolean
+    required: false

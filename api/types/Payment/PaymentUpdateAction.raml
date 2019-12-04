@@ -1,10 +1,33 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: PaymentUpdateAction
-# discriminator: action
-# 
+discriminator: action
+(subTypes):
+- PaymentAddInterfaceInteractionAction
+- PaymentAddTransactionAction
+- PaymentChangeAmountPlannedAction
+- PaymentChangeTransactionInteractionIdAction
+- PaymentChangeTransactionStateAction
+- PaymentChangeTransactionTimestampAction
+- PaymentSetAmountPaidAction
+- PaymentSetAmountRefundedAction
+- PaymentSetAnonymousIdAction
+- PaymentSetAuthorizationAction
+- PaymentSetCustomFieldAction
+- PaymentSetCustomTypeAction
+- PaymentSetCustomerAction
+- PaymentSetExternalIdAction
+- PaymentSetInterfaceIdAction
+- PaymentSetKeyAction
+- PaymentSetMethodInfoInterfaceAction
+- PaymentSetMethodInfoMethodAction
+- PaymentSetMethodInfoNameAction
+- PaymentSetStatusInterfaceCodeAction
+- PaymentSetStatusInterfaceTextAction
+- PaymentTransitionStateAction
 properties:
   action:
-    required: true
     type: string
+    (builtinType): string
+    required: true

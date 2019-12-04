@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: OrderBillingAddressSetMessagePayload
-# discriminator: type
-# discriminatorValue: OrderBillingAddressSet
+discriminator: type
+discriminatorValue: OrderBillingAddressSet
 properties:
   type:
-    default: OrderBillingAddressSet
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - OrderBillingAddressSet
+    required: true
   oldAddress:
-    required: false
     type: Address
+    (builtinType): object
+    required: false
   address:
-    required: false
     type: Address
+    (builtinType): object
+    required: false

@@ -1,24 +1,29 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): TypedMoneyDraft
+(builtinType): object
+type: TypedMoneyDraft
 displayName: HighPrecisionMoneyDraft
-# discriminator: type
-# discriminatorValue: highPrecision
+discriminator: type
+discriminatorValue: highPrecision
 properties:
   centAmount:
-    required: true
     format: int64
     type: number
-  currencyCode:
+    (builtinType): number
     required: true
+  currencyCode:
+    type: CurrencyCode
+    (builtinType): string
     description: |-
       The currency code compliant to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-    type: CurrencyCode
+    required: true
   type:
-    default: highPrecision
-    required: true
     type: MoneyType
-  preciseAmount:
+    (builtinType): string
+    enum:
+    - highPrecision
     required: true
+  preciseAmount:
     format: int64
     type: number
+    (builtinType): number
+    required: true

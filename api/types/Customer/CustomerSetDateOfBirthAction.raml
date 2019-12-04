@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CustomerUpdateAction
+(builtinType): object
+type: CustomerUpdateAction
 displayName: CustomerSetDateOfBirthAction
-# discriminator: action
-# discriminatorValue: setDateOfBirth
+discriminator: action
+discriminatorValue: setDateOfBirth
 properties:
   action:
-    default: setDateOfBirth
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setDateOfBirth
+    required: true
   dateOfBirth:
-    required: false
     type: date-only
+    (builtinType): date-only
+    required: false

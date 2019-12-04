@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProjectUpdateAction
+(builtinType): object
+type: ProjectUpdateAction
 displayName: ProjectChangeLanguagesAction
-# discriminator: action
-# discriminatorValue: changeLanguages
+discriminator: action
+discriminatorValue: changeLanguages
 properties:
   action:
-    default: changeLanguages
-    required: true
     type: string
-  languages:
+    (builtinType): string
+    enum:
+    - changeLanguages
     required: true
+  languages:
     type: array
     items:
       type: Locale
+    (builtinType): array
+    required: true

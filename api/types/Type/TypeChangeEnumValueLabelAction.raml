@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): TypeUpdateAction
+(builtinType): object
+type: TypeUpdateAction
 displayName: TypeChangeEnumValueLabelAction
-# discriminator: action
-# discriminatorValue: changeEnumValueLabel
+discriminator: action
+discriminatorValue: changeEnumValueLabel
 properties:
   action:
-    default: changeEnumValueLabel
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changeEnumValueLabel
+    required: true
   fieldName:
-    required: true
     type: string
-  value:
+    (builtinType): string
     required: true
+  value:
     type: CustomFieldEnumValue
+    (builtinType): object
+    required: true

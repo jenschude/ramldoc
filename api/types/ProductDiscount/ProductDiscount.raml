@@ -1,90 +1,104 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: ProductDiscount
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the product discount
-    type: string
-  version:
     required: true
-    description: |-
-      The current version of the product discount.
+  version:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The current version of the product discount.
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
+    required: false
   references:
-    required: true
-    description: |-
-      The platform will generate this array from the predicate.
-      It contains the references of all the resources that are addressed in the predicate.
     type: array
     items:
       type: Reference
+    (builtinType): array
+    description: |-
+      The platform will generate this array from the predicate.
+               It contains the references of all the resources that are addressed in the predicate.
+    required: true
   description:
-    required: false
     type: LocalizedString
-  validFrom:
+    (builtinType): object
     required: false
+  validFrom:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
     description: |-
       The time from which the discount should be effective.
-      Please take Eventual Consistency into account for calculated product discount values.
-    format: rfc3339
-    type: datetime
+               Please take Eventual Consistency into account for calculated product discount values.
+    required: false
   isActive:
-    required: true
+    type: boolean
+    (builtinType): boolean
     description: |-
       Only active discount will be applied to product prices.
-    type: boolean
-  predicate:
     required: true
+  predicate:
+    type: string
+    (builtinType): string
     description: |-
       A valid ProductDiscount Predicate.
-    type: string
-  sortOrder:
     required: true
+  sortOrder:
+    type: string
+    (builtinType): string
     description: |-
       The string contains a number between 0 and 1.
-      A discount with greater sortOrder is prioritized higher than a discount with lower sortOrder.
-      A sortOrder must be unambiguous.
-    type: string
-  name:
+               A discount with greater sortOrder is prioritized higher than a discount with lower sortOrder.
+               A sortOrder must be unambiguous.
     required: true
+  name:
     type: LocalizedString
+    (builtinType): object
+    required: true
   validUntil:
-    required: false
-    description: |-
-      The time from which the discount should be ineffective.
-      Please take Eventual Consistency into account for calculated undiscounted values.
     format: rfc3339
     type: datetime
-  value:
-    required: true
-    type: ProductDiscountValue
-  key:
+    (builtinType): datetime
+    description: |-
+      The time from which the discount should be ineffective.
+               Please take Eventual Consistency into account for calculated undiscounted values.
     required: false
+  value:
+    type: ProductDiscountValue
+    (builtinType): object
+    required: true
+  key:
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for a product discount.
-      Must be unique across a project.
-    type: string
+               Must be unique across a project.
+    required: false

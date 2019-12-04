@@ -1,27 +1,34 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductSetImageLabelAction
-# discriminator: action
-# discriminatorValue: setImageLabel
+discriminator: action
+discriminatorValue: setImageLabel
 properties:
   action:
-    default: setImageLabel
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setImageLabel
+    required: true
   imageUrl:
+    type: string
+    (builtinType): string
     required: true
-    type: string
   staged:
-    required: false
     type: boolean
+    (builtinType): boolean
+    required: false
   label:
-    required: false
     type: string
-  variantId:
+    (builtinType): string
     required: false
+  variantId:
     format: int64
     type: number
-  sku:
+    (builtinType): number
     required: false
+  sku:
     type: string
+    (builtinType): string
+    required: false

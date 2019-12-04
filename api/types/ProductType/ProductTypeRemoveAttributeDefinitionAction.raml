@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductTypeUpdateAction
+(builtinType): object
+type: ProductTypeUpdateAction
 displayName: ProductTypeRemoveAttributeDefinitionAction
-# discriminator: action
-# discriminatorValue: removeAttributeDefinition
+discriminator: action
+discriminatorValue: removeAttributeDefinition
 properties:
   action:
-    default: removeAttributeDefinition
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - removeAttributeDefinition
+    required: true
   name:
-    required: true
     type: string
+    (builtinType): string
+    required: true

@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): OrderUpdateAction
+(builtinType): object
+type: OrderUpdateAction
 displayName: OrderSetReturnShipmentStateAction
-# discriminator: action
-# discriminatorValue: setReturnShipmentState
+discriminator: action
+discriminatorValue: setReturnShipmentState
 properties:
   action:
-    default: setReturnShipmentState
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setReturnShipmentState
+    required: true
   shipmentState:
-    required: true
     type: ReturnShipmentState
-  returnItemId:
+    (builtinType): string
     required: true
+  returnItemId:
     type: string
+    (builtinType): string
+    required: true

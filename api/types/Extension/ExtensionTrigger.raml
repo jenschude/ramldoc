@@ -1,15 +1,15 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ExtensionTrigger
-# 
-# 
 properties:
   resourceTypeId:
-    required: true
     type: ExtensionResourceTypeId
-  actions:
+    (builtinType): string
     required: true
+  actions:
     type: array
     items:
       type: ExtensionAction
+    (builtinType): array
+    required: true

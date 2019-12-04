@@ -4,6 +4,9 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
 post:
   securedBy:
   - oauth_2_0:
@@ -13,8 +16,10 @@ post:
   body:
     application/json:
       type: ProductDiscountMatchQuery
+      (builtinType): object
   responses:
     200:
       body:
         application/json:
           type: ProductDiscount
+          (builtinType): object

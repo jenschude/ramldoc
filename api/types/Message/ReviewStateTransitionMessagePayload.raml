@@ -1,29 +1,37 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: ReviewStateTransitionMessagePayload
-# discriminator: type
-# discriminatorValue: ReviewStateTransition
+discriminator: type
+discriminatorValue: ReviewStateTransition
 properties:
   type:
-    default: ReviewStateTransition
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - ReviewStateTransition
+    required: true
   newIncludedInStatistics:
-    required: true
     type: boolean
+    (builtinType): boolean
+    required: true
   oldState:
-    required: true
     type: StateReference
+    (builtinType): object
+    required: true
   force:
-    required: true
     type: boolean
+    (builtinType): boolean
+    required: true
   oldIncludedInStatistics:
-    required: true
     type: boolean
+    (builtinType): boolean
+    required: true
   newState:
-    required: true
     type: StateReference
-  target:
+    (builtinType): object
     required: true
+  target:
     type: Reference
+    (builtinType): object
+    required: true

@@ -1,15 +1,18 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): DiscountCodeUpdateAction
+(builtinType): object
+type: DiscountCodeUpdateAction
 displayName: DiscountCodeSetMaxApplicationsAction
-# discriminator: action
-# discriminatorValue: setMaxApplications
+discriminator: action
+discriminatorValue: setMaxApplications
 properties:
   action:
-    default: setMaxApplications
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setMaxApplications
+    required: true
   maxApplications:
-    required: false
     format: int64
     type: number
+    (builtinType): number
+    required: false

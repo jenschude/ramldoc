@@ -1,43 +1,49 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: CustomLineItemDraft
-# 
-# 
 properties:
   externalTaxRate:
-    required: false
+    type: ExternalTaxRateDraft
+    (builtinType): object
     description: |-
       An external tax rate can be set if the cart has the `External` TaxMode.
-    type: ExternalTaxRateDraft
+    required: false
   quantity:
-    required: true
-    description: |-
-      The amount of a CustomLineItemin the cart.
-      Must be a positive integer.
     format: int16
     type: number
+    (builtinType): number
+    description: |-
+      The amount of a CustomLineItemin the cart.
+               Must be a positive integer.
+    required: true
   shippingDetails:
-    required: false
+    type: ItemShippingDetailsDraft
+    (builtinType): object
     description: |-
       Container for custom line item specific address(es).
-    type: ItemShippingDetailsDraft
-  money:
-    required: true
-    type: Money
-  custom:
     required: false
+  money:
+    type: Money
+    (builtinType): object
+    required: true
+  custom:
+    type: CustomFields
+    (builtinType): object
     description: |-
       The custom fields.
-    type: CustomFields
-  name:
-    required: true
-    type: LocalizedString
-  slug:
-    required: true
-    type: string
-  taxCategory:
     required: false
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  slug:
+    type: string
+    (builtinType): string
+    required: true
+  taxCategory:
+    type: TaxCategoryResourceIdentifier
+    (builtinType): object
     description: |-
       The given tax category will be used to select a tax rate when a cart has the TaxMode `Platform`.
-    type: TaxCategoryResourceIdentifier
+    required: false

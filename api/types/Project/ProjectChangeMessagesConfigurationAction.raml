@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProjectUpdateAction
+(builtinType): object
+type: ProjectUpdateAction
 displayName: ProjectChangeMessagesConfigurationAction
-# discriminator: action
-# discriminatorValue: changeMessagesConfiguration
+discriminator: action
+discriminatorValue: changeMessagesConfiguration
 properties:
   action:
-    default: changeMessagesConfiguration
-    required: true
     type: string
-  messagesConfiguration:
+    (builtinType): string
+    enum:
+    - changeMessagesConfiguration
     required: true
+  messagesConfiguration:
     type: MessageConfigurationDraft
+    (builtinType): object
+    required: true

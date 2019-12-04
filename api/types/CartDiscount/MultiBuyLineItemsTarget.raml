@@ -1,37 +1,44 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CartDiscountTarget
+(builtinType): object
+type: CartDiscountTarget
 displayName: MultiBuyLineItemsTarget
-# discriminator: type
-# discriminatorValue: multiBuyLineItems
+discriminator: type
+discriminatorValue: multiBuyLineItems
 properties:
   type:
-    default: multiBuyLineItems
-    required: true
     type: string
-  predicate:
+    (builtinType): string
+    enum:
+    - multiBuyLineItems
     required: true
+  predicate:
+    type: string
+    (builtinType): string
     description: |-
       A valid line item target predicate. The discount will be applied to line items that are matched by the predicate.
-    type: string
-  triggerQuantity:
     required: true
+  triggerQuantity:
+    format: int16
+    type: integer
+    (builtinType): integer
     description: |-
       Quantity of line items that need to be present in order to trigger an application of this discount.
+    required: true
+  discountedQuantity:
     format: int16
     type: integer
-  discountedQuantity:
-    required: true
+    (builtinType): integer
     description: |-
       Quantity of line items that are discounted per application of this discount.
+    required: true
+  maxOccurrence:
     format: int16
     type: integer
-  maxOccurrence:
-    required: false
+    (builtinType): integer
     description: |-
       Maximum number of applications of this discount.
-    format: int16
-    type: integer
+    required: false
   selectionMode:
-    required: true
     type: SelectionMode
+    (builtinType): string
+    required: true

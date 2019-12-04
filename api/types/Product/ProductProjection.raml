@@ -1,89 +1,109 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): BaseResource
+(builtinType): object
+type: BaseResource
 displayName: ProductProjection
-# 
-# 
 properties:
   createdAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the Product.
-    type: string
-  version:
     required: true
-    description: |-
-      The current version of the Product.
+  version:
     format: int64
     type: number
-  searchKeywords:
-    required: false
-    type: SearchKeywords
-  description:
-    required: false
-    type: LocalizedString
-  variants:
+    (builtinType): number
+    description: |-
+      The current version of the Product.
     required: true
+  searchKeywords:
+    type: SearchKeywords
+    (builtinType): object
+    required: false
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  variants:
     type: array
     items:
       type: ProductVariant
+    (builtinType): array
+    required: true
   published:
-    required: false
     type: boolean
+    (builtinType): boolean
+    required: false
   hasStagedChanges:
-    required: false
     type: boolean
+    (builtinType): boolean
+    required: false
   metaDescription:
-    required: false
     type: LocalizedString
+    (builtinType): object
+    required: false
   taxCategory:
-    required: false
     type: TaxCategoryReference
+    (builtinType): object
+    required: false
   metaKeywords:
-    required: false
     type: LocalizedString
+    (builtinType): object
+    required: false
   categoryOrderHints:
-    required: false
     type: CategoryOrderHints
+    (builtinType): object
+    required: false
   metaTitle:
-    required: false
     type: LocalizedString
+    (builtinType): object
+    required: false
   name:
-    required: true
     type: LocalizedString
+    (builtinType): object
+    required: true
   state:
-    required: false
     type: StateReference
+    (builtinType): object
+    required: false
   masterVariant:
-    required: true
     type: ProductVariant
-  categories:
+    (builtinType): object
     required: true
-    description: |-
-      References to categories the product is in.
+  categories:
     type: array
     items:
       type: CategoryReference
+    (builtinType): array
+    description: |-
+      References to categories the product is in.
+    required: true
   reviewRatingStatistics:
-    required: false
+    type: ReviewRatingStatistics
+    (builtinType): object
     description: |-
       Statistics about the review ratings taken into account for this product.
-    type: ReviewRatingStatistics
+    required: false
   slug:
-    required: true
     type: LocalizedString
-  productType:
+    (builtinType): object
     required: true
+  productType:
     discriminatorValue: product-type
     type: ProductTypeReference
+    (builtinType): object
+    required: true
   key:
-    required: false
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier of the Product.
-    type: string
+    required: false

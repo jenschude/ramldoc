@@ -4,8 +4,12 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
   key:
     type: string
+    (builtinType): string
 get:
   securedBy:
   - oauth_2_0:
@@ -21,23 +25,32 @@ get:
     staged:
       required: false
       type: boolean
+      (builtinType): boolean
+      description: |-
+        Whether to query for the current or staged projections.
     priceCurrency:
       required: false
       type: string
+      (builtinType): string
     priceCountry:
       required: false
       type: string
+      (builtinType): string
     priceCustomerGroup:
       required: false
       type: string
+      (builtinType): string
     priceChannel:
       required: false
       type: string
+      (builtinType): string
     expand:
       required: false
       type: string
+      (builtinType): string
   responses:
     200:
       body:
         application/json:
           type: ProductProjection
+          (builtinType): object

@@ -1,45 +1,58 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MyCartUpdateAction
+(builtinType): object
+type: MyCartUpdateAction
 displayName: MyCartAddLineItemAction
-# discriminator: action
-# discriminatorValue: addLineItem
+discriminator: action
+discriminatorValue: addLineItem
 properties:
   action:
-    default: addLineItem
+    type: string
+    (builtinType): string
+    enum:
+    - addLineItem
     required: true
-    type: string
   quantity:
-    required: false
     type: number
+    (builtinType): number
+    required: false
   externalTaxRate:
-    required: false
     type: ExternalTaxRateDraft
+    (builtinType): object
+    required: false
   shippingDetails:
-    required: false
     type: ItemShippingDetailsDraft
+    (builtinType): object
+    required: false
   productId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   externalTotalPrice:
-    required: false
     type: ExternalLineItemTotalPrice
+    (builtinType): object
+    required: false
   custom:
-    required: false
     type: CustomFieldsDraft
+    (builtinType): object
+    required: false
   supplyChannel:
-    required: false
     type: ChannelResourceIdentifier
-  variantId:
+    (builtinType): object
     required: false
+  variantId:
     format: int64
     type: number
+    (builtinType): number
+    required: false
   sku:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   distributionChannel:
-    required: false
     type: ChannelResourceIdentifier
-  externalPrice:
+    (builtinType): object
     required: false
+  externalPrice:
     type: Money
+    (builtinType): object
+    required: false

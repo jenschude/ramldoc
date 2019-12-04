@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Reference
+(builtinType): object
+type: Reference
 displayName: ShippingMethodReference
-# discriminator: typeId
-# discriminatorValue: shipping-method
+discriminator: typeId
+discriminatorValue: shipping-method
 properties:
   typeId:
-    default: shipping-method
-    required: true
     type: ReferenceTypeId
-  id:
+    (builtinType): string
+    enum:
+    - shipping-method
     required: true
+  id:
     type: string
+    (builtinType): string
+    required: true
   obj:
-    required: false
     type: ShippingMethod
+    (builtinType): object
+    required: false

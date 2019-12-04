@@ -1,25 +1,27 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ProductTypeDraft
-# 
-# 
 properties:
   name:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   description:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   attributes:
-    required: false
     type: array
     items:
       type: AttributeDefinitionDraft
-  key:
+    (builtinType): array
     required: false
+  key:
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for the product type (min.
-      2 and max.
-      256 characters).
-    type: string
+               2 and max.
+               256 characters).
+    required: false

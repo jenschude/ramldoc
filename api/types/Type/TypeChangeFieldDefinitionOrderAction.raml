@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): TypeUpdateAction
+(builtinType): object
+type: TypeUpdateAction
 displayName: TypeChangeFieldDefinitionOrderAction
-# discriminator: action
-# discriminatorValue: changeFieldDefinitionOrder
+discriminator: action
+discriminatorValue: changeFieldDefinitionOrder
 properties:
   action:
-    default: changeFieldDefinitionOrder
-    required: true
     type: string
-  fieldNames:
+    (builtinType): string
+    enum:
+    - changeFieldDefinitionOrder
     required: true
+  fieldNames:
     type: array
     items:
       type: string
+    (builtinType): array
+    required: true

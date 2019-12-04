@@ -1,200 +1,239 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Order
+(builtinType): object
+type: Order
 displayName: StagedOrder
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the order.
-    type: string
-  version:
     required: true
-    description: |-
-      The current version of the order.
+  version:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The current version of the order.
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
+    required: false
   shipmentState:
-    required: false
     type: ShipmentState
-  country:
+    (builtinType): string
     required: false
+  country:
+    type: string
+    (builtinType): string
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-      Used for product variant price selection.
-    type: string
-  orderNumber:
+               Used for product variant price selection.
     required: false
+  orderNumber:
+    type: string
+    (builtinType): string
     description: |-
       String that uniquely identifies an order.
-      It can be used to create more human-readable (in contrast to ID) identifier for the order.
-      It should be unique across a project.
-      Once it's set it cannot be changed.
-    type: string
+               It can be used to create more human-readable (in contrast to ID) identifier for the order.
+               It should be unique across a project.
+               Once it's set it cannot be changed.
+    required: false
   totalPrice:
-    required: true
     discriminator: type
     type: TypedMoney
+    (builtinType): object
+    required: true
   shippingRateInput:
-    required: false
-    description: |-
-      The shippingRateInput is used as an input to select a ShippingRatePriceTier.
     discriminator: type
     type: ShippingRateInput
-  taxedPrice:
+    (builtinType): object
+    description: |-
+      The shippingRateInput is used as an input to select a ShippingRatePriceTier.
     required: false
+  taxedPrice:
+    type: TaxedPrice
+    (builtinType): object
     description: |-
       The taxes are calculated based on the shipping address.
-    type: TaxedPrice
-  origin:
-    required: true
-    type: CartOrigin
-  shippingInfo:
     required: false
+  origin:
+    type: CartOrigin
+    (builtinType): string
+    required: true
+  shippingInfo:
+    type: ShippingInfo
+    (builtinType): object
     description: |-
       Set if the ShippingMethod is set.
-    type: ShippingInfo
+    required: false
   refusedGifts:
-    required: true
-    description: |-
-      Automatically filled when a line item with LineItemMode `GiftLineItem` is removed from this order.
     type: array
     items:
       type: CartDiscountReference
-  locale:
-    required: false
-    type: string
-  cart:
-    required: false
+    (builtinType): array
     description: |-
-      Set when this order was created from a cart.
-      The cart will have the state `Ordered`.
+      Automatically filled when a line item with LineItemMode `GiftLineItem` is removed from this order.
+    required: true
+  locale:
+    type: string
+    (builtinType): string
+    required: false
+  cart:
     discriminatorValue: cart
     type: CartReference
-  inventoryMode:
+    (builtinType): object
+    description: |-
+      Set when this order was created from a cart.
+               The cart will have the state `Ordered`.
     required: false
+  inventoryMode:
     type: InventoryMode
+    (builtinType): string
+    required: false
   orderState:
-    required: true
+    type: OrderState
+    (builtinType): string
     description: |-
       One of the four predefined OrderStates.
-    type: OrderState
+    required: true
   returnInfo:
-    required: false
     type: array
     items:
       type: ReturnInfo
+    (builtinType): array
+    required: false
   lineItems:
-    required: true
     type: array
     items:
       type: LineItem
-  customLineItems:
+    (builtinType): array
     required: true
+  customLineItems:
     type: array
     items:
       type: CustomLineItem
+    (builtinType): array
+    required: true
   itemShippingAddresses:
-    required: false
-    description: |-
-      Contains addresses for orders with multiple shipping addresses.
     type: array
     items:
       type: Address
+    (builtinType): array
+    description: |-
+      Contains addresses for orders with multiple shipping addresses.
+    required: false
   customerEmail:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   customerId:
-    required: false
     type: string
-  state:
+    (builtinType): string
     required: false
+  state:
+    type: StateReference
+    (builtinType): object
     description: |-
       This reference can point to a state in a custom workflow.
-    type: StateReference
+    required: false
   paymentState:
-    required: false
     type: PaymentState
-  anonymousId:
+    (builtinType): string
     required: false
+  anonymousId:
+    type: string
+    (builtinType): string
     description: |-
       Identifies carts and orders belonging to an anonymous session (the customer has not signed up/in yet).
-    type: string
-  discountCodes:
     required: false
+  discountCodes:
     type: array
     items:
       type: DiscountCodeInfo
-  completedAt:
+    (builtinType): array
     required: false
-    description: |-
-      This field will only be present if it was set for Order Import
+  completedAt:
     format: rfc3339
     type: datetime
-  customerGroup:
-    required: false
+    (builtinType): datetime
     description: |-
-      Set when the customer is set and the customer is a member of a customer group.
-      Used for product variant price selection.
+      This field will only be present if it was set for Order Import
+    required: false
+  customerGroup:
     discriminatorValue: customer-group
     type: CustomerGroupReference
+    (builtinType): object
+    description: |-
+      Set when the customer is set and the customer is a member of a customer group.
+               Used for product variant price selection.
+    required: false
   custom:
-    required: false
     type: CustomFields
-  taxCalculationMode:
+    (builtinType): object
     required: false
+  taxCalculationMode:
+    type: TaxCalculationMode
+    (builtinType): string
     description: |-
       When calculating taxes for `taxedPrice`, the selected mode is used for calculating the price with LineItemLevel (horizontally) or UnitPriceLevel (vertically) calculation mode.
-    type: TaxCalculationMode
-  store:
     required: false
+  store:
     type: StoreKeyReference
+    (builtinType): object
+    required: false
   lastMessageSequenceNumber:
-    required: true
-    description: |-
-      The sequence number of the last order message produced by changes to this order.
-      `0` means, that no messages were created yet.
     format: int64
     type: number
-  syncInfo:
+    (builtinType): number
+    description: |-
+      The sequence number of the last order message produced by changes to this order.
+               `0` means, that no messages were created yet.
     required: true
+  syncInfo:
     type: array
     items:
       type: SyncInfo
+    (builtinType): array
+    required: true
   taxRoundingMode:
-    required: false
+    type: RoundingMode
+    (builtinType): string
     description: |-
       When calculating taxes for `taxedPrice`, the selected mode is used for rouding.
-    type: RoundingMode
+    required: false
   taxMode:
-    required: false
     type: TaxMode
+    (builtinType): string
+    required: false
   shippingAddress:
-    required: false
     type: Address
+    (builtinType): object
+    required: false
   billingAddress:
-    required: false
     type: Address
-  paymentInfo:
+    (builtinType): object
     required: false
+  paymentInfo:
     type: PaymentInfo
+    (builtinType): object
+    required: false

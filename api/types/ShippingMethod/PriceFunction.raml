@@ -1,15 +1,15 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: PriceFunction
-# 
-# 
 properties:
   function:
-    required: true
     type: string
-  currencyCode:
+    (builtinType): string
     required: true
+  currencyCode:
+    type: CurrencyCode
+    (builtinType): string
     description: |-
       The currency code compliant to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-    type: CurrencyCode
+    required: true

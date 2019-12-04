@@ -4,6 +4,9 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
 post:
   securedBy:
   - oauth_2_0:
@@ -15,8 +18,10 @@ post:
   body:
     application/graphql:
       type: any
+      (builtinType): any
   responses:
     200:
       body:
         application/json:
           type: any
+          (builtinType): any

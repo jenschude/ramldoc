@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: OrderStateTransitionMessagePayload
-# discriminator: type
-# discriminatorValue: OrderStateTransition
+discriminator: type
+discriminatorValue: OrderStateTransition
 properties:
   type:
-    default: OrderStateTransition
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - OrderStateTransition
+    required: true
   force:
-    required: true
     type: boolean
-  state:
+    (builtinType): boolean
     required: true
+  state:
     type: StateReference
+    (builtinType): object
+    required: true

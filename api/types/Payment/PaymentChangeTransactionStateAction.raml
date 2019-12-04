@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): PaymentUpdateAction
+(builtinType): object
+type: PaymentUpdateAction
 displayName: PaymentChangeTransactionStateAction
-# discriminator: action
-# discriminatorValue: changeTransactionState
+discriminator: action
+discriminatorValue: changeTransactionState
 properties:
   action:
-    default: changeTransactionState
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changeTransactionState
+    required: true
   state:
-    required: true
     type: TransactionState
-  transactionId:
+    (builtinType): string
     required: true
+  transactionId:
     type: string
+    (builtinType): string
+    required: true

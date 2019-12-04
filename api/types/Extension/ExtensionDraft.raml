@@ -1,34 +1,36 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ExtensionDraft
-# 
-# 
 properties:
   timeoutInMs:
-    required: false
-    description: |-
-      The maximum time the commercetools platform waits for a response from the extension.
-      The maximum value is 2000 ms (2 seconds).
-      This limit can be increased per project after we review the performance impact.
-      Please contact Support via the [Support Portal](https://support.commercetools.com) and provide the region, project key and use case.
     format: int16
     type: integer
-  destination:
-    required: true
+    (builtinType): integer
     description: |-
-      Details where the extension can be reached
+      The maximum time the commercetools platform waits for a response from the extension.
+               The maximum value is 2000 ms (2 seconds).
+               This limit can be increased per project after we review the performance impact.
+               Please contact Support via the [Support Portal](https://support.commercetools.com) and provide the region, project key and use case.
+    required: false
+  destination:
     discriminator: type
     type: ExtensionDestination
-  triggers:
-    required: true
+    (builtinType): object
     description: |-
-      Describes what triggers the extension
+      Details where the extension can be reached
+    required: true
+  triggers:
     type: array
     items:
       type: ExtensionTrigger
+    (builtinType): array
+    description: |-
+      Describes what triggers the extension
+    required: true
   key:
-    required: false
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for the extension
-    type: string
+    required: false

@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StagedOrderUpdateAction
+(builtinType): object
+type: StagedOrderUpdateAction
 displayName: StagedOrderChangeTaxRoundingModeAction
-# discriminator: action
-# discriminatorValue: changeTaxRoundingMode
+discriminator: action
+discriminatorValue: changeTaxRoundingMode
 properties:
   action:
-    default: changeTaxRoundingMode
-    required: true
     type: string
-  taxRoundingMode:
+    (builtinType): string
+    enum:
+    - changeTaxRoundingMode
     required: true
+  taxRoundingMode:
     type: RoundingMode
+    (builtinType): string
+    required: true

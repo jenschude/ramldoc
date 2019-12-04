@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ChannelUpdateAction
+(builtinType): object
+type: ChannelUpdateAction
 displayName: ChannelAddRolesAction
-# discriminator: action
-# discriminatorValue: addRoles
+discriminator: action
+discriminatorValue: addRoles
 properties:
   action:
-    default: addRoles
-    required: true
     type: string
-  roles:
+    (builtinType): string
+    enum:
+    - addRoles
     required: true
+  roles:
     type: array
     items:
       type: ChannelRoleEnum
+    (builtinType): array
+    required: true

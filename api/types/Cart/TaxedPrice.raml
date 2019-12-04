@@ -1,20 +1,21 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: TaxedPrice
-# 
-# 
 properties:
   taxPortions:
-    required: true
-    description: |-
-      TaxedPrice fields that can be used in query predicates: `totalNet`, `totalGross`.
     type: array
     items:
       type: TaxPortion
+    (builtinType): array
+    description: |-
+      TaxedPrice fields that can be used in query predicates: `totalNet`, `totalGross`.
+    required: true
   totalGross:
-    required: true
     type: TypedMoney
+    (builtinType): object
+    required: true
   totalNet:
-    required: true
     type: TypedMoney
+    (builtinType): object
+    required: true

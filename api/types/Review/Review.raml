@@ -1,89 +1,108 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: Review
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the review.
-    type: string
-  version:
     required: true
-    description: |-
-      The current version of the review.
+  version:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The current version of the review.
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
+    required: false
   uniquenessValue:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   custom:
-    required: false
     type: CustomFields
-  rating:
+    (builtinType): object
     required: false
-    description: |-
-      Number between -100 and 100 included.
+  rating:
     format: int8
     minimum: -100
     maximum: 100
     type: number
+    (builtinType): number
+    description: |-
+      Number between -100 and 100 included.
+    required: false
   title:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   locale:
-    required: false
     type: string
-  target:
+    (builtinType): string
     required: false
+  target:
+    type: ProductReference | ChannelReference
+    (oneOf):
+    - ProductReference
+    - ChannelReference
+    (builtinType): any
     description: |-
       Identifies the target of the review.
-      Can be a Product or a Channel
-    type: ProductReference | ChannelReference
+               Can be a Product or a Channel
+    required: false
   includedInStatistics:
-    required: true
+    type: boolean
+    (builtinType): boolean
     description: |-
       Indicates if this review is taken into account in the ratings statistics of the target.
-      A review is per default used in the statistics, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
-      If the role of a State is modified after the calculation of this field, the calculation is not updated.
-    type: boolean
+               A review is per default used in the statistics, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
+               If the role of a State is modified after the calculation of this field, the calculation is not updated.
+    required: true
   authorName:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   state:
-    required: false
     type: StateReference
+    (builtinType): object
+    required: false
   text:
-    required: false
     type: string
-  key:
+    (builtinType): string
     required: false
+  key:
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for the review.
-    type: string
-  customer:
     required: false
-    description: |-
-      The customer who created the review.
+  customer:
     discriminatorValue: customer
     type: CustomerReference
+    (builtinType): object
+    description: |-
+      The customer who created the review.
+    required: false

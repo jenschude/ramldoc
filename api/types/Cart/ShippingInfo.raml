@@ -1,54 +1,62 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ShippingInfo
-# 
-# 
 properties:
   taxRate:
-    required: false
+    type: TaxRate
+    (builtinType): object
     description: |-
       Will be set automatically in the `Platform` TaxMode once the shipping address is set is set.
-      For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
-    type: TaxRate
+               For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
+    required: false
   shippingRate:
-    required: true
+    type: ShippingRate
+    (builtinType): object
     description: |-
       The shipping rate used to determine the price.
-    type: ShippingRate
-  discountedPrice:
-    required: false
-    type: DiscountedLineItemPrice
-  shippingMethodState:
     required: true
+  discountedPrice:
+    type: DiscountedLineItemPrice
+    (builtinType): object
+    required: false
+  shippingMethodState:
+    type: ShippingMethodState
+    (builtinType): string
     description: |-
       Indicates whether the ShippingMethod referenced in this ShippingInfo is allowed for the cart or not.
-    type: ShippingMethodState
+    required: true
   taxedPrice:
-    required: false
+    type: TaxedItemPrice
+    (builtinType): object
     description: |-
       Set once the `taxRate` is set.
-    type: TaxedItemPrice
+    required: false
   price:
-    required: true
+    type: TypedMoney
+    (builtinType): object
     description: |-
       Determined based on the ShippingRate and its tiered prices, and either the sum of LineItem prices or the `shippingRateInput` field.
-    type: TypedMoney
+    required: true
   shippingMethod:
-    required: false
+    type: ShippingMethodReference
+    (builtinType): object
     description: |-
       Not set if custom shipping method is used.
-    type: ShippingMethodReference
-  shippingMethodName:
-    required: true
-    type: string
-  deliveries:
     required: false
-    description: |-
-      Deliveries are compilations of information on how the articles are being delivered to the customers.
+  shippingMethodName:
+    type: string
+    (builtinType): string
+    required: true
+  deliveries:
     type: array
     items:
       type: Delivery
-  taxCategory:
+    (builtinType): array
+    description: |-
+      Deliveries are compilations of information on how the articles are being delivered to the customers.
     required: false
+  taxCategory:
     type: TaxCategoryReference
+    (builtinType): object
+    required: false

@@ -1,106 +1,123 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: DiscountCode
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the discount code.
-    type: string
-  version:
     required: true
+  version:
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
+    required: false
   cartDiscounts:
-    required: true
-    description: |-
-      The referenced matching cart discounts can be applied to the cart once the DiscountCode is added.
     type: array
     items:
       type: CartDiscountReference
-  code:
+    (builtinType): array
+    description: |-
+      The referenced matching cart discounts can be applied to the cart once the DiscountCode is added.
     required: true
+  code:
+    type: string
+    (builtinType): string
     description: |-
       Unique identifier of this discount code.
-      This value is added to the cart
-      to enable the related cart discounts in the cart.
-    type: string
-  references:
+               This value is added to the cart
+               to enable the related cart discounts in the cart.
     required: true
-    description: |-
-      The platform will generate this array from the cart predicate.
-      It contains the references of all the resources that are addressed in the predicate.
+  references:
     type: array
     items:
       type: Reference
+    (builtinType): array
+    description: |-
+      The platform will generate this array from the cart predicate.
+               It contains the references of all the resources that are addressed in the predicate.
+    required: true
   cartPredicate:
-    required: false
+    type: string
+    (builtinType): string
     description: |-
       The discount code can only be applied to carts that match this predicate.
-    type: string
-  custom:
     required: false
+  custom:
     type: CustomFields
+    (builtinType): object
+    required: false
   groups:
-    required: true
-    description: |-
-      The groups to which this discount code belong.
     type: array
     items:
       type: string
+    (builtinType): array
+    description: |-
+      The groups to which this discount code belong.
+    required: true
   description:
-    required: false
     type: LocalizedString
-  validFrom:
+    (builtinType): object
     required: false
+  validFrom:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
     description: |-
       The time from which the discount can be applied on a cart.
-      Before that time the code is invalid.
-    format: rfc3339
-    type: datetime
-  isActive:
-    required: true
-    type: boolean
-  maxApplications:
+               Before that time the code is invalid.
     required: false
+  isActive:
+    type: boolean
+    (builtinType): boolean
+    required: true
+  maxApplications:
+    format: int64
+    type: number
+    (builtinType): number
     description: |-
       The discount code can only be applied `maxApplications` times.
-    format: int64
-    type: number
+    required: false
   name:
-    required: false
     type: LocalizedString
-  validUntil:
+    (builtinType): object
     required: false
-    description: |-
-      The time until the discount can be applied on a cart.
-      After that time the code is invalid.
+  validUntil:
     format: rfc3339
     type: datetime
-  maxApplicationsPerCustomer:
-    required: false
+    (builtinType): datetime
     description: |-
-      The discount code can only be applied `maxApplicationsPerCustomer` times per customer.
+      The time until the discount can be applied on a cart.
+               After that time the code is invalid.
+    required: false
+  maxApplicationsPerCustomer:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The discount code can only be applied `maxApplicationsPerCustomer` times per customer.
+    required: false

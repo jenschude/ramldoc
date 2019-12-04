@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ShippingMethodUpdateAction
+(builtinType): object
+type: ShippingMethodUpdateAction
 displayName: ShippingMethodChangeNameAction
-# discriminator: action
-# discriminatorValue: changeName
+discriminator: action
+discriminatorValue: changeName
 properties:
   action:
-    default: changeName
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changeName
+    required: true
   name:
-    required: true
     type: string
+    (builtinType): string
+    required: true

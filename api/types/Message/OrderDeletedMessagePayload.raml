@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: OrderDeletedMessagePayload
-# discriminator: type
-# discriminatorValue: OrderDeleted
+discriminator: type
+discriminatorValue: OrderDeleted
 properties:
   type:
-    default: OrderDeleted
-    required: true
     type: string
-  order:
+    (builtinType): string
+    enum:
+    - OrderDeleted
     required: true
+  order:
     type: Order
+    (builtinType): object
+    required: true

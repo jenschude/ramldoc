@@ -1,13 +1,13 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: DiscountedPrice
-# 
-# 
 properties:
   discount:
-    required: true
     type: ProductDiscountReference
-  value:
+    (builtinType): object
     required: true
+  value:
     type: Money
+    (builtinType): object
+    required: true

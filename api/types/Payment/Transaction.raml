@@ -1,38 +1,42 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: Transaction
-# 
-# 
 properties:
   interactionId:
-    required: false
+    type: string
+    (builtinType): string
     description: |-
       The identifier that is used by the interface that managed the transaction (usually the PSP).
-      If a matching interaction was logged in the `interfaceInteractions` array, the corresponding interaction should be findable with this ID.
-    type: string
+               If a matching interaction was logged in the `interfaceInteractions` array, the corresponding interaction should be findable with this ID.
+    required: false
   amount:
-    required: true
     discriminator: type
     type: TypedMoney
+    (builtinType): object
+    required: true
   state:
-    required: false
+    type: TransactionState
+    (builtinType): string
     description: |-
       The state of this transaction.
-    type: TransactionState
+    required: false
   id:
-    required: true
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of this object.
-    type: string
-  type:
     required: true
+  type:
+    type: TransactionType
+    (builtinType): string
     description: |-
       The type of this transaction.
-    type: TransactionType
+    required: true
   timestamp:
-    required: false
-    description: |-
-      The time at which the transaction took place.
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    description: |-
+      The time at which the transaction took place.
+    required: false

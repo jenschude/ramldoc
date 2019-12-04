@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StagedOrderUpdateAction
+(builtinType): object
+type: StagedOrderUpdateAction
 displayName: StagedOrderSetReturnPaymentStateAction
-# discriminator: action
-# discriminatorValue: setReturnPaymentState
+discriminator: action
+discriminatorValue: setReturnPaymentState
 properties:
   action:
-    default: setReturnPaymentState
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setReturnPaymentState
+    required: true
   returnItemId:
-    required: true
     type: string
-  paymentState:
+    (builtinType): string
     required: true
+  paymentState:
     type: ReturnPaymentState
+    (builtinType): string
+    required: true

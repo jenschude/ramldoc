@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Reference
+(builtinType): object
+type: Reference
 displayName: ChannelReference
-# discriminator: typeId
-# discriminatorValue: channel
+discriminator: typeId
+discriminatorValue: channel
 properties:
   typeId:
-    default: channel
-    required: true
     type: ReferenceTypeId
-  id:
+    (builtinType): string
+    enum:
+    - channel
     required: true
+  id:
     type: string
+    (builtinType): string
+    required: true
   obj:
-    required: false
     type: Channel
+    (builtinType): object
+    required: false

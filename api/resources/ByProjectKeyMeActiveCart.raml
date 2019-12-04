@@ -4,6 +4,9 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
 get:
   securedBy:
   - oauth_2_0:
@@ -14,3 +17,4 @@ get:
       body:
         application/json:
           type: MyCart
+          (builtinType): object

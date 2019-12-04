@@ -1,15 +1,18 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): InventoryEntryUpdateAction
+(builtinType): object
+type: InventoryEntryUpdateAction
 displayName: InventoryEntryRemoveQuantityAction
-# discriminator: action
-# discriminatorValue: removeQuantity
+discriminator: action
+discriminatorValue: removeQuantity
 properties:
   action:
-    default: removeQuantity
-    required: true
     type: string
-  quantity:
+    (builtinType): string
+    enum:
+    - removeQuantity
     required: true
+  quantity:
     format: int64
     type: number
+    (builtinType): number
+    required: true

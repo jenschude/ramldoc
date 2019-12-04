@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): PaymentUpdateAction
+(builtinType): object
+type: PaymentUpdateAction
 displayName: PaymentSetStatusInterfaceCodeAction
-# discriminator: action
-# discriminatorValue: setStatusInterfaceCode
+discriminator: action
+discriminatorValue: setStatusInterfaceCode
 properties:
   action:
-    default: setStatusInterfaceCode
+    type: string
+    (builtinType): string
+    enum:
+    - setStatusInterfaceCode
     required: true
-    type: string
   interfaceCode:
-    required: false
     type: string
+    (builtinType): string
+    required: false

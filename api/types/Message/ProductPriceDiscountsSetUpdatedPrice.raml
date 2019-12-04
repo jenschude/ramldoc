@@ -1,25 +1,29 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ProductPriceDiscountsSetUpdatedPrice
-# 
-# 
 properties:
   discounted:
-    required: false
     type: DiscountedPrice
+    (builtinType): object
+    required: false
   staged:
-    required: true
     type: boolean
+    (builtinType): boolean
+    required: true
   variantId:
-    required: true
     type: integer
-  priceId:
+    (builtinType): integer
     required: true
+  priceId:
     type: string
+    (builtinType): string
+    required: true
   sku:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   variantKey:
-    required: false
     type: string
+    (builtinType): string
+    required: false

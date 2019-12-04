@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StagedOrderUpdateAction
+(builtinType): object
+type: StagedOrderUpdateAction
 displayName: StagedOrderSetShippingMethodTaxRateAction
-# discriminator: action
-# discriminatorValue: setShippingMethodTaxRate
+discriminator: action
+discriminatorValue: setShippingMethodTaxRate
 properties:
   action:
-    default: setShippingMethodTaxRate
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setShippingMethodTaxRate
+    required: true
   externalTaxRate:
-    required: false
     type: ExternalTaxRateDraft
+    (builtinType): object
+    required: false

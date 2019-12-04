@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Reference
+(builtinType): object
+type: Reference
 displayName: InventoryEntryReference
-# discriminator: typeId
-# discriminatorValue: inventory-entry
+discriminator: typeId
+discriminatorValue: inventory-entry
 properties:
   typeId:
-    default: inventory-entry
-    required: true
     type: ReferenceTypeId
-  id:
+    (builtinType): string
+    enum:
+    - inventory-entry
     required: true
+  id:
     type: string
+    (builtinType): string
+    required: true
   obj:
-    required: false
     type: InventoryEntry
+    (builtinType): object
+    required: false

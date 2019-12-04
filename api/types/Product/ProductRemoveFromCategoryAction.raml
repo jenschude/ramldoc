@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductRemoveFromCategoryAction
-# discriminator: action
-# discriminatorValue: removeFromCategory
+discriminator: action
+discriminatorValue: removeFromCategory
 properties:
   action:
-    default: removeFromCategory
-    required: true
     type: string
-  staged:
-    required: false
-    type: boolean
-  category:
+    (builtinType): string
+    enum:
+    - removeFromCategory
     required: true
+  staged:
+    type: boolean
+    (builtinType): boolean
+    required: false
+  category:
     type: CategoryResourceIdentifier
+    (builtinType): object
+    required: true

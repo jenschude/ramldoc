@@ -1,16 +1,41 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ResourceIdentifier
-# discriminator: typeId
-# 
+discriminator: typeId
+(subTypes):
+- CustomerGroupResourceIdentifier
+- CustomerResourceIdentifier
+- DiscountCodeResourceIdentifier
+- InventoryEntryResourceIdentifier
+- OrderEditResourceIdentifier
+- OrderResourceIdentifier
+- PaymentResourceIdentifier
+- ProductDiscountResourceIdentifier
+- ProductTypeResourceIdentifier
+- ProductResourceIdentifier
+- ReviewResourceIdentifier
+- ShippingMethodResourceIdentifier
+- ShoppingListResourceIdentifier
+- StateResourceIdentifier
+- StoreResourceIdentifier
+- TaxCategoryResourceIdentifier
+- TypeResourceIdentifier
+- ZoneResourceIdentifier
+- CartDiscountResourceIdentifier
+- CartResourceIdentifier
+- CategoryResourceIdentifier
+- ChannelResourceIdentifier
 properties:
   typeId:
-    required: false
     type: ReferenceTypeId
+    (builtinType): string
+    required: false
   id:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   key:
-    required: false
     type: string
+    (builtinType): string
+    required: false

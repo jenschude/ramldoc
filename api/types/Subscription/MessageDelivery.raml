@@ -1,44 +1,56 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): SubscriptionDelivery
+(builtinType): object
+type: SubscriptionDelivery
 displayName: MessageDelivery
-# discriminator: notificationType
-# discriminatorValue: Message
+discriminator: notificationType
+discriminatorValue: Message
 properties:
   projectKey:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   resource:
-    required: true
     type: Reference
+    (builtinType): object
+    required: true
   resourceUserProvidedIdentifiers:
-    required: false
     type: UserProvidedIdentifiers
+    (builtinType): object
+    required: false
   notificationType:
-    default: Message
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - Message
+    required: true
   sequenceNumber:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   resourceVersion:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   payloadNotIncluded:
-    required: true
     type: PayloadNotIncluded
+    (builtinType): object
+    required: true
   id:
-    required: true
     type: string
-  version:
+    (builtinType): string
     required: true
+  version:
     format: int64
     type: number
+    (builtinType): number
+    required: true

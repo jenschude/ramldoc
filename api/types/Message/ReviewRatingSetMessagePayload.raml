@@ -1,23 +1,29 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: ReviewRatingSetMessagePayload
-# discriminator: type
-# discriminatorValue: ReviewRatingSet
+discriminator: type
+discriminatorValue: ReviewRatingSet
 properties:
   type:
-    default: ReviewRatingSet
-    required: true
     type: string
-  oldRating:
-    required: false
-    type: number
-  includedInStatistics:
+    (builtinType): string
+    enum:
+    - ReviewRatingSet
     required: true
-    type: boolean
-  newRating:
-    required: false
+  oldRating:
     type: number
-  target:
+    (builtinType): number
     required: false
+  includedInStatistics:
+    type: boolean
+    (builtinType): boolean
+    required: true
+  newRating:
+    type: number
+    (builtinType): number
+    required: false
+  target:
     type: Reference
+    (builtinType): object
+    required: false

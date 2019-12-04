@@ -1,14 +1,14 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: MessageConfiguration
-# 
-# 
 properties:
   deleteDaysAfterCreation:
-    required: false
     format: int32
     type: number
+    (builtinType): number
+    required: false
   enabled:
-    required: true
     type: boolean
+    (builtinType): boolean
+    required: true

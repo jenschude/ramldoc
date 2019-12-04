@@ -1,13 +1,13 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ExtensionInput
-# 
-# 
 properties:
   resource:
-    required: true
     type: Reference
-  action:
+    (builtinType): object
     required: true
+  action:
     type: ExtensionAction
+    (builtinType): string
+    required: true

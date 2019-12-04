@@ -1,106 +1,123 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: LineItem
-# 
-# 
 properties:
   quantity:
-    required: true
-    description: |-
-      The amount of a LineItem in the cart.
-      Must be a positive integer.
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The amount of a LineItem in the cart.
+               Must be a positive integer.
+    required: true
   priceMode:
-    required: true
     type: LineItemPriceMode
+    (builtinType): string
+    required: true
   productId:
-    required: true
     type: string
-  totalPrice:
+    (builtinType): string
     required: true
+  totalPrice:
+    type: TypedMoney
+    (builtinType): object
     description: |-
       The total price of this line item.
-      If the line item is discounted, then the `totalPrice` is the DiscountedLineItemPriceForQuantity multiplied by `quantity`.
-      Otherwise the total price is the product price multiplied by the `quantity`.
-      `totalPrice` may or may not include the taxes: it depends on the taxRate.includedInPrice property.
-    type: TypedMoney
+               If the line item is discounted, then the `totalPrice` is the DiscountedLineItemPriceForQuantity multiplied by `quantity`.
+               Otherwise the total price is the product price multiplied by the `quantity`.
+               `totalPrice` may or may not include the taxes: it depends on the taxRate.includedInPrice property.
+    required: true
   taxedPrice:
-    required: false
+    type: TaxedItemPrice
+    (builtinType): object
     description: |-
       Set once the `taxRate` is set.
-    type: TaxedItemPrice
-  custom:
     required: false
+  custom:
     type: CustomFields
+    (builtinType): object
+    required: false
   discountedPricePerQuantity:
-    required: true
     type: array
     items:
       type: DiscountedLineItemPriceForQuantity
+    (builtinType): array
+    required: true
   productSlug:
-    required: false
+    type: LocalizedString
+    (builtinType): object
     description: |-
       The slug of a product is inserted on the fly.
-      It is always up-to-date and can therefore be used to link to the product detail page of the product.
-      It is empty if the product has been deleted.
-      The slug is also empty if the cart or order is retrieved via Reference Expansion or is a snapshot in a Message.
-    type: LocalizedString
-  taxRate:
+               It is always up-to-date and can therefore be used to link to the product detail page of the product.
+               It is empty if the product has been deleted.
+               The slug is also empty if the cart or order is retrieved via Reference Expansion or is a snapshot in a Message.
     required: false
+  taxRate:
+    type: TaxRate
+    (builtinType): object
     description: |-
       Will be set automatically in the `Platform` TaxMode once the shipping address is set is set.
-      For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
-    type: TaxRate
-  shippingDetails:
+               For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
     required: false
+  shippingDetails:
+    type: ItemShippingDetails
+    (builtinType): object
     description: |-
       Container for line item specific address(es).
-    type: ItemShippingDetails
+    required: false
   price:
-    required: true
+    type: Price
+    (builtinType): object
     description: |-
       The price of a line item is selected from the prices array of the product variant.
-      If the `variant` field hasn't been updated, the price may not correspond to a price in `variant.prices`.
-    type: Price
-  variant:
+               If the `variant` field hasn't been updated, the price may not correspond to a price in `variant.prices`.
     required: true
+  variant:
+    type: ProductVariant
+    (builtinType): object
     description: |-
       The variant data is saved when the variant is added to the cart, and not updated automatically.
-      It can manually be updated with the Recalculate update action.
-    type: ProductVariant
-  name:
+               It can manually be updated with the Recalculate update action.
     required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
     description: |-
       The product name.
-    type: LocalizedString
+    required: true
   supplyChannel:
-    required: false
+    type: ChannelReference
+    (builtinType): object
     description: |-
       The supply channel identifies the inventory entries that should be reserved.
-      The channel has
-      the role InventorySupply.
-    type: ChannelReference
+               The channel has
+               the role InventorySupply.
+    required: false
   state:
-    required: true
     type: array
     items:
       type: ItemState
-  id:
+    (builtinType): array
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of this LineItem.
-    type: string
+    required: true
   distributionChannel:
-    required: false
+    type: ChannelReference
+    (builtinType): object
     description: |-
       The distribution channel is used to select a ProductPrice.
-      The channel has the role ProductDistribution.
-    type: ChannelReference
+               The channel has the role ProductDistribution.
+    required: false
   lineItemMode:
-    required: true
     type: LineItemMode
-  productType:
+    (builtinType): string
     required: true
+  productType:
     type: ProductTypeReference
+    (builtinType): object
+    required: true

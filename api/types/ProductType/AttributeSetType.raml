@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): AttributeType
+(builtinType): object
+type: AttributeType
 displayName: AttributeSetType
-# discriminator: name
-# discriminatorValue: set
+discriminator: name
+discriminatorValue: set
 properties:
   name:
-    default: set
-    required: true
     type: string
-  elementType:
+    (builtinType): string
+    enum:
+    - set
     required: true
+  elementType:
     type: AttributeType
+    (builtinType): object
+    required: true

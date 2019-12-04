@@ -1,64 +1,73 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: LineItemDraft
-# 
-# 
 properties:
   externalTaxRate:
-    required: false
+    type: ExternalTaxRateDraft
+    (builtinType): object
     description: |-
       An external tax rate can be set if the cart has the `External` TaxMode.
-    type: ExternalTaxRateDraft
-  quantity:
-    default: 1
     required: false
+  quantity:
+    format: int64
+    type: number
+    (builtinType): number
     description: |-
       The amount of a `LineItem`in the cart.
-      Must be a positive integer.
-    format: int64
-    type: number
-  shippingDetails:
+               Must be a positive integer.
+    default: 1
     required: false
+  shippingDetails:
+    type: ItemShippingDetailsDraft
+    (builtinType): object
     description: |-
       Container for line item specific address(es).
-    type: ItemShippingDetailsDraft
+    required: false
   productId:
-    required: false
     type: string
-  externalTotalPrice:
+    (builtinType): string
     required: false
+  externalTotalPrice:
+    type: ExternalLineItemTotalPrice
+    (builtinType): object
     description: |-
       Sets the line item `price` and `totalPrice` to the given values and sets the line item `priceMode` to `ExternalTotal` LineItemPriceMode.
-    type: ExternalLineItemTotalPrice
-  custom:
     required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
     description: |-
       The custom fields.
-    type: CustomFieldsDraft
-  supplyChannel:
     required: false
+  supplyChannel:
+    type: ChannelResourceIdentifier
+    (builtinType): object
     description: |-
       By providing supply channel information, you can unique identify
-      inventory entries that should be reserved.
-      The provided channel should have
-      the InventorySupply role.
-    type: ChannelResourceIdentifier
-  variantId:
+               inventory entries that should be reserved.
+               The provided channel should have
+               the InventorySupply role.
     required: false
+  variantId:
     format: int64
     type: number
-  distributionChannel:
+    (builtinType): number
     required: false
+  distributionChannel:
+    type: ChannelResourceIdentifier
+    (builtinType): object
     description: |-
       The channel is used to select a ProductPrice.
-      The provided channel should have the ProductDistribution role.
-    type: ChannelResourceIdentifier
+               The provided channel should have the ProductDistribution role.
+    required: false
   sku:
-    required: false
     type: string
-  externalPrice:
+    (builtinType): string
     required: false
+  externalPrice:
+    type: Money
+    (builtinType): object
     description: |-
       Sets the line item `price` to the given value and sets the line item `priceMode` to `ExternalPrice` LineItemPriceMode.
-    type: Money
+    required: false

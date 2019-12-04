@@ -1,20 +1,25 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ExtensionDestination
+(builtinType): object
+type: ExtensionDestination
 displayName: ExtensionAWSLambdaDestination
-# discriminator: type
-# discriminatorValue: AWSLambda
+discriminator: type
+discriminatorValue: AWSLambda
 properties:
   type:
-    default: AWSLambda
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - AWSLambda
+    required: true
   accessKey:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   arn:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   accessSecret:
-    required: true
     type: string
+    (builtinType): string
+    required: true

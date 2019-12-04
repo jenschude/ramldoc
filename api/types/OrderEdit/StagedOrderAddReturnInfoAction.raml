@@ -1,22 +1,27 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StagedOrderUpdateAction
+(builtinType): object
+type: StagedOrderUpdateAction
 displayName: StagedOrderAddReturnInfoAction
-# discriminator: action
-# discriminatorValue: addReturnInfo
+discriminator: action
+discriminatorValue: addReturnInfo
 properties:
   action:
-    default: addReturnInfo
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - addReturnInfo
+    required: true
   returnDate:
-    required: false
     type: datetime
-  returnTrackingId:
+    (builtinType): datetime
     required: false
+  returnTrackingId:
     type: string
+    (builtinType): string
+    required: false
   items:
-    required: true
     type: array
     items:
       type: ReturnItemDraft
+    (builtinType): array
+    required: true

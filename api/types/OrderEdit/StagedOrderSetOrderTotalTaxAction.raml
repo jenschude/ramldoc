@@ -1,19 +1,23 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StagedOrderUpdateAction
+(builtinType): object
+type: StagedOrderUpdateAction
 displayName: StagedOrderSetOrderTotalTaxAction
-# discriminator: action
-# discriminatorValue: setOrderTotalTax
+discriminator: action
+discriminatorValue: setOrderTotalTax
 properties:
   action:
-    default: setOrderTotalTax
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setOrderTotalTax
+    required: true
   externalTaxPortions:
-    required: false
     type: array
     items:
       type: TaxPortionDraft
+    (builtinType): array
+    required: false
   externalTotalGross:
-    required: true
     type: Money
+    (builtinType): object
+    required: true

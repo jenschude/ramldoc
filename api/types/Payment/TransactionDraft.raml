@@ -1,33 +1,36 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: TransactionDraft
-# 
-# 
 properties:
   interactionId:
-    required: false
+    type: string
+    (builtinType): string
     description: |-
       The identifier that is used by the interface that managed the transaction (usually the PSP).
-      If a matching interaction was logged in the `interfaceInteractions` array, the corresponding interaction should be findable with this ID.
-    type: string
-  amount:
-    required: true
-    type: Money
-  state:
+               If a matching interaction was logged in the `interfaceInteractions` array, the corresponding interaction should be findable with this ID.
     required: false
+  amount:
+    type: Money
+    (builtinType): object
+    required: true
+  state:
+    type: TransactionState
+    (builtinType): string
     description: |-
       The state of this transaction.
-      If not set, defaults to `Initial`.
-    type: TransactionState
+               If not set, defaults to `Initial`.
+    required: false
   type:
-    required: true
+    type: TransactionType
+    (builtinType): string
     description: |-
       The type of this transaction.
-    type: TransactionType
+    required: true
   timestamp:
-    required: false
-    description: |-
-      The time at which the transaction took place.
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    description: |-
+      The time at which the transaction took place.
+    required: false

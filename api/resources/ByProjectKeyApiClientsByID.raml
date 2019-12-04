@@ -4,8 +4,12 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
   ID:
     type: string
+    (builtinType): string
 get:
   securedBy:
   - oauth_2_0:
@@ -19,6 +23,7 @@ get:
       body:
         application/json:
           type: ApiClient
+          (builtinType): object
 delete:
   securedBy:
   - oauth_2_0:
@@ -31,3 +36,4 @@ delete:
       body:
         application/json:
           type: ApiClient
+          (builtinType): object

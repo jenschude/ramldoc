@@ -1,18 +1,19 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: CustomerGroupDraft
-# 
-# 
 properties:
   groupName:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   custom:
-    required: false
     type: CustomFields
-  key:
+    (builtinType): object
     required: false
+  key:
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for the customer group.
-    type: string
+    required: false

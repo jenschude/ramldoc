@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CartDiscountUpdateAction
+(builtinType): object
+type: CartDiscountUpdateAction
 displayName: CartDiscountSetCustomTypeAction
-# discriminator: action
-# discriminatorValue: setCustomType
+discriminator: action
+discriminatorValue: setCustomType
 properties:
   action:
-    default: setCustomType
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setCustomType
+    required: true
   fields:
-    required: false
     type: object
-  type:
+    (builtinType): object
     required: false
+  type:
     type: TypeResourceIdentifier
+    (builtinType): object
+    required: false

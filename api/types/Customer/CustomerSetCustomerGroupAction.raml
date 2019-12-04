@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CustomerUpdateAction
+(builtinType): object
+type: CustomerUpdateAction
 displayName: CustomerSetCustomerGroupAction
-# discriminator: action
-# discriminatorValue: setCustomerGroup
+discriminator: action
+discriminatorValue: setCustomerGroup
 properties:
   action:
-    default: setCustomerGroup
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setCustomerGroup
+    required: true
   customerGroup:
-    required: false
     type: CustomerGroupResourceIdentifier
+    (builtinType): object
+    required: false

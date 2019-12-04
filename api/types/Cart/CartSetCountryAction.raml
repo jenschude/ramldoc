@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CartUpdateAction
+(builtinType): object
+type: CartUpdateAction
 displayName: CartSetCountryAction
-# discriminator: action
-# discriminatorValue: setCountry
+discriminator: action
+discriminatorValue: setCountry
 properties:
   action:
-    default: setCountry
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setCountry
+    required: true
   country:
-    required: false
+    type: CountryCode
+    (builtinType): string
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-    type: CountryCode
+    required: false

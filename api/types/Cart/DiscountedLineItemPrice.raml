@@ -1,15 +1,15 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: DiscountedLineItemPrice
-# 
-# 
 properties:
   includedDiscounts:
-    required: true
     type: array
     items:
       type: DiscountedLineItemPortion
-  value:
+    (builtinType): array
     required: true
+  value:
     type: TypedMoney
+    (builtinType): object
+    required: true

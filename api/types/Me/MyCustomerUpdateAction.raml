@@ -1,10 +1,32 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: MyCustomerUpdateAction
-# discriminator: action
-# 
+discriminator: action
+(subTypes):
+- MyCustomerAddAddressAction
+- MyCustomerAddBillingAddressIdAction
+- MyCustomerAddShippingAddressIdAction
+- MyCustomerChangeAddressAction
+- MyCustomerChangeEmailAction
+- MyCustomerRemoveAddressAction
+- MyCustomerRemoveBillingAddressIdAction
+- MyCustomerRemoveShippingAddressIdAction
+- MyCustomerSetCompanyNameAction
+- MyCustomerSetCustomFieldAction
+- MyCustomerSetCustomTypeAction
+- MyCustomerSetDateOfBirthAction
+- MyCustomerSetDefaultBillingAddressAction
+- MyCustomerSetDefaultShippingAddressAction
+- MyCustomerSetFirstNameAction
+- MyCustomerSetLastNameAction
+- MyCustomerSetLocaleAction
+- MyCustomerSetMiddleNameAction
+- MyCustomerSetSalutationAction
+- MyCustomerSetTitleAction
+- MyCustomerSetVatIdAction
 properties:
   action:
-    required: true
     type: string
+    (builtinType): string
+    required: true

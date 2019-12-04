@@ -4,6 +4,9 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
 post:
   securedBy:
   - oauth_2_0:
@@ -15,10 +18,12 @@ post:
   body:
     application/json:
       type: OrderImportDraft
+      (builtinType): object
   responses:
     201:
       body:
         application/json:
           type: Order
+          (builtinType): object
     200:
       body:

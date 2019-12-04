@@ -1,19 +1,23 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): OrderUpdateAction
+(builtinType): object
+type: OrderUpdateAction
 displayName: OrderSetParcelItemsAction
-# discriminator: action
-# discriminatorValue: setParcelItems
+discriminator: action
+discriminatorValue: setParcelItems
 properties:
   action:
-    default: setParcelItems
-    required: true
     type: string
-  items:
+    (builtinType): string
+    enum:
+    - setParcelItems
     required: true
+  items:
     type: array
     items:
       type: DeliveryItem
-  parcelId:
+    (builtinType): array
     required: true
+  parcelId:
     type: string
+    (builtinType): string
+    required: true

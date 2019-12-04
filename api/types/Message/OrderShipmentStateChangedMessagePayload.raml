@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: OrderShipmentStateChangedMessagePayload
-# discriminator: type
-# discriminatorValue: OrderShipmentStateChanged
+discriminator: type
+discriminatorValue: OrderShipmentStateChanged
 properties:
   type:
-    default: OrderShipmentStateChanged
-    required: true
     type: string
-  shipmentState:
+    (builtinType): string
+    enum:
+    - OrderShipmentStateChanged
     required: true
+  shipmentState:
     type: ShipmentState
+    (builtinType): string
+    required: true
   oldShipmentState:
-    required: false
     type: ShipmentState
+    (builtinType): string
+    required: false

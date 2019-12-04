@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductDiscountUpdateAction
+(builtinType): object
+type: ProductDiscountUpdateAction
 displayName: ProductDiscountChangeValueAction
-# discriminator: action
-# discriminatorValue: changeValue
+discriminator: action
+discriminatorValue: changeValue
 properties:
   action:
-    default: changeValue
-    required: true
     type: string
-  value:
+    (builtinType): string
+    enum:
+    - changeValue
     required: true
+  value:
     type: ProductDiscountValueDraft
+    (builtinType): object
+    required: true

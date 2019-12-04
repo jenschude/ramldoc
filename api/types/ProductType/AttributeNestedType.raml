@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): AttributeType
+(builtinType): object
+type: AttributeType
 displayName: AttributeNestedType
-# discriminator: name
-# discriminatorValue: nested
+discriminator: name
+discriminatorValue: nested
 properties:
   name:
-    default: nested
-    required: true
     type: string
-  typeReference:
+    (builtinType): string
+    enum:
+    - nested
     required: true
+  typeReference:
     type: ProductTypeReference
+    (builtinType): object
+    required: true

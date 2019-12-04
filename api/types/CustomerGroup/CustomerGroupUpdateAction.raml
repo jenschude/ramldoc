@@ -1,10 +1,15 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: CustomerGroupUpdateAction
-# discriminator: action
-# 
+discriminator: action
+(subTypes):
+- CustomerGroupChangeNameAction
+- CustomerGroupSetCustomFieldAction
+- CustomerGroupSetCustomTypeAction
+- CustomerGroupSetKeyAction
 properties:
   action:
-    required: true
     type: string
+    (builtinType): string
+    required: true

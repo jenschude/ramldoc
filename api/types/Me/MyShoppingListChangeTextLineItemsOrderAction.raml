@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MyShoppingListUpdateAction
+(builtinType): object
+type: MyShoppingListUpdateAction
 displayName: MyShoppingListChangeTextLineItemsOrderAction
-# discriminator: action
-# discriminatorValue: changeTextLineItemsOrder
+discriminator: action
+discriminatorValue: changeTextLineItemsOrder
 properties:
   action:
-    default: changeTextLineItemsOrder
-    required: true
     type: string
-  textLineItemOrder:
+    (builtinType): string
+    enum:
+    - changeTextLineItemsOrder
     required: true
+  textLineItemOrder:
     type: array
     items:
       type: string
+    (builtinType): array
+    required: true

@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): PaymentUpdateAction
+(builtinType): object
+type: PaymentUpdateAction
 displayName: PaymentSetExternalIdAction
-# discriminator: action
-# discriminatorValue: setExternalId
+discriminator: action
+discriminatorValue: setExternalId
 properties:
   action:
-    default: setExternalId
+    type: string
+    (builtinType): string
+    enum:
+    - setExternalId
     required: true
-    type: string
   externalId:
-    required: false
     type: string
+    (builtinType): string
+    required: false

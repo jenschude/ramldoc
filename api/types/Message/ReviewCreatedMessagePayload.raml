@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: ReviewCreatedMessagePayload
-# discriminator: type
-# discriminatorValue: ReviewCreated
+discriminator: type
+discriminatorValue: ReviewCreated
 properties:
   type:
-    default: ReviewCreated
-    required: true
     type: string
-  review:
+    (builtinType): string
+    enum:
+    - ReviewCreated
     required: true
+  review:
     type: Review
+    (builtinType): object
+    required: true

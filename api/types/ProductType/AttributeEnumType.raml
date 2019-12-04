@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): AttributeType
+(builtinType): object
+type: AttributeType
 displayName: AttributeEnumType
-# discriminator: name
-# discriminatorValue: enum
+discriminator: name
+discriminatorValue: enum
 properties:
   name:
-    default: enum
-    required: true
     type: string
-  values:
+    (builtinType): string
+    enum:
+    - enum
     required: true
+  values:
     type: array
     items:
       type: AttributePlainEnumValue
+    (builtinType): array
+    required: true

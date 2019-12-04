@@ -1,20 +1,25 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StagedOrderUpdateAction
+(builtinType): object
+type: StagedOrderUpdateAction
 displayName: StagedOrderAddShoppingListAction
-# discriminator: action
-# discriminatorValue: addShoppingList
+discriminator: action
+discriminatorValue: addShoppingList
 properties:
   action:
-    default: addShoppingList
-    required: true
     type: string
-  shoppingList:
+    (builtinType): string
+    enum:
+    - addShoppingList
     required: true
+  shoppingList:
     type: ShoppingListResourceIdentifier
+    (builtinType): object
+    required: true
   supplyChannel:
-    required: false
     type: ChannelResourceIdentifier
+    (builtinType): object
+    required: false
   distributionChannel:
-    required: false
     type: ChannelResourceIdentifier
+    (builtinType): object
+    required: false

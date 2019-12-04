@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): TypeUpdateAction
+(builtinType): object
+type: TypeUpdateAction
 displayName: TypeChangeLabelAction
-# discriminator: action
-# discriminatorValue: changeLabel
+discriminator: action
+discriminatorValue: changeLabel
 properties:
   action:
-    default: changeLabel
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changeLabel
+    required: true
   fieldName:
-    required: true
     type: string
-  label:
+    (builtinType): string
     required: true
+  label:
     type: LocalizedString
+    (builtinType): object
+    required: true

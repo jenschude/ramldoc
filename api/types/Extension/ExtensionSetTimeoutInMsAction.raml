@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ExtensionUpdateAction
+(builtinType): object
+type: ExtensionUpdateAction
 displayName: ExtensionSetTimeoutInMsAction
-# discriminator: action
-# discriminatorValue: setTimeoutInMs
+discriminator: action
+discriminatorValue: setTimeoutInMs
 properties:
   action:
-    default: setTimeoutInMs
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setTimeoutInMs
+    required: true
   timeoutInMs:
-    required: false
     type: integer
+    (builtinType): integer
+    required: false

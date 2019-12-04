@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductPublishAction
-# discriminator: action
-# discriminatorValue: publish
+discriminator: action
+discriminatorValue: publish
 properties:
   action:
-    default: publish
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - publish
+    required: true
   scope:
-    required: false
     type: ProductPublishScope
+    (builtinType): string
+    required: false

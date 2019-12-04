@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): InventoryEntryUpdateAction
+(builtinType): object
+type: InventoryEntryUpdateAction
 displayName: InventoryEntrySetExpectedDeliveryAction
-# discriminator: action
-# discriminatorValue: setExpectedDelivery
+discriminator: action
+discriminatorValue: setExpectedDelivery
 properties:
   action:
-    default: setExpectedDelivery
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setExpectedDelivery
+    required: true
   expectedDelivery:
-    required: false
     type: datetime
+    (builtinType): datetime
+    required: false

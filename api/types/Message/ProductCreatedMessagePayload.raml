@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: ProductCreatedMessagePayload
-# discriminator: type
-# discriminatorValue: ProductCreated
+discriminator: type
+discriminatorValue: ProductCreated
 properties:
   type:
-    default: ProductCreated
-    required: true
     type: string
-  productProjection:
+    (builtinType): string
+    enum:
+    - ProductCreated
     required: true
+  productProjection:
     type: ProductProjection
+    (builtinType): object
+    required: true

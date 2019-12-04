@@ -1,56 +1,66 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: Subscription
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   id:
-    required: true
     type: string
-  version:
+    (builtinType): string
     required: true
+  version:
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
+    required: false
   format:
-    required: true
     discriminator: type
     type: DeliveryFormat
-  destination:
+    (builtinType): object
     required: true
+  destination:
     discriminator: type
     type: Destination
-  changes:
+    (builtinType): object
     required: true
+  changes:
     type: array
     items:
       type: ChangeSubscription
-  messages:
+    (builtinType): array
     required: true
+  messages:
     type: array
     items:
       type: MessageSubscription
-  key:
-    required: false
-    type: string
-  status:
+    (builtinType): array
     required: true
+  key:
+    type: string
+    (builtinType): string
+    required: false
+  status:
     type: SubscriptionHealthStatus
+    (builtinType): string
+    required: true

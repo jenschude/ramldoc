@@ -1,24 +1,30 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductSetProductVariantKeyAction
-# discriminator: action
-# discriminatorValue: setProductVariantKey
+discriminator: action
+discriminatorValue: setProductVariantKey
 properties:
   action:
-    default: setProductVariantKey
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setProductVariantKey
+    required: true
   staged:
-    required: false
     type: boolean
-  variantId:
+    (builtinType): boolean
     required: false
+  variantId:
     format: int64
     type: number
+    (builtinType): number
+    required: false
   sku:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   key:
-    required: false
     type: string
+    (builtinType): string
+    required: false

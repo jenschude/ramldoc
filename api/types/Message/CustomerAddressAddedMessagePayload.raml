@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: CustomerAddressAddedMessagePayload
-# discriminator: type
-# discriminatorValue: CustomerAddressAdded
+discriminator: type
+discriminatorValue: CustomerAddressAdded
 properties:
   type:
-    default: CustomerAddressAdded
-    required: true
     type: string
-  address:
+    (builtinType): string
+    enum:
+    - CustomerAddressAdded
     required: true
+  address:
     type: Address
+    (builtinType): object
+    required: true

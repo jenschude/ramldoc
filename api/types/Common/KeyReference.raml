@@ -1,13 +1,16 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: KeyReference
-# discriminator: typeId
-# 
+discriminator: typeId
+(subTypes):
+- StoreKeyReference
 properties:
   typeId:
-    required: true
     type: ReferenceTypeId
-  key:
+    (builtinType): string
     required: true
+  key:
     type: string
+    (builtinType): string
+    required: true

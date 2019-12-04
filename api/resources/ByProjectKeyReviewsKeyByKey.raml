@@ -4,8 +4,12 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
   key:
     type: string
+    (builtinType): string
 get:
   securedBy:
   - oauth_2_0:
@@ -18,11 +22,13 @@ get:
     expand:
       required: false
       type: string
+      (builtinType): string
   responses:
     200:
       body:
         application/json:
           type: Review
+          (builtinType): object
 post:
   securedBy:
   - oauth_2_0:
@@ -35,14 +41,17 @@ post:
     expand:
       required: false
       type: string
+      (builtinType): string
   body:
     application/json:
       type: ReviewUpdate
+      (builtinType): object
   responses:
     200:
       body:
         application/json:
           type: Review
+          (builtinType): object
 delete:
   securedBy:
   - oauth_2_0:
@@ -55,15 +64,21 @@ delete:
     dataErasure:
       required: false
       type: boolean
+      (builtinType): boolean
     version:
       required: true
       format: int64
       type: number
+      (builtinType): number
+      description: |-
+        Last seen version of the resource
     expand:
       required: false
       type: string
+      (builtinType): string
   responses:
     200:
       body:
         application/json:
           type: Review
+          (builtinType): object

@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: PaymentInteractionAddedMessagePayload
-# discriminator: type
-# discriminatorValue: PaymentInteractionAdded
+discriminator: type
+discriminatorValue: PaymentInteractionAdded
 properties:
   type:
-    default: PaymentInteractionAdded
-    required: true
     type: string
-  interaction:
+    (builtinType): string
+    enum:
+    - PaymentInteractionAdded
     required: true
+  interaction:
     type: CustomFields
+    (builtinType): object
+    required: true

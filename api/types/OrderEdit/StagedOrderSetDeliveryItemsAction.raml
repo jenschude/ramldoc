@@ -1,19 +1,23 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StagedOrderUpdateAction
+(builtinType): object
+type: StagedOrderUpdateAction
 displayName: StagedOrderSetDeliveryItemsAction
-# discriminator: action
-# discriminatorValue: setDeliveryItems
+discriminator: action
+discriminatorValue: setDeliveryItems
 properties:
   action:
-    default: setDeliveryItems
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setDeliveryItems
+    required: true
   deliveryId:
-    required: true
     type: string
-  items:
+    (builtinType): string
     required: true
+  items:
     type: array
     items:
       type: DeliveryItem
+    (builtinType): array
+    required: true

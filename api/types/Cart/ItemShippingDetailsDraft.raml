@@ -1,17 +1,16 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ItemShippingDetailsDraft
-# 
-# 
 properties:
   targets:
-    required: true
-    description: |-
-      Used to capture one or more (custom) line item specific shipping addresses.
-      By specifying sub-quantities, it is possible to set multiple shipping addresses for one line item.
-      A cart can have `shippingDetails` where the `targets` sum does not match the quantity of the line item or custom line item.
-      For the order creation and order updates the `targets` sum must match the quantity.
     type: array
     items:
       type: ItemShippingTarget
+    (builtinType): array
+    description: |-
+      Used to capture one or more (custom) line item specific shipping addresses.
+               By specifying sub-quantities, it is possible to set multiple shipping addresses for one line item.
+               A cart can have `shippingDetails` where the `targets` sum does not match the quantity of the line item or custom line item.
+               For the order creation and order updates the `targets` sum must match the quantity.
+    required: true

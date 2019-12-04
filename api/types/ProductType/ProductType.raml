@@ -1,53 +1,61 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: ProductType
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the product type.
-    type: string
-  version:
     required: true
-    description: |-
-      The current version of the product type.
+  version:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The current version of the product type.
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
-  name:
-    required: true
-    type: string
-  description:
-    required: true
-    type: string
-  attributes:
     required: false
+  name:
+    type: string
+    (builtinType): string
+    required: true
+  description:
+    type: string
+    (builtinType): string
+    required: true
+  attributes:
     type: array
     items:
       type: AttributeDefinition
-  key:
+    (builtinType): array
     required: false
+  key:
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for the product type (max.
-      256 characters).
-    type: string
+               256 characters).
+    required: false

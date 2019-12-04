@@ -1,60 +1,69 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: Project
-# 
-# 
 properties:
   externalOAuth:
-    required: false
     type: ExternalOAuth
-  shippingRateInputType:
+    (builtinType): object
     required: false
+  shippingRateInputType:
     type: ShippingRateInputType
+    (builtinType): object
+    required: false
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
-  languages:
+    (builtinType): datetime
     required: true
+  languages:
     type: array
     items:
       type: Locale
-  name:
+    (builtinType): array
     required: true
+  name:
+    type: string
+    (builtinType): string
     description: |-
       The name of the project.
-    type: string
+    required: true
   messages:
-    required: true
     type: MessageConfiguration
-  countries:
+    (builtinType): object
     required: true
-    description: |-
-      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  countries:
     type: array
     items:
       type: CountryCode
+    (builtinType): array
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+    required: true
   trialUntil:
-    required: false
+    type: string
+    (builtinType): string
     description: |-
       The time is in the format Year-Month `YYYY-MM`.
-    type: string
+    required: false
   version:
-    required: true
-    description: |-
-      The current version of the project.
     format: int64
     type: number
-  key:
+    (builtinType): number
+    description: |-
+      The current version of the project.
     required: true
+  key:
+    type: string
+    (builtinType): string
     description: |-
       The unique key of the project.
-    type: string
-  currencies:
     required: true
-    description: |-
-      A three-digit currency code as per [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+  currencies:
     type: array
     items:
       type: CurrencyCode
+    (builtinType): array
+    description: |-
+      A three-digit currency code as per [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+    required: true

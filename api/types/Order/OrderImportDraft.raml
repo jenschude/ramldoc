@@ -1,116 +1,136 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: OrderImportDraft
-# 
-# 
 properties:
   shipmentState:
-    required: false
     type: ShipmentState
-  country:
+    (builtinType): string
     required: false
+  country:
+    type: string
+    (builtinType): string
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-      Used for product variant price selection.
-    type: string
-  completedAt:
+               Used for product variant price selection.
     required: false
+  completedAt:
     format: rfc3339
     type: datetime
-  orderNumber:
+    (builtinType): datetime
     required: false
+  orderNumber:
+    type: string
+    (builtinType): string
     description: |-
       String that unique identifies an order.
-      It can be used to create more human-readable (in contrast to ID) identifier for the order.
-      It should be unique within a project.
-    type: string
-  totalPrice:
-    required: true
-    type: Money
-  customerGroup:
+               It can be used to create more human-readable (in contrast to ID) identifier for the order.
+               It should be unique within a project.
     required: false
-    description: |-
-      Set when the customer is set and the customer is a member of a customer group.
-      Used for product variant price selection.
+  totalPrice:
+    type: Money
+    (builtinType): object
+    required: true
+  customerGroup:
     discriminatorValue: customer-group
     type: CustomerGroupResourceIdentifier
-  taxedPrice:
+    (builtinType): object
+    description: |-
+      Set when the customer is set and the customer is a member of a customer group.
+               Used for product variant price selection.
     required: false
+  taxedPrice:
+    type: TaxedPriceDraft
+    (builtinType): object
     description: |-
       Order Import does not support calculation of taxes.
-      When setting the draft the taxedPrice is to be provided.
-    type: TaxedPriceDraft
-  origin:
+               When setting the draft the taxedPrice is to be provided.
     required: false
+  origin:
+    type: CartOrigin
+    (builtinType): string
     description: |-
       The default origin is `Customer`.
-    type: CartOrigin
-  custom:
     required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
     description: |-
       The custom fields.
-    type: CustomFieldsDraft
-  shippingInfo:
     required: false
+  shippingInfo:
+    type: ShippingInfoImportDraft
+    (builtinType): object
     description: |-
       Set if the ShippingMethod is set.
-    type: ShippingInfoImportDraft
+    required: false
   store:
-    required: false
     type: StoreResourceIdentifier
-  inventoryMode:
+    (builtinType): object
     required: false
+  inventoryMode:
+    type: InventoryMode
+    (builtinType): string
     description: |-
       If not given the mode `None` will be assigned by default.
-    type: InventoryMode
-  orderState:
     required: false
+  orderState:
+    type: OrderState
+    (builtinType): string
     description: |-
       If not given the `Open` state will be assigned by default.
-    type: OrderState
-  taxRoundingMode:
     required: false
+  taxRoundingMode:
+    type: RoundingMode
+    (builtinType): string
     description: |-
       If not given the tax rounding mode `HalfEven` will be assigned by default.
-    type: RoundingMode
-  lineItems:
     required: false
-    description: |-
-      If not given `customLineItems` must not be empty.
+  lineItems:
     type: array
     items:
       type: LineItemImportDraft
-  customLineItems:
-    required: false
+    (builtinType): array
     description: |-
-      If not given `lineItems` must not be empty.
+      If not given `customLineItems` must not be empty.
+    required: false
+  customLineItems:
     type: array
     items:
       type: CustomLineItemDraft
-  itemShippingAddresses:
-    required: false
+    (builtinType): array
     description: |-
-      Contains addresses for orders with multiple shipping addresses.
+      If not given `lineItems` must not be empty.
+    required: false
+  itemShippingAddresses:
     type: array
     items:
       type: Address
-  customerEmail:
+    (builtinType): array
+    description: |-
+      Contains addresses for orders with multiple shipping addresses.
     required: false
+  customerEmail:
+    type: string
+    (builtinType): string
     description: |-
       The customer email can be used when no check against existing Customers is desired during order import.
-    type: string
-  customerId:
     required: false
+  customerId:
+    type: string
+    (builtinType): string
     description: |-
       If given the customer with that ID must exist in the project.
-    type: string
+    required: false
   shippingAddress:
-    required: false
     type: Address
+    (builtinType): object
+    required: false
   billingAddress:
-    required: false
     type: Address
-  paymentState:
+    (builtinType): object
     required: false
+  paymentState:
     type: PaymentState
+    (builtinType): string
+    required: false

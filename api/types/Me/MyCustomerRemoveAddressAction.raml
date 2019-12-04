@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MyCustomerUpdateAction
+(builtinType): object
+type: MyCustomerUpdateAction
 displayName: MyCustomerRemoveAddressAction
-# discriminator: action
-# discriminatorValue: removeAddress
+discriminator: action
+discriminatorValue: removeAddress
 properties:
   action:
-    default: removeAddress
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - removeAddress
+    required: true
   addressId:
-    required: true
     type: string
+    (builtinType): string
+    required: true

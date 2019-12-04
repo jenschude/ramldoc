@@ -1,10 +1,17 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: MyPaymentUpdateAction
-# discriminator: action
-# 
+discriminator: action
+(subTypes):
+- MyPaymentAddTransactionAction
+- MyPaymentChangeAmountPlannedAction
+- MyPaymentSetCustomFieldAction
+- MyPaymentSetMethodInfoInterfaceAction
+- MyPaymentSetMethodInfoMethodAction
+- MyPaymentSetMethodInfoNameAction
 properties:
   action:
-    required: true
     type: string
+    (builtinType): string
+    required: true

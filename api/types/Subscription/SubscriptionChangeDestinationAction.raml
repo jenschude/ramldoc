@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): SubscriptionUpdateAction
+(builtinType): object
+type: SubscriptionUpdateAction
 displayName: SubscriptionChangeDestinationAction
-# discriminator: action
-# discriminatorValue: changeDestination
+discriminator: action
+discriminatorValue: changeDestination
 properties:
   action:
-    default: changeDestination
-    required: true
     type: string
-  destination:
+    (builtinType): string
+    enum:
+    - changeDestination
     required: true
+  destination:
     type: Destination
+    (builtinType): object
+    required: true

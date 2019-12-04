@@ -1,19 +1,23 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductTypeUpdateAction
+(builtinType): object
+type: ProductTypeUpdateAction
 displayName: ProductTypeChangePlainEnumValueOrderAction
-# discriminator: action
-# discriminatorValue: changePlainEnumValueOrder
+discriminator: action
+discriminatorValue: changePlainEnumValueOrder
 properties:
   action:
-    default: changePlainEnumValueOrder
-    required: true
     type: string
-  values:
+    (builtinType): string
+    enum:
+    - changePlainEnumValueOrder
     required: true
+  values:
     type: array
     items:
       type: AttributePlainEnumValue
-  attributeName:
+    (builtinType): array
     required: true
+  attributeName:
     type: string
+    (builtinType): string
+    required: true

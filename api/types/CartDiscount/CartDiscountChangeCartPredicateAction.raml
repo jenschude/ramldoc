@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CartDiscountUpdateAction
+(builtinType): object
+type: CartDiscountUpdateAction
 displayName: CartDiscountChangeCartPredicateAction
-# discriminator: action
-# discriminatorValue: changeCartPredicate
+discriminator: action
+discriminatorValue: changeCartPredicate
 properties:
   action:
-    default: changeCartPredicate
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changeCartPredicate
+    required: true
   cartPredicate:
-    required: true
     type: string
+    (builtinType): string
+    required: true

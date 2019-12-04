@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): OrderUpdateAction
+(builtinType): object
+type: OrderUpdateAction
 displayName: OrderChangeOrderStateAction
-# discriminator: action
-# discriminatorValue: changeOrderState
+discriminator: action
+discriminatorValue: changeOrderState
 properties:
   action:
-    default: changeOrderState
-    required: true
     type: string
-  orderState:
+    (builtinType): string
+    enum:
+    - changeOrderState
     required: true
+  orderState:
     type: OrderState
+    (builtinType): string
+    required: true

@@ -1,40 +1,46 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: Store
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   id:
-    required: true
     type: string
-  version:
+    (builtinType): string
     required: true
+  version:
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdBy:
-    required: false
     type: CreatedBy
+    (builtinType): object
+    required: false
   lastModifiedBy:
-    required: false
     type: LastModifiedBy
-  name:
+    (builtinType): object
     required: false
+  name:
+    type: LocalizedString
+    (builtinType): object
     description: |-
       The name of the store
-    type: LocalizedString
+    required: false
   key:
-    required: true
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for the store.
-      The `key` is mandatory and immutable.
-      It is used to reference the store.
-    type: string
+               The `key` is mandatory and immutable.
+               It is used to reference the store.
+    required: true

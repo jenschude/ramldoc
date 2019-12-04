@@ -1,119 +1,150 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: MyCart
-# 
-# 
 properties:
   createdAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   id:
-    required: true
     type: string
-  version:
+    (builtinType): string
     required: true
+  version:
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdBy:
-    required: false
     type: CreatedBy
+    (builtinType): object
+    required: false
   lastModifiedBy:
-    required: false
     type: LastModifiedBy
-  country:
+    (builtinType): object
     required: false
+  country:
+    type: CountryCode
+    (builtinType): string
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-    type: CountryCode
+    required: false
   totalPrice:
-    required: true
     type: TypedMoney
+    (builtinType): object
+    required: true
   shippingRateInput:
-    required: false
     type: ShippingRateInput
+    (builtinType): object
+    required: false
   taxedPrice:
-    required: false
     type: TaxedPrice
+    (builtinType): object
+    required: false
   origin:
-    required: true
     type: CartOrigin
-  deleteDaysAfterLastModification:
-    required: false
-    type: integer
-  shippingInfo:
-    required: false
-    type: ShippingInfo
-  refusedGifts:
+    (builtinType): string
     required: true
+  deleteDaysAfterLastModification:
+    type: integer
+    (builtinType): integer
+    required: false
+  shippingInfo:
+    type: ShippingInfo
+    (builtinType): object
+    required: false
+  refusedGifts:
     type: array
     items:
       type: CartDiscountReference
-  locale:
-    required: false
-    type: string
-  inventoryMode:
-    required: false
-    type: InventoryMode
-  lineItems:
+    (builtinType): array
     required: true
+  locale:
+    type: string
+    (builtinType): string
+    required: false
+  inventoryMode:
+    type: InventoryMode
+    (builtinType): string
+    required: false
+  lineItems:
     type: array
     items:
       type: LineItem
-  customLineItems:
+    (builtinType): array
     required: true
+  customLineItems:
     type: array
     items:
       type: CustomLineItem
+    (builtinType): array
+    required: true
   itemShippingAddresses:
-    required: false
     type: array
     items:
       type: Address
+    (builtinType): array
+    required: false
   customerEmail:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   cartState:
-    required: true
     type: CartState
+    (builtinType): string
+    required: true
   customerId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   anonymousId:
-    required: false
     type: string
-  discountCodes:
+    (builtinType): string
     required: false
+  discountCodes:
     type: array
     items:
       type: DiscountCodeInfo
+    (builtinType): array
+    required: false
   customerGroup:
-    required: false
     type: CustomerGroupReference
+    (builtinType): object
+    required: false
   custom:
-    required: false
     type: CustomFields
+    (builtinType): object
+    required: false
   taxCalculationMode:
-    required: true
     type: TaxCalculationMode
+    (builtinType): string
+    required: true
   store:
-    required: false
     type: StoreKeyReference
+    (builtinType): object
+    required: false
   taxRoundingMode:
-    required: true
     type: RoundingMode
-  taxMode:
+    (builtinType): string
     required: true
+  taxMode:
     type: TaxMode
+    (builtinType): string
+    required: true
   shippingAddress:
-    required: false
     type: Address
+    (builtinType): object
+    required: false
   billingAddress:
-    required: false
     type: Address
-  paymentInfo:
+    (builtinType): object
     required: false
+  paymentInfo:
     type: PaymentInfo
+    (builtinType): object
+    required: false

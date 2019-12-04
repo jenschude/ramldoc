@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: ProductPriceDiscountsSetMessagePayload
-# discriminator: type
-# discriminatorValue: ProductPriceDiscountsSet
+discriminator: type
+discriminatorValue: ProductPriceDiscountsSet
 properties:
   type:
-    default: ProductPriceDiscountsSet
-    required: true
     type: string
-  updatedPrices:
+    (builtinType): string
+    enum:
+    - ProductPriceDiscountsSet
     required: true
+  updatedPrices:
     type: array
     items:
       type: ProductPriceDiscountsSetUpdatedPrice
+    (builtinType): array
+    required: true

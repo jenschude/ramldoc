@@ -1,27 +1,30 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: Parcel
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
     type: string
+    (builtinType): string
+    required: true
   items:
-    required: false
-    description: |-
-      The delivery items contained in this parcel.
     type: array
     items:
       type: DeliveryItem
+    (builtinType): array
+    description: |-
+      The delivery items contained in this parcel.
+    required: false
   trackingData:
-    required: false
     type: TrackingData
-  measurements:
+    (builtinType): object
     required: false
+  measurements:
     type: ParcelMeasurements
+    (builtinType): object
+    required: false

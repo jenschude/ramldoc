@@ -1,10 +1,19 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: InventoryEntryUpdateAction
-# discriminator: action
-# 
+discriminator: action
+(subTypes):
+- InventoryEntryAddQuantityAction
+- InventoryEntryChangeQuantityAction
+- InventoryEntryRemoveQuantityAction
+- InventoryEntrySetCustomFieldAction
+- InventoryEntrySetCustomTypeAction
+- InventoryEntrySetExpectedDeliveryAction
+- InventoryEntrySetRestockableInDaysAction
+- InventoryEntrySetSupplyChannelAction
 properties:
   action:
-    required: true
     type: string
+    (builtinType): string
+    required: true

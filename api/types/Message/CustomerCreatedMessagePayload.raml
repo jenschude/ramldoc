@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: CustomerCreatedMessagePayload
-# discriminator: type
-# discriminatorValue: CustomerCreated
+discriminator: type
+discriminatorValue: CustomerCreated
 properties:
   type:
-    default: CustomerCreated
-    required: true
     type: string
-  customer:
+    (builtinType): string
+    enum:
+    - CustomerCreated
     required: true
+  customer:
     type: Customer
+    (builtinType): object
+    required: true

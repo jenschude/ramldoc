@@ -1,10 +1,36 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: MyCartUpdateAction
-# discriminator: action
-# 
+discriminator: action
+(subTypes):
+- MyCartAddDiscountCodeAction
+- MyCartAddItemShippingAddressAction
+- MyCartAddLineItemAction
+- MyCartAddPaymentAction
+- MyCartApplyDeltaToLineItemShippingDetailsTargetsAction
+- MyCartChangeLineItemQuantityAction
+- MyCartChangeTaxModeAction
+- MyCartRecalculateAction
+- MyCartRemoveDiscountCodeAction
+- MyCartRemoveItemShippingAddressAction
+- MyCartRemoveLineItemAction
+- MyCartRemovePaymentAction
+- MyCartSetBillingAddressAction
+- MyCartSetCountryAction
+- MyCartSetCustomFieldAction
+- MyCartSetCustomShippingMethodAction
+- MyCartSetCustomTypeAction
+- MyCartSetDeleteDaysAfterLastModificationAction
+- MyCartSetLineItemCustomFieldAction
+- MyCartSetLineItemCustomTypeAction
+- MyCartSetLineItemShippingDetailsAction
+- MyCartSetLocaleAction
+- MyCartSetShippingAddressAction
+- MyCartSetShippingMethodAction
+- MyCartUpdateItemShippingAddressAction
 properties:
   action:
-    required: true
     type: string
+    (builtinType): string
+    required: true

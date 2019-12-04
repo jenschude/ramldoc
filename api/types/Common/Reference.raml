@@ -1,13 +1,38 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: Reference
-# discriminator: typeId
-# 
+discriminator: typeId
+(subTypes):
+- CustomObjectReference
+- CustomerGroupReference
+- CustomerReference
+- DiscountCodeReference
+- InventoryEntryReference
+- OrderEditReference
+- OrderReference
+- PaymentReference
+- ProductDiscountReference
+- ProductTypeReference
+- ProductReference
+- ReviewReference
+- ShippingMethodReference
+- ShoppingListReference
+- StateReference
+- StoreReference
+- TaxCategoryReference
+- TypeReference
+- ZoneReference
+- CartDiscountReference
+- CartReference
+- CategoryReference
+- ChannelReference
 properties:
   typeId:
-    required: true
     type: ReferenceTypeId
-  id:
+    (builtinType): string
     required: true
+  id:
     type: string
+    (builtinType): string
+    required: true

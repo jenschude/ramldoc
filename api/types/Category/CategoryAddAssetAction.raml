@@ -1,18 +1,22 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CategoryUpdateAction
+(builtinType): object
+type: CategoryUpdateAction
 displayName: CategoryAddAssetAction
-# discriminator: action
-# discriminatorValue: addAsset
+discriminator: action
+discriminatorValue: addAsset
 properties:
   action:
-    default: addAsset
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - addAsset
+    required: true
   position:
-    required: false
     format: int32
     type: number
+    (builtinType): number
+    required: false
   asset:
-    required: true
     type: AssetDraft
+    (builtinType): object
+    required: true

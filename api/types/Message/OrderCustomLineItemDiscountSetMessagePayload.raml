@@ -1,22 +1,27 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: OrderCustomLineItemDiscountSetMessagePayload
-# discriminator: type
-# discriminatorValue: OrderCustomLineItemDiscountSet
+discriminator: type
+discriminatorValue: OrderCustomLineItemDiscountSet
 properties:
   type:
-    default: OrderCustomLineItemDiscountSet
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - OrderCustomLineItemDiscountSet
+    required: true
   customLineItemId:
-    required: true
     type: string
-  taxedPrice:
-    required: false
-    type: TaxedItemPrice
-  discountedPricePerQuantity:
+    (builtinType): string
     required: true
+  taxedPrice:
+    type: TaxedItemPrice
+    (builtinType): object
+    required: false
+  discountedPricePerQuantity:
     type: array
     items:
       type: DiscountedLineItemPriceForQuantity
+    (builtinType): array
+    required: true

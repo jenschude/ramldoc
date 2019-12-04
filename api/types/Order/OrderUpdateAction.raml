@@ -1,10 +1,51 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: OrderUpdateAction
-# discriminator: action
-# 
+discriminator: action
+(subTypes):
+- OrderAddDeliveryAction
+- OrderAddItemShippingAddressAction
+- OrderAddParcelToDeliveryAction
+- OrderAddPaymentAction
+- OrderAddReturnInfoAction
+- OrderChangeOrderStateAction
+- OrderChangePaymentStateAction
+- OrderChangeShipmentStateAction
+- OrderImportCustomLineItemStateAction
+- OrderImportLineItemStateAction
+- OrderRemoveDeliveryAction
+- OrderRemoveItemShippingAddressAction
+- OrderRemoveParcelFromDeliveryAction
+- OrderRemovePaymentAction
+- OrderSetBillingAddressAction
+- OrderSetCustomFieldAction
+- OrderSetCustomLineItemCustomFieldAction
+- OrderSetCustomLineItemCustomTypeAction
+- OrderSetCustomLineItemShippingDetailsAction
+- OrderSetCustomTypeAction
+- OrderSetCustomerEmailAction
+- OrderSetCustomerIdAction
+- OrderSetDeliveryAddressAction
+- OrderSetDeliveryItemsAction
+- OrderSetLineItemCustomFieldAction
+- OrderSetLineItemCustomTypeAction
+- OrderSetLineItemShippingDetailsAction
+- OrderSetLocaleAction
+- OrderSetOrderNumberAction
+- OrderSetParcelItemsAction
+- OrderSetParcelMeasurementsAction
+- OrderSetParcelTrackingDataAction
+- OrderSetReturnPaymentStateAction
+- OrderSetReturnShipmentStateAction
+- OrderSetShippingAddressAction
+- OrderTransitionCustomLineItemStateAction
+- OrderTransitionLineItemStateAction
+- OrderTransitionStateAction
+- OrderUpdateItemShippingAddressAction
+- OrderUpdateSyncInfoAction
 properties:
   action:
-    required: true
     type: string
+    (builtinType): string
+    required: true

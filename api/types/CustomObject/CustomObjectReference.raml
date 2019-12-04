@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Reference
+(builtinType): object
+type: Reference
 displayName: CustomObjectReference
-# discriminator: typeId
-# discriminatorValue: key-value-document
+discriminator: typeId
+discriminatorValue: key-value-document
 properties:
   typeId:
-    default: key-value-document
-    required: true
     type: ReferenceTypeId
-  id:
+    (builtinType): string
+    enum:
+    - key-value-document
     required: true
+  id:
     type: string
+    (builtinType): string
+    required: true
   obj:
-    required: false
     type: CustomObject
+    (builtinType): object
+    required: false

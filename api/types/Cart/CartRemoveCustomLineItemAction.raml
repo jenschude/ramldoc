@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CartUpdateAction
+(builtinType): object
+type: CartUpdateAction
 displayName: CartRemoveCustomLineItemAction
-# discriminator: action
-# discriminatorValue: removeCustomLineItem
+discriminator: action
+discriminatorValue: removeCustomLineItem
 properties:
   action:
-    default: removeCustomLineItem
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - removeCustomLineItem
+    required: true
   customLineItemId:
-    required: true
     type: string
+    (builtinType): string
+    required: true

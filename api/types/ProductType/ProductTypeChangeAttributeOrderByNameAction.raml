@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductTypeUpdateAction
+(builtinType): object
+type: ProductTypeUpdateAction
 displayName: ProductTypeChangeAttributeOrderByNameAction
-# discriminator: action
-# discriminatorValue: changeAttributeOrderByName
+discriminator: action
+discriminatorValue: changeAttributeOrderByName
 properties:
   action:
-    default: changeAttributeOrderByName
-    required: true
     type: string
-  attributeNames:
+    (builtinType): string
+    enum:
+    - changeAttributeOrderByName
     required: true
+  attributeNames:
     type: array
     items:
       type: string
+    (builtinType): array
+    required: true

@@ -1,62 +1,72 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: Product
-# 
-# 
 properties:
   createdAt:
-    required: true
     format: rfc3339
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     format: rfc3339
     type: datetime
-  id:
+    (builtinType): datetime
     required: true
+  id:
+    type: string
+    (builtinType): string
     description: |-
       The unique ID of the product.
-    type: string
-  version:
     required: true
-    description: |-
-      The current version of the product.
+  version:
     format: int64
     type: number
+    (builtinType): number
+    description: |-
+      The current version of the product.
+    required: true
   createdBy:
-    required: false
+    type: CreatedBy
+    (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
-    type: CreatedBy
-  lastModifiedBy:
     required: false
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
-    type: LastModifiedBy
+    required: false
   masterData:
-    required: true
+    type: ProductCatalogData
+    (builtinType): object
     description: |-
       The product data in the master catalog.
-    type: ProductCatalogData
+    required: true
   state:
-    required: false
     type: StateReference
-  reviewRatingStatistics:
+    (builtinType): object
     required: false
+  reviewRatingStatistics:
+    type: ReviewRatingStatistics
+    (builtinType): object
     description: |-
       Statistics about the review ratings taken into account for this product.
-    type: ReviewRatingStatistics
+    required: false
   productType:
-    required: true
     discriminatorValue: product-type
     type: ProductTypeReference
+    (builtinType): object
+    required: true
   key:
-    required: false
+    type: string
+    (builtinType): string
     description: |-
       User-specific unique identifier for the product.
-      *Product keys are different from product variant keys.*
-    type: string
-  taxCategory:
+               *Product keys are different from product variant keys.*
     required: false
+  taxCategory:
     type: TaxCategoryReference
+    (builtinType): object
+    required: false

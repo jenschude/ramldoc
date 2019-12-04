@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StateUpdateAction
+(builtinType): object
+type: StateUpdateAction
 displayName: StateSetNameAction
-# discriminator: action
-# discriminatorValue: setName
+discriminator: action
+discriminatorValue: setName
 properties:
   action:
-    default: setName
-    required: true
     type: string
-  name:
+    (builtinType): string
+    enum:
+    - setName
     required: true
+  name:
     type: LocalizedString
+    (builtinType): object
+    required: true

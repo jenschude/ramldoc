@@ -1,10 +1,80 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: StagedOrderUpdateAction
-# discriminator: action
-# 
+discriminator: action
+(subTypes):
+- StagedOrderAddCustomLineItemAction
+- StagedOrderAddDeliveryAction
+- StagedOrderAddDiscountCodeAction
+- StagedOrderAddItemShippingAddressAction
+- StagedOrderAddLineItemAction
+- StagedOrderAddParcelToDeliveryAction
+- StagedOrderAddPaymentAction
+- StagedOrderAddReturnInfoAction
+- StagedOrderAddShoppingListAction
+- StagedOrderChangeCustomLineItemMoneyAction
+- StagedOrderChangeCustomLineItemQuantityAction
+- StagedOrderChangeLineItemQuantityAction
+- StagedOrderChangeOrderStateAction
+- StagedOrderChangePaymentStateAction
+- StagedOrderChangeShipmentStateAction
+- StagedOrderChangeTaxCalculationModeAction
+- StagedOrderChangeTaxModeAction
+- StagedOrderChangeTaxRoundingModeAction
+- StagedOrderImportCustomLineItemStateAction
+- StagedOrderImportLineItemStateAction
+- StagedOrderRemoveCustomLineItemAction
+- StagedOrderRemoveDeliveryAction
+- StagedOrderRemoveDiscountCodeAction
+- StagedOrderRemoveItemShippingAddressAction
+- StagedOrderRemoveLineItemAction
+- StagedOrderRemoveParcelFromDeliveryAction
+- StagedOrderRemovePaymentAction
+- StagedOrderSetBillingAddressAction
+- StagedOrderSetCountryAction
+- StagedOrderSetCustomFieldAction
+- StagedOrderSetCustomLineItemCustomFieldAction
+- StagedOrderSetCustomLineItemCustomTypeAction
+- StagedOrderSetCustomLineItemShippingDetailsAction
+- StagedOrderSetCustomLineItemTaxAmountAction
+- StagedOrderSetCustomLineItemTaxRateAction
+- StagedOrderSetCustomShippingMethodAction
+- StagedOrderSetCustomTypeAction
+- StagedOrderSetCustomerEmailAction
+- StagedOrderSetCustomerGroupAction
+- StagedOrderSetCustomerIdAction
+- StagedOrderSetDeliveryAddressAction
+- StagedOrderSetDeliveryItemsAction
+- StagedOrderSetLineItemCustomFieldAction
+- StagedOrderSetLineItemCustomTypeAction
+- StagedOrderSetLineItemPriceAction
+- StagedOrderSetLineItemShippingDetailsAction
+- StagedOrderSetLineItemTaxAmountAction
+- StagedOrderSetLineItemTaxRateAction
+- StagedOrderSetLineItemTotalPriceAction
+- StagedOrderSetLocaleAction
+- StagedOrderSetOrderNumberAction
+- StagedOrderSetOrderTotalTaxAction
+- StagedOrderSetParcelItemsAction
+- StagedOrderSetParcelMeasurementsAction
+- StagedOrderSetParcelTrackingDataAction
+- StagedOrderSetReturnPaymentStateAction
+- StagedOrderSetReturnShipmentStateAction
+- StagedOrderSetShippingAddressAction
+- StagedOrderSetShippingAddressAndCustomShippingMethodAction
+- StagedOrderSetShippingAddressAndShippingMethodAction
+- StagedOrderSetShippingMethodAction
+- StagedOrderSetShippingMethodTaxAmountAction
+- StagedOrderSetShippingMethodTaxRateAction
+- StagedOrderSetShippingRateInputAction
+- StagedOrderTransitionCustomLineItemStateAction
+- StagedOrderTransitionLineItemStateAction
+- StagedOrderTransitionStateAction
+- StagedOrderUpdateItemShippingAddressAction
+- StagedOrderUpdateSyncInfoAction
 properties:
   action:
-    required: true
     type: string
+    (builtinType): string
+    required: true

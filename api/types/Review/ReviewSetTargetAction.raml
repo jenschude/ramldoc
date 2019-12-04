@@ -1,14 +1,20 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ReviewUpdateAction
+(builtinType): object
+type: ReviewUpdateAction
 displayName: ReviewSetTargetAction
-# discriminator: action
-# discriminatorValue: setTarget
+discriminator: action
+discriminatorValue: setTarget
 properties:
   action:
-    default: setTarget
-    required: true
     type: string
-  target:
+    (builtinType): string
+    enum:
+    - setTarget
     required: true
+  target:
     type: ProductResourceIdentifier | ChannelResourceIdentifier
+    (oneOf):
+    - ProductResourceIdentifier
+    - ChannelResourceIdentifier
+    (builtinType): any
+    required: true

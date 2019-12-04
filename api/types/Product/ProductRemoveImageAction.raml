@@ -1,24 +1,30 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductRemoveImageAction
-# discriminator: action
-# discriminatorValue: removeImage
+discriminator: action
+discriminatorValue: removeImage
 properties:
   action:
-    default: removeImage
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - removeImage
+    required: true
   imageUrl:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   staged:
-    required: false
     type: boolean
-  variantId:
+    (builtinType): boolean
     required: false
+  variantId:
     format: int64
     type: number
-  sku:
+    (builtinType): number
     required: false
+  sku:
     type: string
+    (builtinType): string
+    required: false

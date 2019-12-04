@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Reference
+(builtinType): object
+type: Reference
 displayName: PaymentReference
-# discriminator: typeId
-# discriminatorValue: payment
+discriminator: typeId
+discriminatorValue: payment
 properties:
   typeId:
-    default: payment
-    required: true
     type: ReferenceTypeId
-  id:
+    (builtinType): string
+    enum:
+    - payment
     required: true
+  id:
     type: string
+    (builtinType): string
+    required: true
   obj:
-    required: false
     type: Payment
+    (builtinType): object
+    required: false

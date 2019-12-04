@@ -1,34 +1,39 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: PagedQueryResponse
-# 
-# 
 properties:
   total:
-    required: false
     format: int64
     type: number
+    (builtinType): number
+    required: false
   offset:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   meta:
-    required: false
     type: object
+    (builtinType): object
+    required: false
   count:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   limit:
-    required: true
     format: int64
     type: number
-  results:
+    (builtinType): number
     required: true
+  results:
     type: array
     items:
       type: BaseResource
+    (builtinType): array
+    required: true
   facets:
-    required: false
     type: FacetResults
+    (builtinType): object
+    required: false

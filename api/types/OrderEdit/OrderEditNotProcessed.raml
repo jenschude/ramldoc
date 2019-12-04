@@ -1,11 +1,13 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): OrderEditResult
+(builtinType): object
+type: OrderEditResult
 displayName: OrderEditNotProcessed
-# discriminator: type
-# discriminatorValue: NotProcessed
+discriminator: type
+discriminatorValue: NotProcessed
 properties:
   type:
-    default: NotProcessed
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - NotProcessed
+    required: true

@@ -1,23 +1,29 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CartUpdateAction
+(builtinType): object
+type: CartUpdateAction
 displayName: CartChangeLineItemQuantityAction
-# discriminator: action
-# discriminatorValue: changeLineItemQuantity
+discriminator: action
+discriminatorValue: changeLineItemQuantity
 properties:
   action:
-    default: changeLineItemQuantity
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changeLineItemQuantity
+    required: true
   quantity:
-    required: true
     type: number
-  externalTotalPrice:
-    required: false
-    type: ExternalLineItemTotalPrice
-  lineItemId:
+    (builtinType): number
     required: true
-    type: string
-  externalPrice:
+  externalTotalPrice:
+    type: ExternalLineItemTotalPrice
+    (builtinType): object
     required: false
+  lineItemId:
+    type: string
+    (builtinType): string
+    required: true
+  externalPrice:
     type: Money
+    (builtinType): object
+    required: false

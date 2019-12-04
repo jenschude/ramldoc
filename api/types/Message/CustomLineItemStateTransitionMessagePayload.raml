@@ -1,27 +1,34 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: CustomLineItemStateTransitionMessagePayload
-# discriminator: type
-# discriminatorValue: CustomLineItemStateTransition
+discriminator: type
+discriminatorValue: CustomLineItemStateTransition
 properties:
   type:
-    default: CustomLineItemStateTransition
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - CustomLineItemStateTransition
+    required: true
   toState:
-    required: true
     type: StateReference
+    (builtinType): object
+    required: true
   fromState:
-    required: true
     type: StateReference
+    (builtinType): object
+    required: true
   customLineItemId:
-    required: true
     type: string
-  quantity:
+    (builtinType): string
     required: true
+  quantity:
     format: int64
     type: number
-  transitionDate:
+    (builtinType): number
     required: true
+  transitionDate:
     type: datetime
+    (builtinType): datetime
+    required: true

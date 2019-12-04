@@ -1,24 +1,30 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductAddPriceAction
-# discriminator: action
-# discriminatorValue: addPrice
+discriminator: action
+discriminatorValue: addPrice
 properties:
   action:
-    default: addPrice
-    required: true
     type: string
-  price:
+    (builtinType): string
+    enum:
+    - addPrice
     required: true
+  price:
     type: PriceDraft
+    (builtinType): object
+    required: true
   staged:
-    required: false
     type: boolean
-  variantId:
+    (builtinType): boolean
     required: false
+  variantId:
     format: int64
     type: number
-  sku:
+    (builtinType): number
     required: false
+  sku:
     type: string
+    (builtinType): string
+    required: false

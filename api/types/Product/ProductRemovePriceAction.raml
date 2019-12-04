@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductRemovePriceAction
-# discriminator: action
-# discriminatorValue: removePrice
+discriminator: action
+discriminatorValue: removePrice
 properties:
   action:
-    default: removePrice
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - removePrice
+    required: true
   staged:
-    required: false
     type: boolean
+    (builtinType): boolean
+    required: false
   priceId:
-    required: true
     type: string
+    (builtinType): string
+    required: true

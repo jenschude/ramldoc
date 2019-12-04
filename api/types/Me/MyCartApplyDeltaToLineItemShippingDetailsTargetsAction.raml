@@ -1,19 +1,23 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MyCartUpdateAction
+(builtinType): object
+type: MyCartUpdateAction
 displayName: MyCartApplyDeltaToLineItemShippingDetailsTargetsAction
-# discriminator: action
-# discriminatorValue: applyDeltaToLineItemShippingDetailsTargets
+discriminator: action
+discriminatorValue: applyDeltaToLineItemShippingDetailsTargets
 properties:
   action:
-    default: applyDeltaToLineItemShippingDetailsTargets
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - applyDeltaToLineItemShippingDetailsTargets
+    required: true
   lineItemId:
-    required: true
     type: string
-  targetsDelta:
+    (builtinType): string
     required: true
+  targetsDelta:
     type: array
     items:
       type: ItemShippingTarget
+    (builtinType): array
+    required: true

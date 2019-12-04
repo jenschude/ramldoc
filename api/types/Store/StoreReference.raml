@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Reference
+(builtinType): object
+type: Reference
 displayName: StoreReference
-# discriminator: typeId
-# discriminatorValue: store
+discriminator: typeId
+discriminatorValue: store
 properties:
   typeId:
-    default: store
-    required: true
     type: ReferenceTypeId
-  id:
+    (builtinType): string
+    enum:
+    - store
     required: true
+  id:
     type: string
+    (builtinType): string
+    required: true
   obj:
-    required: false
     type: Store
+    (builtinType): object
+    required: false

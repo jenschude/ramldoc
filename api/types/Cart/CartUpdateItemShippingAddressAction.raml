@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CartUpdateAction
+(builtinType): object
+type: CartUpdateAction
 displayName: CartUpdateItemShippingAddressAction
-# discriminator: action
-# discriminatorValue: updateItemShippingAddress
+discriminator: action
+discriminatorValue: updateItemShippingAddress
 properties:
   action:
-    default: updateItemShippingAddress
-    required: true
     type: string
-  address:
+    (builtinType): string
+    enum:
+    - updateItemShippingAddress
     required: true
+  address:
     type: Address
+    (builtinType): object
+    required: true

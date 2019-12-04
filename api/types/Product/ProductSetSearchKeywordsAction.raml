@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductSetSearchKeywordsAction
-# discriminator: action
-# discriminatorValue: setSearchKeywords
+discriminator: action
+discriminatorValue: setSearchKeywords
 properties:
   action:
-    default: setSearchKeywords
-    required: true
     type: string
-  searchKeywords:
+    (builtinType): string
+    enum:
+    - setSearchKeywords
     required: true
+  searchKeywords:
     type: SearchKeywords
+    (builtinType): object
+    required: true
   staged:
-    required: false
     type: boolean
+    (builtinType): boolean
+    required: false

@@ -1,34 +1,39 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: ChannelDraft
-# 
-# 
 properties:
   address:
-    required: false
     type: Address
+    (builtinType): object
+    required: false
   geoLocation:
-    required: false
     type: GeoJson
-  custom:
+    (builtinType): object
     required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
     description: |-
       The custom fields.
-    type: CustomFieldsDraft
-  roles:
     required: false
-    description: |-
-      If not specified, then channel will get InventorySupply role by default
+  roles:
     type: array
     items:
       type: ChannelRoleEnum
+    (builtinType): array
+    description: |-
+      If not specified, then channel will get InventorySupply role by default
+    required: false
   name:
-    required: false
     type: LocalizedString
+    (builtinType): object
+    required: false
   description:
-    required: false
     type: LocalizedString
+    (builtinType): object
+    required: false
   key:
-    required: true
     type: string
+    (builtinType): string
+    required: true

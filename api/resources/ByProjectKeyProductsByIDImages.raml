@@ -4,8 +4,12 @@
 uriParameters:
   projectKey:
     type: string
+    (builtinType): string
+    description: |-
+      Test
   ID:
     type: string
+    (builtinType): string
 post:
   securedBy:
   - oauth_2_0:
@@ -18,21 +22,27 @@ post:
     filename:
       required: false
       type: string
+      (builtinType): string
     variant:
       required: false
       type: number
+      (builtinType): number
     sku:
       required: false
       type: string
+      (builtinType): string
     staged:
       required: false
       type: boolean
+      (builtinType): boolean
   body:
     application/json:
       fileTypes: [image/jpeg, image/png, image/gif]
       type: file
+      (builtinType): file
   responses:
     200:
       body:
         application/json:
           type: Product
+          (builtinType): object

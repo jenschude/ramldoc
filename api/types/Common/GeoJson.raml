@@ -1,10 +1,12 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: GeoJson
-# discriminator: type
-# 
+discriminator: type
+(subTypes):
+- GeoJsonPoint
 properties:
   type:
-    required: true
     type: string
+    (builtinType): string
+    required: true

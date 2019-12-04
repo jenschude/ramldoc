@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): StateUpdateAction
+(builtinType): object
+type: StateUpdateAction
 displayName: StateChangeTypeAction
-# discriminator: action
-# discriminatorValue: changeType
+discriminator: action
+discriminatorValue: changeType
 properties:
   action:
-    default: changeType
-    required: true
     type: string
-  type:
+    (builtinType): string
+    enum:
+    - changeType
     required: true
+  type:
     type: StateTypeEnum
+    (builtinType): string
+    required: true

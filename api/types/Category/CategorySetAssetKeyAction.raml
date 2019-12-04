@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CategoryUpdateAction
+(builtinType): object
+type: CategoryUpdateAction
 displayName: CategorySetAssetKeyAction
-# discriminator: action
-# discriminatorValue: setAssetKey
+discriminator: action
+discriminatorValue: setAssetKey
 properties:
   action:
-    default: setAssetKey
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setAssetKey
+    required: true
   assetId:
+    type: string
+    (builtinType): string
     required: true
-    type: string
   assetKey:
-    required: false
     type: string
+    (builtinType): string
+    required: false

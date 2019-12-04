@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Reference
+(builtinType): object
+type: Reference
 displayName: TypeReference
-# discriminator: typeId
-# discriminatorValue: type
+discriminator: typeId
+discriminatorValue: type
 properties:
   typeId:
-    default: type
-    required: true
     type: ReferenceTypeId
-  id:
+    (builtinType): string
+    enum:
+    - type
     required: true
+  id:
     type: string
+    (builtinType): string
+    required: true
   obj:
-    required: false
     type: Type
+    (builtinType): object
+    required: false

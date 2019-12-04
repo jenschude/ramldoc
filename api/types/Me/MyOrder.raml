@@ -1,146 +1,185 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): LoggedResource
+(builtinType): object
+type: LoggedResource
 displayName: MyOrder
-# 
-# 
 properties:
   createdAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   id:
-    required: true
     type: string
-  version:
+    (builtinType): string
     required: true
+  version:
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdBy:
-    required: false
     type: CreatedBy
+    (builtinType): object
+    required: false
   lastModifiedBy:
-    required: false
     type: LastModifiedBy
+    (builtinType): object
+    required: false
   shipmentState:
-    required: false
     type: ShipmentState
+    (builtinType): string
+    required: false
   country:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   orderNumber:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   totalPrice:
-    required: true
     type: TypedMoney
+    (builtinType): object
+    required: true
   shippingRateInput:
-    required: false
     type: ShippingRateInput
+    (builtinType): object
+    required: false
   taxedPrice:
-    required: false
     type: TaxedPrice
-  origin:
-    required: true
-    type: CartOrigin
-  shippingInfo:
+    (builtinType): object
     required: false
-    type: ShippingInfo
-  refusedGifts:
+  origin:
+    type: CartOrigin
+    (builtinType): string
     required: true
+  shippingInfo:
+    type: ShippingInfo
+    (builtinType): object
+    required: false
+  refusedGifts:
     type: array
     items:
       type: CartDiscountReference
-  locale:
-    required: false
-    type: string
-  cart:
-    required: false
-    type: CartReference
-  inventoryMode:
-    required: false
-    type: InventoryMode
-  orderState:
+    (builtinType): array
     required: true
-    type: OrderState
-  returnInfo:
+  locale:
+    type: string
+    (builtinType): string
     required: false
+  cart:
+    type: CartReference
+    (builtinType): object
+    required: false
+  inventoryMode:
+    type: InventoryMode
+    (builtinType): string
+    required: false
+  orderState:
+    type: OrderState
+    (builtinType): string
+    required: true
+  returnInfo:
     type: array
     items:
       type: ReturnInfo
+    (builtinType): array
+    required: false
   lineItems:
-    required: true
     type: array
     items:
       type: LineItem
-  customLineItems:
+    (builtinType): array
     required: true
+  customLineItems:
     type: array
     items:
       type: CustomLineItem
+    (builtinType): array
+    required: true
   itemShippingAddresses:
-    required: false
     type: array
     items:
       type: Address
+    (builtinType): array
+    required: false
   customerEmail:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   customerId:
-    required: false
     type: string
+    (builtinType): string
+    required: false
   state:
-    required: false
     type: StateReference
+    (builtinType): object
+    required: false
   paymentState:
-    required: false
     type: PaymentState
+    (builtinType): string
+    required: false
   anonymousId:
-    required: false
     type: string
-  discountCodes:
+    (builtinType): string
     required: false
+  discountCodes:
     type: array
     items:
       type: DiscountCodeInfo
+    (builtinType): array
+    required: false
   completedAt:
-    required: false
     type: datetime
+    (builtinType): datetime
+    required: false
   customerGroup:
-    required: false
     type: CustomerGroupReference
+    (builtinType): object
+    required: false
   custom:
-    required: false
     type: CustomFields
+    (builtinType): object
+    required: false
   taxCalculationMode:
-    required: false
     type: TaxCalculationMode
-  store:
+    (builtinType): string
     required: false
+  store:
     type: StoreKeyReference
+    (builtinType): object
+    required: false
   lastMessageSequenceNumber:
-    required: true
     format: int64
     type: number
-  syncInfo:
+    (builtinType): number
     required: true
+  syncInfo:
     type: array
     items:
       type: SyncInfo
+    (builtinType): array
+    required: true
   taxRoundingMode:
-    required: false
     type: RoundingMode
+    (builtinType): string
+    required: false
   taxMode:
-    required: false
     type: TaxMode
+    (builtinType): string
+    required: false
   shippingAddress:
-    required: false
     type: Address
+    (builtinType): object
+    required: false
   billingAddress:
-    required: false
     type: Address
-  paymentInfo:
+    (builtinType): object
     required: false
+  paymentInfo:
     type: PaymentInfo
+    (builtinType): object
+    required: false

@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): MessagePayload
+(builtinType): object
+type: MessagePayload
 displayName: CategorySlugChangedMessagePayload
-# discriminator: type
-# discriminatorValue: CategorySlugChanged
+discriminator: type
+discriminatorValue: CategorySlugChanged
 properties:
   type:
-    default: CategorySlugChanged
-    required: true
     type: string
-  slug:
+    (builtinType): string
+    enum:
+    - CategorySlugChanged
     required: true
+  slug:
     type: LocalizedString
+    (builtinType): object
+    required: true

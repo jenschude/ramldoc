@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): FieldType
+(builtinType): object
+type: FieldType
 displayName: CustomFieldReferenceType
-# discriminator: name
-# discriminatorValue: Reference
+discriminator: name
+discriminatorValue: Reference
 properties:
   name:
-    default: Reference
-    required: true
     type: string
-  referenceTypeId:
+    (builtinType): string
+    enum:
+    - Reference
     required: true
+  referenceTypeId:
     type: ReferenceTypeId
+    (builtinType): string
+    required: true

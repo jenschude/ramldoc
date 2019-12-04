@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): FieldType
+(builtinType): object
+type: FieldType
 displayName: CustomFieldSetType
-# discriminator: name
-# discriminatorValue: Set
+discriminator: name
+discriminatorValue: Set
 properties:
   name:
-    default: Set
-    required: true
     type: string
-  elementType:
+    (builtinType): string
+    enum:
+    - Set
     required: true
+  elementType:
     type: FieldType
+    (builtinType): object
+    required: true

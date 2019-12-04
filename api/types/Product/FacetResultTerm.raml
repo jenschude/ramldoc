@@ -1,18 +1,19 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: FacetResultTerm
-# 
-# 
 properties:
   count:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   term:
-    required: true
     type: any
+    (builtinType): any
+    required: true
   productCount:
-    required: false
     format: int64
     type: number
+    (builtinType): number
+    required: false

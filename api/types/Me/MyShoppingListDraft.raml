@@ -1,34 +1,38 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: MyShoppingListDraft
-# 
-# 
 properties:
   lineItems:
-    required: false
     type: array
     items:
       type: ShoppingListLineItemDraft
-  textLineItems:
+    (builtinType): array
     required: false
+  textLineItems:
     type: array
     items:
       type: TextLineItemDraft
-  deleteDaysAfterLastModification:
+    (builtinType): array
     required: false
-    description: |-
-      The shopping list will be deleted automatically if it hasn't been modified for the specified amount of days.
+  deleteDaysAfterLastModification:
     format: int64
     type: number
-  custom:
+    (builtinType): number
+    description: |-
+      The shopping list will be deleted automatically if it hasn't been modified for the specified amount of days.
     required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
     description: |-
       The custom fields.
-    type: CustomFieldsDraft
-  name:
-    required: true
-    type: LocalizedString
-  description:
     required: false
+  name:
     type: LocalizedString
+    (builtinType): object
+    required: true
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false

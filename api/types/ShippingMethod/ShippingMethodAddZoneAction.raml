@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ShippingMethodUpdateAction
+(builtinType): object
+type: ShippingMethodUpdateAction
 displayName: ShippingMethodAddZoneAction
-# discriminator: action
-# discriminatorValue: addZone
+discriminator: action
+discriminatorValue: addZone
 properties:
   action:
-    default: addZone
-    required: true
     type: string
-  zone:
+    (builtinType): string
+    enum:
+    - addZone
     required: true
+  zone:
     type: ZoneResourceIdentifier
+    (builtinType): object
+    required: true

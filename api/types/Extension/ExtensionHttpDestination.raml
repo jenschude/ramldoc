@@ -1,17 +1,21 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ExtensionDestination
+(builtinType): object
+type: ExtensionDestination
 displayName: ExtensionHttpDestination
-# discriminator: type
-# discriminatorValue: HTTP
+discriminator: type
+discriminatorValue: HTTP
 properties:
   type:
-    default: HTTP
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - HTTP
+    required: true
   url:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   authentication:
-    required: false
     type: ExtensionHttpDestinationAuthentication
+    (builtinType): object
+    required: false

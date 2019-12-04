@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ErrorObject
+(builtinType): object
+type: ErrorObject
 displayName: InvalidSubjectError
-# discriminator: code
-# discriminatorValue: InvalidSubject
+discriminator: code
+discriminatorValue: InvalidSubject
 properties:
   code:
-    default: InvalidSubject
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - InvalidSubject
+    required: true
   message:
-    required: true
     type: string
+    (builtinType): string
+    required: true

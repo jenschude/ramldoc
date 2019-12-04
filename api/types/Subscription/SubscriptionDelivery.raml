@@ -1,19 +1,27 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: SubscriptionDelivery
-# discriminator: notificationType
-# 
+discriminator: notificationType
+(subTypes):
+- MessageDelivery
+- ResourceCreatedDelivery
+- ResourceDeletedDelivery
+- ResourceUpdatedDelivery
 properties:
   projectKey:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   resource:
-    required: true
     type: Reference
-  resourceUserProvidedIdentifiers:
-    required: false
-    type: UserProvidedIdentifiers
-  notificationType:
+    (builtinType): object
     required: true
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+    (builtinType): object
+    required: false
+  notificationType:
     type: string
+    (builtinType): string
+    required: true

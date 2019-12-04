@@ -1,19 +1,20 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: TaxPortionDraft
-# 
-# 
 properties:
   amount:
-    required: true
     type: TypedMoneyDraft
-  rate:
+    (builtinType): object
     required: true
+  rate:
     format: int16
     minimum: 0
     maximum: 1
     type: number
+    (builtinType): number
+    required: true
   name:
-    required: false
     type: string
+    (builtinType): string
+    required: false

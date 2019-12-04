@@ -1,18 +1,19 @@
 #%RAML 1.0 DataType
+(builtinType): object
 type: object
-(originalType): object
 displayName: TaxedPriceDraft
-# 
-# 
 properties:
   taxPortions:
-    required: true
     type: array
     items:
       type: TaxPortionDraft
+    (builtinType): array
+    required: true
   totalGross:
-    required: true
     type: TypedMoneyDraft
+    (builtinType): object
+    required: true
   totalNet:
-    required: true
     type: TypedMoneyDraft
+    (builtinType): object
+    required: true

@@ -1,53 +1,68 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): Message
+(builtinType): object
+type: Message
 displayName: ParcelTrackingDataUpdatedMessage
-# discriminator: type
-# discriminatorValue: ParcelTrackingDataUpdated
+discriminator: type
+discriminatorValue: ParcelTrackingDataUpdated
 properties:
   createdAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedAt:
-    required: true
     type: datetime
+    (builtinType): datetime
+    required: true
   id:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   version:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   createdBy:
-    required: false
     type: CreatedBy
+    (builtinType): object
+    required: false
   lastModifiedBy:
-    required: false
     type: LastModifiedBy
+    (builtinType): object
+    required: false
   sequenceNumber:
-    required: true
     format: int64
     type: number
+    (builtinType): number
+    required: true
   resource:
-    required: true
     type: Reference
-  resourceUserProvidedIdentifiers:
-    required: false
-    type: UserProvidedIdentifiers
-  resourceVersion:
+    (builtinType): object
     required: true
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+    (builtinType): object
+    required: false
+  resourceVersion:
     format: int64
     type: number
+    (builtinType): number
+    required: true
   type:
-    default: ParcelTrackingDataUpdated
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - ParcelTrackingDataUpdated
+    required: true
   deliveryId:
-    required: true
     type: string
+    (builtinType): string
+    required: true
   trackingData:
-    required: false
     type: TrackingData
+    (builtinType): object
+    required: false
   parcelId:
-    required: true
     type: string
+    (builtinType): string
+    required: true

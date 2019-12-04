@@ -1,21 +1,26 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): ProductUpdateAction
+(builtinType): object
+type: ProductUpdateAction
 displayName: ProductChangeMasterVariantAction
-# discriminator: action
-# discriminatorValue: changeMasterVariant
+discriminator: action
+discriminatorValue: changeMasterVariant
 properties:
   action:
-    default: changeMasterVariant
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - changeMasterVariant
+    required: true
   staged:
-    required: false
     type: boolean
-  variantId:
+    (builtinType): boolean
     required: false
+  variantId:
     format: int64
     type: number
-  sku:
+    (builtinType): number
     required: false
+  sku:
     type: string
+    (builtinType): string
+    required: false

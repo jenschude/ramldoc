@@ -1,14 +1,17 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): CartUpdateAction
+(builtinType): object
+type: CartUpdateAction
 displayName: CartRecalculateAction
-# discriminator: action
-# discriminatorValue: recalculate
+discriminator: action
+discriminatorValue: recalculate
 properties:
   action:
-    default: recalculate
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - recalculate
+    required: true
   updateProductData:
-    required: false
     type: boolean
+    (builtinType): boolean
+    required: false

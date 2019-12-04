@@ -1,16 +1,19 @@
 #%RAML 1.0 DataType
-type: object
-(originalType): SubscriptionUpdateAction
+(builtinType): object
+type: SubscriptionUpdateAction
 displayName: SubscriptionSetMessagesAction
-# discriminator: action
-# discriminatorValue: setMessages
+discriminator: action
+discriminatorValue: setMessages
 properties:
   action:
-    default: setMessages
-    required: true
     type: string
+    (builtinType): string
+    enum:
+    - setMessages
+    required: true
   messages:
-    required: false
     type: array
     items:
       type: MessageSubscription
+    (builtinType): array
+    required: false
