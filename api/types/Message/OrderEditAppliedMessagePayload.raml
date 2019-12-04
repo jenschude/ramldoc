@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderEditAppliedMessagePayload
-
-discriminatorValue: OrderEditApplied
+# discriminator: type
+# discriminatorValue: OrderEditApplied
 properties:
   type:
+    default: OrderEditApplied
     required: true
     type: string
   result:

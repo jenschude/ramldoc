@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: ShippingMethodDoesNotMatchCartError
-
-discriminatorValue: ShippingMethodDoesNotMatchCart
+# discriminator: code
+# discriminatorValue: ShippingMethodDoesNotMatchCart
 properties:
   code:
+    default: ShippingMethodDoesNotMatchCart
     required: true
     type: string
   message:

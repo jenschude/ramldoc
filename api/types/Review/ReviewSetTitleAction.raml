@@ -2,10 +2,11 @@
 type: object
 (originalType): ReviewUpdateAction
 displayName: ReviewSetTitleAction
-
-discriminatorValue: setTitle
+# discriminator: action
+# discriminatorValue: setTitle
 properties:
   action:
+    default: setTitle
     required: true
     type: string
   title:

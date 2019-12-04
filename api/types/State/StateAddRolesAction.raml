@@ -2,10 +2,11 @@
 type: object
 (originalType): StateUpdateAction
 displayName: StateAddRolesAction
-
-discriminatorValue: addRoles
+# discriminator: action
+# discriminatorValue: addRoles
 properties:
   action:
+    default: addRoles
     required: true
     type: string
   roles:

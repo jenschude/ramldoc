@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderStateChangedMessagePayload
-
-discriminatorValue: OrderStateChanged
+# discriminator: type
+# discriminatorValue: OrderStateChanged
 properties:
   type:
+    default: OrderStateChanged
     required: true
     type: string
   oldOrderState:

@@ -2,10 +2,11 @@
 type: object
 (originalType): DiscountCodeUpdateAction
 displayName: DiscountCodeSetValidFromAndUntilAction
-
-discriminatorValue: setValidFromAndUntil
+# discriminator: action
+# discriminatorValue: setValidFromAndUntil
 properties:
   action:
+    default: setValidFromAndUntil
     required: true
     type: string
   validUntil:

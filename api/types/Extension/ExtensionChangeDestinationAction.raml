@@ -2,10 +2,11 @@
 type: object
 (originalType): ExtensionUpdateAction
 displayName: ExtensionChangeDestinationAction
-
-discriminatorValue: changeDestination
+# discriminator: action
+# discriminatorValue: changeDestination
 properties:
   action:
+    default: changeDestination
     required: true
     type: string
   destination:

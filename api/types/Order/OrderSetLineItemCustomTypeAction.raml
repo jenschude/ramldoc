@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderSetLineItemCustomTypeAction
-
-discriminatorValue: setLineItemCustomType
+# discriminator: action
+# discriminatorValue: setLineItemCustomType
 properties:
   action:
+    default: setLineItemCustomType
     required: true
     type: string
   lineItemId:

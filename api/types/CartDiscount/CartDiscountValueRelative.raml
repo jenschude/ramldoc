@@ -2,10 +2,11 @@
 type: object
 (originalType): CartDiscountValue
 displayName: CartDiscountValueRelative
-
-discriminatorValue: relative
+# discriminator: type
+# discriminatorValue: relative
 properties:
   type:
+    default: relative
     required: true
     type: string
   permyriad:

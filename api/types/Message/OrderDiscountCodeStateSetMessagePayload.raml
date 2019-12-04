@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderDiscountCodeStateSetMessagePayload
-
-discriminatorValue: OrderDiscountCodeStateSet
+# discriminator: type
+# discriminatorValue: OrderDiscountCodeStateSet
 properties:
   type:
+    default: OrderDiscountCodeStateSet
     required: true
     type: string
   discountCode:

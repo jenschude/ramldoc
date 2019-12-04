@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeSetInputTipAction
-
-discriminatorValue: setInputTip
+# discriminator: action
+# discriminatorValue: setInputTip
 properties:
   action:
+    default: setInputTip
     required: true
     type: string
   attributeName:

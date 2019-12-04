@@ -2,10 +2,11 @@
 type: object
 (originalType): TypeUpdateAction
 displayName: TypeAddFieldDefinitionAction
-
-discriminatorValue: addFieldDefinition
+# discriminator: action
+# discriminatorValue: addFieldDefinition
 properties:
   action:
+    default: addFieldDefinition
     required: true
     type: string
   fieldDefinition:

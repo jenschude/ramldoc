@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetCustomerIdAction
-
-discriminatorValue: setCustomerId
+# discriminator: action
+# discriminatorValue: setCustomerId
 properties:
   action:
+    default: setCustomerId
     required: true
     type: string
   customerId:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ShoppingListUpdateAction
 displayName: ShoppingListAddLineItemAction
-
-discriminatorValue: addLineItem
+# discriminator: action
+# discriminatorValue: addLineItem
 properties:
   action:
+    default: addLineItem
     required: true
     type: string
   addedAt:

@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: OrderReference
-
-discriminatorValue: order
+# discriminator: typeId
+# discriminatorValue: order
 properties:
   typeId:
+    default: order
     required: true
     type: ReferenceTypeId
   id:

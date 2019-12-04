@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetCustomLineItemTaxRateAction
-
-discriminatorValue: setCustomLineItemTaxRate
+# discriminator: action
+# discriminatorValue: setCustomLineItemTaxRate
 properties:
   action:
+    default: setCustomLineItemTaxRate
     required: true
     type: string
   customLineItemId:

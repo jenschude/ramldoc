@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ProductCreatedMessagePayload
-
-discriminatorValue: ProductCreated
+# discriminator: type
+# discriminatorValue: ProductCreated
 properties:
   type:
+    default: ProductCreated
     required: true
     type: string
   productProjection:

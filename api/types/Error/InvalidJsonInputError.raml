@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: InvalidJsonInputError
-
-discriminatorValue: InvalidJsonInput
+# discriminator: code
+# discriminatorValue: InvalidJsonInput
 properties:
   code:
+    default: InvalidJsonInput
     required: true
     type: string
   message:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetDiscountedPriceAction
-
-discriminatorValue: setDiscountedPrice
+# discriminator: action
+# discriminatorValue: setDiscountedPrice
 properties:
   action:
+    default: setDiscountedPrice
     required: true
     type: string
   discounted:

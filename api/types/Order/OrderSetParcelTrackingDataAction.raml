@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderSetParcelTrackingDataAction
-
-discriminatorValue: setParcelTrackingData
+# discriminator: action
+# discriminatorValue: setParcelTrackingData
 properties:
   action:
+    default: setParcelTrackingData
     required: true
     type: string
   trackingData:

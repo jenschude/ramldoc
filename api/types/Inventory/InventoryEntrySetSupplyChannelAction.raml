@@ -2,10 +2,11 @@
 type: object
 (originalType): InventoryEntryUpdateAction
 displayName: InventoryEntrySetSupplyChannelAction
-
-discriminatorValue: setSupplyChannel
+# discriminator: action
+# discriminatorValue: setSupplyChannel
 properties:
   action:
+    default: setSupplyChannel
     required: true
     type: string
   supplyChannel:

@@ -2,10 +2,11 @@
 type: object
 (originalType): StateUpdateAction
 displayName: StateSetTransitionsAction
-
-discriminatorValue: setTransitions
+# discriminator: action
+# discriminatorValue: setTransitions
 properties:
   action:
+    default: setTransitions
     required: true
     type: string
   transitions:

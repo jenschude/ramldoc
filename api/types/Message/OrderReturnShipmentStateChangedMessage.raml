@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: OrderReturnShipmentStateChangedMessage
-
-discriminatorValue: OrderReturnShipmentStateChanged
+# discriminator: type
+# discriminatorValue: OrderReturnShipmentStateChanged
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: OrderReturnShipmentStateChanged
     required: true
     type: string
   returnItemId:

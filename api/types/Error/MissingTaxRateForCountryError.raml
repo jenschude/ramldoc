@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: MissingTaxRateForCountryError
-
-discriminatorValue: MissingTaxRateForCountry
+# discriminator: code
+# discriminatorValue: MissingTaxRateForCountry
 properties:
   code:
+    default: MissingTaxRateForCountry
     required: true
     type: string
   message:

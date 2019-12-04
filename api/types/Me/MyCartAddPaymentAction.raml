@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCartUpdateAction
 displayName: MyCartAddPaymentAction
-
-discriminatorValue: addPayment
+# discriminator: action
+# discriminatorValue: addPayment
 properties:
   action:
+    default: addPayment
     required: true
     type: string
   payment:

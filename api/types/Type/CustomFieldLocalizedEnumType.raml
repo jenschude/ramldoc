@@ -2,10 +2,11 @@
 type: object
 (originalType): FieldType
 displayName: CustomFieldLocalizedEnumType
-
-discriminatorValue: LocalizedEnum
+# discriminator: name
+# discriminatorValue: LocalizedEnum
 properties:
   name:
+    default: LocalizedEnum
     required: true
     type: string
   values:

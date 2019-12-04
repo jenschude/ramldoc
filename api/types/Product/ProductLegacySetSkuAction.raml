@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductLegacySetSkuAction
-
-discriminatorValue: legacySetSku
+# discriminator: action
+# discriminatorValue: legacySetSku
 properties:
   action:
+    default: legacySetSku
     required: true
     type: string
   variantId:

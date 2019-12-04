@@ -2,10 +2,11 @@
 type: object
 (originalType): ReviewUpdateAction
 displayName: ReviewSetRatingAction
-
-discriminatorValue: setRating
+# discriminator: action
+# discriminatorValue: setRating
 properties:
   action:
+    default: setRating
     required: true
     type: string
   rating:

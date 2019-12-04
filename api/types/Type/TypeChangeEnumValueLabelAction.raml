@@ -2,10 +2,11 @@
 type: object
 (originalType): TypeUpdateAction
 displayName: TypeChangeEnumValueLabelAction
-
-discriminatorValue: changeEnumValueLabel
+# discriminator: action
+# discriminatorValue: changeEnumValueLabel
 properties:
   action:
+    default: changeEnumValueLabel
     required: true
     type: string
   fieldName:

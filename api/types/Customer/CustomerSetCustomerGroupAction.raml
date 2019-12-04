@@ -2,10 +2,11 @@
 type: object
 (originalType): CustomerUpdateAction
 displayName: CustomerSetCustomerGroupAction
-
-discriminatorValue: setCustomerGroup
+# discriminator: action
+# discriminatorValue: setCustomerGroup
 properties:
   action:
+    default: setCustomerGroup
     required: true
     type: string
   customerGroup:

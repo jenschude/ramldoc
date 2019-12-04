@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: OutOfStockError
-
-discriminatorValue: OutOfStock
+# discriminator: code
+# discriminatorValue: OutOfStock
 properties:
   code:
+    default: OutOfStock
     required: true
     type: string
   message:

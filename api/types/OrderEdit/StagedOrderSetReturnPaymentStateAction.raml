@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetReturnPaymentStateAction
-
-discriminatorValue: setReturnPaymentState
+# discriminator: action
+# discriminatorValue: setReturnPaymentState
 properties:
   action:
+    default: setReturnPaymentState
     required: true
     type: string
   returnItemId:

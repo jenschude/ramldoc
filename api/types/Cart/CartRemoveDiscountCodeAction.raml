@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartRemoveDiscountCodeAction
-
-discriminatorValue: removeDiscountCode
+# discriminator: action
+# discriminatorValue: removeDiscountCode
 properties:
   action:
+    default: removeDiscountCode
     required: true
     type: string
   discountCode:

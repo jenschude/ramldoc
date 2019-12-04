@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ProductImageAddedMessagePayload
-
-discriminatorValue: ProductImageAdded
+# discriminator: type
+# discriminatorValue: ProductImageAdded
 properties:
   type:
+    default: ProductImageAdded
     required: true
     type: string
   image:

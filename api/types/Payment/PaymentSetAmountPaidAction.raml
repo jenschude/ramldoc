@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentSetAmountPaidAction
-
-discriminatorValue: setAmountPaid
+# discriminator: action
+# discriminatorValue: setAmountPaid
 properties:
   action:
+    default: setAmountPaid
     required: true
     type: string
   amount:

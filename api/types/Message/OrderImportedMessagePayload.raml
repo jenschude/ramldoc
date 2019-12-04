@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderImportedMessagePayload
-
-discriminatorValue: OrderImported
+# discriminator: type
+# discriminatorValue: OrderImported
 properties:
   type:
+    default: OrderImported
     required: true
     type: string
   order:

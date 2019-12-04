@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductAddVariantAction
-
-discriminatorValue: addVariant
+# discriminator: action
+# discriminatorValue: addVariant
 properties:
   action:
+    default: addVariant
     required: true
     type: string
   images:

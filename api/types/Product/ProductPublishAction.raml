@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductPublishAction
-
-discriminatorValue: publish
+# discriminator: action
+# discriminatorValue: publish
 properties:
   action:
+    default: publish
     required: true
     type: string
   scope:

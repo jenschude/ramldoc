@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetLineItemShippingDetailsAction
-
-discriminatorValue: setLineItemShippingDetails
+# discriminator: action
+# discriminatorValue: setLineItemShippingDetails
 properties:
   action:
+    default: setLineItemShippingDetails
     required: true
     type: string
   shippingDetails:

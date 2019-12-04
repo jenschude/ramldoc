@@ -2,10 +2,11 @@
 type: object
 (originalType): ExtensionUpdateAction
 displayName: ExtensionChangeTriggersAction
-
-discriminatorValue: changeTriggers
+# discriminator: action
+# discriminatorValue: changeTriggers
 properties:
   action:
+    default: changeTriggers
     required: true
     type: string
   triggers:

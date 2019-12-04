@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetShippingMethodTaxAmountAction
-
-discriminatorValue: setShippingMethodTaxAmount
+# discriminator: action
+# discriminatorValue: setShippingMethodTaxAmount
 properties:
   action:
+    default: setShippingMethodTaxAmount
     required: true
     type: string
   externalTaxAmount:

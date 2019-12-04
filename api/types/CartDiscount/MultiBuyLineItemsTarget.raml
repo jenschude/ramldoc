@@ -2,10 +2,11 @@
 type: object
 (originalType): CartDiscountTarget
 displayName: MultiBuyLineItemsTarget
-
-discriminatorValue: multiBuyLineItems
+# discriminator: type
+# discriminatorValue: multiBuyLineItems
 properties:
   type:
+    default: multiBuyLineItems
     required: true
     type: string
   predicate:

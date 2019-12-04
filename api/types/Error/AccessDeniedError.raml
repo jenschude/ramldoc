@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: AccessDeniedError
-
-discriminatorValue: access_denied
+# discriminator: code
+# discriminatorValue: access_denied
 properties:
   code:
+    default: access_denied
     required: true
     type: string
   message:

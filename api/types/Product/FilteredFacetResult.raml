@@ -2,10 +2,11 @@
 type: object
 (originalType): FacetResult
 displayName: FilteredFacetResult
-
-discriminatorValue: filter
+# discriminator: type
+# discriminatorValue: filter
 properties:
   type:
+    default: filter
     required: true
     type: FacetTypes
   count:

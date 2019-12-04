@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: DiscountCodeNonApplicableError
-
-discriminatorValue: DiscountCodeNonApplicable
+# discriminator: code
+# discriminatorValue: DiscountCodeNonApplicable
 properties:
   code:
+    default: DiscountCodeNonApplicable
     required: true
     type: string
   message:

@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderEditResult
 displayName: OrderEditApplied
-
-discriminatorValue: Applied
+# discriminator: type
+# discriminatorValue: Applied
 properties:
   type:
+    default: Applied
     required: true
     type: string
   excerptAfterEdit:

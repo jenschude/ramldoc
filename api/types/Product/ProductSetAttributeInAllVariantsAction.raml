@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetAttributeInAllVariantsAction
-
-discriminatorValue: setAttributeInAllVariants
+# discriminator: action
+# discriminatorValue: setAttributeInAllVariants
 properties:
   action:
+    default: setAttributeInAllVariants
     required: true
     type: string
   name:

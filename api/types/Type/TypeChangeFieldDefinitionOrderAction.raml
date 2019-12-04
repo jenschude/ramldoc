@@ -2,10 +2,11 @@
 type: object
 (originalType): TypeUpdateAction
 displayName: TypeChangeFieldDefinitionOrderAction
-
-discriminatorValue: changeFieldDefinitionOrder
+# discriminator: action
+# discriminatorValue: changeFieldDefinitionOrder
 properties:
   action:
+    default: changeFieldDefinitionOrder
     required: true
     type: string
   fieldNames:

@@ -2,9 +2,10 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductUnpublishAction
-
-discriminatorValue: unpublish
+# discriminator: action
+# discriminatorValue: unpublish
 properties:
   action:
+    default: unpublish
     required: true
     type: string

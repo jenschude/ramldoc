@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: DuplicatePriceScopeError
-
-discriminatorValue: DuplicatePriceScope
+# discriminator: code
+# discriminatorValue: DuplicatePriceScope
 properties:
   code:
+    default: DuplicatePriceScope
     required: true
     type: string
   message:

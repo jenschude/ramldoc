@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderEditUpdateAction
 displayName: OrderEditSetStagedActionsAction
-
-discriminatorValue: setStagedActions
+# discriminator: action
+# discriminatorValue: setStagedActions
 properties:
   action:
+    default: setStagedActions
     required: true
     type: string
   stagedActions:

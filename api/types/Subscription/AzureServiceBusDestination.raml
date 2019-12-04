@@ -2,10 +2,11 @@
 type: object
 (originalType): Destination
 displayName: AzureServiceBusDestination
-
-discriminatorValue: AzureServiceBus
+# discriminator: type
+# discriminatorValue: AzureServiceBus
 properties:
   type:
+    default: AzureServiceBus
     required: true
     type: string
   connectionString:

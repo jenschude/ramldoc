@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderCustomerSetMessagePayload
-
-discriminatorValue: OrderCustomerSet
+# discriminator: type
+# discriminatorValue: OrderCustomerSet
 properties:
   type:
+    default: OrderCustomerSet
     required: true
     type: string
   oldCustomerGroup:

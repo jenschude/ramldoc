@@ -2,10 +2,11 @@
 type: object
 (originalType): DeliveryFormat
 displayName: DeliveryCloudEventsFormat
-
-discriminatorValue: CloudEvents
+# discriminator: type
+# discriminatorValue: CloudEvents
 properties:
   type:
+    default: CloudEvents
     required: true
     type: string
   cloudEventsVersion:

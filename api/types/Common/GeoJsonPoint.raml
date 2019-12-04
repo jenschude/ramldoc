@@ -2,10 +2,11 @@
 type: object
 (originalType): GeoJson
 displayName: GeoJsonPoint
-
-discriminatorValue: Point
+# discriminator: type
+# discriminatorValue: Point
 properties:
   type:
+    default: Point
     required: true
     type: string
   coordinates:

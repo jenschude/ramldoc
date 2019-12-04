@@ -2,10 +2,11 @@
 type: object
 (originalType): CategoryUpdateAction
 displayName: CategoryAddAssetAction
-
-discriminatorValue: addAsset
+# discriminator: action
+# discriminatorValue: addAsset
 properties:
   action:
+    default: addAsset
     required: true
     type: string
   position:

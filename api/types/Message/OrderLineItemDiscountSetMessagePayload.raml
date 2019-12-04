@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderLineItemDiscountSetMessagePayload
-
-discriminatorValue: OrderLineItemDiscountSet
+# discriminator: type
+# discriminatorValue: OrderLineItemDiscountSet
 properties:
   type:
+    default: OrderLineItemDiscountSet
     required: true
     type: string
   totalPrice:

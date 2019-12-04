@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: InvalidOperationError
-
-discriminatorValue: InvalidOperation
+# discriminator: code
+# discriminatorValue: InvalidOperation
 properties:
   code:
+    default: InvalidOperation
     required: true
     type: string
   message:

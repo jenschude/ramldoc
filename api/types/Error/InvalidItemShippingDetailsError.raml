@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: InvalidItemShippingDetailsError
-
-discriminatorValue: InvalidItemShippingDetails
+# discriminator: code
+# discriminatorValue: InvalidItemShippingDetails
 properties:
   code:
+    default: InvalidItemShippingDetails
     required: true
     type: string
   message:

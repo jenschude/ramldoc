@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCustomerUpdateAction
 displayName: MyCustomerAddShippingAddressIdAction
-
-discriminatorValue: addShippingAddressId
+# discriminator: action
+# discriminatorValue: addShippingAddressId
 properties:
   action:
+    default: addShippingAddressId
     required: true
     type: string
   addressId:

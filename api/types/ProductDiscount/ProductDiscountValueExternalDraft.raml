@@ -2,9 +2,10 @@
 type: object
 (originalType): ProductDiscountValueDraft
 displayName: ProductDiscountValueExternalDraft
-
-discriminatorValue: external
+# discriminator: type
+# discriminatorValue: external
 properties:
   type:
+    default: external
     required: true
     type: string

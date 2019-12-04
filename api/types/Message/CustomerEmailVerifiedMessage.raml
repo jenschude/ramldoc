@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: CustomerEmailVerifiedMessage
-
-discriminatorValue: CustomerEmailVerified
+# discriminator: type
+# discriminatorValue: CustomerEmailVerified
 properties:
   createdAt:
     required: true
@@ -39,5 +39,6 @@ properties:
     format: int64
     type: number
   type:
+    default: CustomerEmailVerified
     required: true
     type: string

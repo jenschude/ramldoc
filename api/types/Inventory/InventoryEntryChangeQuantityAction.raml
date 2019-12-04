@@ -2,10 +2,11 @@
 type: object
 (originalType): InventoryEntryUpdateAction
 displayName: InventoryEntryChangeQuantityAction
-
-discriminatorValue: changeQuantity
+# discriminator: action
+# discriminatorValue: changeQuantity
 properties:
   action:
+    default: changeQuantity
     required: true
     type: string
   quantity:

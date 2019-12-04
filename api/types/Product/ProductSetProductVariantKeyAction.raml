@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetProductVariantKeyAction
-
-discriminatorValue: setProductVariantKey
+# discriminator: action
+# discriminatorValue: setProductVariantKey
 properties:
   action:
+    default: setProductVariantKey
     required: true
     type: string
   staged:

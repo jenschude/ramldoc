@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderCreatedMessagePayload
-
-discriminatorValue: OrderCreated
+# discriminator: type
+# discriminatorValue: OrderCreated
 properties:
   type:
+    default: OrderCreated
     required: true
     type: string
   order:

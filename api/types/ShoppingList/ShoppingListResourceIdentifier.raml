@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: ShoppingListResourceIdentifier
-
-discriminatorValue: shopping-list
+# discriminator: typeId
+# discriminatorValue: shopping-list
 properties:
   typeId:
+    default: shopping-list
     required: false
     type: ReferenceTypeId
   id:

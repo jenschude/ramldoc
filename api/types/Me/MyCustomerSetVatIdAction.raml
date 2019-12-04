@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCustomerUpdateAction
 displayName: MyCustomerSetVatIdAction
-
-discriminatorValue: setVatId
+# discriminator: action
+# discriminatorValue: setVatId
 properties:
   action:
+    default: setVatId
     required: true
     type: string
   vatId:

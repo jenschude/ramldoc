@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: PaymentResourceIdentifier
-
-discriminatorValue: payment
+# discriminator: typeId
+# discriminatorValue: payment
 properties:
   typeId:
+    default: payment
     required: false
     type: ReferenceTypeId
   id:

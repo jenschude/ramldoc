@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderChangeTaxModeAction
-
-discriminatorValue: changeTaxMode
+# discriminator: action
+# discriminatorValue: changeTaxMode
 properties:
   action:
+    default: changeTaxMode
     required: true
     type: string
   taxMode:

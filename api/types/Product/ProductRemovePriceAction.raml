@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductRemovePriceAction
-
-discriminatorValue: removePrice
+# discriminator: action
+# discriminatorValue: removePrice
 properties:
   action:
+    default: removePrice
     required: true
     type: string
   staged:

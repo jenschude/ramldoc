@@ -2,10 +2,11 @@
 type: object
 (originalType): CustomerUpdateAction
 displayName: CustomerChangeAddressAction
-
-discriminatorValue: changeAddress
+# discriminator: action
+# discriminatorValue: changeAddress
 properties:
   action:
+    default: changeAddress
     required: true
     type: string
   address:

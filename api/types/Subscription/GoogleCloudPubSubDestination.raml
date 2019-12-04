@@ -2,10 +2,11 @@
 type: object
 (originalType): Destination
 displayName: GoogleCloudPubSubDestination
-
-discriminatorValue: GoogleCloudPubSub
+# discriminator: type
+# discriminatorValue: GoogleCloudPubSub
 properties:
   type:
+    default: GoogleCloudPubSub
     required: true
     type: string
   topic:

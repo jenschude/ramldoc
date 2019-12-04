@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: DeliveryAddedMessage
-
-discriminatorValue: DeliveryAdded
+# discriminator: type
+# discriminatorValue: DeliveryAdded
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: DeliveryAdded
     required: true
     type: string
   delivery:

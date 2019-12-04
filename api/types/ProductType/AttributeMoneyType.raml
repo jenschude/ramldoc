@@ -2,9 +2,10 @@
 type: object
 (originalType): AttributeType
 displayName: AttributeMoneyType
-
-discriminatorValue: money
+# discriminator: name
+# discriminatorValue: money
 properties:
   name:
+    default: money
     required: true
     type: string

@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: CustomerDateOfBirthSetMessagePayload
-
-discriminatorValue: CustomerDateOfBirthSet
+# discriminator: type
+# discriminatorValue: CustomerDateOfBirthSet
 properties:
   type:
+    default: CustomerDateOfBirthSet
     required: true
     type: string
   dateOfBirth:

@@ -2,10 +2,11 @@
 type: object
 (originalType): MyShoppingListUpdateAction
 displayName: MyShoppingListChangeTextLineItemsOrderAction
-
-discriminatorValue: changeTextLineItemsOrder
+# discriminator: action
+# discriminatorValue: changeTextLineItemsOrder
 properties:
   action:
+    default: changeTextLineItemsOrder
     required: true
     type: string
   textLineItemOrder:

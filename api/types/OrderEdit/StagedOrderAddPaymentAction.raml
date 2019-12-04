@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderAddPaymentAction
-
-discriminatorValue: addPayment
+# discriminator: action
+# discriminatorValue: addPayment
 properties:
   action:
+    default: addPayment
     required: true
     type: string
   payment:

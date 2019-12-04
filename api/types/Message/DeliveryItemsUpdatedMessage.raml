@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: DeliveryItemsUpdatedMessage
-
-discriminatorValue: DeliveryItemsUpdated
+# discriminator: type
+# discriminatorValue: DeliveryItemsUpdated
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: DeliveryItemsUpdated
     required: true
     type: string
   deliveryId:

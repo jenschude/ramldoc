@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: CustomerAddressChangedMessagePayload
-
-discriminatorValue: CustomerAddressChanged
+# discriminator: type
+# discriminatorValue: CustomerAddressChanged
 properties:
   type:
+    default: CustomerAddressChanged
     required: true
     type: string
   address:

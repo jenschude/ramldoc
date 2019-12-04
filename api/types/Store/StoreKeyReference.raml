@@ -2,10 +2,11 @@
 type: object
 (originalType): KeyReference
 displayName: StoreKeyReference
-
-discriminatorValue: store
+# discriminator: typeId
+# discriminatorValue: store
 properties:
   typeId:
+    default: store
     required: true
     type: ReferenceTypeId
   key:

@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentChangeTransactionInteractionIdAction
-
-discriminatorValue: changeTransactionInteractionId
+# discriminator: action
+# discriminatorValue: changeTransactionInteractionId
 properties:
   action:
+    default: changeTransactionInteractionId
     required: true
     type: string
   interactionId:

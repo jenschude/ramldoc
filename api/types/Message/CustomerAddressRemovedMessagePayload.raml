@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: CustomerAddressRemovedMessagePayload
-
-discriminatorValue: CustomerAddressRemoved
+# discriminator: type
+# discriminatorValue: CustomerAddressRemoved
 properties:
   type:
+    default: CustomerAddressRemoved
     required: true
     type: string
   address:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ProjectUpdateAction
 displayName: ProjectChangeMessagesEnabledAction
-
-discriminatorValue: changeMessagesEnabled
+# discriminator: action
+# discriminatorValue: changeMessagesEnabled
 properties:
   action:
+    default: changeMessagesEnabled
     required: true
     type: string
   messagesEnabled:

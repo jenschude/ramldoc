@@ -2,9 +2,10 @@
 type: object
 (originalType): MessagePayload
 displayName: CustomerEmailVerifiedMessagePayload
-
-discriminatorValue: CustomerEmailVerified
+# discriminator: type
+# discriminatorValue: CustomerEmailVerified
 properties:
   type:
+    default: CustomerEmailVerified
     required: true
     type: string

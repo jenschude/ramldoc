@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: PaymentReference
-
-discriminatorValue: payment
+# discriminator: typeId
+# discriminatorValue: payment
 properties:
   typeId:
+    default: payment
     required: true
     type: ReferenceTypeId
   id:

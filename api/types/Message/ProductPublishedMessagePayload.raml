@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ProductPublishedMessagePayload
-
-discriminatorValue: ProductPublished
+# discriminator: type
+# discriminatorValue: ProductPublished
 properties:
   type:
+    default: ProductPublished
     required: true
     type: string
   removedImageUrls:

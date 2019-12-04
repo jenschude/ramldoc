@@ -2,10 +2,11 @@
 type: object
 (originalType): TypeUpdateAction
 displayName: TypeRemoveFieldDefinitionAction
-
-discriminatorValue: removeFieldDefinition
+# discriminator: action
+# discriminatorValue: removeFieldDefinition
 properties:
   action:
+    default: removeFieldDefinition
     required: true
     type: string
   fieldName:

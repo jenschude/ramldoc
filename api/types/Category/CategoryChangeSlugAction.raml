@@ -2,10 +2,11 @@
 type: object
 (originalType): CategoryUpdateAction
 displayName: CategoryChangeSlugAction
-
-discriminatorValue: changeSlug
+# discriminator: action
+# discriminatorValue: changeSlug
 properties:
   action:
+    default: changeSlug
     required: true
     type: string
   slug:

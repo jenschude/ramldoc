@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderTransitionCustomLineItemStateAction
-
-discriminatorValue: transitionCustomLineItemState
+# discriminator: action
+# discriminatorValue: transitionCustomLineItemState
 properties:
   action:
+    default: transitionCustomLineItemState
     required: true
     type: string
   toState:

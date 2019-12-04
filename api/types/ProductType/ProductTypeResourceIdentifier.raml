@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: ProductTypeResourceIdentifier
-
-discriminatorValue: product-type
+# discriminator: typeId
+# discriminatorValue: product-type
 properties:
   typeId:
+    default: product-type
     required: false
     type: ReferenceTypeId
   id:

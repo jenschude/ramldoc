@@ -2,9 +2,10 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductRevertStagedChangesAction
-
-discriminatorValue: revertStagedChanges
+# discriminator: action
+# discriminatorValue: revertStagedChanges
 properties:
   action:
+    default: revertStagedChanges
     required: true
     type: string

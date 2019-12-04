@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: InsufficientScopeError
-
-discriminatorValue: insufficient_scope
+# discriminator: code
+# discriminatorValue: insufficient_scope
 properties:
   code:
+    default: insufficient_scope
     required: true
     type: string
   message:

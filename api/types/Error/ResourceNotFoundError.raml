@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: ResourceNotFoundError
-
-discriminatorValue: ResourceNotFound
+# discriminator: code
+# discriminatorValue: ResourceNotFound
 properties:
   code:
+    default: ResourceNotFound
     required: true
     type: string
   message:

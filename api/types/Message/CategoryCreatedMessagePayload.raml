@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: CategoryCreatedMessagePayload
-
-discriminatorValue: CategoryCreated
+# discriminator: type
+# discriminatorValue: CategoryCreated
 properties:
   type:
+    default: CategoryCreated
     required: true
     type: string
   category:

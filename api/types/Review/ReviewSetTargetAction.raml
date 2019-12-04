@@ -2,10 +2,11 @@
 type: object
 (originalType): ReviewUpdateAction
 displayName: ReviewSetTargetAction
-
-discriminatorValue: setTarget
+# discriminator: action
+# discriminatorValue: setTarget
 properties:
   action:
+    default: setTarget
     required: true
     type: string
   target:

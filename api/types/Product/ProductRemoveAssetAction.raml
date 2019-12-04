@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductRemoveAssetAction
-
-discriminatorValue: removeAsset
+# discriminator: action
+# discriminatorValue: removeAsset
 properties:
   action:
+    default: removeAsset
     required: true
     type: string
   assetId:

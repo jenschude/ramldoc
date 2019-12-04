@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: ProductSlugChangedMessage
-
-discriminatorValue: ProductSlugChanged
+# discriminator: type
+# discriminatorValue: ProductSlugChanged
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: ProductSlugChanged
     required: true
     type: string
   slug:

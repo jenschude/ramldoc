@@ -2,10 +2,11 @@
 type: object
 (originalType): MyShoppingListUpdateAction
 displayName: MyShoppingListChangeTextLineItemNameAction
-
-discriminatorValue: changeTextLineItemName
+# discriminator: action
+# discriminatorValue: changeTextLineItemName
 properties:
   action:
+    default: changeTextLineItemName
     required: true
     type: string
   name:

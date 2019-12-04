@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetOrderTotalTaxAction
-
-discriminatorValue: setOrderTotalTax
+# discriminator: action
+# discriminatorValue: setOrderTotalTax
 properties:
   action:
+    default: setOrderTotalTax
     required: true
     type: string
   externalTaxPortions:

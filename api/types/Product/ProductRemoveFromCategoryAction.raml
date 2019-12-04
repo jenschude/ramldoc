@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductRemoveFromCategoryAction
-
-discriminatorValue: removeFromCategory
+# discriminator: action
+# discriminatorValue: removeFromCategory
 properties:
   action:
+    default: removeFromCategory
     required: true
     type: string
   staged:

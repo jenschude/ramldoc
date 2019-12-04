@@ -2,8 +2,8 @@
 type: object
 (originalType): TypedMoney
 displayName: HighPrecisionMoney
-
-discriminatorValue: highPrecision
+# discriminator: type
+# discriminatorValue: highPrecision
 properties:
   centAmount:
     required: true
@@ -15,6 +15,7 @@ properties:
     maximum: 12
     type: number
   type:
+    default: highPrecision
     required: true
     type: MoneyType
   currencyCode:

@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderRemoveCustomLineItemAction
-
-discriminatorValue: removeCustomLineItem
+# discriminator: action
+# discriminatorValue: removeCustomLineItem
 properties:
   action:
+    default: removeCustomLineItem
     required: true
     type: string
   customLineItemId:

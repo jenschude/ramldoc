@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentSetStatusInterfaceTextAction
-
-discriminatorValue: setStatusInterfaceText
+# discriminator: action
+# discriminatorValue: setStatusInterfaceText
 properties:
   action:
+    default: setStatusInterfaceText
     required: true
     type: string
   interfaceText:

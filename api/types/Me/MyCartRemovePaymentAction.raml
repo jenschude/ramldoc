@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCartUpdateAction
 displayName: MyCartRemovePaymentAction
-
-discriminatorValue: removePayment
+# discriminator: action
+# discriminatorValue: removePayment
 properties:
   action:
+    default: removePayment
     required: true
     type: string
   payment:

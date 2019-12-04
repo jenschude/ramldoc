@@ -2,10 +2,11 @@
 type: object
 (originalType): CustomerUpdateAction
 displayName: CustomerSetFirstNameAction
-
-discriminatorValue: setFirstName
+# discriminator: action
+# discriminatorValue: setFirstName
 properties:
   action:
+    default: setFirstName
     required: true
     type: string
   firstName:

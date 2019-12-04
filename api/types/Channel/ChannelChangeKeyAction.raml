@@ -2,10 +2,11 @@
 type: object
 (originalType): ChannelUpdateAction
 displayName: ChannelChangeKeyAction
-
-discriminatorValue: changeKey
+# discriminator: action
+# discriminatorValue: changeKey
 properties:
   action:
+    default: changeKey
     required: true
     type: string
   key:

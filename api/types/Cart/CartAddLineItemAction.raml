@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartAddLineItemAction
-
-discriminatorValue: addLineItem
+# discriminator: action
+# discriminatorValue: addLineItem
 properties:
   action:
+    default: addLineItem
     required: true
     type: string
   quantity:

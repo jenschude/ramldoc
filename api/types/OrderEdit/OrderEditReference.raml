@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: OrderEditReference
-
-discriminatorValue: order-edit
+# discriminator: typeId
+# discriminatorValue: order-edit
 properties:
   typeId:
+    default: order-edit
     required: true
     type: ReferenceTypeId
   id:

@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetShippingRateInputAction
-
-discriminatorValue: setShippingRateInput
+# discriminator: action
+# discriminatorValue: setShippingRateInput
 properties:
   action:
+    default: setShippingRateInput
     required: true
     type: string
   shippingRateInput:

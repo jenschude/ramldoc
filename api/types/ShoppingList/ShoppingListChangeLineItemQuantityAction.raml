@@ -2,10 +2,11 @@
 type: object
 (originalType): ShoppingListUpdateAction
 displayName: ShoppingListChangeLineItemQuantityAction
-
-discriminatorValue: changeLineItemQuantity
+# discriminator: action
+# discriminatorValue: changeLineItemQuantity
 properties:
   action:
+    default: changeLineItemQuantity
     required: true
     type: string
   quantity:

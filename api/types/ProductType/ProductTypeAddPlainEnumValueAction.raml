@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeAddPlainEnumValueAction
-
-discriminatorValue: addPlainEnumValue
+# discriminator: action
+# discriminatorValue: addPlainEnumValue
 properties:
   action:
+    default: addPlainEnumValue
     required: true
     type: string
   attributeName:

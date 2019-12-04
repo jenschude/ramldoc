@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentSetAmountRefundedAction
-
-discriminatorValue: setAmountRefunded
+# discriminator: action
+# discriminatorValue: setAmountRefunded
 properties:
   action:
+    default: setAmountRefunded
     required: true
     type: string
   amount:

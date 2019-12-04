@@ -2,10 +2,11 @@
 type: object
 (originalType): TypeUpdateAction
 displayName: TypeChangeInputHintAction
-
-discriminatorValue: changeInputHint
+# discriminator: action
+# discriminatorValue: changeInputHint
 properties:
   action:
+    default: changeInputHint
     required: true
     type: string
   fieldName:

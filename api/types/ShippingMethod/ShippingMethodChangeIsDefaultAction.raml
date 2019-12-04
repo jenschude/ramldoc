@@ -2,10 +2,11 @@
 type: object
 (originalType): ShippingMethodUpdateAction
 displayName: ShippingMethodChangeIsDefaultAction
-
-discriminatorValue: changeIsDefault
+# discriminator: action
+# discriminatorValue: changeIsDefault
 properties:
   action:
+    default: changeIsDefault
     required: true
     type: string
   isDefault:

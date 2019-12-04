@@ -2,10 +2,11 @@
 type: object
 (originalType): FieldType
 displayName: CustomFieldEnumType
-
-discriminatorValue: Enum
+# discriminator: name
+# discriminatorValue: Enum
 properties:
   name:
+    default: Enum
     required: true
     type: string
   values:

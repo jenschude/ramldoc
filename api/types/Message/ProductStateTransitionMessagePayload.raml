@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ProductStateTransitionMessagePayload
-
-discriminatorValue: ProductStateTransition
+# discriminator: type
+# discriminatorValue: ProductStateTransition
 properties:
   type:
+    default: ProductStateTransition
     required: true
     type: string
   force:

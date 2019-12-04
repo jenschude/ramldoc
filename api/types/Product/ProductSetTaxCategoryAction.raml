@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetTaxCategoryAction
-
-discriminatorValue: setTaxCategory
+# discriminator: action
+# discriminatorValue: setTaxCategory
 properties:
   action:
+    default: setTaxCategory
     required: true
     type: string
   taxCategory:

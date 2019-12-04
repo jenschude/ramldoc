@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: CustomerGroupSetMessage
-
-discriminatorValue: CustomerGroupSet
+# discriminator: type
+# discriminatorValue: CustomerGroupSet
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: CustomerGroupSet
     required: true
     type: string
   customerGroup:

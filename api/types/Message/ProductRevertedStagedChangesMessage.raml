@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: ProductRevertedStagedChangesMessage
-
-discriminatorValue: ProductRevertedStagedChanges
+# discriminator: type
+# discriminatorValue: ProductRevertedStagedChanges
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: ProductRevertedStagedChanges
     required: true
     type: string
   removedImageUrls:

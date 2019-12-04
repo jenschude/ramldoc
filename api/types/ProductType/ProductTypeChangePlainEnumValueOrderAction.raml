@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangePlainEnumValueOrderAction
-
-discriminatorValue: changePlainEnumValueOrder
+# discriminator: action
+# discriminatorValue: changePlainEnumValueOrder
 properties:
   action:
+    default: changePlainEnumValueOrder
     required: true
     type: string
   values:

@@ -2,10 +2,11 @@
 type: object
 (originalType): CustomerUpdateAction
 displayName: CustomerRemoveAddressAction
-
-discriminatorValue: removeAddress
+# discriminator: action
+# discriminatorValue: removeAddress
 properties:
   action:
+    default: removeAddress
     required: true
     type: string
   addressId:

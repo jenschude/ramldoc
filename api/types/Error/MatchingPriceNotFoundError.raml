@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: MatchingPriceNotFoundError
-
-discriminatorValue: MatchingPriceNotFound
+# discriminator: code
+# discriminatorValue: MatchingPriceNotFound
 properties:
   code:
+    default: MatchingPriceNotFound
     required: true
     type: string
   message:

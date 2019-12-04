@@ -2,10 +2,11 @@
 type: object
 (originalType): SubscriptionUpdateAction
 displayName: SubscriptionSetMessagesAction
-
-discriminatorValue: setMessages
+# discriminator: action
+# discriminatorValue: setMessages
 properties:
   action:
+    default: setMessages
     required: true
     type: string
   messages:

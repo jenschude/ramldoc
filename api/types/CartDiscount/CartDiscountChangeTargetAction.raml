@@ -2,10 +2,11 @@
 type: object
 (originalType): CartDiscountUpdateAction
 displayName: CartDiscountChangeTargetAction
-
-discriminatorValue: changeTarget
+# discriminator: action
+# discriminatorValue: changeTarget
 properties:
   action:
+    default: changeTarget
     required: true
     type: string
   target:

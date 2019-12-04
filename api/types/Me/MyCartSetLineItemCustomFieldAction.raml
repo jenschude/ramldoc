@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCartUpdateAction
 displayName: MyCartSetLineItemCustomFieldAction
-
-discriminatorValue: setLineItemCustomField
+# discriminator: action
+# discriminatorValue: setLineItemCustomField
 properties:
   action:
+    default: setLineItemCustomField
     required: true
     type: string
   lineItemId:

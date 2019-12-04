@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangeAttributeOrderAction
-
-discriminatorValue: changeAttributeOrder
+# discriminator: action
+# discriminatorValue: changeAttributeOrder
 properties:
   action:
+    default: changeAttributeOrder
     required: true
     type: string
   attributes:

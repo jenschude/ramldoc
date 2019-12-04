@@ -2,10 +2,11 @@
 type: object
 (originalType): InventoryEntryUpdateAction
 displayName: InventoryEntrySetRestockableInDaysAction
-
-discriminatorValue: setRestockableInDays
+# discriminator: action
+# discriminatorValue: setRestockableInDays
 properties:
   action:
+    default: setRestockableInDays
     required: true
     type: string
   restockableInDays:

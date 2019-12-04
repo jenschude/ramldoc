@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: CustomerGroupSetMessagePayload
-
-discriminatorValue: CustomerGroupSet
+# discriminator: type
+# discriminatorValue: CustomerGroupSet
 properties:
   type:
+    default: CustomerGroupSet
     required: true
     type: string
   customerGroup:

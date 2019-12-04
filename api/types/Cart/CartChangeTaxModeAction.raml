@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartChangeTaxModeAction
-
-discriminatorValue: changeTaxMode
+# discriminator: action
+# discriminatorValue: changeTaxMode
 properties:
   action:
+    default: changeTaxMode
     required: true
     type: string
   taxMode:

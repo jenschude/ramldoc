@@ -2,10 +2,11 @@
 type: object
 (originalType): ZoneUpdateAction
 displayName: ZoneRemoveLocationAction
-
-discriminatorValue: removeLocation
+# discriminator: action
+# discriminatorValue: removeLocation
 properties:
   action:
+    default: removeLocation
     required: true
     type: string
   location:

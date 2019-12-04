@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderSetParcelMeasurementsAction
-
-discriminatorValue: setParcelMeasurements
+# discriminator: action
+# discriminatorValue: setParcelMeasurements
 properties:
   action:
+    default: setParcelMeasurements
     required: true
     type: string
   measurements:

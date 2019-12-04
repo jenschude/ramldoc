@@ -2,10 +2,11 @@
 type: object
 (originalType): TaxCategoryUpdateAction
 displayName: TaxCategoryAddTaxRateAction
-
-discriminatorValue: addTaxRate
+# discriminator: action
+# discriminatorValue: addTaxRate
 properties:
   action:
+    default: addTaxRate
     required: true
     type: string
   taxRate:

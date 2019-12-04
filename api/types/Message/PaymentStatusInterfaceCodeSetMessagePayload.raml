@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: PaymentStatusInterfaceCodeSetMessagePayload
-
-discriminatorValue: PaymentStatusInterfaceCodeSet
+# discriminator: type
+# discriminatorValue: PaymentStatusInterfaceCodeSet
 properties:
   type:
+    default: PaymentStatusInterfaceCodeSet
     required: true
     type: string
   paymentId:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetSearchKeywordsAction
-
-discriminatorValue: setSearchKeywords
+# discriminator: action
+# discriminatorValue: setSearchKeywords
 properties:
   action:
+    default: setSearchKeywords
     required: true
     type: string
   searchKeywords:

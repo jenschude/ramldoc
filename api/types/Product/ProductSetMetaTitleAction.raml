@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetMetaTitleAction
-
-discriminatorValue: setMetaTitle
+# discriminator: action
+# discriminatorValue: setMetaTitle
 properties:
   action:
+    default: setMetaTitle
     required: true
     type: string
   metaTitle:

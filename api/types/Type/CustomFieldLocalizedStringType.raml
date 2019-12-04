@@ -2,9 +2,10 @@
 type: object
 (originalType): FieldType
 displayName: CustomFieldLocalizedStringType
-
-discriminatorValue: LocalizedString
+# discriminator: name
+# discriminatorValue: LocalizedString
 properties:
   name:
+    default: LocalizedString
     required: true
     type: string

@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetBillingAddressAction
-
-discriminatorValue: setBillingAddress
+# discriminator: action
+# discriminatorValue: setBillingAddress
 properties:
   action:
+    default: setBillingAddress
     required: true
     type: string
   address:

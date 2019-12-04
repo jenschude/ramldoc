@@ -2,10 +2,11 @@
 type: object
 (originalType): SubscriptionUpdateAction
 displayName: SubscriptionSetChangesAction
-
-discriminatorValue: setChanges
+# discriminator: action
+# discriminatorValue: setChanges
 properties:
   action:
+    default: setChanges
     required: true
     type: string
   changes:

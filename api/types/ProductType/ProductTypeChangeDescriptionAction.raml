@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangeDescriptionAction
-
-discriminatorValue: changeDescription
+# discriminator: action
+# discriminatorValue: changeDescription
 properties:
   action:
+    default: changeDescription
     required: true
     type: string
   description:

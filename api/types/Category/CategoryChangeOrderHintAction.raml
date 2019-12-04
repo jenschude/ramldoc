@@ -2,10 +2,11 @@
 type: object
 (originalType): CategoryUpdateAction
 displayName: CategoryChangeOrderHintAction
-
-discriminatorValue: changeOrderHint
+# discriminator: action
+# discriminatorValue: changeOrderHint
 properties:
   action:
+    default: changeOrderHint
     required: true
     type: string
   orderHint:

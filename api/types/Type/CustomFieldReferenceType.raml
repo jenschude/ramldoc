@@ -2,10 +2,11 @@
 type: object
 (originalType): FieldType
 displayName: CustomFieldReferenceType
-
-discriminatorValue: Reference
+# discriminator: name
+# discriminatorValue: Reference
 properties:
   name:
+    default: Reference
     required: true
     type: string
   referenceTypeId:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ChannelUpdateAction
 displayName: ChannelRemoveRolesAction
-
-discriminatorValue: removeRoles
+# discriminator: action
+# discriminatorValue: removeRoles
 properties:
   action:
+    default: removeRoles
     required: true
     type: string
   roles:

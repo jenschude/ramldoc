@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderImportLineItemStateAction
-
-discriminatorValue: importLineItemState
+# discriminator: action
+# discriminatorValue: importLineItemState
 properties:
   action:
+    default: importLineItemState
     required: true
     type: string
   lineItemId:

@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: ReviewStateTransitionMessage
-
-discriminatorValue: ReviewStateTransition
+# discriminator: type
+# discriminatorValue: ReviewStateTransition
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: ReviewStateTransition
     required: true
     type: string
   newIncludedInStatistics:

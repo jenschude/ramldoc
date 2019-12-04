@@ -2,10 +2,11 @@
 type: object
 (originalType): ShippingMethodUpdateAction
 displayName: ShippingMethodRemoveShippingRateAction
-
-discriminatorValue: removeShippingRate
+# discriminator: action
+# discriminatorValue: removeShippingRate
 properties:
   action:
+    default: removeShippingRate
     required: true
     type: string
   shippingRate:

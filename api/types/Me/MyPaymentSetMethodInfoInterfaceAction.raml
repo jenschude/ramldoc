@@ -2,10 +2,11 @@
 type: object
 (originalType): MyPaymentUpdateAction
 displayName: MyPaymentSetMethodInfoInterfaceAction
-
-discriminatorValue: setMethodInfoInterface
+# discriminator: action
+# discriminatorValue: setMethodInfoInterface
 properties:
   action:
+    default: setMethodInfoInterface
     required: true
     type: string
   interface:

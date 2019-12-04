@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductDiscountUpdateAction
 displayName: ProductDiscountSetValidFromAction
-
-discriminatorValue: setValidFrom
+# discriminator: action
+# discriminatorValue: setValidFrom
 properties:
   action:
+    default: setValidFrom
     required: true
     type: string
   validFrom:

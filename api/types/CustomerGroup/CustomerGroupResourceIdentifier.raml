@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: CustomerGroupResourceIdentifier
-
-discriminatorValue: customer-group
+# discriminator: typeId
+# discriminatorValue: customer-group
 properties:
   typeId:
+    default: customer-group
     required: false
     type: ReferenceTypeId
   id:

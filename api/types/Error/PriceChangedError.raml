@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: PriceChangedError
-
-discriminatorValue: PriceChanged
+# discriminator: code
+# discriminatorValue: PriceChanged
 properties:
   code:
+    default: PriceChanged
     required: true
     type: string
   message:

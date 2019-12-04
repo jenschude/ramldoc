@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetLineItemTaxAmountAction
-
-discriminatorValue: setLineItemTaxAmount
+# discriminator: action
+# discriminatorValue: setLineItemTaxAmount
 properties:
   action:
+    default: setLineItemTaxAmount
     required: true
     type: string
   lineItemId:

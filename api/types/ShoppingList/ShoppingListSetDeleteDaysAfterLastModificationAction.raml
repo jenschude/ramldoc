@@ -2,10 +2,11 @@
 type: object
 (originalType): ShoppingListUpdateAction
 displayName: ShoppingListSetDeleteDaysAfterLastModificationAction
-
-discriminatorValue: setDeleteDaysAfterLastModification
+# discriminator: action
+# discriminatorValue: setDeleteDaysAfterLastModification
 properties:
   action:
+    default: setDeleteDaysAfterLastModification
     required: true
     type: string
   deleteDaysAfterLastModification:

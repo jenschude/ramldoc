@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ReviewStateTransitionMessagePayload
-
-discriminatorValue: ReviewStateTransition
+# discriminator: type
+# discriminatorValue: ReviewStateTransition
 properties:
   type:
+    default: ReviewStateTransition
     required: true
     type: string
   newIncludedInStatistics:

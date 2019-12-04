@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetShippingRateInputAction
-
-discriminatorValue: setShippingRateInput
+# discriminator: action
+# discriminatorValue: setShippingRateInput
 properties:
   action:
+    default: setShippingRateInput
     required: true
     type: string
   shippingRateInput:

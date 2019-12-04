@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: ChannelResourceIdentifier
-
-discriminatorValue: channel
+# discriminator: typeId
+# discriminatorValue: channel
 properties:
   typeId:
+    default: channel
     required: false
     type: ReferenceTypeId
   id:

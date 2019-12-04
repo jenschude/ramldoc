@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetAssetDescriptionAction
-
-discriminatorValue: setAssetDescription
+# discriminator: action
+# discriminatorValue: setAssetDescription
 properties:
   action:
+    default: setAssetDescription
     required: true
     type: string
   assetId:

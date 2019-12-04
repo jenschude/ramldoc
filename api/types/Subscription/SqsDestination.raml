@@ -2,10 +2,11 @@
 type: object
 (originalType): Destination
 displayName: SqsDestination
-
-discriminatorValue: SQS
+# discriminator: type
+# discriminatorValue: SQS
 properties:
   type:
+    default: SQS
     required: true
     type: string
   accessKey:

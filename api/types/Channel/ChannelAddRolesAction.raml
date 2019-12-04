@@ -2,10 +2,11 @@
 type: object
 (originalType): ChannelUpdateAction
 displayName: ChannelAddRolesAction
-
-discriminatorValue: addRoles
+# discriminator: action
+# discriminatorValue: addRoles
 properties:
   action:
+    default: addRoles
     required: true
     type: string
   roles:

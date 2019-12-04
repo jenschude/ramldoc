@@ -2,10 +2,11 @@
 type: object
 (originalType): FacetResult
 displayName: RangeFacetResult
-
-discriminatorValue: range
+# discriminator: type
+# discriminatorValue: range
 properties:
   type:
+    default: range
     required: true
     type: FacetTypes
   ranges:

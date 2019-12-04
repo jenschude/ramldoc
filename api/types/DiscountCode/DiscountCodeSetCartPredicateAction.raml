@@ -2,10 +2,11 @@
 type: object
 (originalType): DiscountCodeUpdateAction
 displayName: DiscountCodeSetCartPredicateAction
-
-discriminatorValue: setCartPredicate
+# discriminator: action
+# discriminatorValue: setCartPredicate
 properties:
   action:
+    default: setCartPredicate
     required: true
     type: string
   cartPredicate:

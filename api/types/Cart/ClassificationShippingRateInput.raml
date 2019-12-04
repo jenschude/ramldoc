@@ -2,10 +2,11 @@
 type: object
 (originalType): ShippingRateInput
 displayName: ClassificationShippingRateInput
-
-discriminatorValue: Classification
+# discriminator: type
+# discriminatorValue: Classification
 properties:
   type:
+    default: Classification
     required: true
     type: string
   label:

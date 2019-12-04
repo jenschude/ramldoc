@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderEditUpdateAction
 displayName: OrderEditSetCommentAction
-
-discriminatorValue: setComment
+# discriminator: action
+# discriminatorValue: setComment
 properties:
   action:
+    default: setComment
     required: true
     type: string
   comment:

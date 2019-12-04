@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderChangeShipmentStateAction
-
-discriminatorValue: changeShipmentState
+# discriminator: action
+# discriminatorValue: changeShipmentState
 properties:
   action:
+    default: changeShipmentState
     required: true
     type: string
   shipmentState:

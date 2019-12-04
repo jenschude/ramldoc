@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetCountryAction
-
-discriminatorValue: setCountry
+# discriminator: action
+# discriminatorValue: setCountry
 properties:
   action:
+    default: setCountry
     required: true
     type: string
   country:

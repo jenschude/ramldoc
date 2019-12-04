@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: ParcelTrackingDataUpdatedMessage
-
-discriminatorValue: ParcelTrackingDataUpdated
+# discriminator: type
+# discriminatorValue: ParcelTrackingDataUpdated
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: ParcelTrackingDataUpdated
     required: true
     type: string
   deliveryId:

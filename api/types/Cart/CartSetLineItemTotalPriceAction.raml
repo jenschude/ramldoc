@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetLineItemTotalPriceAction
-
-discriminatorValue: setLineItemTotalPrice
+# discriminator: action
+# discriminatorValue: setLineItemTotalPrice
 properties:
   action:
+    default: setLineItemTotalPrice
     required: true
     type: string
   externalTotalPrice:

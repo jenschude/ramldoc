@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderReturnInfoAddedMessagePayload
-
-discriminatorValue: ReturnInfoAdded
+# discriminator: type
+# discriminatorValue: ReturnInfoAdded
 properties:
   type:
+    default: ReturnInfoAdded
     required: true
     type: string
   returnInfo:

@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetCustomLineItemShippingDetailsAction
-
-discriminatorValue: setCustomLineItemShippingDetails
+# discriminator: action
+# discriminatorValue: setCustomLineItemShippingDetails
 properties:
   action:
+    default: setCustomLineItemShippingDetails
     required: true
     type: string
   customLineItemId:

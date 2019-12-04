@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartAddShoppingListAction
-
-discriminatorValue: addShoppingList
+# discriminator: action
+# discriminatorValue: addShoppingList
 properties:
   action:
+    default: addShoppingList
     required: true
     type: string
   shoppingList:

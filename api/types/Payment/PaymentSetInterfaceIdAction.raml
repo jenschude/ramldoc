@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentSetInterfaceIdAction
-
-discriminatorValue: setInterfaceId
+# discriminator: action
+# discriminatorValue: setInterfaceId
 properties:
   action:
+    default: setInterfaceId
     required: true
     type: string
   interfaceId:

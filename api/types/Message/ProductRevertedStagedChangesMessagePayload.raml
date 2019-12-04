@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ProductRevertedStagedChangesMessagePayload
-
-discriminatorValue: ProductRevertedStagedChanges
+# discriminator: type
+# discriminatorValue: ProductRevertedStagedChanges
 properties:
   type:
+    default: ProductRevertedStagedChanges
     required: true
     type: string
   removedImageUrls:

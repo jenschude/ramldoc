@@ -2,10 +2,11 @@
 type: object
 (originalType): ShippingMethodUpdateAction
 displayName: ShippingMethodAddZoneAction
-
-discriminatorValue: addZone
+# discriminator: action
+# discriminatorValue: addZone
 properties:
   action:
+    default: addZone
     required: true
     type: string
   zone:

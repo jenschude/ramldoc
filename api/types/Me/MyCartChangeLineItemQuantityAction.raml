@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCartUpdateAction
 displayName: MyCartChangeLineItemQuantityAction
-
-discriminatorValue: changeLineItemQuantity
+# discriminator: action
+# discriminatorValue: changeLineItemQuantity
 properties:
   action:
+    default: changeLineItemQuantity
     required: true
     type: string
   quantity:

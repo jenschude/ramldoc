@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductChangeAssetOrderAction
-
-discriminatorValue: changeAssetOrder
+# discriminator: action
+# discriminatorValue: changeAssetOrder
 properties:
   action:
+    default: changeAssetOrder
     required: true
     type: string
   assetOrder:

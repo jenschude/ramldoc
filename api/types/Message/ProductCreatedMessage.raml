@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: ProductCreatedMessage
-
-discriminatorValue: ProductCreated
+# discriminator: type
+# discriminatorValue: ProductCreated
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: ProductCreated
     required: true
     type: string
   productProjection:

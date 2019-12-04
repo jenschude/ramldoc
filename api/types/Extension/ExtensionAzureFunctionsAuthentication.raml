@@ -2,10 +2,11 @@
 type: object
 (originalType): ExtensionHttpDestinationAuthentication
 displayName: ExtensionAzureFunctionsAuthentication
-
-discriminatorValue: AzureFunctions
+# discriminator: type
+# discriminatorValue: AzureFunctions
 properties:
   type:
+    default: AzureFunctions
     required: true
     type: string
   key:

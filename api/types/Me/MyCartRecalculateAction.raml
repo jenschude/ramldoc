@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCartUpdateAction
 displayName: MyCartRecalculateAction
-
-discriminatorValue: recalculate
+# discriminator: action
+# discriminatorValue: recalculate
 properties:
   action:
+    default: recalculate
     required: true
     type: string
   updateProductData:

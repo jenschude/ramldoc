@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: ShippingMethodReference
-
-discriminatorValue: shipping-method
+# discriminator: typeId
+# discriminatorValue: shipping-method
 properties:
   typeId:
+    default: shipping-method
     required: true
     type: ReferenceTypeId
   id:

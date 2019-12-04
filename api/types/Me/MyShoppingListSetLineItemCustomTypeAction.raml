@@ -2,10 +2,11 @@
 type: object
 (originalType): MyShoppingListUpdateAction
 displayName: MyShoppingListSetLineItemCustomTypeAction
-
-discriminatorValue: setLineItemCustomType
+# discriminator: action
+# discriminatorValue: setLineItemCustomType
 properties:
   action:
+    default: setLineItemCustomType
     required: true
     type: string
   lineItemId:

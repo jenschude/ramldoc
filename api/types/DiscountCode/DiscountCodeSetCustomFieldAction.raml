@@ -2,10 +2,11 @@
 type: object
 (originalType): DiscountCodeUpdateAction
 displayName: DiscountCodeSetCustomFieldAction
-
-discriminatorValue: setCustomField
+# discriminator: action
+# discriminatorValue: setCustomField
 properties:
   action:
+    default: setCustomField
     required: true
     type: string
   name:

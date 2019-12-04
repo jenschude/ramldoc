@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductRevertStagedVariantChangesAction
-
-discriminatorValue: revertStagedVariantChanges
+# discriminator: action
+# discriminatorValue: revertStagedVariantChanges
 properties:
   action:
+    default: revertStagedVariantChanges
     required: true
     type: string
   variantId:

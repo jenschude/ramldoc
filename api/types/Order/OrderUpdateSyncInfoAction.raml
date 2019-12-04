@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderUpdateSyncInfoAction
-
-discriminatorValue: updateSyncInfo
+# discriminator: action
+# discriminatorValue: updateSyncInfo
 properties:
   action:
+    default: updateSyncInfo
     required: true
     type: string
   channel:

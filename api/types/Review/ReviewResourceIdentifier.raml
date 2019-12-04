@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: ReviewResourceIdentifier
-
-discriminatorValue: review
+# discriminator: typeId
+# discriminatorValue: review
 properties:
   typeId:
+    default: review
     required: false
     type: ReferenceTypeId
   id:

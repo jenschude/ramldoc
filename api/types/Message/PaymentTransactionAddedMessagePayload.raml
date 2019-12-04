@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: PaymentTransactionAddedMessagePayload
-
-discriminatorValue: PaymentTransactionAdded
+# discriminator: type
+# discriminatorValue: PaymentTransactionAdded
 properties:
   type:
+    default: PaymentTransactionAdded
     required: true
     type: string
   transaction:

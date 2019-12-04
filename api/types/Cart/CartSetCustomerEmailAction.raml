@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetCustomerEmailAction
-
-discriminatorValue: setCustomerEmail
+# discriminator: action
+# discriminatorValue: setCustomerEmail
 properties:
   action:
+    default: setCustomerEmail
     required: true
     type: string
   email:

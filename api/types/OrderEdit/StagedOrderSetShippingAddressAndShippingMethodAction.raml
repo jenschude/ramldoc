@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetShippingAddressAndShippingMethodAction
-
-discriminatorValue: setShippingAddressAndShippingMethod
+# discriminator: action
+# discriminatorValue: setShippingAddressAndShippingMethod
 properties:
   action:
+    default: setShippingAddressAndShippingMethod
     required: true
     type: string
   externalTaxRate:

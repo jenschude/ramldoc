@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: CustomerCompanyNameSetMessagePayload
-
-discriminatorValue: CustomerCompanyNameSet
+# discriminator: type
+# discriminatorValue: CustomerCompanyNameSet
 properties:
   type:
+    default: CustomerCompanyNameSet
     required: true
     type: string
   companyName:

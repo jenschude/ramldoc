@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderAddPaymentAction
-
-discriminatorValue: addPayment
+# discriminator: action
+# discriminatorValue: addPayment
 properties:
   action:
+    default: addPayment
     required: true
     type: string
   payment:

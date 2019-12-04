@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductDiscountUpdateAction
 displayName: ProductDiscountSetDescriptionAction
-
-discriminatorValue: setDescription
+# discriminator: action
+# discriminatorValue: setDescription
 properties:
   action:
+    default: setDescription
     required: true
     type: string
   description:

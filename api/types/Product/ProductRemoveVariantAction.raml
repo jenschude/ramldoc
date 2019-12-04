@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductRemoveVariantAction
-
-discriminatorValue: removeVariant
+# discriminator: action
+# discriminatorValue: removeVariant
 properties:
   action:
+    default: removeVariant
     required: true
     type: string
   staged:

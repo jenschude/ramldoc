@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderPaymentStateChangedMessagePayload
-
-discriminatorValue: OrderPaymentStateChanged
+# discriminator: type
+# discriminatorValue: OrderPaymentStateChanged
 properties:
   type:
+    default: OrderPaymentStateChanged
     required: true
     type: string
   oldPaymentState:

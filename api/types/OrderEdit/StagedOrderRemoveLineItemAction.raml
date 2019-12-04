@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderRemoveLineItemAction
-
-discriminatorValue: removeLineItem
+# discriminator: action
+# discriminatorValue: removeLineItem
 properties:
   action:
+    default: removeLineItem
     required: true
     type: string
   quantity:

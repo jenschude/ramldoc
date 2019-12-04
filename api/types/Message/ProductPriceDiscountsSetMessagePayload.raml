@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ProductPriceDiscountsSetMessagePayload
-
-discriminatorValue: ProductPriceDiscountsSet
+# discriminator: type
+# discriminatorValue: ProductPriceDiscountsSet
 properties:
   type:
+    default: ProductPriceDiscountsSet
     required: true
     type: string
   updatedPrices:

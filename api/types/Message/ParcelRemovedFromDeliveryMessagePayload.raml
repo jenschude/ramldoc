@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ParcelRemovedFromDeliveryMessagePayload
-
-discriminatorValue: ParcelRemovedFromDelivery
+# discriminator: type
+# discriminatorValue: ParcelRemovedFromDelivery
 properties:
   type:
+    default: ParcelRemovedFromDelivery
     required: true
     type: string
   parcel:

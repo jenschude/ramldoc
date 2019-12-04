@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderSetCustomerIdAction
-
-discriminatorValue: setCustomerId
+# discriminator: action
+# discriminatorValue: setCustomerId
 properties:
   action:
+    default: setCustomerId
     required: true
     type: string
   customerId:

@@ -2,10 +2,11 @@
 type: object
 (originalType): CustomerUpdateAction
 displayName: CustomerChangeEmailAction
-
-discriminatorValue: changeEmail
+# discriminator: action
+# discriminatorValue: changeEmail
 properties:
   action:
+    default: changeEmail
     required: true
     type: string
   email:

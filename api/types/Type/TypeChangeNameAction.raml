@@ -2,10 +2,11 @@
 type: object
 (originalType): TypeUpdateAction
 displayName: TypeChangeNameAction
-
-discriminatorValue: changeName
+# discriminator: action
+# discriminatorValue: changeName
 properties:
   action:
+    default: changeName
     required: true
     type: string
   name:

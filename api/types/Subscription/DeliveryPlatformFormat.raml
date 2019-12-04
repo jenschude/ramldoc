@@ -2,9 +2,10 @@
 type: object
 (originalType): DeliveryFormat
 displayName: DeliveryPlatformFormat
-
-discriminatorValue: Platform
+# discriminator: type
+# discriminatorValue: Platform
 properties:
   type:
+    default: Platform
     required: true
     type: string

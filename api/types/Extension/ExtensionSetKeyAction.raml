@@ -2,10 +2,11 @@
 type: object
 (originalType): ExtensionUpdateAction
 displayName: ExtensionSetKeyAction
-
-discriminatorValue: setKey
+# discriminator: action
+# discriminatorValue: setKey
 properties:
   action:
+    default: setKey
     required: true
     type: string
   key:

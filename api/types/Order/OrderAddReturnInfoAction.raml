@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderAddReturnInfoAction
-
-discriminatorValue: addReturnInfo
+# discriminator: action
+# discriminatorValue: addReturnInfo
 properties:
   action:
+    default: addReturnInfo
     required: true
     type: string
   returnDate:

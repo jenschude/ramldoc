@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: OrderCreatedMessage
-
-discriminatorValue: OrderCreated
+# discriminator: type
+# discriminatorValue: OrderCreated
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: OrderCreated
     required: true
     type: string
   order:

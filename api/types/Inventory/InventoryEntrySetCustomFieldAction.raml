@@ -2,10 +2,11 @@
 type: object
 (originalType): InventoryEntryUpdateAction
 displayName: InventoryEntrySetCustomFieldAction
-
-discriminatorValue: setCustomField
+# discriminator: action
+# discriminatorValue: setCustomField
 properties:
   action:
+    default: setCustomField
     required: true
     type: string
   name:

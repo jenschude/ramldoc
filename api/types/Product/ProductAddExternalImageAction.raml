@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductAddExternalImageAction
-
-discriminatorValue: addExternalImage
+# discriminator: action
+# discriminatorValue: addExternalImage
 properties:
   action:
+    default: addExternalImage
     required: true
     type: string
   image:

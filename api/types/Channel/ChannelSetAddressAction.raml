@@ -2,10 +2,11 @@
 type: object
 (originalType): ChannelUpdateAction
 displayName: ChannelSetAddressAction
-
-discriminatorValue: setAddress
+# discriminator: action
+# discriminatorValue: setAddress
 properties:
   action:
+    default: setAddress
     required: true
     type: string
   address:

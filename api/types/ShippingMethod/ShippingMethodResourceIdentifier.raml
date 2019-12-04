@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: ShippingMethodResourceIdentifier
-
-discriminatorValue: shipping-method
+# discriminator: typeId
+# discriminatorValue: shipping-method
 properties:
   typeId:
+    default: shipping-method
     required: false
     type: ReferenceTypeId
   id:

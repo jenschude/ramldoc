@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: InvalidTokenError
-
-discriminatorValue: invalid_token
+# discriminator: code
+# discriminatorValue: invalid_token
 properties:
   code:
+    default: invalid_token
     required: true
     type: string
   message:

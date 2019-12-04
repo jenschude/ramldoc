@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderAddItemShippingAddressAction
-
-discriminatorValue: addItemShippingAddress
+# discriminator: action
+# discriminatorValue: addItemShippingAddress
 properties:
   action:
+    default: addItemShippingAddress
     required: true
     type: string
   address:

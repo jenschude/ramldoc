@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductDiscountUpdateAction
 displayName: ProductDiscountSetValidUntilAction
-
-discriminatorValue: setValidUntil
+# discriminator: action
+# discriminatorValue: setValidUntil
 properties:
   action:
+    default: setValidUntil
     required: true
     type: string
   validUntil:

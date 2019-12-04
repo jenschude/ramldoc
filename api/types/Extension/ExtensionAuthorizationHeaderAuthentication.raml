@@ -2,10 +2,11 @@
 type: object
 (originalType): ExtensionHttpDestinationAuthentication
 displayName: ExtensionAuthorizationHeaderAuthentication
-
-discriminatorValue: AuthorizationHeader
+# discriminator: type
+# discriminatorValue: AuthorizationHeader
 properties:
   type:
+    default: AuthorizationHeader
     required: true
     type: string
   headerValue:

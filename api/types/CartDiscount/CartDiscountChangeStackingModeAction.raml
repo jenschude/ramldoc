@@ -2,10 +2,11 @@
 type: object
 (originalType): CartDiscountUpdateAction
 displayName: CartDiscountChangeStackingModeAction
-
-discriminatorValue: changeStackingMode
+# discriminator: action
+# discriminatorValue: changeStackingMode
 properties:
   action:
+    default: changeStackingMode
     required: true
     type: string
   stackingMode:

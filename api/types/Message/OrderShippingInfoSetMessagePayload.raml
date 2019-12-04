@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderShippingInfoSetMessagePayload
-
-discriminatorValue: OrderShippingInfoSet
+# discriminator: type
+# discriminatorValue: OrderShippingInfoSet
 properties:
   type:
+    default: OrderShippingInfoSet
     required: true
     type: string
   shippingInfo:

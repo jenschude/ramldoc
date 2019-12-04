@@ -2,10 +2,11 @@
 type: object
 (originalType): ZoneUpdateAction
 displayName: ZoneAddLocationAction
-
-discriminatorValue: addLocation
+# discriminator: action
+# discriminatorValue: addLocation
 properties:
   action:
+    default: addLocation
     required: true
     type: string
   location:

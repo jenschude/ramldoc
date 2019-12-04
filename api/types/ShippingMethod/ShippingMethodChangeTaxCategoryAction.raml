@@ -2,10 +2,11 @@
 type: object
 (originalType): ShippingMethodUpdateAction
 displayName: ShippingMethodChangeTaxCategoryAction
-
-discriminatorValue: changeTaxCategory
+# discriminator: action
+# discriminatorValue: changeTaxCategory
 properties:
   action:
+    default: changeTaxCategory
     required: true
     type: string
   taxCategory:

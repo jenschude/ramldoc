@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: ZoneReference
-
-discriminatorValue: zone
+# discriminator: typeId
+# discriminatorValue: zone
 properties:
   typeId:
+    default: zone
     required: true
     type: ReferenceTypeId
   id:

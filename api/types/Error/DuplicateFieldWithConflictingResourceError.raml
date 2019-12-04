@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: DuplicateFieldWithConflictingResourceError
-
-discriminatorValue: DuplicateFieldWithConflictingResource
+# discriminator: code
+# discriminatorValue: DuplicateFieldWithConflictingResource
 properties:
   code:
+    default: DuplicateFieldWithConflictingResource
     required: true
     type: string
   message:

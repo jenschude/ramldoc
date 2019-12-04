@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCartUpdateAction
 displayName: MyCartSetShippingAddressAction
-
-discriminatorValue: setShippingAddress
+# discriminator: action
+# discriminatorValue: setShippingAddress
 properties:
   action:
+    default: setShippingAddress
     required: true
     type: string
   address:

@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: CustomObjectReference
-
-discriminatorValue: key-value-document
+# discriminator: typeId
+# discriminatorValue: key-value-document
 properties:
   typeId:
+    default: key-value-document
     required: true
     type: ReferenceTypeId
   id:

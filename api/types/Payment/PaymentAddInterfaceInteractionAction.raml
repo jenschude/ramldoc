@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentAddInterfaceInteractionAction
-
-discriminatorValue: addInterfaceInteraction
+# discriminator: action
+# discriminatorValue: addInterfaceInteraction
 properties:
   action:
+    default: addInterfaceInteraction
     required: true
     type: string
   fields:

@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetParcelMeasurementsAction
-
-discriminatorValue: setParcelMeasurements
+# discriminator: action
+# discriminatorValue: setParcelMeasurements
 properties:
   action:
+    default: setParcelMeasurements
     required: true
     type: string
   measurements:

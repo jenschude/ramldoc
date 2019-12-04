@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: StateResourceIdentifier
-
-discriminatorValue: state
+# discriminator: typeId
+# discriminatorValue: state
 properties:
   typeId:
+    default: state
     required: false
     type: ReferenceTypeId
   id:

@@ -2,10 +2,11 @@
 type: object
 (originalType): CategoryUpdateAction
 displayName: CategoryChangeAssetNameAction
-
-discriminatorValue: changeAssetName
+# discriminator: action
+# discriminatorValue: changeAssetName
 properties:
   action:
+    default: changeAssetName
     required: true
     type: string
   assetId:

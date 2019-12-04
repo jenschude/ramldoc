@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductAddPriceAction
-
-discriminatorValue: addPrice
+# discriminator: action
+# discriminatorValue: addPrice
 properties:
   action:
+    default: addPrice
     required: true
     type: string
   price:

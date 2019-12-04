@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: ReviewReference
-
-discriminatorValue: review
+# discriminator: typeId
+# discriminatorValue: review
 properties:
   typeId:
+    default: review
     required: true
     type: ReferenceTypeId
   id:

@@ -2,10 +2,11 @@
 type: object
 (originalType): CategoryUpdateAction
 displayName: CategorySetAssetCustomFieldAction
-
-discriminatorValue: setAssetCustomField
+# discriminator: action
+# discriminatorValue: setAssetCustomField
 properties:
   action:
+    default: setAssetCustomField
     required: true
     type: string
   assetId:

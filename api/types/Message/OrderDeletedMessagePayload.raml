@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderDeletedMessagePayload
-
-discriminatorValue: OrderDeleted
+# discriminator: type
+# discriminatorValue: OrderDeleted
 properties:
   type:
+    default: OrderDeleted
     required: true
     type: string
   order:

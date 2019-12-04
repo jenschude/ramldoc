@@ -2,10 +2,11 @@
 type: object
 (originalType): CartDiscountValue
 displayName: CartDiscountValueGiftLineItem
-
-discriminatorValue: giftLineItem
+# discriminator: type
+# discriminatorValue: giftLineItem
 properties:
   type:
+    default: giftLineItem
     required: true
     type: string
   product:

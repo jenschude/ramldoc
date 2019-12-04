@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: ZoneResourceIdentifier
-
-discriminatorValue: zone
+# discriminator: typeId
+# discriminatorValue: zone
 properties:
   typeId:
+    default: zone
     required: false
     type: ReferenceTypeId
   id:

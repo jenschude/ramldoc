@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ProductAddedToCategoryMessagePayload
-
-discriminatorValue: ProductAddedToCategory
+# discriminator: type
+# discriminatorValue: ProductAddedToCategory
 properties:
   type:
+    default: ProductAddedToCategory
     required: true
     type: string
   staged:

@@ -2,10 +2,11 @@
 type: object
 (originalType): AttributeType
 displayName: AttributeEnumType
-
-discriminatorValue: enum
+# discriminator: name
+# discriminatorValue: enum
 properties:
   name:
+    default: enum
     required: true
     type: string
   values:

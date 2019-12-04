@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: StateReference
-
-discriminatorValue: state
+# discriminator: typeId
+# discriminatorValue: state
 properties:
   typeId:
+    default: state
     required: true
     type: ReferenceTypeId
   id:

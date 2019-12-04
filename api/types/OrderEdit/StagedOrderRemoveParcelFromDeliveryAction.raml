@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderRemoveParcelFromDeliveryAction
-
-discriminatorValue: removeParcelFromDelivery
+# discriminator: action
+# discriminatorValue: removeParcelFromDelivery
 properties:
   action:
+    default: removeParcelFromDelivery
     required: true
     type: string
   parcelId:

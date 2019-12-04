@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ReviewRatingSetMessagePayload
-
-discriminatorValue: ReviewRatingSet
+# discriminator: type
+# discriminatorValue: ReviewRatingSet
 properties:
   type:
+    default: ReviewRatingSet
     required: true
     type: string
   oldRating:

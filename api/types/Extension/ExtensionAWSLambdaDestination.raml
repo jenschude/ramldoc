@@ -2,10 +2,11 @@
 type: object
 (originalType): ExtensionDestination
 displayName: ExtensionAWSLambdaDestination
-
-discriminatorValue: AWSLambda
+# discriminator: type
+# discriminatorValue: AWSLambda
 properties:
   type:
+    default: AWSLambda
     required: true
     type: string
   accessKey:

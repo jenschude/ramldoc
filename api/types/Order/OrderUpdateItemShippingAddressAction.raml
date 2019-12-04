@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderUpdateItemShippingAddressAction
-
-discriminatorValue: updateItemShippingAddress
+# discriminator: action
+# discriminatorValue: updateItemShippingAddress
 properties:
   action:
+    default: updateItemShippingAddress
     required: true
     type: string
   address:

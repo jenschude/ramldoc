@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: CustomerCompanyNameSetMessage
-
-discriminatorValue: CustomerCompanyNameSet
+# discriminator: type
+# discriminatorValue: CustomerCompanyNameSet
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: CustomerCompanyNameSet
     required: true
     type: string
   companyName:

@@ -2,8 +2,8 @@
 type: object
 (originalType): SubscriptionDelivery
 displayName: ResourceCreatedDelivery
-
-discriminatorValue: ResourceCreated
+# discriminator: notificationType
+# discriminatorValue: ResourceCreated
 properties:
   projectKey:
     required: true
@@ -15,6 +15,7 @@ properties:
     required: false
     type: UserProvidedIdentifiers
   notificationType:
+    default: ResourceCreated
     required: true
     type: string
   modifiedAt:

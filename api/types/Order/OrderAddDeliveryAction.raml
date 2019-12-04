@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderAddDeliveryAction
-
-discriminatorValue: addDelivery
+# discriminator: action
+# discriminatorValue: addDelivery
 properties:
   action:
+    default: addDelivery
     required: true
     type: string
   address:

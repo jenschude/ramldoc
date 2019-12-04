@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderCustomLineItemDiscountSetMessagePayload
-
-discriminatorValue: OrderCustomLineItemDiscountSet
+# discriminator: type
+# discriminatorValue: OrderCustomLineItemDiscountSet
 properties:
   type:
+    default: OrderCustomLineItemDiscountSet
     required: true
     type: string
   customLineItemId:

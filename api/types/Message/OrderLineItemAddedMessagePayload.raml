@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderLineItemAddedMessagePayload
-
-discriminatorValue: OrderLineItemAdded
+# discriminator: type
+# discriminatorValue: OrderLineItemAdded
 properties:
   type:
+    default: OrderLineItemAdded
     required: true
     type: string
   lineItem:

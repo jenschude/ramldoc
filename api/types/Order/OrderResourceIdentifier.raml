@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: OrderResourceIdentifier
-
-discriminatorValue: order
+# discriminator: typeId
+# discriminatorValue: order
 properties:
   typeId:
+    default: order
     required: false
     type: ReferenceTypeId
   id:

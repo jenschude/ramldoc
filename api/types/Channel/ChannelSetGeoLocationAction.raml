@@ -2,10 +2,11 @@
 type: object
 (originalType): ChannelUpdateAction
 displayName: ChannelSetGeoLocationAction
-
-discriminatorValue: setGeoLocation
+# discriminator: action
+# discriminatorValue: setGeoLocation
 properties:
   action:
+    default: setGeoLocation
     required: true
     type: string
   geoLocation:

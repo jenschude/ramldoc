@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductAddToCategoryAction
-
-discriminatorValue: addToCategory
+# discriminator: action
+# discriminatorValue: addToCategory
 properties:
   action:
+    default: addToCategory
     required: true
     type: string
   orderHint:

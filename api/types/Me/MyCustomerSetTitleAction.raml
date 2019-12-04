@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCustomerUpdateAction
 displayName: MyCustomerSetTitleAction
-
-discriminatorValue: setTitle
+# discriminator: action
+# discriminatorValue: setTitle
 properties:
   action:
+    default: setTitle
     required: true
     type: string
   title:

@@ -2,8 +2,8 @@
 type: object
 (originalType): TypedMoneyDraft
 displayName: HighPrecisionMoneyDraft
-
-discriminatorValue: highPrecision
+# discriminator: type
+# discriminatorValue: highPrecision
 properties:
   centAmount:
     required: true
@@ -15,6 +15,7 @@ properties:
       The currency code compliant to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
     type: CurrencyCode
   type:
+    default: highPrecision
     required: true
     type: MoneyType
   preciseAmount:

@@ -2,10 +2,11 @@
 type: object
 (originalType): Destination
 displayName: AzureEventGridDestination
-
-discriminatorValue: EventGrid
+# discriminator: type
+# discriminatorValue: EventGrid
 properties:
   type:
+    default: EventGrid
     required: true
     type: string
   accessKey:

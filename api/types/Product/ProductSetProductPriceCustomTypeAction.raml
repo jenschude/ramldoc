@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetProductPriceCustomTypeAction
-
-discriminatorValue: setProductPriceCustomType
+# discriminator: action
+# discriminatorValue: setProductPriceCustomType
 properties:
   action:
+    default: setProductPriceCustomType
     required: true
     type: string
   staged:

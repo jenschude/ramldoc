@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: ExtensionBadResponseError
-
-discriminatorValue: ExtensionBadResponse
+# discriminator: code
+# discriminatorValue: ExtensionBadResponse
 properties:
   code:
+    default: ExtensionBadResponse
     required: true
     type: string
   message:

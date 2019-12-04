@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: ChannelReference
-
-discriminatorValue: channel
+# discriminator: typeId
+# discriminatorValue: channel
 properties:
   typeId:
+    default: channel
     required: true
     type: ReferenceTypeId
   id:

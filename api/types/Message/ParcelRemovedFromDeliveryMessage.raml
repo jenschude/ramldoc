@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: ParcelRemovedFromDeliveryMessage
-
-discriminatorValue: ParcelRemovedFromDelivery
+# discriminator: type
+# discriminatorValue: ParcelRemovedFromDelivery
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: ParcelRemovedFromDelivery
     required: true
     type: string
   parcel:

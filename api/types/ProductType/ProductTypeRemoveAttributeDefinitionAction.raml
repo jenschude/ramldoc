@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeRemoveAttributeDefinitionAction
-
-discriminatorValue: removeAttributeDefinition
+# discriminator: action
+# discriminatorValue: removeAttributeDefinition
 properties:
   action:
+    default: removeAttributeDefinition
     required: true
     type: string
   name:

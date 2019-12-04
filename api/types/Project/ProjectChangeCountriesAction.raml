@@ -2,10 +2,11 @@
 type: object
 (originalType): ProjectUpdateAction
 displayName: ProjectChangeCountriesAction
-
-discriminatorValue: changeCountries
+# discriminator: action
+# discriminatorValue: changeCountries
 properties:
   action:
+    default: changeCountries
     required: true
     type: string
   countries:

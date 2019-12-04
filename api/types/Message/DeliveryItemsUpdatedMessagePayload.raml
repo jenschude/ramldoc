@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: DeliveryItemsUpdatedMessagePayload
-
-discriminatorValue: DeliveryItemsUpdated
+# discriminator: type
+# discriminatorValue: DeliveryItemsUpdated
 properties:
   type:
+    default: DeliveryItemsUpdated
     required: true
     type: string
   deliveryId:

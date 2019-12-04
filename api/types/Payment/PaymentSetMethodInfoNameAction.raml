@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentSetMethodInfoNameAction
-
-discriminatorValue: setMethodInfoName
+# discriminator: action
+# discriminatorValue: setMethodInfoName
 properties:
   action:
+    default: setMethodInfoName
     required: true
     type: string
   name:

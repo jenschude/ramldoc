@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: OrderDeletedMessage
-
-discriminatorValue: OrderDeleted
+# discriminator: type
+# discriminatorValue: OrderDeleted
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: OrderDeleted
     required: true
     type: string
   order:

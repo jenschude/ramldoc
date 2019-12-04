@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangePlainEnumValueLabelAction
-
-discriminatorValue: changePlainEnumValueLabel
+# discriminator: action
+# discriminatorValue: changePlainEnumValueLabel
 properties:
   action:
+    default: changePlainEnumValueLabel
     required: true
     type: string
   newValue:

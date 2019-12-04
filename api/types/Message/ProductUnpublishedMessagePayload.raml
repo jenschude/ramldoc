@@ -2,9 +2,10 @@
 type: object
 (originalType): MessagePayload
 displayName: ProductUnpublishedMessagePayload
-
-discriminatorValue: ProductUnpublished
+# discriminator: type
+# discriminatorValue: ProductUnpublished
 properties:
   type:
+    default: ProductUnpublished
     required: true
     type: string

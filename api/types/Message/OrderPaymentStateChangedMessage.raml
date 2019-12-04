@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: OrderPaymentStateChangedMessage
-
-discriminatorValue: OrderPaymentStateChanged
+# discriminator: type
+# discriminatorValue: OrderPaymentStateChanged
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: OrderPaymentStateChanged
     required: true
     type: string
   oldPaymentState:

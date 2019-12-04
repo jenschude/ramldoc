@@ -2,10 +2,11 @@
 type: object
 (originalType): SuggestTokenizer
 displayName: CustomTokenizer
-
-discriminatorValue: custom
+# discriminator: type
+# discriminatorValue: custom
 properties:
   type:
+    default: custom
     required: true
     type: string
   inputs:

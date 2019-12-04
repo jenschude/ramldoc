@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderEditResult
 displayName: OrderEditPreviewSuccess
-
-discriminatorValue: PreviewSuccess
+# discriminator: type
+# discriminatorValue: PreviewSuccess
 properties:
   type:
+    default: PreviewSuccess
     required: true
     type: string
   preview:

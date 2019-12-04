@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductDiscountUpdateAction
 displayName: ProductDiscountChangeSortOrderAction
-
-discriminatorValue: changeSortOrder
+# discriminator: action
+# discriminatorValue: changeSortOrder
 properties:
   action:
+    default: changeSortOrder
     required: true
     type: string
   sortOrder:

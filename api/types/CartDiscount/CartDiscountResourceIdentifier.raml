@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: CartDiscountResourceIdentifier
-
-discriminatorValue: cart-discount
+# discriminator: typeId
+# discriminatorValue: cart-discount
 properties:
   typeId:
+    default: cart-discount
     required: false
     type: ReferenceTypeId
   id:

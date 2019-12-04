@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCartUpdateAction
 displayName: MyCartRemoveLineItemAction
-
-discriminatorValue: removeLineItem
+# discriminator: action
+# discriminatorValue: removeLineItem
 properties:
   action:
+    default: removeLineItem
     required: true
     type: string
   quantity:

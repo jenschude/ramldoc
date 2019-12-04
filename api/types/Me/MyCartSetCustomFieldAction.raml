@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCartUpdateAction
 displayName: MyCartSetCustomFieldAction
-
-discriminatorValue: setCustomField
+# discriminator: action
+# discriminatorValue: setCustomField
 properties:
   action:
+    default: setCustomField
     required: true
     type: string
   name:

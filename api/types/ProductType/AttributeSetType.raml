@@ -2,10 +2,11 @@
 type: object
 (originalType): AttributeType
 displayName: AttributeSetType
-
-discriminatorValue: set
+# discriminator: name
+# discriminatorValue: set
 properties:
   name:
+    default: set
     required: true
     type: string
   elementType:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: ReferenceExistsError
-
-discriminatorValue: ReferenceExists
+# discriminator: code
+# discriminatorValue: ReferenceExists
 properties:
   code:
+    default: ReferenceExists
     required: true
     type: string
   message:

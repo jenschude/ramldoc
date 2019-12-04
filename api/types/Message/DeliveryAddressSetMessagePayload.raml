@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: DeliveryAddressSetMessagePayload
-
-discriminatorValue: DeliveryAddressSet
+# discriminator: type
+# discriminatorValue: DeliveryAddressSet
 properties:
   type:
+    default: DeliveryAddressSet
     required: true
     type: string
   oldAddress:

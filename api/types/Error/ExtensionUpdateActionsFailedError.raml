@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: ExtensionUpdateActionsFailedError
-
-discriminatorValue: ExtensionUpdateActionsFailed
+# discriminator: code
+# discriminatorValue: ExtensionUpdateActionsFailed
 properties:
   code:
+    default: ExtensionUpdateActionsFailed
     required: true
     type: string
   message:

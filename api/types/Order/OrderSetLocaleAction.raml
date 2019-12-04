@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderSetLocaleAction
-
-discriminatorValue: setLocale
+# discriminator: action
+# discriminatorValue: setLocale
 properties:
   action:
+    default: setLocale
     required: true
     type: string
   locale:

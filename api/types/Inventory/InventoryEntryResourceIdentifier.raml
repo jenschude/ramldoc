@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: InventoryEntryResourceIdentifier
-
-discriminatorValue: inventory-entry
+# discriminator: typeId
+# discriminatorValue: inventory-entry
 properties:
   typeId:
+    default: inventory-entry
     required: false
     type: ReferenceTypeId
   id:

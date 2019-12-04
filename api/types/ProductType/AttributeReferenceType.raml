@@ -2,10 +2,11 @@
 type: object
 (originalType): AttributeType
 displayName: AttributeReferenceType
-
-discriminatorValue: reference
+# discriminator: name
+# discriminatorValue: reference
 properties:
   name:
+    default: reference
     required: true
     type: string
   referenceTypeId:

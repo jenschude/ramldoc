@@ -2,10 +2,11 @@
 type: object
 (originalType): AttributeType
 displayName: AttributeNestedType
-
-discriminatorValue: nested
+# discriminator: name
+# discriminatorValue: nested
 properties:
   name:
+    default: nested
     required: true
     type: string
   typeReference:

@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: CartDiscountReference
-
-discriminatorValue: cart-discount
+# discriminator: typeId
+# discriminatorValue: cart-discount
 properties:
   typeId:
+    default: cart-discount
     required: true
     type: ReferenceTypeId
   id:

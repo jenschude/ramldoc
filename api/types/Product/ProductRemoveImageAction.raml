@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductRemoveImageAction
-
-discriminatorValue: removeImage
+# discriminator: action
+# discriminatorValue: removeImage
 properties:
   action:
+    default: removeImage
     required: true
     type: string
   imageUrl:

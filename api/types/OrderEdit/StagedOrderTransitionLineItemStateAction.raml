@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderTransitionLineItemStateAction
-
-discriminatorValue: transitionLineItemState
+# discriminator: action
+# discriminatorValue: transitionLineItemState
 properties:
   action:
+    default: transitionLineItemState
     required: true
     type: string
   toState:

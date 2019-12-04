@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: TaxCategoryReference
-
-discriminatorValue: tax-category
+# discriminator: typeId
+# discriminatorValue: tax-category
 properties:
   typeId:
+    default: tax-category
     required: true
     type: ReferenceTypeId
   id:

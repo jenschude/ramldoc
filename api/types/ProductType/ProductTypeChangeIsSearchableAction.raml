@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangeIsSearchableAction
-
-discriminatorValue: changeIsSearchable
+# discriminator: action
+# discriminatorValue: changeIsSearchable
 properties:
   action:
+    default: changeIsSearchable
     required: true
     type: string
   attributeName:

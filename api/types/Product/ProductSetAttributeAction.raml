@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetAttributeAction
-
-discriminatorValue: setAttribute
+# discriminator: action
+# discriminatorValue: setAttribute
 properties:
   action:
+    default: setAttribute
     required: true
     type: string
   name:

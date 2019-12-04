@@ -2,10 +2,11 @@
 type: object
 (originalType): ExtensionUpdateAction
 displayName: ExtensionSetTimeoutInMsAction
-
-discriminatorValue: setTimeoutInMs
+# discriminator: action
+# discriminatorValue: setTimeoutInMs
 properties:
   action:
+    default: setTimeoutInMs
     required: true
     type: string
   timeoutInMs:

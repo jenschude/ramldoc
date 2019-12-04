@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangeLocalizedEnumValueOrderAction
-
-discriminatorValue: changeLocalizedEnumValueOrder
+# discriminator: action
+# discriminatorValue: changeLocalizedEnumValueOrder
 properties:
   action:
+    default: changeLocalizedEnumValueOrder
     required: true
     type: string
   values:

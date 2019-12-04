@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetDeliveryItemsAction
-
-discriminatorValue: setDeliveryItems
+# discriminator: action
+# discriminatorValue: setDeliveryItems
 properties:
   action:
+    default: setDeliveryItems
     required: true
     type: string
   deliveryId:

@@ -2,10 +2,11 @@
 type: object
 (originalType): CustomerUpdateAction
 displayName: CustomerSetDateOfBirthAction
-
-discriminatorValue: setDateOfBirth
+# discriminator: action
+# discriminatorValue: setDateOfBirth
 properties:
   action:
+    default: setDateOfBirth
     required: true
     type: string
   dateOfBirth:

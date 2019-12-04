@@ -2,10 +2,11 @@
 type: object
 (originalType): Destination
 displayName: IronMqDestination
-
-discriminatorValue: IronMQ
+# discriminator: type
+# discriminatorValue: IronMQ
 properties:
   type:
+    default: IronMQ
     required: true
     type: string
   uri:

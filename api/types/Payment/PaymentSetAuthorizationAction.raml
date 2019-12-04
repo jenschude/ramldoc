@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentSetAuthorizationAction
-
-discriminatorValue: setAuthorization
+# discriminator: action
+# discriminatorValue: setAuthorization
 properties:
   action:
+    default: setAuthorization
     required: true
     type: string
   amount:

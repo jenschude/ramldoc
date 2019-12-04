@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetCustomShippingMethodAction
-
-discriminatorValue: setCustomShippingMethod
+# discriminator: action
+# discriminatorValue: setCustomShippingMethod
 properties:
   action:
+    default: setCustomShippingMethod
     required: true
     type: string
   shippingRate:

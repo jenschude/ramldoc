@@ -2,10 +2,11 @@
 type: object
 (originalType): ShippingRateInputDraft
 displayName: ScoreShippingRateInputDraft
-
-discriminatorValue: Score
+# discriminator: type
+# discriminatorValue: Score
 properties:
   type:
+    default: Score
     required: true
     type: string
   score:

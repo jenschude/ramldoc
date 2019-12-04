@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetMetaKeywordsAction
-
-discriminatorValue: setMetaKeywords
+# discriminator: action
+# discriminatorValue: setMetaKeywords
 properties:
   action:
+    default: setMetaKeywords
     required: true
     type: string
   metaKeywords:

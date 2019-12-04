@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: OrderEditAppliedMessage
-
-discriminatorValue: OrderEditApplied
+# discriminator: type
+# discriminatorValue: OrderEditApplied
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: OrderEditApplied
     required: true
     type: string
   result:

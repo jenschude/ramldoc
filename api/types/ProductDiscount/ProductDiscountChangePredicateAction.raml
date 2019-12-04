@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductDiscountUpdateAction
 displayName: ProductDiscountChangePredicateAction
-
-discriminatorValue: changePredicate
+# discriminator: action
+# discriminatorValue: changePredicate
 properties:
   action:
+    default: changePredicate
     required: true
     type: string
   predicate:

@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartRemoveItemShippingAddressAction
-
-discriminatorValue: removeItemShippingAddress
+# discriminator: action
+# discriminatorValue: removeItemShippingAddress
 properties:
   action:
+    default: removeItemShippingAddress
     required: true
     type: string
   addressKey:

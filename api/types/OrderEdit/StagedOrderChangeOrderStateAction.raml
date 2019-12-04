@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderChangeOrderStateAction
-
-discriminatorValue: changeOrderState
+# discriminator: action
+# discriminatorValue: changeOrderState
 properties:
   action:
+    default: changeOrderState
     required: true
     type: string
   orderState:

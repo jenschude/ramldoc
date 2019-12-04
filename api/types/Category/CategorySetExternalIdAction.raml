@@ -2,10 +2,11 @@
 type: object
 (originalType): CategoryUpdateAction
 displayName: CategorySetExternalIdAction
-
-discriminatorValue: setExternalId
+# discriminator: action
+# discriminatorValue: setExternalId
 properties:
   action:
+    default: setExternalId
     required: true
     type: string
   externalId:

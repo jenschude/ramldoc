@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetShippingMethodTaxAmountAction
-
-discriminatorValue: setShippingMethodTaxAmount
+# discriminator: action
+# discriminatorValue: setShippingMethodTaxAmount
 properties:
   action:
+    default: setShippingMethodTaxAmount
     required: true
     type: string
   externalTaxAmount:

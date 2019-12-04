@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartAddCustomLineItemAction
-
-discriminatorValue: addCustomLineItem
+# discriminator: action
+# discriminatorValue: addCustomLineItem
 properties:
   action:
+    default: addCustomLineItem
     required: true
     type: string
   externalTaxRate:

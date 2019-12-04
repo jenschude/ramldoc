@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: InventoryEntryReference
-
-discriminatorValue: inventory-entry
+# discriminator: typeId
+# discriminatorValue: inventory-entry
 properties:
   typeId:
+    default: inventory-entry
     required: true
     type: ReferenceTypeId
   id:

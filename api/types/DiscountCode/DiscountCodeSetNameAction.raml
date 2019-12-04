@@ -2,10 +2,11 @@
 type: object
 (originalType): DiscountCodeUpdateAction
 displayName: DiscountCodeSetNameAction
-
-discriminatorValue: setName
+# discriminator: action
+# discriminatorValue: setName
 properties:
   action:
+    default: setName
     required: true
     type: string
   name:

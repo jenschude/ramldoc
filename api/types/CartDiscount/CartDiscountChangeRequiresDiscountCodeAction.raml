@@ -2,10 +2,11 @@
 type: object
 (originalType): CartDiscountUpdateAction
 displayName: CartDiscountChangeRequiresDiscountCodeAction
-
-discriminatorValue: changeRequiresDiscountCode
+# discriminator: action
+# discriminatorValue: changeRequiresDiscountCode
 properties:
   action:
+    default: changeRequiresDiscountCode
     required: true
     type: string
   requiresDiscountCode:

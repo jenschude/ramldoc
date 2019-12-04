@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ReviewCreatedMessagePayload
-
-discriminatorValue: ReviewCreated
+# discriminator: type
+# discriminatorValue: ReviewCreated
 properties:
   type:
+    default: ReviewCreated
     required: true
     type: string
   review:

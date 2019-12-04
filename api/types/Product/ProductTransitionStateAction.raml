@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductTransitionStateAction
-
-discriminatorValue: transitionState
+# discriminator: action
+# discriminatorValue: transitionState
 properties:
   action:
+    default: transitionState
     required: true
     type: string
   force:

@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetLocaleAction
-
-discriminatorValue: setLocale
+# discriminator: action
+# discriminatorValue: setLocale
 properties:
   action:
+    default: setLocale
     required: true
     type: string
   locale:

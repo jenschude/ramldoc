@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: EnumValueIsUsedError
-
-discriminatorValue: EnumValueIsUsed
+# discriminator: code
+# discriminatorValue: EnumValueIsUsed
 properties:
   code:
+    default: EnumValueIsUsed
     required: true
     type: string
   message:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: OrderEditResourceIdentifier
-
-discriminatorValue: order-edit
+# discriminator: typeId
+# discriminatorValue: order-edit
 properties:
   typeId:
+    default: order-edit
     required: false
     type: ReferenceTypeId
   id:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductMoveImageToPositionAction
-
-discriminatorValue: moveImageToPosition
+# discriminator: action
+# discriminatorValue: moveImageToPosition
 properties:
   action:
+    default: moveImageToPosition
     required: true
     type: string
   imageUrl:

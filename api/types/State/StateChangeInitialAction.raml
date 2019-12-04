@@ -2,10 +2,11 @@
 type: object
 (originalType): StateUpdateAction
 displayName: StateChangeInitialAction
-
-discriminatorValue: changeInitial
+# discriminator: action
+# discriminatorValue: changeInitial
 properties:
   action:
+    default: changeInitial
     required: true
     type: string
   initial:

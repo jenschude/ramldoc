@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderSetReturnShipmentStateAction
-
-discriminatorValue: setReturnShipmentState
+# discriminator: action
+# discriminatorValue: setReturnShipmentState
 properties:
   action:
+    default: setReturnShipmentState
     required: true
     type: string
   shipmentState:

@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetDeleteDaysAfterLastModificationAction
-
-discriminatorValue: setDeleteDaysAfterLastModification
+# discriminator: action
+# discriminatorValue: setDeleteDaysAfterLastModification
 properties:
   action:
+    default: setDeleteDaysAfterLastModification
     required: true
     type: string
   deleteDaysAfterLastModification:

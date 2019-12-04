@@ -2,10 +2,11 @@
 type: object
 (originalType): ShoppingListUpdateAction
 displayName: ShoppingListSetDescriptionAction
-
-discriminatorValue: setDescription
+# discriminator: action
+# discriminatorValue: setDescription
 properties:
   action:
+    default: setDescription
     required: true
     type: string
   description:

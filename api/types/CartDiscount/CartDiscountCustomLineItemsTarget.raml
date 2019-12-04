@@ -2,10 +2,11 @@
 type: object
 (originalType): CartDiscountTarget
 displayName: CartDiscountCustomLineItemsTarget
-
-discriminatorValue: customLineItems
+# discriminator: type
+# discriminatorValue: customLineItems
 properties:
   type:
+    default: customLineItems
     required: true
     type: string
   predicate:

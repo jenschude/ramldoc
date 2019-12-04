@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangeEnumKeyAction
-
-discriminatorValue: changeEnumKey
+# discriminator: action
+# discriminatorValue: changeEnumKey
 properties:
   action:
+    default: changeEnumKey
     required: true
     type: string
   newKey:

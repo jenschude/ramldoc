@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ParcelItemsUpdatedMessagePayload
-
-discriminatorValue: ParcelItemsUpdated
+# discriminator: type
+# discriminatorValue: ParcelItemsUpdated
 properties:
   type:
+    default: ParcelItemsUpdated
     required: true
     type: string
   deliveryId:

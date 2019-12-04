@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: ProductTypeReference
-
-discriminatorValue: product-type
+# discriminator: typeId
+# discriminatorValue: product-type
 properties:
   typeId:
+    default: product-type
     required: true
     type: ReferenceTypeId
   id:

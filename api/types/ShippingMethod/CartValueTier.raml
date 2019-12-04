@@ -2,10 +2,11 @@
 type: object
 (originalType): ShippingRatePriceTier
 displayName: CartValueTier
-
-discriminatorValue: CartValue
+# discriminator: type
+# discriminatorValue: CartValue
 properties:
   type:
+    default: CartValue
     required: true
     type: ShippingRateTierType
   minimumCentAmount:

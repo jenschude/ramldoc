@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: OrderCustomerEmailSetMessage
-
-discriminatorValue: OrderCustomerEmailSet
+# discriminator: type
+# discriminatorValue: OrderCustomerEmailSet
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: OrderCustomerEmailSet
     required: true
     type: string
   oldEmail:

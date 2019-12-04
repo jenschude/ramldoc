@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentSetCustomerAction
-
-discriminatorValue: setCustomer
+# discriminator: action
+# discriminatorValue: setCustomer
 properties:
   action:
+    default: setCustomer
     required: true
     type: string
   customer:

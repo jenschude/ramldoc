@@ -2,10 +2,11 @@
 type: object
 (originalType): ShoppingListUpdateAction
 displayName: ShoppingListRemoveTextLineItemAction
-
-discriminatorValue: removeTextLineItem
+# discriminator: action
+# discriminatorValue: removeTextLineItem
 properties:
   action:
+    default: removeTextLineItem
     required: true
     type: string
   quantity:

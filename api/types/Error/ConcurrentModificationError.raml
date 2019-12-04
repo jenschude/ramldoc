@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: ConcurrentModificationError
-
-discriminatorValue: ConcurrentModification
+# discriminator: code
+# discriminatorValue: ConcurrentModification
 properties:
   code:
+    default: ConcurrentModification
     required: true
     type: string
   message:

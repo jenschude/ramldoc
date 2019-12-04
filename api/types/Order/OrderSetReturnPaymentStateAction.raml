@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderSetReturnPaymentStateAction
-
-discriminatorValue: setReturnPaymentState
+# discriminator: action
+# discriminatorValue: setReturnPaymentState
 properties:
   action:
+    default: setReturnPaymentState
     required: true
     type: string
   returnItemId:

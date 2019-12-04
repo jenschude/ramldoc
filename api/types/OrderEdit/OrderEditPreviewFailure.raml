@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderEditResult
 displayName: OrderEditPreviewFailure
-
-discriminatorValue: PreviewFailure
+# discriminator: type
+# discriminatorValue: PreviewFailure
 properties:
   type:
+    default: PreviewFailure
     required: true
     type: string
   errors:

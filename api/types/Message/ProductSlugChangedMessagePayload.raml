@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ProductSlugChangedMessagePayload
-
-discriminatorValue: ProductSlugChanged
+# discriminator: type
+# discriminatorValue: ProductSlugChanged
 properties:
   type:
+    default: ProductSlugChanged
     required: true
     type: string
   slug:

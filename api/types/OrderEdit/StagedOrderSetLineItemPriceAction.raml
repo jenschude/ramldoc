@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetLineItemPriceAction
-
-discriminatorValue: setLineItemPrice
+# discriminator: action
+# discriminatorValue: setLineItemPrice
 properties:
   action:
+    default: setLineItemPrice
     required: true
     type: string
   lineItemId:

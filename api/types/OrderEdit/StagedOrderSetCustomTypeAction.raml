@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetCustomTypeAction
-
-discriminatorValue: setCustomType
+# discriminator: action
+# discriminatorValue: setCustomType
 properties:
   action:
+    default: setCustomType
     required: true
     type: string
   fields:

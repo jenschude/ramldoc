@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ParcelAddedToDeliveryMessagePayload
-
-discriminatorValue: ParcelAddedToDelivery
+# discriminator: type
+# discriminatorValue: ParcelAddedToDelivery
 properties:
   type:
+    default: ParcelAddedToDelivery
     required: true
     type: string
   delivery:

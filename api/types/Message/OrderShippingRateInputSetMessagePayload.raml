@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderShippingRateInputSetMessagePayload
-
-discriminatorValue: OrderShippingRateInputSet
+# discriminator: type
+# discriminatorValue: OrderShippingRateInputSet
 properties:
   type:
+    default: OrderShippingRateInputSet
     required: true
     type: string
   shippingRateInput:

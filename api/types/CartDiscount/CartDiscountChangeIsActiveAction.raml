@@ -2,10 +2,11 @@
 type: object
 (originalType): CartDiscountUpdateAction
 displayName: CartDiscountChangeIsActiveAction
-
-discriminatorValue: changeIsActive
+# discriminator: action
+# discriminatorValue: changeIsActive
 properties:
   action:
+    default: changeIsActive
     required: true
     type: string
   isActive:

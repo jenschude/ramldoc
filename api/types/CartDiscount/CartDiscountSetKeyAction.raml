@@ -2,10 +2,11 @@
 type: object
 (originalType): CartDiscountUpdateAction
 displayName: CartDiscountSetKeyAction
-
-discriminatorValue: setKey
+# discriminator: action
+# discriminatorValue: setKey
 properties:
   action:
+    default: setKey
     required: true
     type: string
   key:

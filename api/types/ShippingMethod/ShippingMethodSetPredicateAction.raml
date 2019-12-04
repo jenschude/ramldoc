@@ -2,10 +2,11 @@
 type: object
 (originalType): ShippingMethodUpdateAction
 displayName: ShippingMethodSetPredicateAction
-
-discriminatorValue: setPredicate
+# discriminator: action
+# discriminatorValue: setPredicate
 properties:
   action:
+    default: setPredicate
     required: true
     type: string
   predicate:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ShoppingListUpdateAction
 displayName: ShoppingListSetSlugAction
-
-discriminatorValue: setSlug
+# discriminator: action
+# discriminatorValue: setSlug
 properties:
   action:
+    default: setSlug
     required: true
     type: string
   slug:

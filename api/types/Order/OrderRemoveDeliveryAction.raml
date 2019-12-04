@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderRemoveDeliveryAction
-
-discriminatorValue: removeDelivery
+# discriminator: action
+# discriminatorValue: removeDelivery
 properties:
   action:
+    default: removeDelivery
     required: true
     type: string
   deliveryId:

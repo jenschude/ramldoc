@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetCartTotalTaxAction
-
-discriminatorValue: setCartTotalTax
+# discriminator: action
+# discriminatorValue: setCartTotalTax
 properties:
   action:
+    default: setCartTotalTax
     required: true
     type: string
   externalTaxPortions:

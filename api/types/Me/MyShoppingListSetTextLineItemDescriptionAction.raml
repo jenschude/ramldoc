@@ -2,10 +2,11 @@
 type: object
 (originalType): MyShoppingListUpdateAction
 displayName: MyShoppingListSetTextLineItemDescriptionAction
-
-discriminatorValue: setTextLineItemDescription
+# discriminator: action
+# discriminatorValue: setTextLineItemDescription
 properties:
   action:
+    default: setTextLineItemDescription
     required: true
     type: string
   description:

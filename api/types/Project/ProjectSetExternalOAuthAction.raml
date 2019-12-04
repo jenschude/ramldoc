@@ -2,10 +2,11 @@
 type: object
 (originalType): ProjectUpdateAction
 displayName: ProjectSetExternalOAuthAction
-
-discriminatorValue: setExternalOAuth
+# discriminator: action
+# discriminatorValue: setExternalOAuth
 properties:
   action:
+    default: setExternalOAuth
     required: true
     type: string
   externalOAuth:

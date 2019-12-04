@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: InvalidInputError
-
-discriminatorValue: InvalidInput
+# discriminator: code
+# discriminatorValue: InvalidInput
 properties:
   code:
+    default: InvalidInput
     required: true
     type: string
   message:

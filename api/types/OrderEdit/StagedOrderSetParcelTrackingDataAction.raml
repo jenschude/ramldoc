@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetParcelTrackingDataAction
-
-discriminatorValue: setParcelTrackingData
+# discriminator: action
+# discriminatorValue: setParcelTrackingData
 properties:
   action:
+    default: setParcelTrackingData
     required: true
     type: string
   trackingData:

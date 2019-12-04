@@ -2,10 +2,11 @@
 type: object
 (originalType): ReviewUpdateAction
 displayName: ReviewSetAuthorNameAction
-
-discriminatorValue: setAuthorName
+# discriminator: action
+# discriminatorValue: setAuthorName
 properties:
   action:
+    default: setAuthorName
     required: true
     type: string
   authorName:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ShoppingListUpdateAction
 displayName: ShoppingListSetKeyAction
-
-discriminatorValue: setKey
+# discriminator: action
+# discriminatorValue: setKey
 properties:
   action:
+    default: setKey
     required: true
     type: string
   key:

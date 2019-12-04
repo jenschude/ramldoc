@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartSetCustomTypeAction
-
-discriminatorValue: setCustomType
+# discriminator: action
+# discriminatorValue: setCustomType
 properties:
   action:
+    default: setCustomType
     required: true
     type: string
   fields:

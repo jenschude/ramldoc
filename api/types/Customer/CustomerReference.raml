@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: CustomerReference
-
-discriminatorValue: customer
+# discriminator: typeId
+# discriminatorValue: customer
 properties:
   typeId:
+    default: customer
     required: true
     type: ReferenceTypeId
   id:

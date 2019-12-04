@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductChangeSlugAction
-
-discriminatorValue: changeSlug
+# discriminator: action
+# discriminatorValue: changeSlug
 properties:
   action:
+    default: changeSlug
     required: true
     type: string
   staged:

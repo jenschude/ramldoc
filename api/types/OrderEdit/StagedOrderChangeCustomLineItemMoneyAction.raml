@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderChangeCustomLineItemMoneyAction
-
-discriminatorValue: changeCustomLineItemMoney
+# discriminator: action
+# discriminatorValue: changeCustomLineItemMoney
 properties:
   action:
+    default: changeCustomLineItemMoney
     required: true
     type: string
   customLineItemId:

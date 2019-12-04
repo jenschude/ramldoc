@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetImageLabelAction
-
-discriminatorValue: setImageLabel
+# discriminator: action
+# discriminatorValue: setImageLabel
 properties:
   action:
+    default: setImageLabel
     required: true
     type: string
   imageUrl:

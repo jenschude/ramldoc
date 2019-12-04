@@ -2,10 +2,11 @@
 type: object
 (originalType): CartDiscountValueDraft
 displayName: CartDiscountValueAbsoluteDraft
-
-discriminatorValue: absolute
+# discriminator: type
+# discriminatorValue: absolute
 properties:
   type:
+    default: absolute
     required: true
     type: string
   money:

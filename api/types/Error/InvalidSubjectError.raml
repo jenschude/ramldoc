@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: InvalidSubjectError
-
-discriminatorValue: InvalidSubject
+# discriminator: code
+# discriminatorValue: InvalidSubject
 properties:
   code:
+    default: InvalidSubject
     required: true
     type: string
   message:

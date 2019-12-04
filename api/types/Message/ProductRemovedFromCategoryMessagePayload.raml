@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: ProductRemovedFromCategoryMessagePayload
-
-discriminatorValue: ProductRemovedFromCategory
+# discriminator: type
+# discriminatorValue: ProductRemovedFromCategory
 properties:
   type:
+    default: ProductRemovedFromCategory
     required: true
     type: string
   staged:

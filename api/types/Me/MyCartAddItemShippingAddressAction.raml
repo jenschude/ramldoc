@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCartUpdateAction
 displayName: MyCartAddItemShippingAddressAction
-
-discriminatorValue: addItemShippingAddress
+# discriminator: action
+# discriminatorValue: addItemShippingAddress
 properties:
   action:
+    default: addItemShippingAddress
     required: true
     type: string
   address:

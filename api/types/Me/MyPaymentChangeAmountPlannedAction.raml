@@ -2,10 +2,11 @@
 type: object
 (originalType): MyPaymentUpdateAction
 displayName: MyPaymentChangeAmountPlannedAction
-
-discriminatorValue: changeAmountPlanned
+# discriminator: action
+# discriminatorValue: changeAmountPlanned
 properties:
   action:
+    default: changeAmountPlanned
     required: true
     type: string
   amount:

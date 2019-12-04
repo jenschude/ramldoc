@@ -2,10 +2,11 @@
 type: object
 (originalType): StateUpdateAction
 displayName: StateChangeKeyAction
-
-discriminatorValue: changeKey
+# discriminator: action
+# discriminatorValue: changeKey
 properties:
   action:
+    default: changeKey
     required: true
     type: string
   key:

@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCustomerUpdateAction
 displayName: MyCustomerSetCompanyNameAction
-
-discriminatorValue: setCompanyName
+# discriminator: action
+# discriminatorValue: setCompanyName
 properties:
   action:
+    default: setCompanyName
     required: true
     type: string
   companyName:

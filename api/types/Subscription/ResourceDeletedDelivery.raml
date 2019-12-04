@@ -2,8 +2,8 @@
 type: object
 (originalType): SubscriptionDelivery
 displayName: ResourceDeletedDelivery
-
-discriminatorValue: ResourceDeleted
+# discriminator: notificationType
+# discriminatorValue: ResourceDeleted
 properties:
   projectKey:
     required: true
@@ -15,6 +15,7 @@ properties:
     required: false
     type: UserProvidedIdentifiers
   notificationType:
+    default: ResourceDeleted
     required: true
     type: string
   modifiedAt:

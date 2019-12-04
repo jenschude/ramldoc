@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderChangeCustomLineItemQuantityAction
-
-discriminatorValue: changeCustomLineItemQuantity
+# discriminator: action
+# discriminatorValue: changeCustomLineItemQuantity
 properties:
   action:
+    default: changeCustomLineItemQuantity
     required: true
     type: string
   customLineItemId:

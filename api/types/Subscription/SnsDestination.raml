@@ -2,10 +2,11 @@
 type: object
 (originalType): Destination
 displayName: SnsDestination
-
-discriminatorValue: SNS
+# discriminator: type
+# discriminatorValue: SNS
 properties:
   type:
+    default: SNS
     required: true
     type: string
   accessKey:

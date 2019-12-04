@@ -2,10 +2,11 @@
 type: object
 (originalType): FacetResult
 displayName: TermFacetResult
-
-discriminatorValue: terms
+# discriminator: type
+# discriminatorValue: terms
 properties:
   type:
+    default: terms
     required: true
     type: FacetTypes
   other:

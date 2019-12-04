@@ -2,10 +2,11 @@
 type: object
 (originalType): Reference
 displayName: CategoryReference
-
-discriminatorValue: category
+# discriminator: typeId
+# discriminatorValue: category
 properties:
   typeId:
+    default: category
     required: true
     type: ReferenceTypeId
   id:

@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: OrderDiscountCodeStateSetMessage
-
-discriminatorValue: OrderDiscountCodeStateSet
+# discriminator: type
+# discriminatorValue: OrderDiscountCodeStateSet
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: OrderDiscountCodeStateSet
     required: true
     type: string
   discountCode:

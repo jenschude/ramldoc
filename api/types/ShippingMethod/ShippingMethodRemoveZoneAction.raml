@@ -2,10 +2,11 @@
 type: object
 (originalType): ShippingMethodUpdateAction
 displayName: ShippingMethodRemoveZoneAction
-
-discriminatorValue: removeZone
+# discriminator: action
+# discriminatorValue: removeZone
 properties:
   action:
+    default: removeZone
     required: true
     type: string
   zone:

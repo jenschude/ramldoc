@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: CustomerCreatedMessage
-
-discriminatorValue: CustomerCreated
+# discriminator: type
+# discriminatorValue: CustomerCreated
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: CustomerCreated
     required: true
     type: string
   customer:

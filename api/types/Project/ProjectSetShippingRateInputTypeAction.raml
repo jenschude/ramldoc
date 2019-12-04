@@ -2,10 +2,11 @@
 type: object
 (originalType): ProjectUpdateAction
 displayName: ProjectSetShippingRateInputTypeAction
-
-discriminatorValue: setShippingRateInputType
+# discriminator: action
+# discriminatorValue: setShippingRateInputType
 properties:
   action:
+    default: setShippingRateInputType
     required: true
     type: string
   shippingRateInputType:

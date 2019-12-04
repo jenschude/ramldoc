@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCustomerUpdateAction
 displayName: MyCustomerSetMiddleNameAction
-
-discriminatorValue: setMiddleName
+# discriminator: action
+# discriminatorValue: setMiddleName
 properties:
   action:
+    default: setMiddleName
     required: true
     type: string
   middleName:

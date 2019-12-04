@@ -2,10 +2,11 @@
 type: object
 (originalType): DiscountCodeUpdateAction
 displayName: DiscountCodeSetMaxApplicationsAction
-
-discriminatorValue: setMaxApplications
+# discriminator: action
+# discriminatorValue: setMaxApplications
 properties:
   action:
+    default: setMaxApplications
     required: true
     type: string
   maxApplications:

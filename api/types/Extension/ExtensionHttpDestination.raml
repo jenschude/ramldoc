@@ -2,10 +2,11 @@
 type: object
 (originalType): ExtensionDestination
 displayName: ExtensionHttpDestination
-
-discriminatorValue: HTTP
+# discriminator: type
+# discriminatorValue: HTTP
 properties:
   type:
+    default: HTTP
     required: true
     type: string
   url:

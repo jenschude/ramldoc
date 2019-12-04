@@ -2,10 +2,11 @@
 type: object
 (originalType): MyCustomerUpdateAction
 displayName: MyCustomerAddAddressAction
-
-discriminatorValue: addAddress
+# discriminator: action
+# discriminatorValue: addAddress
 properties:
   action:
+    default: addAddress
     required: true
     type: string
   address:

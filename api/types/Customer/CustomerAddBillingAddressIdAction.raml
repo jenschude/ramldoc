@@ -2,10 +2,11 @@
 type: object
 (originalType): CustomerUpdateAction
 displayName: CustomerAddBillingAddressIdAction
-
-discriminatorValue: addBillingAddressId
+# discriminator: action
+# discriminatorValue: addBillingAddressId
 properties:
   action:
+    default: addBillingAddressId
     required: true
     type: string
   addressId:

@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetLineItemTotalPriceAction
-
-discriminatorValue: setLineItemTotalPrice
+# discriminator: action
+# discriminatorValue: setLineItemTotalPrice
 properties:
   action:
+    default: setLineItemTotalPrice
     required: true
     type: string
   externalTotalPrice:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ResourceIdentifier
 displayName: TaxCategoryResourceIdentifier
-
-discriminatorValue: tax-category
+# discriminator: typeId
+# discriminatorValue: tax-category
 properties:
   typeId:
+    default: tax-category
     required: false
     type: ReferenceTypeId
   id:

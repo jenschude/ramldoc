@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: InventoryEntryDeletedMessagePayload
-
-discriminatorValue: InventoryEntryDeleted
+# discriminator: type
+# discriminatorValue: InventoryEntryDeleted
 properties:
   type:
+    default: InventoryEntryDeleted
     required: true
     type: string
   supplyChannel:

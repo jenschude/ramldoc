@@ -2,10 +2,11 @@
 type: object
 (originalType): InventoryEntryUpdateAction
 displayName: InventoryEntrySetExpectedDeliveryAction
-
-discriminatorValue: setExpectedDelivery
+# discriminator: action
+# discriminatorValue: setExpectedDelivery
 properties:
   action:
+    default: setExpectedDelivery
     required: true
     type: string
   expectedDelivery:

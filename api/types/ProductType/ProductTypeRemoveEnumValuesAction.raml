@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeRemoveEnumValuesAction
-
-discriminatorValue: removeEnumValues
+# discriminator: action
+# discriminatorValue: removeEnumValues
 properties:
   action:
+    default: removeEnumValues
     required: true
     type: string
   keys:

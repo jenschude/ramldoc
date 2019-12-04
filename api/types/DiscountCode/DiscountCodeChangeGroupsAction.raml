@@ -2,10 +2,11 @@
 type: object
 (originalType): DiscountCodeUpdateAction
 displayName: DiscountCodeChangeGroupsAction
-
-discriminatorValue: changeGroups
+# discriminator: action
+# discriminatorValue: changeGroups
 properties:
   action:
+    default: changeGroups
     required: true
     type: string
   groups:

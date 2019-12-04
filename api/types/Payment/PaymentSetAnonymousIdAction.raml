@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentSetAnonymousIdAction
-
-discriminatorValue: setAnonymousId
+# discriminator: action
+# discriminatorValue: setAnonymousId
 properties:
   action:
+    default: setAnonymousId
     required: true
     type: string
   anonymousId:

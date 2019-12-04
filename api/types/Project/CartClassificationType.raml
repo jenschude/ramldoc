@@ -2,10 +2,11 @@
 type: object
 (originalType): ShippingRateInputType
 displayName: CartClassificationType
-
-discriminatorValue: CartClassification
+# discriminator: type
+# discriminatorValue: CartClassification
 properties:
   type:
+    default: CartClassification
     required: true
     type: ShippingRateTierType
   values:

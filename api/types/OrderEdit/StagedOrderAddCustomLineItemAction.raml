@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderAddCustomLineItemAction
-
-discriminatorValue: addCustomLineItem
+# discriminator: action
+# discriminatorValue: addCustomLineItem
 properties:
   action:
+    default: addCustomLineItem
     required: true
     type: string
   externalTaxRate:

@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderChangeTaxRoundingModeAction
-
-discriminatorValue: changeTaxRoundingMode
+# discriminator: action
+# discriminatorValue: changeTaxRoundingMode
 properties:
   action:
+    default: changeTaxRoundingMode
     required: true
     type: string
   taxRoundingMode:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ProjectUpdateAction
 displayName: ProjectChangeCurrenciesAction
-
-discriminatorValue: changeCurrencies
+# discriminator: action
+# discriminatorValue: changeCurrencies
 properties:
   action:
+    default: changeCurrencies
     required: true
     type: string
   currencies:

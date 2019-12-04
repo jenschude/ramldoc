@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderAddParcelToDeliveryAction
-
-discriminatorValue: addParcelToDelivery
+# discriminator: action
+# discriminatorValue: addParcelToDelivery
 properties:
   action:
+    default: addParcelToDelivery
     required: true
     type: string
   deliveryId:

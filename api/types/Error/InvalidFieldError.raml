@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: InvalidFieldError
-
-discriminatorValue: InvalidField
+# discriminator: code
+# discriminatorValue: InvalidField
 properties:
   code:
+    default: InvalidField
     required: true
     type: string
   message:

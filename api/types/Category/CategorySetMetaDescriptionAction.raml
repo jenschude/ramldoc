@@ -2,10 +2,11 @@
 type: object
 (originalType): CategoryUpdateAction
 displayName: CategorySetMetaDescriptionAction
-
-discriminatorValue: setMetaDescription
+# discriminator: action
+# discriminatorValue: setMetaDescription
 properties:
   action:
+    default: setMetaDescription
     required: true
     type: string
   metaDescription:

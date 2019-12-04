@@ -2,10 +2,11 @@
 type: object
 (originalType): CustomerUpdateAction
 displayName: CustomerSetSalutationAction
-
-discriminatorValue: setSalutation
+# discriminator: action
+# discriminatorValue: setSalutation
 properties:
   action:
+    default: setSalutation
     required: true
     type: string
   salutation:

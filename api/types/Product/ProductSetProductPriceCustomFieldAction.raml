@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetProductPriceCustomFieldAction
-
-discriminatorValue: setProductPriceCustomField
+# discriminator: action
+# discriminatorValue: setProductPriceCustomField
 properties:
   action:
+    default: setProductPriceCustomField
     required: true
     type: string
   name:

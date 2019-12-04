@@ -2,10 +2,11 @@
 type: object
 (originalType): TypeUpdateAction
 displayName: TypeChangeEnumValueOrderAction
-
-discriminatorValue: changeEnumValueOrder
+# discriminator: action
+# discriminatorValue: changeEnumValueOrder
 properties:
   action:
+    default: changeEnumValueOrder
     required: true
     type: string
   fieldName:

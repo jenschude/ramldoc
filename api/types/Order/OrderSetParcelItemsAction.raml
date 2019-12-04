@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderSetParcelItemsAction
-
-discriminatorValue: setParcelItems
+# discriminator: action
+# discriminatorValue: setParcelItems
 properties:
   action:
+    default: setParcelItems
     required: true
     type: string
   items:

@@ -2,8 +2,8 @@
 type: object
 (originalType): ReturnItem
 displayName: CustomLineItemReturnItem
-
-discriminatorValue: CustomLineItemReturnItem
+# discriminator: type
+# discriminatorValue: CustomLineItemReturnItem
 properties:
   shipmentState:
     required: true
@@ -28,6 +28,7 @@ properties:
     required: true
     type: ReturnPaymentState
   type:
+    default: CustomLineItemReturnItem
     required: true
     type: string
   customLineItemId:

@@ -2,10 +2,11 @@
 type: object
 (originalType): ShoppingListUpdateAction
 displayName: ShoppingListSetCustomerAction
-
-discriminatorValue: setCustomer
+# discriminator: action
+# discriminatorValue: setCustomer
 properties:
   action:
+    default: setCustomer
     required: true
     type: string
   customer:

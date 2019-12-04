@@ -2,10 +2,11 @@
 type: object
 (originalType): MyShoppingListUpdateAction
 displayName: MyShoppingListSetTextLineItemCustomFieldAction
-
-discriminatorValue: setTextLineItemCustomField
+# discriminator: action
+# discriminatorValue: setTextLineItemCustomField
 properties:
   action:
+    default: setTextLineItemCustomField
     required: true
     type: string
   name:

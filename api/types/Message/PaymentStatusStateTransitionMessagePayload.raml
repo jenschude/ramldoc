@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: PaymentStatusStateTransitionMessagePayload
-
-discriminatorValue: PaymentStatusStateTransition
+# discriminator: type
+# discriminatorValue: PaymentStatusStateTransition
 properties:
   type:
+    default: PaymentStatusStateTransition
     required: true
     type: string
   force:

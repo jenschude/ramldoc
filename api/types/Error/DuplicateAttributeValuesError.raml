@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: DuplicateAttributeValuesError
-
-discriminatorValue: DuplicateAttributeValues
+# discriminator: code
+# discriminatorValue: DuplicateAttributeValues
 properties:
   code:
+    default: DuplicateAttributeValues
     required: true
     type: string
   message:

@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartRemoveCustomLineItemAction
-
-discriminatorValue: removeCustomLineItem
+# discriminator: action
+# discriminatorValue: removeCustomLineItem
 properties:
   action:
+    default: removeCustomLineItem
     required: true
     type: string
   customLineItemId:

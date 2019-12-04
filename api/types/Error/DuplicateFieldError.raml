@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: DuplicateFieldError
-
-discriminatorValue: DuplicateField
+# discriminator: code
+# discriminatorValue: DuplicateField
 properties:
   code:
+    default: DuplicateField
     required: true
     type: string
   message:

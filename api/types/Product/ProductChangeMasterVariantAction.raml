@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductChangeMasterVariantAction
-
-discriminatorValue: changeMasterVariant
+# discriminator: action
+# discriminatorValue: changeMasterVariant
 properties:
   action:
+    default: changeMasterVariant
     required: true
     type: string
   staged:

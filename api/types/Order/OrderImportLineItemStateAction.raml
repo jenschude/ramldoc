@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderImportLineItemStateAction
-
-discriminatorValue: importLineItemState
+# discriminator: action
+# discriminatorValue: importLineItemState
 properties:
   action:
+    default: importLineItemState
     required: true
     type: string
   lineItemId:

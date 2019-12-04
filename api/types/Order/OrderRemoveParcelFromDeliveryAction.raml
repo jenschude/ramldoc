@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderRemoveParcelFromDeliveryAction
-
-discriminatorValue: removeParcelFromDelivery
+# discriminator: action
+# discriminatorValue: removeParcelFromDelivery
 properties:
   action:
+    default: removeParcelFromDelivery
     required: true
     type: string
   parcelId:

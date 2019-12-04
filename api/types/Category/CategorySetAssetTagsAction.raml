@@ -2,10 +2,11 @@
 type: object
 (originalType): CategoryUpdateAction
 displayName: CategorySetAssetTagsAction
-
-discriminatorValue: setAssetTags
+# discriminator: action
+# discriminatorValue: setAssetTags
 properties:
   action:
+    default: setAssetTags
     required: true
     type: string
   assetId:

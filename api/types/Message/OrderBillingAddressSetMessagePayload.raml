@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderBillingAddressSetMessagePayload
-
-discriminatorValue: OrderBillingAddressSet
+# discriminator: type
+# discriminatorValue: OrderBillingAddressSet
 properties:
   type:
+    default: OrderBillingAddressSet
     required: true
     type: string
   oldAddress:

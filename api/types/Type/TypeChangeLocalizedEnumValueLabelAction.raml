@@ -2,10 +2,11 @@
 type: object
 (originalType): TypeUpdateAction
 displayName: TypeChangeLocalizedEnumValueLabelAction
-
-discriminatorValue: changeLocalizedEnumValueLabel
+# discriminator: action
+# discriminatorValue: changeLocalizedEnumValueLabel
 properties:
   action:
+    default: changeLocalizedEnumValueLabel
     required: true
     type: string
   fieldName:

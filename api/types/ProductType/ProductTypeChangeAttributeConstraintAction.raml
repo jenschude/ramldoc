@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductTypeUpdateAction
 displayName: ProductTypeChangeAttributeConstraintAction
-
-discriminatorValue: changeAttributeConstraint
+# discriminator: action
+# discriminatorValue: changeAttributeConstraint
 properties:
   action:
+    default: changeAttributeConstraint
     required: true
     type: string
   newValue:

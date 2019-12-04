@@ -2,8 +2,8 @@
 type: object
 (originalType): Message
 displayName: CategoryCreatedMessage
-
-discriminatorValue: CategoryCreated
+# discriminator: type
+# discriminatorValue: CategoryCreated
 properties:
   createdAt:
     required: true
@@ -39,6 +39,7 @@ properties:
     format: int64
     type: number
   type:
+    default: CategoryCreated
     required: true
     type: string
   category:

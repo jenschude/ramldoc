@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderTransitionStateAction
-
-discriminatorValue: transitionState
+# discriminator: action
+# discriminatorValue: transitionState
 properties:
   action:
+    default: transitionState
     required: true
     type: string
   force:

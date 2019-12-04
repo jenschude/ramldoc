@@ -2,10 +2,11 @@
 type: object
 (originalType): CategoryUpdateAction
 displayName: CategoryChangeParentAction
-
-discriminatorValue: changeParent
+# discriminator: action
+# discriminatorValue: changeParent
 properties:
   action:
+    default: changeParent
     required: true
     type: string
   parent:

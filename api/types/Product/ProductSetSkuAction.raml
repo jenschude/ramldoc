@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetSkuAction
-
-discriminatorValue: setSku
+# discriminator: action
+# discriminatorValue: setSku
 properties:
   action:
+    default: setSku
     required: true
     type: string
   staged:

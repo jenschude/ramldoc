@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderRemoveDiscountCodeAction
-
-discriminatorValue: removeDiscountCode
+# discriminator: action
+# discriminatorValue: removeDiscountCode
 properties:
   action:
+    default: removeDiscountCode
     required: true
     type: string
   discountCode:

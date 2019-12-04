@@ -2,9 +2,10 @@
 type: object
 (originalType): ShippingRateInputType
 displayName: CartValueType
-
-discriminatorValue: CartValue
+# discriminator: type
+# discriminatorValue: CartValue
 properties:
   type:
+    default: CartValue
     required: true
     type: ShippingRateTierType

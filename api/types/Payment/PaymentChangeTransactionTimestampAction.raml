@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentChangeTransactionTimestampAction
-
-discriminatorValue: changeTransactionTimestamp
+# discriminator: action
+# discriminatorValue: changeTransactionTimestamp
 properties:
   action:
+    default: changeTransactionTimestamp
     required: true
     type: string
   transactionId:

@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: DeliveryRemovedMessagePayload
-
-discriminatorValue: DeliveryRemoved
+# discriminator: type
+# discriminatorValue: DeliveryRemoved
 properties:
   type:
+    default: DeliveryRemoved
     required: true
     type: string
   delivery:

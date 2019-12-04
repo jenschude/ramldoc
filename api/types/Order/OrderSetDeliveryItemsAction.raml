@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderSetDeliveryItemsAction
-
-discriminatorValue: setDeliveryItems
+# discriminator: action
+# discriminatorValue: setDeliveryItems
 properties:
   action:
+    default: setDeliveryItems
     required: true
     type: string
   deliveryId:

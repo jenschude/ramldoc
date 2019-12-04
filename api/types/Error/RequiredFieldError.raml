@@ -2,10 +2,11 @@
 type: object
 (originalType): ErrorObject
 displayName: RequiredFieldError
-
-discriminatorValue: RequiredField
+# discriminator: code
+# discriminatorValue: RequiredField
 properties:
   code:
+    default: RequiredField
     required: true
     type: string
   message:

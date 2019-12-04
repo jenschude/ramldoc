@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: CustomerCreatedMessagePayload
-
-discriminatorValue: CustomerCreated
+# discriminator: type
+# discriminatorValue: CustomerCreated
 properties:
   type:
+    default: CustomerCreated
     required: true
     type: string
   customer:

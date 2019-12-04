@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetAssetSourcesAction
-
-discriminatorValue: setAssetSources
+# discriminator: action
+# discriminatorValue: setAssetSources
 properties:
   action:
+    default: setAssetSources
     required: true
     type: string
   sources:

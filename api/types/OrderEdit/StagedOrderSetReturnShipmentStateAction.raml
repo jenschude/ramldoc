@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetReturnShipmentStateAction
-
-discriminatorValue: setReturnShipmentState
+# discriminator: action
+# discriminatorValue: setReturnShipmentState
 properties:
   action:
+    default: setReturnShipmentState
     required: true
     type: string
   shipmentState:

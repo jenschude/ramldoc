@@ -2,10 +2,11 @@
 type: object
 (originalType): StateUpdateAction
 displayName: StateRemoveRolesAction
-
-discriminatorValue: removeRoles
+# discriminator: action
+# discriminatorValue: removeRoles
 properties:
   action:
+    default: removeRoles
     required: true
     type: string
   roles:

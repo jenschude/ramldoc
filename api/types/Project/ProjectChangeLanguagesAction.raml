@@ -2,10 +2,11 @@
 type: object
 (originalType): ProjectUpdateAction
 displayName: ProjectChangeLanguagesAction
-
-discriminatorValue: changeLanguages
+# discriminator: action
+# discriminatorValue: changeLanguages
 properties:
   action:
+    default: changeLanguages
     required: true
     type: string
   languages:

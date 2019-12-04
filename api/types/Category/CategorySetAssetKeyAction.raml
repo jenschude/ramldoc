@@ -2,10 +2,11 @@
 type: object
 (originalType): CategoryUpdateAction
 displayName: CategorySetAssetKeyAction
-
-discriminatorValue: setAssetKey
+# discriminator: action
+# discriminatorValue: setAssetKey
 properties:
   action:
+    default: setAssetKey
     required: true
     type: string
   assetId:

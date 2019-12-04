@@ -2,10 +2,11 @@
 type: object
 (originalType): PaymentUpdateAction
 displayName: PaymentSetStatusInterfaceCodeAction
-
-discriminatorValue: setStatusInterfaceCode
+# discriminator: action
+# discriminatorValue: setStatusInterfaceCode
 properties:
   action:
+    default: setStatusInterfaceCode
     required: true
     type: string
   interfaceCode:

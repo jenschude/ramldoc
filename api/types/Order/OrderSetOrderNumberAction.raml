@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderSetOrderNumberAction
-
-discriminatorValue: setOrderNumber
+# discriminator: action
+# discriminatorValue: setOrderNumber
 properties:
   action:
+    default: setOrderNumber
     required: true
     type: string
   orderNumber:

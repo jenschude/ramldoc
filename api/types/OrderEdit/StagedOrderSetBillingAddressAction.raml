@@ -2,10 +2,11 @@
 type: object
 (originalType): StagedOrderUpdateAction
 displayName: StagedOrderSetBillingAddressAction
-
-discriminatorValue: setBillingAddress
+# discriminator: action
+# discriminatorValue: setBillingAddress
 properties:
   action:
+    default: setBillingAddress
     required: true
     type: string
   address:

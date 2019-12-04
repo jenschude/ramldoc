@@ -2,10 +2,11 @@
 type: object
 (originalType): ProductUpdateAction
 displayName: ProductSetCategoryOrderHintAction
-
-discriminatorValue: setCategoryOrderHint
+# discriminator: action
+# discriminatorValue: setCategoryOrderHint
 properties:
   action:
+    default: setCategoryOrderHint
     required: true
     type: string
   orderHint:

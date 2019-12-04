@@ -2,10 +2,11 @@
 type: object
 (originalType): TypeUpdateAction
 displayName: TypeChangeFieldDefinitionLabelAction
-
-discriminatorValue: changeFieldDefinitionLabel
+# discriminator: action
+# discriminatorValue: changeFieldDefinitionLabel
 properties:
   action:
+    default: changeFieldDefinitionLabel
     required: true
     type: string
   fieldName:

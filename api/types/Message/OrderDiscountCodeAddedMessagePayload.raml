@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: OrderDiscountCodeAddedMessagePayload
-
-discriminatorValue: OrderDiscountCodeAdded
+# discriminator: type
+# discriminatorValue: OrderDiscountCodeAdded
 properties:
   type:
+    default: OrderDiscountCodeAdded
     required: true
     type: string
   discountCode:

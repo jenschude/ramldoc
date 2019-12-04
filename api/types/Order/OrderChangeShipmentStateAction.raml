@@ -2,10 +2,11 @@
 type: object
 (originalType): OrderUpdateAction
 displayName: OrderChangeShipmentStateAction
-
-discriminatorValue: changeShipmentState
+# discriminator: action
+# discriminatorValue: changeShipmentState
 properties:
   action:
+    default: changeShipmentState
     required: true
     type: string
   shipmentState:

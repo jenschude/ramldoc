@@ -2,10 +2,11 @@
 type: object
 (originalType): CartUpdateAction
 displayName: CartApplyDeltaToCustomLineItemShippingDetailsTargetsAction
-
-discriminatorValue: applyDeltaToCustomLineItemShippingDetailsTargets
+# discriminator: action
+# discriminatorValue: applyDeltaToCustomLineItemShippingDetailsTargets
 properties:
   action:
+    default: applyDeltaToCustomLineItemShippingDetailsTargets
     required: true
     type: string
   customLineItemId:

@@ -2,8 +2,8 @@
 type: object
 (originalType): SubscriptionDelivery
 displayName: MessageDelivery
-
-discriminatorValue: Message
+# discriminator: notificationType
+# discriminatorValue: Message
 properties:
   projectKey:
     required: true
@@ -15,6 +15,7 @@ properties:
     required: false
     type: UserProvidedIdentifiers
   notificationType:
+    default: Message
     required: true
     type: string
   sequenceNumber:

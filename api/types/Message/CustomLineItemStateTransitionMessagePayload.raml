@@ -2,10 +2,11 @@
 type: object
 (originalType): MessagePayload
 displayName: CustomLineItemStateTransitionMessagePayload
-
-discriminatorValue: CustomLineItemStateTransition
+# discriminator: type
+# discriminatorValue: CustomLineItemStateTransition
 properties:
   type:
+    default: CustomLineItemStateTransition
     required: true
     type: string
   toState:
