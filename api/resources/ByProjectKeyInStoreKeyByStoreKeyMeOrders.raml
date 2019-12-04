@@ -8,7 +8,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_orders:{projectKey}"
       - "manage_my_orders:{projectKey}:{storeKey}"
@@ -42,7 +42,7 @@ get:
           type: OrderPagedQueryResponse
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_orders:{projectKey}"
       - "manage_my_orders:{projectKey}:{storeKey}"

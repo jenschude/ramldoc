@@ -8,7 +8,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_orders:{projectKey}"
   description: |-
@@ -24,7 +24,7 @@ get:
           type: MyOrder
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_orders:{projectKey}"
   description: |-

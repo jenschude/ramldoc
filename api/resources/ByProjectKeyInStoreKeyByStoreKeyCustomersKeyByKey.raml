@@ -10,7 +10,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "view_customers:{projectKey}"
@@ -31,7 +31,7 @@ get:
           type: Customer
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_customers:{projectKey}"
@@ -53,7 +53,7 @@ post:
           type: Customer
 delete:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_customers:{projectKey}"

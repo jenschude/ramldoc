@@ -8,7 +8,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "view_types:{projectKey}"
@@ -25,7 +25,7 @@ get:
           type: Type
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_types:{projectKey}"
@@ -45,7 +45,7 @@ post:
           type: Type
 delete:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_types:{projectKey}"

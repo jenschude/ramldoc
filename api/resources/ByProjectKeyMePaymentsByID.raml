@@ -8,7 +8,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_payments:{projectKey}"
   description: |-
@@ -24,7 +24,7 @@ get:
           type: MyPayment
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_payments:{projectKey}"
   description: |-
@@ -43,7 +43,7 @@ post:
           type: MyPayment
 delete:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_payments:{projectKey}"
   description: |-

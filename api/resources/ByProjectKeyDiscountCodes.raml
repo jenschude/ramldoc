@@ -6,7 +6,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "view_orders:{projectKey}"
@@ -40,7 +40,7 @@ get:
           type: DiscountCodePagedQueryResponse
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_orders:{projectKey}"

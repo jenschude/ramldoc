@@ -8,7 +8,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_extensions:{projectKey}"
@@ -25,7 +25,7 @@ get:
           type: Extension
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_extensions:{projectKey}"
@@ -45,7 +45,7 @@ post:
           type: Extension
 delete:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_extensions:{projectKey}"

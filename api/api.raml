@@ -8,6 +8,10 @@ annotationTypes:
   originalType:
     type: string
     allowedTargets: TypeDeclaration
+securitySchemes:
+  oauth_2_0: !include oauth2.raml
+securedBy:
+- oauth_2_0
 types:
   AccessDeniedError: !include types/Error/AccessDeniedError.raml
   Address: !include types/Common/Address.raml

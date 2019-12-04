@@ -8,7 +8,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "view_order_edits:{projectKey}"
@@ -25,7 +25,7 @@ get:
           type: OrderEdit
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_order_edits:{projectKey}"
@@ -45,7 +45,7 @@ post:
           type: OrderEdit
 delete:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_order_edits:{projectKey}"

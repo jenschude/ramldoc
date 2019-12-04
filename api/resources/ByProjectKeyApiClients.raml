@@ -6,7 +6,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_api_clients:{projectKey}"
       - "view_api_clients:{projectKey}"
@@ -40,7 +40,7 @@ get:
           type: ApiClientPagedQueryResponse
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_api_clients:{projectKey}"
   description: |-

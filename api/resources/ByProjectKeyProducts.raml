@@ -6,7 +6,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "view_products:{projectKey}"
@@ -54,7 +54,7 @@ get:
           type: ProductPagedQueryResponse
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_products:{projectKey}"

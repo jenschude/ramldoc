@@ -6,7 +6,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_profile:{projectKey}"
   queryParameters:
@@ -37,7 +37,7 @@ get:
           type: MyCustomer
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_profile:{projectKey}"
   description: |-
@@ -52,7 +52,7 @@ post:
           type: MyCustomer
 delete:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_profile:{projectKey}"
   description: |-

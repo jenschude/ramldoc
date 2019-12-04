@@ -10,7 +10,7 @@ uriParameters:
     type: string
 get:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_orders:{projectKey}"
       - "manage_my_orders:{projectKey}:{storeKey}"
@@ -27,7 +27,7 @@ get:
           type: Cart
 post:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_orders:{projectKey}"
       - "manage_my_orders:{projectKey}:{storeKey}"
@@ -47,7 +47,7 @@ post:
           type: Cart
 delete:
   securedBy:
-    oauth_2_0:
+  - oauth_2_0:
       scopes:
       - "manage_my_orders:{projectKey}"
       - "manage_my_orders:{projectKey}:{storeKey}"
