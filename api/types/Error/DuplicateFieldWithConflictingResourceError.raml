@@ -6,12 +6,17 @@ displayName: DuplicateFieldWithConflictingResourceError
 discriminatorValue: DuplicateFieldWithConflictingResource
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   conflictingResource:
+    required: true
     type: Reference
   duplicateValue:
+    required: true
     type: any
   field:
+    required: true
     type: string

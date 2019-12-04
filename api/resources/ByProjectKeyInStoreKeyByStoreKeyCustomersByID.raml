@@ -9,6 +9,12 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_customers:{projectKey}"
+      - "view_customers:{projectKey}:{storeKey}"
   description: |-
     Returns a customer by its ID from a specific Store. The {storeKey} path parameter maps to a Store’s key.
     It also considers customers that do not have the stores field.
@@ -16,6 +22,7 @@ get:
     this method returns a ResourceNotFound error.
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -23,12 +30,19 @@ get:
         application/json:
           type: Customer
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_customers:{projectKey}"
+      - "manage_customers:{projectKey}:{storeKey}"
   description: |-
     Updates a customer in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store’s key.
     If the customer exists in the commercetools project but the stores field references a different store,
     this method returns a ResourceNotFound error.
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -39,15 +53,24 @@ post:
         application/json:
           type: Customer
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_customers:{projectKey}"
+      - "manage_customers:{projectKey}:{storeKey}"
   description: |-
     Delete Customer by ID
   queryParameters:
     dataErasure:
+      required: false
       type: boolean
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

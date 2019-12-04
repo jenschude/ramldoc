@@ -6,42 +6,53 @@ displayName: Type
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the type.
     type: string
   version:
+    required: true
     description: |-
       The current version of the type.
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   name:
+    required: true
     type: LocalizedString
   fieldDefinitions:
+    required: true
     type: array
     items:
       type: FieldDefinition
   description:
+    required: false
     type: LocalizedString
   key:
+    required: true
     description: |-
       Identifier for the type (max.
       256 characters).
     type: string
   resourceTypeIds:
+    required: true
     description: |-
       Defines for which resource(s) the type is valid.
     type: array

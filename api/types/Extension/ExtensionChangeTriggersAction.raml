@@ -6,8 +6,10 @@ displayName: ExtensionChangeTriggersAction
 discriminatorValue: changeTriggers
 properties:
   action:
+    required: true
     type: string
   triggers:
+    required: true
     type: array
     items:
       type: ExtensionTrigger

@@ -6,10 +6,14 @@ displayName: ProductChangePriceAction
 discriminatorValue: changePrice
 properties:
   action:
+    required: true
     type: string
   price:
+    required: true
     type: PriceDraft
   staged:
+    required: false
     type: boolean
   priceId:
+    required: true
     type: string

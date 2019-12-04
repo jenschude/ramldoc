@@ -6,16 +6,21 @@ displayName: TypeDraft
 
 properties:
   name:
+    required: true
     type: LocalizedString
   fieldDefinitions:
+    required: false
     type: array
     items:
       type: FieldDefinition
   description:
+    required: false
     type: LocalizedString
   key:
+    required: true
     type: string
   resourceTypeIds:
+    required: true
     description: |-
       The IDs of the resources that can be customized with this type.
     type: array

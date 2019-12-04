@@ -5,24 +5,37 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
+      - "view_orders:{projectKey}"
+      - "view_customers:{projectKey}"
   description: |-
     The query endpoint allows to retrieve custom objects in a specific container or all custom objects.
     For performance reasons, it is highly advisable to query only for custom objects in a container by using
     the container field in the where predicate.
   queryParameters:
     expand:
+      required: false
       type: string
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:
@@ -30,6 +43,13 @@ get:
         application/json:
           type: CustomObjectPagedQueryResponse
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
+      - "manage_orders:{projectKey}"
+      - "manage_customers:{projectKey}"
   description: |-
     Creates a new custom object or updates an existing custom object.
     If an object with the given container/key exists,
@@ -40,6 +60,7 @@ post:
     Fields with null values will not be saved.
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:

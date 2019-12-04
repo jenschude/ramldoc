@@ -6,43 +6,56 @@ displayName: ShippingMethod
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the shipping method.
     type: string
   version:
+    required: true
     description: |-
       The current version of the shipping method.
     format: int64
     type: number
   createdBy:
+    required: false
     type: CreatedBy
   lastModifiedBy:
+    required: false
     type: LastModifiedBy
   zoneRates:
+    required: true
     type: array
     items:
       type: ZoneRate
   predicate:
+    required: false
     description: |-
       A Cart predicate which can be used to more precisely select a shipping method for a cart.
     type: string
   isDefault:
+    required: true
     description: |-
       One shipping method in a project can be default.
     type: boolean
   name:
+    required: true
     type: string
   description:
+    required: false
     type: string
   key:
+    required: false
     description: |-
       User-specific unique identifier for the shipping method.
     type: string
   taxCategory:
+    required: true
     type: TaxCategoryReference

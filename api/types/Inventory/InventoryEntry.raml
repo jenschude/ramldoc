@@ -6,54 +6,67 @@ displayName: InventoryEntry
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the inventory entry.
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   availableQuantity:
+    required: true
     description: |-
       Available amount of stock.
       (available means: `quantityOnStock` - reserved quantity)
     format: int64
     type: number
   expectedDelivery:
+    required: false
     description: |-
       The date and time of the next restock.
     format: rfc3339
     type: datetime
   custom:
+    required: false
     type: CustomFields
   quantityOnStock:
+    required: true
     description: |-
       Overall amount of stock.
       (available + reserved)
     format: int64
     type: number
   supplyChannel:
+    required: false
     description: |-
       Optional connection to a particular supplier.
     discriminatorValue: channel
     type: ChannelResourceIdentifier
   restockableInDays:
+    required: false
     description: |-
       The time period in days, that tells how often this inventory entry is restocked.
     format: int64
     type: number
   sku:
+    required: true
     type: string

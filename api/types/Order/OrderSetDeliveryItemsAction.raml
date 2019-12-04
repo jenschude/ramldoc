@@ -6,10 +6,13 @@ displayName: OrderSetDeliveryItemsAction
 discriminatorValue: setDeliveryItems
 properties:
   action:
+    required: true
     type: string
   deliveryId:
+    required: true
     type: string
   items:
+    required: true
     type: array
     items:
       type: DeliveryItem

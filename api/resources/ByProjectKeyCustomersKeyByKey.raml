@@ -7,10 +7,16 @@ uriParameters:
   key:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_customers:{projectKey}"
   description: |-
     Get Customer by key
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -18,10 +24,16 @@ get:
         application/json:
           type: Customer
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_customers:{projectKey}"
   description: |-
     Update Customer by key
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -32,15 +44,23 @@ post:
         application/json:
           type: Customer
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_customers:{projectKey}"
   description: |-
     Delete Customer by key
   queryParameters:
     dataErasure:
+      required: false
       type: boolean
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

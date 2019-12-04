@@ -6,8 +6,11 @@ displayName: OrderPaymentStateChangedMessagePayload
 discriminatorValue: OrderPaymentStateChanged
 properties:
   type:
+    required: true
     type: string
   oldPaymentState:
+    required: false
     type: PaymentState
   paymentState:
+    required: true
     type: PaymentState

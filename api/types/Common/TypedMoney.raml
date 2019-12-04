@@ -6,15 +6,19 @@ discriminator: type
 
 properties:
   centAmount:
+    required: true
     format: int64
     type: number
   fractionDigits:
+    required: true
     format: int32
     maximum: 12
     type: number
   type:
+    required: true
     type: MoneyType
   currencyCode:
+    required: true
     description: |-
       The currency code compliant to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
     type: CurrencyCode

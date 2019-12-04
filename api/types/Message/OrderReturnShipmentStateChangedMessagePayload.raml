@@ -6,8 +6,11 @@ displayName: OrderReturnShipmentStateChangedMessagePayload
 discriminatorValue: OrderReturnShipmentStateChanged
 properties:
   type:
+    required: true
     type: string
   returnItemId:
+    required: true
     type: string
   returnShipmentState:
+    required: true
     type: ReturnShipmentState

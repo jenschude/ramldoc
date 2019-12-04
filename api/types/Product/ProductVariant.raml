@@ -6,35 +6,47 @@ displayName: ProductVariant
 
 properties:
   scopedPrice:
+    required: false
     type: ScopedPrice
   images:
+    required: false
     type: array
     items:
       type: Image
   assets:
+    required: false
     type: array
     items:
       type: Asset
   isMatchingVariant:
+    required: false
     type: boolean
   price:
+    required: false
     type: Price
   scopedPriceDiscounted:
+    required: false
     type: boolean
   attributes:
+    required: false
     type: array
     items:
       type: Attribute
   availability:
+    required: false
     type: ProductVariantAvailability
   id:
+    required: true
     format: int64
     type: number
   prices:
+    required: false
     type: array
     items:
       type: Price
   sku:
+    required: false
     type: string
   key:
+    required: false
     type: string

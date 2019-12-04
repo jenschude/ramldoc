@@ -6,6 +6,7 @@ displayName: FieldDefinition
 
 properties:
   name:
+    required: true
     description: |-
       The name of the field.
       The name must be between two and 36 characters long and can contain the ASCII letters A to Z in lowercase or uppercase, digits, underscores (`_`) and the hyphen-minus (`-`).
@@ -13,19 +14,23 @@ properties:
       In case there is a field with the same name in another type it has to have the same FieldType also.
     type: string
   inputHint:
+    required: false
     description: |-
       Provides a visual representation type for this field.
       It is only relevant for string-based field types like StringType and LocalizedStringType.
     type: TypeTextInputHint
   label:
+    required: true
     description: |-
       A human-readable label for the field.
     type: LocalizedString
   type:
+    required: true
     description: |-
       Describes the type of the field.
     type: FieldType
   required:
+    required: true
     description: |-
       Whether the field is required to have a value.
     type: boolean

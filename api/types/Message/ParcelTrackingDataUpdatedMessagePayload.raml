@@ -6,10 +6,14 @@ displayName: ParcelTrackingDataUpdatedMessagePayload
 discriminatorValue: ParcelTrackingDataUpdated
 properties:
   type:
+    required: true
     type: string
   deliveryId:
+    required: true
     type: string
   trackingData:
+    required: false
     type: TrackingData
   parcelId:
+    required: true
     type: string

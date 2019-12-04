@@ -6,8 +6,11 @@ displayName: OrderStateChangedMessagePayload
 discriminatorValue: OrderStateChanged
 properties:
   type:
+    required: true
     type: string
   oldOrderState:
+    required: true
     type: OrderState
   orderState:
+    required: true
     type: OrderState

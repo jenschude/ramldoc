@@ -6,14 +6,17 @@ displayName: ShippingRateDraft
 
 properties:
   tiers:
+    required: false
     description: |-
       A list of shipping rate price tiers.
     type: array
     items:
       type: ShippingRatePriceTier
   price:
+    required: true
     type: Money
   freeAbove:
+    required: false
     description: |-
       The shipping is free if the order total (the sum of line item prices) exceeds the freeAbove value.
       Note: `freeAbove` applies before any Cart or Product discounts, and can cause discounts to apply in invalid scenarios.

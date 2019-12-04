@@ -7,22 +7,33 @@ uriParameters:
   storeKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
+      - "manage_my_orders:{projectKey}:{storeKey}"
   description: |-
     Query Orders
   queryParameters:
     expand:
+      required: false
       type: string
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:
@@ -30,10 +41,16 @@ get:
         application/json:
           type: OrderPagedQueryResponse
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
+      - "manage_my_orders:{projectKey}:{storeKey}"
   description: |-
     Create Order
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:

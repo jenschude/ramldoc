@@ -6,8 +6,11 @@ displayName: ExtensionHttpDestination
 discriminatorValue: HTTP
 properties:
   type:
+    required: true
     type: string
   url:
+    required: true
     type: string
   authentication:
+    required: false
     type: ExtensionHttpDestinationAuthentication

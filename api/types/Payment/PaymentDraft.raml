@@ -6,35 +6,46 @@ displayName: PaymentDraft
 
 properties:
   amountAuthorized:
+    required: false
     type: Money
   anonymousId:
+    required: false
     description: |-
       Identifies payments belonging to an anonymous session (the customer has not signed up/in yet).
     type: string
   paymentMethodInfo:
+    required: false
     type: PaymentMethodInfo
   custom:
+    required: false
     type: CustomFieldsDraft
   authorizedUntil:
+    required: false
     type: string
   externalId:
+    required: false
     type: string
   transactions:
+    required: false
     description: |-
       A list of financial transactions of different TransactionTypes with different TransactionStates.
     type: array
     items:
       type: TransactionDraft
   amountPaid:
+    required: false
     type: Money
   amountRefunded:
+    required: false
     type: Money
   amountPlanned:
+    required: true
     description: |-
       How much money this payment intends to receive from the customer.
       The value usually matches the cart or order gross total.
     type: Money
   interfaceInteractions:
+    required: false
     description: |-
       Interface interactions can be requests send to the PSP, responses received from the PSP or notifications received from the PSP.
       Some interactions may result in a transaction.
@@ -44,19 +55,23 @@ properties:
     items:
       type: CustomFieldsDraft
   interfaceId:
+    required: false
     description: |-
       The identifier that is used by the interface that manages the payment (usually the PSP).
       Cannot be changed once it has been set.
       The combination of this ID and the PaymentMethodInfo `paymentInterface` must be unique.
     type: string
   key:
+    required: false
     description: |-
       User-specific unique identifier for the payment (max.
       256 characters).
     type: string
   paymentStatus:
+    required: false
     type: PaymentStatusDraft
   customer:
+    required: false
     description: |-
       A reference to the customer this payment belongs to.
     discriminatorValue: customer

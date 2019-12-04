@@ -6,24 +6,34 @@ displayName: ScopedPrice
 
 properties:
   discounted:
+    required: false
     type: DiscountedPrice
   country:
+    required: false
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
     type: CountryCode
   customerGroup:
+    required: false
     type: CustomerGroupReference
   custom:
+    required: false
     type: CustomFields
   channel:
+    required: false
     type: ChannelReference
   validUntil:
+    required: false
     type: datetime
   validFrom:
+    required: false
     type: datetime
   id:
+    required: true
     type: string
   value:
+    required: true
     type: TypedMoney
   currentValue:
+    required: true
     type: TypedMoney

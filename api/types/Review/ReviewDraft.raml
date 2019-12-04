@@ -6,15 +6,19 @@ displayName: ReviewDraft
 
 properties:
   uniquenessValue:
+    required: false
     description: |-
       If set, this value must be unique among reviews.
       For example, if you want to have only one review per customer and per product, you can set the value to `customer's id` + `product's id`.
     type: string
   authorName:
+    required: false
     type: string
   custom:
+    required: false
     type: CustomFieldsDraft
   rating:
+    required: false
     description: |-
       Number between -100 and 100 included.
       Rating of the targeted object, like a product.
@@ -25,23 +29,30 @@ properties:
     maximum: 100
     type: number
   state:
+    required: false
     type: StateResourceIdentifier
   text:
+    required: false
     type: string
   title:
+    required: false
     type: string
   locale:
+    required: false
     type: string
   key:
+    required: false
     description: |-
       User-specific unique identifier for the review.
     type: string
   customer:
+    required: false
     description: |-
       The customer who created the review.
     discriminatorValue: customer
     type: CustomerResourceIdentifier
   target:
+    required: false
     description: |-
       Identifies the target of the review.
       Can be a Product or a Channel

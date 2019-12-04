@@ -6,10 +6,14 @@ displayName: StagedOrderUpdateSyncInfoAction
 discriminatorValue: updateSyncInfo
 properties:
   action:
+    required: true
     type: string
   channel:
+    required: true
     type: ChannelResourceIdentifier
   externalId:
+    required: false
     type: string
   syncedAt:
+    required: false
     type: datetime

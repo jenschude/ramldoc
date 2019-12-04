@@ -6,25 +6,36 @@ displayName: ShoppingListLineItem
 
 properties:
   addedAt:
+    required: true
     type: datetime
   quantity:
+    required: true
     type: number
   productId:
+    required: true
     type: string
   custom:
+    required: false
     type: CustomFields
   variant:
+    required: false
     type: ProductVariant
   name:
+    required: true
     type: LocalizedString
   variantId:
+    required: false
     format: int64
     type: number
   id:
+    required: true
     type: string
   deactivatedAt:
+    required: false
     type: datetime
   productSlug:
+    required: false
     type: LocalizedString
   productType:
+    required: true
     type: ProductTypeReference

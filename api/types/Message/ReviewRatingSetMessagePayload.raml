@@ -6,12 +6,17 @@ displayName: ReviewRatingSetMessagePayload
 discriminatorValue: ReviewRatingSet
 properties:
   type:
+    required: true
     type: string
   oldRating:
+    required: false
     type: number
   includedInStatistics:
+    required: true
     type: boolean
   newRating:
+    required: false
     type: number
   target:
+    required: false
     type: Reference

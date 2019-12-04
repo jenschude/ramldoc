@@ -7,10 +7,15 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
   description: |-
     Get MyOrder by ID
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -18,10 +23,15 @@ get:
         application/json:
           type: MyOrder
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
   description: |-
     Update MyOrder by ID
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:

@@ -6,33 +6,43 @@ displayName: Zone
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the zone.
     type: string
   version:
+    required: true
     description: |-
       The current version of the zone.
     format: int64
     type: number
   createdBy:
+    required: false
     type: CreatedBy
   lastModifiedBy:
+    required: false
     type: LastModifiedBy
   name:
+    required: true
     type: string
   description:
+    required: false
     type: string
   locations:
+    required: true
     type: array
     items:
       type: Location
   key:
+    required: false
     description: |-
       User-specific unique identifier for a zone.
       Must be unique across a project.

@@ -6,8 +6,11 @@ displayName: CustomObjectReference
 discriminatorValue: key-value-document
 properties:
   typeId:
+    required: true
     type: ReferenceTypeId
   id:
+    required: true
     type: string
   obj:
+    required: false
     type: CustomObject

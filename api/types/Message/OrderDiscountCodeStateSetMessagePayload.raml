@@ -6,10 +6,14 @@ displayName: OrderDiscountCodeStateSetMessagePayload
 discriminatorValue: OrderDiscountCodeStateSet
 properties:
   type:
+    required: true
     type: string
   discountCode:
+    required: true
     type: DiscountCodeReference
   oldState:
+    required: false
     type: DiscountCodeState
   state:
+    required: true
     type: DiscountCodeState

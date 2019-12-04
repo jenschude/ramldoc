@@ -7,6 +7,11 @@ uriParameters:
   storeKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
+      - "manage_my_orders:{projectKey}:{storeKey}"
   responses:
     200:
       body:

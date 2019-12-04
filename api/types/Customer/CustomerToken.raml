@@ -6,17 +6,23 @@ displayName: CustomerToken
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: false
     format: rfc3339
     type: datetime
   customerId:
+    required: true
     type: string
   id:
+    required: true
     type: string
   value:
+    required: true
     type: string
   expiresAt:
+    required: true
     format: rfc3339
     type: datetime

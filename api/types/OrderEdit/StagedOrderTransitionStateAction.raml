@@ -6,8 +6,11 @@ displayName: StagedOrderTransitionStateAction
 discriminatorValue: transitionState
 properties:
   action:
+    required: true
     type: string
   force:
+    required: false
     type: boolean
   state:
+    required: true
     type: StateResourceIdentifier

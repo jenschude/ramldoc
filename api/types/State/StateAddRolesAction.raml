@@ -6,8 +6,10 @@ displayName: StateAddRolesAction
 discriminatorValue: addRoles
 properties:
   action:
+    required: true
     type: string
   roles:
+    required: true
     type: array
     items:
       type: StateRoleEnum

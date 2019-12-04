@@ -6,44 +6,55 @@ displayName: OrderEdit
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the OrderEdit.
     type: string
   version:
+    required: true
     description: |-
       The current version of the OrderEdit.
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   result:
+    required: true
     description: |-
       Contains a preview of the changes in case of unapplied edit.
       For applied edits, it contains the summary of the changes.
     type: OrderEditResult
   resource:
+    required: true
     description: |-
       The order to be updated with this edit.
     type: OrderReference
   custom:
+    required: false
     type: CustomFields
   comment:
+    required: false
     description: |-
       This field can be used to add textual information regarding the edit.
     type: string
   stagedActions:
+    required: true
     description: |-
       The actions to apply to the Order.
       Cannot be updated after the edit has been applied.
@@ -51,6 +62,7 @@ properties:
     items:
       type: StagedOrderUpdateAction
   key:
+    required: false
     description: |-
       Unique identifier for this edit.
     type: string

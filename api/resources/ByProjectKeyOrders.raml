@@ -5,22 +5,33 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_orders:{projectKey}"
   description: |-
     Query Orders
   queryParameters:
     expand:
+      required: false
       type: string
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:
@@ -28,12 +39,18 @@ get:
         application/json:
           type: OrderPagedQueryResponse
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_orders:{projectKey}"
   description: |-
     Creates an order from a Cart.
     The cart must have a shipping address set before creating an order.
     When using the Platform TaxMode, the shipping address is used for tax calculation.
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:

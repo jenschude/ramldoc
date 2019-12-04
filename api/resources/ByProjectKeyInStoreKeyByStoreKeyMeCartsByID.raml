@@ -9,10 +9,16 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
+      - "manage_my_orders:{projectKey}:{storeKey}"
   description: |-
     Get Cart by ID
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -20,10 +26,16 @@ get:
         application/json:
           type: Cart
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
+      - "manage_my_orders:{projectKey}:{storeKey}"
   description: |-
     Update Cart by ID
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -34,13 +46,20 @@ post:
         application/json:
           type: Cart
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
+      - "manage_my_orders:{projectKey}:{storeKey}"
   description: |-
     Delete Cart by ID
   queryParameters:
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

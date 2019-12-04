@@ -6,6 +6,7 @@ displayName: ExtensionDraft
 
 properties:
   timeoutInMs:
+    required: false
     description: |-
       The maximum time the commercetools platform waits for a response from the extension.
       The maximum value is 2000 ms (2 seconds).
@@ -14,17 +15,20 @@ properties:
     format: int16
     type: integer
   destination:
+    required: true
     description: |-
       Details where the extension can be reached
     discriminator: type
     type: ExtensionDestination
   triggers:
+    required: true
     description: |-
       Describes what triggers the extension
     type: array
     items:
       type: ExtensionTrigger
   key:
+    required: false
     description: |-
       User-specific unique identifier for the extension
     type: string

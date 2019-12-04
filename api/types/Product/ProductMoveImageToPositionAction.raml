@@ -6,16 +6,22 @@ displayName: ProductMoveImageToPositionAction
 discriminatorValue: moveImageToPosition
 properties:
   action:
+    required: true
     type: string
   imageUrl:
+    required: true
     type: string
   staged:
+    required: false
     type: boolean
   position:
+    required: true
     format: int64
     type: number
   variantId:
+    required: false
     format: int64
     type: number
   sku:
+    required: false
     type: string

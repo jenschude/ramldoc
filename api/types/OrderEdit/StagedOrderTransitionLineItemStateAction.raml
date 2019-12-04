@@ -6,15 +6,21 @@ displayName: StagedOrderTransitionLineItemStateAction
 discriminatorValue: transitionLineItemState
 properties:
   action:
+    required: true
     type: string
   toState:
+    required: true
     type: StateResourceIdentifier
   fromState:
+    required: true
     type: StateResourceIdentifier
   quantity:
+    required: true
     format: int64
     type: number
   lineItemId:
+    required: true
     type: string
   actualTransitionDate:
+    required: false
     type: datetime

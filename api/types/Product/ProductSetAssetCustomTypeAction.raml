@@ -6,19 +6,27 @@ displayName: ProductSetAssetCustomTypeAction
 discriminatorValue: setAssetCustomType
 properties:
   action:
+    required: true
     type: string
   assetId:
+    required: false
     type: string
   staged:
+    required: false
     type: boolean
   variantId:
+    required: false
     format: int64
     type: number
   fields:
+    required: false
     type: object
   type:
+    required: false
     type: TypeResourceIdentifier
   sku:
+    required: false
     type: string
   assetKey:
+    required: false
     type: string

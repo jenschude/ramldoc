@@ -7,6 +7,11 @@ uriParameters:
   ID:
     type: string
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_order_edits:{projectKey}"
   body:
     application/json:
       type: OrderEditApply

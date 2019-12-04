@@ -6,39 +6,49 @@ displayName: TaxCategory
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the category.
     type: string
   version:
+    required: true
     description: |-
       The current version of the category.
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   rates:
+    required: true
     description: |-
       The tax rates have unique IDs in the rates list
     type: array
     items:
       type: TaxRate
   name:
+    required: true
     type: string
   description:
+    required: false
     type: string
   key:
+    required: false
     description: |-
       User-specific unique identifier for the category.
     type: string

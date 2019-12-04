@@ -6,15 +6,21 @@ displayName: ProductSetImageLabelAction
 discriminatorValue: setImageLabel
 properties:
   action:
+    required: true
     type: string
   imageUrl:
+    required: true
     type: string
   staged:
+    required: false
     type: boolean
   label:
+    required: false
     type: string
   variantId:
+    required: false
     format: int64
     type: number
   sku:
+    required: false
     type: string

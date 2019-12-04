@@ -6,18 +6,25 @@ displayName: ResourceUpdatedDelivery
 discriminatorValue: ResourceUpdated
 properties:
   projectKey:
+    required: true
     type: string
   resource:
+    required: true
     type: Reference
   resourceUserProvidedIdentifiers:
+    required: false
     type: UserProvidedIdentifiers
   notificationType:
+    required: true
     type: string
   modifiedAt:
+    required: true
     type: datetime
   oldVersion:
+    required: true
     format: int64
     type: number
   version:
+    required: true
     format: int64
     type: number

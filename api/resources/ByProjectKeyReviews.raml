@@ -5,22 +5,33 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
   description: |-
     Query Reviews
   queryParameters:
     expand:
+      required: false
       type: string
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:
@@ -28,10 +39,16 @@ get:
         application/json:
           type: ReviewPagedQueryResponse
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
   description: |-
     Create Review
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:

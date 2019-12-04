@@ -6,14 +6,17 @@ displayName: CartDraft
 
 properties:
   country:
+    required: false
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
     type: string
   anonymousId:
+    required: false
     description: |-
       Assigns the new cart to an anonymous session (the customer has not signed up/in yet).
     type: string
   shippingRateInput:
+    required: false
     description: |-
       The shippingRateInput is used as an input to select a ShippingRatePriceTier.
       Based on the definition of ShippingRateInputType.
@@ -22,60 +25,74 @@ properties:
       Otherwise it can not bet set.
     type: ShippingRateInputDraft
   customerGroup:
+    required: false
     description: |-
       Will be set automatically when the `customerId` is set and the customer is a member of a customer group.
       Can be set explicitly when no `customerId` is present.
     type: CustomerGroupResourceIdentifier
   origin:
+    required: false
     description: |-
       The default origin is `Customer`.
     type: CartOrigin
   deleteDaysAfterLastModification:
+    required: false
     description: |-
       The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
       If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
     format: int64
     type: number
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFieldsDraft
   shippingMethod:
+    required: false
     type: ShippingMethodResourceIdentifier
   taxCalculationMode:
+    required: false
     description: |-
       The default tax calculation mode is `LineItemLevel`.
     type: TaxCalculationMode
   store:
+    required: false
     description: |-
       Assigns the new cart to the store.
       The store assignment can not be modified.
     type: StoreResourceIdentifier
   locale:
+    required: false
     description: |-
       Must be one of the languages supported for this project
     type: string
   externalTaxRateForShippingMethod:
+    required: false
     description: |-
       An external tax rate can be set for the `shippingMethod` if the cart has the `External` TaxMode.
     type: ExternalTaxRateDraft
   inventoryMode:
+    required: false
     description: |-
       Default inventory mode is `None`.
     type: InventoryMode
   lineItems:
+    required: false
     type: array
     items:
       type: LineItemDraft
   taxRoundingMode:
+    required: false
     description: |-
       The default tax rounding mode is `HalfEven`.
     type: RoundingMode
   customLineItems:
+    required: false
     type: array
     items:
       type: CustomLineItemDraft
   itemShippingAddresses:
+    required: false
     description: |-
       Contains addresses for carts with multiple shipping addresses.
       Each address must contain a key which is unique in this cart.
@@ -86,22 +103,28 @@ properties:
     items:
       type: Address
   taxMode:
+    required: false
     description: |-
       The default tax mode is `Platform`.
     type: TaxMode
   customerEmail:
+    required: false
     type: string
   customerId:
+    required: false
     description: |-
       Id of an existing Customer.
     type: string
   shippingAddress:
+    required: false
     description: |-
       The shipping address is used to determine the eligible shipping methods and rates as well as the tax rate of the line items.
     type: Address
   currency:
+    required: true
     description: |-
       A three-digit currency code as per [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
     type: CurrencyCode
   billingAddress:
+    required: false
     type: Address

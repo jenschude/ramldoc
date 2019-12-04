@@ -6,25 +6,34 @@ displayName: CustomObject
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     type: CreatedBy
   lastModifiedBy:
+    required: false
     type: LastModifiedBy
   container:
+    required: true
     description: |-
       A namespace to group custom objects.
     type: string
   value:
+    required: true
     type: any
   key:
+    required: true
     type: string

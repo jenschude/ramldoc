@@ -6,10 +6,14 @@ displayName: CartClassificationTier
 discriminatorValue: CartClassification
 properties:
   type:
+    required: true
     type: ShippingRateTierType
   price:
+    required: true
     type: Money
   isMatching:
+    required: false
     type: boolean
   value:
+    required: true
     type: string

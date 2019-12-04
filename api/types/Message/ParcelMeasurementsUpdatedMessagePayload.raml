@@ -6,10 +6,14 @@ displayName: ParcelMeasurementsUpdatedMessagePayload
 discriminatorValue: ParcelMeasurementsUpdated
 properties:
   type:
+    required: true
     type: string
   deliveryId:
+    required: true
     type: string
   measurements:
+    required: false
     type: ParcelMeasurements
   parcelId:
+    required: true
     type: string

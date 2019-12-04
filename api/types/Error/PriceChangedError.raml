@@ -6,12 +6,16 @@ displayName: PriceChangedError
 discriminatorValue: PriceChanged
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   lineItems:
+    required: true
     type: array
     items:
       type: string
   shipping:
+    required: true
     type: boolean

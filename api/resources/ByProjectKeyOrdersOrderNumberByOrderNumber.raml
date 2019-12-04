@@ -7,11 +7,17 @@ uriParameters:
   orderNumber:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_orders:{projectKey}"
   description: |-
     In case the orderNumber does not match the regular expression [a-zA-Z0-9_-]+,
     it should be provided in URL-encoded format.
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -19,10 +25,16 @@ get:
         application/json:
           type: Order
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_orders:{projectKey}"
   description: |-
     Update Order by orderNumber
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -33,15 +45,23 @@ post:
         application/json:
           type: Order
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_orders:{projectKey}"
   description: |-
     Delete Order by orderNumber
   queryParameters:
     dataErasure:
+      required: false
       type: boolean
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

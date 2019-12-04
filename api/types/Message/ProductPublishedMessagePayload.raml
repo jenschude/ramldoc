@@ -6,12 +6,16 @@ displayName: ProductPublishedMessagePayload
 discriminatorValue: ProductPublished
 properties:
   type:
+    required: true
     type: string
   removedImageUrls:
+    required: true
     type: array
     items:
       type: string
   productProjection:
+    required: true
     type: ProductProjection
   scope:
+    required: true
     type: ProductPublishScope

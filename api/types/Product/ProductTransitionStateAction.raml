@@ -6,8 +6,11 @@ displayName: ProductTransitionStateAction
 discriminatorValue: transitionState
 properties:
   action:
+    required: true
     type: string
   force:
+    required: false
     type: boolean
   state:
+    required: false
     type: StateResourceIdentifier

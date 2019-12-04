@@ -6,12 +6,17 @@ displayName: CartScoreTier
 discriminatorValue: CartScore
 properties:
   type:
+    required: true
     type: ShippingRateTierType
   score:
+    required: true
     type: number
   price:
+    required: false
     type: Money
   isMatching:
+    required: false
     type: boolean
   priceFunction:
+    required: false
     type: PriceFunction

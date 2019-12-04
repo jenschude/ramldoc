@@ -6,30 +6,38 @@ displayName: LineItemDraft
 
 properties:
   externalTaxRate:
+    required: false
     description: |-
       An external tax rate can be set if the cart has the `External` TaxMode.
     type: ExternalTaxRateDraft
   quantity:
+    default: 1
+    required: false
     description: |-
       The amount of a `LineItem`in the cart.
       Must be a positive integer.
     format: int64
     type: number
   shippingDetails:
+    required: false
     description: |-
       Container for line item specific address(es).
     type: ItemShippingDetailsDraft
   productId:
+    required: false
     type: string
   externalTotalPrice:
+    required: false
     description: |-
       Sets the line item `price` and `totalPrice` to the given values and sets the line item `priceMode` to `ExternalTotal` LineItemPriceMode.
     type: ExternalLineItemTotalPrice
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFieldsDraft
   supplyChannel:
+    required: false
     description: |-
       By providing supply channel information, you can unique identify
       inventory entries that should be reserved.
@@ -37,16 +45,20 @@ properties:
       the InventorySupply role.
     type: ChannelResourceIdentifier
   variantId:
+    required: false
     format: int64
     type: number
   distributionChannel:
+    required: false
     description: |-
       The channel is used to select a ProductPrice.
       The provided channel should have the ProductDistribution role.
     type: ChannelResourceIdentifier
   sku:
+    required: false
     type: string
   externalPrice:
+    required: false
     description: |-
       Sets the line item `price` to the given value and sets the line item `priceMode` to `ExternalPrice` LineItemPriceMode.
     type: Money

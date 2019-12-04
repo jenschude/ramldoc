@@ -6,8 +6,11 @@ displayName: MyCartSetLineItemShippingDetailsAction
 discriminatorValue: setLineItemShippingDetails
 properties:
   action:
+    required: true
     type: string
   shippingDetails:
+    required: false
     type: ItemShippingDetailsDraft
   lineItemId:
+    required: true
     type: string

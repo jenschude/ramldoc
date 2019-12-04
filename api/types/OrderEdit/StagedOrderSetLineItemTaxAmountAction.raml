@@ -6,8 +6,11 @@ displayName: StagedOrderSetLineItemTaxAmountAction
 discriminatorValue: setLineItemTaxAmount
 properties:
   action:
+    required: true
     type: string
   lineItemId:
+    required: true
     type: string
   externalTaxAmount:
+    required: false
     type: ExternalTaxAmountDraft

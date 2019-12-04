@@ -5,34 +5,52 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
+      - "view_published_products:{projectKey}"
   description: |-
     You can use the product projections query endpoint to get the current or staged representations of Products.
     When used with an API client that has the view_published_products:{projectKey} scope,
     this endpoint only returns published (current) product projections.
   queryParameters:
     staged:
+      default: false
+      required: false
       type: boolean
     priceCurrency:
+      required: false
       type: string
     priceCountry:
+      required: false
       type: string
     priceCustomerGroup:
+      required: false
       type: string
     priceChannel:
+      required: false
       type: string
     expand:
+      required: false
       type: string
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:

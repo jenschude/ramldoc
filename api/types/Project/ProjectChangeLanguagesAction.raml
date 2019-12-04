@@ -6,8 +6,10 @@ displayName: ProjectChangeLanguagesAction
 discriminatorValue: changeLanguages
 properties:
   action:
+    required: true
     type: string
   languages:
+    required: true
     type: array
     items:
       type: Locale

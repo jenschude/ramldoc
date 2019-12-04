@@ -6,6 +6,7 @@ displayName: DiscountCodeDraft
 
 properties:
   cartDiscounts:
+    required: true
     description: |-
       The referenced matching cart discounts can be applied to the cart once the discount code is added.
       The number of cart discounts in a discount code is limited to **10**.
@@ -13,44 +14,55 @@ properties:
     items:
       type: CartDiscountResourceIdentifier
   code:
+    required: true
     description: |-
       Unique identifier of this discount code.
       This value is added to the cart
       to enable the related cart discounts in the cart.
     type: string
   cartPredicate:
+    required: false
     description: |-
       The discount code can only be applied to carts that match this predicate.
     type: string
   custom:
+    required: false
     type: CustomFieldsDraft
   name:
+    required: false
     type: LocalizedString
   validUntil:
+    required: false
     description: |-
       The time until the discount can be applied on a cart.
       After that time the code is invalid.
     format: rfc3339
     type: datetime
   groups:
+    required: false
     description: |-
       The groups to which this discount code shall belong to.
     type: array
     items:
       type: string
   description:
+    required: false
     type: LocalizedString
   validFrom:
+    required: false
     description: |-
       The time from which the discount can be applied on a cart.
       Before that time the code is invalid.
     format: rfc3339
     type: datetime
   maxApplicationsPerCustomer:
+    required: false
     format: int64
     type: number
   isActive:
+    required: false
     type: boolean
   maxApplications:
+    required: false
     format: int64
     type: number

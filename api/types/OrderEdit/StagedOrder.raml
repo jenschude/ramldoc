@@ -6,36 +6,45 @@ displayName: StagedOrder
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the order.
     type: string
   version:
+    required: true
     description: |-
       The current version of the order.
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   shipmentState:
+    required: false
     type: ShipmentState
   country:
+    required: false
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
       Used for product variant price selection.
     type: string
   orderNumber:
+    required: false
     description: |-
       String that uniquely identifies an order.
       It can be used to create more human-readable (in contrast to ID) identifier for the order.
@@ -43,117 +52,149 @@ properties:
       Once it's set it cannot be changed.
     type: string
   totalPrice:
+    required: true
     discriminator: type
     type: TypedMoney
   shippingRateInput:
+    required: false
     description: |-
       The shippingRateInput is used as an input to select a ShippingRatePriceTier.
     discriminator: type
     type: ShippingRateInput
   taxedPrice:
+    required: false
     description: |-
       The taxes are calculated based on the shipping address.
     type: TaxedPrice
   origin:
+    required: true
     type: CartOrigin
   shippingInfo:
+    required: false
     description: |-
       Set if the ShippingMethod is set.
     type: ShippingInfo
   refusedGifts:
+    required: true
     description: |-
       Automatically filled when a line item with LineItemMode `GiftLineItem` is removed from this order.
     type: array
     items:
       type: CartDiscountReference
   locale:
+    required: false
     type: string
   cart:
+    required: false
     description: |-
       Set when this order was created from a cart.
       The cart will have the state `Ordered`.
     discriminatorValue: cart
     type: CartReference
   inventoryMode:
+    required: false
     type: InventoryMode
   orderState:
+    required: true
     description: |-
       One of the four predefined OrderStates.
     type: OrderState
   returnInfo:
+    required: false
     type: array
     items:
       type: ReturnInfo
   lineItems:
+    required: true
     type: array
     items:
       type: LineItem
   customLineItems:
+    required: true
     type: array
     items:
       type: CustomLineItem
   itemShippingAddresses:
+    required: false
     description: |-
       Contains addresses for orders with multiple shipping addresses.
     type: array
     items:
       type: Address
   customerEmail:
+    required: false
     type: string
   customerId:
+    required: false
     type: string
   state:
+    required: false
     description: |-
       This reference can point to a state in a custom workflow.
     type: StateReference
   paymentState:
+    required: false
     type: PaymentState
   anonymousId:
+    required: false
     description: |-
       Identifies carts and orders belonging to an anonymous session (the customer has not signed up/in yet).
     type: string
   discountCodes:
+    required: false
     type: array
     items:
       type: DiscountCodeInfo
   completedAt:
+    required: false
     description: |-
       This field will only be present if it was set for Order Import
     format: rfc3339
     type: datetime
   customerGroup:
+    required: false
     description: |-
       Set when the customer is set and the customer is a member of a customer group.
       Used for product variant price selection.
     discriminatorValue: customer-group
     type: CustomerGroupReference
   custom:
+    required: false
     type: CustomFields
   taxCalculationMode:
+    required: false
     description: |-
       When calculating taxes for `taxedPrice`, the selected mode is used for calculating the price with LineItemLevel (horizontally) or UnitPriceLevel (vertically) calculation mode.
     type: TaxCalculationMode
   store:
+    required: false
     type: StoreKeyReference
   lastMessageSequenceNumber:
+    required: true
     description: |-
       The sequence number of the last order message produced by changes to this order.
       `0` means, that no messages were created yet.
     format: int64
     type: number
   syncInfo:
+    required: true
     type: array
     items:
       type: SyncInfo
   taxRoundingMode:
+    required: false
     description: |-
       When calculating taxes for `taxedPrice`, the selected mode is used for rouding.
     type: RoundingMode
   taxMode:
+    required: false
     type: TaxMode
   shippingAddress:
+    required: false
     type: Address
   billingAddress:
+    required: false
     type: Address
   paymentInfo:
+    required: false
     type: PaymentInfo

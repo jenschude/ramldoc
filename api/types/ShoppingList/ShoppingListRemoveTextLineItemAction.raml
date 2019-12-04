@@ -6,9 +6,12 @@ displayName: ShoppingListRemoveTextLineItemAction
 discriminatorValue: removeTextLineItem
 properties:
   action:
+    required: true
     type: string
   quantity:
+    required: false
     format: int64
     type: number
   textLineItemId:
+    required: true
     type: string

@@ -6,8 +6,11 @@ displayName: CartSetCustomLineItemTaxAmountAction
 discriminatorValue: setCustomLineItemTaxAmount
 properties:
   action:
+    required: true
     type: string
   customLineItemId:
+    required: true
     type: string
   externalTaxAmount:
+    required: false
     type: ExternalTaxAmountDraft

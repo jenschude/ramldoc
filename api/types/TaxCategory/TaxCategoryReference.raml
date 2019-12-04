@@ -6,8 +6,11 @@ displayName: TaxCategoryReference
 discriminatorValue: tax-category
 properties:
   typeId:
+    required: true
     type: ReferenceTypeId
   id:
+    required: true
     type: string
   obj:
+    required: false
     type: TaxCategory

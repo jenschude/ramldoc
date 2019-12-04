@@ -5,6 +5,10 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
   responses:
     200:
       body:

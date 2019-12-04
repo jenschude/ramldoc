@@ -6,22 +6,27 @@ displayName: TransactionDraft
 
 properties:
   interactionId:
+    required: false
     description: |-
       The identifier that is used by the interface that managed the transaction (usually the PSP).
       If a matching interaction was logged in the `interfaceInteractions` array, the corresponding interaction should be findable with this ID.
     type: string
   amount:
+    required: true
     type: Money
   state:
+    required: false
     description: |-
       The state of this transaction.
       If not set, defaults to `Initial`.
     type: TransactionState
   type:
+    required: true
     description: |-
       The type of this transaction.
     type: TransactionType
   timestamp:
+    required: false
     description: |-
       The time at which the transaction took place.
     format: rfc3339

@@ -5,30 +5,45 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_orders:{projectKey}"
   description: |-
     Query ShippingMethods
   queryParameters:
     shipping-methodId:
+      required: false
       type: string
     country:
+      required: false
       type: string
     state:
+      required: false
       type: string
     currency:
+      required: false
       type: string
     expand:
+      required: false
       type: string
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:
@@ -36,10 +51,16 @@ get:
         application/json:
           type: ShippingMethodPagedQueryResponse
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_orders:{projectKey}"
   description: |-
     Create ShippingMethod
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:

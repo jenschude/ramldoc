@@ -6,14 +6,20 @@ displayName: StagedOrderSetShippingAddressAndCustomShippingMethodAction
 discriminatorValue: setShippingAddressAndCustomShippingMethod
 properties:
   action:
+    required: true
     type: string
   shippingRate:
+    required: true
     type: ShippingRateDraft
   externalTaxRate:
+    required: false
     type: ExternalTaxRateDraft
   address:
+    required: true
     type: Address
   shippingMethodName:
+    required: true
     type: string
   taxCategory:
+    required: false
     type: TaxCategoryResourceIdentifier

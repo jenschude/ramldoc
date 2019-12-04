@@ -7,24 +7,37 @@ uriParameters:
   storeKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_orders:{projectKey}"
+      - "view_orders:{projectKey}:{storeKey}"
   description: |-
     Queries carts in a specific Store. The {storeKey} path parameter maps to a Store’s key.
   queryParameters:
     customerId:
+      required: false
       type: string
     expand:
+      required: false
       type: string
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:
@@ -32,6 +45,12 @@ get:
         application/json:
           type: CartPagedQueryResponse | object
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_orders:{projectKey}"
+      - "manage_orders:{projectKey}:{storeKey}"
   description: |-
     Creates a cart in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store’s key.
     When using this endpoint the cart’s store field is always set to the store specified in the path parameter.
@@ -39,6 +58,7 @@ post:
     in the CartDraft has a predicate which does not match the cart.
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:

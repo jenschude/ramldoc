@@ -6,20 +6,26 @@ displayName: TextLineItem
 
 properties:
   addedAt:
+    required: true
     description: |-
       When the text line item was added to the shopping list.
     format: rfc3339
     type: datetime
   quantity:
+    required: true
     format: int16
     type: number
   custom:
+    required: false
     type: CustomFields
   name:
+    required: true
     type: LocalizedString
   description:
+    required: false
     type: LocalizedString
   id:
+    required: true
     description: |-
       The unique ID of this TextLineItem.
     type: string

@@ -6,9 +6,12 @@ displayName: ConcurrentModificationError
 discriminatorValue: ConcurrentModification
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   currentVersion:
+    required: false
     format: int64
     type: number

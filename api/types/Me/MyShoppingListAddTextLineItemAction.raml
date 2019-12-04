@@ -6,15 +6,21 @@ displayName: MyShoppingListAddTextLineItemAction
 discriminatorValue: addTextLineItem
 properties:
   action:
+    required: true
     type: string
   addedAt:
+    required: false
     type: datetime
   quantity:
+    required: false
     format: int64
     type: number
   custom:
+    required: false
     type: CustomFieldsDraft
   name:
+    required: true
     type: LocalizedString
   description:
+    required: false
     type: LocalizedString

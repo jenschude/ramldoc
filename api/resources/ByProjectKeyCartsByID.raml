@@ -7,11 +7,17 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_orders:{projectKey}"
   description: |-
     The cart may not contain up-to-date prices, discounts etc.
     If you want to ensure they’re up-to-date, send an Update request with the Recalculate update action instead.
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -19,10 +25,16 @@ get:
         application/json:
           type: Cart
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_orders:{projectKey}"
   description: |-
     Update Cart by ID
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -33,15 +45,23 @@ post:
         application/json:
           type: Cart
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_orders:{projectKey}"
   description: |-
     Delete Cart by ID
   queryParameters:
     dataErasure:
+      required: false
       type: boolean
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

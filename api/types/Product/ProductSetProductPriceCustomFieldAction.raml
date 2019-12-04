@@ -6,12 +6,17 @@ displayName: ProductSetProductPriceCustomFieldAction
 discriminatorValue: setProductPriceCustomField
 properties:
   action:
+    required: true
     type: string
   name:
+    required: true
     type: string
   staged:
+    required: false
     type: boolean
   priceId:
+    required: true
     type: string
   value:
+    required: false
     type: any

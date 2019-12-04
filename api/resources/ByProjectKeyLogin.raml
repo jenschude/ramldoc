@@ -5,6 +5,11 @@ uriParameters:
   projectKey:
     type: string
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_customers:{projectKey}"
   description: |-
     Authenticate Customer (Sign In). Retrieves the authenticated
     customer (a customer that matches the given email/password pair).

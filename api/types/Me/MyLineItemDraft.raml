@@ -6,19 +6,24 @@ displayName: MyLineItemDraft
 
 properties:
   quantity:
+    required: true
     format: int16
     type: number
   shippingDetails:
+    required: false
     description: |-
       Container for line item specific address(es).
     type: ItemShippingDetailsDraft
   productId:
+    required: true
     type: string
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFieldsDraft
   supplyChannel:
+    required: false
     description: |-
       By providing supply channel information, you can unique identify
       inventory entries that should be reserved.
@@ -26,11 +31,14 @@ properties:
     discriminatorValue: channel
     type: ChannelResourceIdentifier
   variantId:
+    required: true
     format: int64
     type: number
   sku:
+    required: false
     type: string
   distributionChannel:
+    required: false
     description: |-
       The channel is used to select a ProductPrice.
       The provided channel should have the ProductDistribution role.

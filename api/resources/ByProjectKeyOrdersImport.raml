@@ -5,6 +5,11 @@ uriParameters:
   projectKey:
     type: string
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_orders:{projectKey}"
   description: |-
     Create an Order by Import
   body:

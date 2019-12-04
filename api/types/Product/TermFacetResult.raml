@@ -6,19 +6,25 @@ displayName: TermFacetResult
 discriminatorValue: terms
 properties:
   type:
+    required: true
     type: FacetTypes
   other:
+    required: true
     format: int64
     type: number
   total:
+    required: true
     format: int64
     type: number
   terms:
+    required: true
     type: array
     items:
       type: FacetResultTerm
   dataType:
+    required: true
     type: TermFacetResultType
   missing:
+    required: true
     format: int64
     type: number

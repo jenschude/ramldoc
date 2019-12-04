@@ -6,18 +6,26 @@ displayName: CartAddCustomLineItemAction
 discriminatorValue: addCustomLineItem
 properties:
   action:
+    required: true
     type: string
   externalTaxRate:
+    required: false
     type: ExternalTaxRateDraft
   quantity:
+    required: true
     type: number
   money:
+    required: true
     type: Money
   custom:
+    required: false
     type: CustomFieldsDraft
   name:
+    required: true
     type: LocalizedString
   slug:
+    required: true
     type: string
   taxCategory:
+    required: false
     type: TaxCategoryResourceIdentifier

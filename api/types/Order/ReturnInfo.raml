@@ -6,13 +6,16 @@ displayName: ReturnInfo
 
 properties:
   returnDate:
+    required: false
     format: rfc3339
     type: datetime
   returnTrackingId:
+    required: false
     description: |-
       Identifies, which return tracking ID is connected to this particular return.
     type: string
   items:
+    required: true
     type: array
     items:
       type: ReturnItem

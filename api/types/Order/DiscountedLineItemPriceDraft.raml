@@ -6,8 +6,10 @@ displayName: DiscountedLineItemPriceDraft
 
 properties:
   includedDiscounts:
+    required: true
     type: array
     items:
       type: DiscountedLineItemPortion
   value:
+    required: true
     type: Money

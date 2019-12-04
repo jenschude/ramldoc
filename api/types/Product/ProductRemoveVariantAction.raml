@@ -6,11 +6,15 @@ displayName: ProductRemoveVariantAction
 discriminatorValue: removeVariant
 properties:
   action:
+    required: true
     type: string
   staged:
+    required: false
     type: boolean
   id:
+    required: false
     format: int64
     type: number
   sku:
+    required: false
     type: string

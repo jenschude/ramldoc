@@ -6,15 +6,21 @@ displayName: LoggedResource
 
 properties:
   createdAt:
+    required: true
     type: datetime
   lastModifiedAt:
+    required: true
     type: datetime
   id:
+    required: true
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     type: CreatedBy
   lastModifiedBy:
+    required: false
     type: LastModifiedBy

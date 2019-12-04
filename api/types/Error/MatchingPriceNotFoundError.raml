@@ -6,18 +6,26 @@ displayName: MatchingPriceNotFoundError
 discriminatorValue: MatchingPriceNotFound
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   country:
+    required: false
     type: string
   productId:
+    required: true
     type: string
   customerGroup:
+    required: false
     type: CustomerGroupReference
   channel:
+    required: false
     type: ChannelReference
   currency:
+    required: false
     type: string
   variantId:
+    required: true
     type: integer

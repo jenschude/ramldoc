@@ -6,8 +6,11 @@ displayName: OrderSetCustomLineItemShippingDetailsAction
 discriminatorValue: setCustomLineItemShippingDetails
 properties:
   action:
+    required: true
     type: string
   customLineItemId:
+    required: true
     type: string
   shippingDetails:
+    required: false
     type: ItemShippingDetailsDraft

@@ -6,22 +6,29 @@ displayName: PagedQueryResponse
 
 properties:
   total:
+    required: false
     format: int64
     type: number
   offset:
+    required: true
     format: int64
     type: number
   meta:
+    required: false
     type: object
   count:
+    required: true
     format: int64
     type: number
   limit:
+    required: true
     format: int64
     type: number
   results:
+    required: true
     type: array
     items:
       type: BaseResource
   facets:
+    required: false
     type: FacetResults

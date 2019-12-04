@@ -6,8 +6,10 @@ displayName: ZoneRateDraft
 
 properties:
   zone:
+    required: true
     type: ZoneResourceIdentifier
   shippingRates:
+    required: true
     description: |-
       The array must not contain two shipping rates with the same currency.
     type: array

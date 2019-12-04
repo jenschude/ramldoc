@@ -7,10 +7,16 @@ uriParameters:
   key:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
   description: |-
     Get ProductDiscount by key
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -18,10 +24,16 @@ get:
         application/json:
           type: ProductDiscount
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
   description: |-
     Update ProductDiscount by key
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -32,13 +44,20 @@ post:
         application/json:
           type: ProductDiscount
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
   description: |-
     Delete ProductDiscount by key
   queryParameters:
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

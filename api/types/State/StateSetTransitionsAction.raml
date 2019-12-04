@@ -6,8 +6,10 @@ displayName: StateSetTransitionsAction
 discriminatorValue: setTransitions
 properties:
   action:
+    required: true
     type: string
   transitions:
+    required: false
     type: array
     items:
       type: StateResourceIdentifier

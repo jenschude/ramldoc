@@ -6,8 +6,11 @@ displayName: StagedOrderSetParcelTrackingDataAction
 discriminatorValue: setParcelTrackingData
 properties:
   action:
+    required: true
     type: string
   trackingData:
+    required: false
     type: TrackingData
   parcelId:
+    required: true
     type: string

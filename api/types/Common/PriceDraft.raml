@@ -6,24 +6,33 @@ displayName: PriceDraft
 
 properties:
   discounted:
+    required: false
     type: DiscountedPrice
   country:
+    required: false
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
     type: CountryCode
   tiers:
+    required: false
     type: array
     items:
       type: PriceTierDraft
   customerGroup:
+    required: false
     type: CustomerGroupResourceIdentifier
   custom:
+    required: false
     type: CustomFieldsDraft
   channel:
+    required: false
     type: ChannelResourceIdentifier
   validUntil:
+    required: false
     type: datetime
   validFrom:
+    required: false
     type: datetime
   value:
+    required: true
     type: Money

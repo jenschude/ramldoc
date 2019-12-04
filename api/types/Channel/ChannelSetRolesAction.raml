@@ -6,8 +6,10 @@ displayName: ChannelSetRolesAction
 discriminatorValue: setRoles
 properties:
   action:
+    required: true
     type: string
   roles:
+    required: true
     type: array
     items:
       type: ChannelRoleEnum

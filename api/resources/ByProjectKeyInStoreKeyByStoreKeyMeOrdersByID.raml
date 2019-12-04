@@ -9,10 +9,16 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
+      - "manage_my_orders:{projectKey}:{storeKey}"
   description: |-
     Get Order by ID
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:

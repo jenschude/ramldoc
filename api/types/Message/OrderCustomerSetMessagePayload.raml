@@ -6,12 +6,17 @@ displayName: OrderCustomerSetMessagePayload
 discriminatorValue: OrderCustomerSet
 properties:
   type:
+    required: true
     type: string
   oldCustomerGroup:
+    required: false
     type: CustomerGroupReference
   customerGroup:
+    required: false
     type: CustomerGroupReference
   oldCustomer:
+    required: false
     type: CustomerReference
   customer:
+    required: false
     type: CustomerReference

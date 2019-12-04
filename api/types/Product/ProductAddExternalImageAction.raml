@@ -6,13 +6,18 @@ displayName: ProductAddExternalImageAction
 discriminatorValue: addExternalImage
 properties:
   action:
+    required: true
     type: string
   image:
+    required: true
     type: Image
   staged:
+    required: false
     type: boolean
   variantId:
+    required: false
     format: int64
     type: number
   sku:
+    required: false
     type: string

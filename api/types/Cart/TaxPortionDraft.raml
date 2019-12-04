@@ -6,11 +6,14 @@ displayName: TaxPortionDraft
 
 properties:
   amount:
+    required: true
     type: TypedMoneyDraft
   rate:
+    required: true
     format: int16
     minimum: 0
     maximum: 1
     type: number
   name:
+    required: false
     type: string

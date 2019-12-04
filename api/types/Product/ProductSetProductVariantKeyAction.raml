@@ -6,13 +6,18 @@ displayName: ProductSetProductVariantKeyAction
 discriminatorValue: setProductVariantKey
 properties:
   action:
+    required: true
     type: string
   staged:
+    required: false
     type: boolean
   variantId:
+    required: false
     format: int64
     type: number
   sku:
+    required: false
     type: string
   key:
+    required: false
     type: string

@@ -6,10 +6,14 @@ displayName: ProductAddToCategoryAction
 discriminatorValue: addToCategory
 properties:
   action:
+    required: true
     type: string
   orderHint:
+    required: false
     type: string
   staged:
+    required: false
     type: boolean
   category:
+    required: true
     type: CategoryResourceIdentifier

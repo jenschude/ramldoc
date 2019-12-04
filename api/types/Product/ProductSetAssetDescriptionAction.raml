@@ -6,17 +6,24 @@ displayName: ProductSetAssetDescriptionAction
 discriminatorValue: setAssetDescription
 properties:
   action:
+    required: true
     type: string
   assetId:
+    required: false
     type: string
   description:
+    required: false
     type: LocalizedString
   staged:
+    required: false
     type: boolean
   variantId:
+    required: false
     format: int64
     type: number
   sku:
+    required: false
     type: string
   assetKey:
+    required: false
     type: string

@@ -6,8 +6,11 @@ displayName: StagedOrderSetLineItemTotalPriceAction
 discriminatorValue: setLineItemTotalPrice
 properties:
   action:
+    required: true
     type: string
   externalTotalPrice:
+    required: false
     type: ExternalLineItemTotalPrice
   lineItemId:
+    required: true
     type: string

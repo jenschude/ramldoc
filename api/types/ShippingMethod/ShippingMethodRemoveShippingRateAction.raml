@@ -6,8 +6,11 @@ displayName: ShippingMethodRemoveShippingRateAction
 discriminatorValue: removeShippingRate
 properties:
   action:
+    required: true
     type: string
   shippingRate:
+    required: true
     type: ShippingRateDraft
   zone:
+    required: true
     type: ZoneResourceIdentifier

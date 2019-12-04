@@ -6,8 +6,10 @@ displayName: ProjectChangeCountriesAction
 discriminatorValue: changeCountries
 properties:
   action:
+    required: true
     type: string
   countries:
+    required: true
     type: array
     items:
       type: CountryCode

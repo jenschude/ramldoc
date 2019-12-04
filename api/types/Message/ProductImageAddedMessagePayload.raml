@@ -6,11 +6,15 @@ displayName: ProductImageAddedMessagePayload
 discriminatorValue: ProductImageAdded
 properties:
   type:
+    required: true
     type: string
   image:
+    required: true
     type: Image
   staged:
+    required: true
     type: boolean
   variantId:
+    required: true
     format: int64
     type: number

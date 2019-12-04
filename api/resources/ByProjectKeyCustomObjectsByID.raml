@@ -7,10 +7,18 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
+      - "view_orders:{projectKey}"
+      - "view_customers:{projectKey}"
   description: |-
     Get CustomObject by container
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -18,15 +26,25 @@ get:
         application/json:
           type: CustomObject
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
+      - "manage_orders:{projectKey}"
+      - "manage_customers:{projectKey}"
   description: |-
     The version control is optional. If the query contains a version, then it must match the version of the object.
   queryParameters:
     version:
+      required: false
       format: int64
       type: number
     dataErasure:
+      required: false
       type: boolean
     expand:
+      required: false
       type: string
   responses:
     200:

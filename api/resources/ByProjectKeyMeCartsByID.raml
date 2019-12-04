@@ -7,10 +7,15 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
   description: |-
     Get MyCart by ID
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -18,10 +23,15 @@ get:
         application/json:
           type: MyCart
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
   description: |-
     Update MyCart by ID
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -32,13 +42,19 @@ post:
         application/json:
           type: MyCart
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_orders:{projectKey}"
   description: |-
     Delete MyCart by ID
   queryParameters:
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

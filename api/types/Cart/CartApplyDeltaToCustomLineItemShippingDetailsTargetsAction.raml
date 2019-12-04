@@ -6,10 +6,13 @@ displayName: CartApplyDeltaToCustomLineItemShippingDetailsTargetsAction
 discriminatorValue: applyDeltaToCustomLineItemShippingDetailsTargets
 properties:
   action:
+    required: true
     type: string
   customLineItemId:
+    required: true
     type: string
   targetsDelta:
+    required: true
     type: array
     items:
       type: ItemShippingTarget

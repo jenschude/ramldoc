@@ -6,21 +6,30 @@ displayName: CustomLineItemReturnItem
 discriminatorValue: CustomLineItemReturnItem
 properties:
   shipmentState:
+    required: true
     type: ReturnShipmentState
   createdAt:
+    required: true
     type: datetime
   lastModifiedAt:
+    required: true
     type: datetime
   quantity:
+    required: true
     format: int64
     type: number
   comment:
+    required: false
     type: string
   id:
+    required: true
     type: string
   paymentState:
+    required: true
     type: ReturnPaymentState
   type:
+    required: true
     type: string
   customLineItemId:
+    required: true
     type: string

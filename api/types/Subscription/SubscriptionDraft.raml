@@ -6,18 +6,23 @@ displayName: SubscriptionDraft
 
 properties:
   format:
+    required: false
     discriminator: type
     type: DeliveryFormat
   destination:
+    required: true
     discriminator: type
     type: Destination
   changes:
+    required: false
     type: array
     items:
       type: ChangeSubscription
   messages:
+    required: false
     type: array
     items:
       type: MessageSubscription
   key:
+    required: false
     type: string

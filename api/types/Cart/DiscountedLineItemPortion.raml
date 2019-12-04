@@ -6,7 +6,9 @@ displayName: DiscountedLineItemPortion
 
 properties:
   discountedAmount:
+    required: true
     type: TypedMoney
   discount:
+    required: true
     discriminatorValue: cart-discount
     type: CartDiscountReference

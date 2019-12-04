@@ -6,8 +6,11 @@ displayName: ProductChangeSlugAction
 discriminatorValue: changeSlug
 properties:
   action:
+    required: true
     type: string
   staged:
+    required: false
     type: boolean
   slug:
+    required: true
     type: LocalizedString

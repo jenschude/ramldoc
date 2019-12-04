@@ -6,12 +6,17 @@ displayName: ExtensionBadResponseError
 discriminatorValue: ExtensionBadResponse
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   localizedMessage:
+    required: false
     type: LocalizedString
   extensionExtraInfo:
+    required: false
     type: object
   errorByExtension:
+    required: true
     type: ErrorByExtension

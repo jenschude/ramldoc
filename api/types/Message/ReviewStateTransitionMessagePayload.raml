@@ -6,16 +6,23 @@ displayName: ReviewStateTransitionMessagePayload
 discriminatorValue: ReviewStateTransition
 properties:
   type:
+    required: true
     type: string
   newIncludedInStatistics:
+    required: true
     type: boolean
   oldState:
+    required: true
     type: StateReference
   force:
+    required: true
     type: boolean
   oldIncludedInStatistics:
+    required: true
     type: boolean
   newState:
+    required: true
     type: StateReference
   target:
+    required: true
     type: Reference

@@ -6,20 +6,26 @@ displayName: InventoryEntryDraft
 
 properties:
   expectedDelivery:
+    required: false
     format: rfc3339
     type: datetime
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFieldsDraft
   quantityOnStock:
+    required: true
     format: int64
     type: number
   supplyChannel:
+    required: false
     discriminatorValue: channel
     type: ChannelResourceIdentifier
   restockableInDays:
+    required: false
     format: int64
     type: number
   sku:
+    required: true
     type: string

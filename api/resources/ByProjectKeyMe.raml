@@ -5,20 +5,30 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_profile:{projectKey}"
   queryParameters:
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -26,6 +36,10 @@ get:
         application/json:
           type: MyCustomer
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_profile:{projectKey}"
   description: |-
     Create a customer
   body:
@@ -37,10 +51,15 @@ post:
         application/json:
           type: MyCustomer
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_my_profile:{projectKey}"
   description: |-
     Delete a Customer
   queryParameters:
     version:
+      required: true
       format: int64
       type: number
   responses:

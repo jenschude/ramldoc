@@ -6,49 +6,64 @@ displayName: ProductDraft
 
 properties:
   searchKeywords:
+    required: false
     type: SearchKeywords
   description:
+    required: false
     type: LocalizedString
   variants:
+    required: false
     description: |-
       An array of related product variants.
     type: array
     items:
       type: ProductVariantDraft
   metaDescription:
+    required: false
     type: LocalizedString
   taxCategory:
+    required: false
     type: TaxCategoryResourceIdentifier
   metaKeywords:
+    required: false
     type: LocalizedString
   categoryOrderHints:
+    required: false
     type: CategoryOrderHints
   publish:
+    required: false
     description: |-
       If `true`, the product is published immediately.
     type: boolean
   metaTitle:
+    required: false
     type: LocalizedString
   name:
+    required: true
     type: LocalizedString
   state:
+    required: false
     type: StateResourceIdentifier
   masterVariant:
+    required: false
     description: |-
       The master product variant.
       Required if the `variants` array has product variants.
     type: ProductVariantDraft
   categories:
+    required: false
     description: |-
       Categories assigned to the product.
     type: array
     items:
       type: CategoryResourceIdentifier
   key:
+    required: false
     description: |-
       User-specific unique identifier for the product.
     type: string
   slug:
+    required: true
     description: |-
       Human-readable identifiers usually used as deep-link URLs for the product.
       A slug must be unique across a project, but a product can have the same slug for different languages.
@@ -56,6 +71,7 @@ properties:
       Valid characters are: alphabetic characters (`A-Z, a-z`), numeric characters (`0-9`), underscores (`_`) and hyphens (`-`).
     type: LocalizedString
   productType:
+    required: true
     description: |-
       A predefined product type assigned to the product.
       All products must have a product type.

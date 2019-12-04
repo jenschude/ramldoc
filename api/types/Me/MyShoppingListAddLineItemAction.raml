@@ -6,18 +6,25 @@ displayName: MyShoppingListAddLineItemAction
 discriminatorValue: addLineItem
 properties:
   action:
+    required: true
     type: string
   addedAt:
+    required: false
     type: datetime
   quantity:
+    required: false
     format: int64
     type: number
   productId:
+    required: false
     type: string
   custom:
+    required: false
     type: CustomFieldsDraft
   variantId:
+    required: false
     format: int64
     type: number
   sku:
+    required: false
     type: string

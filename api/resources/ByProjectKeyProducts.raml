@@ -5,32 +5,47 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
   description: |-
     You can use the query endpoint to get the full representations of products.
     REMARK: We suggest to use the performance optimized search endpoint which has a bunch functionalities,
     the query API lacks like sorting on custom attributes, etc.
   queryParameters:
     priceCurrency:
+      required: false
       type: string
     priceCountry:
+      required: false
       type: string
     priceCustomerGroup:
+      required: false
       type: string
     priceChannel:
+      required: false
       type: string
     expand:
+      required: false
       type: string
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:
@@ -38,20 +53,30 @@ get:
         application/json:
           type: ProductPagedQueryResponse
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
   description: |-
     To create a new product, send a representation that is going to become the initial staged representation
     of the new product in the master catalog. If price selection query parameters are provided,
     the selected prices will be added to the response.
   queryParameters:
     priceCurrency:
+      required: false
       type: string
     priceCountry:
+      required: false
       type: string
     priceCustomerGroup:
+      required: false
       type: string
     priceChannel:
+      required: false
       type: string
     expand:
+      required: false
       type: string
   body:
     application/json:

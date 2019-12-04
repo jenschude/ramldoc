@@ -6,81 +6,114 @@ displayName: MyCart
 
 properties:
   createdAt:
+    required: true
     type: datetime
   lastModifiedAt:
+    required: true
     type: datetime
   id:
+    required: true
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     type: CreatedBy
   lastModifiedBy:
+    required: false
     type: LastModifiedBy
   country:
+    required: false
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
     type: CountryCode
   totalPrice:
+    required: true
     type: TypedMoney
   shippingRateInput:
+    required: false
     type: ShippingRateInput
   taxedPrice:
+    required: false
     type: TaxedPrice
   origin:
+    required: true
     type: CartOrigin
   deleteDaysAfterLastModification:
+    required: false
     type: integer
   shippingInfo:
+    required: false
     type: ShippingInfo
   refusedGifts:
+    required: true
     type: array
     items:
       type: CartDiscountReference
   locale:
+    required: false
     type: string
   inventoryMode:
+    required: false
     type: InventoryMode
   lineItems:
+    required: true
     type: array
     items:
       type: LineItem
   customLineItems:
+    required: true
     type: array
     items:
       type: CustomLineItem
   itemShippingAddresses:
+    required: false
     type: array
     items:
       type: Address
   customerEmail:
+    required: false
     type: string
   cartState:
+    required: true
     type: CartState
   customerId:
+    required: false
     type: string
   anonymousId:
+    required: false
     type: string
   discountCodes:
+    required: false
     type: array
     items:
       type: DiscountCodeInfo
   customerGroup:
+    required: false
     type: CustomerGroupReference
   custom:
+    required: false
     type: CustomFields
   taxCalculationMode:
+    required: true
     type: TaxCalculationMode
   store:
+    required: false
     type: StoreKeyReference
   taxRoundingMode:
+    required: true
     type: RoundingMode
   taxMode:
+    required: true
     type: TaxMode
   shippingAddress:
+    required: false
     type: Address
   billingAddress:
+    required: false
     type: Address
   paymentInfo:
+    required: false
     type: PaymentInfo

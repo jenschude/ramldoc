@@ -6,15 +6,21 @@ displayName: ResourceCreatedDelivery
 discriminatorValue: ResourceCreated
 properties:
   projectKey:
+    required: true
     type: string
   resource:
+    required: true
     type: Reference
   resourceUserProvidedIdentifiers:
+    required: false
     type: UserProvidedIdentifiers
   notificationType:
+    required: true
     type: string
   modifiedAt:
+    required: true
     type: datetime
   version:
+    required: true
     format: int64
     type: number

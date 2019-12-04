@@ -6,15 +6,19 @@ displayName: CustomObjectDraft
 
 properties:
   container:
+    required: true
     description: |-
       A namespace to group custom objects.
     type: string
   version:
+    required: false
     format: int64
     type: number
   value:
+    required: true
     type: any
   key:
+    required: true
     description: |-
       A user-defined key that is unique within the given container.
     type: string

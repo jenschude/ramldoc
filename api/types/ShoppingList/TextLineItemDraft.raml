@@ -6,20 +6,25 @@ displayName: TextLineItemDraft
 
 properties:
   addedAt:
+    required: false
     description: |-
       Defaults to the current date and time.
     format: rfc3339
     type: datetime
   quantity:
+    required: false
     description: |-
       Defaults to `1`.
     format: int16
     type: number
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFieldsDraft
   name:
+    required: true
     type: LocalizedString
   description:
+    required: false
     type: LocalizedString

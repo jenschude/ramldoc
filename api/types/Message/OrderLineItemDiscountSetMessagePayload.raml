@@ -6,14 +6,19 @@ displayName: OrderLineItemDiscountSetMessagePayload
 discriminatorValue: OrderLineItemDiscountSet
 properties:
   type:
+    required: true
     type: string
   totalPrice:
+    required: true
     type: Money
   lineItemId:
+    required: true
     type: string
   taxedPrice:
+    required: false
     type: TaxedItemPrice
   discountedPricePerQuantity:
+    required: true
     type: array
     items:
       type: DiscountedLineItemPriceForQuantity

@@ -6,62 +6,84 @@ displayName: ProductProjection
 
 properties:
   createdAt:
+    required: true
     type: datetime
   lastModifiedAt:
+    required: true
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the Product.
     type: string
   version:
+    required: true
     description: |-
       The current version of the Product.
     format: int64
     type: number
   searchKeywords:
+    required: false
     type: SearchKeywords
   description:
+    required: false
     type: LocalizedString
   variants:
+    required: true
     type: array
     items:
       type: ProductVariant
   published:
+    required: false
     type: boolean
   hasStagedChanges:
+    required: false
     type: boolean
   metaDescription:
+    required: false
     type: LocalizedString
   taxCategory:
+    required: false
     type: TaxCategoryReference
   metaKeywords:
+    required: false
     type: LocalizedString
   categoryOrderHints:
+    required: false
     type: CategoryOrderHints
   metaTitle:
+    required: false
     type: LocalizedString
   name:
+    required: true
     type: LocalizedString
   state:
+    required: false
     type: StateReference
   masterVariant:
+    required: true
     type: ProductVariant
   categories:
+    required: true
     description: |-
       References to categories the product is in.
     type: array
     items:
       type: CategoryReference
   reviewRatingStatistics:
+    required: false
     description: |-
       Statistics about the review ratings taken into account for this product.
     type: ReviewRatingStatistics
   slug:
+    required: true
     type: LocalizedString
   productType:
+    required: true
     discriminatorValue: product-type
     type: ProductTypeReference
   key:
+    required: false
     description: |-
       User-specific unique identifier of the Product.
     type: string

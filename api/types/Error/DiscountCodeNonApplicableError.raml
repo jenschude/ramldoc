@@ -6,18 +6,26 @@ displayName: DiscountCodeNonApplicableError
 discriminatorValue: DiscountCodeNonApplicable
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   reason:
+    required: false
     type: string
   validityCheckTime:
+    required: false
     type: datetime
   discountCode:
+    required: false
     type: string
   validUntil:
+    required: false
     type: datetime
   validFrom:
+    required: false
     type: datetime
   dicountCodeId:
+    required: false
     type: string

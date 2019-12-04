@@ -6,22 +6,29 @@ displayName: ChannelDraft
 
 properties:
   address:
+    required: false
     type: Address
   geoLocation:
+    required: false
     type: GeoJson
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFieldsDraft
   roles:
+    required: false
     description: |-
       If not specified, then channel will get InventorySupply role by default
     type: array
     items:
       type: ChannelRoleEnum
   name:
+    required: false
     type: LocalizedString
   description:
+    required: false
     type: LocalizedString
   key:
+    required: true
     type: string

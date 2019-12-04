@@ -6,8 +6,11 @@ displayName: StagedOrderSetDeliveryAddressAction
 discriminatorValue: setDeliveryAddress
 properties:
   action:
+    required: true
     type: string
   deliveryId:
+    required: true
     type: string
   address:
+    required: false
     type: Address

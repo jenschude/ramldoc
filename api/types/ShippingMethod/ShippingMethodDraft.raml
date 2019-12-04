@@ -6,22 +6,29 @@ displayName: ShippingMethodDraft
 
 properties:
   zoneRates:
+    required: true
     type: array
     items:
       type: ZoneRateDraft
   predicate:
+    required: false
     description: |-
       A Cart predicate which can be used to more precisely select a shipping method for a cart.
     type: string
   isDefault:
+    required: true
     description: |-
       If `true` the shipping method will be the default one in a project.
     type: boolean
   name:
+    required: true
     type: string
   description:
+    required: false
     type: string
   key:
+    required: false
     type: string
   taxCategory:
+    required: true
     type: TaxCategoryResourceIdentifier

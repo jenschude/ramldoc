@@ -6,12 +6,17 @@ displayName: CategorySetAssetCustomFieldAction
 discriminatorValue: setAssetCustomField
 properties:
   action:
+    required: true
     type: string
   assetId:
+    required: false
     type: string
   name:
+    required: true
     type: string
   value:
+    required: false
     type: any
   assetKey:
+    required: false
     type: string

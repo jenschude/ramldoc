@@ -6,12 +6,15 @@ displayName: TaxedPrice
 
 properties:
   taxPortions:
+    required: true
     description: |-
       TaxedPrice fields that can be used in query predicates: `totalNet`, `totalGross`.
     type: array
     items:
       type: TaxPortion
   totalGross:
+    required: true
     type: TypedMoney
   totalNet:
+    required: true
     type: TypedMoney

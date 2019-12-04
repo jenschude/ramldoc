@@ -6,8 +6,11 @@ displayName: ProductChangeNameAction
 discriminatorValue: changeName
 properties:
   action:
+    required: true
     type: string
   name:
+    required: true
     type: LocalizedString
   staged:
+    required: false
     type: boolean

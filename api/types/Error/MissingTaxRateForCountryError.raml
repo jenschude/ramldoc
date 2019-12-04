@@ -6,12 +6,17 @@ displayName: MissingTaxRateForCountryError
 discriminatorValue: MissingTaxRateForCountry
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   country:
+    required: false
     type: string
   state:
+    required: false
     type: string
   taxCategoryId:
+    required: true
     type: string

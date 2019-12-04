@@ -7,10 +7,16 @@ uriParameters:
   key:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
   description: |-
     Get Review by key
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -18,10 +24,16 @@ get:
         application/json:
           type: Review
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
   description: |-
     Update Review by key
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -32,15 +44,23 @@ post:
         application/json:
           type: Review
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
   description: |-
     Delete Review by key
   queryParameters:
     dataErasure:
+      required: false
       type: boolean
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

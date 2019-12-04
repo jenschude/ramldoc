@@ -6,10 +6,13 @@ displayName: OrderSetParcelItemsAction
 discriminatorValue: setParcelItems
 properties:
   action:
+    required: true
     type: string
   items:
+    required: true
     type: array
     items:
       type: DeliveryItem
   parcelId:
+    required: true
     type: string

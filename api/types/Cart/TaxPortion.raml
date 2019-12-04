@@ -6,8 +6,10 @@ displayName: TaxPortion
 
 properties:
   amount:
+    required: true
     type: TypedMoney
   rate:
+    required: true
     description: |-
       A number in the range [0..1]
     format: int16
@@ -15,4 +17,5 @@ properties:
     maximum: 1
     type: number
   name:
+    required: false
     type: string

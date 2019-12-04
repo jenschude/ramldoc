@@ -6,6 +6,7 @@ displayName: ProductVariantImportDraft
 
 properties:
   images:
+    required: false
     description: |-
       If this property is defined, then it will override the `images` property from the original
       product variant, otherwise `images` property from the original product variant would be copied in the resulting order.
@@ -13,6 +14,7 @@ properties:
     items:
       type: Image
   attributes:
+    required: false
     description: |-
       If this property is defined, then it will override the `attributes` property from the original
       product variant, otherwise `attributes` property from the original product variant would be copied in the resulting order.
@@ -20,6 +22,7 @@ properties:
     items:
       type: Attribute
   id:
+    required: false
     description: |-
       The sequential ID of the variant within the product.
       The variant with provided ID should exist in some existing product, so you also need to specify the productId if this property is set,
@@ -27,6 +30,7 @@ properties:
     format: int64
     type: number
   prices:
+    required: false
     description: |-
       The prices of the variant.
       The prices should not contain two prices for the same price scope (same currency, country and customer group).
@@ -35,6 +39,7 @@ properties:
     items:
       type: PriceDraft
   sku:
+    required: false
     description: |-
       The SKU of the existing variant.
     type: string

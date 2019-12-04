@@ -6,10 +6,13 @@ displayName: DuplicateAttributeValuesError
 discriminatorValue: DuplicateAttributeValues
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   attributes:
+    required: true
     type: array
     items:
       type: Attribute

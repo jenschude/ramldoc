@@ -6,8 +6,11 @@ displayName: StagedOrderSetParcelMeasurementsAction
 discriminatorValue: setParcelMeasurements
 properties:
   action:
+    required: true
     type: string
   measurements:
+    required: false
     type: ParcelMeasurements
   parcelId:
+    required: true
     type: string

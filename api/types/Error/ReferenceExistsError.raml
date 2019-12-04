@@ -6,8 +6,11 @@ displayName: ReferenceExistsError
 discriminatorValue: ReferenceExists
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   referencedBy:
+    required: false
     type: ReferenceTypeId

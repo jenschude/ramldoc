@@ -6,10 +6,13 @@ displayName: OrderExcerpt
 
 properties:
   totalPrice:
+    required: true
     discriminator: type
     type: TypedMoney
   taxedPrice:
+    required: false
     type: TaxedPrice
   version:
+    required: true
     format: int16
     type: integer

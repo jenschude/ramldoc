@@ -6,28 +6,39 @@ displayName: ProductData
 
 properties:
   metaKeywords:
+    required: false
     type: LocalizedString
   categoryOrderHints:
+    required: false
     type: CategoryOrderHints
   searchKeywords:
+    required: true
     type: SearchKeywords
   metaTitle:
+    required: false
     type: LocalizedString
   name:
+    required: true
     type: LocalizedString
   description:
+    required: false
     type: LocalizedString
   variants:
+    required: true
     type: array
     items:
       type: ProductVariant
   masterVariant:
+    required: true
     type: ProductVariant
   categories:
+    required: true
     type: array
     items:
       type: CategoryReference
   metaDescription:
+    required: false
     type: LocalizedString
   slug:
+    required: true
     type: LocalizedString

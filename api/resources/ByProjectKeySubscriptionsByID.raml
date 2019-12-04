@@ -7,10 +7,16 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_subscriptions:{projectKey}"
   description: |-
     Retrieves the representation of a subscription by its id.
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -18,10 +24,16 @@ get:
         application/json:
           type: Subscription
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_subscriptions:{projectKey}"
   description: |-
     Update Subscription by ID
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -32,13 +44,20 @@ post:
         application/json:
           type: Subscription
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_subscriptions:{projectKey}"
   description: |-
     Delete Subscription by ID
   queryParameters:
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

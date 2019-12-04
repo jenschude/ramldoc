@@ -6,12 +6,16 @@ displayName: StagedOrderAddReturnInfoAction
 discriminatorValue: addReturnInfo
 properties:
   action:
+    required: true
     type: string
   returnDate:
+    required: false
     type: datetime
   returnTrackingId:
+    required: false
     type: string
   items:
+    required: true
     type: array
     items:
       type: ReturnItemDraft

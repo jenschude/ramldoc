@@ -6,10 +6,14 @@ displayName: ProductSetDiscountedPriceAction
 discriminatorValue: setDiscountedPrice
 properties:
   action:
+    required: true
     type: string
   discounted:
+    required: false
     type: DiscountedPrice
   staged:
+    required: false
     type: boolean
   priceId:
+    required: true
     type: string

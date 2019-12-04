@@ -6,20 +6,27 @@ displayName: StateDraft
 
 properties:
   initial:
+    required: false
     type: boolean
   roles:
+    required: false
     type: array
     items:
       type: StateRoleEnum
   name:
+    required: false
     type: LocalizedString
   description:
+    required: false
     type: LocalizedString
   transitions:
+    required: false
     type: array
     items:
       type: StateResourceIdentifier
   type:
+    required: true
     type: StateTypeEnum
   key:
+    required: true
     type: string

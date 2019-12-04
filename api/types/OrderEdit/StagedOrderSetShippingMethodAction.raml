@@ -6,8 +6,11 @@ displayName: StagedOrderSetShippingMethodAction
 discriminatorValue: setShippingMethod
 properties:
   action:
+    required: true
     type: string
   externalTaxRate:
+    required: false
     type: ExternalTaxRateDraft
   shippingMethod:
+    required: false
     type: ShippingMethodResourceIdentifier

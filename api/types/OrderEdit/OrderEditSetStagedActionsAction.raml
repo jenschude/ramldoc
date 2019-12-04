@@ -6,8 +6,10 @@ displayName: OrderEditSetStagedActionsAction
 discriminatorValue: setStagedActions
 properties:
   action:
+    required: true
     type: string
   stagedActions:
+    required: true
     type: array
     items:
       type: StagedOrderUpdateAction

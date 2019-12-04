@@ -6,14 +6,17 @@ displayName: SyncInfo
 
 properties:
   channel:
+    required: true
     description: |-
       Connection to a particular synchronization destination.
     discriminatorValue: channel
     type: ChannelReference
   externalId:
+    required: false
     description: |-
       Can be used to reference an external order instance, file etc.
     type: string
   syncedAt:
+    required: true
     format: rfc3339
     type: datetime

@@ -6,89 +6,111 @@ displayName: OrderImportDraft
 
 properties:
   shipmentState:
+    required: false
     type: ShipmentState
   country:
+    required: false
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
       Used for product variant price selection.
     type: string
   completedAt:
+    required: false
     format: rfc3339
     type: datetime
   orderNumber:
+    required: false
     description: |-
       String that unique identifies an order.
       It can be used to create more human-readable (in contrast to ID) identifier for the order.
       It should be unique within a project.
     type: string
   totalPrice:
+    required: true
     type: Money
   customerGroup:
+    required: false
     description: |-
       Set when the customer is set and the customer is a member of a customer group.
       Used for product variant price selection.
     discriminatorValue: customer-group
     type: CustomerGroupResourceIdentifier
   taxedPrice:
+    required: false
     description: |-
       Order Import does not support calculation of taxes.
       When setting the draft the taxedPrice is to be provided.
     type: TaxedPriceDraft
   origin:
+    required: false
     description: |-
       The default origin is `Customer`.
     type: CartOrigin
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFieldsDraft
   shippingInfo:
+    required: false
     description: |-
       Set if the ShippingMethod is set.
     type: ShippingInfoImportDraft
   store:
+    required: false
     type: StoreResourceIdentifier
   inventoryMode:
+    required: false
     description: |-
       If not given the mode `None` will be assigned by default.
     type: InventoryMode
   orderState:
+    required: false
     description: |-
       If not given the `Open` state will be assigned by default.
     type: OrderState
   taxRoundingMode:
+    required: false
     description: |-
       If not given the tax rounding mode `HalfEven` will be assigned by default.
     type: RoundingMode
   lineItems:
+    required: false
     description: |-
       If not given `customLineItems` must not be empty.
     type: array
     items:
       type: LineItemImportDraft
   customLineItems:
+    required: false
     description: |-
       If not given `lineItems` must not be empty.
     type: array
     items:
       type: CustomLineItemDraft
   itemShippingAddresses:
+    required: false
     description: |-
       Contains addresses for orders with multiple shipping addresses.
     type: array
     items:
       type: Address
   customerEmail:
+    required: false
     description: |-
       The customer email can be used when no check against existing Customers is desired during order import.
     type: string
   customerId:
+    required: false
     description: |-
       If given the customer with that ID must exist in the project.
     type: string
   shippingAddress:
+    required: false
     type: Address
   billingAddress:
+    required: false
     type: Address
   paymentState:
+    required: false
     type: PaymentState

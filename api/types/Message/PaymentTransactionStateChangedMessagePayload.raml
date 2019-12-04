@@ -6,8 +6,11 @@ displayName: PaymentTransactionStateChangedMessagePayload
 discriminatorValue: PaymentTransactionStateChanged
 properties:
   type:
+    required: true
     type: string
   state:
+    required: true
     type: TransactionState
   transactionId:
+    required: true
     type: string

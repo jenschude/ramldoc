@@ -6,10 +6,13 @@ displayName: OrderEditPreviewSuccess
 discriminatorValue: PreviewSuccess
 properties:
   type:
+    required: true
     type: string
   preview:
+    required: true
     type: StagedOrder
   messagePayloads:
+    required: true
     type: array
     items:
       type: MessagePayload

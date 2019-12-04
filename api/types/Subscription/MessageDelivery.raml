@@ -6,27 +6,38 @@ displayName: MessageDelivery
 discriminatorValue: Message
 properties:
   projectKey:
+    required: true
     type: string
   resource:
+    required: true
     type: Reference
   resourceUserProvidedIdentifiers:
+    required: false
     type: UserProvidedIdentifiers
   notificationType:
+    required: true
     type: string
   sequenceNumber:
+    required: true
     format: int64
     type: number
   createdAt:
+    required: true
     type: datetime
   lastModifiedAt:
+    required: true
     type: datetime
   resourceVersion:
+    required: true
     format: int64
     type: number
   payloadNotIncluded:
+    required: true
     type: PayloadNotIncluded
   id:
+    required: true
     type: string
   version:
+    required: true
     format: int64
     type: number

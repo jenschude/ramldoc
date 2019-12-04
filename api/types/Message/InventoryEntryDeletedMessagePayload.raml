@@ -6,8 +6,11 @@ displayName: InventoryEntryDeletedMessagePayload
 discriminatorValue: InventoryEntryDeleted
 properties:
   type:
+    required: true
     type: string
   supplyChannel:
+    required: true
     type: ChannelReference
   sku:
+    required: true
     type: string

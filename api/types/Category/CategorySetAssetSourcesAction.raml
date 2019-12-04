@@ -6,12 +6,16 @@ displayName: CategorySetAssetSourcesAction
 discriminatorValue: setAssetSources
 properties:
   action:
+    required: true
     type: string
   sources:
+    required: true
     type: array
     items:
       type: AssetSource
   assetId:
+    required: false
     type: string
   assetKey:
+    required: false
     type: string

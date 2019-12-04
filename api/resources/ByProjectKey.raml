@@ -5,6 +5,10 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
   description: |-
     The Endpoint is responding a limited set of information about settings and configuration of the project.
   responses:
@@ -13,6 +17,10 @@ get:
         application/json:
           type: Project
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
   description: |-
     Update project
   body:

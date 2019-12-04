@@ -6,18 +6,23 @@ displayName: ZonePagedQueryResponse
 
 properties:
   total:
+    required: false
     format: int64
     type: number
   offset:
+    required: true
     format: int64
     type: number
   count:
+    required: true
     format: int64
     type: number
   limit:
+    required: true
     format: int64
     type: number
   results:
+    required: true
     type: array
     items:
       type: Zone

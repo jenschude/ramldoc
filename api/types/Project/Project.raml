@@ -6,42 +6,53 @@ displayName: Project
 
 properties:
   externalOAuth:
+    required: false
     type: ExternalOAuth
   shippingRateInputType:
+    required: false
     type: ShippingRateInputType
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   languages:
+    required: true
     type: array
     items:
       type: Locale
   name:
+    required: true
     description: |-
       The name of the project.
     type: string
   messages:
+    required: true
     type: MessageConfiguration
   countries:
+    required: true
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
     type: array
     items:
       type: CountryCode
   trialUntil:
+    required: false
     description: |-
       The time is in the format Year-Month `YYYY-MM`.
     type: string
   version:
+    required: true
     description: |-
       The current version of the project.
     format: int64
     type: number
   key:
+    required: true
     description: |-
       The unique key of the project.
     type: string
   currencies:
+    required: true
     description: |-
       A three-digit currency code as per [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
     type: array

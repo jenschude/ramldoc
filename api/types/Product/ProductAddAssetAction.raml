@@ -6,16 +6,22 @@ displayName: ProductAddAssetAction
 discriminatorValue: addAsset
 properties:
   action:
+    required: true
     type: string
   position:
+    required: false
     format: int32
     type: number
   staged:
+    required: false
     type: boolean
   variantId:
+    required: false
     format: int64
     type: number
   asset:
+    required: true
     type: AssetDraft
   sku:
+    required: false
     type: string

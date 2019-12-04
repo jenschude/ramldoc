@@ -6,12 +6,17 @@ displayName: CartSetCustomShippingMethodAction
 discriminatorValue: setCustomShippingMethod
 properties:
   action:
+    required: true
     type: string
   shippingRate:
+    required: true
     type: ShippingRateDraft
   externalTaxRate:
+    required: false
     type: ExternalTaxRateDraft
   shippingMethodName:
+    required: true
     type: string
   taxCategory:
+    required: false
     type: TaxCategoryResourceIdentifier

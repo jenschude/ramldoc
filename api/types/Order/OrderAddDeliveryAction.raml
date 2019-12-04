@@ -6,14 +6,18 @@ displayName: OrderAddDeliveryAction
 discriminatorValue: addDelivery
 properties:
   action:
+    required: true
     type: string
   address:
+    required: false
     type: Address
   items:
+    required: false
     type: array
     items:
       type: DeliveryItem
   parcels:
+    required: false
     type: array
     items:
       type: ParcelDraft

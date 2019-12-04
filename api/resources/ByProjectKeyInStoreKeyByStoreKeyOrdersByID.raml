@@ -9,12 +9,19 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_orders:{projectKey}"
+      - "view_orders:{projectKey}:{storeKey}"
   description: |-
     Returns an order by its ID from a specific Store. The {storeKey} path parameter maps to a Store’s key.
     If the order exists in the commercetools project but does not have the store field,
     or the store field references a different store, this method returns a ResourceNotFound error.
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -22,12 +29,19 @@ get:
         application/json:
           type: Order
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_orders:{projectKey}"
+      - "manage_orders:{projectKey}:{storeKey}"
   description: |-
     Updates an order in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store’s key.
     If the order exists in the commercetools project but does not have the store field,
     or the store field references a different store, this method returns a ResourceNotFound error.
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -38,15 +52,24 @@ post:
         application/json:
           type: Order
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_orders:{projectKey}"
+      - "manage_orders:{projectKey}:{storeKey}"
   description: |-
     Delete Order by ID
   queryParameters:
     dataErasure:
+      required: false
       type: boolean
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

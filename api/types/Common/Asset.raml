@@ -6,20 +6,27 @@ displayName: Asset
 
 properties:
   sources:
+    required: true
     type: array
     items:
       type: AssetSource
   custom:
+    required: false
     type: CustomFields
   name:
+    required: true
     type: LocalizedString
   description:
+    required: false
     type: LocalizedString
   id:
+    required: true
     type: string
   key:
+    required: false
     type: string
   tags:
+    required: false
     type: array
     items:
       type: string

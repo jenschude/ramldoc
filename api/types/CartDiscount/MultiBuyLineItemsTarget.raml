@@ -6,25 +6,31 @@ displayName: MultiBuyLineItemsTarget
 discriminatorValue: multiBuyLineItems
 properties:
   type:
+    required: true
     type: string
   predicate:
+    required: true
     description: |-
       A valid line item target predicate. The discount will be applied to line items that are matched by the predicate.
     type: string
   triggerQuantity:
+    required: true
     description: |-
       Quantity of line items that need to be present in order to trigger an application of this discount.
     format: int16
     type: integer
   discountedQuantity:
+    required: true
     description: |-
       Quantity of line items that are discounted per application of this discount.
     format: int16
     type: integer
   maxOccurrence:
+    required: false
     description: |-
       Maximum number of applications of this discount.
     format: int16
     type: integer
   selectionMode:
+    required: true
     type: SelectionMode

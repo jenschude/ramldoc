@@ -6,39 +6,51 @@ displayName: Subscription
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   format:
+    required: true
     discriminator: type
     type: DeliveryFormat
   destination:
+    required: true
     discriminator: type
     type: Destination
   changes:
+    required: true
     type: array
     items:
       type: ChangeSubscription
   messages:
+    required: true
     type: array
     items:
       type: MessageSubscription
   key:
+    required: false
     type: string
   status:
+    required: true
     type: SubscriptionHealthStatus

@@ -6,12 +6,15 @@ displayName: ParcelDraft
 
 properties:
   items:
+    required: false
     description: |-
       The delivery items contained in this parcel.
     type: array
     items:
       type: DeliveryItem
   trackingData:
+    required: false
     type: TrackingData
   measurements:
+    required: false
     type: ParcelMeasurements

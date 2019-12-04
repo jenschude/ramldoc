@@ -6,40 +6,56 @@ displayName: MyShoppingList
 
 properties:
   createdAt:
+    required: true
     type: datetime
   lastModifiedAt:
+    required: true
     type: datetime
   id:
+    required: true
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     type: CreatedBy
   lastModifiedBy:
+    required: false
     type: LastModifiedBy
   anonymousId:
+    required: false
     type: string
   textLineItems:
+    required: false
     type: array
     items:
       type: TextLineItem
   deleteDaysAfterLastModification:
+    required: false
     format: int64
     type: number
   custom:
+    required: false
     type: CustomFields
   description:
+    required: false
     type: LocalizedString
   lineItems:
+    required: false
     type: array
     items:
       type: ShoppingListLineItem
   name:
+    required: true
     type: LocalizedString
   slug:
+    required: false
     type: LocalizedString
   key:
+    required: false
     type: string
   customer:
+    required: false
     type: CustomerReference

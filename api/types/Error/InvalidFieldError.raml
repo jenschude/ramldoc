@@ -6,14 +6,19 @@ displayName: InvalidFieldError
 discriminatorValue: InvalidField
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   allowedValues:
+    required: false
     type: array
     items:
       type: any
   field:
+    required: true
     type: string
   invalidValue:
+    required: true
     type: any

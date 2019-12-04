@@ -6,8 +6,11 @@ displayName: PaymentAddInterfaceInteractionAction
 discriminatorValue: addInterfaceInteraction
 properties:
   action:
+    required: true
     type: string
   fields:
+    required: false
     type: FieldContainer
   type:
+    required: true
     type: TypeResourceIdentifier

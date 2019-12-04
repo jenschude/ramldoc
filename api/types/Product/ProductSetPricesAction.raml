@@ -6,15 +6,20 @@ displayName: ProductSetPricesAction
 discriminatorValue: setPrices
 properties:
   action:
+    required: true
     type: string
   staged:
+    required: false
     type: boolean
   variantId:
+    required: false
     format: int64
     type: number
   prices:
+    required: true
     type: array
     items:
       type: PriceDraft
   sku:
+    required: false
     type: string

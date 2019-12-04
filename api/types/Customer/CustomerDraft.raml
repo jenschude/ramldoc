@@ -6,24 +6,29 @@ displayName: CustomerDraft
 
 properties:
   anonymousId:
+    required: false
     description: |-
       Identifies carts and orders belonging to an anonymous session that will be assigned to the new customer account.
     type: string
   lastName:
+    required: false
     type: string
   addresses:
+    required: false
     description: |-
       Sets the ID of each address to be unique in the addresses list.
     type: array
     items:
       type: Address
   defaultShippingAddress:
+    required: false
     description: |-
       The index of the address in the addresses array.
       The `defaultShippingAddressId` of the customer will be set to the ID of that address.
     format: int64
     type: number
   stores:
+    required: false
     description: |-
       References to the stores the customer account is associated with.
       If no stores are specified, the customer is a global customer, and can log in using the Password Flow for global Customers.
@@ -32,19 +37,25 @@ properties:
     items:
       type: StoreResourceIdentifier
   customerGroup:
+    required: false
     discriminatorValue: customer-group
     type: CustomerGroupResourceIdentifier
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFieldsDraft
   companyName:
+    required: false
     type: string
   vatId:
+    required: false
     type: string
   externalId:
+    required: false
     type: string
   billingAddresses:
+    required: false
     description: |-
       The indices of the billing addresses in the addresses array.
       The `billingAddressIds` of the customer will be set to the IDs of that addresses.
@@ -52,14 +63,18 @@ properties:
     items:
       type: integer
   dateOfBirth:
+    required: false
     type: date-only
   locale:
+    required: false
     description: |-
       Must be one of the languages supported for this project
     type: string
   title:
+    required: false
     type: string
   customerNumber:
+    required: false
     description: |-
       String that uniquely identifies a customer.
       It can be used to create more human-readable (in contrast to ID) identifier for the customer.
@@ -67,38 +82,48 @@ properties:
       Once it's set it cannot be changed.
     type: string
   isEmailVerified:
+    required: false
     type: boolean
   firstName:
+    required: false
     type: string
   password:
+    required: true
     type: string
   middleName:
+    required: false
     type: string
   salutation:
+    required: false
     type: string
   anonymousCartId:
+    required: false
     description: |-
       Identifies a single cart that will be assigned to the new customer account.
     type: string
   key:
+    required: false
     description: |-
       User-specific unique identifier for a customer.
       Must be unique across a project.
       The field can be reset using the Set Key UpdateAction
     type: string
   defaultBillingAddress:
+    required: false
     description: |-
       The index of the address in the addresses array.
       The `defaultBillingAddressId` of the customer will be set to the ID of that address.
     format: int64
     type: number
   email:
+    required: true
     description: |-
       The customer's email address and the main identifier of uniqueness for a customer account.
       Email addresses are either unique to the store they're specified for, _or_ for the entire project, and are case insensitive.
       For more information, see Email uniquenes.
     type: string
   shippingAddresses:
+    required: false
     description: |-
       The indices of the shipping addresses in the addresses array.
       The `shippingAddressIds` of the Customer will be set to the IDs of that addresses.

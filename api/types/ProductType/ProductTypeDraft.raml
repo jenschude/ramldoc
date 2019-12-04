@@ -6,14 +6,18 @@ displayName: ProductTypeDraft
 
 properties:
   name:
+    required: true
     type: string
   description:
+    required: true
     type: string
   attributes:
+    required: false
     type: array
     items:
       type: AttributeDefinitionDraft
   key:
+    required: false
     description: |-
       User-specific unique identifier for the product type (min.
       2 and max.

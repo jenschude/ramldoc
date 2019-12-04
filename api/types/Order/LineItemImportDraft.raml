@@ -6,30 +6,39 @@ displayName: LineItemImportDraft
 
 properties:
   taxRate:
+    required: false
     type: TaxRate
   quantity:
+    required: true
     format: int16
     type: number
   shippingDetails:
+    required: false
     type: ItemShippingDetailsDraft
   productId:
+    required: false
     description: |-
       ID of the existing product.
       You also need to specify the ID of the variant if this property is set or alternatively you can just specify SKU of the product variant.
     type: string
   price:
+    required: true
     type: PriceDraft
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFieldsDraft
   variant:
+    required: true
     type: ProductVariantImportDraft
   name:
+    required: true
     description: |-
       The product name.
     type: LocalizedString
   supplyChannel:
+    required: false
     description: |-
       Optional connection to a particular supplier.
       By providing supply channel information, you can uniquely identify
@@ -39,10 +48,12 @@ properties:
     discriminatorValue: channel
     type: ChannelResourceIdentifier
   state:
+    required: false
     type: array
     items:
       type: ItemState
   distributionChannel:
+    required: false
     description: |-
       The channel is used to select a ProductPrice.
       The provided channel should have the ProductDistribution role.

@@ -6,13 +6,18 @@ displayName: ReturnItemDraft
 
 properties:
   shipmentState:
+    required: true
     type: ReturnShipmentState
   customLineItemId:
+    required: false
     type: string
   quantity:
+    required: true
     format: int64
     type: number
   lineItemId:
+    required: false
     type: string
   comment:
+    required: false
     type: string

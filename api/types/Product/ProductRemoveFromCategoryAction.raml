@@ -6,8 +6,11 @@ displayName: ProductRemoveFromCategoryAction
 discriminatorValue: removeFromCategory
 properties:
   action:
+    required: true
     type: string
   staged:
+    required: false
     type: boolean
   category:
+    required: true
     type: CategoryResourceIdentifier

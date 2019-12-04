@@ -6,6 +6,7 @@ displayName: ItemShippingTarget
 
 properties:
   quantity:
+    required: true
     description: |-
       The quantity of items that should go to the address with the specified `addressKey`.
       Only positive values are allowed.
@@ -13,6 +14,7 @@ properties:
     format: int16
     type: number
   addressKey:
+    required: true
     description: |-
       The key of the address in the cart's `itemShippingAddresses`
     type: string

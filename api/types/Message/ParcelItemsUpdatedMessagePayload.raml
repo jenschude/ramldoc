@@ -6,16 +6,21 @@ displayName: ParcelItemsUpdatedMessagePayload
 discriminatorValue: ParcelItemsUpdated
 properties:
   type:
+    required: true
     type: string
   deliveryId:
+    required: false
     type: string
   oldItems:
+    required: true
     type: array
     items:
       type: DeliveryItem
   items:
+    required: true
     type: array
     items:
       type: DeliveryItem
   parcelId:
+    required: true
     type: string

@@ -7,10 +7,16 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_shopping_lists:{projectKey}"
   description: |-
     Gets a shopping list by ID.
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -18,10 +24,16 @@ get:
         application/json:
           type: ShoppingList
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_shopping_lists:{projectKey}"
   description: |-
     Update ShoppingList by ID
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -32,15 +44,23 @@ post:
         application/json:
           type: ShoppingList
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_shopping_lists:{projectKey}"
   description: |-
     Delete ShoppingList by ID
   queryParameters:
     dataErasure:
+      required: false
       type: boolean
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

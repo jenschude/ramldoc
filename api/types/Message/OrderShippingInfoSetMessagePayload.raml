@@ -6,8 +6,11 @@ displayName: OrderShippingInfoSetMessagePayload
 discriminatorValue: OrderShippingInfoSet
 properties:
   type:
+    required: true
     type: string
   shippingInfo:
+    required: false
     type: ShippingInfo
   oldShippingInfo:
+    required: false
     type: ShippingInfo

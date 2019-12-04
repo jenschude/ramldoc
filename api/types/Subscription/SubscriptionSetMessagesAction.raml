@@ -6,8 +6,10 @@ displayName: SubscriptionSetMessagesAction
 discriminatorValue: setMessages
 properties:
   action:
+    required: true
     type: string
   messages:
+    required: false
     type: array
     items:
       type: MessageSubscription

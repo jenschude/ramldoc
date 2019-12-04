@@ -6,29 +6,36 @@ displayName: ProductDiscount
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the product discount
     type: string
   version:
+    required: true
     description: |-
       The current version of the product discount.
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   references:
+    required: true
     description: |-
       The platform will generate this array from the predicate.
       It contains the references of all the resources that are addressed in the predicate.
@@ -36,38 +43,47 @@ properties:
     items:
       type: Reference
   description:
+    required: false
     type: LocalizedString
   validFrom:
+    required: false
     description: |-
       The time from which the discount should be effective.
       Please take Eventual Consistency into account for calculated product discount values.
     format: rfc3339
     type: datetime
   isActive:
+    required: true
     description: |-
       Only active discount will be applied to product prices.
     type: boolean
   predicate:
+    required: true
     description: |-
       A valid ProductDiscount Predicate.
     type: string
   sortOrder:
+    required: true
     description: |-
       The string contains a number between 0 and 1.
       A discount with greater sortOrder is prioritized higher than a discount with lower sortOrder.
       A sortOrder must be unambiguous.
     type: string
   name:
+    required: true
     type: LocalizedString
   validUntil:
+    required: false
     description: |-
       The time from which the discount should be ineffective.
       Please take Eventual Consistency into account for calculated undiscounted values.
     format: rfc3339
     type: datetime
   value:
+    required: true
     type: ProductDiscountValue
   key:
+    required: false
     description: |-
       User-specific unique identifier for a product discount.
       Must be unique across a project.

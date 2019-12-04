@@ -6,51 +6,64 @@ displayName: CartDiscountDraft
 
 properties:
   requiresDiscountCode:
+    required: true
     description: |-
       States whether the discount can only be used in a connection with a DiscountCode.
       Defaults to `false`.
     type: boolean
   cartPredicate:
+    required: true
     description: |-
       A valid Cart predicate.
     type: string
   custom:
+    required: false
     type: CustomFields
   stackingMode:
+    required: false
     description: |-
       Specifies whether the application of this discount causes the following discounts to be ignored.
       Defaults to Stacking.
     type: StackingMode
   sortOrder:
+    required: true
     description: |-
       The string must contain a number between 0 and 1.
       A discount with greater sort order is prioritized higher than a discount with lower sort order.
       The sort order must be unambiguous among all cart discounts.
     type: string
   name:
+    required: true
     type: LocalizedString
   validUntil:
+    required: false
     format: rfc3339
     type: datetime
   description:
+    required: false
     type: LocalizedString
   validFrom:
+    required: false
     format: rfc3339
     type: datetime
   isActive:
+    required: false
     description: |-
       Only active discount can be applied to the cart.
       Defaults to `true`.
     type: boolean
   value:
+    required: true
     type: CartDiscountValueDraft
   key:
+    required: false
     description: |-
       User-specific unique identifier for a cart discount.
       Must be unique across a project.
       The field can be reset using the Set Key UpdateAction.
     type: string
   target:
+    required: false
     description: |-
       Must not be set when the `value` has type `giftLineItem`, otherwise a CartDiscountTarget must be set.
     type: CartDiscountTarget

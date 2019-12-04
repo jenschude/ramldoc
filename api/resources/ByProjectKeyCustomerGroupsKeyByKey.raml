@@ -7,10 +7,16 @@ uriParameters:
   key:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_customers:{projectKey}"
   description: |-
     Gets a customer group by Key.
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -18,10 +24,16 @@ get:
         application/json:
           type: CustomerGroup
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_customers:{projectKey}"
   description: |-
     Updates a customer group by Key.
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -32,13 +44,20 @@ post:
         application/json:
           type: CustomerGroup
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_customers:{projectKey}"
   description: |-
     Delete CustomerGroup by key
   queryParameters:
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

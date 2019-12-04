@@ -5,22 +5,33 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_subscriptions:{projectKey}"
   description: |-
     Query Subscriptions
   queryParameters:
     expand:
+      required: false
       type: string
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:
@@ -28,6 +39,11 @@ get:
         application/json:
           type: SubscriptionPagedQueryResponse
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_subscriptions:{projectKey}"
   description: |-
     The creation of a Subscription is eventually consistent, it may take up to a minute before it becomes fully active.
     In order to test that the destination is correctly configured, a test message will be put into the queue.
@@ -36,6 +52,7 @@ post:
     Currently, a maximum of 25 subscriptions can be created per project.
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:

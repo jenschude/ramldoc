@@ -6,34 +6,43 @@ displayName: Channel
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the channel.
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   address:
+    required: false
     description: |-
       The address where this channel is located (e.g.
       if the channel is a physical store).
     type: Address
   custom:
+    required: false
     type: CustomFields
   roles:
+    required: true
     description: |-
       The roles of this channel.
       Each channel must have at least one role.
@@ -41,22 +50,27 @@ properties:
     items:
       type: ChannelRoleEnum
   description:
+    required: false
     description: |-
       A human-readable description of the channel.
     type: LocalizedString
   geoLocation:
+    required: false
     description: |-
       A GeoJSON geometry object encoding the geo location of the channel.
     type: GeoJson
   name:
+    required: false
     description: |-
       A human-readable name of the channel.
     type: LocalizedString
   reviewRatingStatistics:
+    required: false
     description: |-
       Statistics about the review ratings taken into account for this channel.
     type: ReviewRatingStatistics
   key:
+    required: true
     description: |-
       Any arbitrary string key that uniquely identifies this channel within the project.
     type: string

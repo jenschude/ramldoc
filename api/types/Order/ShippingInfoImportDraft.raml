@@ -6,30 +6,39 @@ displayName: ShippingInfoImportDraft
 
 properties:
   taxRate:
+    required: false
     type: TaxRate
   shippingRate:
+    required: true
     description: |-
       The shipping rate used to determine the price.
     type: ShippingRateDraft
   discountedPrice:
+    required: false
     type: DiscountedLineItemPriceDraft
   shippingMethodState:
+    required: false
     description: |-
       Indicates whether the ShippingMethod referenced is allowed for the cart or not.
     type: ShippingMethodState
   price:
+    required: true
     type: Money
   shippingMethod:
+    required: false
     description: |-
       Not set if custom shipping method is used.
     type: ShippingMethodResourceIdentifier
   shippingMethodName:
+    required: true
     type: string
   deliveries:
+    required: false
     description: |-
       Deliveries are compilations of information on how the articles are being delivered to the customers.
     type: array
     items:
       type: Delivery
   taxCategory:
+    required: false
     type: TaxCategoryResourceIdentifier

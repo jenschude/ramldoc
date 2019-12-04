@@ -6,13 +6,18 @@ displayName: ProductAddPriceAction
 discriminatorValue: addPrice
 properties:
   action:
+    required: true
     type: string
   price:
+    required: true
     type: PriceDraft
   staged:
+    required: false
     type: boolean
   variantId:
+    required: false
     format: int64
     type: number
   sku:
+    required: false
     type: string

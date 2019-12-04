@@ -6,10 +6,13 @@ displayName: FilteredFacetResult
 discriminatorValue: filter
 properties:
   type:
+    required: true
     type: FacetTypes
   count:
+    required: true
     format: int64
     type: number
   productCount:
+    required: false
     format: int64
     type: number

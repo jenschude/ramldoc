@@ -6,11 +6,15 @@ displayName: CartValueTier
 discriminatorValue: CartValue
 properties:
   type:
+    required: true
     type: ShippingRateTierType
   minimumCentAmount:
+    required: true
     format: int64
     type: integer
   price:
+    required: true
     type: Money
   isMatching:
+    required: false
     type: boolean

@@ -6,14 +6,18 @@ displayName: HighPrecisionMoneyDraft
 discriminatorValue: highPrecision
 properties:
   centAmount:
+    required: true
     format: int64
     type: number
   currencyCode:
+    required: true
     description: |-
       The currency code compliant to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
     type: CurrencyCode
   type:
+    required: true
     type: MoneyType
   preciseAmount:
+    required: true
     format: int64
     type: number

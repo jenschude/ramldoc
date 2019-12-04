@@ -6,10 +6,13 @@ displayName: TaxedPriceDraft
 
 properties:
   taxPortions:
+    required: true
     type: array
     items:
       type: TaxPortionDraft
   totalGross:
+    required: true
     type: TypedMoneyDraft
   totalNet:
+    required: true
     type: TypedMoneyDraft

@@ -6,12 +6,17 @@ displayName: DuplicateFieldError
 discriminatorValue: DuplicateField
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   conflictingResource:
+    required: false
     type: Reference
   duplicateValue:
+    required: false
     type: any
   field:
+    required: false
     type: string

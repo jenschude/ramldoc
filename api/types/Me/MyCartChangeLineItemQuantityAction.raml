@@ -6,12 +6,17 @@ displayName: MyCartChangeLineItemQuantityAction
 discriminatorValue: changeLineItemQuantity
 properties:
   action:
+    required: true
     type: string
   quantity:
+    required: true
     type: number
   externalTotalPrice:
+    required: false
     type: ExternalLineItemTotalPrice
   lineItemId:
+    required: true
     type: string
   externalPrice:
+    required: false
     type: Money

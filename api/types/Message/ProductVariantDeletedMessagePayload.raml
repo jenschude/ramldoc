@@ -6,10 +6,13 @@ displayName: ProductVariantDeletedMessagePayload
 discriminatorValue: ProductVariantDeleted
 properties:
   type:
+    required: true
     type: string
   removedImageUrls:
+    required: true
     type: array
     items:
       type: string
   variant:
+    required: true
     type: ProductVariant

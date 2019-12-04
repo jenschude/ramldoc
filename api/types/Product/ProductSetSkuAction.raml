@@ -6,11 +6,15 @@ displayName: ProductSetSkuAction
 discriminatorValue: setSku
 properties:
   action:
+    required: true
     type: string
   staged:
+    required: false
     type: boolean
   variantId:
+    required: true
     format: int64
     type: number
   sku:
+    required: false
     type: string

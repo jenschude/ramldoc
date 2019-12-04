@@ -6,33 +6,42 @@ displayName: Review
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the review.
     type: string
   version:
+    required: true
     description: |-
       The current version of the review.
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   uniquenessValue:
+    required: false
     type: string
   custom:
+    required: false
     type: CustomFields
   rating:
+    required: false
     description: |-
       Number between -100 and 100 included.
     format: int8
@@ -40,31 +49,40 @@ properties:
     maximum: 100
     type: number
   title:
+    required: false
     type: string
   locale:
+    required: false
     type: string
   target:
+    required: false
     description: |-
       Identifies the target of the review.
       Can be a Product or a Channel
     type: ProductReference | ChannelReference
   includedInStatistics:
+    required: true
     description: |-
       Indicates if this review is taken into account in the ratings statistics of the target.
       A review is per default used in the statistics, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
       If the role of a State is modified after the calculation of this field, the calculation is not updated.
     type: boolean
   authorName:
+    required: false
     type: string
   state:
+    required: false
     type: StateReference
   text:
+    required: false
     type: string
   key:
+    required: false
     description: |-
       User-specific unique identifier for the review.
     type: string
   customer:
+    required: false
     description: |-
       The customer who created the review.
     discriminatorValue: customer

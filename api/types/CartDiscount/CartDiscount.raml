@@ -6,33 +6,41 @@ displayName: CartDiscount
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the cart discount.
     type: string
   version:
+    required: true
     description: |-
       The current version of the cart discount.
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   requiresDiscountCode:
+    required: true
     description: |-
       States whether the discount can only be used in a connection with a DiscountCode.
     type: boolean
   references:
+    required: true
     description: |-
       The platform will generate this array from the predicate.
       It contains the references of all the resources that are addressed in the predicate.
@@ -40,30 +48,38 @@ properties:
     items:
       type: Reference
   cartPredicate:
+    required: true
     description: |-
       A valid Cart predicate.
     type: string
   custom:
+    required: false
     type: CustomFields
   description:
+    required: false
     type: LocalizedString
   validFrom:
+    required: false
     format: rfc3339
     type: datetime
   isActive:
+    required: true
     description: |-
       Only active discount can be applied to the cart.
     type: boolean
   target:
+    required: false
     description: |-
       Empty when the `value` has type `giftLineItem`, otherwise a CartDiscountTarget is set.
     type: CartDiscountTarget
   stackingMode:
+    required: true
     description: |-
       Specifies whether the application of this discount causes the following discounts to be ignored.
       Defaults to Stacking.
     type: StackingMode
   sortOrder:
+    required: true
     description: |-
       The string must contain a number between 0 and 1.
       All matching cart discounts are applied to a cart in the order defined by this field.
@@ -71,13 +87,17 @@ properties:
       The sort order is unambiguous among all cart discounts.
     type: string
   name:
+    required: true
     type: LocalizedString
   validUntil:
+    required: false
     format: rfc3339
     type: datetime
   value:
+    required: true
     type: CartDiscountValue
   key:
+    required: false
     description: |-
       User-specific unique identifier for a cart discount.
       Must be unique across a project.

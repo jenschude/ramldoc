@@ -5,51 +5,80 @@ uriParameters:
   projectKey:
     type: string
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
+      - "view_published_products:{projectKey}"
   description: |-
     Search Product Projection
   responses:
     200:
       body:
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
+      - "view_published_products:{projectKey}"
   description: |-
     Search Product Projection
   queryParameters:
     fuzzy:
+      required: false
       type: boolean
     fuzzyLevel:
+      required: false
       format: int16
       type: number
     staged:
+      required: false
       type: boolean
     filter:
+      required: false
       type: string
     filter.facets:
+      required: false
       type: string
     filter.query:
+      required: false
       type: string
     facet:
+      required: false
       type: string
     /text.[a-z]{2}(-[A-Z]{2})?/:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
     priceCurrency:
+      required: false
       type: string
     priceCountry:
+      required: false
       type: string
     priceCustomerGroup:
+      required: false
       type: string
     priceChannel:
+      required: false
       type: string
     expand:
+      required: false
       type: string
   responses:
     200:

@@ -6,8 +6,10 @@ displayName: ProductTypeChangeAttributeOrderAction
 discriminatorValue: changeAttributeOrder
 properties:
   action:
+    required: true
     type: string
   attributes:
+    required: true
     type: array
     items:
       type: AttributeDefinition

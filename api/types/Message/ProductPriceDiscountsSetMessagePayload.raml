@@ -6,8 +6,10 @@ displayName: ProductPriceDiscountsSetMessagePayload
 discriminatorValue: ProductPriceDiscountsSet
 properties:
   type:
+    required: true
     type: string
   updatedPrices:
+    required: true
     type: array
     items:
       type: ProductPriceDiscountsSetUpdatedPrice

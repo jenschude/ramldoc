@@ -6,10 +6,13 @@ displayName: DuplicatePriceScopeError
 discriminatorValue: DuplicatePriceScope
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   conflictingPrices:
+    required: true
     type: array
     items:
       type: Price

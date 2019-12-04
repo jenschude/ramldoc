@@ -6,8 +6,10 @@ displayName: DiscountCodeChangeGroupsAction
 discriminatorValue: changeGroups
 properties:
   action:
+    required: true
     type: string
   groups:
+    required: true
     type: array
     items:
       type: string

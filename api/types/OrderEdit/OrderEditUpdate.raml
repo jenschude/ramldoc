@@ -6,11 +6,14 @@ displayName: OrderEditUpdate
 
 properties:
   dryRun:
+    required: false
     type: boolean
   actions:
+    required: true
     type: array
     items:
       type: OrderEditUpdateAction
   version:
+    required: true
     format: int64
     type: number

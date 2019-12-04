@@ -6,37 +6,47 @@ displayName: ProductType
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the product type.
     type: string
   version:
+    required: true
     description: |-
       The current version of the product type.
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   name:
+    required: true
     type: string
   description:
+    required: true
     type: string
   attributes:
+    required: false
     type: array
     items:
       type: AttributeDefinition
   key:
+    required: false
     description: |-
       User-specific unique identifier for the product type (max.
       256 characters).

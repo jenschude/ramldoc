@@ -6,8 +6,11 @@ displayName: StagedOrderSetReturnPaymentStateAction
 discriminatorValue: setReturnPaymentState
 properties:
   action:
+    required: true
     type: string
   returnItemId:
+    required: true
     type: string
   paymentState:
+    required: true
     type: ReturnPaymentState

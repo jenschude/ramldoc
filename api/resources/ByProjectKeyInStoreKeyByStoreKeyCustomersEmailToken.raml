@@ -7,6 +7,12 @@ uriParameters:
   storeKey:
     type: string
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_customers:{projectKey}"
+      - "manage_customers:{projectKey}:{storeKey}"
   description: |-
     Create a Token for verifying the Customer's Email
   body:

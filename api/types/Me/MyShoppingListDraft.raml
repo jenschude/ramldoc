@@ -6,23 +6,29 @@ displayName: MyShoppingListDraft
 
 properties:
   lineItems:
+    required: false
     type: array
     items:
       type: ShoppingListLineItemDraft
   textLineItems:
+    required: false
     type: array
     items:
       type: TextLineItemDraft
   deleteDaysAfterLastModification:
+    required: false
     description: |-
       The shopping list will be deleted automatically if it hasn't been modified for the specified amount of days.
     format: int64
     type: number
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFieldsDraft
   name:
+    required: true
     type: LocalizedString
   description:
+    required: false
     type: LocalizedString

@@ -6,14 +6,18 @@ displayName: OutOfStockError
 discriminatorValue: OutOfStock
 properties:
   code:
+    required: true
     type: string
   message:
+    required: true
     type: string
   lineItems:
+    required: true
     type: array
     items:
       type: string
   skus:
+    required: true
     type: array
     items:
       type: string

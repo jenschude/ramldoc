@@ -6,7 +6,9 @@ displayName: InventoryEntrySetRestockableInDaysAction
 discriminatorValue: setRestockableInDays
 properties:
   action:
+    required: true
     type: string
   restockableInDays:
+    required: false
     format: int64
     type: number

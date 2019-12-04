@@ -6,30 +6,38 @@ displayName: CustomLineItemDraft
 
 properties:
   externalTaxRate:
+    required: false
     description: |-
       An external tax rate can be set if the cart has the `External` TaxMode.
     type: ExternalTaxRateDraft
   quantity:
+    required: true
     description: |-
       The amount of a CustomLineItemin the cart.
       Must be a positive integer.
     format: int16
     type: number
   shippingDetails:
+    required: false
     description: |-
       Container for custom line item specific address(es).
     type: ItemShippingDetailsDraft
   money:
+    required: true
     type: Money
   custom:
+    required: false
     description: |-
       The custom fields.
     type: CustomFields
   name:
+    required: true
     type: LocalizedString
   slug:
+    required: true
     type: string
   taxCategory:
+    required: false
     description: |-
       The given tax category will be used to select a tax rate when a cart has the TaxMode `Platform`.
     type: TaxCategoryResourceIdentifier

@@ -7,10 +7,16 @@ uriParameters:
   emailToken:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_customers:{projectKey}"
   description: |-
     Get Customer by emailToken
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:

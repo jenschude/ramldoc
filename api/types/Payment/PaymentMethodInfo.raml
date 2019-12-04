@@ -6,17 +6,20 @@ displayName: PaymentMethodInfo
 
 properties:
   method:
+    required: false
     description: |-
       The payment method that is used, e.g.
       e.g.
       a conventional string representing Credit Card, Cash Advance etc.
     type: string
   name:
+    required: false
     description: |-
       A human-readable, localized name for the payment method, e.g.
       'Credit Card'.
     type: LocalizedString
   paymentInterface:
+    required: false
     description: |-
       The interface that handles the payment (usually a PSP).
       Cannot be changed once it has been set.

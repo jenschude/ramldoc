@@ -6,8 +6,10 @@ displayName: CartClassificationType
 discriminatorValue: CartClassification
 properties:
   type:
+    required: true
     type: ShippingRateTierType
   values:
+    required: true
     type: array
     items:
       type: CustomFieldLocalizedEnumValue

@@ -6,12 +6,16 @@ displayName: TaxCategoryDraft
 
 properties:
   rates:
+    required: true
     type: array
     items:
       type: TaxRateDraft
   name:
+    required: true
     type: string
   description:
+    required: false
     type: string
   key:
+    required: false
     type: string

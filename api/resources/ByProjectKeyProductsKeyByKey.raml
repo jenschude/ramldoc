@@ -7,18 +7,28 @@ uriParameters:
   key:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
   description: |-
     Gets the full representation of a product by Key.
   queryParameters:
     priceCurrency:
+      required: false
       type: string
     priceCountry:
+      required: false
       type: string
     priceCustomerGroup:
+      required: false
       type: string
     priceChannel:
+      required: false
       type: string
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -26,18 +36,28 @@ get:
         application/json:
           type: Product
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
   description: |-
     Update Product by key
   queryParameters:
     priceCurrency:
+      required: false
       type: string
     priceCountry:
+      required: false
       type: string
     priceCustomerGroup:
+      required: false
       type: string
     priceChannel:
+      required: false
       type: string
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -48,21 +68,32 @@ post:
         application/json:
           type: Product
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
   description: |-
     Delete Product by key
   queryParameters:
     priceCurrency:
+      required: false
       type: string
     priceCountry:
+      required: false
       type: string
     priceCustomerGroup:
+      required: false
       type: string
     priceChannel:
+      required: false
       type: string
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

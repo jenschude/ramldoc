@@ -5,22 +5,33 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_extensions:{projectKey}"
   description: |-
     Query Extensions
   queryParameters:
     expand:
+      required: false
       type: string
     where:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:
@@ -28,10 +39,16 @@ get:
         application/json:
           type: ExtensionPagedQueryResponse
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_extensions:{projectKey}"
   description: |-
     Currently, a maximum of 25 extensions can be created per project.
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:

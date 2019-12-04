@@ -6,10 +6,14 @@ displayName: CartSetCustomLineItemCustomTypeAction
 discriminatorValue: setCustomLineItemCustomType
 properties:
   action:
+    required: true
     type: string
   customLineItemId:
+    required: true
     type: string
   fields:
+    required: false
     type: FieldContainer
   type:
+    required: false
     type: TypeResourceIdentifier

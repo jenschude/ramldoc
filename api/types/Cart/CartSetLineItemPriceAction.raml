@@ -6,8 +6,11 @@ displayName: CartSetLineItemPriceAction
 discriminatorValue: setLineItemPrice
 properties:
   action:
+    required: true
     type: string
   lineItemId:
+    required: true
     type: string
   externalPrice:
+    required: false
     type: Money

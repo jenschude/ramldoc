@@ -6,10 +6,13 @@ displayName: CartSetCartTotalTaxAction
 discriminatorValue: setCartTotalTax
 properties:
   action:
+    required: true
     type: string
   externalTaxPortions:
+    required: false
     type: array
     items:
       type: TaxPortionDraft
   externalTotalGross:
+    required: true
     type: Money

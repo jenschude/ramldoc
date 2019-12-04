@@ -6,14 +6,19 @@ displayName: ErrorResponse
 
 properties:
   error_description:
+    required: false
     type: string
   error:
+    required: false
     type: string
   message:
+    required: true
     type: string
   errors:
+    required: false
     type: array
     items:
       type: ErrorObject
   statusCode:
+    required: true
     type: integer

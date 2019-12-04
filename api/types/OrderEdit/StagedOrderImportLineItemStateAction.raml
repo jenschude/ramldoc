@@ -6,10 +6,13 @@ displayName: StagedOrderImportLineItemStateAction
 discriminatorValue: importLineItemState
 properties:
   action:
+    required: true
     type: string
   lineItemId:
+    required: true
     type: string
   state:
+    required: true
     type: array
     items:
       type: ItemState

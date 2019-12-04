@@ -6,8 +6,10 @@ displayName: SubscriptionSetChangesAction
 discriminatorValue: setChanges
 properties:
   action:
+    required: true
     type: string
   changes:
+    required: false
     type: array
     items:
       type: ChangeSubscription

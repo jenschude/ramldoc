@@ -5,22 +5,35 @@ uriParameters:
   projectKey:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_products:{projectKey}"
+      - "view_published_products:{projectKey}"
   queryParameters:
     fuzzy:
+      required: false
       type: boolean
     staged:
+      required: false
       type: boolean
     /searchKeywords.[a-z]{2}(-[A-Z]{2})?/:
+      required: false
       type: string
     sort:
+      required: false
       type: string
     limit:
+      required: false
       format: int16
       type: number
     offset:
+      required: false
       format: int16
       type: number
     withTotal:
+      required: false
       type: boolean
   responses:
     200:

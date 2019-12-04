@@ -6,11 +6,14 @@ displayName: ApiClientDraft
 
 properties:
   deleteDaysAfterCreation:
+    required: false
     description: |-
       If set, the client will be deleted after the specified amount of days.
     format: int64
     type: number
   scope:
+    required: true
     type: string
   name:
+    required: true
     type: string

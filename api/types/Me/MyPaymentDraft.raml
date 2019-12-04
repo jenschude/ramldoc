@@ -6,15 +6,19 @@ displayName: MyPaymentDraft
 
 properties:
   paymentMethodInfo:
+    required: false
     type: PaymentMethodInfo
   custom:
+    required: false
     type: CustomFieldsDraft
   amountPlanned:
+    required: true
     description: |-
       How much money this payment intends to receive from the customer.
       The value usually matches the cart or order gross total.
     type: Money
   transaction:
+    required: false
     description: |-
       A list of financial transactions of the `Authorization` or `Charge`
       TransactionTypes.

@@ -6,15 +6,21 @@ displayName: CustomLineItemStateTransitionMessagePayload
 discriminatorValue: CustomLineItemStateTransition
 properties:
   type:
+    required: true
     type: string
   toState:
+    required: true
     type: StateReference
   fromState:
+    required: true
     type: StateReference
   customLineItemId:
+    required: true
     type: string
   quantity:
+    required: true
     format: int64
     type: number
   transitionDate:
+    required: true
     type: datetime

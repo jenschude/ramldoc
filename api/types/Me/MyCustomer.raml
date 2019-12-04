@@ -6,69 +6,98 @@ displayName: MyCustomer
 
 properties:
   createdAt:
+    required: true
     type: datetime
   lastModifiedAt:
+    required: true
     type: datetime
   id:
+    required: true
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     type: CreatedBy
   lastModifiedBy:
+    required: false
     type: LastModifiedBy
   lastName:
+    required: false
     type: string
   addresses:
+    required: true
     type: array
     items:
       type: Address
   companyName:
+    required: false
     type: string
   vatId:
+    required: false
     type: string
   locale:
+    required: false
     type: string
   title:
+    required: false
     type: string
   isEmailVerified:
+    required: true
     type: boolean
   shippingAddressIds:
+    required: false
     type: array
     items:
       type: string
   password:
+    required: true
     type: string
   key:
+    required: false
     type: string
   email:
+    required: true
     type: string
   stores:
+    required: false
     type: array
     items:
       type: StoreKeyReference
   customerGroup:
+    required: false
     type: CustomerGroupReference
   custom:
+    required: false
     type: CustomFields
   externalId:
+    required: false
     type: string
   dateOfBirth:
+    required: false
     type: date-only
   billingAddressIds:
+    required: false
     type: array
     items:
       type: string
   defaultShippingAddressId:
+    required: false
     type: string
   customerNumber:
+    required: false
     type: string
   defaultBillingAddressId:
+    required: false
     type: string
   firstName:
+    required: false
     type: string
   middleName:
+    required: false
     type: string
   salutation:
+    required: false
     type: string

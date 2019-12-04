@@ -7,10 +7,16 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_orders:{projectKey}"
   description: |-
     Get Message by ID
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:

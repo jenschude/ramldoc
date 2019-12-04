@@ -6,12 +6,16 @@ displayName: CategorySetAssetTagsAction
 discriminatorValue: setAssetTags
 properties:
   action:
+    required: true
     type: string
   assetId:
+    required: false
     type: string
   assetKey:
+    required: false
     type: string
   tags:
+    required: false
     type: array
     items:
       type: string

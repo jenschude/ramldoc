@@ -7,10 +7,16 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "view_payments:{projectKey}"
   description: |-
     Get Payment by ID
   queryParameters:
     expand:
+      required: false
       type: string
   responses:
     200:
@@ -18,10 +24,16 @@ get:
         application/json:
           type: Payment
 post:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_payments:{projectKey}"
   description: |-
     Update Payment by ID
   queryParameters:
     expand:
+      required: false
       type: string
   body:
     application/json:
@@ -32,15 +44,23 @@ post:
         application/json:
           type: Payment
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_payments:{projectKey}"
   description: |-
     Delete Payment by ID
   queryParameters:
     dataErasure:
+      required: false
       type: boolean
     version:
+      required: true
       format: int64
       type: number
     expand:
+      required: false
       type: string
   responses:
     200:

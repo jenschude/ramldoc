@@ -6,14 +6,20 @@ displayName: StagedOrderRemoveLineItemAction
 discriminatorValue: removeLineItem
 properties:
   action:
+    required: true
     type: string
   quantity:
+    required: false
     type: number
   externalTotalPrice:
+    required: false
     type: ExternalLineItemTotalPrice
   lineItemId:
+    required: true
     type: string
   shippingDetailsToRemove:
+    required: false
     type: ItemShippingDetailsDraft
   externalPrice:
+    required: false
     type: Money

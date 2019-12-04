@@ -6,10 +6,14 @@ displayName: DeliveryAddressSetMessagePayload
 discriminatorValue: DeliveryAddressSet
 properties:
   type:
+    required: true
     type: string
   oldAddress:
+    required: false
     type: Address
   deliveryId:
+    required: true
     type: string
   address:
+    required: false
     type: Address

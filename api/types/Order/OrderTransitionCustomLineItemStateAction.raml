@@ -6,15 +6,21 @@ displayName: OrderTransitionCustomLineItemStateAction
 discriminatorValue: transitionCustomLineItemState
 properties:
   action:
+    required: true
     type: string
   toState:
+    required: true
     type: StateResourceIdentifier
   fromState:
+    required: true
     type: StateResourceIdentifier
   customLineItemId:
+    required: true
     type: string
   quantity:
+    required: true
     format: int64
     type: number
   actualTransitionDate:
+    required: false
     type: datetime

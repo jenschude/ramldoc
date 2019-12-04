@@ -6,8 +6,11 @@ displayName: PaymentChangeTransactionStateAction
 discriminatorValue: changeTransactionState
 properties:
   action:
+    required: true
     type: string
   state:
+    required: true
     type: TransactionState
   transactionId:
+    required: true
     type: string

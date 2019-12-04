@@ -6,14 +6,18 @@ displayName: DeliveryItemsUpdatedMessagePayload
 discriminatorValue: DeliveryItemsUpdated
 properties:
   type:
+    required: true
     type: string
   deliveryId:
+    required: true
     type: string
   oldItems:
+    required: true
     type: array
     items:
       type: DeliveryItem
   items:
+    required: true
     type: array
     items:
       type: DeliveryItem

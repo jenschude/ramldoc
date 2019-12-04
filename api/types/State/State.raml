@@ -6,42 +6,53 @@ displayName: State
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   initial:
+    required: true
     description: |-
       A state can be declared as an initial state for any state machine.
       When a workflow starts, this first state must be an `initial` state.
     type: boolean
   roles:
+    required: false
     type: array
     items:
       type: StateRoleEnum
   builtIn:
+    required: true
     description: |-
       Builtin states are integral parts of the project that cannot be deleted nor the key can be changed.
     type: boolean
   description:
+    required: false
     description: |-
       A human-readable description of the state.
     type: LocalizedString
   transitions:
+    required: false
     description: |-
       Transitions are a way to describe possible transformations of the current state to other states of the same `type` (e.g.: _Initial_ -> _Shipped_).
       When performing a `transitionState` update action and `transitions` is set, the currently referenced state must have a transition to the new state.
@@ -52,12 +63,15 @@ properties:
     items:
       type: StateReference
   type:
+    required: true
     type: StateTypeEnum
   name:
+    required: false
     description: |-
       A human-readable name of the state.
     type: LocalizedString
   key:
+    required: true
     description: |-
       A unique identifier for the state.
     type: string

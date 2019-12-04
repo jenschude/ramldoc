@@ -6,14 +6,18 @@ displayName: ZoneDraft
 
 properties:
   name:
+    required: true
     type: string
   description:
+    required: false
     type: string
   locations:
+    required: true
     type: array
     items:
       type: Location
   key:
+    required: false
     description: |-
       User-specific unique identifier for a zone.
       Must be unique across a project.

@@ -6,8 +6,11 @@ displayName: PaymentSetAuthorizationAction
 discriminatorValue: setAuthorization
 properties:
   action:
+    required: true
     type: string
   amount:
+    required: false
     type: Money
   until:
+    required: false
     type: datetime

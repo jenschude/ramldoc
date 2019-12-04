@@ -6,27 +6,39 @@ displayName: MyCartAddLineItemAction
 discriminatorValue: addLineItem
 properties:
   action:
+    required: true
     type: string
   quantity:
+    required: false
     type: number
   externalTaxRate:
+    required: false
     type: ExternalTaxRateDraft
   shippingDetails:
+    required: false
     type: ItemShippingDetailsDraft
   productId:
+    required: false
     type: string
   externalTotalPrice:
+    required: false
     type: ExternalLineItemTotalPrice
   custom:
+    required: false
     type: CustomFieldsDraft
   supplyChannel:
+    required: false
     type: ChannelResourceIdentifier
   variantId:
+    required: false
     format: int64
     type: number
   sku:
+    required: false
     type: string
   distributionChannel:
+    required: false
     type: ChannelResourceIdentifier
   externalPrice:
+    required: false
     type: Money

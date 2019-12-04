@@ -6,39 +6,56 @@ displayName: ReviewStateTransitionMessage
 discriminatorValue: ReviewStateTransition
 properties:
   createdAt:
+    required: true
     type: datetime
   lastModifiedAt:
+    required: true
     type: datetime
   id:
+    required: true
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     type: CreatedBy
   lastModifiedBy:
+    required: false
     type: LastModifiedBy
   sequenceNumber:
+    required: true
     format: int64
     type: number
   resource:
+    required: true
     type: Reference
   resourceUserProvidedIdentifiers:
+    required: false
     type: UserProvidedIdentifiers
   resourceVersion:
+    required: true
     format: int64
     type: number
   type:
+    required: true
     type: string
   newIncludedInStatistics:
+    required: true
     type: boolean
   oldState:
+    required: true
     type: StateReference
   force:
+    required: true
     type: boolean
   oldIncludedInStatistics:
+    required: true
     type: boolean
   newState:
+    required: true
     type: StateReference
   target:
+    required: true
     type: Reference

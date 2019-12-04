@@ -6,8 +6,11 @@ displayName: ProductRemovedFromCategoryMessagePayload
 discriminatorValue: ProductRemovedFromCategory
 properties:
   type:
+    required: true
     type: string
   staged:
+    required: true
     type: boolean
   category:
+    required: true
     type: CategoryReference

@@ -6,35 +6,45 @@ displayName: Extension
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     type: string
   version:
+    required: true
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   timeoutInMs:
+    required: false
     description: |-
       The maximum time the commercetools platform waits for a response from the extension.
       If not present, `2000` (2 seconds) is used.
     format: int16
     type: integer
   destination:
+    required: true
     type: ExtensionDestination
   triggers:
+    required: true
     type: array
     items:
       type: ExtensionTrigger
   key:
+    required: false
     type: string

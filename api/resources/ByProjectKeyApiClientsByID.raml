@@ -7,6 +7,11 @@ uriParameters:
   ID:
     type: string
 get:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_api_clients:{projectKey}"
+      - "view_api_clients:{projectKey}"
   description: |-
     Get ApiClient by ID
   responses:
@@ -15,6 +20,10 @@ get:
         application/json:
           type: ApiClient
 delete:
+  securedBy:
+    oauth_2_0:
+      scopes:
+      - "manage_api_clients:{projectKey}"
   description: |-
     Delete ApiClient by ID
   responses:

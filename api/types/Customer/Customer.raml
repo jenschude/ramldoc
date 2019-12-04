@@ -6,67 +6,85 @@ displayName: Customer
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   lastModifiedAt:
+    required: true
     format: rfc3339
     type: datetime
   id:
+    required: true
     description: |-
       The unique ID of the customer.
     type: string
   version:
+    required: true
     description: |-
       The current version of the customer.
     format: int64
     type: number
   createdBy:
+    required: false
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     type: CreatedBy
   lastModifiedBy:
+    required: false
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     type: LastModifiedBy
   lastName:
+    required: false
     type: string
   addresses:
+    required: true
     description: |-
       The addresses have unique IDs in the addresses list
     type: array
     items:
       type: Address
   companyName:
+    required: false
     type: string
   vatId:
+    required: false
     type: string
   locale:
+    required: false
     type: string
   title:
+    required: false
     type: string
   isEmailVerified:
+    required: true
     type: boolean
   shippingAddressIds:
+    required: false
     description: |-
       The IDs from the addresses list which are used as shipping addresses
     type: array
     items:
       type: string
   password:
+    required: true
     type: string
   key:
+    required: false
     description: |-
       User-specific unique identifier for a customer.
       Must be unique across a project.
       The field can be reset using the Set Key UpdateAction
     type: string
   email:
+    required: true
     description: |-
       The customer's email address and the main identifier of uniqueness for a customer account.
       Email addresses are either unique to the store they're specified for, _or_ for the entire project.
       For more information, see Email uniquenes.
     type: string
   stores:
+    required: false
     description: |-
       References to the stores the customer account is associated with.
       If no stores are specified, the customer is a global customer, and can log in using the Password Flow for global Customers.
@@ -75,37 +93,48 @@ properties:
     items:
       type: StoreKeyReference
   customerGroup:
+    required: false
     discriminatorValue: customer-group
     type: CustomerGroupReference
   custom:
+    required: false
     type: CustomFields
   externalId:
+    required: false
     type: string
   dateOfBirth:
+    required: false
     type: date-only
   billingAddressIds:
+    required: false
     description: |-
       The IDs from the addresses list which are used as billing addresses
     type: array
     items:
       type: string
   defaultShippingAddressId:
+    required: false
     description: |-
       The address ID in the addresses list
     type: string
   customerNumber:
+    required: false
     description: |-
       The customer number can be used to create a more human-readable (in contrast to ID) identifier for the customer.
       It should be unique across a project.
       Once the field was set it cannot be changed anymore.
     type: string
   defaultBillingAddressId:
+    required: false
     description: |-
       The address ID in the addresses list
     type: string
   firstName:
+    required: false
     type: string
   middleName:
+    required: false
     type: string
   salutation:
+    required: false
     type: string

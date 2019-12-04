@@ -6,18 +6,23 @@ displayName: TrackingData
 
 properties:
   isReturn:
+    required: false
     description: |-
       Flag to distinguish if the parcel is on the way to the customer (false) or on the way back (true).
     type: boolean
   carrier:
+    required: false
     description: |-
       The carrier that delivers the parcel.
     type: string
   providerTransaction:
+    required: false
     type: string
   provider:
+    required: false
     type: string
   trackingId:
+    required: false
     description: |-
       The ID to track one parcel.
     type: string

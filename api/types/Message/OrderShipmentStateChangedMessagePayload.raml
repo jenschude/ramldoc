@@ -6,8 +6,11 @@ displayName: OrderShipmentStateChangedMessagePayload
 discriminatorValue: OrderShipmentStateChanged
 properties:
   type:
+    required: true
     type: string
   shipmentState:
+    required: true
     type: ShipmentState
   oldShipmentState:
+    required: false
     type: ShipmentState

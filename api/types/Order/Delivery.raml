@@ -6,13 +6,17 @@ displayName: Delivery
 
 properties:
   createdAt:
+    required: true
     format: rfc3339
     type: datetime
   address:
+    required: false
     type: Address
   id:
+    required: true
     type: string
   items:
+    required: true
     description: |-
       Items which are shipped in this delivery regardless their distribution over several parcels.
       Can also be specified individually for each Parcel.
@@ -20,6 +24,7 @@ properties:
     items:
       type: DeliveryItem
   parcels:
+    required: true
     type: array
     items:
       type: Parcel

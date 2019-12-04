@@ -6,8 +6,11 @@ displayName: PaymentStatusStateTransitionMessagePayload
 discriminatorValue: PaymentStatusStateTransition
 properties:
   type:
+    required: true
     type: string
   force:
+    required: true
     type: boolean
   state:
+    required: true
     type: StateReference

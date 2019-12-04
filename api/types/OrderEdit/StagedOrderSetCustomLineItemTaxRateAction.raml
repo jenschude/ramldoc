@@ -6,8 +6,11 @@ displayName: StagedOrderSetCustomLineItemTaxRateAction
 discriminatorValue: setCustomLineItemTaxRate
 properties:
   action:
+    required: true
     type: string
   customLineItemId:
+    required: true
     type: string
   externalTaxRate:
+    required: false
     type: ExternalTaxRateDraft

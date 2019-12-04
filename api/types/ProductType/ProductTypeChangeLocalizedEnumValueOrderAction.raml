@@ -6,10 +6,13 @@ displayName: ProductTypeChangeLocalizedEnumValueOrderAction
 discriminatorValue: changeLocalizedEnumValueOrder
 properties:
   action:
+    required: true
     type: string
   values:
+    required: true
     type: array
     items:
       type: AttributeLocalizedEnumValue
   attributeName:
+    required: true
     type: string

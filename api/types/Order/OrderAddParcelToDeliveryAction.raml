@@ -6,14 +6,19 @@ displayName: OrderAddParcelToDeliveryAction
 discriminatorValue: addParcelToDelivery
 properties:
   action:
+    required: true
     type: string
   deliveryId:
+    required: true
     type: string
   items:
+    required: false
     type: array
     items:
       type: DeliveryItem
   trackingData:
+    required: false
     type: TrackingData
   measurements:
+    required: false
     type: ParcelMeasurements

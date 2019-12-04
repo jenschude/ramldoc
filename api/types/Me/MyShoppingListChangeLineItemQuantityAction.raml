@@ -6,9 +6,12 @@ displayName: MyShoppingListChangeLineItemQuantityAction
 discriminatorValue: changeLineItemQuantity
 properties:
   action:
+    required: true
     type: string
   quantity:
+    required: true
     format: int64
     type: number
   lineItemId:
+    required: true
     type: string

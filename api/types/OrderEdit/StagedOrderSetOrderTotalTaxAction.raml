@@ -6,10 +6,13 @@ displayName: StagedOrderSetOrderTotalTaxAction
 discriminatorValue: setOrderTotalTax
 properties:
   action:
+    required: true
     type: string
   externalTaxPortions:
+    required: false
     type: array
     items:
       type: TaxPortionDraft
   externalTotalGross:
+    required: true
     type: Money

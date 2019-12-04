@@ -6,8 +6,10 @@ displayName: ProjectChangeCurrenciesAction
 discriminatorValue: changeCurrencies
 properties:
   action:
+    required: true
     type: string
   currencies:
+    required: true
     type: array
     items:
       type: CurrencyCode

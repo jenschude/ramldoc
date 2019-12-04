@@ -6,16 +6,23 @@ displayName: ProductPriceExternalDiscountSetMessagePayload
 discriminatorValue: ProductPriceExternalDiscountSet
 properties:
   type:
+    required: true
     type: string
   discounted:
+    required: false
     type: DiscountedPrice
   staged:
+    required: true
     type: boolean
   variantId:
+    required: true
     type: integer
   priceId:
+    required: true
     type: string
   sku:
+    required: false
     type: string
   variantKey:
+    required: false
     type: string

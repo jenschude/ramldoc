@@ -6,39 +6,49 @@ displayName: ShippingInfo
 
 properties:
   taxRate:
+    required: false
     description: |-
       Will be set automatically in the `Platform` TaxMode once the shipping address is set is set.
       For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
     type: TaxRate
   shippingRate:
+    required: true
     description: |-
       The shipping rate used to determine the price.
     type: ShippingRate
   discountedPrice:
+    required: false
     type: DiscountedLineItemPrice
   shippingMethodState:
+    required: true
     description: |-
       Indicates whether the ShippingMethod referenced in this ShippingInfo is allowed for the cart or not.
     type: ShippingMethodState
   taxedPrice:
+    required: false
     description: |-
       Set once the `taxRate` is set.
     type: TaxedItemPrice
   price:
+    required: true
     description: |-
       Determined based on the ShippingRate and its tiered prices, and either the sum of LineItem prices or the `shippingRateInput` field.
     type: TypedMoney
   shippingMethod:
+    required: false
     description: |-
       Not set if custom shipping method is used.
     type: ShippingMethodReference
   shippingMethodName:
+    required: true
     type: string
   deliveries:
+    required: false
     description: |-
       Deliveries are compilations of information on how the articles are being delivered to the customers.
     type: array
     items:
       type: Delivery
   taxCategory:
+    required: false
     type: TaxCategoryReference

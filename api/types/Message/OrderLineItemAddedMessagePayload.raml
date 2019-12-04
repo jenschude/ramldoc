@@ -6,9 +6,12 @@ displayName: OrderLineItemAddedMessagePayload
 discriminatorValue: OrderLineItemAdded
 properties:
   type:
+    required: true
     type: string
   lineItem:
+    required: true
     type: LineItem
   addedQuantity:
+    required: true
     format: int64
     type: number

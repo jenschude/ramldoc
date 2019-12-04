@@ -6,9 +6,11 @@ displayName: CustomerSignInResult
 
 properties:
   cart:
+    required: false
     description: |-
       A cart that is associated to the customer.
       Empty if the customer does not have a cart yet.
     type: object
   customer:
+    required: true
     type: Customer
