@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: ProductStateTransitionMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: ProductStateTransition
 properties:
   type:
@@ -11,11 +10,11 @@ properties:
     enum:
     - ProductStateTransition
     required: true
-  force:
-    type: boolean
-    (builtinType): boolean
-    required: true
   state:
     type: StateReference
     (builtinType): object
+    required: true
+  force:
+    type: boolean
+    (builtinType): boolean
     required: true

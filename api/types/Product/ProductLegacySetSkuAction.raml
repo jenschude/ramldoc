@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductLegacySetSkuAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: legacySetSku
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - legacySetSku
     required: true
-  variantId:
-    type: integer
-    (builtinType): integer
-    required: true
   sku:
     type: string
     (builtinType): string
     required: false
+  variantId:
+    type: integer
+    (builtinType): integer
+    required: true

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductMoveImageToPositionAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: moveImageToPosition
 properties:
   action:
@@ -10,19 +9,6 @@ properties:
     (builtinType): string
     enum:
     - moveImageToPosition
-    required: true
-  imageUrl:
-    type: string
-    (builtinType): string
-    required: true
-  staged:
-    type: boolean
-    (builtinType): boolean
-    required: false
-  position:
-    format: int64
-    type: number
-    (builtinType): number
     required: true
   variantId:
     format: int64
@@ -32,4 +18,17 @@ properties:
   sku:
     type: string
     (builtinType): string
+    required: false
+  imageUrl:
+    type: string
+    (builtinType): string
+    required: true
+  position:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
+  staged:
+    type: boolean
+    (builtinType): boolean
     required: false

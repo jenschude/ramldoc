@@ -1,80 +1,36 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: Message
 displayName: ReviewStateTransitionMessage
-discriminator: type
+type: Message
+(builtinType): object
 discriminatorValue: ReviewStateTransition
 properties:
-  createdAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    required: false
-  lastModifiedBy:
-    type: LastModifiedBy
-    (builtinType): object
-    required: false
-  sequenceNumber:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  resource:
-    type: Reference
-    (builtinType): object
-    required: true
-  resourceUserProvidedIdentifiers:
-    type: UserProvidedIdentifiers
-    (builtinType): object
-    required: false
-  resourceVersion:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
   type:
     type: string
     (builtinType): string
     enum:
     - ReviewStateTransition
     required: true
-  newIncludedInStatistics:
-    type: boolean
-    (builtinType): boolean
-    required: true
   oldState:
     type: StateReference
     (builtinType): object
-    required: true
-  force:
-    type: boolean
-    (builtinType): boolean
-    required: true
-  oldIncludedInStatistics:
-    type: boolean
-    (builtinType): boolean
     required: true
   newState:
     type: StateReference
     (builtinType): object
     required: true
+  oldIncludedInStatistics:
+    type: boolean
+    (builtinType): boolean
+    required: true
+  newIncludedInStatistics:
+    type: boolean
+    (builtinType): boolean
+    required: true
   target:
     type: Reference
     (builtinType): object
+    required: true
+  force:
+    type: boolean
+    (builtinType): boolean
     required: true

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: CategoryUpdateAction
 displayName: CategoryAddAssetAction
-discriminator: action
+type: CategoryUpdateAction
+(builtinType): object
 discriminatorValue: addAsset
 properties:
   action:
@@ -11,12 +10,12 @@ properties:
     enum:
     - addAsset
     required: true
+  asset:
+    type: AssetDraft
+    (builtinType): object
+    required: true
   position:
     format: int32
     type: number
     (builtinType): number
     required: false
-  asset:
-    type: AssetDraft
-    (builtinType): object
-    required: true

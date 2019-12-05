@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MyShoppingListUpdateAction
 displayName: MyShoppingListChangeLineItemsOrderAction
-discriminator: action
+type: MyShoppingListUpdateAction
+(builtinType): object
 discriminatorValue: changeLineItemsOrder
 properties:
   action:

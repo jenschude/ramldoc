@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: Destination
 displayName: AzureEventGridDestination
-discriminator: type
+type: Destination
+(builtinType): object
 discriminatorValue: EventGrid
 properties:
   type:
@@ -11,11 +10,11 @@ properties:
     enum:
     - EventGrid
     required: true
-  accessKey:
+  uri:
     type: string
     (builtinType): string
     required: true
-  uri:
+  accessKey:
     type: string
     (builtinType): string
     required: true

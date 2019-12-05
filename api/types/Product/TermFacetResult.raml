@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: FacetResult
 displayName: TermFacetResult
-discriminator: type
+type: FacetResult
+(builtinType): object
 discriminatorValue: terms
 properties:
   type:
@@ -10,22 +9,6 @@ properties:
     (builtinType): string
     enum:
     - terms
-    required: true
-  other:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  total:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  terms:
-    type: array
-    items:
-      type: FacetResultTerm
-    (builtinType): array
     required: true
   dataType:
     type: TermFacetResultType
@@ -35,4 +18,20 @@ properties:
     format: int64
     type: number
     (builtinType): number
+    required: true
+  total:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
+  other:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
+  terms:
+    type: array
+    items:
+      type: FacetResultTerm
+    (builtinType): array
     required: true

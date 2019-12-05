@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ErrorObject
 displayName: DuplicatePriceScopeError
-discriminator: code
+type: ErrorObject
+(builtinType): object
 discriminatorValue: DuplicatePriceScope
 properties:
   code:
@@ -10,10 +9,6 @@ properties:
     (builtinType): string
     enum:
     - DuplicatePriceScope
-    required: true
-  message:
-    type: string
-    (builtinType): string
     required: true
   conflictingPrices:
     type: array

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MyShoppingListUpdateAction
 displayName: MyShoppingListRemoveLineItemAction
-discriminator: action
+type: MyShoppingListUpdateAction
+(builtinType): object
 discriminatorValue: removeLineItem
 properties:
   action:
@@ -11,12 +10,12 @@ properties:
     enum:
     - removeLineItem
     required: true
+  lineItemId:
+    type: string
+    (builtinType): string
+    required: true
   quantity:
     format: int64
     type: number
     (builtinType): number
     required: false
-  lineItemId:
-    type: string
-    (builtinType): string
-    required: true

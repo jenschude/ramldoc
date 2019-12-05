@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductTypeUpdateAction
 displayName: ProductTypeChangeLocalizedEnumValueLabelAction
-discriminator: action
+type: ProductTypeUpdateAction
+(builtinType): object
 discriminatorValue: changeLocalizedEnumValueLabel
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - changeLocalizedEnumValueLabel
     required: true
-  newValue:
-    type: AttributeLocalizedEnumValue
-    (builtinType): object
-    required: true
   attributeName:
     type: string
     (builtinType): string
+    required: true
+  newValue:
+    type: AttributeLocalizedEnumValue
+    (builtinType): object
     required: true

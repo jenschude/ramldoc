@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ResourceIdentifier
 displayName: CustomerGroupResourceIdentifier
-discriminator: typeId
+type: ResourceIdentifier
+(builtinType): object
 discriminatorValue: customer-group
 properties:
   typeId:
@@ -10,12 +9,4 @@ properties:
     (builtinType): string
     enum:
     - customer-group
-    required: false
-  id:
-    type: string
-    (builtinType): string
-    required: false
-  key:
-    type: string
-    (builtinType): string
     required: false

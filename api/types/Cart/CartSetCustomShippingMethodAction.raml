@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: CartUpdateAction
 displayName: CartSetCustomShippingMethodAction
-discriminator: action
+type: CartUpdateAction
+(builtinType): object
 discriminatorValue: setCustomShippingMethod
 properties:
   action:
@@ -11,19 +10,19 @@ properties:
     enum:
     - setCustomShippingMethod
     required: true
-  shippingRate:
-    type: ShippingRateDraft
-    (builtinType): object
-    required: true
-  externalTaxRate:
-    type: ExternalTaxRateDraft
-    (builtinType): object
-    required: false
   shippingMethodName:
     type: string
     (builtinType): string
     required: true
+  shippingRate:
+    type: ShippingRateDraft
+    (builtinType): object
+    required: true
   taxCategory:
     type: TaxCategoryResourceIdentifier
+    (builtinType): object
+    required: false
+  externalTaxRate:
+    type: ExternalTaxRateDraft
     (builtinType): object
     required: false

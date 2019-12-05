@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductSetAssetTagsAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: setAssetTags
 properties:
   action:
@@ -11,7 +10,12 @@ properties:
     enum:
     - setAssetTags
     required: true
-  assetId:
+  variantId:
+    format: int64
+    type: number
+    (builtinType): number
+    required: false
+  sku:
     type: string
     (builtinType): string
     required: false
@@ -19,12 +23,7 @@ properties:
     type: boolean
     (builtinType): boolean
     required: false
-  variantId:
-    format: int64
-    type: number
-    (builtinType): number
-    required: false
-  sku:
+  assetId:
     type: string
     (builtinType): string
     required: false

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: OrderCustomerSetMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: OrderCustomerSet
 properties:
   type:
@@ -11,8 +10,8 @@ properties:
     enum:
     - OrderCustomerSet
     required: true
-  oldCustomerGroup:
-    type: CustomerGroupReference
+  customer:
+    type: CustomerReference
     (builtinType): object
     required: false
   customerGroup:
@@ -23,7 +22,7 @@ properties:
     type: CustomerReference
     (builtinType): object
     required: false
-  customer:
-    type: CustomerReference
+  oldCustomerGroup:
+    type: CustomerGroupReference
     (builtinType): object
     required: false

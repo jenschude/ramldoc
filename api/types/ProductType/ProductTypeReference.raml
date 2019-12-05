@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: Reference
 displayName: ProductTypeReference
-discriminator: typeId
+type: Reference
+(builtinType): object
 discriminatorValue: product-type
 properties:
   typeId:
@@ -10,10 +9,6 @@ properties:
     (builtinType): string
     enum:
     - product-type
-    required: true
-  id:
-    type: string
-    (builtinType): string
     required: true
   obj:
     type: ProductType

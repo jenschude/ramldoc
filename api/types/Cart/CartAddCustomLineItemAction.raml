@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: CartUpdateAction
 displayName: CartAddCustomLineItemAction
-discriminator: action
+type: CartUpdateAction
+(builtinType): object
 discriminatorValue: addCustomLineItem
 properties:
   action:
@@ -11,25 +10,17 @@ properties:
     enum:
     - addCustomLineItem
     required: true
-  externalTaxRate:
-    type: ExternalTaxRateDraft
-    (builtinType): object
-    required: false
-  quantity:
-    type: number
-    (builtinType): number
-    required: true
   money:
     type: Money
     (builtinType): object
     required: true
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    required: false
   name:
     type: LocalizedString
     (builtinType): object
+    required: true
+  quantity:
+    type: number
+    (builtinType): number
     required: true
   slug:
     type: string
@@ -37,5 +28,13 @@ properties:
     required: true
   taxCategory:
     type: TaxCategoryResourceIdentifier
+    (builtinType): object
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    required: false
+  externalTaxRate:
+    type: ExternalTaxRateDraft
     (builtinType): object
     required: false

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductChangePriceAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: changePrice
 properties:
   action:
@@ -10,6 +9,10 @@ properties:
     (builtinType): string
     enum:
     - changePrice
+    required: true
+  priceId:
+    type: string
+    (builtinType): string
     required: true
   price:
     type: PriceDraft
@@ -19,7 +22,3 @@ properties:
     type: boolean
     (builtinType): boolean
     required: false
-  priceId:
-    type: string
-    (builtinType): string
-    required: true

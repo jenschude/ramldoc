@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductSetMetaDescriptionAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: setMetaDescription
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - setMetaDescription
     required: true
-  staged:
-    type: boolean
-    (builtinType): boolean
-    required: false
   metaDescription:
     type: LocalizedString
     (builtinType): object
+    required: false
+  staged:
+    type: boolean
+    (builtinType): boolean
     required: false

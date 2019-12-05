@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: OrderUpdateAction
 displayName: OrderSetReturnPaymentStateAction
-discriminator: action
+type: OrderUpdateAction
+(builtinType): object
 discriminatorValue: setReturnPaymentState
 properties:
   action:

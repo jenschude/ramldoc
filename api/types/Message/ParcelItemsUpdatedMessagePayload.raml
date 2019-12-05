@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: ParcelItemsUpdatedMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: ParcelItemsUpdated
 properties:
   type:
@@ -11,23 +10,23 @@ properties:
     enum:
     - ParcelItemsUpdated
     required: true
+  parcelId:
+    type: string
+    (builtinType): string
+    required: true
   deliveryId:
     type: string
     (builtinType): string
     required: false
-  oldItems:
-    type: array
-    items:
-      type: DeliveryItem
-    (builtinType): array
-    required: true
   items:
     type: array
     items:
       type: DeliveryItem
     (builtinType): array
     required: true
-  parcelId:
-    type: string
-    (builtinType): string
+  oldItems:
+    type: array
+    items:
+      type: DeliveryItem
+    (builtinType): array
     required: true

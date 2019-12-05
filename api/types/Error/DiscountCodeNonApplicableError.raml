@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ErrorObject
 displayName: DiscountCodeNonApplicableError
-discriminator: code
+type: ErrorObject
+(builtinType): object
 discriminatorValue: DiscountCodeNonApplicable
 properties:
   code:
@@ -11,31 +10,27 @@ properties:
     enum:
     - DiscountCodeNonApplicable
     required: true
-  message:
-    type: string
-    (builtinType): string
-    required: true
-  reason:
-    type: string
-    (builtinType): string
-    required: false
-  validityCheckTime:
-    type: datetime
-    (builtinType): datetime
-    required: false
   discountCode:
     type: string
     (builtinType): string
     required: false
-  validUntil:
-    type: datetime
-    (builtinType): datetime
+  reason:
+    type: string
+    (builtinType): string
+    required: false
+  dicountCodeId:
+    type: string
+    (builtinType): string
     required: false
   validFrom:
     type: datetime
     (builtinType): datetime
     required: false
-  dicountCodeId:
-    type: string
-    (builtinType): string
+  validUntil:
+    type: datetime
+    (builtinType): datetime
+    required: false
+  validityCheckTime:
+    type: datetime
+    (builtinType): datetime
     required: false

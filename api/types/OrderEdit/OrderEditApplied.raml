@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: OrderEditResult
 displayName: OrderEditApplied
-discriminator: type
+type: OrderEditResult
+(builtinType): object
 discriminatorValue: Applied
 properties:
   type:
@@ -11,15 +10,15 @@ properties:
     enum:
     - Applied
     required: true
-  excerptAfterEdit:
-    type: OrderExcerpt
-    (builtinType): object
+  appliedAt:
+    type: datetime
+    (builtinType): datetime
     required: true
   excerptBeforeEdit:
     type: OrderExcerpt
     (builtinType): object
     required: true
-  appliedAt:
-    type: datetime
-    (builtinType): datetime
+  excerptAfterEdit:
+    type: OrderExcerpt
+    (builtinType): object
     required: true

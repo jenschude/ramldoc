@@ -1,9 +1,9 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: object
 displayName: CategoryUpdateAction
+type: object
+(builtinType): object
 discriminator: action
-(subTypes):
+(oneOf):
 - CategoryAddAssetAction
 - CategoryChangeAssetNameAction
 - CategoryChangeAssetOrderAction

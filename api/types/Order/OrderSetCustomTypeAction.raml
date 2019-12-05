@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: OrderUpdateAction
 displayName: OrderSetCustomTypeAction
-discriminator: action
+type: OrderUpdateAction
+(builtinType): object
 discriminatorValue: setCustomType
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - setCustomType
     required: true
-  fields:
-    type: FieldContainer
-    (builtinType): object
-    required: false
   type:
     type: TypeResourceIdentifier
+    (builtinType): object
+    required: false
+  fields:
+    type: FieldContainer
     (builtinType): object
     required: false

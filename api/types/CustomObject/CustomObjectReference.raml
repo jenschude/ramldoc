@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: Reference
 displayName: CustomObjectReference
-discriminator: typeId
+type: Reference
+(builtinType): object
 discriminatorValue: key-value-document
 properties:
   typeId:
@@ -10,10 +9,6 @@ properties:
     (builtinType): string
     enum:
     - key-value-document
-    required: true
-  id:
-    type: string
-    (builtinType): string
     required: true
   obj:
     type: CustomObject

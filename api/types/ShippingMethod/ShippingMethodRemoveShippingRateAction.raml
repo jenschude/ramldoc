@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ShippingMethodUpdateAction
 displayName: ShippingMethodRemoveShippingRateAction
-discriminator: action
+type: ShippingMethodUpdateAction
+(builtinType): object
 discriminatorValue: removeShippingRate
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - removeShippingRate
     required: true
-  shippingRate:
-    type: ShippingRateDraft
-    (builtinType): object
-    required: true
   zone:
     type: ZoneResourceIdentifier
+    (builtinType): object
+    required: true
+  shippingRate:
+    type: ShippingRateDraft
     (builtinType): object
     required: true

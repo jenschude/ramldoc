@@ -1,9 +1,9 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: object
 displayName: SubscriptionDelivery
+type: object
+(builtinType): object
 discriminator: notificationType
-(subTypes):
+(oneOf):
 - MessageDelivery
 - ResourceCreatedDelivery
 - ResourceDeletedDelivery

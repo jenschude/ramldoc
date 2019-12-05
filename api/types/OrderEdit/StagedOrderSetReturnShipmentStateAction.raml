@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: StagedOrderUpdateAction
 displayName: StagedOrderSetReturnShipmentStateAction
-discriminator: action
+type: StagedOrderUpdateAction
+(builtinType): object
 discriminatorValue: setReturnShipmentState
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - setReturnShipmentState
     required: true
-  shipmentState:
-    type: ReturnShipmentState
-    (builtinType): string
-    required: true
   returnItemId:
     type: string
+    (builtinType): string
+    required: true
+  shipmentState:
+    type: ReturnShipmentState
     (builtinType): string
     required: true

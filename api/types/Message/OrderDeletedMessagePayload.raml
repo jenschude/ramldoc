@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: OrderDeletedMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: OrderDeleted
 properties:
   type:

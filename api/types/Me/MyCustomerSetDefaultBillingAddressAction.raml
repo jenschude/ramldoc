@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MyCustomerUpdateAction
 displayName: MyCustomerSetDefaultBillingAddressAction
-discriminator: action
+type: MyCustomerUpdateAction
+(builtinType): object
 discriminatorValue: setDefaultBillingAddress
 properties:
   action:

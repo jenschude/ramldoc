@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ExtensionDestination
 displayName: ExtensionAWSLambdaDestination
-discriminator: type
+type: ExtensionDestination
+(builtinType): object
 discriminatorValue: AWSLambda
 properties:
   type:
@@ -11,11 +10,11 @@ properties:
     enum:
     - AWSLambda
     required: true
-  accessKey:
+  arn:
     type: string
     (builtinType): string
     required: true
-  arn:
+  accessKey:
     type: string
     (builtinType): string
     required: true

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: CartUpdateAction
 displayName: CartAddLineItemAction
-discriminator: action
+type: CartUpdateAction
+(builtinType): object
 discriminatorValue: addLineItem
 properties:
   action:
@@ -11,33 +10,21 @@ properties:
     enum:
     - addLineItem
     required: true
-  quantity:
-    type: number
-    (builtinType): number
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    required: false
+  distributionChannel:
+    type: ChannelResourceIdentifier
+    (builtinType): object
     required: false
   externalTaxRate:
     type: ExternalTaxRateDraft
     (builtinType): object
     required: false
-  shippingDetails:
-    type: ItemShippingDetailsDraft
-    (builtinType): object
-    required: false
   productId:
     type: string
     (builtinType): string
-    required: false
-  externalTotalPrice:
-    type: ExternalLineItemTotalPrice
-    (builtinType): object
-    required: false
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    required: false
-  supplyChannel:
-    type: ChannelResourceIdentifier
-    (builtinType): object
     required: false
   variantId:
     format: int64
@@ -48,11 +35,23 @@ properties:
     type: string
     (builtinType): string
     required: false
-  distributionChannel:
+  quantity:
+    type: number
+    (builtinType): number
+    required: false
+  supplyChannel:
     type: ChannelResourceIdentifier
     (builtinType): object
     required: false
   externalPrice:
     type: Money
+    (builtinType): object
+    required: false
+  externalTotalPrice:
+    type: ExternalLineItemTotalPrice
+    (builtinType): object
+    required: false
+  shippingDetails:
+    type: ItemShippingDetailsDraft
     (builtinType): object
     required: false

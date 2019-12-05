@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductChangeSlugAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: changeSlug
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - changeSlug
     required: true
-  staged:
-    type: boolean
-    (builtinType): boolean
-    required: false
   slug:
     type: LocalizedString
     (builtinType): object
     required: true
+  staged:
+    type: boolean
+    (builtinType): boolean
+    required: false

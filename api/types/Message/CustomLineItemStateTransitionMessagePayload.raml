@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: CustomLineItemStateTransitionMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: CustomLineItemStateTransition
 properties:
   type:
@@ -11,24 +10,24 @@ properties:
     enum:
     - CustomLineItemStateTransition
     required: true
-  toState:
-    type: StateReference
-    (builtinType): object
-    required: true
-  fromState:
-    type: StateReference
-    (builtinType): object
-    required: true
   customLineItemId:
     type: string
     (builtinType): string
+    required: true
+  transitionDate:
+    type: datetime
+    (builtinType): datetime
     required: true
   quantity:
     format: int64
     type: number
     (builtinType): number
     required: true
-  transitionDate:
-    type: datetime
-    (builtinType): datetime
+  fromState:
+    type: StateReference
+    (builtinType): object
+    required: true
+  toState:
+    type: StateReference
+    (builtinType): object
     required: true

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductTransitionStateAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: transitionState
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - transitionState
     required: true
-  force:
-    type: boolean
-    (builtinType): boolean
-    required: false
   state:
     type: StateResourceIdentifier
     (builtinType): object
+    required: false
+  force:
+    type: boolean
+    (builtinType): boolean
     required: false

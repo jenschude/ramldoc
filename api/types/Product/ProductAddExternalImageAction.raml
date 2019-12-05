@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductAddExternalImageAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: addExternalImage
 properties:
   action:
@@ -11,14 +10,6 @@ properties:
     enum:
     - addExternalImage
     required: true
-  image:
-    type: Image
-    (builtinType): object
-    required: true
-  staged:
-    type: boolean
-    (builtinType): boolean
-    required: false
   variantId:
     format: int64
     type: number
@@ -27,4 +18,12 @@ properties:
   sku:
     type: string
     (builtinType): string
+    required: false
+  image:
+    type: Image
+    (builtinType): object
+    required: true
+  staged:
+    type: boolean
+    (builtinType): boolean
     required: false

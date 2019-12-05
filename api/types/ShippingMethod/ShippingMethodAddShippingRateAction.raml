@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ShippingMethodUpdateAction
 displayName: ShippingMethodAddShippingRateAction
-discriminator: action
+type: ShippingMethodUpdateAction
+(builtinType): object
 discriminatorValue: addShippingRate
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - addShippingRate
     required: true
-  shippingRate:
-    type: ShippingRateDraft
-    (builtinType): object
-    required: true
   zone:
     type: ZoneResourceIdentifier
+    (builtinType): object
+    required: true
+  shippingRate:
+    type: ShippingRateDraft
     (builtinType): object
     required: true

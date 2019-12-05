@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductTypeUpdateAction
 displayName: ProductTypeChangeEnumKeyAction
-discriminator: action
+type: ProductTypeUpdateAction
+(builtinType): object
 discriminatorValue: changeEnumKey
 properties:
   action:
@@ -11,15 +10,15 @@ properties:
     enum:
     - changeEnumKey
     required: true
-  newKey:
-    type: string
-    (builtinType): string
-    required: true
   attributeName:
     type: string
     (builtinType): string
     required: true
   key:
+    type: string
+    (builtinType): string
+    required: true
+  newKey:
     type: string
     (builtinType): string
     required: true

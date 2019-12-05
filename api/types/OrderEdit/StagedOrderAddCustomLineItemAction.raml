@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: StagedOrderUpdateAction
 displayName: StagedOrderAddCustomLineItemAction
-discriminator: action
+type: StagedOrderUpdateAction
+(builtinType): object
 discriminatorValue: addCustomLineItem
 properties:
   action:
@@ -11,31 +10,31 @@ properties:
     enum:
     - addCustomLineItem
     required: true
-  externalTaxRate:
-    type: ExternalTaxRateDraft
-    (builtinType): object
-    required: false
-  quantity:
-    type: number
-    (builtinType): number
-    required: false
   money:
     type: Money
     (builtinType): object
     required: true
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    required: false
   name:
     type: LocalizedString
     (builtinType): object
     required: true
+  quantity:
+    type: number
+    (builtinType): number
+    required: false
   slug:
     type: string
     (builtinType): string
     required: true
   taxCategory:
     type: TaxCategoryResourceIdentifier
+    (builtinType): object
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    required: false
+  externalTaxRate:
+    type: ExternalTaxRateDraft
     (builtinType): object
     required: false

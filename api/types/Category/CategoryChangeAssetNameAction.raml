@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: CategoryUpdateAction
 displayName: CategoryChangeAssetNameAction
-discriminator: action
+type: CategoryUpdateAction
+(builtinType): object
 discriminatorValue: changeAssetName
 properties:
   action:
@@ -15,11 +14,11 @@ properties:
     type: string
     (builtinType): string
     required: false
-  name:
-    type: LocalizedString
-    (builtinType): object
-    required: true
   assetKey:
     type: string
     (builtinType): string
     required: false
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true

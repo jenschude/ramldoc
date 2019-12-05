@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: PaymentStatusStateTransitionMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: PaymentStatusStateTransition
 properties:
   type:
@@ -11,11 +10,11 @@ properties:
     enum:
     - PaymentStatusStateTransition
     required: true
-  force:
-    type: boolean
-    (builtinType): boolean
-    required: true
   state:
     type: StateReference
     (builtinType): object
+    required: true
+  force:
+    type: boolean
+    (builtinType): boolean
     required: true

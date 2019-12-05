@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: ParcelTrackingDataUpdatedMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: ParcelTrackingDataUpdated
 properties:
   type:
@@ -15,11 +14,11 @@ properties:
     type: string
     (builtinType): string
     required: true
-  trackingData:
-    type: TrackingData
-    (builtinType): object
-    required: false
   parcelId:
     type: string
     (builtinType): string
     required: true
+  trackingData:
+    type: TrackingData
+    (builtinType): object
+    required: false

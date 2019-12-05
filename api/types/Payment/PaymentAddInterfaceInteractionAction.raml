@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: PaymentUpdateAction
 displayName: PaymentAddInterfaceInteractionAction
-discriminator: action
+type: PaymentUpdateAction
+(builtinType): object
 discriminatorValue: addInterfaceInteraction
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - addInterfaceInteraction
     required: true
-  fields:
-    type: FieldContainer
-    (builtinType): object
-    required: false
   type:
     type: TypeResourceIdentifier
     (builtinType): object
     required: true
+  fields:
+    type: FieldContainer
+    (builtinType): object
+    required: false

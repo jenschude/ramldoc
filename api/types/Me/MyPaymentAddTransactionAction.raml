@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MyPaymentUpdateAction
 displayName: MyPaymentAddTransactionAction
-discriminator: action
+type: MyPaymentUpdateAction
+(builtinType): object
 discriminatorValue: addTransaction
 properties:
   action:

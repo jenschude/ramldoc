@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: Reference
 displayName: InventoryEntryReference
-discriminator: typeId
+type: Reference
+(builtinType): object
 discriminatorValue: inventory-entry
 properties:
   typeId:
@@ -10,10 +9,6 @@ properties:
     (builtinType): string
     enum:
     - inventory-entry
-    required: true
-  id:
-    type: string
-    (builtinType): string
     required: true
   obj:
     type: InventoryEntry

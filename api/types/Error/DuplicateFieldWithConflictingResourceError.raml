@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ErrorObject
 displayName: DuplicateFieldWithConflictingResourceError
-discriminator: code
+type: ErrorObject
+(builtinType): object
 discriminatorValue: DuplicateFieldWithConflictingResource
 properties:
   code:
@@ -11,19 +10,15 @@ properties:
     enum:
     - DuplicateFieldWithConflictingResource
     required: true
-  message:
+  field:
     type: string
     (builtinType): string
-    required: true
-  conflictingResource:
-    type: Reference
-    (builtinType): object
     required: true
   duplicateValue:
     type: any
     (builtinType): any
     required: true
-  field:
-    type: string
-    (builtinType): string
+  conflictingResource:
+    type: Reference
+    (builtinType): object
     required: true

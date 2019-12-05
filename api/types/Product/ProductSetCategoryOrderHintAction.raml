@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductSetCategoryOrderHintAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: setCategoryOrderHint
 properties:
   action:
@@ -10,6 +9,10 @@ properties:
     (builtinType): string
     enum:
     - setCategoryOrderHint
+    required: true
+  categoryId:
+    type: string
+    (builtinType): string
     required: true
   orderHint:
     type: string
@@ -19,7 +22,3 @@ properties:
     type: boolean
     (builtinType): boolean
     required: false
-  categoryId:
-    type: string
-    (builtinType): string
-    required: true

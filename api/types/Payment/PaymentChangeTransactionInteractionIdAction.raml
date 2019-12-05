@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: PaymentUpdateAction
 displayName: PaymentChangeTransactionInteractionIdAction
-discriminator: action
+type: PaymentUpdateAction
+(builtinType): object
 discriminatorValue: changeTransactionInteractionId
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - changeTransactionInteractionId
     required: true
-  interactionId:
+  transactionId:
     type: string
     (builtinType): string
     required: true
-  transactionId:
+  interactionId:
     type: string
     (builtinType): string
     required: true

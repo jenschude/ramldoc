@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: StagedOrderUpdateAction
 displayName: StagedOrderAddReturnInfoAction
-discriminator: action
+type: StagedOrderUpdateAction
+(builtinType): object
 discriminatorValue: addReturnInfo
 properties:
   action:
@@ -11,10 +10,6 @@ properties:
     enum:
     - addReturnInfo
     required: true
-  returnDate:
-    type: datetime
-    (builtinType): datetime
-    required: false
   returnTrackingId:
     type: string
     (builtinType): string
@@ -25,3 +20,7 @@ properties:
       type: ReturnItemDraft
     (builtinType): array
     required: true
+  returnDate:
+    type: datetime
+    (builtinType): datetime
+    required: false

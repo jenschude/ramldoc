@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: ProductPriceExternalDiscountSetMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: ProductPriceExternalDiscountSet
 properties:
   type:
@@ -10,6 +9,22 @@ properties:
     (builtinType): string
     enum:
     - ProductPriceExternalDiscountSet
+    required: true
+  variantId:
+    type: integer
+    (builtinType): integer
+    required: true
+  variantKey:
+    type: string
+    (builtinType): string
+    required: false
+  sku:
+    type: string
+    (builtinType): string
+    required: false
+  priceId:
+    type: string
+    (builtinType): string
     required: true
   discounted:
     type: DiscountedPrice
@@ -19,19 +34,3 @@ properties:
     type: boolean
     (builtinType): boolean
     required: true
-  variantId:
-    type: integer
-    (builtinType): integer
-    required: true
-  priceId:
-    type: string
-    (builtinType): string
-    required: true
-  sku:
-    type: string
-    (builtinType): string
-    required: false
-  variantKey:
-    type: string
-    (builtinType): string
-    required: false

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductSetProductPriceCustomFieldAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: setProductPriceCustomField
 properties:
   action:
@@ -11,7 +10,7 @@ properties:
     enum:
     - setProductPriceCustomField
     required: true
-  name:
+  priceId:
     type: string
     (builtinType): string
     required: true
@@ -19,7 +18,7 @@ properties:
     type: boolean
     (builtinType): boolean
     required: false
-  priceId:
+  name:
     type: string
     (builtinType): string
     required: true

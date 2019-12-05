@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductChangeAssetOrderAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: changeAssetOrder
 properties:
   action:
@@ -11,16 +10,6 @@ properties:
     enum:
     - changeAssetOrder
     required: true
-  assetOrder:
-    type: array
-    items:
-      type: string
-    (builtinType): array
-    required: true
-  staged:
-    type: boolean
-    (builtinType): boolean
-    required: false
   variantId:
     format: int64
     type: number
@@ -30,3 +19,13 @@ properties:
     type: string
     (builtinType): string
     required: false
+  staged:
+    type: boolean
+    (builtinType): boolean
+    required: false
+  assetOrder:
+    type: array
+    items:
+      type: string
+    (builtinType): array
+    required: true

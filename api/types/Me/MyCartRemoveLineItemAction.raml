@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MyCartUpdateAction
 displayName: MyCartRemoveLineItemAction
-discriminator: action
+type: MyCartUpdateAction
+(builtinType): object
 discriminatorValue: removeLineItem
 properties:
   action:
@@ -11,23 +10,23 @@ properties:
     enum:
     - removeLineItem
     required: true
+  lineItemId:
+    type: string
+    (builtinType): string
+    required: true
   quantity:
     type: number
     (builtinType): number
+    required: false
+  externalPrice:
+    type: Money
+    (builtinType): object
     required: false
   externalTotalPrice:
     type: ExternalLineItemTotalPrice
     (builtinType): object
     required: false
-  lineItemId:
-    type: string
-    (builtinType): string
-    required: true
   shippingDetailsToRemove:
     type: ItemShippingDetailsDraft
-    (builtinType): object
-    required: false
-  externalPrice:
-    type: Money
     (builtinType): object
     required: false

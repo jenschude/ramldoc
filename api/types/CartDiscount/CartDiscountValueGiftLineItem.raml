@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: CartDiscountValue
 displayName: CartDiscountValueGiftLineItem
-discriminator: type
+type: CartDiscountValue
+(builtinType): object
 discriminatorValue: giftLineItem
 properties:
   type:
@@ -15,15 +14,15 @@ properties:
     type: ProductReference
     (builtinType): object
     required: true
-  supplyChannel:
-    type: ChannelReference
-    (builtinType): object
-    required: false
   variantId:
     format: int64
     type: number
     (builtinType): number
     required: true
+  supplyChannel:
+    type: ChannelReference
+    (builtinType): object
+    required: false
   distributionChannel:
     type: ChannelReference
     (builtinType): object

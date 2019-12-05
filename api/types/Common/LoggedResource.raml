@@ -1,8 +1,8 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: BaseResource
 displayName: LoggedResource
-(subTypes):
+type: BaseResource
+(builtinType): object
+(oneOf):
 - CustomObject
 - CustomerGroup
 - Customer

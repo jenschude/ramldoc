@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: Destination
 displayName: GoogleCloudPubSubDestination
-discriminator: type
+type: Destination
+(builtinType): object
 discriminatorValue: GoogleCloudPubSub
 properties:
   type:
@@ -11,11 +10,11 @@ properties:
     enum:
     - GoogleCloudPubSub
     required: true
-  topic:
+  projectId:
     type: string
     (builtinType): string
     required: true
-  projectId:
+  topic:
     type: string
     (builtinType): string
     required: true

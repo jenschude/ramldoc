@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ErrorObject
 displayName: ConcurrentModificationError
-discriminator: code
+type: ErrorObject
+(builtinType): object
 discriminatorValue: ConcurrentModification
 properties:
   code:
@@ -10,10 +9,6 @@ properties:
     (builtinType): string
     enum:
     - ConcurrentModification
-    required: true
-  message:
-    type: string
-    (builtinType): string
     required: true
   currentVersion:
     format: int64

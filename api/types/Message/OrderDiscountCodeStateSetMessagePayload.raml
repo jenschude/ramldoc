@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: OrderDiscountCodeStateSetMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: OrderDiscountCodeStateSet
 properties:
   type:
@@ -15,11 +14,11 @@ properties:
     type: DiscountCodeReference
     (builtinType): object
     required: true
-  oldState:
-    type: DiscountCodeState
-    (builtinType): string
-    required: false
   state:
     type: DiscountCodeState
     (builtinType): string
     required: true
+  oldState:
+    type: DiscountCodeState
+    (builtinType): string
+    required: false

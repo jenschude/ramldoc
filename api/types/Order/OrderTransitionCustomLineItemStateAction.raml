@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: OrderUpdateAction
 displayName: OrderTransitionCustomLineItemStateAction
-discriminator: action
+type: OrderUpdateAction
+(builtinType): object
 discriminatorValue: transitionCustomLineItemState
 properties:
   action:
@@ -10,14 +9,6 @@ properties:
     (builtinType): string
     enum:
     - transitionCustomLineItemState
-    required: true
-  toState:
-    type: StateResourceIdentifier
-    (builtinType): object
-    required: true
-  fromState:
-    type: StateResourceIdentifier
-    (builtinType): object
     required: true
   customLineItemId:
     type: string
@@ -27,6 +18,14 @@ properties:
     format: int64
     type: number
     (builtinType): number
+    required: true
+  fromState:
+    type: StateResourceIdentifier
+    (builtinType): object
+    required: true
+  toState:
+    type: StateResourceIdentifier
+    (builtinType): object
     required: true
   actualTransitionDate:
     type: datetime

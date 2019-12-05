@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: CategoryUpdateAction
 displayName: CategorySetAssetCustomTypeAction
-discriminator: action
+type: CategoryUpdateAction
+(builtinType): object
 discriminatorValue: setAssetCustomType
 properties:
   action:
@@ -15,15 +14,15 @@ properties:
     type: string
     (builtinType): string
     required: false
-  fields:
-    type: object
-    (builtinType): object
+  assetKey:
+    type: string
+    (builtinType): string
     required: false
   type:
     type: TypeResourceIdentifier
     (builtinType): object
     required: false
-  assetKey:
-    type: string
-    (builtinType): string
+  fields:
+    type: object
+    (builtinType): object
     required: false

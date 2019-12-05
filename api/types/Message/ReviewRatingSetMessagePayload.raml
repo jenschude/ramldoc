@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: ReviewRatingSetMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: ReviewRatingSet
 properties:
   type:
@@ -15,14 +14,14 @@ properties:
     type: number
     (builtinType): number
     required: false
-  includedInStatistics:
-    type: boolean
-    (builtinType): boolean
-    required: true
   newRating:
     type: number
     (builtinType): number
     required: false
+  includedInStatistics:
+    type: boolean
+    (builtinType): boolean
+    required: true
   target:
     type: Reference
     (builtinType): object

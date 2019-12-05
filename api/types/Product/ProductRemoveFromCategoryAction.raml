@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductRemoveFromCategoryAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: removeFromCategory
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - removeFromCategory
     required: true
-  staged:
-    type: boolean
-    (builtinType): boolean
-    required: false
   category:
     type: CategoryResourceIdentifier
     (builtinType): object
     required: true
+  staged:
+    type: boolean
+    (builtinType): boolean
+    required: false

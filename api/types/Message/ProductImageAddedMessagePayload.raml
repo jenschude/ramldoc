@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: ProductImageAddedMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: ProductImageAdded
 properties:
   type:
@@ -11,6 +10,11 @@ properties:
     enum:
     - ProductImageAdded
     required: true
+  variantId:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   image:
     type: Image
     (builtinType): object
@@ -18,9 +22,4 @@ properties:
   staged:
     type: boolean
     (builtinType): boolean
-    required: true
-  variantId:
-    format: int64
-    type: number
-    (builtinType): number
     required: true

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: DeliveryItemsUpdatedMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: DeliveryItemsUpdated
 properties:
   type:
@@ -15,13 +14,13 @@ properties:
     type: string
     (builtinType): string
     required: true
-  oldItems:
+  items:
     type: array
     items:
       type: DeliveryItem
     (builtinType): array
     required: true
-  items:
+  oldItems:
     type: array
     items:
       type: DeliveryItem

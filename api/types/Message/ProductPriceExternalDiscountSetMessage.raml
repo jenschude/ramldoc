@@ -1,58 +1,30 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: Message
 displayName: ProductPriceExternalDiscountSetMessage
-discriminator: type
+type: Message
+(builtinType): object
 discriminatorValue: ProductPriceExternalDiscountSet
 properties:
-  createdAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    required: false
-  lastModifiedBy:
-    type: LastModifiedBy
-    (builtinType): object
-    required: false
-  sequenceNumber:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  resource:
-    type: Reference
-    (builtinType): object
-    required: true
-  resourceUserProvidedIdentifiers:
-    type: UserProvidedIdentifiers
-    (builtinType): object
-    required: false
-  resourceVersion:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
   type:
     type: string
     (builtinType): string
     enum:
     - ProductPriceExternalDiscountSet
+    required: true
+  variantId:
+    type: integer
+    (builtinType): integer
+    required: true
+  variantKey:
+    type: string
+    (builtinType): string
+    required: false
+  sku:
+    type: string
+    (builtinType): string
+    required: false
+  priceId:
+    type: string
+    (builtinType): string
     required: true
   discounted:
     type: DiscountedPrice
@@ -62,19 +34,3 @@ properties:
     type: boolean
     (builtinType): boolean
     required: true
-  variantId:
-    type: integer
-    (builtinType): integer
-    required: true
-  priceId:
-    type: string
-    (builtinType): string
-    required: true
-  sku:
-    type: string
-    (builtinType): string
-    required: false
-  variantKey:
-    type: string
-    (builtinType): string
-    required: false

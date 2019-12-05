@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductSetDiscountedPriceAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: setDiscountedPrice
 properties:
   action:
@@ -11,15 +10,15 @@ properties:
     enum:
     - setDiscountedPrice
     required: true
-  discounted:
-    type: DiscountedPrice
-    (builtinType): object
-    required: false
-  staged:
-    type: boolean
-    (builtinType): boolean
-    required: false
   priceId:
     type: string
     (builtinType): string
     required: true
+  staged:
+    type: boolean
+    (builtinType): boolean
+    required: false
+  discounted:
+    type: DiscountedPrice
+    (builtinType): object
+    required: false

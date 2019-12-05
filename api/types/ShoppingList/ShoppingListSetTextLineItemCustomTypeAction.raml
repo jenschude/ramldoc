@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ShoppingListUpdateAction
 displayName: ShoppingListSetTextLineItemCustomTypeAction
-discriminator: action
+type: ShoppingListUpdateAction
+(builtinType): object
 discriminatorValue: setTextLineItemCustomType
 properties:
   action:
@@ -11,15 +10,15 @@ properties:
     enum:
     - setTextLineItemCustomType
     required: true
-  fields:
-    type: FieldContainer
-    (builtinType): object
-    required: false
-  type:
-    type: TypeResourceIdentifier
-    (builtinType): object
-    required: false
   textLineItemId:
     type: string
     (builtinType): string
     required: true
+  type:
+    type: TypeResourceIdentifier
+    (builtinType): object
+    required: false
+  fields:
+    type: FieldContainer
+    (builtinType): object
+    required: false

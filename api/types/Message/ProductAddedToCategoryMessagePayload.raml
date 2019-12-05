@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: ProductAddedToCategoryMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: ProductAddedToCategory
 properties:
   type:
@@ -11,11 +10,11 @@ properties:
     enum:
     - ProductAddedToCategory
     required: true
-  staged:
-    type: boolean
-    (builtinType): boolean
-    required: true
   category:
     type: CategoryReference
     (builtinType): object
+    required: true
+  staged:
+    type: boolean
+    (builtinType): boolean
     required: true

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: OrderCustomerEmailSetMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: OrderCustomerEmailSet
 properties:
   type:
@@ -11,11 +10,11 @@ properties:
     enum:
     - OrderCustomerEmailSet
     required: true
-  oldEmail:
+  email:
     type: string
     (builtinType): string
     required: false
-  email:
+  oldEmail:
     type: string
     (builtinType): string
     required: false

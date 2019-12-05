@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MyCartUpdateAction
 displayName: MyCartSetLineItemShippingDetailsAction
-discriminator: action
+type: MyCartUpdateAction
+(builtinType): object
 discriminatorValue: setLineItemShippingDetails
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - setLineItemShippingDetails
     required: true
-  shippingDetails:
-    type: ItemShippingDetailsDraft
-    (builtinType): object
-    required: false
   lineItemId:
     type: string
     (builtinType): string
     required: true
+  shippingDetails:
+    type: ItemShippingDetailsDraft
+    (builtinType): object
+    required: false

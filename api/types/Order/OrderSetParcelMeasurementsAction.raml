@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: OrderUpdateAction
 displayName: OrderSetParcelMeasurementsAction
-discriminator: action
+type: OrderUpdateAction
+(builtinType): object
 discriminatorValue: setParcelMeasurements
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - setParcelMeasurements
     required: true
-  measurements:
-    type: ParcelMeasurements
-    (builtinType): object
-    required: false
   parcelId:
     type: string
     (builtinType): string
     required: true
+  measurements:
+    type: ParcelMeasurements
+    (builtinType): object
+    required: false

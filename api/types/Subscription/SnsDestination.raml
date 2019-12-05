@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: Destination
 displayName: SnsDestination
-discriminator: type
+type: Destination
+(builtinType): object
 discriminatorValue: SNS
 properties:
   type:
@@ -15,11 +14,11 @@ properties:
     type: string
     (builtinType): string
     required: true
-  topicArn:
+  accessSecret:
     type: string
     (builtinType): string
     required: true
-  accessSecret:
+  topicArn:
     type: string
     (builtinType): string
     required: true

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: Destination
 displayName: SqsDestination
-discriminator: type
+type: Destination
+(builtinType): object
 discriminatorValue: SQS
 properties:
   type:
@@ -15,15 +14,15 @@ properties:
     type: string
     (builtinType): string
     required: true
+  accessSecret:
+    type: string
+    (builtinType): string
+    required: true
   queueUrl:
     type: string
     (builtinType): string
     required: true
   region:
-    type: string
-    (builtinType): string
-    required: true
-  accessSecret:
     type: string
     (builtinType): string
     required: true

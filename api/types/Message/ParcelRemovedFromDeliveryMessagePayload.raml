@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: ParcelRemovedFromDeliveryMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: ParcelRemovedFromDelivery
 properties:
   type:
@@ -11,11 +10,11 @@ properties:
     enum:
     - ParcelRemovedFromDelivery
     required: true
-  parcel:
-    type: Parcel
-    (builtinType): object
-    required: true
   deliveryId:
     type: string
     (builtinType): string
+    required: true
+  parcel:
+    type: Parcel
+    (builtinType): object
     required: true

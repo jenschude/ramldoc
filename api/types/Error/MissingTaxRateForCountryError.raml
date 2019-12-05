@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ErrorObject
 displayName: MissingTaxRateForCountryError
-discriminator: code
+type: ErrorObject
+(builtinType): object
 discriminatorValue: MissingTaxRateForCountry
 properties:
   code:
@@ -11,7 +10,7 @@ properties:
     enum:
     - MissingTaxRateForCountry
     required: true
-  message:
+  taxCategoryId:
     type: string
     (builtinType): string
     required: true
@@ -23,7 +22,3 @@ properties:
     type: string
     (builtinType): string
     required: false
-  taxCategoryId:
-    type: string
-    (builtinType): string
-    required: true

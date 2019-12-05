@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: OrderShippingAddressSetMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: OrderShippingAddressSet
 properties:
   type:
@@ -11,11 +10,11 @@ properties:
     enum:
     - OrderShippingAddressSet
     required: true
-  oldAddress:
+  address:
     type: Address
     (builtinType): object
     required: false
-  address:
+  oldAddress:
     type: Address
     (builtinType): object
     required: false

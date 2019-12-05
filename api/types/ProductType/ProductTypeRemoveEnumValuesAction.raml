@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductTypeUpdateAction
 displayName: ProductTypeRemoveEnumValuesAction
-discriminator: action
+type: ProductTypeUpdateAction
+(builtinType): object
 discriminatorValue: removeEnumValues
 properties:
   action:
@@ -11,13 +10,13 @@ properties:
     enum:
     - removeEnumValues
     required: true
+  attributeName:
+    type: string
+    (builtinType): string
+    required: true
   keys:
     type: array
     items:
       type: string
     (builtinType): array
-    required: true
-  attributeName:
-    type: string
-    (builtinType): string
     required: true

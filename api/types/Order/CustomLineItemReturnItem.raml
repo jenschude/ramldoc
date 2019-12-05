@@ -1,39 +1,9 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ReturnItem
 displayName: CustomLineItemReturnItem
-discriminator: type
+type: ReturnItem
+(builtinType): object
 discriminatorValue: CustomLineItemReturnItem
 properties:
-  shipmentState:
-    type: ReturnShipmentState
-    (builtinType): string
-    required: true
-  createdAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  quantity:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  comment:
-    type: string
-    (builtinType): string
-    required: false
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  paymentState:
-    type: ReturnPaymentState
-    (builtinType): string
-    required: true
   type:
     type: string
     (builtinType): string

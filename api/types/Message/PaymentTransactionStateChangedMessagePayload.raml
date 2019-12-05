@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: PaymentTransactionStateChangedMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: PaymentTransactionStateChanged
 properties:
   type:
@@ -11,11 +10,11 @@ properties:
     enum:
     - PaymentTransactionStateChanged
     required: true
-  state:
-    type: TransactionState
-    (builtinType): string
-    required: true
   transactionId:
     type: string
+    (builtinType): string
+    required: true
+  state:
+    type: TransactionState
     (builtinType): string
     required: true

@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ErrorObject
 displayName: AccessDeniedError
-discriminator: code
+type: ErrorObject
+(builtinType): object
 discriminatorValue: access_denied
 properties:
   code:
@@ -10,8 +9,4 @@ properties:
     (builtinType): string
     enum:
     - access_denied
-    required: true
-  message:
-    type: string
-    (builtinType): string
     required: true

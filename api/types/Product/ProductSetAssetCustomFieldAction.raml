@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductSetAssetCustomFieldAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: setAssetCustomField
 properties:
   action:
@@ -11,18 +10,6 @@ properties:
     enum:
     - setAssetCustomField
     required: true
-  assetId:
-    type: string
-    (builtinType): string
-    required: false
-  name:
-    type: string
-    (builtinType): string
-    required: true
-  staged:
-    type: boolean
-    (builtinType): boolean
-    required: false
   variantId:
     format: int64
     type: number
@@ -32,11 +19,23 @@ properties:
     type: string
     (builtinType): string
     required: false
-  value:
-    type: any
-    (builtinType): any
+  staged:
+    type: boolean
+    (builtinType): boolean
+    required: false
+  assetId:
+    type: string
+    (builtinType): string
     required: false
   assetKey:
     type: string
     (builtinType): string
+    required: false
+  name:
+    type: string
+    (builtinType): string
+    required: true
+  value:
+    type: any
+    (builtinType): any
     required: false

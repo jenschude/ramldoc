@@ -1,32 +1,14 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: TypedMoney
 displayName: HighPrecisionMoney
-discriminator: type
+type: TypedMoney
+(builtinType): object
 discriminatorValue: highPrecision
 properties:
-  centAmount:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  fractionDigits:
-    format: int32
-    maximum: 12
-    type: number
-    (builtinType): number
-    required: true
   type:
     type: MoneyType
     (builtinType): string
     enum:
     - highPrecision
-    required: true
-  currencyCode:
-    type: CurrencyCode
-    (builtinType): string
-    description: |-
-      The currency code compliant to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
     required: true
   preciseAmount:
     format: int64

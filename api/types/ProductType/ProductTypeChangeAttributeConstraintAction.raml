@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductTypeUpdateAction
 displayName: ProductTypeChangeAttributeConstraintAction
-discriminator: action
+type: ProductTypeUpdateAction
+(builtinType): object
 discriminatorValue: changeAttributeConstraint
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - changeAttributeConstraint
     required: true
-  newValue:
-    type: AttributeConstraintEnumDraft
-    (builtinType): string
-    required: true
   attributeName:
     type: string
+    (builtinType): string
+    required: true
+  newValue:
+    type: AttributeConstraintEnumDraft
     (builtinType): string
     required: true

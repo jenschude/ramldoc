@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ErrorObject
 displayName: ExtensionBadResponseError
-discriminator: code
+type: ErrorObject
+(builtinType): object
 discriminatorValue: ExtensionBadResponse
 properties:
   code:
@@ -10,10 +9,6 @@ properties:
     (builtinType): string
     enum:
     - ExtensionBadResponse
-    required: true
-  message:
-    type: string
-    (builtinType): string
     required: true
   localizedMessage:
     type: LocalizedString

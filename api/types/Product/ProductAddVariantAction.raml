@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductAddVariantAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: addVariant
 properties:
   action:
@@ -11,16 +10,24 @@ properties:
     enum:
     - addVariant
     required: true
+  sku:
+    type: string
+    (builtinType): string
+    required: false
+  key:
+    type: string
+    (builtinType): string
+    required: false
+  prices:
+    type: array
+    items:
+      type: PriceDraft
+    (builtinType): array
+    required: false
   images:
     type: array
     items:
       type: Image
-    (builtinType): array
-    required: false
-  assets:
-    type: array
-    items:
-      type: Asset
     (builtinType): array
     required: false
   attributes:
@@ -33,17 +40,9 @@ properties:
     type: boolean
     (builtinType): boolean
     required: false
-  prices:
+  assets:
     type: array
     items:
-      type: PriceDraft
+      type: Asset
     (builtinType): array
-    required: false
-  sku:
-    type: string
-    (builtinType): string
-    required: false
-  key:
-    type: string
-    (builtinType): string
     required: false

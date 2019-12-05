@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: StagedOrderUpdateAction
 displayName: StagedOrderSetParcelTrackingDataAction
-discriminator: action
+type: StagedOrderUpdateAction
+(builtinType): object
 discriminatorValue: setParcelTrackingData
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - setParcelTrackingData
     required: true
-  trackingData:
-    type: TrackingData
-    (builtinType): object
-    required: false
   parcelId:
     type: string
     (builtinType): string
     required: true
+  trackingData:
+    type: TrackingData
+    (builtinType): object
+    required: false

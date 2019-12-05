@@ -1,71 +1,14 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: Message
 displayName: LineItemStateTransitionMessage
-discriminator: type
+type: Message
+(builtinType): object
 discriminatorValue: LineItemStateTransition
 properties:
-  createdAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    required: false
-  lastModifiedBy:
-    type: LastModifiedBy
-    (builtinType): object
-    required: false
-  sequenceNumber:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  resource:
-    type: Reference
-    (builtinType): object
-    required: true
-  resourceUserProvidedIdentifiers:
-    type: UserProvidedIdentifiers
-    (builtinType): object
-    required: false
-  resourceVersion:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
   type:
     type: string
     (builtinType): string
     enum:
     - LineItemStateTransition
-    required: true
-  toState:
-    type: StateReference
-    (builtinType): object
-    required: true
-  fromState:
-    type: StateReference
-    (builtinType): object
-    required: true
-  quantity:
-    format: int64
-    type: number
-    (builtinType): number
     required: true
   lineItemId:
     type: string
@@ -74,4 +17,17 @@ properties:
   transitionDate:
     type: datetime
     (builtinType): datetime
+    required: true
+  quantity:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
+  fromState:
+    type: StateReference
+    (builtinType): object
+    required: true
+  toState:
+    type: StateReference
+    (builtinType): object
     required: true

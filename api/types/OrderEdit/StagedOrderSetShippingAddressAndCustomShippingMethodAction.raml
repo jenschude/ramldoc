@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: StagedOrderUpdateAction
 displayName: StagedOrderSetShippingAddressAndCustomShippingMethodAction
-discriminator: action
+type: StagedOrderUpdateAction
+(builtinType): object
 discriminatorValue: setShippingAddressAndCustomShippingMethod
 properties:
   action:
@@ -11,14 +10,6 @@ properties:
     enum:
     - setShippingAddressAndCustomShippingMethod
     required: true
-  shippingRate:
-    type: ShippingRateDraft
-    (builtinType): object
-    required: true
-  externalTaxRate:
-    type: ExternalTaxRateDraft
-    (builtinType): object
-    required: false
   address:
     type: Address
     (builtinType): object
@@ -27,7 +18,15 @@ properties:
     type: string
     (builtinType): string
     required: true
+  shippingRate:
+    type: ShippingRateDraft
+    (builtinType): object
+    required: true
   taxCategory:
     type: TaxCategoryResourceIdentifier
+    (builtinType): object
+    required: false
+  externalTaxRate:
+    type: ExternalTaxRateDraft
     (builtinType): object
     required: false

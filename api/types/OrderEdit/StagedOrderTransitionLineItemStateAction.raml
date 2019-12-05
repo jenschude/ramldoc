@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: StagedOrderUpdateAction
 displayName: StagedOrderTransitionLineItemStateAction
-discriminator: action
+type: StagedOrderUpdateAction
+(builtinType): object
 discriminatorValue: transitionLineItemState
 properties:
   action:
@@ -11,22 +10,22 @@ properties:
     enum:
     - transitionLineItemState
     required: true
-  toState:
-    type: StateResourceIdentifier
-    (builtinType): object
-    required: true
-  fromState:
-    type: StateResourceIdentifier
-    (builtinType): object
+  lineItemId:
+    type: string
+    (builtinType): string
     required: true
   quantity:
     format: int64
     type: number
     (builtinType): number
     required: true
-  lineItemId:
-    type: string
-    (builtinType): string
+  fromState:
+    type: StateResourceIdentifier
+    (builtinType): object
+    required: true
+  toState:
+    type: StateResourceIdentifier
+    (builtinType): object
     required: true
   actualTransitionDate:
     type: datetime

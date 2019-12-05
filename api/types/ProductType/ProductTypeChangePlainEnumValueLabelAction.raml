@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductTypeUpdateAction
 displayName: ProductTypeChangePlainEnumValueLabelAction
-discriminator: action
+type: ProductTypeUpdateAction
+(builtinType): object
 discriminatorValue: changePlainEnumValueLabel
 properties:
   action:
@@ -11,11 +10,11 @@ properties:
     enum:
     - changePlainEnumValueLabel
     required: true
-  newValue:
-    type: AttributePlainEnumValue
-    (builtinType): object
-    required: true
   attributeName:
     type: string
     (builtinType): string
+    required: true
+  newValue:
+    type: AttributePlainEnumValue
+    (builtinType): object
     required: true

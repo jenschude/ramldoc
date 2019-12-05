@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ProductUpdateAction
 displayName: ProductSetProductPriceCustomTypeAction
-discriminator: action
+type: ProductUpdateAction
+(builtinType): object
 discriminatorValue: setProductPriceCustomType
 properties:
   action:
@@ -11,19 +10,19 @@ properties:
     enum:
     - setProductPriceCustomType
     required: true
+  priceId:
+    type: string
+    (builtinType): string
+    required: true
   staged:
     type: boolean
     (builtinType): boolean
-    required: false
-  fields:
-    type: FieldContainer
-    (builtinType): object
     required: false
   type:
     type: TypeResourceIdentifier
     (builtinType): object
     required: false
-  priceId:
-    type: string
-    (builtinType): string
-    required: true
+  fields:
+    type: FieldContainer
+    (builtinType): object
+    required: false

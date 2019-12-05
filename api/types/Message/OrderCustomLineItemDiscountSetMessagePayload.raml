@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: MessagePayload
 displayName: OrderCustomLineItemDiscountSetMessagePayload
-discriminator: type
+type: MessagePayload
+(builtinType): object
 discriminatorValue: OrderCustomLineItemDiscountSet
 properties:
   type:
@@ -15,13 +14,13 @@ properties:
     type: string
     (builtinType): string
     required: true
-  taxedPrice:
-    type: TaxedItemPrice
-    (builtinType): object
-    required: false
   discountedPricePerQuantity:
     type: array
     items:
       type: DiscountedLineItemPriceForQuantity
     (builtinType): array
     required: true
+  taxedPrice:
+    type: TaxedItemPrice
+    (builtinType): object
+    required: false

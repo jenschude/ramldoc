@@ -1,8 +1,7 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: ShippingRatePriceTier
 displayName: CartClassificationTier
-discriminator: type
+type: ShippingRatePriceTier
+(builtinType): object
 discriminatorValue: CartClassification
 properties:
   type:
@@ -10,6 +9,10 @@ properties:
     (builtinType): string
     enum:
     - CartClassification
+    required: true
+  value:
+    type: string
+    (builtinType): string
     required: true
   price:
     type: Money
@@ -19,7 +22,3 @@ properties:
     type: boolean
     (builtinType): boolean
     required: false
-  value:
-    type: string
-    (builtinType): string
-    required: true

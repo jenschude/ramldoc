@@ -1,8 +1,8 @@
 #%RAML 1.0 DataType
-(builtinType): object
-type: LoggedResource
 displayName: Order
-(subTypes):
+type: LoggedResource
+(builtinType): object
+(oneOf):
 - StagedOrder
 properties:
   createdAt:
