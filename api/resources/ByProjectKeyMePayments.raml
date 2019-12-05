@@ -5,15 +5,13 @@ uriParameters:
   projectKey:
     type: string
     (builtinType): string
-    description: |-
-      Test
 get:
   securedBy:
   - oauth_2_0:
       scopes:
       - "manage_my_payments:{projectKey}"
   description: |-
-    Query Payments
+    Query payments
   queryParameters:
     expand:
       required: false

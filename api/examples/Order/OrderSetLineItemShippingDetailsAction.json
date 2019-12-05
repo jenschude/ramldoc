@@ -1,0 +1,10 @@
+{
+  "action" : "setLineItemShippingDetails",
+  "lineItemId" : "{{lineItemId}}",
+  "shippingDetails" : {
+    "targets" : [ {
+      "addressKey" : "AddressKeyStringFromAddress",
+      "quantity" : 2
+    } ]
+  }
+}

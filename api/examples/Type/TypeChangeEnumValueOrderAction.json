@@ -1,0 +1,5 @@
+{
+  "action" : "changeEnumValueOrder",
+  "fieldName" : "CustomENumField",
+  "keys" : [ "neweNumKey", "NewENumKey", "enum2", "enum1" ]
+}

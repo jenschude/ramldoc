@@ -5,8 +5,6 @@ uriParameters:
   projectKey:
     type: string
     (builtinType): string
-    description: |-
-      Test
 get:
   securedBy:
   - oauth_2_0:
@@ -14,7 +12,7 @@ get:
       - "manage_project:{projectKey}"
       - "view_products:{projectKey}"
   description: |-
-    Query Channels
+    Query channels
   queryParameters:
     expand:
       required: false

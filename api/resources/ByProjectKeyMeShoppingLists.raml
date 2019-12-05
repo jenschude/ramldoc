@@ -5,15 +5,13 @@ uriParameters:
   projectKey:
     type: string
     (builtinType): string
-    description: |-
-      Test
 get:
   securedBy:
   - oauth_2_0:
       scopes:
       - "manage_my_shopping_lists:{projectKey}"
   description: |-
-    Query ShoppingLists
+    Query shopping-lists
   queryParameters:
     expand:
       required: false

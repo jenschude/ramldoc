@@ -1,0 +1,20 @@
+#%RAML 1.0 DataType
+displayName: OrderCustomerGroupSetMessage
+type: Message
+(builtinType): object
+discriminatorValue: OrderCustomerGroupSet
+properties:
+  type:
+    type: string
+    (builtinType): string
+    enum:
+    - OrderCustomerGroupSet
+    required: true
+  customerGroup:
+    type: CustomerGroupReference
+    (builtinType): object
+    required: false
+  oldCustomerGroup:
+    type: CustomerGroupReference
+    (builtinType): object
+    required: false

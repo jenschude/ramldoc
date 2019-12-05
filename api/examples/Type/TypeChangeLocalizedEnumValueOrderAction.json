@@ -1,0 +1,5 @@
+{
+  "action" : "changeLocalizedEnumValueOrder",
+  "fieldName" : "CustomLeNumField",
+  "keys" : [ "newleNumKey", "NewLocalizedEnumKeyString", "lenum2", "lenum1" ]
+}

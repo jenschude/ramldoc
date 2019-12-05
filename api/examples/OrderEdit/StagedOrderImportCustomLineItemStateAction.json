@@ -1,0 +1,11 @@
+{
+  "action" : "importCustomLineItemState",
+  "customLineItemId" : "{{customLineItemId}}",
+  "state" : [ {
+    "quantity" : 1,
+    "state" : {
+      "typeId" : "state",
+      "id" : "{{stateId}}"
+    }
+  } ]
+}

@@ -1,0 +1,8 @@
+{
+  "action" : "setParcelItems",
+  "parcelId" : "{{parcelId}}",
+  "items" : [ {
+    "id" : "{{lineItemId}}",
+    "quantity" : 2
+  } ]
+}

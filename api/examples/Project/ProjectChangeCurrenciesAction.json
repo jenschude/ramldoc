@@ -1,0 +1,4 @@
+{
+  "action" : "changeCurrencies",
+  "currencies" : [ "EUR" ]
+}

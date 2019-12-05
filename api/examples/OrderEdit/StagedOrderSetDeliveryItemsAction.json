@@ -1,0 +1,8 @@
+{
+  "action" : "setDeliveryItems",
+  "deliveryId" : "{{deliveryId}}",
+  "items" : [ {
+    "id" : "{{itemId}}",
+    "quantity" : 2
+  } ]
+}

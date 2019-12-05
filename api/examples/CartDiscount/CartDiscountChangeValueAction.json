@@ -1,0 +1,10 @@
+{
+  "action" : "changeValue",
+  "value" : {
+    "type" : "absolute",
+    "money" : [ {
+      "currencyCode" : "EUR",
+      "centAmount" : 40099
+    } ]
+  }
+}
