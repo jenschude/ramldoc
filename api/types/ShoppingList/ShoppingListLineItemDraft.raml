@@ -7,24 +7,24 @@ properties:
     type: datetime
     (builtinType): datetime
     required: false
-  quantity:
-    type: number
-    (builtinType): number
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    required: false
+  sku:
+    type: string
+    (builtinType): string
     required: false
   productId:
     type: string
     (builtinType): string
     required: false
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
+  quantity:
+    type: number
+    (builtinType): number
     required: false
   variantId:
     format: int64
     type: number
     (builtinType): number
-    required: false
-  sku:
-    type: string
-    (builtinType): string
     required: false

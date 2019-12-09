@@ -3,12 +3,12 @@ displayName: PriceTier
 type: object
 (builtinType): object
 properties:
-  value:
-    type: TypedMoney
-    (builtinType): object
-    required: true
   minimumQuantity:
     format: int64
     type: number
     (builtinType): number
+    required: true
+  value:
+    type: TypedMoney
+    (builtinType): object
     required: true

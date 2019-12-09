@@ -3,21 +3,20 @@ displayName: SubscriptionDraft
 type: object
 (builtinType): object
 properties:
-  format:
-    discriminator: type
-    type: DeliveryFormat
-    (builtinType): object
+  changes:
+    type: array
+    items:
+      type: ChangeSubscription
+    (builtinType): array
     required: false
   destination:
     discriminator: type
     type: Destination
     (builtinType): object
     required: true
-  changes:
-    type: array
-    items:
-      type: ChangeSubscription
-    (builtinType): array
+  key:
+    type: string
+    (builtinType): string
     required: false
   messages:
     type: array
@@ -25,7 +24,8 @@ properties:
       type: MessageSubscription
     (builtinType): array
     required: false
-  key:
-    type: string
-    (builtinType): string
+  format:
+    discriminator: type
+    type: DeliveryFormat
+    (builtinType): object
     required: false

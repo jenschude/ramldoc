@@ -10,24 +10,24 @@ properties:
     description: |-
       Defaults to the current date and time.
     required: false
-  quantity:
-    format: int16
-    type: number
-    (builtinType): number
-    description: |-
-      Defaults to `1`.
-    required: false
   custom:
     type: CustomFieldsDraft
     (builtinType): object
     description: |-
       The custom fields.
     required: false
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
   name:
     type: LocalizedString
     (builtinType): object
     required: true
-  description:
-    type: LocalizedString
-    (builtinType): object
+  quantity:
+    format: int16
+    type: number
+    (builtinType): number
+    description: |-
+      Defaults to `1`.
     required: false

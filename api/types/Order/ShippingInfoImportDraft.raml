@@ -3,16 +3,42 @@ displayName: ShippingInfoImportDraft
 type: object
 (builtinType): object
 properties:
-  taxRate:
-    type: TaxRate
+  shippingMethodName:
+    type: string
+    (builtinType): string
+    required: true
+  price:
+    type: Money
     (builtinType): object
-    required: false
+    required: true
   shippingRate:
     type: ShippingRateDraft
     (builtinType): object
     description: |-
       The shipping rate used to determine the price.
     required: true
+  taxRate:
+    type: TaxRate
+    (builtinType): object
+    required: false
+  taxCategory:
+    type: TaxCategoryResourceIdentifier
+    (builtinType): object
+    required: false
+  shippingMethod:
+    type: ShippingMethodResourceIdentifier
+    (builtinType): object
+    description: |-
+      Not set if custom shipping method is used.
+    required: false
+  deliveries:
+    type: array
+    items:
+      type: Delivery
+    (builtinType): array
+    description: |-
+      Deliveries are compilations of information on how the articles are being delivered to the customers.
+    required: false
   discountedPrice:
     type: DiscountedLineItemPriceDraft
     (builtinType): object
@@ -22,30 +48,4 @@ properties:
     (builtinType): string
     description: |-
       Indicates whether the ShippingMethod referenced is allowed for the cart or not.
-    required: false
-  price:
-    type: Money
-    (builtinType): object
-    required: true
-  shippingMethod:
-    type: ShippingMethodResourceIdentifier
-    (builtinType): object
-    description: |-
-      Not set if custom shipping method is used.
-    required: false
-  shippingMethodName:
-    type: string
-    (builtinType): string
-    required: true
-  deliveries:
-    type: array
-    items:
-      type: Delivery
-    (builtinType): array
-    description: |-
-      Deliveries are compilations of information on how the articles are being delivered to the customers.
-    required: false
-  taxCategory:
-    type: TaxCategoryResourceIdentifier
-    (builtinType): object
     required: false

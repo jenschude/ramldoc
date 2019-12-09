@@ -3,11 +3,16 @@ displayName: MyCartDraft
 type: object
 (builtinType): object
 properties:
-  lineItems:
-    type: array
-    items:
-      type: MyLineItemDraft
-    (builtinType): array
+  currency:
+    pattern: ^[A-Z]{3}$
+    type: CurrencyCode
+    (builtinType): string
+    description: |-
+      A three-digit currency code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+    required: true
+  customerEmail:
+    type: string
+    (builtinType): string
     required: false
   country:
     type: string
@@ -15,14 +20,39 @@ properties:
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
     required: false
-  itemShippingAddresses:
+  inventoryMode:
+    type: InventoryMode
+    (builtinType): string
+    description: |-
+      Default inventory mode is `None`.
+    required: false
+  lineItems:
     type: array
     items:
-      type: Address
+      type: MyLineItemDraft
     (builtinType): array
+    required: false
+  shippingAddress:
+    type: Address
+    (builtinType): object
+    required: false
+  billingAddress:
+    type: Address
+    (builtinType): object
+    required: false
+  shippingMethod:
+    type: ShippingMethodResourceIdentifier
+    (builtinType): object
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
     description: |-
-      Contains addresses for orders with multiple shipping addresses.
-               Each address must contain a key which is unique in this cart.
+      The custom fields.
+    required: false
+  locale:
+    type: string
+    (builtinType): string
     required: false
   taxMode:
     type: TaxMode
@@ -38,42 +68,12 @@ properties:
       The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
                If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
     required: false
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
+  itemShippingAddresses:
+    type: array
+    items:
+      type: Address
+    (builtinType): array
     description: |-
-      The custom fields.
-    required: false
-  shippingMethod:
-    type: ShippingMethodResourceIdentifier
-    (builtinType): object
-    required: false
-  customerEmail:
-    type: string
-    (builtinType): string
-    required: false
-  shippingAddress:
-    type: Address
-    (builtinType): object
-    required: false
-  currency:
-    pattern: ^[A-Z]{3}$
-    type: CurrencyCode
-    (builtinType): string
-    description: |-
-      A three-digit currency code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-    required: true
-  billingAddress:
-    type: Address
-    (builtinType): object
-    required: false
-  locale:
-    type: string
-    (builtinType): string
-    required: false
-  inventoryMode:
-    type: InventoryMode
-    (builtinType): string
-    description: |-
-      Default inventory mode is `None`.
+      Contains addresses for orders with multiple shipping addresses.
+               Each address must contain a key which is unique in this cart.
     required: false

@@ -3,24 +3,10 @@ displayName: ShippingMethodDraft
 type: object
 (builtinType): object
 properties:
-  zoneRates:
-    type: array
-    items:
-      type: ZoneRateDraft
-    (builtinType): array
-    required: true
-  predicate:
+  key:
     type: string
     (builtinType): string
-    description: |-
-      A Cart predicate which can be used to more precisely select a shipping method for a cart.
     required: false
-  isDefault:
-    type: boolean
-    (builtinType): boolean
-    description: |-
-      If `true` the shipping method will be the default one in a project.
-    required: true
   name:
     type: string
     (builtinType): string
@@ -29,11 +15,25 @@ properties:
     type: string
     (builtinType): string
     required: false
-  key:
-    type: string
-    (builtinType): string
-    required: false
   taxCategory:
     type: TaxCategoryResourceIdentifier
     (builtinType): object
     required: true
+  zoneRates:
+    type: array
+    items:
+      type: ZoneRateDraft
+    (builtinType): array
+    required: true
+  isDefault:
+    type: boolean
+    (builtinType): boolean
+    description: |-
+      If `true` the shipping method will be the default one in a project.
+    required: true
+  predicate:
+    type: string
+    (builtinType): string
+    description: |-
+      A Cart predicate which can be used to more precisely select a shipping method for a cart.
+    required: false

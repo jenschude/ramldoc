@@ -3,14 +3,6 @@ displayName: MyShoppingList
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -20,36 +12,42 @@ properties:
     type: number
     (builtinType): number
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    required: false
+  createdAt:
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     required: false
-  anonymousId:
-    type: string
-    (builtinType): string
+  createdBy:
+    type: CreatedBy
+    (builtinType): object
     required: false
-  textLineItems:
-    type: array
-    items:
-      type: TextLineItem
-    (builtinType): array
+  custom:
+    type: CustomFields
+    (builtinType): object
+    required: false
+  customer:
+    type: CustomerReference
+    (builtinType): object
     required: false
   deleteDaysAfterLastModification:
     format: int64
     type: number
     (builtinType): number
     required: false
-  custom:
-    type: CustomFields
-    (builtinType): object
-    required: false
   description:
     type: LocalizedString
     (builtinType): object
+    required: false
+  key:
+    type: string
+    (builtinType): string
     required: false
   lineItems:
     type: array
@@ -65,11 +63,13 @@ properties:
     type: LocalizedString
     (builtinType): object
     required: false
-  key:
+  textLineItems:
+    type: array
+    items:
+      type: TextLineItem
+    (builtinType): array
+    required: false
+  anonymousId:
     type: string
     (builtinType): string
-    required: false
-  customer:
-    type: CustomerReference
-    (builtinType): object
     required: false

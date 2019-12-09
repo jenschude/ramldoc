@@ -3,40 +3,9 @@ displayName: MyPayment
 type: object
 (builtinType): object
 properties:
-  anonymousId:
-    type: string
-    (builtinType): string
-    description: |-
-      Identifies payments belonging to an anonymous session (the customer has not signed up/in yet).
-    required: false
-  paymentMethodInfo:
-    type: PaymentMethodInfo
-    (builtinType): object
-    required: true
-  custom:
-    type: CustomFields
-    (builtinType): object
-    required: false
-  amountPlanned:
-    discriminator: type
-    type: TypedMoney
-    (builtinType): object
-    description: |-
-      How much money this payment intends to receive from the customer.
-               The value usually matches the cart or order gross total.
-    required: true
   id:
     type: string
     (builtinType): string
-    required: true
-  transactions:
-    type: array
-    items:
-      type: Transaction
-    (builtinType): array
-    description: |-
-      A list of financial transactions of different TransactionTypes
-               with different TransactionStates.
     required: true
   version:
     format: int64
@@ -49,4 +18,35 @@ properties:
     (builtinType): object
     description: |-
       A reference to the customer this payment belongs to.
+    required: false
+  anonymousId:
+    type: string
+    (builtinType): string
+    description: |-
+      Identifies payments belonging to an anonymous session (the customer has not signed up/in yet).
+    required: false
+  amountPlanned:
+    discriminator: type
+    type: TypedMoney
+    (builtinType): object
+    description: |-
+      How much money this payment intends to receive from the customer.
+               The value usually matches the cart or order gross total.
+    required: true
+  paymentMethodInfo:
+    type: PaymentMethodInfo
+    (builtinType): object
+    required: true
+  transactions:
+    type: array
+    items:
+      type: Transaction
+    (builtinType): array
+    description: |-
+      A list of financial transactions of different TransactionTypes
+               with different TransactionStates.
+    required: true
+  custom:
+    type: CustomFields
+    (builtinType): object
     required: false

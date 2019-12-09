@@ -7,36 +7,36 @@ discriminator: type
 - CustomLineItemReturnItem
 - LineItemReturnItem
 properties:
-  shipmentState:
-    type: ReturnShipmentState
+  id:
+    type: string
     (builtinType): string
-    required: true
-  createdAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    type: datetime
-    (builtinType): datetime
     required: true
   quantity:
     format: int64
     type: number
     (builtinType): number
     required: true
+  type:
+    type: string
+    (builtinType): string
+    required: true
   comment:
     type: string
     (builtinType): string
     required: false
-  id:
-    type: string
+  shipmentState:
+    type: ReturnShipmentState
     (builtinType): string
     required: true
   paymentState:
     type: ReturnPaymentState
     (builtinType): string
     required: true
-  type:
-    type: string
-    (builtinType): string
+  lastModifiedAt:
+    type: datetime
+    (builtinType): datetime
+    required: true
+  createdAt:
+    type: datetime
+    (builtinType): datetime
     required: true

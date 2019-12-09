@@ -3,11 +3,18 @@ displayName: LineItemDraft
 type: object
 (builtinType): object
 properties:
-  externalTaxRate:
-    type: ExternalTaxRateDraft
-    (builtinType): object
-    description: |-
-      An external tax rate can be set if the cart has the `External` TaxMode.
+  productId:
+    type: string
+    (builtinType): string
+    required: false
+  variantId:
+    format: int64
+    type: number
+    (builtinType): number
+    required: false
+  sku:
+    type: string
+    (builtinType): string
     required: false
   quantity:
     format: int64
@@ -18,28 +25,6 @@ properties:
                Must be a positive integer.
     default: 1
     required: false
-  shippingDetails:
-    type: ItemShippingDetailsDraft
-    (builtinType): object
-    description: |-
-      Container for line item specific address(es).
-    required: false
-  productId:
-    type: string
-    (builtinType): string
-    required: false
-  externalTotalPrice:
-    type: ExternalLineItemTotalPrice
-    (builtinType): object
-    description: |-
-      Sets the line item `price` and `totalPrice` to the given values and sets the line item `priceMode` to `ExternalTotal` LineItemPriceMode.
-    required: false
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    description: |-
-      The custom fields.
-    required: false
   supplyChannel:
     type: ChannelResourceIdentifier
     (builtinType): object
@@ -49,11 +34,6 @@ properties:
                The provided channel should have
                the InventorySupply role.
     required: false
-  variantId:
-    format: int64
-    type: number
-    (builtinType): number
-    required: false
   distributionChannel:
     type: ChannelResourceIdentifier
     (builtinType): object
@@ -61,13 +41,33 @@ properties:
       The channel is used to select a ProductPrice.
                The provided channel should have the ProductDistribution role.
     required: false
-  sku:
-    type: string
-    (builtinType): string
+  externalTaxRate:
+    type: ExternalTaxRateDraft
+    (builtinType): object
+    description: |-
+      An external tax rate can be set if the cart has the `External` TaxMode.
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    description: |-
+      The custom fields.
     required: false
   externalPrice:
     type: Money
     (builtinType): object
     description: |-
       Sets the line item `price` to the given value and sets the line item `priceMode` to `ExternalPrice` LineItemPriceMode.
+    required: false
+  externalTotalPrice:
+    type: ExternalLineItemTotalPrice
+    (builtinType): object
+    description: |-
+      Sets the line item `price` and `totalPrice` to the given values and sets the line item `priceMode` to `ExternalTotal` LineItemPriceMode.
+    required: false
+  shippingDetails:
+    type: ItemShippingDetailsDraft
+    (builtinType): object
+    description: |-
+      Container for line item specific address(es).
     required: false

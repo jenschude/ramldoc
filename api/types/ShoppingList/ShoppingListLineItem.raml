@@ -7,39 +7,26 @@ properties:
     type: datetime
     (builtinType): datetime
     required: true
-  quantity:
-    type: number
-    (builtinType): number
-    required: true
-  productId:
-    type: string
-    (builtinType): string
-    required: true
   custom:
     type: CustomFields
     (builtinType): object
     required: false
-  variant:
-    type: ProductVariant
-    (builtinType): object
-    required: false
-  name:
-    type: LocalizedString
-    (builtinType): object
-    required: true
-  variantId:
-    format: int64
-    type: number
-    (builtinType): number
+  deactivatedAt:
+    type: datetime
+    (builtinType): datetime
     required: false
   id:
     type: string
     (builtinType): string
     required: true
-  deactivatedAt:
-    type: datetime
-    (builtinType): datetime
-    required: false
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  productId:
+    type: string
+    (builtinType): string
+    required: true
   productSlug:
     type: LocalizedString
     (builtinType): object
@@ -48,3 +35,16 @@ properties:
     type: ProductTypeReference
     (builtinType): object
     required: true
+  quantity:
+    type: number
+    (builtinType): number
+    required: true
+  variant:
+    type: ProductVariant
+    (builtinType): object
+    required: false
+  variantId:
+    format: int64
+    type: number
+    (builtinType): number
+    required: false

@@ -3,6 +3,12 @@ displayName: CustomerGroupDraft
 type: object
 (builtinType): object
 properties:
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier for the customer group.
+    required: false
   groupName:
     type: string
     (builtinType): string
@@ -10,10 +16,4 @@ properties:
   custom:
     type: CustomFields
     (builtinType): object
-    required: false
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for the customer group.
     required: false

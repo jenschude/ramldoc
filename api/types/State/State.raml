@@ -3,6 +3,15 @@ displayName: State
 type: LoggedResource
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   createdAt:
     format: rfc3339
     type: datetime
@@ -13,26 +22,39 @@ properties:
     type: datetime
     (builtinType): datetime
     required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
+    description: |-
+      Present on resources updated after 1/02/2019 except for events not tracked.
+    required: false
   createdBy:
     type: CreatedBy
     (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     required: false
-  lastModifiedBy:
-    type: LastModifiedBy
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      A unique identifier for the state.
+    required: true
+  type:
+    type: StateTypeEnum
+    (builtinType): string
+    required: true
+  name:
+    type: LocalizedString
     (builtinType): object
     description: |-
-      Present on resources updated after 1/02/2019 except for events not tracked.
+      A human-readable name of the state.
+    required: false
+  description:
+    type: LocalizedString
+    (builtinType): object
+    description: |-
+      A human-readable description of the state.
     required: false
   initial:
     type: boolean
@@ -41,23 +63,17 @@ properties:
       A state can be declared as an initial state for any state machine.
                When a workflow starts, this first state must be an `initial` state.
     required: true
-  roles:
-    type: array
-    items:
-      type: StateRoleEnum
-    (builtinType): array
-    required: false
   builtIn:
     type: boolean
     (builtinType): boolean
     description: |-
       Builtin states are integral parts of the project that cannot be deleted nor the key can be changed.
     required: true
-  description:
-    type: LocalizedString
-    (builtinType): object
-    description: |-
-      A human-readable description of the state.
+  roles:
+    type: array
+    items:
+      type: StateRoleEnum
+    (builtinType): array
     required: false
   transitions:
     type: array
@@ -71,19 +87,3 @@ properties:
                If `transitions` is not set, the validation is turned off.
                When performing a `transitionState` update action, any other state of the same `type` can be transitioned to.
     required: false
-  type:
-    type: StateTypeEnum
-    (builtinType): string
-    required: true
-  name:
-    type: LocalizedString
-    (builtinType): object
-    description: |-
-      A human-readable name of the state.
-    required: false
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      A unique identifier for the state.
-    required: true

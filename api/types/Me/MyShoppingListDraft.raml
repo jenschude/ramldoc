@@ -3,6 +3,14 @@ displayName: MyShoppingListDraft
 type: object
 (builtinType): object
 properties:
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
   lineItems:
     type: array
     items:
@@ -15,24 +23,16 @@ properties:
       type: TextLineItemDraft
     (builtinType): array
     required: false
-  deleteDaysAfterLastModification:
-    format: int64
-    type: number
-    (builtinType): number
-    description: |-
-      The shopping list will be deleted automatically if it hasn't been modified for the specified amount of days.
-    required: false
   custom:
     type: CustomFieldsDraft
     (builtinType): object
     description: |-
       The custom fields.
     required: false
-  name:
-    type: LocalizedString
-    (builtinType): object
-    required: true
-  description:
-    type: LocalizedString
-    (builtinType): object
+  deleteDaysAfterLastModification:
+    format: int64
+    type: number
+    (builtinType): number
+    description: |-
+      The shopping list will be deleted automatically if it hasn't been modified for the specified amount of days.
     required: false

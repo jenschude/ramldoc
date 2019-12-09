@@ -3,13 +3,6 @@ displayName: ReviewRatingStatistics
 type: object
 (builtinType): object
 properties:
-  highestRating:
-    format: int16
-    type: number
-    (builtinType): number
-    description: |-
-      Highest rating of one target
-    required: true
   averageRating:
     format: int16
     type: number
@@ -17,6 +10,20 @@ properties:
     description: |-
       Average rating of one target
                This number is rounded with 5 decimals.
+    required: true
+  highestRating:
+    format: int16
+    type: number
+    (builtinType): number
+    description: |-
+      Highest rating of one target
+    required: true
+  lowestRating:
+    format: int16
+    type: number
+    (builtinType): number
+    description: |-
+      Lowest rating of one target
     required: true
   count:
     format: int16
@@ -32,11 +39,4 @@ properties:
       The full distribution of the ratings.
                The keys are the different ratings and the values are the count of reviews having this rating.
                Only the used ratings appear in this object.
-    required: true
-  lowestRating:
-    format: int16
-    type: number
-    (builtinType): number
-    description: |-
-      Lowest rating of one target
     required: true

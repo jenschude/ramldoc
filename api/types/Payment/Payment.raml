@@ -3,6 +3,15 @@ displayName: Payment
 type: LoggedResource
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   createdAt:
     format: rfc3339
     type: datetime
@@ -13,30 +22,24 @@ properties:
     type: datetime
     (builtinType): datetime
     required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
-  amountAuthorized:
-    type: TypedMoney
+  createdBy:
+    type: CreatedBy
     (builtinType): object
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    required: false
+  customer:
+    discriminatorValue: customer
+    type: CustomerReference
+    (builtinType): object
+    description: |-
+      A reference to the customer this payment belongs to.
     required: false
   anonymousId:
     type: string
@@ -44,37 +47,17 @@ properties:
     description: |-
       Identifies payments belonging to an anonymous session (the customer has not signed up/in yet).
     required: false
-  paymentMethodInfo:
-    type: PaymentMethodInfo
-    (builtinType): object
-    required: true
-  custom:
-    type: CustomFields
-    (builtinType): object
-    required: false
-  authorizedUntil:
-    type: string
-    (builtinType): string
-    required: false
   externalId:
     type: string
     (builtinType): string
     required: false
-  transactions:
-    type: array
-    items:
-      type: Transaction
-    (builtinType): array
+  interfaceId:
+    type: string
+    (builtinType): string
     description: |-
-      A list of financial transactions of different TransactionTypes with different TransactionStates.
-    required: true
-  amountPaid:
-    type: TypedMoney
-    (builtinType): object
-    required: false
-  amountRefunded:
-    type: TypedMoney
-    (builtinType): object
+      The identifier that is used by the interface that manages the payment (usually the PSP).
+               Cannot be changed once it has been set.
+               The combination of this ID and the PaymentMethodInfo `paymentInterface` must be unique.
     required: false
   amountPlanned:
     discriminator: type
@@ -83,6 +66,38 @@ properties:
     description: |-
       How much money this payment intends to receive from the customer.
                The value usually matches the cart or order gross total.
+    required: true
+  amountAuthorized:
+    type: TypedMoney
+    (builtinType): object
+    required: false
+  authorizedUntil:
+    type: string
+    (builtinType): string
+    required: false
+  amountPaid:
+    type: TypedMoney
+    (builtinType): object
+    required: false
+  amountRefunded:
+    type: TypedMoney
+    (builtinType): object
+    required: false
+  paymentMethodInfo:
+    type: PaymentMethodInfo
+    (builtinType): object
+    required: true
+  paymentStatus:
+    type: PaymentStatus
+    (builtinType): object
+    required: true
+  transactions:
+    type: array
+    items:
+      type: Transaction
+    (builtinType): array
+    description: |-
+      A list of financial transactions of different TransactionTypes with different TransactionStates.
     required: true
   interfaceInteractions:
     type: array
@@ -95,13 +110,9 @@ properties:
                If so, the `interactionId` in the Transaction should be set to match the ID of the PSP for the interaction.
                Interactions are managed by the PSP integration and are usually neither written nor read by the user facing frontends or other services.
     required: true
-  interfaceId:
-    type: string
-    (builtinType): string
-    description: |-
-      The identifier that is used by the interface that manages the payment (usually the PSP).
-               Cannot be changed once it has been set.
-               The combination of this ID and the PaymentMethodInfo `paymentInterface` must be unique.
+  custom:
+    type: CustomFields
+    (builtinType): object
     required: false
   key:
     type: string
@@ -109,15 +120,4 @@ properties:
     description: |-
       User-specific unique identifier for the payment (max.
                256 characters).
-    required: false
-  paymentStatus:
-    type: PaymentStatus
-    (builtinType): object
-    required: true
-  customer:
-    discriminatorValue: customer
-    type: CustomerReference
-    (builtinType): object
-    description: |-
-      A reference to the customer this payment belongs to.
     required: false

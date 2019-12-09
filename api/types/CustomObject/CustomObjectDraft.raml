@@ -9,18 +9,18 @@ properties:
     description: |-
       A namespace to group custom objects.
     required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: false
-  value:
-    type: any
-    (builtinType): any
-    required: true
   key:
     type: string
     (builtinType): string
     description: |-
       A user-defined key that is unique within the given container.
     required: true
+  value:
+    type: any
+    (builtinType): any
+    required: true
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: false

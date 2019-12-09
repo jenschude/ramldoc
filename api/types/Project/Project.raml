@@ -3,49 +3,6 @@ displayName: Project
 type: object
 (builtinType): object
 properties:
-  externalOAuth:
-    type: ExternalOAuth
-    (builtinType): object
-    required: false
-  shippingRateInputType:
-    type: ShippingRateInputType
-    (builtinType): object
-    required: false
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  languages:
-    type: array
-    items:
-      type: Locale
-    (builtinType): array
-    required: true
-  name:
-    type: string
-    (builtinType): string
-    description: |-
-      The name of the project.
-    required: true
-  messages:
-    type: MessageConfiguration
-    (builtinType): object
-    required: true
-  countries:
-    type: array
-    items:
-      type: CountryCode
-    (builtinType): array
-    description: |-
-      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-    required: true
-  trialUntil:
-    type: string
-    (builtinType): string
-    description: |-
-      The time is in the format Year-Month `YYYY-MM`.
-    required: false
   version:
     format: int64
     type: number
@@ -59,6 +16,20 @@ properties:
     description: |-
       The unique key of the project.
     required: true
+  name:
+    type: string
+    (builtinType): string
+    description: |-
+      The name of the project.
+    required: true
+  countries:
+    type: array
+    items:
+      type: CountryCode
+    (builtinType): array
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+    required: true
   currencies:
     type: array
     items:
@@ -67,3 +38,32 @@ properties:
     description: |-
       A three-digit currency code as per [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
     required: true
+  languages:
+    type: array
+    items:
+      type: Locale
+    (builtinType): array
+    required: true
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  trialUntil:
+    type: string
+    (builtinType): string
+    description: |-
+      The time is in the format Year-Month `YYYY-MM`.
+    required: false
+  messages:
+    type: MessageConfiguration
+    (builtinType): object
+    required: true
+  shippingRateInputType:
+    type: ShippingRateInputType
+    (builtinType): object
+    required: false
+  externalOAuth:
+    type: ExternalOAuth
+    (builtinType): object
+    required: false

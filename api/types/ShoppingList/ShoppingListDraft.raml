@@ -3,23 +3,16 @@ displayName: ShoppingListDraft
 type: object
 (builtinType): object
 properties:
-  lineItems:
-    type: array
-    items:
-      type: ShoppingListLineItemDraft
-    (builtinType): array
-    required: false
-  anonymousId:
-    type: string
-    (builtinType): string
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
     description: |-
-      Identifies shopping lists belonging to an anonymous session (the customer has not signed up/in yet).
+      The custom fields.
     required: false
-  textLineItems:
-    type: array
-    items:
-      type: TextLineItemDraft
-    (builtinType): array
+  customer:
+    discriminatorValue: customer
+    type: CustomerResourceIdentifier
+    (builtinType): object
     required: false
   deleteDaysAfterLastModification:
     format: int64
@@ -28,20 +21,26 @@ properties:
     description: |-
       The shopping list will be deleted automatically if it hasn't been modified for the specified amount of days.
     required: false
-  custom:
-    type: CustomFieldsDraft
+  description:
+    type: LocalizedString
     (builtinType): object
+    required: false
+  key:
+    type: string
+    (builtinType): string
     description: |-
-      The custom fields.
+      User-specific unique identifier for the shopping list.
+    required: false
+  lineItems:
+    type: array
+    items:
+      type: ShoppingListLineItemDraft
+    (builtinType): array
     required: false
   name:
     type: LocalizedString
     (builtinType): object
     required: true
-  description:
-    type: LocalizedString
-    (builtinType): object
-    required: false
   slug:
     type: LocalizedString
     (builtinType): object
@@ -50,14 +49,15 @@ properties:
                Each slug is unique across a project, but a shopping list can have the same slug for different languages.
                The slug must match the pattern [a-zA-Z0-9_-]{2,256}.
     required: false
-  key:
+  textLineItems:
+    type: array
+    items:
+      type: TextLineItemDraft
+    (builtinType): array
+    required: false
+  anonymousId:
     type: string
     (builtinType): string
     description: |-
-      User-specific unique identifier for the shopping list.
-    required: false
-  customer:
-    discriminatorValue: customer
-    type: CustomerResourceIdentifier
-    (builtinType): object
+      Identifies shopping lists belonging to an anonymous session (the customer has not signed up/in yet).
     required: false

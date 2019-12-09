@@ -3,14 +3,6 @@ displayName: ShippingRate
 type: object
 (builtinType): object
 properties:
-  tiers:
-    type: array
-    items:
-      type: ShippingRatePriceTier
-    (builtinType): array
-    description: |-
-      A list of shipping rate price tiers.
-    required: true
   price:
     discriminator: type
     type: TypedMoney
@@ -31,3 +23,11 @@ properties:
     description: |-
       Only appears in response to requests for shipping methods by cart or location to mark this shipping rate as one that matches the cart or location.
     required: false
+  tiers:
+    type: array
+    items:
+      type: ShippingRatePriceTier
+    (builtinType): array
+    description: |-
+      A list of shipping rate price tiers.
+    required: true

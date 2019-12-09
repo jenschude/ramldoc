@@ -3,12 +3,7 @@ displayName: ApiClientPagedQueryResponse
 type: object
 (builtinType): object
 properties:
-  total:
-    format: int64
-    type: number
-    (builtinType): number
-    required: false
-  offset:
+  limit:
     format: int64
     type: number
     (builtinType): number
@@ -18,7 +13,12 @@ properties:
     type: number
     (builtinType): number
     required: true
-  limit:
+  total:
+    format: int64
+    type: number
+    (builtinType): number
+    required: false
+  offset:
     format: int64
     type: number
     (builtinType): number

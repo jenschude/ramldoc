@@ -3,18 +3,18 @@ displayName: OrderEditUpdate
 type: object
 (builtinType): object
 properties:
-  dryRun:
-    type: boolean
-    (builtinType): boolean
-    required: false
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   actions:
     type: array
     items:
       type: OrderEditUpdateAction
     (builtinType): array
     required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
+  dryRun:
+    type: boolean
+    (builtinType): boolean
+    required: false

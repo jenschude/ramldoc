@@ -3,10 +3,10 @@ displayName: TaxPortion
 type: object
 (builtinType): object
 properties:
-  amount:
-    type: TypedMoney
-    (builtinType): object
-    required: true
+  name:
+    type: string
+    (builtinType): string
+    required: false
   rate:
     format: int16
     minimum: 0
@@ -16,7 +16,7 @@ properties:
     description: |-
       A number in the range [0..1]
     required: true
-  name:
-    type: string
-    (builtinType): string
-    required: false
+  amount:
+    type: TypedMoney
+    (builtinType): object
+    required: true

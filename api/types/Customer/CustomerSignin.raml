@@ -3,27 +3,27 @@ displayName: CustomerSignin
 type: object
 (builtinType): object
 properties:
-  updateProductData:
-    type: boolean
-    (builtinType): boolean
+  email:
+    type: string
+    (builtinType): string
+    required: true
+  password:
+    type: string
+    (builtinType): string
+    required: true
+  anonymousCartId:
+    type: string
+    (builtinType): string
+    required: false
+  anonymousCartSignInMode:
+    type: AnonymousCartSignInMode
+    (builtinType): string
     required: false
   anonymousId:
     type: string
     (builtinType): string
     required: false
-  password:
-    type: string
-    (builtinType): string
-    required: true
-  anonymousCartSignInMode:
-    type: AnonymousCartSignInMode
-    (builtinType): string
+  updateProductData:
+    type: boolean
+    (builtinType): boolean
     required: false
-  anonymousCartId:
-    type: string
-    (builtinType): string
-    required: false
-  email:
-    type: string
-    (builtinType): string
-    required: true

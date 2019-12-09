@@ -3,6 +3,26 @@ displayName: AttributeDefinitionDraft
 type: object
 (builtinType): object
 properties:
+  type:
+    type: AttributeType
+    (builtinType): object
+    description: |-
+      Describes the type of the attribute.
+    required: true
+  name:
+    type: string
+    (builtinType): string
+    description: |-
+      The unique name of the attribute used in the API.
+               The name must be between two and 256 characters long and can contain the ASCII letters A to Z in lowercase or uppercase, digits, underscores (`_`) and the hyphen-minus (`-`).
+               When using the same `name` for an attribute in two or more product types all fields of the AttributeDefinition of this attribute need to be the same across the product types.
+    required: true
+  label:
+    type: LocalizedString
+    (builtinType): object
+    description: |-
+      A human-readable label for the attribute.
+    required: true
   isRequired:
     type: boolean
     (builtinType): boolean
@@ -15,14 +35,12 @@ properties:
     description: |-
       Describes how an attribute or a set of attributes should be validated across all variants of a product.
     required: false
-  name:
-    type: string
-    (builtinType): string
+  inputTip:
+    type: LocalizedString
+    (builtinType): object
     description: |-
-      The unique name of the attribute used in the API.
-               The name must be between two and 256 characters long and can contain the ASCII letters A to Z in lowercase or uppercase, digits, underscores (`_`) and the hyphen-minus (`-`).
-               When using the same `name` for an attribute in two or more product types all fields of the AttributeDefinition of this attribute need to be the same across the product types.
-    required: true
+      Additional information about the attribute that aids content managers when setting product details.
+    required: false
   inputHint:
     type: TextInputHint
     (builtinType): string
@@ -37,22 +55,4 @@ properties:
       Whether the attribute's values should generally be enabled in product search.
                This determines whether the value is stored in products for matching terms in the context of full-text search queries and can be used in facets & filters as part of product search queries.
                The exact features that are enabled/disabled with this flag depend on the concrete attribute type and are described there.
-    required: false
-  label:
-    type: LocalizedString
-    (builtinType): object
-    description: |-
-      A human-readable label for the attribute.
-    required: true
-  type:
-    type: AttributeType
-    (builtinType): object
-    description: |-
-      Describes the type of the attribute.
-    required: true
-  inputTip:
-    type: LocalizedString
-    (builtinType): object
-    description: |-
-      Additional information about the attribute that aids content managers when setting product details.
     required: false

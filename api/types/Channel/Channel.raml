@@ -3,16 +3,6 @@ displayName: Channel
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -24,29 +14,34 @@ properties:
     type: number
     (builtinType): number
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
-  address:
-    type: Address
+  createdBy:
+    type: CreatedBy
     (builtinType): object
     description: |-
-      The address where this channel is located (e.g.
-               if the channel is a physical store).
+      Present on resources created after 1/02/2019 except for events not tracked.
     required: false
-  custom:
-    type: CustomFields
-    (builtinType): object
-    required: false
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      Any arbitrary string key that uniquely identifies this channel within the project.
+    required: true
   roles:
     type: array
     items:
@@ -56,23 +51,24 @@ properties:
       The roles of this channel.
                Each channel must have at least one role.
     required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
+    description: |-
+      A human-readable name of the channel.
+    required: false
   description:
     type: LocalizedString
     (builtinType): object
     description: |-
       A human-readable description of the channel.
     required: false
-  geoLocation:
-    type: GeoJson
+  address:
+    type: Address
     (builtinType): object
     description: |-
-      A GeoJSON geometry object encoding the geo location of the channel.
-    required: false
-  name:
-    type: LocalizedString
-    (builtinType): object
-    description: |-
-      A human-readable name of the channel.
+      The address where this channel is located (e.g.
+               if the channel is a physical store).
     required: false
   reviewRatingStatistics:
     type: ReviewRatingStatistics
@@ -80,9 +76,13 @@ properties:
     description: |-
       Statistics about the review ratings taken into account for this channel.
     required: false
-  key:
-    type: string
-    (builtinType): string
+  custom:
+    type: CustomFields
+    (builtinType): object
+    required: false
+  geoLocation:
+    type: GeoJson
+    (builtinType): object
     description: |-
-      Any arbitrary string key that uniquely identifies this channel within the project.
-    required: true
+      A GeoJSON geometry object encoding the geo location of the channel.
+    required: false

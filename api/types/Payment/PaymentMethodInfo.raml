@@ -3,6 +3,14 @@ displayName: PaymentMethodInfo
 type: object
 (builtinType): object
 properties:
+  paymentInterface:
+    type: string
+    (builtinType): string
+    description: |-
+      The interface that handles the payment (usually a PSP).
+               Cannot be changed once it has been set.
+               The combination of Payment`interfaceId` and this field must be unique.
+    required: false
   method:
     type: string
     (builtinType): string
@@ -17,12 +25,4 @@ properties:
     description: |-
       A human-readable, localized name for the payment method, e.g.
                'Credit Card'.
-    required: false
-  paymentInterface:
-    type: string
-    (builtinType): string
-    description: |-
-      The interface that handles the payment (usually a PSP).
-               Cannot be changed once it has been set.
-               The combination of Payment`interfaceId` and this field must be unique.
     required: false

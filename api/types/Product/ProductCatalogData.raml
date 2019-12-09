@@ -3,6 +3,10 @@ displayName: ProductCatalogData
 type: object
 (builtinType): object
 properties:
+  published:
+    type: boolean
+    (builtinType): boolean
+    required: true
   current:
     type: ProductData
     (builtinType): object
@@ -10,10 +14,6 @@ properties:
   staged:
     type: ProductData
     (builtinType): object
-    required: true
-  published:
-    type: boolean
-    (builtinType): boolean
     required: true
   hasStagedChanges:
     type: boolean

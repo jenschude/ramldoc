@@ -3,6 +3,10 @@ displayName: SearchKeyword
 type: object
 (builtinType): object
 properties:
+  text:
+    type: string
+    (builtinType): string
+    required: true
   suggestTokenizer:
     type: SuggestTokenizer | WhitespaceTokenizer | CustomTokenizer
     (oneOf):
@@ -11,7 +15,3 @@ properties:
     - CustomTokenizer
     (builtinType): any
     required: false
-  text:
-    type: string
-    (builtinType): string
-    required: true

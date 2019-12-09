@@ -3,6 +3,26 @@ displayName: ProductDiscountDraft
 type: object
 (builtinType): object
 properties:
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier for a product discount.
+               Must be unique across a project.
+               The field can be reset using the Set Key UpdateAction
+    required: false
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  value:
+    type: ProductDiscountValueDraft
+    (builtinType): object
+    required: true
   predicate:
     type: string
     (builtinType): string
@@ -16,22 +36,12 @@ properties:
       The string must contain a decimal number between 0 and 1.
                A discount with greater sortOrder is prioritized higher than a discount with lower sortOrder.
     required: true
-  name:
-    type: LocalizedString
-    (builtinType): object
-    required: true
-  validUntil:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
+  isActive:
+    type: boolean
+    (builtinType): boolean
     description: |-
-      The time from which the discount should be effective.
-               Please take Eventual Consistency into account for calculated undiscounted values.
-    required: false
-  description:
-    type: LocalizedString
-    (builtinType): object
-    required: false
+      If set to `true` the discount will be applied to product prices.
+    required: true
   validFrom:
     format: rfc3339
     type: datetime
@@ -40,21 +50,11 @@ properties:
       The time from which the discount should be effective.
                Please take Eventual Consistency into account for calculated product discount values.
     required: false
-  isActive:
-    type: boolean
-    (builtinType): boolean
+  validUntil:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
     description: |-
-      If set to `true` the discount will be applied to product prices.
-    required: true
-  value:
-    type: ProductDiscountValueDraft
-    (builtinType): object
-    required: true
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for a product discount.
-               Must be unique across a project.
-               The field can be reset using the Set Key UpdateAction
+      The time from which the discount should be effective.
+               Please take Eventual Consistency into account for calculated undiscounted values.
     required: false

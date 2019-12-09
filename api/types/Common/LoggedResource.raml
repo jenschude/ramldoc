@@ -34,14 +34,6 @@ type: BaseResource
 - Type
 - Zone
 properties:
-  createdAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -51,11 +43,19 @@ properties:
     type: number
     (builtinType): number
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    required: false
+  createdAt:
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
+    (builtinType): object
+    required: false
+  createdBy:
+    type: CreatedBy
     (builtinType): object
     required: false

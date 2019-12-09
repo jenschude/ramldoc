@@ -3,16 +3,6 @@ displayName: ShoppingList
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -26,29 +16,36 @@ properties:
     description: |-
       The current version of the shopping list.
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
-  anonymousId:
-    type: string
-    (builtinType): string
+  createdBy:
+    type: CreatedBy
+    (builtinType): object
     description: |-
-      Identifies shopping lists belonging to an anonymous session (the customer has not signed up/in yet).
+      Present on resources created after 1/02/2019 except for events not tracked.
     required: false
-  textLineItems:
-    type: array
-    items:
-      type: TextLineItem
-    (builtinType): array
+  custom:
+    type: CustomFields
+    (builtinType): object
+    required: false
+  customer:
+    discriminatorValue: customer
+    type: CustomerReference
+    (builtinType): object
     required: false
   deleteDaysAfterLastModification:
     format: int64
@@ -57,13 +54,15 @@ properties:
     description: |-
       The shopping list will be deleted automatically if it hasn't been modified for the specified amount of days.
     required: false
-  custom:
-    type: CustomFields
-    (builtinType): object
-    required: false
   description:
     type: LocalizedString
     (builtinType): object
+    required: false
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier for the shopping list.
     required: false
   lineItems:
     type: array
@@ -83,14 +82,15 @@ properties:
                Each slug is unique across a project, but a shopping list can have the same slug for different languages.
                The slug must match the pattern [a-zA-Z0-9_-]{2,256}.
     required: false
-  key:
+  textLineItems:
+    type: array
+    items:
+      type: TextLineItem
+    (builtinType): array
+    required: false
+  anonymousId:
     type: string
     (builtinType): string
     description: |-
-      User-specific unique identifier for the shopping list.
-    required: false
-  customer:
-    discriminatorValue: customer
-    type: CustomerReference
-    (builtinType): object
+      Identifies shopping lists belonging to an anonymous session (the customer has not signed up/in yet).
     required: false

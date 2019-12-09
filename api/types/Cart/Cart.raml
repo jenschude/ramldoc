@@ -3,16 +3,6 @@ displayName: Cart
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -26,81 +16,45 @@ properties:
     description: |-
       The current version of the cart.
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
-  country:
-    type: CountryCode
-    (builtinType): string
-    description: |-
-      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-               Used for product variant price selection.
-    required: false
-  totalPrice:
-    type: TypedMoney
+  createdBy:
+    type: CreatedBy
     (builtinType): object
     description: |-
-      The sum of all `totalPrice` fields of the `lineItems` and `customLineItems`, as well as the `price` field of `shippingInfo` (if it exists).
-               `totalPrice` may or may not include the taxes: it depends on the taxRate.includedInPrice property of each price.
-    required: true
-  shippingRateInput:
-    type: ShippingRateInput
-    (builtinType): object
-    description: |-
-      The shippingRateInput is used as an input to select a ShippingRatePriceTier.
+      Present on resources created after 1/02/2019 except for events not tracked.
     required: false
-  taxedPrice:
-    type: TaxedPrice
-    (builtinType): object
-    description: |-
-      Not set until the shipping address is set.
-               Will be set automatically in the `Platform` TaxMode.
-               For the `External` tax mode it will be set  as soon as the external tax rates for all line items, custom line items, and shipping in the cart are set.
-    required: false
-  origin:
-    type: CartOrigin
-    (builtinType): string
-    description: |-
-      The origin field indicates how this cart was created.
-               The value `Customer` indicates, that the cart was created by the customer.
-    required: true
-  deleteDaysAfterLastModification:
-    format: int16
-    type: integer
-    (builtinType): integer
-    description: |-
-      The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
-    required: false
-  shippingInfo:
-    type: ShippingInfo
-    (builtinType): object
-    description: |-
-      Set automatically once the ShippingMethod is set.
-    required: false
-  refusedGifts:
-    type: array
-    items:
-      type: CartDiscountReference
-    (builtinType): array
-    description: |-
-      Automatically filled when a line item with LineItemMode `GiftLineItem` is removed from the cart.
-    required: true
-  locale:
+  customerId:
     type: string
     (builtinType): string
     required: false
-  inventoryMode:
-    type: InventoryMode
+  customerEmail:
+    type: string
     (builtinType): string
+    required: false
+  anonymousId:
+    type: string
+    (builtinType): string
+    description: |-
+      Identifies carts and orders belonging to an anonymous session (the customer has not signed up/in yet).
+    required: false
+  store:
+    type: StoreKeyReference
+    (builtinType): object
     required: false
   lineItems:
     type: array
@@ -114,71 +68,23 @@ properties:
       type: CustomLineItem
     (builtinType): array
     required: true
-  itemShippingAddresses:
-    type: array
-    items:
-      type: Address
-    (builtinType): array
+  totalPrice:
+    type: TypedMoney
+    (builtinType): object
     description: |-
-      Contains addresses for carts with multiple shipping addresses.
-               Line items reference these addresses under their `shippingDetails`.
-               The addresses captured here are not used to determine eligible shipping methods or the applicable tax rate.
-               Only the cart's `shippingAddress` is used for this.
-    required: false
-  customerEmail:
-    type: string
-    (builtinType): string
+      The sum of all `totalPrice` fields of the `lineItems` and `customLineItems`, as well as the `price` field of `shippingInfo` (if it exists).
+               `totalPrice` may or may not include the taxes: it depends on the taxRate.includedInPrice property of each price.
+    required: true
+  taxedPrice:
+    type: TaxedPrice
+    (builtinType): object
+    description: |-
+      Not set until the shipping address is set.
+               Will be set automatically in the `Platform` TaxMode.
+               For the `External` tax mode it will be set  as soon as the external tax rates for all line items, custom line items, and shipping in the cart are set.
     required: false
   cartState:
     type: CartState
-    (builtinType): string
-    required: true
-  customerId:
-    type: string
-    (builtinType): string
-    required: false
-  anonymousId:
-    type: string
-    (builtinType): string
-    description: |-
-      Identifies carts and orders belonging to an anonymous session (the customer has not signed up/in yet).
-    required: false
-  discountCodes:
-    type: array
-    items:
-      type: DiscountCodeInfo
-    (builtinType): array
-    required: false
-  customerGroup:
-    type: CustomerGroupReference
-    (builtinType): object
-    description: |-
-      Set automatically when the customer is set and the customer is a member of a customer group.
-               Used for product variant
-               price selection.
-    required: false
-  custom:
-    type: CustomFields
-    (builtinType): object
-    required: false
-  taxCalculationMode:
-    type: TaxCalculationMode
-    (builtinType): string
-    description: |-
-      When calculating taxes for `taxedPrice`, the selected mode is used for calculating the price with `LineItemLevel` (horizontally) or `UnitPriceLevel` (vertically) calculation mode.
-    required: true
-  store:
-    type: StoreKeyReference
-    (builtinType): object
-    required: false
-  taxRoundingMode:
-    type: RoundingMode
-    (builtinType): string
-    description: |-
-      When calculating taxes for `taxedPrice`, the selected mode is used for rounding.
-    required: true
-  taxMode:
-    type: TaxMode
     (builtinType): string
     required: true
   shippingAddress:
@@ -191,7 +97,101 @@ properties:
     type: Address
     (builtinType): object
     required: false
+  inventoryMode:
+    type: InventoryMode
+    (builtinType): string
+    required: false
+  taxMode:
+    type: TaxMode
+    (builtinType): string
+    required: true
+  taxRoundingMode:
+    type: RoundingMode
+    (builtinType): string
+    description: |-
+      When calculating taxes for `taxedPrice`, the selected mode is used for rounding.
+    required: true
+  taxCalculationMode:
+    type: TaxCalculationMode
+    (builtinType): string
+    description: |-
+      When calculating taxes for `taxedPrice`, the selected mode is used for calculating the price with `LineItemLevel` (horizontally) or `UnitPriceLevel` (vertically) calculation mode.
+    required: true
+  customerGroup:
+    type: CustomerGroupReference
+    (builtinType): object
+    description: |-
+      Set automatically when the customer is set and the customer is a member of a customer group.
+               Used for product variant
+               price selection.
+    required: false
+  country:
+    type: CountryCode
+    (builtinType): string
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+               Used for product variant price selection.
+    required: false
+  shippingInfo:
+    type: ShippingInfo
+    (builtinType): object
+    description: |-
+      Set automatically once the ShippingMethod is set.
+    required: false
+  discountCodes:
+    type: array
+    items:
+      type: DiscountCodeInfo
+    (builtinType): array
+    required: false
+  custom:
+    type: CustomFields
+    (builtinType): object
+    required: false
   paymentInfo:
     type: PaymentInfo
     (builtinType): object
+    required: false
+  locale:
+    type: string
+    (builtinType): string
+    required: false
+  deleteDaysAfterLastModification:
+    format: int16
+    type: integer
+    (builtinType): integer
+    description: |-
+      The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
+    required: false
+  refusedGifts:
+    type: array
+    items:
+      type: CartDiscountReference
+    (builtinType): array
+    description: |-
+      Automatically filled when a line item with LineItemMode `GiftLineItem` is removed from the cart.
+    required: true
+  origin:
+    type: CartOrigin
+    (builtinType): string
+    description: |-
+      The origin field indicates how this cart was created.
+               The value `Customer` indicates, that the cart was created by the customer.
+    required: true
+  shippingRateInput:
+    type: ShippingRateInput
+    (builtinType): object
+    description: |-
+      The shippingRateInput is used as an input to select a ShippingRatePriceTier.
+    required: false
+  itemShippingAddresses:
+    type: array
+    items:
+      type: Address
+    (builtinType): array
+    description: |-
+      Contains addresses for carts with multiple shipping addresses.
+               Line items reference these addresses under their `shippingDetails`.
+               The addresses captured here are not used to determine eligible shipping methods or the applicable tax rate.
+               Only the cart's `shippingAddress` is used for this.
     required: false

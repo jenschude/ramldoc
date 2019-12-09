@@ -3,16 +3,6 @@ displayName: InventoryEntry
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -24,18 +14,47 @@ properties:
     type: number
     (builtinType): number
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
+  createdBy:
+    type: CreatedBy
+    (builtinType): object
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    required: false
+  sku:
+    type: string
+    (builtinType): string
+    required: true
+  supplyChannel:
+    discriminatorValue: channel
+    type: ChannelResourceIdentifier
+    (builtinType): object
+    description: |-
+      Optional connection to a particular supplier.
+    required: false
+  quantityOnStock:
+    format: int64
+    type: number
+    (builtinType): number
+    description: |-
+      Overall amount of stock.
+               (available + reserved)
+    required: true
   availableQuantity:
     format: int64
     type: number
@@ -44,6 +63,13 @@ properties:
       Available amount of stock.
                (available means: `quantityOnStock` - reserved quantity)
     required: true
+  restockableInDays:
+    format: int64
+    type: number
+    (builtinType): number
+    description: |-
+      The time period in days, that tells how often this inventory entry is restocked.
+    required: false
   expectedDelivery:
     format: rfc3339
     type: datetime
@@ -55,29 +81,3 @@ properties:
     type: CustomFields
     (builtinType): object
     required: false
-  quantityOnStock:
-    format: int64
-    type: number
-    (builtinType): number
-    description: |-
-      Overall amount of stock.
-               (available + reserved)
-    required: true
-  supplyChannel:
-    discriminatorValue: channel
-    type: ChannelResourceIdentifier
-    (builtinType): object
-    description: |-
-      Optional connection to a particular supplier.
-    required: false
-  restockableInDays:
-    format: int64
-    type: number
-    (builtinType): number
-    description: |-
-      The time period in days, that tells how often this inventory entry is restocked.
-    required: false
-  sku:
-    type: string
-    (builtinType): string
-    required: true

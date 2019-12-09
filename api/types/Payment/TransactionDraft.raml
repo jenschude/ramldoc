@@ -3,23 +3,12 @@ displayName: TransactionDraft
 type: object
 (builtinType): object
 properties:
-  interactionId:
-    type: string
-    (builtinType): string
+  timestamp:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
     description: |-
-      The identifier that is used by the interface that managed the transaction (usually the PSP).
-               If a matching interaction was logged in the `interfaceInteractions` array, the corresponding interaction should be findable with this ID.
-    required: false
-  amount:
-    type: Money
-    (builtinType): object
-    required: true
-  state:
-    type: TransactionState
-    (builtinType): string
-    description: |-
-      The state of this transaction.
-               If not set, defaults to `Initial`.
+      The time at which the transaction took place.
     required: false
   type:
     type: TransactionType
@@ -27,10 +16,21 @@ properties:
     description: |-
       The type of this transaction.
     required: true
-  timestamp:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
+  amount:
+    type: Money
+    (builtinType): object
+    required: true
+  interactionId:
+    type: string
+    (builtinType): string
     description: |-
-      The time at which the transaction took place.
+      The identifier that is used by the interface that managed the transaction (usually the PSP).
+               If a matching interaction was logged in the `interfaceInteractions` array, the corresponding interaction should be findable with this ID.
+    required: false
+  state:
+    type: TransactionState
+    (builtinType): string
+    description: |-
+      The state of this transaction.
+               If not set, defaults to `Initial`.
     required: false

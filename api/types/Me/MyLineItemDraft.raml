@@ -3,27 +3,20 @@ displayName: MyLineItemDraft
 type: object
 (builtinType): object
 properties:
+  productId:
+    type: string
+    (builtinType): string
+    required: true
+  variantId:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   quantity:
     format: int16
     type: number
     (builtinType): number
     required: true
-  shippingDetails:
-    type: ItemShippingDetailsDraft
-    (builtinType): object
-    description: |-
-      Container for line item specific address(es).
-    required: false
-  productId:
-    type: string
-    (builtinType): string
-    required: true
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    description: |-
-      The custom fields.
-    required: false
   supplyChannel:
     discriminatorValue: channel
     type: ChannelResourceIdentifier
@@ -33,15 +26,6 @@ properties:
                inventory entries that should be reserved.
                The provided channel should have the InventorySupply role.
     required: false
-  variantId:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  sku:
-    type: string
-    (builtinType): string
-    required: false
   distributionChannel:
     discriminatorValue: channel
     type: ChannelResourceIdentifier
@@ -49,4 +33,20 @@ properties:
     description: |-
       The channel is used to select a ProductPrice.
                The provided channel should have the ProductDistribution role.
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    description: |-
+      The custom fields.
+    required: false
+  shippingDetails:
+    type: ItemShippingDetailsDraft
+    (builtinType): object
+    description: |-
+      Container for line item specific address(es).
+    required: false
+  sku:
+    type: string
+    (builtinType): string
     required: false

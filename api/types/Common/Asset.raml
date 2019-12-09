@@ -3,16 +3,16 @@ displayName: Asset
 type: object
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
   sources:
     type: array
     items:
       type: AssetSource
     (builtinType): array
     required: true
-  custom:
-    type: CustomFields
-    (builtinType): object
-    required: false
   name:
     type: LocalizedString
     (builtinType): object
@@ -21,17 +21,17 @@ properties:
     type: LocalizedString
     (builtinType): object
     required: false
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  key:
-    type: string
-    (builtinType): string
-    required: false
   tags:
     type: array
     items:
       type: string
     (builtinType): array
+    required: false
+  custom:
+    type: CustomFields
+    (builtinType): object
+    required: false
+  key:
+    type: string
+    (builtinType): string
     required: false

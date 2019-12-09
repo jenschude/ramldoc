@@ -3,6 +3,12 @@ displayName: ReviewDraft
 type: object
 (builtinType): object
 properties:
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier for the review.
+    required: false
   uniquenessValue:
     type: string
     (builtinType): string
@@ -10,12 +16,34 @@ properties:
       If set, this value must be unique among reviews.
                For example, if you want to have only one review per customer and per product, you can set the value to `customer's id` + `product's id`.
     required: false
+  locale:
+    type: string
+    (builtinType): string
+    required: false
   authorName:
     type: string
     (builtinType): string
     required: false
-  custom:
-    type: CustomFieldsDraft
+  title:
+    type: string
+    (builtinType): string
+    required: false
+  text:
+    type: string
+    (builtinType): string
+    required: false
+  target:
+    type: ProductResourceIdentifier | ChannelResourceIdentifier
+    (oneOf):
+    - ProductResourceIdentifier
+    - ChannelResourceIdentifier
+    (builtinType): any
+    description: |-
+      Identifies the target of the review.
+               Can be a Product or a Channel
+    required: false
+  state:
+    type: StateResourceIdentifier
     (builtinType): object
     required: false
   rating:
@@ -30,28 +58,6 @@ properties:
                This rating can represent the number of stars, or a percentage, or a like (+1)/dislike (-1)
                A rating is used in the ratings statistics of the targeted object, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
     required: false
-  state:
-    type: StateResourceIdentifier
-    (builtinType): object
-    required: false
-  text:
-    type: string
-    (builtinType): string
-    required: false
-  title:
-    type: string
-    (builtinType): string
-    required: false
-  locale:
-    type: string
-    (builtinType): string
-    required: false
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for the review.
-    required: false
   customer:
     discriminatorValue: customer
     type: CustomerResourceIdentifier
@@ -59,13 +65,7 @@ properties:
     description: |-
       The customer who created the review.
     required: false
-  target:
-    type: ProductResourceIdentifier | ChannelResourceIdentifier
-    (oneOf):
-    - ProductResourceIdentifier
-    - ChannelResourceIdentifier
-    (builtinType): any
-    description: |-
-      Identifies the target of the review.
-               Can be a Product or a Channel
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
     required: false

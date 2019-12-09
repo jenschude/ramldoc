@@ -3,12 +3,17 @@ displayName: TaxRate
 type: object
 (builtinType): object
 properties:
-  country:
-    pattern: ^[A-Z]{2}$
-    type: CountryCode
+  id:
+    type: string
     (builtinType): string
     description: |-
-      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+      The ID is always set if the tax rate is part of a TaxCategory.
+               The external tax rates in a
+               Cart do not contain an `id`.
+    required: false
+  name:
+    type: string
+    (builtinType): string
     required: true
   amount:
     format: int16
@@ -24,23 +29,18 @@ properties:
     type: boolean
     (builtinType): boolean
     required: true
-  name:
-    type: string
+  country:
+    pattern: ^[A-Z]{2}$
+    type: CountryCode
     (builtinType): string
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
     required: true
   state:
     type: string
     (builtinType): string
     description: |-
       The state in the country
-    required: false
-  id:
-    type: string
-    (builtinType): string
-    description: |-
-      The ID is always set if the tax rate is part of a TaxCategory.
-               The external tax rates in a
-               Cart do not contain an `id`.
     required: false
   subRates:
     type: array

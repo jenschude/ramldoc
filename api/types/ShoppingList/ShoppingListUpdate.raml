@@ -3,14 +3,14 @@ displayName: ShoppingListUpdate
 type: object
 (builtinType): object
 properties:
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   actions:
     type: array
     items:
       type: ShoppingListUpdateAction
     (builtinType): array
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
     required: true

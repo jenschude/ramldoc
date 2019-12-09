@@ -3,6 +3,22 @@ displayName: ProductPriceDiscountsSetUpdatedPrice
 type: object
 (builtinType): object
 properties:
+  variantId:
+    type: integer
+    (builtinType): integer
+    required: true
+  variantKey:
+    type: string
+    (builtinType): string
+    required: false
+  sku:
+    type: string
+    (builtinType): string
+    required: false
+  priceId:
+    type: string
+    (builtinType): string
+    required: true
   discounted:
     type: DiscountedPrice
     (builtinType): object
@@ -11,19 +27,3 @@ properties:
     type: boolean
     (builtinType): boolean
     required: true
-  variantId:
-    type: integer
-    (builtinType): integer
-    required: true
-  priceId:
-    type: string
-    (builtinType): string
-    required: true
-  sku:
-    type: string
-    (builtinType): string
-    required: false
-  variantKey:
-    type: string
-    (builtinType): string
-    required: false

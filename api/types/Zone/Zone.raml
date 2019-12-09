@@ -3,16 +3,6 @@ displayName: Zone
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -26,13 +16,31 @@ properties:
     description: |-
       The current version of the zone.
     required: true
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
+    required: false
   createdBy:
     type: CreatedBy
     (builtinType): object
     required: false
-  lastModifiedBy:
-    type: LastModifiedBy
-    (builtinType): object
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier for a zone.
+               Must be unique across a project.
+               The field can be reset using the Set Key UpdateAction.
     required: false
   name:
     type: string
@@ -48,11 +56,3 @@ properties:
       type: Location
     (builtinType): array
     required: true
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for a zone.
-               Must be unique across a project.
-               The field can be reset using the Set Key UpdateAction.
-    required: false

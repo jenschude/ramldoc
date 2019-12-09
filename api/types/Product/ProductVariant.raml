@@ -3,8 +3,33 @@ displayName: ProductVariant
 type: object
 (builtinType): object
 properties:
-  scopedPrice:
-    type: ScopedPrice
+  id:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
+  sku:
+    type: string
+    (builtinType): string
+    required: false
+  key:
+    type: string
+    (builtinType): string
+    required: false
+  prices:
+    type: array
+    items:
+      type: Price
+    (builtinType): array
+    required: false
+  attributes:
+    type: array
+    items:
+      type: Attribute
+    (builtinType): array
+    required: false
+  price:
+    type: Price
     (builtinType): object
     required: false
   images:
@@ -19,44 +44,19 @@ properties:
       type: Asset
     (builtinType): array
     required: false
+  availability:
+    type: ProductVariantAvailability
+    (builtinType): object
+    required: false
   isMatchingVariant:
     type: boolean
     (builtinType): boolean
     required: false
-  price:
-    type: Price
+  scopedPrice:
+    type: ScopedPrice
     (builtinType): object
     required: false
   scopedPriceDiscounted:
     type: boolean
     (builtinType): boolean
-    required: false
-  attributes:
-    type: array
-    items:
-      type: Attribute
-    (builtinType): array
-    required: false
-  availability:
-    type: ProductVariantAvailability
-    (builtinType): object
-    required: false
-  id:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  prices:
-    type: array
-    items:
-      type: Price
-    (builtinType): array
-    required: false
-  sku:
-    type: string
-    (builtinType): string
-    required: false
-  key:
-    type: string
-    (builtinType): string
     required: false

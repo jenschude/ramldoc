@@ -3,13 +3,13 @@ displayName: DiscountedLineItemPrice
 type: object
 (builtinType): object
 properties:
+  value:
+    type: TypedMoney
+    (builtinType): object
+    required: true
   includedDiscounts:
     type: array
     items:
       type: DiscountedLineItemPortion
     (builtinType): array
-    required: true
-  value:
-    type: TypedMoney
-    (builtinType): object
     required: true

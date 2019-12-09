@@ -3,6 +3,14 @@ displayName: TaxedPrice
 type: object
 (builtinType): object
 properties:
+  totalNet:
+    type: TypedMoney
+    (builtinType): object
+    required: true
+  totalGross:
+    type: TypedMoney
+    (builtinType): object
+    required: true
   taxPortions:
     type: array
     items:
@@ -10,12 +18,4 @@ properties:
     (builtinType): array
     description: |-
       TaxedPrice fields that can be used in query predicates: `totalNet`, `totalGross`.
-    required: true
-  totalGross:
-    type: TypedMoney
-    (builtinType): object
-    required: true
-  totalNet:
-    type: TypedMoney
-    (builtinType): object
     required: true

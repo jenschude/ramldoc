@@ -3,6 +3,12 @@ displayName: PaymentStatus
 type: object
 (builtinType): object
 properties:
+  interfaceCode:
+    type: string
+    (builtinType): string
+    description: |-
+      A code describing the current status returned by the interface that processes the payment.
+    required: false
   interfaceText:
     type: string
     (builtinType): string
@@ -12,10 +18,4 @@ properties:
   state:
     type: StateReference
     (builtinType): object
-    required: false
-  interfaceCode:
-    type: string
-    (builtinType): string
-    description: |-
-      A code describing the current status returned by the interface that processes the payment.
     required: false

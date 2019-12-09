@@ -3,15 +3,11 @@ displayName: ExtensionDraft
 type: object
 (builtinType): object
 properties:
-  timeoutInMs:
-    format: int16
-    type: integer
-    (builtinType): integer
+  key:
+    type: string
+    (builtinType): string
     description: |-
-      The maximum time the commercetools platform waits for a response from the extension.
-               The maximum value is 2000 ms (2 seconds).
-               This limit can be increased per project after we review the performance impact.
-               Please contact Support via the [Support Portal](https://support.commercetools.com) and provide the region, project key and use case.
+      User-specific unique identifier for the extension
     required: false
   destination:
     discriminator: type
@@ -28,9 +24,13 @@ properties:
     description: |-
       Describes what triggers the extension
     required: true
-  key:
-    type: string
-    (builtinType): string
+  timeoutInMs:
+    format: int16
+    type: integer
+    (builtinType): integer
     description: |-
-      User-specific unique identifier for the extension
+      The maximum time the commercetools platform waits for a response from the extension.
+               The maximum value is 2000 ms (2 seconds).
+               This limit can be increased per project after we review the performance impact.
+               Please contact Support via the [Support Portal](https://support.commercetools.com) and provide the region, project key and use case.
     required: false

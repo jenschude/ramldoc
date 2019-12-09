@@ -3,25 +3,25 @@ displayName: ErrorResponse
 type: object
 (builtinType): object
 properties:
-  error_description:
-    type: string
-    (builtinType): string
-    required: false
-  error:
-    type: string
-    (builtinType): string
-    required: false
+  statusCode:
+    type: integer
+    (builtinType): integer
+    required: true
   message:
     type: string
     (builtinType): string
     required: true
+  error:
+    type: string
+    (builtinType): string
+    required: false
+  error_description:
+    type: string
+    (builtinType): string
+    required: false
   errors:
     type: array
     items:
       type: ErrorObject
     (builtinType): array
     required: false
-  statusCode:
-    type: integer
-    (builtinType): integer
-    required: true

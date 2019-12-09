@@ -3,15 +3,15 @@ displayName: CustomFieldsDraft
 type: object
 (builtinType): object
 properties:
-  fields:
-    type: FieldContainer
-    (builtinType): object
-    description: |-
-      A valid JSON object, based on the FieldDefinitions of the Type.
-    required: false
   type:
     type: TypeResourceIdentifier
     (builtinType): object
     description: |-
       The `id` or the `key` of the type to use.
     required: true
+  fields:
+    type: FieldContainer
+    (builtinType): object
+    description: |-
+      A valid JSON object, based on the FieldDefinitions of the Type.
+    required: false

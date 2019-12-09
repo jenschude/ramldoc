@@ -3,12 +3,12 @@ displayName: DiscountedLineItemPortion
 type: object
 (builtinType): object
 properties:
-  discountedAmount:
-    type: TypedMoney
-    (builtinType): object
-    required: true
   discount:
     discriminatorValue: cart-discount
     type: CartDiscountReference
+    (builtinType): object
+    required: true
+  discountedAmount:
+    type: TypedMoney
     (builtinType): object
     required: true

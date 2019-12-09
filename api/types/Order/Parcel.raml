@@ -3,15 +3,23 @@ displayName: Parcel
 type: object
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
   createdAt:
     format: rfc3339
     type: datetime
     (builtinType): datetime
     required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
+  measurements:
+    type: ParcelMeasurements
+    (builtinType): object
+    required: false
+  trackingData:
+    type: TrackingData
+    (builtinType): object
+    required: false
   items:
     type: array
     items:
@@ -19,12 +27,4 @@ properties:
     (builtinType): array
     description: |-
       The delivery items contained in this parcel.
-    required: false
-  trackingData:
-    type: TrackingData
-    (builtinType): object
-    required: false
-  measurements:
-    type: ParcelMeasurements
-    (builtinType): object
     required: false

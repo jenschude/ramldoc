@@ -7,10 +7,9 @@ discriminator: type
 - CentPrecisionMoney
 - HighPrecisionMoney
 properties:
-  centAmount:
-    format: int64
-    type: number
-    (builtinType): number
+  type:
+    type: MoneyType
+    (builtinType): string
     required: true
   fractionDigits:
     format: int32
@@ -18,9 +17,10 @@ properties:
     type: number
     (builtinType): number
     required: true
-  type:
-    type: MoneyType
-    (builtinType): string
+  centAmount:
+    format: int64
+    type: number
+    (builtinType): number
     required: true
   currencyCode:
     type: CurrencyCode

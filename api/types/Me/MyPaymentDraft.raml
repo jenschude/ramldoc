@@ -3,6 +3,13 @@ displayName: MyPaymentDraft
 type: object
 (builtinType): object
 properties:
+  amountPlanned:
+    type: Money
+    (builtinType): object
+    description: |-
+      How much money this payment intends to receive from the customer.
+               The value usually matches the cart or order gross total.
+    required: true
   paymentMethodInfo:
     type: PaymentMethodInfo
     (builtinType): object
@@ -11,13 +18,6 @@ properties:
     type: CustomFieldsDraft
     (builtinType): object
     required: false
-  amountPlanned:
-    type: Money
-    (builtinType): object
-    description: |-
-      How much money this payment intends to receive from the customer.
-               The value usually matches the cart or order gross total.
-    required: true
   transaction:
     type: MyTransactionDraft
     (builtinType): object

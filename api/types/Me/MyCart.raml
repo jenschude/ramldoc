@@ -3,14 +3,6 @@ displayName: MyCart
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -20,57 +12,37 @@ properties:
     type: number
     (builtinType): number
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    required: false
+  createdAt:
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     required: false
-  country:
-    type: CountryCode
-    (builtinType): string
-    description: |-
-      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-    required: false
-  totalPrice:
-    type: TypedMoney
-    (builtinType): object
-    required: true
-  shippingRateInput:
-    type: ShippingRateInput
+  createdBy:
+    type: CreatedBy
     (builtinType): object
     required: false
-  taxedPrice:
-    type: TaxedPrice
-    (builtinType): object
-    required: false
-  origin:
-    type: CartOrigin
-    (builtinType): string
-    required: true
-  deleteDaysAfterLastModification:
-    type: integer
-    (builtinType): integer
-    required: false
-  shippingInfo:
-    type: ShippingInfo
-    (builtinType): object
-    required: false
-  refusedGifts:
-    type: array
-    items:
-      type: CartDiscountReference
-    (builtinType): array
-    required: true
-  locale:
+  customerId:
     type: string
     (builtinType): string
     required: false
-  inventoryMode:
-    type: InventoryMode
+  customerEmail:
+    type: string
     (builtinType): string
+    required: false
+  anonymousId:
+    type: string
+    (builtinType): string
+    required: false
+  store:
+    type: StoreKeyReference
+    (builtinType): object
     required: false
   lineItems:
     type: array
@@ -84,56 +56,16 @@ properties:
       type: CustomLineItem
     (builtinType): array
     required: true
-  itemShippingAddresses:
-    type: array
-    items:
-      type: Address
-    (builtinType): array
-    required: false
-  customerEmail:
-    type: string
-    (builtinType): string
+  totalPrice:
+    type: TypedMoney
+    (builtinType): object
+    required: true
+  taxedPrice:
+    type: TaxedPrice
+    (builtinType): object
     required: false
   cartState:
     type: CartState
-    (builtinType): string
-    required: true
-  customerId:
-    type: string
-    (builtinType): string
-    required: false
-  anonymousId:
-    type: string
-    (builtinType): string
-    required: false
-  discountCodes:
-    type: array
-    items:
-      type: DiscountCodeInfo
-    (builtinType): array
-    required: false
-  customerGroup:
-    type: CustomerGroupReference
-    (builtinType): object
-    required: false
-  custom:
-    type: CustomFields
-    (builtinType): object
-    required: false
-  taxCalculationMode:
-    type: TaxCalculationMode
-    (builtinType): string
-    required: true
-  store:
-    type: StoreKeyReference
-    (builtinType): object
-    required: false
-  taxRoundingMode:
-    type: RoundingMode
-    (builtinType): string
-    required: true
-  taxMode:
-    type: TaxMode
     (builtinType): string
     required: true
   shippingAddress:
@@ -144,7 +76,75 @@ properties:
     type: Address
     (builtinType): object
     required: false
+  inventoryMode:
+    type: InventoryMode
+    (builtinType): string
+    required: false
+  taxMode:
+    type: TaxMode
+    (builtinType): string
+    required: true
+  taxRoundingMode:
+    type: RoundingMode
+    (builtinType): string
+    required: true
+  taxCalculationMode:
+    type: TaxCalculationMode
+    (builtinType): string
+    required: true
+  customerGroup:
+    type: CustomerGroupReference
+    (builtinType): object
+    required: false
+  country:
+    type: CountryCode
+    (builtinType): string
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+    required: false
+  shippingInfo:
+    type: ShippingInfo
+    (builtinType): object
+    required: false
+  discountCodes:
+    type: array
+    items:
+      type: DiscountCodeInfo
+    (builtinType): array
+    required: false
+  custom:
+    type: CustomFields
+    (builtinType): object
+    required: false
   paymentInfo:
     type: PaymentInfo
     (builtinType): object
+    required: false
+  locale:
+    type: string
+    (builtinType): string
+    required: false
+  deleteDaysAfterLastModification:
+    type: integer
+    (builtinType): integer
+    required: false
+  refusedGifts:
+    type: array
+    items:
+      type: CartDiscountReference
+    (builtinType): array
+    required: true
+  origin:
+    type: CartOrigin
+    (builtinType): string
+    required: true
+  shippingRateInput:
+    type: ShippingRateInput
+    (builtinType): object
+    required: false
+  itemShippingAddresses:
+    type: array
+    items:
+      type: Address
+    (builtinType): array
     required: false

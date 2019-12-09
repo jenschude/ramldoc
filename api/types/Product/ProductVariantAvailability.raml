@@ -3,6 +3,15 @@ displayName: ProductVariantAvailability
 type: object
 (builtinType): object
 properties:
+  isOnStock:
+    type: boolean
+    (builtinType): boolean
+    required: false
+  restockableInDays:
+    format: int64
+    type: number
+    (builtinType): number
+    required: false
   availableQuantity:
     format: int64
     type: number
@@ -11,13 +20,4 @@ properties:
   channels:
     type: ProductVariantChannelAvailabilityMap
     (builtinType): object
-    required: false
-  restockableInDays:
-    format: int64
-    type: number
-    (builtinType): number
-    required: false
-  isOnStock:
-    type: boolean
-    (builtinType): boolean
     required: false

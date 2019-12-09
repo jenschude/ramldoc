@@ -3,16 +3,6 @@ displayName: CartDiscount
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -26,17 +16,83 @@ properties:
     description: |-
       The current version of the cart discount.
     required: true
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
+    description: |-
+      Present on resources updated after 1/02/2019 except for events not tracked.
+    required: false
   createdBy:
     type: CreatedBy
     (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     required: false
-  lastModifiedBy:
-    type: LastModifiedBy
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier for a cart discount.
+               Must be unique across a project.
+    required: false
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  value:
+    type: CartDiscountValue
+    (builtinType): object
+    required: true
+  cartPredicate:
+    type: string
+    (builtinType): string
+    description: |-
+      A valid Cart predicate.
+    required: true
+  target:
+    type: CartDiscountTarget
     (builtinType): object
     description: |-
-      Present on resources updated after 1/02/2019 except for events not tracked.
+      Empty when the `value` has type `giftLineItem`, otherwise a CartDiscountTarget is set.
+    required: false
+  sortOrder:
+    type: string
+    (builtinType): string
+    description: |-
+      The string must contain a number between 0 and 1.
+               All matching cart discounts are applied to a cart in the order defined by this field.
+               A discount with greater sort order is prioritized higher than a discount with lower sort order.
+               The sort order is unambiguous among all cart discounts.
+    required: true
+  isActive:
+    type: boolean
+    (builtinType): boolean
+    description: |-
+      Only active discount can be applied to the cart.
+    required: true
+  validFrom:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: false
+  validUntil:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
     required: false
   requiresDiscountCode:
     type: boolean
@@ -53,37 +109,6 @@ properties:
       The platform will generate this array from the predicate.
                It contains the references of all the resources that are addressed in the predicate.
     required: true
-  cartPredicate:
-    type: string
-    (builtinType): string
-    description: |-
-      A valid Cart predicate.
-    required: true
-  custom:
-    type: CustomFields
-    (builtinType): object
-    required: false
-  description:
-    type: LocalizedString
-    (builtinType): object
-    required: false
-  validFrom:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: false
-  isActive:
-    type: boolean
-    (builtinType): boolean
-    description: |-
-      Only active discount can be applied to the cart.
-    required: true
-  target:
-    type: CartDiscountTarget
-    (builtinType): object
-    description: |-
-      Empty when the `value` has type `giftLineItem`, otherwise a CartDiscountTarget is set.
-    required: false
   stackingMode:
     type: StackingMode
     (builtinType): string
@@ -91,32 +116,7 @@ properties:
       Specifies whether the application of this discount causes the following discounts to be ignored.
                Defaults to Stacking.
     required: true
-  sortOrder:
-    type: string
-    (builtinType): string
-    description: |-
-      The string must contain a number between 0 and 1.
-               All matching cart discounts are applied to a cart in the order defined by this field.
-               A discount with greater sort order is prioritized higher than a discount with lower sort order.
-               The sort order is unambiguous among all cart discounts.
-    required: true
-  name:
-    type: LocalizedString
+  custom:
+    type: CustomFields
     (builtinType): object
-    required: true
-  validUntil:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: false
-  value:
-    type: CartDiscountValue
-    (builtinType): object
-    required: true
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for a cart discount.
-               Must be unique across a project.
     required: false

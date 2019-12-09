@@ -3,10 +3,10 @@ displayName: TaxPortionDraft
 type: object
 (builtinType): object
 properties:
-  amount:
-    type: Money
-    (builtinType): object
-    required: true
+  name:
+    type: string
+    (builtinType): string
+    required: false
   rate:
     format: int16
     minimum: 0
@@ -14,7 +14,7 @@ properties:
     type: number
     (builtinType): number
     required: true
-  name:
-    type: string
-    (builtinType): string
-    required: false
+  amount:
+    type: Money
+    (builtinType): object
+    required: true

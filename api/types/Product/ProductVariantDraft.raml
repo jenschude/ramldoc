@@ -3,6 +3,26 @@ displayName: ProductVariantDraft
 type: object
 (builtinType): object
 properties:
+  sku:
+    type: string
+    (builtinType): string
+    required: false
+  key:
+    type: string
+    (builtinType): string
+    required: false
+  prices:
+    type: array
+    items:
+      type: PriceDraft
+    (builtinType): array
+    required: false
+  attributes:
+    type: array
+    items:
+      type: Attribute
+    (builtinType): array
+    required: false
   images:
     type: array
     items:
@@ -14,24 +34,4 @@ properties:
     items:
       type: AssetDraft
     (builtinType): array
-    required: false
-  attributes:
-    type: array
-    items:
-      type: Attribute
-    (builtinType): array
-    required: false
-  prices:
-    type: array
-    items:
-      type: PriceDraft
-    (builtinType): array
-    required: false
-  sku:
-    type: string
-    (builtinType): string
-    required: false
-  key:
-    type: string
-    (builtinType): string
     required: false

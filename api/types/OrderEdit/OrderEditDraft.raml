@@ -3,11 +3,11 @@ displayName: OrderEditDraft
 type: object
 (builtinType): object
 properties:
-  dryRun:
-    type: boolean
-    (builtinType): boolean
+  key:
+    type: string
+    (builtinType): string
     description: |-
-      When set to `true` the edit is applied on the Order without persisting it.
+      Unique identifier for this edit.
     required: false
   resource:
     type: OrderReference
@@ -15,6 +15,14 @@ properties:
     description: |-
       The order to be updated with this edit.
     required: true
+  stagedActions:
+    type: array
+    items:
+      type: StagedOrderUpdateAction
+    (builtinType): array
+    description: |-
+      The actions to apply to `resource`.
+    required: false
   custom:
     type: CustomFieldsDraft
     (builtinType): object
@@ -27,17 +35,9 @@ properties:
     description: |-
       This field can be used to add additional textual information regarding the edit.
     required: false
-  stagedActions:
-    type: array
-    items:
-      type: StagedOrderUpdateAction
-    (builtinType): array
+  dryRun:
+    type: boolean
+    (builtinType): boolean
     description: |-
-      The actions to apply to `resource`.
-    required: false
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      Unique identifier for this edit.
+      When set to `true` the edit is applied on the Order without persisting it.
     required: false

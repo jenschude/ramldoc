@@ -10,19 +10,10 @@ properties:
     description: |-
       When the text line item was added to the shopping list.
     required: true
-  quantity:
-    format: int16
-    type: number
-    (builtinType): number
-    required: true
   custom:
     type: CustomFields
     (builtinType): object
     required: false
-  name:
-    type: LocalizedString
-    (builtinType): object
-    required: true
   description:
     type: LocalizedString
     (builtinType): object
@@ -32,4 +23,13 @@ properties:
     (builtinType): string
     description: |-
       The unique ID of this TextLineItem.
+    required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  quantity:
+    format: int16
+    type: number
+    (builtinType): number
     required: true

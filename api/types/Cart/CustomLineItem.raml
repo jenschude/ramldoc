@@ -3,29 +3,18 @@ displayName: CustomLineItem
 type: object
 (builtinType): object
 properties:
-  taxRate:
-    type: TaxRate
-    (builtinType): object
+  id:
+    type: string
+    (builtinType): string
     description: |-
-      Will be set automatically in the `Platform` TaxMode once the shipping address is set is set.
-               For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
-    required: false
-  quantity:
-    format: int16
-    type: number
-    (builtinType): number
-    description: |-
-      The amount of a CustomLineItem in the cart.
-               Must be a positive integer.
+      The unique ID of this CustomLineItem.
     required: true
-  shippingDetails:
-    type: ItemShippingDetails
+  name:
+    type: LocalizedString
     (builtinType): object
     description: |-
-      Container for custom line item specific address(es).
-               CustomLineItem fields that can be used in query predicates: `slug`, `name`, `quantity`,
-               `money`, `state`, `discountedPricePerQuantity`.
-    required: false
+      The name of this CustomLineItem.
+    required: true
   money:
     type: TypedMoney
     (builtinType): object
@@ -33,6 +22,12 @@ properties:
       The cost to add to the cart.
                The amount can be negative.
     required: true
+  taxedPrice:
+    type: TaxedItemPrice
+    (builtinType): object
+    description: |-
+      Set once the `taxRate` is set.
+    required: false
   totalPrice:
     type: TypedMoney
     (builtinType): object
@@ -42,21 +37,19 @@ properties:
                Otherwise a total price is just a `money` multiplied by the `quantity`.
                `totalPrice` may or may not include the taxes: it depends on the taxRate.includedInPrice property.
     required: true
-  taxedPrice:
-    type: TaxedItemPrice
-    (builtinType): object
+  slug:
+    type: string
+    (builtinType): string
     description: |-
-      Set once the `taxRate` is set.
-    required: false
-  custom:
-    type: CustomFields
-    (builtinType): object
-    required: false
-  name:
-    type: LocalizedString
-    (builtinType): object
+      A unique String in the cart to identify this CustomLineItem.
+    required: true
+  quantity:
+    format: int16
+    type: number
+    (builtinType): number
     description: |-
-      The name of this CustomLineItem.
+      The amount of a CustomLineItem in the cart.
+               Must be a positive integer.
     required: true
   state:
     type: array
@@ -64,25 +57,32 @@ properties:
       type: ItemState
     (builtinType): array
     required: true
-  id:
-    type: string
-    (builtinType): string
+  taxCategory:
+    type: TaxCategoryReference
+    (builtinType): object
+    required: false
+  taxRate:
+    type: TaxRate
+    (builtinType): object
     description: |-
-      The unique ID of this CustomLineItem.
-    required: true
+      Will be set automatically in the `Platform` TaxMode once the shipping address is set is set.
+               For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
+    required: false
   discountedPricePerQuantity:
     type: array
     items:
       type: DiscountedLineItemPriceForQuantity
     (builtinType): array
     required: true
-  slug:
-    type: string
-    (builtinType): string
-    description: |-
-      A unique String in the cart to identify this CustomLineItem.
-    required: true
-  taxCategory:
-    type: TaxCategoryReference
+  custom:
+    type: CustomFields
     (builtinType): object
+    required: false
+  shippingDetails:
+    type: ItemShippingDetails
+    (builtinType): object
+    description: |-
+      Container for custom line item specific address(es).
+               CustomLineItem fields that can be used in query predicates: `slug`, `name`, `quantity`,
+               `money`, `state`, `discountedPricePerQuantity`.
     required: false

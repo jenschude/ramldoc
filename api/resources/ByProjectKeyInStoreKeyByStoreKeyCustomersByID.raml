@@ -19,7 +19,7 @@ get:
       - "view_customers:{projectKey}"
       - "view_customers:{projectKey}:{storeKey}"
   description: |-
-    Returns a customer by its ID from a specific Store. The {storeKey} path parameter maps to a Store’s key.
+    Returns a customer by its ID from a specific Store. The {storeKey} path parameter maps to a Store's key.
     It also considers customers that do not have the stores field.
     If the customer exists in the commercetools project but the stores field references different stores,
     this method returns a ResourceNotFound error.
@@ -42,7 +42,7 @@ post:
       - "manage_customers:{projectKey}"
       - "manage_customers:{projectKey}:{storeKey}"
   description: |-
-    Updates a customer in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store’s key.
+    Updates a customer in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store's key.
     If the customer exists in the commercetools project but the stores field references a different store,
     this method returns a ResourceNotFound error.
   queryParameters:

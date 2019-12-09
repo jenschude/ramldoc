@@ -3,14 +3,6 @@ displayName: ReturnItemDraft
 type: object
 (builtinType): object
 properties:
-  shipmentState:
-    type: ReturnShipmentState
-    (builtinType): string
-    required: true
-  customLineItemId:
-    type: string
-    (builtinType): string
-    required: false
   quantity:
     format: int64
     type: number
@@ -20,7 +12,15 @@ properties:
     type: string
     (builtinType): string
     required: false
+  customLineItemId:
+    type: string
+    (builtinType): string
+    required: false
   comment:
     type: string
     (builtinType): string
     required: false
+  shipmentState:
+    type: ReturnShipmentState
+    (builtinType): string
+    required: true

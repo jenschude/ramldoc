@@ -3,14 +3,6 @@ displayName: ShippingRateDraft
 type: object
 (builtinType): object
 properties:
-  tiers:
-    type: array
-    items:
-      type: ShippingRatePriceTier
-    (builtinType): array
-    description: |-
-      A list of shipping rate price tiers.
-    required: false
   price:
     type: Money
     (builtinType): object
@@ -22,4 +14,12 @@ properties:
       The shipping is free if the order total (the sum of line item prices) exceeds the freeAbove value.
                Note: `freeAbove` applies before any Cart or Product discounts, and can cause discounts to apply in invalid scenarios.
                Use a Cart Discount to set the shipping price to 0 to avoid providing free shipping in invalid discount scenarios.
+    required: false
+  tiers:
+    type: array
+    items:
+      type: ShippingRatePriceTier
+    (builtinType): array
+    description: |-
+      A list of shipping rate price tiers.
     required: false

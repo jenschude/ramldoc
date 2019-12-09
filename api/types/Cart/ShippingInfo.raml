@@ -3,6 +3,28 @@ displayName: ShippingInfo
 type: object
 (builtinType): object
 properties:
+  shippingMethodName:
+    type: string
+    (builtinType): string
+    required: true
+  price:
+    type: TypedMoney
+    (builtinType): object
+    description: |-
+      Determined based on the ShippingRate and its tiered prices, and either the sum of LineItem prices or the `shippingRateInput` field.
+    required: true
+  shippingRate:
+    type: ShippingRate
+    (builtinType): object
+    description: |-
+      The shipping rate used to determine the price.
+    required: true
+  taxedPrice:
+    type: TaxedItemPrice
+    (builtinType): object
+    description: |-
+      Set once the `taxRate` is set.
+    required: false
   taxRate:
     type: TaxRate
     (builtinType): object
@@ -10,12 +32,24 @@ properties:
       Will be set automatically in the `Platform` TaxMode once the shipping address is set is set.
                For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
     required: false
-  shippingRate:
-    type: ShippingRate
+  taxCategory:
+    type: TaxCategoryReference
+    (builtinType): object
+    required: false
+  shippingMethod:
+    type: ShippingMethodReference
     (builtinType): object
     description: |-
-      The shipping rate used to determine the price.
-    required: true
+      Not set if custom shipping method is used.
+    required: false
+  deliveries:
+    type: array
+    items:
+      type: Delivery
+    (builtinType): array
+    description: |-
+      Deliveries are compilations of information on how the articles are being delivered to the customers.
+    required: false
   discountedPrice:
     type: DiscountedLineItemPrice
     (builtinType): object
@@ -26,37 +60,3 @@ properties:
     description: |-
       Indicates whether the ShippingMethod referenced in this ShippingInfo is allowed for the cart or not.
     required: true
-  taxedPrice:
-    type: TaxedItemPrice
-    (builtinType): object
-    description: |-
-      Set once the `taxRate` is set.
-    required: false
-  price:
-    type: TypedMoney
-    (builtinType): object
-    description: |-
-      Determined based on the ShippingRate and its tiered prices, and either the sum of LineItem prices or the `shippingRateInput` field.
-    required: true
-  shippingMethod:
-    type: ShippingMethodReference
-    (builtinType): object
-    description: |-
-      Not set if custom shipping method is used.
-    required: false
-  shippingMethodName:
-    type: string
-    (builtinType): string
-    required: true
-  deliveries:
-    type: array
-    items:
-      type: Delivery
-    (builtinType): array
-    description: |-
-      Deliveries are compilations of information on how the articles are being delivered to the customers.
-    required: false
-  taxCategory:
-    type: TaxCategoryReference
-    (builtinType): object
-    required: false

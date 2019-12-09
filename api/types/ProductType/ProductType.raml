@@ -3,16 +3,6 @@ displayName: ProductType
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -26,17 +16,34 @@ properties:
     description: |-
       The current version of the product type.
     required: true
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
+    description: |-
+      Present on resources updated after 1/02/2019 except for events not tracked.
+    required: false
   createdBy:
     type: CreatedBy
     (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     required: false
-  lastModifiedBy:
-    type: LastModifiedBy
-    (builtinType): object
+  key:
+    type: string
+    (builtinType): string
     description: |-
-      Present on resources updated after 1/02/2019 except for events not tracked.
+      User-specific unique identifier for the product type (max.
+               256 characters).
     required: false
   name:
     type: string
@@ -51,11 +58,4 @@ properties:
     items:
       type: AttributeDefinition
     (builtinType): array
-    required: false
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for the product type (max.
-               256 characters).
     required: false

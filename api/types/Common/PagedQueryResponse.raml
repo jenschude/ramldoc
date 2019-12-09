@@ -3,26 +3,22 @@ displayName: PagedQueryResponse
 type: object
 (builtinType): object
 properties:
+  limit:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
+  count:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   total:
     format: int64
     type: number
     (builtinType): number
     required: false
   offset:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  meta:
-    type: object
-    (builtinType): object
-    required: false
-  count:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  limit:
     format: int64
     type: number
     (builtinType): number
@@ -35,5 +31,9 @@ properties:
     required: true
   facets:
     type: FacetResults
+    (builtinType): object
+    required: false
+  meta:
+    type: object
     (builtinType): object
     required: false

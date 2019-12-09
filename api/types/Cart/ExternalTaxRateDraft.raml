@@ -3,11 +3,9 @@ displayName: ExternalTaxRateDraft
 type: object
 (builtinType): object
 properties:
-  country:
+  name:
     type: string
     (builtinType): string
-    description: |-
-      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
     required: true
   amount:
     format: int16
@@ -19,15 +17,11 @@ properties:
                If `subRates` are specified
                then the `amount` can be omitted or it must be the sum of the amounts of all `subRates`.
     required: false
-  includedInPrice:
-    type: boolean
-    (builtinType): boolean
-    description: |-
-      The default value for `includedInPrice` is FALSE.
-    required: false
-  name:
+  country:
     type: string
     (builtinType): string
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
     required: true
   state:
     type: string
@@ -44,4 +38,10 @@ properties:
       For countries (e.g.
                the US) where the total tax is a combination of multiple taxes (e.g.
                state and local taxes).
+    required: false
+  includedInPrice:
+    type: boolean
+    (builtinType): boolean
+    description: |-
+      The default value for `includedInPrice` is FALSE.
     required: false

@@ -3,14 +3,6 @@ displayName: ProductProjection
 type: BaseResource
 (builtinType): object
 properties:
-  createdAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -24,58 +16,35 @@ properties:
     description: |-
       The current version of the Product.
     required: true
-  searchKeywords:
-    type: SearchKeywords
-    (builtinType): object
-    required: false
-  description:
-    type: LocalizedString
-    (builtinType): object
-    required: false
-  variants:
-    type: array
-    items:
-      type: ProductVariant
-    (builtinType): array
+  createdAt:
+    type: datetime
+    (builtinType): datetime
     required: true
-  published:
-    type: boolean
-    (builtinType): boolean
+  lastModifiedAt:
+    type: datetime
+    (builtinType): datetime
+    required: true
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier of the Product.
     required: false
-  hasStagedChanges:
-    type: boolean
-    (builtinType): boolean
-    required: false
-  metaDescription:
-    type: LocalizedString
+  productType:
+    discriminatorValue: product-type
+    type: ProductTypeReference
     (builtinType): object
-    required: false
-  taxCategory:
-    type: TaxCategoryReference
-    (builtinType): object
-    required: false
-  metaKeywords:
-    type: LocalizedString
-    (builtinType): object
-    required: false
-  categoryOrderHints:
-    type: CategoryOrderHints
-    (builtinType): object
-    required: false
-  metaTitle:
-    type: LocalizedString
-    (builtinType): object
-    required: false
+    required: true
   name:
     type: LocalizedString
     (builtinType): object
     required: true
-  state:
-    type: StateReference
+  description:
+    type: LocalizedString
     (builtinType): object
     required: false
-  masterVariant:
-    type: ProductVariant
+  slug:
+    type: LocalizedString
     (builtinType): object
     required: true
   categories:
@@ -86,24 +55,55 @@ properties:
     description: |-
       References to categories the product is in.
     required: true
+  categoryOrderHints:
+    type: CategoryOrderHints
+    (builtinType): object
+    required: false
+  metaTitle:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  metaDescription:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  metaKeywords:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  searchKeywords:
+    type: SearchKeywords
+    (builtinType): object
+    required: false
+  hasStagedChanges:
+    type: boolean
+    (builtinType): boolean
+    required: false
+  published:
+    type: boolean
+    (builtinType): boolean
+    required: false
+  masterVariant:
+    type: ProductVariant
+    (builtinType): object
+    required: true
+  variants:
+    type: array
+    items:
+      type: ProductVariant
+    (builtinType): array
+    required: true
+  taxCategory:
+    type: TaxCategoryReference
+    (builtinType): object
+    required: false
+  state:
+    type: StateReference
+    (builtinType): object
+    required: false
   reviewRatingStatistics:
     type: ReviewRatingStatistics
     (builtinType): object
     description: |-
       Statistics about the review ratings taken into account for this product.
-    required: false
-  slug:
-    type: LocalizedString
-    (builtinType): object
-    required: true
-  productType:
-    discriminatorValue: product-type
-    type: ProductTypeReference
-    (builtinType): object
-    required: true
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier of the Product.
     required: false

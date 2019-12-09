@@ -3,6 +3,15 @@ displayName: Store
 type: LoggedResource
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   createdAt:
     format: rfc3339
     type: datetime
@@ -13,28 +22,13 @@ properties:
     type: datetime
     (builtinType): datetime
     required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    required: false
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     required: false
-  name:
-    type: LocalizedString
+  createdBy:
+    type: CreatedBy
     (builtinType): object
-    description: |-
-      The name of the store
     required: false
   key:
     type: string
@@ -44,3 +38,9 @@ properties:
                The `key` is mandatory and immutable.
                It is used to reference the store.
     required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
+    description: |-
+      The name of the store
+    required: false

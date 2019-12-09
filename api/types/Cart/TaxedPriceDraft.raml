@@ -3,17 +3,17 @@ displayName: TaxedPriceDraft
 type: object
 (builtinType): object
 properties:
-  taxPortions:
-    type: array
-    items:
-      type: TaxPortionDraft
-    (builtinType): array
+  totalNet:
+    type: TypedMoneyDraft
+    (builtinType): object
     required: true
   totalGross:
     type: TypedMoneyDraft
     (builtinType): object
     required: true
-  totalNet:
-    type: TypedMoneyDraft
-    (builtinType): object
+  taxPortions:
+    type: array
+    items:
+      type: TaxPortionDraft
+    (builtinType): array
     required: true

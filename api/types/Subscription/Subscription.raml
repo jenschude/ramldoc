@@ -3,6 +3,15 @@ displayName: Subscription
 type: LoggedResource
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   createdAt:
     format: rfc3339
     type: datetime
@@ -13,53 +22,44 @@ properties:
     type: datetime
     (builtinType): datetime
     required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
-  format:
-    discriminator: type
-    type: DeliveryFormat
+  createdBy:
+    type: CreatedBy
     (builtinType): object
-    required: true
-  destination:
-    discriminator: type
-    type: Destination
-    (builtinType): object
-    required: true
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    required: false
   changes:
     type: array
     items:
       type: ChangeSubscription
     (builtinType): array
     required: true
+  destination:
+    discriminator: type
+    type: Destination
+    (builtinType): object
+    required: true
+  key:
+    type: string
+    (builtinType): string
+    required: false
   messages:
     type: array
     items:
       type: MessageSubscription
     (builtinType): array
     required: true
-  key:
-    type: string
-    (builtinType): string
-    required: false
+  format:
+    discriminator: type
+    type: DeliveryFormat
+    (builtinType): object
+    required: true
   status:
     type: SubscriptionHealthStatus
     (builtinType): string

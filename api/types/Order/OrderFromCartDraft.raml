@@ -3,10 +3,17 @@ displayName: OrderFromCartDraft
 type: object
 (builtinType): object
 properties:
-  shipmentState:
-    type: ShipmentState
+  id:
+    type: string
     (builtinType): string
-    required: false
+    description: |-
+      The unique id of the cart from which an order is created.
+    required: true
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   orderNumber:
     type: string
     (builtinType): string
@@ -17,28 +24,21 @@ properties:
                Once it's set it cannot be changed.
                For easier use on Get, Update and Delete actions we suggest assigning order numbers that match the regular expression `[a-z0-9_-]{2,36}`.
     required: false
-  state:
-    type: StateResourceIdentifier
-    (builtinType): object
-    required: false
-  id:
-    type: string
-    (builtinType): string
-    description: |-
-      The unique id of the cart from which an order is created.
-    required: true
   paymentState:
     type: PaymentState
     (builtinType): string
     required: false
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
+  shipmentState:
+    type: ShipmentState
+    (builtinType): string
+    required: false
   orderState:
     type: OrderState
     (builtinType): string
     description: |-
       Order will be created with `Open` status by default.
+    required: false
+  state:
+    type: StateResourceIdentifier
+    (builtinType): object
     required: false

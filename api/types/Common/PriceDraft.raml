@@ -3,15 +3,35 @@ displayName: PriceDraft
 type: object
 (builtinType): object
 properties:
-  discounted:
-    type: DiscountedPrice
+  value:
+    type: Money
     (builtinType): object
-    required: false
+    required: true
   country:
     type: CountryCode
     (builtinType): string
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+    required: false
+  customerGroup:
+    type: CustomerGroupResourceIdentifier
+    (builtinType): object
+    required: false
+  channel:
+    type: ChannelResourceIdentifier
+    (builtinType): object
+    required: false
+  validFrom:
+    type: datetime
+    (builtinType): datetime
+    required: false
+  validUntil:
+    type: datetime
+    (builtinType): datetime
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
     required: false
   tiers:
     type: array
@@ -19,27 +39,7 @@ properties:
       type: PriceTierDraft
     (builtinType): array
     required: false
-  customerGroup:
-    type: CustomerGroupResourceIdentifier
+  discounted:
+    type: DiscountedPrice
     (builtinType): object
     required: false
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    required: false
-  channel:
-    type: ChannelResourceIdentifier
-    (builtinType): object
-    required: false
-  validUntil:
-    type: datetime
-    (builtinType): datetime
-    required: false
-  validFrom:
-    type: datetime
-    (builtinType): datetime
-    required: false
-  value:
-    type: Money
-    (builtinType): object
-    required: true

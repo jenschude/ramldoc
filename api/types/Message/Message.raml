@@ -73,14 +73,6 @@ discriminator: type
 - ReviewRatingSetMessage
 - ReviewStateTransitionMessage
 properties:
-  createdAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -90,12 +82,20 @@ properties:
     type: number
     (builtinType): number
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    required: false
+  createdAt:
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
+    (builtinType): object
+    required: false
+  createdBy:
+    type: CreatedBy
     (builtinType): object
     required: false
   sequenceNumber:
@@ -107,10 +107,6 @@ properties:
     type: Reference
     (builtinType): object
     required: true
-  resourceUserProvidedIdentifiers:
-    type: UserProvidedIdentifiers
-    (builtinType): object
-    required: false
   resourceVersion:
     format: int64
     type: number
@@ -120,3 +116,7 @@ properties:
     type: string
     (builtinType): string
     required: true
+  resourceUserProvidedIdentifiers:
+    type: UserProvidedIdentifiers
+    (builtinType): object
+    required: false

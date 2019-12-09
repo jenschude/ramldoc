@@ -3,16 +3,6 @@ displayName: DiscountCode
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -24,18 +14,44 @@ properties:
     type: number
     (builtinType): number
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
+  createdBy:
+    type: CreatedBy
+    (builtinType): object
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    required: false
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  code:
+    type: string
+    (builtinType): string
+    description: |-
+      Unique identifier of this discount code.
+               This value is added to the cart
+               to enable the related cart discounts in the cart.
+    required: true
   cartDiscounts:
     type: array
     items:
@@ -44,13 +60,15 @@ properties:
     description: |-
       The referenced matching cart discounts can be applied to the cart once the DiscountCode is added.
     required: true
-  code:
+  cartPredicate:
     type: string
     (builtinType): string
     description: |-
-      Unique identifier of this discount code.
-               This value is added to the cart
-               to enable the related cart discounts in the cart.
+      The discount code can only be applied to carts that match this predicate.
+    required: false
+  isActive:
+    type: boolean
+    (builtinType): boolean
     required: true
   references:
     type: array
@@ -61,11 +79,19 @@ properties:
       The platform will generate this array from the cart predicate.
                It contains the references of all the resources that are addressed in the predicate.
     required: true
-  cartPredicate:
-    type: string
-    (builtinType): string
+  maxApplications:
+    format: int64
+    type: number
+    (builtinType): number
     description: |-
-      The discount code can only be applied to carts that match this predicate.
+      The discount code can only be applied `maxApplications` times.
+    required: false
+  maxApplicationsPerCustomer:
+    format: int64
+    type: number
+    (builtinType): number
+    description: |-
+      The discount code can only be applied `maxApplicationsPerCustomer` times per customer.
     required: false
   custom:
     type: CustomFields
@@ -79,10 +105,6 @@ properties:
     description: |-
       The groups to which this discount code belong.
     required: true
-  description:
-    type: LocalizedString
-    (builtinType): object
-    required: false
   validFrom:
     format: rfc3339
     type: datetime
@@ -91,21 +113,6 @@ properties:
       The time from which the discount can be applied on a cart.
                Before that time the code is invalid.
     required: false
-  isActive:
-    type: boolean
-    (builtinType): boolean
-    required: true
-  maxApplications:
-    format: int64
-    type: number
-    (builtinType): number
-    description: |-
-      The discount code can only be applied `maxApplications` times.
-    required: false
-  name:
-    type: LocalizedString
-    (builtinType): object
-    required: false
   validUntil:
     format: rfc3339
     type: datetime
@@ -113,11 +120,4 @@ properties:
     description: |-
       The time until the discount can be applied on a cart.
                After that time the code is invalid.
-    required: false
-  maxApplicationsPerCustomer:
-    format: int64
-    type: number
-    (builtinType): number
-    description: |-
-      The discount code can only be applied `maxApplicationsPerCustomer` times per customer.
     required: false

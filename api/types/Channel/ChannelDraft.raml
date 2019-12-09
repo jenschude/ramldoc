@@ -3,20 +3,10 @@ displayName: ChannelDraft
 type: object
 (builtinType): object
 properties:
-  address:
-    type: Address
-    (builtinType): object
-    required: false
-  geoLocation:
-    type: GeoJson
-    (builtinType): object
-    required: false
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    description: |-
-      The custom fields.
-    required: false
+  key:
+    type: string
+    (builtinType): string
+    required: true
   roles:
     type: array
     items:
@@ -33,7 +23,17 @@ properties:
     type: LocalizedString
     (builtinType): object
     required: false
-  key:
-    type: string
-    (builtinType): string
-    required: true
+  address:
+    type: Address
+    (builtinType): object
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    description: |-
+      The custom fields.
+    required: false
+  geoLocation:
+    type: GeoJson
+    (builtinType): object
+    required: false

@@ -3,14 +3,14 @@ displayName: TypeUpdate
 type: object
 (builtinType): object
 properties:
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   actions:
     type: array
     items:
       type: TypeUpdateAction
     (builtinType): array
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
     required: true

@@ -6,10 +6,6 @@ type: object
 - CreatedBy
 - LastModifiedBy
 properties:
-  anonymousId:
-    type: string
-    (builtinType): string
-    required: false
   clientId:
     type: string
     (builtinType): string
@@ -21,4 +17,8 @@ properties:
   customer:
     type: CustomerReference
     (builtinType): object
+    required: false
+  anonymousId:
+    type: string
+    (builtinType): string
     required: false

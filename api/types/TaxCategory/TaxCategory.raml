@@ -3,16 +3,6 @@ displayName: TaxCategory
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -26,17 +16,35 @@ properties:
     description: |-
       The current version of the category.
     required: true
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedBy:
+    type: LastModifiedBy
+    (builtinType): object
+    description: |-
+      Present on resources updated after 1/02/2019 except for events not tracked.
+    required: false
   createdBy:
     type: CreatedBy
     (builtinType): object
     description: |-
       Present on resources created after 1/02/2019 except for events not tracked.
     required: false
-  lastModifiedBy:
-    type: LastModifiedBy
-    (builtinType): object
-    description: |-
-      Present on resources updated after 1/02/2019 except for events not tracked.
+  name:
+    type: string
+    (builtinType): string
+    required: true
+  description:
+    type: string
+    (builtinType): string
     required: false
   rates:
     type: array
@@ -46,14 +54,6 @@ properties:
     description: |-
       The tax rates have unique IDs in the rates list
     required: true
-  name:
-    type: string
-    (builtinType): string
-    required: true
-  description:
-    type: string
-    (builtinType): string
-    required: false
   key:
     type: string
     (builtinType): string

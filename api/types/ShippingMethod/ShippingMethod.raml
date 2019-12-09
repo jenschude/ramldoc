@@ -3,16 +3,6 @@ displayName: ShippingMethod
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -26,32 +16,30 @@ properties:
     description: |-
       The current version of the shipping method.
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    required: false
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     required: false
-  zoneRates:
-    type: array
-    items:
-      type: ZoneRate
-    (builtinType): array
-    required: true
-  predicate:
+  createdBy:
+    type: CreatedBy
+    (builtinType): object
+    required: false
+  key:
     type: string
     (builtinType): string
     description: |-
-      A Cart predicate which can be used to more precisely select a shipping method for a cart.
+      User-specific unique identifier for the shipping method.
     required: false
-  isDefault:
-    type: boolean
-    (builtinType): boolean
-    description: |-
-      One shipping method in a project can be default.
-    required: true
   name:
     type: string
     (builtinType): string
@@ -60,13 +48,25 @@ properties:
     type: string
     (builtinType): string
     required: false
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for the shipping method.
-    required: false
   taxCategory:
     type: TaxCategoryReference
     (builtinType): object
     required: true
+  zoneRates:
+    type: array
+    items:
+      type: ZoneRate
+    (builtinType): array
+    required: true
+  isDefault:
+    type: boolean
+    (builtinType): boolean
+    description: |-
+      One shipping method in a project can be default.
+    required: true
+  predicate:
+    type: string
+    (builtinType): string
+    description: |-
+      A Cart predicate which can be used to more precisely select a shipping method for a cart.
+    required: false

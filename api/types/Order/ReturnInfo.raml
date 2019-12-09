@@ -3,20 +3,20 @@ displayName: ReturnInfo
 type: object
 (builtinType): object
 properties:
-  returnDate:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: false
-  returnTrackingId:
-    type: string
-    (builtinType): string
-    description: |-
-      Identifies, which return tracking ID is connected to this particular return.
-    required: false
   items:
     type: array
     items:
       type: ReturnItem
     (builtinType): array
     required: true
+  returnTrackingId:
+    type: string
+    (builtinType): string
+    description: |-
+      Identifies, which return tracking ID is connected to this particular return.
+    required: false
+  returnDate:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: false

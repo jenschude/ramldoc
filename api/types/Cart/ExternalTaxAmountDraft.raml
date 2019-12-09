@@ -3,13 +3,13 @@ displayName: ExternalTaxAmountDraft
 type: object
 (builtinType): object
 properties:
-  taxRate:
-    type: ExternalTaxRateDraft
-    (builtinType): object
-    required: true
   totalGross:
     type: Money
     (builtinType): object
     description: |-
       The total gross amount of the item (totalNet + taxes).
+    required: true
+  taxRate:
+    type: ExternalTaxRateDraft
+    (builtinType): object
     required: true

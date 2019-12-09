@@ -3,77 +3,18 @@ displayName: ProductDraft
 type: object
 (builtinType): object
 properties:
-  searchKeywords:
-    type: SearchKeywords
+  productType:
+    discriminatorValue: product-type
+    type: ProductTypeResourceIdentifier
     (builtinType): object
-    required: false
-  description:
-    type: LocalizedString
-    (builtinType): object
-    required: false
-  variants:
-    type: array
-    items:
-      type: ProductVariantDraft
-    (builtinType): array
     description: |-
-      An array of related product variants.
-    required: false
-  metaDescription:
-    type: LocalizedString
-    (builtinType): object
-    required: false
-  taxCategory:
-    type: TaxCategoryResourceIdentifier
-    (builtinType): object
-    required: false
-  metaKeywords:
-    type: LocalizedString
-    (builtinType): object
-    required: false
-  categoryOrderHints:
-    type: CategoryOrderHints
-    (builtinType): object
-    required: false
-  publish:
-    type: boolean
-    (builtinType): boolean
-    description: |-
-      If `true`, the product is published immediately.
-    required: false
-  metaTitle:
-    type: LocalizedString
-    (builtinType): object
-    required: false
+      A predefined product type assigned to the product.
+               All products must have a product type.
+    required: true
   name:
     type: LocalizedString
     (builtinType): object
     required: true
-  state:
-    type: StateResourceIdentifier
-    (builtinType): object
-    required: false
-  masterVariant:
-    type: ProductVariantDraft
-    (builtinType): object
-    description: |-
-      The master product variant.
-               Required if the `variants` array has product variants.
-    required: false
-  categories:
-    type: array
-    items:
-      type: CategoryResourceIdentifier
-    (builtinType): array
-    description: |-
-      Categories assigned to the product.
-    required: false
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for the product.
-    required: false
   slug:
     type: LocalizedString
     (builtinType): object
@@ -83,11 +24,70 @@ properties:
                Slugs have a maximum size of 256.
                Valid characters are: alphabetic characters (`A-Z, a-z`), numeric characters (`0-9`), underscores (`_`) and hyphens (`-`).
     required: true
-  productType:
-    discriminatorValue: product-type
-    type: ProductTypeResourceIdentifier
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier for the product.
+    required: false
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  categories:
+    type: array
+    items:
+      type: CategoryResourceIdentifier
+    (builtinType): array
+    description: |-
+      Categories assigned to the product.
+    required: false
+  categoryOrderHints:
+    type: CategoryOrderHints
+    (builtinType): object
+    required: false
+  metaTitle:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  metaDescription:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  metaKeywords:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  masterVariant:
+    type: ProductVariantDraft
     (builtinType): object
     description: |-
-      A predefined product type assigned to the product.
-               All products must have a product type.
-    required: true
+      The master product variant.
+               Required if the `variants` array has product variants.
+    required: false
+  variants:
+    type: array
+    items:
+      type: ProductVariantDraft
+    (builtinType): array
+    description: |-
+      An array of related product variants.
+    required: false
+  taxCategory:
+    type: TaxCategoryResourceIdentifier
+    (builtinType): object
+    required: false
+  searchKeywords:
+    type: SearchKeywords
+    (builtinType): object
+    required: false
+  state:
+    type: StateResourceIdentifier
+    (builtinType): object
+    required: false
+  publish:
+    type: boolean
+    (builtinType): boolean
+    description: |-
+      If `true`, the product is published immediately.
+    required: false

@@ -3,13 +3,13 @@ displayName: TaxedItemPrice
 type: object
 (builtinType): object
 properties:
+  totalNet:
+    type: TypedMoney
+    (builtinType): object
+    required: true
   totalGross:
     type: TypedMoney
     (builtinType): object
     description: |-
       TaxedItemPrice fields can not be used in query predicates.
-    required: true
-  totalNet:
-    type: TypedMoney
-    (builtinType): object
     required: true

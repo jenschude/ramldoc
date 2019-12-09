@@ -3,24 +3,6 @@ displayName: ProductVariantImportDraft
 type: object
 (builtinType): object
 properties:
-  images:
-    type: array
-    items:
-      type: Image
-    (builtinType): array
-    description: |-
-      If this property is defined, then it will override the `images` property from the original
-               product variant, otherwise `images` property from the original product variant would be copied in the resulting order.
-    required: false
-  attributes:
-    type: array
-    items:
-      type: Attribute
-    (builtinType): array
-    description: |-
-      If this property is defined, then it will override the `attributes` property from the original
-               product variant, otherwise `attributes` property from the original product variant would be copied in the resulting order.
-    required: false
   id:
     format: int64
     type: number
@@ -29,6 +11,12 @@ properties:
       The sequential ID of the variant within the product.
                The variant with provided ID should exist in some existing product, so you also need to specify the productId if this property is set,
                or alternatively you can just specify SKU of the product variant.
+    required: false
+  sku:
+    type: string
+    (builtinType): string
+    description: |-
+      The SKU of the existing variant.
     required: false
   prices:
     type: array
@@ -40,9 +28,21 @@ properties:
                The prices should not contain two prices for the same price scope (same currency, country and customer group).
                If this property is defined, then it will override the `prices` property from the original product variant, otherwise `prices` property from the original product variant would be copied in the resulting order.
     required: false
-  sku:
-    type: string
-    (builtinType): string
+  attributes:
+    type: array
+    items:
+      type: Attribute
+    (builtinType): array
     description: |-
-      The SKU of the existing variant.
+      If this property is defined, then it will override the `attributes` property from the original
+               product variant, otherwise `attributes` property from the original product variant would be copied in the resulting order.
+    required: false
+  images:
+    type: array
+    items:
+      type: Image
+    (builtinType): array
+    description: |-
+      If this property is defined, then it will override the `images` property from the original
+               product variant, otherwise `images` property from the original product variant would be copied in the resulting order.
     required: false

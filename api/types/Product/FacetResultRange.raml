@@ -3,10 +3,32 @@ displayName: FacetResultRange
 type: object
 (builtinType): object
 properties:
+  from:
+    type: number
+    (builtinType): number
+    required: true
+  fromStr:
+    type: string
+    (builtinType): string
+    required: true
+  to:
+    type: number
+    (builtinType): number
+    required: true
   toStr:
     type: string
     (builtinType): string
     required: true
+  count:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
+  productCount:
+    format: int64
+    type: number
+    (builtinType): number
+    required: false
   total:
     format: int64
     type: number
@@ -16,10 +38,6 @@ properties:
     type: number
     (builtinType): number
     required: true
-  fromStr:
-    type: string
-    (builtinType): string
-    required: true
   max:
     type: number
     (builtinType): number
@@ -28,21 +46,3 @@ properties:
     type: number
     (builtinType): number
     required: true
-  count:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  from:
-    type: number
-    (builtinType): number
-    required: true
-  to:
-    type: number
-    (builtinType): number
-    required: true
-  productCount:
-    format: int64
-    type: number
-    (builtinType): number
-    required: false

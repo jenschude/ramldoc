@@ -9,10 +9,6 @@ properties:
       type: AssetSource
     (builtinType): array
     required: true
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    required: false
   name:
     type: LocalizedString
     (builtinType): object
@@ -21,13 +17,17 @@ properties:
     type: LocalizedString
     (builtinType): object
     required: false
-  key:
-    type: string
-    (builtinType): string
-    required: false
   tags:
     type: array
     items:
       type: string
     (builtinType): array
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    required: false
+  key:
+    type: string
+    (builtinType): string
     required: false

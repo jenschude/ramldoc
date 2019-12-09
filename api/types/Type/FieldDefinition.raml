@@ -3,6 +3,12 @@ displayName: FieldDefinition
 type: object
 (builtinType): object
 properties:
+  type:
+    type: FieldType
+    (builtinType): object
+    description: |-
+      Describes the type of the field.
+    required: true
   name:
     type: string
     (builtinType): string
@@ -12,24 +18,11 @@ properties:
                The name must be unique for a given resource type ID.
                In case there is a field with the same name in another type it has to have the same FieldType also.
     required: true
-  inputHint:
-    type: TypeTextInputHint
-    (builtinType): string
-    description: |-
-      Provides a visual representation type for this field.
-               It is only relevant for string-based field types like StringType and LocalizedStringType.
-    required: false
   label:
     type: LocalizedString
     (builtinType): object
     description: |-
       A human-readable label for the field.
-    required: true
-  type:
-    type: FieldType
-    (builtinType): object
-    description: |-
-      Describes the type of the field.
     required: true
   required:
     type: boolean
@@ -37,3 +30,10 @@ properties:
     description: |-
       Whether the field is required to have a value.
     required: true
+  inputHint:
+    type: TypeTextInputHint
+    (builtinType): string
+    description: |-
+      Provides a visual representation type for this field.
+               It is only relevant for string-based field types like StringType and LocalizedStringType.
+    required: false

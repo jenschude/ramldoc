@@ -3,16 +3,6 @@ displayName: Type
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -26,31 +16,27 @@ properties:
     description: |-
       The current version of the type.
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
-  name:
-    type: LocalizedString
+  createdBy:
+    type: CreatedBy
     (builtinType): object
-    required: true
-  fieldDefinitions:
-    type: array
-    items:
-      type: FieldDefinition
-    (builtinType): array
-    required: true
-  description:
-    type: LocalizedString
-    (builtinType): object
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
     required: false
   key:
     type: string
@@ -59,6 +45,14 @@ properties:
       Identifier for the type (max.
                256 characters).
     required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
   resourceTypeIds:
     type: array
     items:
@@ -66,4 +60,10 @@ properties:
     (builtinType): array
     description: |-
       Defines for which resource(s) the type is valid.
+    required: true
+  fieldDefinitions:
+    type: array
+    items:
+      type: FieldDefinition
+    (builtinType): array
     required: true

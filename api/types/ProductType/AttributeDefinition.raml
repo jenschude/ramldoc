@@ -3,6 +3,27 @@ displayName: AttributeDefinition
 type: object
 (builtinType): object
 properties:
+  type:
+    type: AttributeType
+    (builtinType): object
+    description: |-
+      Describes the type of the attribute.
+    required: true
+  name:
+    type: string
+    (builtinType): string
+    description: |-
+      The unique name of the attribute used in the API.
+               The name must be between two and 256 characters long and can contain the ASCII letters A to Z in lowercase or uppercase, digits, underscores (`_`) and the hyphen-minus (`-`).
+               When using the same `name` for an attribute in two or more product types all fields of the AttributeDefinition of this attribute need to be the same across the product types, otherwise an AttributeDefinitionAlreadyExists error code will be returned.
+               An exception to this are the values of an `enum` or `lenum` type and sets thereof.
+    required: true
+  label:
+    type: LocalizedString
+    (builtinType): object
+    description: |-
+      A human-readable label for the attribute.
+    required: true
   isRequired:
     type: boolean
     (builtinType): boolean
@@ -15,15 +36,12 @@ properties:
     description: |-
       Describes how an attribute or a set of attributes should be validated across all variants of a product.
     required: true
-  name:
-    type: string
-    (builtinType): string
+  inputTip:
+    type: LocalizedString
+    (builtinType): object
     description: |-
-      The unique name of the attribute used in the API.
-               The name must be between two and 256 characters long and can contain the ASCII letters A to Z in lowercase or uppercase, digits, underscores (`_`) and the hyphen-minus (`-`).
-               When using the same `name` for an attribute in two or more product types all fields of the AttributeDefinition of this attribute need to be the same across the product types, otherwise an AttributeDefinitionAlreadyExists error code will be returned.
-               An exception to this are the values of an `enum` or `lenum` type and sets thereof.
-    required: true
+      Additional information about the attribute that aids content managers when setting product details.
+    required: false
   inputHint:
     type: TextInputHint
     (builtinType): string
@@ -43,21 +61,3 @@ properties:
                This constraint is enforced at both product creation and product update.
                If the length of the input exceeds the maximum size an InvalidField error is returned.
     required: true
-  label:
-    type: LocalizedString
-    (builtinType): object
-    description: |-
-      A human-readable label for the attribute.
-    required: true
-  type:
-    type: AttributeType
-    (builtinType): object
-    description: |-
-      Describes the type of the attribute.
-    required: true
-  inputTip:
-    type: LocalizedString
-    (builtinType): object
-    description: |-
-      Additional information about the attribute that aids content managers when setting product details.
-    required: false

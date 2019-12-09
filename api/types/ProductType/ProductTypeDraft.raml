@@ -3,6 +3,14 @@ displayName: ProductTypeDraft
 type: object
 (builtinType): object
 properties:
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier for the product type (min.
+               2 and max.
+               256 characters).
+    required: false
   name:
     type: string
     (builtinType): string
@@ -16,12 +24,4 @@ properties:
     items:
       type: AttributeDefinitionDraft
     (builtinType): array
-    required: false
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for the product type (min.
-               2 and max.
-               256 characters).
     required: false

@@ -3,24 +3,18 @@ displayName: TypeDraft
 type: object
 (builtinType): object
 properties:
-  name:
-    type: LocalizedString
-    (builtinType): object
-    required: true
-  fieldDefinitions:
-    type: array
-    items:
-      type: FieldDefinition
-    (builtinType): array
-    required: false
-  description:
-    type: LocalizedString
-    (builtinType): object
-    required: false
   key:
     type: string
     (builtinType): string
     required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
   resourceTypeIds:
     type: array
     items:
@@ -29,3 +23,9 @@ properties:
     description: |-
       The IDs of the resources that can be customized with this type.
     required: true
+  fieldDefinitions:
+    type: array
+    items:
+      type: FieldDefinition
+    (builtinType): array
+    required: false

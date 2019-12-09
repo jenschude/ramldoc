@@ -3,14 +3,6 @@ displayName: ItemShippingDetails
 type: object
 (builtinType): object
 properties:
-  valid:
-    type: boolean
-    (builtinType): boolean
-    description: |-
-      `true` if the quantity of the (custom) line item is equal to the sum of the sub-quantities in `targets`, `false` otherwise.
-               A cart cannot be ordered when the value is `false`.
-               The error InvalidItemShippingDetails will be triggered.
-    required: true
   targets:
     type: array
     items:
@@ -19,4 +11,12 @@ properties:
     description: |-
       Used to map what sub-quantity should be shipped to which address.
                Duplicate address keys are not allowed.
+    required: true
+  valid:
+    type: boolean
+    (builtinType): boolean
+    description: |-
+      `true` if the quantity of the (custom) line item is equal to the sum of the sub-quantities in `targets`, `false` otherwise.
+               A cart cannot be ordered when the value is `false`.
+               The error InvalidItemShippingDetails will be triggered.
     required: true

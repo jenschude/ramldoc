@@ -7,16 +7,16 @@ properties:
     type: string
     (builtinType): string
     required: true
-  price:
-    type: QueryPrice
-    (builtinType): object
+  variantId:
+    format: int32
+    type: number
+    (builtinType): number
     required: true
   staged:
     type: boolean
     (builtinType): boolean
     required: true
-  variantId:
-    format: int32
-    type: number
-    (builtinType): number
+  price:
+    type: QueryPrice
+    (builtinType): object
     required: true

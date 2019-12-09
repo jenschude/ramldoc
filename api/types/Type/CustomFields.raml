@@ -3,13 +3,13 @@ displayName: CustomFields
 type: object
 (builtinType): object
 properties:
+  type:
+    type: TypeReference
+    (builtinType): object
+    required: true
   fields:
     type: FieldContainer
     (builtinType): object
     description: |-
       A valid JSON object, based on FieldDefinition.
-    required: true
-  type:
-    type: TypeReference
-    (builtinType): object
     required: true

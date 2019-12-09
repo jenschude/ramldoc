@@ -3,16 +3,6 @@ displayName: Product
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -26,24 +16,50 @@ properties:
     description: |-
       The current version of the product.
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
+  createdBy:
+    type: CreatedBy
+    (builtinType): object
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    required: false
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier for the product.
+               *Product keys are different from product variant keys.*
+    required: false
+  productType:
+    discriminatorValue: product-type
+    type: ProductTypeReference
+    (builtinType): object
+    required: true
   masterData:
     type: ProductCatalogData
     (builtinType): object
     description: |-
       The product data in the master catalog.
     required: true
+  taxCategory:
+    type: TaxCategoryReference
+    (builtinType): object
+    required: false
   state:
     type: StateReference
     (builtinType): object
@@ -53,20 +69,4 @@ properties:
     (builtinType): object
     description: |-
       Statistics about the review ratings taken into account for this product.
-    required: false
-  productType:
-    discriminatorValue: product-type
-    type: ProductTypeReference
-    (builtinType): object
-    required: true
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for the product.
-               *Product keys are different from product variant keys.*
-    required: false
-  taxCategory:
-    type: TaxCategoryReference
-    (builtinType): object
     required: false

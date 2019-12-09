@@ -3,10 +3,34 @@ displayName: ApiClient
 type: object
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    description: |-
+      The unique ID of the API client.
+               This is the OAuth2 `client_id` and can be used to obtain a token.
+    required: true
+  name:
+    type: string
+    (builtinType): string
+    required: true
+  scope:
+    type: string
+    (builtinType): string
+    description: |-
+      A whitespace separated list of the OAuth scopes.
+               This is the OAuth2 `scope` and can be used to obtain a token.
+    required: true
   createdAt:
     format: rfc3339
     type: datetime
     (builtinType): datetime
+    required: false
+  lastUsedAt:
+    type: date-only
+    (builtinType): date-only
+    description: |-
+      The last day this API Client was used to obtain a token.
     required: false
   deleteAt:
     format: rfc3339
@@ -15,23 +39,6 @@ properties:
     description: |-
       If set, the client will be deleted on (or shortly after) this point in time.
     required: false
-  lastUsedAt:
-    type: date-only
-    (builtinType): date-only
-    description: |-
-      The last day this API Client was used to obtain a token.
-    required: false
-  scope:
-    type: string
-    (builtinType): string
-    description: |-
-      A whitespace separated list of the OAuth scopes.
-               This is the OAuth2 `scope` and can be used to obtain a token.
-    required: true
-  name:
-    type: string
-    (builtinType): string
-    required: true
   secret:
     type: string
     (builtinType): string
@@ -39,10 +46,3 @@ properties:
       The secret is only shown once in the response of creating the API Client.
                This is the OAuth2 `client_secret` and can be used to obtain a token.
     required: false
-  id:
-    type: string
-    (builtinType): string
-    description: |-
-      The unique ID of the API client.
-               This is the OAuth2 `client_id` and can be used to obtain a token.
-    required: true

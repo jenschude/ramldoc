@@ -3,22 +3,6 @@ displayName: OrderImportDraft
 type: object
 (builtinType): object
 properties:
-  shipmentState:
-    type: ShipmentState
-    (builtinType): string
-    required: false
-  country:
-    type: string
-    (builtinType): string
-    description: |-
-      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-               Used for product variant price selection.
-    required: false
-  completedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: false
   orderNumber:
     type: string
     (builtinType): string
@@ -27,64 +11,17 @@ properties:
                It can be used to create more human-readable (in contrast to ID) identifier for the order.
                It should be unique within a project.
     required: false
-  totalPrice:
-    type: Money
-    (builtinType): object
-    required: true
-  customerGroup:
-    discriminatorValue: customer-group
-    type: CustomerGroupResourceIdentifier
-    (builtinType): object
-    description: |-
-      Set when the customer is set and the customer is a member of a customer group.
-               Used for product variant price selection.
-    required: false
-  taxedPrice:
-    type: TaxedPriceDraft
-    (builtinType): object
-    description: |-
-      Order Import does not support calculation of taxes.
-               When setting the draft the taxedPrice is to be provided.
-    required: false
-  origin:
-    type: CartOrigin
+  customerId:
+    type: string
     (builtinType): string
     description: |-
-      The default origin is `Customer`.
+      If given the customer with that ID must exist in the project.
     required: false
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    description: |-
-      The custom fields.
-    required: false
-  shippingInfo:
-    type: ShippingInfoImportDraft
-    (builtinType): object
-    description: |-
-      Set if the ShippingMethod is set.
-    required: false
-  store:
-    type: StoreResourceIdentifier
-    (builtinType): object
-    required: false
-  inventoryMode:
-    type: InventoryMode
+  customerEmail:
+    type: string
     (builtinType): string
     description: |-
-      If not given the mode `None` will be assigned by default.
-    required: false
-  orderState:
-    type: OrderState
-    (builtinType): string
-    description: |-
-      If not given the `Open` state will be assigned by default.
-    required: false
-  taxRoundingMode:
-    type: RoundingMode
-    (builtinType): string
-    description: |-
-      If not given the tax rounding mode `HalfEven` will be assigned by default.
+      The customer email can be used when no check against existing Customers is desired during order import.
     required: false
   lineItems:
     type: array
@@ -102,25 +39,16 @@ properties:
     description: |-
       If not given `lineItems` must not be empty.
     required: false
-  itemShippingAddresses:
-    type: array
-    items:
-      type: Address
-    (builtinType): array
+  totalPrice:
+    type: Money
+    (builtinType): object
+    required: true
+  taxedPrice:
+    type: TaxedPriceDraft
+    (builtinType): object
     description: |-
-      Contains addresses for orders with multiple shipping addresses.
-    required: false
-  customerEmail:
-    type: string
-    (builtinType): string
-    description: |-
-      The customer email can be used when no check against existing Customers is desired during order import.
-    required: false
-  customerId:
-    type: string
-    (builtinType): string
-    description: |-
-      If given the customer with that ID must exist in the project.
+      Order Import does not support calculation of taxes.
+               When setting the draft the taxedPrice is to be provided.
     required: false
   shippingAddress:
     type: Address
@@ -130,7 +58,79 @@ properties:
     type: Address
     (builtinType): object
     required: false
+  customerGroup:
+    discriminatorValue: customer-group
+    type: CustomerGroupResourceIdentifier
+    (builtinType): object
+    description: |-
+      Set when the customer is set and the customer is a member of a customer group.
+               Used for product variant price selection.
+    required: false
+  country:
+    type: string
+    (builtinType): string
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+               Used for product variant price selection.
+    required: false
+  orderState:
+    type: OrderState
+    (builtinType): string
+    description: |-
+      If not given the `Open` state will be assigned by default.
+    required: false
+  shipmentState:
+    type: ShipmentState
+    (builtinType): string
+    required: false
   paymentState:
     type: PaymentState
     (builtinType): string
+    required: false
+  shippingInfo:
+    type: ShippingInfoImportDraft
+    (builtinType): object
+    description: |-
+      Set if the ShippingMethod is set.
+    required: false
+  completedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    description: |-
+      The custom fields.
+    required: false
+  inventoryMode:
+    type: InventoryMode
+    (builtinType): string
+    description: |-
+      If not given the mode `None` will be assigned by default.
+    required: false
+  taxRoundingMode:
+    type: RoundingMode
+    (builtinType): string
+    description: |-
+      If not given the tax rounding mode `HalfEven` will be assigned by default.
+    required: false
+  itemShippingAddresses:
+    type: array
+    items:
+      type: Address
+    (builtinType): array
+    description: |-
+      Contains addresses for orders with multiple shipping addresses.
+    required: false
+  store:
+    type: StoreResourceIdentifier
+    (builtinType): object
+    required: false
+  origin:
+    type: CartOrigin
+    (builtinType): string
+    description: |-
+      The default origin is `Customer`.
     required: false

@@ -3,6 +3,15 @@ displayName: Extension
 type: LoggedResource
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   createdAt:
     format: rfc3339
     type: datetime
@@ -13,34 +22,21 @@ properties:
     type: datetime
     (builtinType): datetime
     required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
-  timeoutInMs:
-    format: int16
-    type: integer
-    (builtinType): integer
+  createdBy:
+    type: CreatedBy
+    (builtinType): object
     description: |-
-      The maximum time the commercetools platform waits for a response from the extension.
-               If not present, `2000` (2 seconds) is used.
+      Present on resources created after 1/02/2019 except for events not tracked.
+    required: false
+  key:
+    type: string
+    (builtinType): string
     required: false
   destination:
     type: ExtensionDestination
@@ -52,7 +48,11 @@ properties:
       type: ExtensionTrigger
     (builtinType): array
     required: true
-  key:
-    type: string
-    (builtinType): string
+  timeoutInMs:
+    format: int16
+    type: integer
+    (builtinType): integer
+    description: |-
+      The maximum time the commercetools platform waits for a response from the extension.
+               If not present, `2000` (2 seconds) is used.
     required: false

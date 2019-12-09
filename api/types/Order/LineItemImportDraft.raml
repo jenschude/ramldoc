@@ -3,19 +3,6 @@ displayName: LineItemImportDraft
 type: object
 (builtinType): object
 properties:
-  taxRate:
-    type: TaxRate
-    (builtinType): object
-    required: false
-  quantity:
-    format: int16
-    type: number
-    (builtinType): number
-    required: true
-  shippingDetails:
-    type: ItemShippingDetailsDraft
-    (builtinType): object
-    required: false
   productId:
     type: string
     (builtinType): string
@@ -23,26 +10,31 @@ properties:
       ID of the existing product.
                You also need to specify the ID of the variant if this property is set or alternatively you can just specify SKU of the product variant.
     required: false
-  price:
-    type: PriceDraft
-    (builtinType): object
-    required: true
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    description: |-
-      The custom fields.
-    required: false
-  variant:
-    type: ProductVariantImportDraft
-    (builtinType): object
-    required: true
   name:
     type: LocalizedString
     (builtinType): object
     description: |-
       The product name.
     required: true
+  variant:
+    type: ProductVariantImportDraft
+    (builtinType): object
+    required: true
+  price:
+    type: PriceDraft
+    (builtinType): object
+    required: true
+  quantity:
+    format: int16
+    type: number
+    (builtinType): number
+    required: true
+  state:
+    type: array
+    items:
+      type: ItemState
+    (builtinType): array
+    required: false
   supplyChannel:
     discriminatorValue: channel
     type: ChannelResourceIdentifier
@@ -54,12 +46,6 @@ properties:
                The provided channel should have the
                InventorySupply role.
     required: false
-  state:
-    type: array
-    items:
-      type: ItemState
-    (builtinType): array
-    required: false
   distributionChannel:
     discriminatorValue: channel
     type: ChannelResourceIdentifier
@@ -67,4 +53,18 @@ properties:
     description: |-
       The channel is used to select a ProductPrice.
                The provided channel should have the ProductDistribution role.
+    required: false
+  taxRate:
+    type: TaxRate
+    (builtinType): object
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    description: |-
+      The custom fields.
+    required: false
+  shippingDetails:
+    type: ItemShippingDetailsDraft
+    (builtinType): object
     required: false

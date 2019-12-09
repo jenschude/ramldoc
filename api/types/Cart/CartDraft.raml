@@ -3,17 +3,129 @@ displayName: CartDraft
 type: object
 (builtinType): object
 properties:
-  country:
+  currency:
+    type: CurrencyCode
+    (builtinType): string
+    description: |-
+      A three-digit currency code as per [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
+    required: true
+  customerId:
     type: string
     (builtinType): string
     description: |-
-      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+      Id of an existing Customer.
+    required: false
+  customerEmail:
+    type: string
+    (builtinType): string
+    required: false
+  customerGroup:
+    type: CustomerGroupResourceIdentifier
+    (builtinType): object
+    description: |-
+      Will be set automatically when the `customerId` is set and the customer is a member of a customer group.
+               Can be set explicitly when no `customerId` is present.
     required: false
   anonymousId:
     type: string
     (builtinType): string
     description: |-
       Assigns the new cart to an anonymous session (the customer has not signed up/in yet).
+    required: false
+  store:
+    type: StoreResourceIdentifier
+    (builtinType): object
+    description: |-
+      Assigns the new cart to the store.
+               The store assignment can not be modified.
+    required: false
+  country:
+    type: string
+    (builtinType): string
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+    required: false
+  inventoryMode:
+    type: InventoryMode
+    (builtinType): string
+    description: |-
+      Default inventory mode is `None`.
+    required: false
+  taxMode:
+    type: TaxMode
+    (builtinType): string
+    description: |-
+      The default tax mode is `Platform`.
+    required: false
+  taxRoundingMode:
+    type: RoundingMode
+    (builtinType): string
+    description: |-
+      The default tax rounding mode is `HalfEven`.
+    required: false
+  taxCalculationMode:
+    type: TaxCalculationMode
+    (builtinType): string
+    description: |-
+      The default tax calculation mode is `LineItemLevel`.
+    required: false
+  lineItems:
+    type: array
+    items:
+      type: LineItemDraft
+    (builtinType): array
+    required: false
+  customLineItems:
+    type: array
+    items:
+      type: CustomLineItemDraft
+    (builtinType): array
+    required: false
+  shippingAddress:
+    type: Address
+    (builtinType): object
+    description: |-
+      The shipping address is used to determine the eligible shipping methods and rates as well as the tax rate of the line items.
+    required: false
+  billingAddress:
+    type: Address
+    (builtinType): object
+    required: false
+  shippingMethod:
+    type: ShippingMethodResourceIdentifier
+    (builtinType): object
+    required: false
+  externalTaxRateForShippingMethod:
+    type: ExternalTaxRateDraft
+    (builtinType): object
+    description: |-
+      An external tax rate can be set for the `shippingMethod` if the cart has the `External` TaxMode.
+    required: false
+  custom:
+    type: CustomFieldsDraft
+    (builtinType): object
+    description: |-
+      The custom fields.
+    required: false
+  locale:
+    type: string
+    (builtinType): string
+    description: |-
+      Must be one of the languages supported for this project
+    required: false
+  deleteDaysAfterLastModification:
+    format: int64
+    type: number
+    (builtinType): number
+    description: |-
+      The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
+               If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
+    required: false
+  origin:
+    type: CartOrigin
+    (builtinType): string
+    description: |-
+      The default origin is `Customer`.
     required: false
   shippingRateInput:
     type: ShippingRateInputDraft
@@ -24,86 +136,6 @@ properties:
                If CartClassification is defined, it must be ClassificationShippingRateInput.
                If CartScore is defined, it must be ScoreShippingRateInput.
                Otherwise it can not bet set.
-    required: false
-  customerGroup:
-    type: CustomerGroupResourceIdentifier
-    (builtinType): object
-    description: |-
-      Will be set automatically when the `customerId` is set and the customer is a member of a customer group.
-               Can be set explicitly when no `customerId` is present.
-    required: false
-  origin:
-    type: CartOrigin
-    (builtinType): string
-    description: |-
-      The default origin is `Customer`.
-    required: false
-  deleteDaysAfterLastModification:
-    format: int64
-    type: number
-    (builtinType): number
-    description: |-
-      The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
-               If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
-    required: false
-  custom:
-    type: CustomFieldsDraft
-    (builtinType): object
-    description: |-
-      The custom fields.
-    required: false
-  shippingMethod:
-    type: ShippingMethodResourceIdentifier
-    (builtinType): object
-    required: false
-  taxCalculationMode:
-    type: TaxCalculationMode
-    (builtinType): string
-    description: |-
-      The default tax calculation mode is `LineItemLevel`.
-    required: false
-  store:
-    type: StoreResourceIdentifier
-    (builtinType): object
-    description: |-
-      Assigns the new cart to the store.
-               The store assignment can not be modified.
-    required: false
-  locale:
-    type: string
-    (builtinType): string
-    description: |-
-      Must be one of the languages supported for this project
-    required: false
-  externalTaxRateForShippingMethod:
-    type: ExternalTaxRateDraft
-    (builtinType): object
-    description: |-
-      An external tax rate can be set for the `shippingMethod` if the cart has the `External` TaxMode.
-    required: false
-  inventoryMode:
-    type: InventoryMode
-    (builtinType): string
-    description: |-
-      Default inventory mode is `None`.
-    required: false
-  lineItems:
-    type: array
-    items:
-      type: LineItemDraft
-    (builtinType): array
-    required: false
-  taxRoundingMode:
-    type: RoundingMode
-    (builtinType): string
-    description: |-
-      The default tax rounding mode is `HalfEven`.
-    required: false
-  customLineItems:
-    type: array
-    items:
-      type: CustomLineItemDraft
-    (builtinType): array
     required: false
   itemShippingAddresses:
     type: array
@@ -116,36 +148,4 @@ properties:
                Line items will use these keys to reference the addresses under their `shippingDetails`.
                The addresses captured here are not used to determine eligible shipping methods or the applicable tax rate.
                Only the cart's `shippingAddress` is used for this.
-    required: false
-  taxMode:
-    type: TaxMode
-    (builtinType): string
-    description: |-
-      The default tax mode is `Platform`.
-    required: false
-  customerEmail:
-    type: string
-    (builtinType): string
-    required: false
-  customerId:
-    type: string
-    (builtinType): string
-    description: |-
-      Id of an existing Customer.
-    required: false
-  shippingAddress:
-    type: Address
-    (builtinType): object
-    description: |-
-      The shipping address is used to determine the eligible shipping methods and rates as well as the tax rate of the line items.
-    required: false
-  currency:
-    type: CurrencyCode
-    (builtinType): string
-    description: |-
-      A three-digit currency code as per [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217).
-    required: true
-  billingAddress:
-    type: Address
-    (builtinType): object
     required: false

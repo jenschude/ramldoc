@@ -3,6 +3,15 @@ displayName: CustomObject
 type: LoggedResource
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
   createdAt:
     format: rfc3339
     type: datetime
@@ -13,21 +22,12 @@ properties:
     type: datetime
     (builtinType): datetime
     required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  version:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    required: false
   lastModifiedBy:
     type: LastModifiedBy
+    (builtinType): object
+    required: false
+  createdBy:
+    type: CreatedBy
     (builtinType): object
     required: false
   container:
@@ -36,11 +36,11 @@ properties:
     description: |-
       A namespace to group custom objects.
     required: true
-  value:
-    type: any
-    (builtinType): any
-    required: true
   key:
     type: string
     (builtinType): string
+    required: true
+  value:
+    type: any
+    (builtinType): any
     required: true

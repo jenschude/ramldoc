@@ -3,6 +3,10 @@ displayName: CustomerToken
 type: object
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
   createdAt:
     format: rfc3339
     type: datetime
@@ -17,16 +21,12 @@ properties:
     type: string
     (builtinType): string
     required: true
-  id:
-    type: string
-    (builtinType): string
-    required: true
-  value:
-    type: string
-    (builtinType): string
-    required: true
   expiresAt:
     format: rfc3339
     type: datetime
     (builtinType): datetime
+    required: true
+  value:
+    type: string
+    (builtinType): string
     required: true

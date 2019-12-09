@@ -3,19 +3,19 @@ displayName: VariantValues
 type: object
 (builtinType): object
 properties:
-  attributes:
-    type: array
-    items:
-      type: Attribute
-    (builtinType): array
-    required: true
+  sku:
+    type: string
+    (builtinType): string
+    required: false
   prices:
     type: array
     items:
       type: PriceDraft
     (builtinType): array
     required: true
-  sku:
-    type: string
-    (builtinType): string
-    required: false
+  attributes:
+    type: array
+    items:
+      type: Attribute
+    (builtinType): array
+    required: true

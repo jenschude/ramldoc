@@ -3,18 +3,14 @@ displayName: Delivery
 type: object
 (builtinType): object
 properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
   createdAt:
     format: rfc3339
     type: datetime
     (builtinType): datetime
-    required: true
-  address:
-    type: Address
-    (builtinType): object
-    required: false
-  id:
-    type: string
-    (builtinType): string
     required: true
   items:
     type: array
@@ -31,3 +27,7 @@ properties:
       type: Parcel
     (builtinType): array
     required: true
+  address:
+    type: Address
+    (builtinType): object
+    required: false

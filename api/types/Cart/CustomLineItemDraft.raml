@@ -3,12 +3,10 @@ displayName: CustomLineItemDraft
 type: object
 (builtinType): object
 properties:
-  externalTaxRate:
-    type: ExternalTaxRateDraft
+  name:
+    type: LocalizedString
     (builtinType): object
-    description: |-
-      An external tax rate can be set if the cart has the `External` TaxMode.
-    required: false
+    required: true
   quantity:
     format: int16
     type: number
@@ -17,24 +15,8 @@ properties:
       The amount of a CustomLineItemin the cart.
                Must be a positive integer.
     required: true
-  shippingDetails:
-    type: ItemShippingDetailsDraft
-    (builtinType): object
-    description: |-
-      Container for custom line item specific address(es).
-    required: false
   money:
     type: Money
-    (builtinType): object
-    required: true
-  custom:
-    type: CustomFields
-    (builtinType): object
-    description: |-
-      The custom fields.
-    required: false
-  name:
-    type: LocalizedString
     (builtinType): object
     required: true
   slug:
@@ -46,4 +28,22 @@ properties:
     (builtinType): object
     description: |-
       The given tax category will be used to select a tax rate when a cart has the TaxMode `Platform`.
+    required: false
+  externalTaxRate:
+    type: ExternalTaxRateDraft
+    (builtinType): object
+    description: |-
+      An external tax rate can be set if the cart has the `External` TaxMode.
+    required: false
+  custom:
+    type: CustomFields
+    (builtinType): object
+    description: |-
+      The custom fields.
+    required: false
+  shippingDetails:
+    type: ItemShippingDetailsDraft
+    (builtinType): object
+    description: |-
+      Container for custom line item specific address(es).
     required: false

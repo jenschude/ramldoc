@@ -3,7 +3,39 @@ displayName: MyCustomerDraft
 type: object
 (builtinType): object
 properties:
+  email:
+    type: string
+    (builtinType): string
+    required: true
+  password:
+    type: string
+    (builtinType): string
+    required: true
+  firstName:
+    type: string
+    (builtinType): string
+    required: false
   lastName:
+    type: string
+    (builtinType): string
+    required: false
+  middleName:
+    type: string
+    (builtinType): string
+    required: false
+  title:
+    type: string
+    (builtinType): string
+    required: false
+  dateOfBirth:
+    type: date-only
+    (builtinType): date-only
+    required: false
+  companyName:
+    type: string
+    (builtinType): string
+    required: false
+  vatId:
     type: string
     (builtinType): string
     required: false
@@ -23,50 +55,6 @@ properties:
       The index of the address in the addresses array.
                The `defaultShippingAddressId` of the customer will be set to the ID of that address.
     required: false
-  stores:
-    type: array
-    items:
-      type: StoreResourceIdentifier
-    (builtinType): array
-    required: false
-  custom:
-    type: CustomFields
-    (builtinType): object
-    description: |-
-      The custom fields.
-    required: false
-  companyName:
-    type: string
-    (builtinType): string
-    required: false
-  vatId:
-    type: string
-    (builtinType): string
-    required: false
-  dateOfBirth:
-    type: date-only
-    (builtinType): date-only
-    required: false
-  locale:
-    type: string
-    (builtinType): string
-    required: false
-  title:
-    type: string
-    (builtinType): string
-    required: false
-  firstName:
-    type: string
-    (builtinType): string
-    required: false
-  password:
-    type: string
-    (builtinType): string
-    required: true
-  middleName:
-    type: string
-    (builtinType): string
-    required: false
   defaultBillingAddress:
     format: int64
     type: number
@@ -75,7 +63,19 @@ properties:
       The index of the address in the addresses array.
                The `defaultBillingAddressId` of the customer will be set to the ID of that address.
     required: false
-  email:
+  custom:
+    type: CustomFields
+    (builtinType): object
+    description: |-
+      The custom fields.
+    required: false
+  locale:
     type: string
     (builtinType): string
-    required: true
+    required: false
+  stores:
+    type: array
+    items:
+      type: StoreResourceIdentifier
+    (builtinType): array
+    required: false

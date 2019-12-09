@@ -3,6 +3,10 @@ displayName: CustomerSignInResult
 type: object
 (builtinType): object
 properties:
+  customer:
+    type: Customer
+    (builtinType): object
+    required: true
   cart:
     type: object
     (builtinType): object
@@ -10,7 +14,3 @@ properties:
       A cart that is associated to the customer.
                Empty if the customer does not have a cart yet.
     required: false
-  customer:
-    type: Customer
-    (builtinType): object
-    required: true

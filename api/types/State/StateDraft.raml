@@ -3,6 +3,22 @@ displayName: StateDraft
 type: object
 (builtinType): object
 properties:
+  key:
+    type: string
+    (builtinType): string
+    required: true
+  type:
+    type: StateTypeEnum
+    (builtinType): string
+    required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
   initial:
     type: boolean
     (builtinType): boolean
@@ -13,25 +29,9 @@ properties:
       type: StateRoleEnum
     (builtinType): array
     required: false
-  name:
-    type: LocalizedString
-    (builtinType): object
-    required: false
-  description:
-    type: LocalizedString
-    (builtinType): object
-    required: false
   transitions:
     type: array
     items:
       type: StateResourceIdentifier
     (builtinType): array
     required: false
-  type:
-    type: StateTypeEnum
-    (builtinType): string
-    required: true
-  key:
-    type: string
-    (builtinType): string
-    required: true

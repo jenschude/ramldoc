@@ -3,16 +3,6 @@ displayName: Review
 type: LoggedResource
 (builtinType): object
 properties:
-  createdAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
-  lastModifiedAt:
-    format: rfc3339
-    type: datetime
-    (builtinType): datetime
-    required: true
   id:
     type: string
     (builtinType): string
@@ -26,40 +16,51 @@ properties:
     description: |-
       The current version of the review.
     required: true
-  createdBy:
-    type: CreatedBy
-    (builtinType): object
-    description: |-
-      Present on resources created after 1/02/2019 except for events not tracked.
-    required: false
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    required: true
   lastModifiedBy:
     type: LastModifiedBy
     (builtinType): object
     description: |-
       Present on resources updated after 1/02/2019 except for events not tracked.
     required: false
+  createdBy:
+    type: CreatedBy
+    (builtinType): object
+    description: |-
+      Present on resources created after 1/02/2019 except for events not tracked.
+    required: false
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      User-specific unique identifier for the review.
+    required: false
   uniquenessValue:
     type: string
     (builtinType): string
     required: false
-  custom:
-    type: CustomFields
-    (builtinType): object
+  locale:
+    type: string
+    (builtinType): string
     required: false
-  rating:
-    format: int8
-    minimum: -100
-    maximum: 100
-    type: number
-    (builtinType): number
-    description: |-
-      Number between -100 and 100 included.
+  authorName:
+    type: string
+    (builtinType): string
     required: false
   title:
     type: string
     (builtinType): string
     required: false
-  locale:
+  text:
     type: string
     (builtinType): string
     required: false
@@ -81,23 +82,18 @@ properties:
                A review is per default used in the statistics, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
                If the role of a State is modified after the calculation of this field, the calculation is not updated.
     required: true
-  authorName:
-    type: string
-    (builtinType): string
+  rating:
+    format: int8
+    minimum: -100
+    maximum: 100
+    type: number
+    (builtinType): number
+    description: |-
+      Number between -100 and 100 included.
     required: false
   state:
     type: StateReference
     (builtinType): object
-    required: false
-  text:
-    type: string
-    (builtinType): string
-    required: false
-  key:
-    type: string
-    (builtinType): string
-    description: |-
-      User-specific unique identifier for the review.
     required: false
   customer:
     discriminatorValue: customer
@@ -105,4 +101,8 @@ properties:
     (builtinType): object
     description: |-
       The customer who created the review.
+    required: false
+  custom:
+    type: CustomFields
+    (builtinType): object
     required: false

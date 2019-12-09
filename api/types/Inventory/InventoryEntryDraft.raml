@@ -3,6 +3,25 @@ displayName: InventoryEntryDraft
 type: object
 (builtinType): object
 properties:
+  sku:
+    type: string
+    (builtinType): string
+    required: true
+  supplyChannel:
+    discriminatorValue: channel
+    type: ChannelResourceIdentifier
+    (builtinType): object
+    required: false
+  quantityOnStock:
+    format: int64
+    type: number
+    (builtinType): number
+    required: true
+  restockableInDays:
+    format: int64
+    type: number
+    (builtinType): number
+    required: false
   expectedDelivery:
     format: rfc3339
     type: datetime
@@ -14,22 +33,3 @@ properties:
     description: |-
       The custom fields.
     required: false
-  quantityOnStock:
-    format: int64
-    type: number
-    (builtinType): number
-    required: true
-  supplyChannel:
-    discriminatorValue: channel
-    type: ChannelResourceIdentifier
-    (builtinType): object
-    required: false
-  restockableInDays:
-    format: int64
-    type: number
-    (builtinType): number
-    required: false
-  sku:
-    type: string
-    (builtinType): string
-    required: true
