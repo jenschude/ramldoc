@@ -4,6 +4,10 @@ type: object
 (builtinType): object
 discriminator: typeId
 (oneOf):
+- CartDiscountResourceIdentifier
+- CartResourceIdentifier
+- CategoryResourceIdentifier
+- ChannelResourceIdentifier
 - CustomerGroupResourceIdentifier
 - CustomerResourceIdentifier
 - DiscountCodeResourceIdentifier
@@ -12,8 +16,8 @@ discriminator: typeId
 - OrderResourceIdentifier
 - PaymentResourceIdentifier
 - ProductDiscountResourceIdentifier
-- ProductTypeResourceIdentifier
 - ProductResourceIdentifier
+- ProductTypeResourceIdentifier
 - ReviewResourceIdentifier
 - ShippingMethodResourceIdentifier
 - ShoppingListResourceIdentifier
@@ -22,10 +26,6 @@ discriminator: typeId
 - TaxCategoryResourceIdentifier
 - TypeResourceIdentifier
 - ZoneResourceIdentifier
-- CartDiscountResourceIdentifier
-- CartResourceIdentifier
-- CategoryResourceIdentifier
-- ChannelResourceIdentifier
 properties:
   typeId:
     type: ReferenceTypeId

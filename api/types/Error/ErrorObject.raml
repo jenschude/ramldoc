@@ -4,6 +4,16 @@ type: object
 (builtinType): object
 discriminator: code
 (oneOf):
+- AccessDeniedError
+- ConcurrentModificationError
+- DiscountCodeNonApplicableError
+- DuplicateAttributeValueError
+- DuplicateAttributeValuesError
+- DuplicateFieldError
+- DuplicateFieldWithConflictingResourceError
+- DuplicatePriceScopeError
+- DuplicateVariantValuesError
+- EnumValueIsUsedError
 - ExtensionBadResponseError
 - ExtensionNoResponseError
 - ExtensionUpdateActionsFailedError
@@ -26,16 +36,6 @@ discriminator: code
 - RequiredFieldError
 - ResourceNotFoundError
 - ShippingMethodDoesNotMatchCartError
-- AccessDeniedError
-- ConcurrentModificationError
-- DiscountCodeNonApplicableError
-- DuplicateAttributeValueError
-- DuplicateAttributeValuesError
-- DuplicateFieldError
-- DuplicateFieldWithConflictingResourceError
-- DuplicatePriceScopeError
-- DuplicateVariantValuesError
-- EnumValueIsUsedError
 properties:
   code:
     type: string

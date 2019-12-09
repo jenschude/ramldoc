@@ -4,6 +4,24 @@ type: LoggedResource
 (builtinType): object
 discriminator: type
 (oneOf):
+- CategoryCreatedMessage
+- CategorySlugChangedMessage
+- CustomLineItemStateTransitionMessage
+- CustomerAddressAddedMessage
+- CustomerAddressChangedMessage
+- CustomerAddressRemovedMessage
+- CustomerCompanyNameSetMessage
+- CustomerCreatedMessage
+- CustomerDateOfBirthSetMessage
+- CustomerEmailChangedMessage
+- CustomerEmailVerifiedMessage
+- CustomerGroupSetMessage
+- DeliveryAddedMessage
+- DeliveryAddressSetMessage
+- DeliveryItemsUpdatedMessage
+- DeliveryRemovedMessage
+- InventoryEntryDeletedMessage
+- LineItemStateTransitionMessage
 - OrderBillingAddressSetMessage
 - OrderCreatedMessage
 - OrderCustomLineItemDiscountSetMessage
@@ -54,24 +72,6 @@ discriminator: type
 - ReviewCreatedMessage
 - ReviewRatingSetMessage
 - ReviewStateTransitionMessage
-- CategoryCreatedMessage
-- CategorySlugChangedMessage
-- CustomLineItemStateTransitionMessage
-- CustomerAddressAddedMessage
-- CustomerAddressChangedMessage
-- CustomerAddressRemovedMessage
-- CustomerCompanyNameSetMessage
-- CustomerCreatedMessage
-- CustomerDateOfBirthSetMessage
-- CustomerEmailChangedMessage
-- CustomerEmailVerifiedMessage
-- CustomerGroupSetMessage
-- DeliveryAddedMessage
-- DeliveryAddressSetMessage
-- DeliveryItemsUpdatedMessage
-- DeliveryRemovedMessage
-- InventoryEntryDeletedMessage
-- LineItemStateTransitionMessage
 properties:
   createdAt:
     type: datetime

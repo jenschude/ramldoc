@@ -4,12 +4,12 @@ type: object
 (builtinType): object
 discriminator: type
 (oneOf):
+- AzureEventGridDestination
+- AzureServiceBusDestination
 - GoogleCloudPubSubDestination
 - IronMqDestination
 - SnsDestination
 - SqsDestination
-- AzureEventGridDestination
-- AzureServiceBusDestination
 properties:
   type:
     type: string

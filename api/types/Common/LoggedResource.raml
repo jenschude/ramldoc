@@ -3,23 +3,27 @@ displayName: LoggedResource
 type: BaseResource
 (builtinType): object
 (oneOf):
+- Cart
+- CartDiscount
+- Category
+- Channel
 - CustomObject
-- CustomerGroup
 - Customer
+- CustomerGroup
 - DiscountCode
 - Extension
 - InventoryEntry
+- Message
 - MyCart
 - MyCustomer
 - MyOrder
 - MyShoppingList
-- Message
-- OrderEdit
 - Order
+- OrderEdit
 - Payment
+- Product
 - ProductDiscount
 - ProductType
-- Product
 - Review
 - ShippingMethod
 - ShoppingList
@@ -29,10 +33,6 @@ type: BaseResource
 - TaxCategory
 - Type
 - Zone
-- CartDiscount
-- Cart
-- Category
-- Channel
 properties:
   createdAt:
     type: datetime

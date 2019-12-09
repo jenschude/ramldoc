@@ -4,6 +4,24 @@ type: object
 (builtinType): object
 discriminator: type
 (oneOf):
+- CategoryCreatedMessagePayload
+- CategorySlugChangedMessagePayload
+- CustomLineItemStateTransitionMessagePayload
+- CustomerAddressAddedMessagePayload
+- CustomerAddressChangedMessagePayload
+- CustomerAddressRemovedMessagePayload
+- CustomerCompanyNameSetMessagePayload
+- CustomerCreatedMessagePayload
+- CustomerDateOfBirthSetMessagePayload
+- CustomerEmailChangedMessagePayload
+- CustomerEmailVerifiedMessagePayload
+- CustomerGroupSetMessagePayload
+- DeliveryAddedMessagePayload
+- DeliveryAddressSetMessagePayload
+- DeliveryItemsUpdatedMessagePayload
+- DeliveryRemovedMessagePayload
+- InventoryEntryDeletedMessagePayload
+- LineItemStateTransitionMessagePayload
 - OrderBillingAddressSetMessagePayload
 - OrderCreatedMessagePayload
 - OrderCustomLineItemDiscountSetMessagePayload
@@ -54,24 +72,6 @@ discriminator: type
 - ReviewCreatedMessagePayload
 - ReviewRatingSetMessagePayload
 - ReviewStateTransitionMessagePayload
-- CategoryCreatedMessagePayload
-- CategorySlugChangedMessagePayload
-- CustomLineItemStateTransitionMessagePayload
-- CustomerAddressAddedMessagePayload
-- CustomerAddressChangedMessagePayload
-- CustomerAddressRemovedMessagePayload
-- CustomerCompanyNameSetMessagePayload
-- CustomerCreatedMessagePayload
-- CustomerDateOfBirthSetMessagePayload
-- CustomerEmailChangedMessagePayload
-- CustomerEmailVerifiedMessagePayload
-- CustomerGroupSetMessagePayload
-- DeliveryAddedMessagePayload
-- DeliveryAddressSetMessagePayload
-- DeliveryItemsUpdatedMessagePayload
-- DeliveryRemovedMessagePayload
-- InventoryEntryDeletedMessagePayload
-- LineItemStateTransitionMessagePayload
 properties:
   type:
     type: string
