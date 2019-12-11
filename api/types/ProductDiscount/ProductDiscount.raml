@@ -47,7 +47,7 @@ properties:
     (builtinType): string
     description: |-
       User-specific unique identifier for a product discount.
-               Must be unique across a project.
+      Must be unique across a project.
     required: false
   description:
     type: LocalizedString
@@ -68,8 +68,8 @@ properties:
     (builtinType): string
     description: |-
       The string contains a number between 0 and 1.
-               A discount with greater sortOrder is prioritized higher than a discount with lower sortOrder.
-               A sortOrder must be unambiguous.
+      A discount with greater sortOrder is prioritized higher than a discount with lower sortOrder.
+      A sortOrder must be unambiguous.
     required: true
   isActive:
     type: boolean
@@ -84,7 +84,7 @@ properties:
     (builtinType): array
     description: |-
       The platform will generate this array from the predicate.
-               It contains the references of all the resources that are addressed in the predicate.
+      It contains the references of all the resources that are addressed in the predicate.
     required: true
   validFrom:
     format: rfc3339
@@ -92,7 +92,7 @@ properties:
     (builtinType): datetime
     description: |-
       The time from which the discount should be effective.
-               Please take Eventual Consistency into account for calculated product discount values.
+      Please take Eventual Consistency into account for calculated product discount values.
     required: false
   validUntil:
     format: rfc3339
@@ -100,5 +100,5 @@ properties:
     (builtinType): datetime
     description: |-
       The time from which the discount should be ineffective.
-               Please take Eventual Consistency into account for calculated undiscounted values.
+      Please take Eventual Consistency into account for calculated undiscounted values.
     required: false

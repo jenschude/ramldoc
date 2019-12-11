@@ -52,9 +52,9 @@ properties:
     (builtinType): string
     description: |-
       String that uniquely identifies an order.
-               It can be used to create more human-readable (in contrast to ID) identifier for the order.
-               It should be unique across a project.
-               Once it's set it cannot be changed.
+      It can be used to create more human-readable (in contrast to ID) identifier for the order.
+      It should be unique across a project.
+      Once it's set it cannot be changed.
     required: false
   customerId:
     type: string
@@ -121,14 +121,14 @@ properties:
     (builtinType): object
     description: |-
       Set when the customer is set and the customer is a member of a customer group.
-               Used for product variant price selection.
+      Used for product variant price selection.
     required: false
   country:
     type: string
     (builtinType): string
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-               Used for product variant price selection.
+      Used for product variant price selection.
     required: false
   orderState:
     type: OrderState
@@ -180,7 +180,7 @@ properties:
     (builtinType): number
     description: |-
       The sequence number of the last order message produced by changes to this order.
-               `0` means, that no messages were created yet.
+      `0` means, that no messages were created yet.
     required: true
   cart:
     discriminatorValue: cart
@@ -188,7 +188,7 @@ properties:
     (builtinType): object
     description: |-
       Set when this order was created from a cart.
-               The cart will have the state `Ordered`.
+      The cart will have the state `Ordered`.
     required: false
   custom:
     type: CustomFields

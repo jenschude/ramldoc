@@ -72,15 +72,15 @@ properties:
     (builtinType): any
     description: |-
       Identifies the target of the review.
-               Can be a Product or a Channel
+      Can be a Product or a Channel
     required: false
   includedInStatistics:
     type: boolean
     (builtinType): boolean
     description: |-
       Indicates if this review is taken into account in the ratings statistics of the target.
-               A review is per default used in the statistics, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
-               If the role of a State is modified after the calculation of this field, the calculation is not updated.
+      A review is per default used in the statistics, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
+      If the role of a State is modified after the calculation of this field, the calculation is not updated.
     required: true
   rating:
     format: int8

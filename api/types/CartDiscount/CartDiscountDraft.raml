@@ -12,8 +12,8 @@ properties:
     (builtinType): string
     description: |-
       User-specific unique identifier for a cart discount.
-               Must be unique across a project.
-               The field can be reset using the Set Key UpdateAction.
+      Must be unique across a project.
+      The field can be reset using the Set Key UpdateAction.
     required: false
   description:
     type: LocalizedString
@@ -40,15 +40,15 @@ properties:
     (builtinType): string
     description: |-
       The string must contain a number between 0 and 1.
-               A discount with greater sort order is prioritized higher than a discount with lower sort order.
-               The sort order must be unambiguous among all cart discounts.
+      A discount with greater sort order is prioritized higher than a discount with lower sort order.
+      The sort order must be unambiguous among all cart discounts.
     required: true
   isActive:
     type: boolean
     (builtinType): boolean
     description: |-
       Only active discount can be applied to the cart.
-               Defaults to `true`.
+      Defaults to `true`.
     required: false
   validFrom:
     format: rfc3339
@@ -65,14 +65,14 @@ properties:
     (builtinType): boolean
     description: |-
       States whether the discount can only be used in a connection with a DiscountCode.
-               Defaults to `false`.
+      Defaults to `false`.
     required: true
   stackingMode:
     type: StackingMode
     (builtinType): string
     description: |-
       Specifies whether the application of this discount causes the following discounts to be ignored.
-               Defaults to Stacking.
+      Defaults to Stacking.
     required: false
   custom:
     type: CustomFields

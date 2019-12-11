@@ -25,15 +25,15 @@ properties:
     (builtinType): string
     description: |-
       The identifier that is used by the interface that manages the payment (usually the PSP).
-               Cannot be changed once it has been set.
-               The combination of this ID and the PaymentMethodInfo `paymentInterface` must be unique.
+      Cannot be changed once it has been set.
+      The combination of this ID and the PaymentMethodInfo `paymentInterface` must be unique.
     required: false
   amountPlanned:
     type: Money
     (builtinType): object
     description: |-
       How much money this payment intends to receive from the customer.
-               The value usually matches the cart or order gross total.
+      The value usually matches the cart or order gross total.
     required: true
   amountAuthorized:
     type: Money
@@ -74,9 +74,9 @@ properties:
     (builtinType): array
     description: |-
       Interface interactions can be requests send to the PSP, responses received from the PSP or notifications received from the PSP.
-               Some interactions may result in a transaction.
-               If so, the `interactionId` in the Transaction should be set to match the ID of the PSP for the interaction.
-               Interactions are managed by the PSP integration and are usually neither written nor read by the user facing frontends or other services.
+      Some interactions may result in a transaction.
+      If so, the `interactionId` in the Transaction should be set to match the ID of the PSP for the interaction.
+      Interactions are managed by the PSP integration and are usually neither written nor read by the user facing frontends or other services.
     required: false
   custom:
     type: CustomFieldsDraft
@@ -87,5 +87,5 @@ properties:
     (builtinType): string
     description: |-
       User-specific unique identifier for the payment (max.
-               256 characters).
+      256 characters).
     required: false

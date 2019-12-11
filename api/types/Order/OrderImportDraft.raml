@@ -8,8 +8,8 @@ properties:
     (builtinType): string
     description: |-
       String that unique identifies an order.
-               It can be used to create more human-readable (in contrast to ID) identifier for the order.
-               It should be unique within a project.
+      It can be used to create more human-readable (in contrast to ID) identifier for the order.
+      It should be unique within a project.
     required: false
   customerId:
     type: string
@@ -48,7 +48,7 @@ properties:
     (builtinType): object
     description: |-
       Order Import does not support calculation of taxes.
-               When setting the draft the taxedPrice is to be provided.
+      When setting the draft the taxedPrice is to be provided.
     required: false
   shippingAddress:
     type: Address
@@ -64,14 +64,14 @@ properties:
     (builtinType): object
     description: |-
       Set when the customer is set and the customer is a member of a customer group.
-               Used for product variant price selection.
+      Used for product variant price selection.
     required: false
   country:
     type: string
     (builtinType): string
     description: |-
       A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-               Used for product variant price selection.
+      Used for product variant price selection.
     required: false
   orderState:
     type: OrderState

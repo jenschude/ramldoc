@@ -8,8 +8,8 @@ properties:
     (builtinType): string
     description: |-
       The ID is always set if the tax rate is part of a TaxCategory.
-               The external tax rates in a
-               Cart do not contain an `id`.
+      The external tax rates in a
+      Cart do not contain an `id`.
     required: false
   name:
     type: string
@@ -23,7 +23,7 @@ properties:
     (builtinType): number
     description: |-
       Percentage in the range of [0..1].
-               The sum of the amounts of all `subRates`, if there are any.
+      The sum of the amounts of all `subRates`, if there are any.
     required: true
   includedInPrice:
     type: boolean
@@ -49,6 +49,6 @@ properties:
     (builtinType): array
     description: |-
       For countries (e.g.
-               the US) where the total tax is a combination of multiple taxes (e.g.
-               state and local taxes).
+      the US) where the total tax is a combination of multiple taxes (e.g.
+      state and local taxes).
     required: false

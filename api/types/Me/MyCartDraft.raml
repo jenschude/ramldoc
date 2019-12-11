@@ -66,7 +66,7 @@ properties:
     (builtinType): number
     description: |-
       The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
-               If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
+      If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
     required: false
   itemShippingAddresses:
     type: array
@@ -75,5 +75,5 @@ properties:
     (builtinType): array
     description: |-
       Contains addresses for orders with multiple shipping addresses.
-               Each address must contain a key which is unique in this cart.
+      Each address must contain a key which is unique in this cart.
     required: false

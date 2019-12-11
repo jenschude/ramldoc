@@ -24,7 +24,7 @@ properties:
     (builtinType): object
     description: |-
       Will be set automatically when the `customerId` is set and the customer is a member of a customer group.
-               Can be set explicitly when no `customerId` is present.
+      Can be set explicitly when no `customerId` is present.
     required: false
   anonymousId:
     type: string
@@ -37,7 +37,7 @@ properties:
     (builtinType): object
     description: |-
       Assigns the new cart to the store.
-               The store assignment can not be modified.
+      The store assignment can not be modified.
     required: false
   country:
     type: string
@@ -119,7 +119,7 @@ properties:
     (builtinType): number
     description: |-
       The cart will be deleted automatically if it hasn't been modified for the specified amount of days and it is in the `Active` CartState.
-               If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
+      If a ChangeSubscription for carts exists, a `ResourceDeleted` notification will be sent.
     required: false
   origin:
     type: CartOrigin
@@ -132,10 +132,10 @@ properties:
     (builtinType): object
     description: |-
       The shippingRateInput is used as an input to select a ShippingRatePriceTier.
-               Based on the definition of ShippingRateInputType.
-               If CartClassification is defined, it must be ClassificationShippingRateInput.
-               If CartScore is defined, it must be ScoreShippingRateInput.
-               Otherwise it can not bet set.
+      Based on the definition of ShippingRateInputType.
+      If CartClassification is defined, it must be ClassificationShippingRateInput.
+      If CartScore is defined, it must be ScoreShippingRateInput.
+      Otherwise it can not bet set.
     required: false
   itemShippingAddresses:
     type: array
@@ -144,8 +144,8 @@ properties:
     (builtinType): array
     description: |-
       Contains addresses for carts with multiple shipping addresses.
-               Each address must contain a key which is unique in this cart.
-               Line items will use these keys to reference the addresses under their `shippingDetails`.
-               The addresses captured here are not used to determine eligible shipping methods or the applicable tax rate.
-               Only the cart's `shippingAddress` is used for this.
+      Each address must contain a key which is unique in this cart.
+      Line items will use these keys to reference the addresses under their `shippingDetails`.
+      The addresses captured here are not used to determine eligible shipping methods or the applicable tax rate.
+      Only the cart's `shippingAddress` is used for this.
     required: false

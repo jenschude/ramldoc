@@ -9,7 +9,7 @@ properties:
     (builtinType): object
     description: |-
       A predefined product type assigned to the product.
-               All products must have a product type.
+      All products must have a product type.
     required: true
   name:
     type: LocalizedString
@@ -20,9 +20,9 @@ properties:
     (builtinType): object
     description: |-
       Human-readable identifiers usually used as deep-link URLs for the product.
-               A slug must be unique across a project, but a product can have the same slug for different languages.
-               Slugs have a maximum size of 256.
-               Valid characters are: alphabetic characters (`A-Z, a-z`), numeric characters (`0-9`), underscores (`_`) and hyphens (`-`).
+      A slug must be unique across a project, but a product can have the same slug for different languages.
+      Slugs have a maximum size of 256.
+      Valid characters are: alphabetic characters (`A-Z, a-z`), numeric characters (`0-9`), underscores (`_`) and hyphens (`-`).
     required: true
   key:
     type: string
@@ -63,7 +63,7 @@ properties:
     (builtinType): object
     description: |-
       The master product variant.
-               Required if the `variants` array has product variants.
+      Required if the `variants` array has product variants.
     required: false
   variants:
     type: array

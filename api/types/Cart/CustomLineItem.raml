@@ -20,7 +20,7 @@ properties:
     (builtinType): object
     description: |-
       The cost to add to the cart.
-               The amount can be negative.
+      The amount can be negative.
     required: true
   taxedPrice:
     type: TaxedItemPrice
@@ -33,9 +33,9 @@ properties:
     (builtinType): object
     description: |-
       The total price of this custom line item.
-               If custom line item is discounted, then the `totalPrice` would be the discounted custom line item price multiplied by `quantity`.
-               Otherwise a total price is just a `money` multiplied by the `quantity`.
-               `totalPrice` may or may not include the taxes: it depends on the taxRate.includedInPrice property.
+      If custom line item is discounted, then the `totalPrice` would be the discounted custom line item price multiplied by `quantity`.
+      Otherwise a total price is just a `money` multiplied by the `quantity`.
+      `totalPrice` may or may not include the taxes: it depends on the taxRate.includedInPrice property.
     required: true
   slug:
     type: string
@@ -49,7 +49,7 @@ properties:
     (builtinType): number
     description: |-
       The amount of a CustomLineItem in the cart.
-               Must be a positive integer.
+      Must be a positive integer.
     required: true
   state:
     type: array
@@ -66,7 +66,7 @@ properties:
     (builtinType): object
     description: |-
       Will be set automatically in the `Platform` TaxMode once the shipping address is set is set.
-               For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
+      For the `External` tax mode the tax rate has to be set explicitly with the ExternalTaxRateDraft.
     required: false
   discountedPricePerQuantity:
     type: array
@@ -83,6 +83,6 @@ properties:
     (builtinType): object
     description: |-
       Container for custom line item specific address(es).
-               CustomLineItem fields that can be used in query predicates: `slug`, `name`, `quantity`,
-               `money`, `state`, `discountedPricePerQuantity`.
+      CustomLineItem fields that can be used in query predicates: `slug`, `name`, `quantity`,
+      `money`, `state`, `discountedPricePerQuantity`.
     required: false

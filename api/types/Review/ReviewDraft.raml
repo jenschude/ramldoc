@@ -14,7 +14,7 @@ properties:
     (builtinType): string
     description: |-
       If set, this value must be unique among reviews.
-               For example, if you want to have only one review per customer and per product, you can set the value to `customer's id` + `product's id`.
+      For example, if you want to have only one review per customer and per product, you can set the value to `customer's id` + `product's id`.
     required: false
   locale:
     type: string
@@ -40,7 +40,7 @@ properties:
     (builtinType): any
     description: |-
       Identifies the target of the review.
-               Can be a Product or a Channel
+      Can be a Product or a Channel
     required: false
   state:
     type: StateResourceIdentifier
@@ -54,9 +54,9 @@ properties:
     (builtinType): number
     description: |-
       Number between -100 and 100 included.
-               Rating of the targeted object, like a product.
-               This rating can represent the number of stars, or a percentage, or a like (+1)/dislike (-1)
-               A rating is used in the ratings statistics of the targeted object, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
+      Rating of the targeted object, like a product.
+      This rating can represent the number of stars, or a percentage, or a like (+1)/dislike (-1)
+      A rating is used in the ratings statistics of the targeted object, unless the review is in a state that does not have the role `ReviewIncludedInStatistics`.
     required: false
   customer:
     discriminatorValue: customer

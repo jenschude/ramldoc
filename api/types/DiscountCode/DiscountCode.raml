@@ -49,8 +49,8 @@ properties:
     (builtinType): string
     description: |-
       Unique identifier of this discount code.
-               This value is added to the cart
-               to enable the related cart discounts in the cart.
+      This value is added to the cart
+      to enable the related cart discounts in the cart.
     required: true
   cartDiscounts:
     type: array
@@ -77,7 +77,7 @@ properties:
     (builtinType): array
     description: |-
       The platform will generate this array from the cart predicate.
-               It contains the references of all the resources that are addressed in the predicate.
+      It contains the references of all the resources that are addressed in the predicate.
     required: true
   maxApplications:
     format: int64
@@ -111,7 +111,7 @@ properties:
     (builtinType): datetime
     description: |-
       The time from which the discount can be applied on a cart.
-               Before that time the code is invalid.
+      Before that time the code is invalid.
     required: false
   validUntil:
     format: rfc3339
@@ -119,5 +119,5 @@ properties:
     (builtinType): datetime
     description: |-
       The time until the discount can be applied on a cart.
-               After that time the code is invalid.
+      After that time the code is invalid.
     required: false
