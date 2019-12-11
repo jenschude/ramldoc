@@ -4,12 +4,12 @@ type: object
 (builtinType): object
 properties:
   price:
-    discriminator: type
+    discriminator: "type"
     type: TypedMoney
     (builtinType): object
     required: true
   freeAbove:
-    discriminator: type
+    discriminator: "type"
     type: TypedMoney
     (builtinType): object
     description: |-

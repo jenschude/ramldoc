@@ -35,7 +35,7 @@ properties:
       Present on resources created after 1/02/2019 except for events not tracked.
     required: false
   customer:
-    discriminatorValue: customer
+    discriminatorValue: "customer"
     type: CustomerReference
     (builtinType): object
     description: |-
@@ -60,7 +60,7 @@ properties:
       The combination of this ID and the PaymentMethodInfo `paymentInterface` must be unique.
     required: false
   amountPlanned:
-    discriminator: type
+    discriminator: "type"
     type: TypedMoney
     (builtinType): object
     description: |-

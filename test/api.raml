@@ -1,0 +1,67 @@
+#%RAML 1.0
+---
+title: Commercetools Test API Spec
+annotationTypes:
+  resourcePathUri:
+    type: string
+    allowedTargets: Method
+  builtinType:
+    type: string
+    allowedTargets: TypeDeclaration
+  oneOf:
+    type: array
+    items: string
+    allowedTargets: TypeDeclaration
+securitySchemes:
+  oauth_2_0: !include oauth2.raml
+securedBy:
+- oauth_2_0
+types:
+  AnnotationsTestType: !include types/AnnotationsTestType.raml
+  AnyPropertiesType: !include types/AnyPropertiesType.raml
+  AnyTestType: !include types/AnyTestType.raml
+  ArrayTestType: !include types/ArrayTestType.raml
+  BooleanTestType: !include types/BooleanTestType.raml
+  ChangeSomePropertyOnExampleResource: !include types/ChangeSomePropertyOnExampleResource.raml
+  ConstantLikeType: !include types/ConstantLikeType.raml
+  DateTestType: !include types/DateTestType.raml
+  DoSomeThingOnExampleResource: !include types/DoSomeThingOnExampleResource.raml
+  EnumPropertiesType: !include types/EnumPropertiesType.raml
+  EnumTest: !include types/EnumTest.raml
+  EnumWithDescriptionExample: !include types/EnumWithDescriptionExample.raml
+  ExampleResourceUpdate: !include types/ExampleResourceUpdate.raml
+  ExampleResourceUpdateAction: !include types/ExampleResourceUpdateAction.raml
+  ExampleTargetType: !include types/ExampleTargetType.raml
+  ExampleTargetTypeKeyReference: !include types/ExampleTargetTypeKeyReference.raml
+  ExampleTargetTypePointer: !include types/ExampleTargetTypePointer.raml
+  ExampleTargetTypeReference: !include types/ExampleTargetTypeReference.raml
+  ExampleTargetTypeResourceIdentifier: !include types/ExampleTargetTypeResourceIdentifier.raml
+  ExamplesTestType: !include types/ExamplesTestType.raml
+  FloatTestType: !include types/FloatTestType.raml
+  ImportFooForSecondPropertyToUpdateOnExampleResource: !include types/ImportFooForSecondPropertyToUpdateOnExampleResource.raml
+  IntegerTestType: !include types/IntegerTestType.raml
+  KeyReference: !include types/KeyReference.raml
+  NumberTestType: !include types/NumberTestType.raml
+  ObjectTestType: !include types/ObjectTestType.raml
+  ObjectTestTypeDraft: !include types/ObjectTestTypeDraft.raml
+  OptionalPropertyTestType: !include types/OptionalPropertyTestType.raml
+  OutOfOrderPropertiesTestType: !include types/OutOfOrderPropertiesTestType.raml
+  Reference: !include types/Reference.raml
+  ReferenceTypeId: !include types/ReferenceTypeId.raml
+  ReferencesTestType: !include types/ReferencesTestType.raml
+  RegexPropertiesType: !include types/RegexPropertiesType.raml
+  ResourceIdentifier: !include types/ResourceIdentifier.raml
+  SetOfEnumTestType: !include types/SetOfEnumTestType.raml
+  SingleExampleTestType: !include types/SingleExampleTestType.raml
+  SingleFullExampleTestType: !include types/SingleFullExampleTestType.raml
+  StringTestType: !include types/StringTestType.raml
+  UnionLikeSubType1: !include types/UnionLikeSubType1.raml
+  UnionLikeSubType2: !include types/UnionLikeSubType2.raml
+  UnionLikeType: !include types/UnionLikeType.raml
+  
+/{projectKey}: !include resources/ByProjectKey.raml
+/{projectKey}/resource: !include resources/ByProjectKeyResource.raml
+/{projectKey}/resource/artificially-complex/path/uri-parameter-one={uriParameterOne}/{uriParameterTwo}: !include resources/ByProjectKeyResourceArtificiallyComplexPathUriParameterOneByUriParameterOneByUriParameterTwo.raml
+/{projectKey}/resource/key={key}: !include resources/ByProjectKeyResourceKeyByKey.raml
+/{projectKey}/resource/searchApiPattern: !include resources/ByProjectKeyResourceSearchApiPattern.raml
+/{projectKey}/resource/{id}: !include resources/ByProjectKeyResourceById.raml
