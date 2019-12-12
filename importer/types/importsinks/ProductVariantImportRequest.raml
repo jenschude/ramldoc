@@ -1,0 +1,20 @@
+#%RAML 1.0 DataType
+displayName: ProductVariantImportRequest
+type: ImportRequest
+(builtinType): object
+discriminatorValue: product-variant
+properties:
+  type:
+    type: ResourceType
+    (builtinType): string
+    enum:
+    - product-variant
+    required: true
+  resources:
+    type: array
+    items:
+      type: ProductVariantImport
+    (builtinType): array
+    description: |-
+      The individual product variants to import.
+    required: true

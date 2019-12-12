@@ -1,0 +1,17 @@
+#%RAML 1.0 DataType
+displayName: ProductVariantPatch
+type: object
+(builtinType): object
+description: |-
+  This type allows partial updates of already existing product variants.
+properties:
+  productVariant:
+    type: ImportReference
+    (builtinType): object
+    description: |-
+      The product variant to which this patch is applied.
+    required: true
+  attributes:
+    type: Attributes
+    (builtinType): object
+    required: false

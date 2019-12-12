@@ -1,0 +1,29 @@
+#%RAML 1.0 DataType
+displayName: Asset
+type: object
+(builtinType): object
+properties:
+  id:
+    type: string
+    (builtinType): string
+    required: true
+  sources:
+    type: array
+    items:
+      type: AssetSource
+    (builtinType): array
+    required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  tags:
+    type: array
+    items:
+      type: string
+    (builtinType): array
+    required: false

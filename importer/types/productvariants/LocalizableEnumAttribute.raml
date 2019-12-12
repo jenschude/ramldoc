@@ -1,0 +1,16 @@
+#%RAML 1.0 DataType
+displayName: LocalizableEnumAttribute
+type: Attribute
+(builtinType): object
+discriminatorValue: lenum
+properties:
+  type:
+    type: string
+    (builtinType): string
+    enum:
+    - lenum
+    required: true
+  value:
+    type: LocalizedEnumValue
+    (builtinType): object
+    required: true

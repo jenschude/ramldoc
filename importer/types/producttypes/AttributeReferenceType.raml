@@ -1,0 +1,16 @@
+#%RAML 1.0 DataType
+displayName: AttributeReferenceType
+type: AttributeType
+(builtinType): object
+discriminatorValue: reference
+properties:
+  name:
+    type: string
+    (builtinType): string
+    enum:
+    - reference
+    required: true
+  referenceTypeId:
+    type: ResourceType
+    (builtinType): string
+    required: true

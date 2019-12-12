@@ -1,0 +1,16 @@
+#%RAML 1.0 DataType
+displayName: BooleanAttribute
+type: Attribute
+(builtinType): object
+discriminatorValue: boolean
+properties:
+  type:
+    type: string
+    (builtinType): string
+    enum:
+    - boolean
+    required: true
+  value:
+    type: boolean
+    (builtinType): boolean
+    required: true

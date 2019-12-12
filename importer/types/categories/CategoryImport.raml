@@ -1,0 +1,53 @@
+#%RAML 1.0 DataType
+displayName: CategoryImport
+type: ImportResource
+(builtinType): object
+properties:
+  key:
+    type: string
+    (builtinType): string
+    required: true
+  name:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  slug:
+    type: LocalizedString
+    (builtinType): object
+    required: true
+  description:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  parent:
+    type: ImportReference
+    (builtinType): object
+    description: |-
+      An import reference references a resource by its key.
+    required: false
+  orderHint:
+    type: string
+    (builtinType): string
+    required: false
+  externalId:
+    type: string
+    (builtinType): string
+    required: false
+  metaTitle:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  metaDescription:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  metaKeywords:
+    type: LocalizedString
+    (builtinType): object
+    required: false
+  assets:
+    type: array
+    items:
+      type: Asset
+    (builtinType): array
+    required: false

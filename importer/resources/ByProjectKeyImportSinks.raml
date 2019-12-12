@@ -1,0 +1,26 @@
+#ByProjectKeyImportSinks
+(resourcePathUri): /{projectKey}/import-sinks
+
+uriParameters:
+  projectKey:
+    type: string
+    (builtinType): string
+    description: |-
+      The CTP project key.
+post:
+  description: |-
+    Creates a new import sink.
+  body:
+    application/json:
+      type: ImportSinkDraft
+      (builtinType): object
+      description: |-
+        This type represents the read model of an ImportSink.
+  responses:
+    201:
+      body:
+        application/json:
+          type: ImportSink
+          (builtinType): object
+          description: |-
+            This type represents an import sink.

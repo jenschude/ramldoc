@@ -1,0 +1,51 @@
+#%RAML 1.0 DataType
+displayName: ImportSink
+type: object
+(builtinType): object
+examples:
+  minimal: !include ../../examples/importsinks/ImportSink-minimal.json
+  with-skip-predicate: !include ../../examples/importsinks/ImportSink-with-skip-predicate.json
+description: |-
+  This type represents an import sink.
+properties:
+  key:
+    type: string
+    (builtinType): string
+    description: |-
+      The key of import sink.
+    required: true
+  resourceType:
+    type: ResourceType
+    (builtinType): string
+    description: |-
+      The type of the import resource sent to this import sink.
+    required: true
+  version:
+    format: int64
+    type: number
+    (builtinType): number
+    description: |-
+      The version of this resource.
+    required: true
+  skipPredicate:
+    type: Predicate
+    (builtinType): object
+    description: |-
+      A predicate allows to check the current state of a CTP resource. And can be used to detect if an import should
+      be performed or should be skipped. And this abstract type allows us to support different syntaxes for our predicates
+      without any breaking changes to our api.
+    required: false
+  createdAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    description: |-
+      The creation time of this import sink.
+    required: true
+  lastModifiedAt:
+    format: rfc3339
+    type: datetime
+    (builtinType): datetime
+    description: |-
+      The last modification time of this import sink.
+    required: true

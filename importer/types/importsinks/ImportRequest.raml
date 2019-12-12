@@ -1,0 +1,19 @@
+#%RAML 1.0 DataType
+displayName: ImportRequest
+type: object
+(builtinType): object
+discriminator: type
+(oneOf):
+- CategoryImportRequest
+- PriceImportRequest
+- ProductImportRequest
+- ProductTypeImportRequest
+- ProductVariantImportRequest
+- ProductVariantPatchRequest
+description: |-
+  Abstract base type for requesting the import of items.
+properties:
+  type:
+    type: ResourceType
+    (builtinType): string
+    required: true

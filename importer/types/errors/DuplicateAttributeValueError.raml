@@ -1,0 +1,21 @@
+#%RAML 1.0 DataType
+displayName: DuplicateAttributeValueError
+type: ErrorObject
+(builtinType): object
+discriminatorValue: DuplicateAttributeValue
+properties:
+  code:
+    type: string
+    (builtinType): string
+    enum:
+    - DuplicateAttributeValue
+    required: true
+  attribute:
+    type: Attribute
+    (builtinType): object
+    description: |-
+      This abstract type is the base for specific attribute types. The concrete type is derived
+      from the type discriminator.
+      An attribute matches an attribute definition of a CTP product type by name.
+      The value can have different types, but must match the type of the matching attribute defintion.
+    required: true

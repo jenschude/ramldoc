@@ -1,0 +1,41 @@
+#%RAML 1.0 DataType
+displayName: ProductVariantImport
+type: ImportResource
+(builtinType): object
+properties:
+  key:
+    type: string
+    (builtinType): string
+    required: true
+  sku:
+    type: string
+    (builtinType): string
+    required: false
+  isMasterVariant:
+    type: boolean
+    (builtinType): boolean
+    required: true
+  attributes:
+    type: array
+    items:
+      type: Attribute
+    (builtinType): array
+    required: false
+  images:
+    type: array
+    items:
+      type: Image
+    (builtinType): array
+    required: false
+  assets:
+    type: array
+    items:
+      type: Asset
+    (builtinType): array
+    required: false
+  product:
+    type: ImportReference
+    (builtinType): object
+    description: |-
+      The product in which this product variant is contained.
+    required: true

@@ -1,0 +1,32 @@
+#%RAML 1.0 DataType
+displayName: ErrorObject
+type: object
+(builtinType): object
+discriminator: code
+(oneOf):
+- AccessDeniedError
+- ConcurrentModificationError
+- DuplicateAttributeValueError
+- DuplicateAttributeValuesError
+- DuplicateFieldError
+- DuplicateVariantValuesError
+- InsufficientScopeError
+- InvalidCredentialsError
+- InvalidFieldError
+- InvalidInput
+- InvalidStateTransitionError
+- InvalidTokenError
+- RequiredFieldError
+- ResourceCreationError
+- ResourceDeletionError
+- ResourceNotFoundError
+- ResourceUpdateError
+properties:
+  code:
+    type: string
+    (builtinType): string
+    required: true
+  message:
+    type: string
+    (builtinType): string
+    required: true

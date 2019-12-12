@@ -1,0 +1,26 @@
+#ByProjectKeyImportSinksByImportSinkKeyItemsByResourceKey
+(resourcePathUri): /{projectKey}/import-sinks/{importSinkKey}/items/{resourceKey}
+
+uriParameters:
+  projectKey:
+    type: string
+    (builtinType): string
+    description: |-
+      The CTP project key.
+  importSinkKey:
+    type: string
+    (builtinType): string
+  resourceKey:
+    type: string
+    (builtinType): string
+get:
+  description: |-
+    Retrieves inidividual import items for the given resource and import sink.
+  responses:
+    200:
+      body:
+        application/json:
+          type: ImportItem
+          (builtinType): object
+          description: |-
+            This type represents an import item.

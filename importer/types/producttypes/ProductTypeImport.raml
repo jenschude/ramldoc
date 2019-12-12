@@ -1,0 +1,23 @@
+#%RAML 1.0 DataType
+displayName: ProductTypeImport
+type: ImportResource
+(builtinType): object
+properties:
+  key:
+    type: string
+    (builtinType): string
+    required: true
+  name:
+    type: string
+    (builtinType): string
+    required: true
+  description:
+    type: string
+    (builtinType): string
+    required: true
+  attributes:
+    type: array
+    items:
+      type: AttributeDefinition
+    (builtinType): array
+    required: false

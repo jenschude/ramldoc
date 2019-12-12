@@ -1,0 +1,13 @@
+#%RAML 1.0 DataType
+displayName: ImportRequestState
+type: object
+(builtinType): object
+description: |-
+  Allows to retrieve the state of an ImportRequest.
+properties:
+  items:
+    type: array
+    items:
+      type: ImportItem
+    (builtinType): array
+    required: true

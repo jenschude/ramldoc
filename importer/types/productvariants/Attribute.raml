@@ -1,0 +1,34 @@
+#%RAML 1.0 DataType
+displayName: Attribute
+type: object
+(builtinType): object
+discriminator: type
+(oneOf):
+- AnyAttribute
+- BooleanAttribute
+- DateAttribute
+- DateTimeAttribute
+- EnumAttribute
+- LocalizableEnumAttribute
+- LocalizableTextAttribute
+- MoneyAttribute
+- NumberAttribute
+- TextAttribute
+- TimeAttribute
+description: |-
+  This abstract type is the base for specific attribute types. The concrete type is derived
+  from the type discriminator.
+  An attribute matches an attribute definition of a CTP product type by name.
+  The value can have different types, but must match the type of the matching attribute defintion.
+properties:
+  name:
+    type: string
+    (builtinType): string
+    description: |-
+      For now we reuse this type in two different context. And that's why the name is required when used in the full import.
+      And why the name isn't required when used in patch.
+    required: false
+  type:
+    type: string
+    (builtinType): string
+    required: true

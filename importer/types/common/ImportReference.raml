@@ -1,0 +1,15 @@
+#%RAML 1.0 DataType
+displayName: ImportReference
+type: object
+(builtinType): object
+description: |-
+  An import reference references a resource by its key.
+properties:
+  key:
+    type: string
+    (builtinType): string
+    required: true
+  typeId:
+    type: ResourceType
+    (builtinType): string
+    required: true

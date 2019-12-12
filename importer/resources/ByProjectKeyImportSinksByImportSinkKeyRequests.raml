@@ -1,0 +1,29 @@
+#ByProjectKeyImportSinksByImportSinkKeyRequests
+(resourcePathUri): /{projectKey}/import-sinks/{importSinkKey}/requests
+
+uriParameters:
+  projectKey:
+    type: string
+    (builtinType): string
+    description: |-
+      The CTP project key.
+  importSinkKey:
+    type: string
+    (builtinType): string
+post:
+  description: |-
+    Creates a new import request.
+  body:
+    application/json:
+      type: ImportRequest
+      (builtinType): object
+      description: |-
+        Abstract base type for requesting the import of items.
+  responses:
+    201:
+      body:
+        application/json:
+          type: ImportRequestState
+          (builtinType): object
+          description: |-
+            Allows to retrieve the state of an ImportRequest.

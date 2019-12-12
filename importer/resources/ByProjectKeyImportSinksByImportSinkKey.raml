@@ -1,0 +1,51 @@
+#ByProjectKeyImportSinksByImportSinkKey
+(resourcePathUri): /{projectKey}/import-sinks/{importSinkKey}
+
+uriParameters:
+  projectKey:
+    type: string
+    (builtinType): string
+    description: |-
+      The CTP project key.
+  importSinkKey:
+    type: string
+    (builtinType): string
+put:
+  description: |-
+    Updates the import sink given by the key.
+  body:
+    application/json:
+      type: ImportSinkDraft
+      (builtinType): object
+      description: |-
+        This type represents the read model of an ImportSink.
+  responses:
+    200:
+      body:
+        application/json:
+          type: ImportSink
+          (builtinType): object
+          description: |-
+            This type represents an import sink.
+get:
+  description: |-
+    Retrieves the import sink given by the key.
+  responses:
+    200:
+      body:
+        application/json:
+          type: ImportSink
+          (builtinType): object
+          description: |-
+            This type represents an import sink.
+delete:
+  description: |-
+    Deletes the import sink given by the key.
+  responses:
+    200:
+      body:
+        application/json:
+          type: ImportSink
+          (builtinType): object
+          description: |-
+            This type represents an import sink.

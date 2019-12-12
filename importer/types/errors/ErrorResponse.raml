@@ -1,0 +1,27 @@
+#%RAML 1.0 DataType
+displayName: ErrorResponse
+type: object
+(builtinType): object
+properties:
+  statusCode:
+    type: integer
+    (builtinType): integer
+    required: true
+  message:
+    type: string
+    (builtinType): string
+    required: true
+  error:
+    type: string
+    (builtinType): string
+    required: false
+  error_description:
+    type: string
+    (builtinType): string
+    required: false
+  errors:
+    type: array
+    items:
+      type: ErrorObject
+    (builtinType): array
+    required: false

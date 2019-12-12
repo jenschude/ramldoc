@@ -1,0 +1,45 @@
+#%RAML 1.0 DataType
+displayName: PriceImport
+type: ImportResource
+(builtinType): object
+properties:
+  key:
+    type: string
+    (builtinType): string
+    required: true
+  value:
+    type: Money
+    (builtinType): object
+    required: true
+  country:
+    type: CountryCode
+    (builtinType): string
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+    required: false
+  validFrom:
+    type: datetime
+    (builtinType): datetime
+    required: false
+  validUntil:
+    type: datetime
+    (builtinType): datetime
+    required: false
+  customerGroup:
+    type: ImportReference
+    (builtinType): object
+    description: |-
+      An import reference references a resource by its key.
+    required: false
+  channel:
+    type: ImportReference
+    (builtinType): object
+    description: |-
+      An import reference references a resource by its key.
+    required: false
+  productVariant:
+    type: ImportReference
+    (builtinType): object
+    description: |-
+      The product variant in which this price is contained.
+    required: true
