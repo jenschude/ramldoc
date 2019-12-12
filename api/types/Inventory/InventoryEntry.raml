@@ -12,8 +12,8 @@ properties:
     required: true
   version:
     format: int64
-    type: number
-    (builtinType): number
+    type: integer
+    (builtinType): integer
     required: true
   createdAt:
     format: rfc3339
@@ -50,24 +50,24 @@ properties:
     required: false
   quantityOnStock:
     format: int64
-    type: number
-    (builtinType): number
+    type: integer
+    (builtinType): integer
     description: |-
       Overall amount of stock.
       (available + reserved)
     required: true
   availableQuantity:
     format: int64
-    type: number
-    (builtinType): number
+    type: integer
+    (builtinType): integer
     description: |-
       Available amount of stock.
       (available means: `quantityOnStock` - reserved quantity)
     required: true
   restockableInDays:
     format: int64
-    type: number
-    (builtinType): number
+    type: integer
+    (builtinType): integer
     description: |-
       The time period in days, that tells how often this inventory entry is restocked.
     required: false

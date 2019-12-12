@@ -12,8 +12,8 @@ properties:
     required: true
   version:
     format: int64
-    type: number
-    (builtinType): number
+    type: integer
+    (builtinType): integer
     required: true
   createdAt:
     format: rfc3339
@@ -82,15 +82,15 @@ properties:
     required: true
   maxApplications:
     format: int64
-    type: number
-    (builtinType): number
+    type: integer
+    (builtinType): integer
     description: |-
       The discount code can only be applied `maxApplications` times.
     required: false
   maxApplicationsPerCustomer:
     format: int64
-    type: number
-    (builtinType): number
+    type: integer
+    (builtinType): integer
     description: |-
       The discount code can only be applied `maxApplicationsPerCustomer` times per customer.
     required: false

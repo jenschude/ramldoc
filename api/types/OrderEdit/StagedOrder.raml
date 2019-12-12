@@ -12,8 +12,8 @@ properties:
     required: true
   version:
     format: int64
-    type: number
-    (builtinType): number
+    type: integer
+    (builtinType): integer
     description: |-
       The current version of the order.
     required: true
@@ -175,8 +175,8 @@ properties:
     required: false
   lastMessageSequenceNumber:
     format: int64
-    type: number
-    (builtinType): number
+    type: integer
+    (builtinType): integer
     description: |-
       The sequence number of the last order message produced by changes to this order.
       `0` means, that no messages were created yet.
