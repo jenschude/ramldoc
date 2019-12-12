@@ -12,6 +12,11 @@ annotationTypes:
     type: array
     items: string
     allowedTargets: TypeDeclaration
+  ReferenceType:
+     type: string
+     (builtinType): string
+     description: |-
+       This annotation documents the type of an import reference.
 securitySchemes:
   oauth_2_0: !include oauth2.raml
 securedBy:

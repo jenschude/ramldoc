@@ -12,6 +12,69 @@ annotationTypes:
     type: array
     items: string
     allowedTargets: TypeDeclaration
+  package:
+     type: string
+     (builtinType): string
+  identifier:
+     type: boolean
+     (builtinType): boolean
+  elementIdentifier:
+     type: boolean
+     (builtinType): boolean
+  placeholderParam:
+     type: object
+     (builtinType): object
+  builder:
+     allowedTargets: [TypeDeclaration]
+     type: array
+     items:
+       type: object
+     (builtinType): array
+  docs-uri:
+     type: string
+     (builtinType): string
+  updateType:
+     type: string
+     (builtinType): string
+  updateable:
+     type: string
+     (builtinType): string
+  deleteable:
+     type: string
+     (builtinType): string
+  createable:
+     type: string
+     (builtinType): string
+  methodName:
+     type: string
+     (builtinType): string
+  asMap:
+     type: object
+     (builtinType): object
+  postman-example:
+     type: string
+     (builtinType): string
+  hasSimpleUpdateAction:
+     type: string
+     (builtinType): string
+  hasUpdateActions:
+     allowedTargets: [TypeDeclaration]
+     type: array
+     items:
+       type: object
+     (builtinType): array
+  hasUpdateAction:
+     type: object
+     (builtinType): object
+  deprecated:
+     type: boolean
+     (builtinType): boolean
+  abstract:
+     type: boolean
+     (builtinType): boolean
+  actionType:
+     type: string
+     (builtinType): string
 securitySchemes:
   oauth_2_0: !include oauth2.raml
 securedBy:
