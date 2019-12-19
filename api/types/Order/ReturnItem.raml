@@ -29,20 +29,10 @@ properties:
   shipmentState:
     type: ReturnShipmentState
     (builtinType): string
-    enum:
-    - Advised
-    - Returned
-    - BackInStock
-    - Unusable
     required: true
   paymentState:
     type: ReturnPaymentState
     (builtinType): string
-    enum:
-    - NonRefundable
-    - Initial
-    - Refunded
-    - NotRefunded
     required: true
   lastModifiedAt:
     type: datetime

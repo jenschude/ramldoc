@@ -85,19 +85,10 @@ properties:
   taxMode:
     type: TaxMode
     (builtinType): string
-    enum:
-    - Platform
-    - External
-    - ExternalAmount
-    - Disabled
     required: false
   taxRoundingMode:
     type: RoundingMode
     (builtinType): string
-    enum:
-    - HalfEven
-    - HalfUp
-    - HalfDown
     required: false
   customerGroup:
     type: CustomerGroupReference
@@ -110,11 +101,6 @@ properties:
   orderState:
     type: OrderState
     (builtinType): string
-    enum:
-    - Open
-    - Confirmed
-    - Complete
-    - Cancelled
     required: true
   state:
     type: StateReference
@@ -123,23 +109,10 @@ properties:
   shipmentState:
     type: ShipmentState
     (builtinType): string
-    enum:
-    - Shipped
-    - Ready
-    - Pending
-    - Delayed
-    - Partial
-    - Backorder
     required: false
   paymentState:
     type: PaymentState
     (builtinType): string
-    enum:
-    - BalanceDue
-    - Failed
-    - Pending
-    - CreditOwed
-    - Paid
     required: false
   shippingInfo:
     type: ShippingInfo
@@ -187,24 +160,14 @@ properties:
   inventoryMode:
     type: InventoryMode
     (builtinType): string
-    enum:
-    - TrackOnly
-    - ReserveOnOrder
-    - None
     required: false
   origin:
     type: CartOrigin
     (builtinType): string
-    enum:
-    - Customer
-    - Merchant
     required: true
   taxCalculationMode:
     type: TaxCalculationMode
     (builtinType): string
-    enum:
-    - LineItemLevel
-    - UnitPriceLevel
     required: false
   shippingRateInput:
     type: ShippingRateInput

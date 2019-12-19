@@ -71,10 +71,6 @@ properties:
   cartState:
     type: CartState
     (builtinType): string
-    enum:
-    - Active
-    - Merged
-    - Ordered
     required: true
   shippingAddress:
     type: Address
@@ -87,34 +83,18 @@ properties:
   inventoryMode:
     type: InventoryMode
     (builtinType): string
-    enum:
-    - TrackOnly
-    - ReserveOnOrder
-    - None
     required: false
   taxMode:
     type: TaxMode
     (builtinType): string
-    enum:
-    - Platform
-    - External
-    - ExternalAmount
-    - Disabled
     required: true
   taxRoundingMode:
     type: RoundingMode
     (builtinType): string
-    enum:
-    - HalfEven
-    - HalfUp
-    - HalfDown
     required: true
   taxCalculationMode:
     type: TaxCalculationMode
     (builtinType): string
-    enum:
-    - LineItemLevel
-    - UnitPriceLevel
     required: true
   customerGroup:
     type: CustomerGroupReference
@@ -161,9 +141,6 @@ properties:
   origin:
     type: CartOrigin
     (builtinType): string
-    enum:
-    - Customer
-    - Merchant
     required: true
   shippingRateInput:
     type: ShippingRateInput
