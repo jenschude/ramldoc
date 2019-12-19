@@ -3,6 +3,8 @@ displayName: MyCartChangeLineItemQuantityAction
 type: MyCartUpdateAction
 (builtinType): object
 discriminatorValue: changeLineItemQuantity
+(package): "Me"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-me-carts#change-lineitem-quantity"
 properties:
   action:
     type: string
@@ -15,8 +17,8 @@ properties:
     (builtinType): string
     required: true
   quantity:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: true
   externalPrice:
     type: Money

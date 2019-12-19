@@ -6,7 +6,9 @@ discriminatorValue: removeVariant
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#remove-productvariant"
 examples:
-  postman: !include ../../examples/Product/ProductRemoveVariantAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductRemoveVariantAction-postman.json
 properties:
   action:
     type: string

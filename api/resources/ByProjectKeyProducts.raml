@@ -1,5 +1,8 @@
-#ByProjectKeyProducts
+(resourceName): ByProjectKeyProducts
 (resourcePathUri): /{projectKey}/products
+description: |-
+  Products are the sellable goods in an e-commerce project on CTP. This document explains some design concepts
+  of products on CTP and describes the available HTTP APIs for working with them.
 
 uriParameters:
   projectKey:
@@ -117,16 +120,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

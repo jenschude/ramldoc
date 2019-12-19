@@ -6,7 +6,9 @@ discriminatorValue: changeAssetName
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#change-asset-name"
 examples:
-  postman: !include ../../examples/Product/ProductChangeAssetNameAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductChangeAssetNameAction-postman.json
 properties:
   action:
     type: string

@@ -6,7 +6,9 @@ discriminatorValue: removeBillingAddressId
 (package): "Customer"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-customers.html#remove-billing-address-id"
 examples:
-  postman: !include ../../examples/Customer/CustomerRemoveBillingAddressIdAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Customer/CustomerRemoveBillingAddressIdAction-postman.json
 properties:
   action:
     type: string

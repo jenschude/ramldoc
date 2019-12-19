@@ -1,5 +1,8 @@
-#ByProjectKeyProductProjectionsSuggest
+(resourceName): ByProjectKeyProductProjectionsSuggest
 (resourcePathUri): /{projectKey}/product-projections/suggest
+displayName: Product Projection Suggestion
+description: |-
+  The source of data for suggestions is the searchKeyword field in a product
 
 uriParameters:
   projectKey:
@@ -50,16 +53,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

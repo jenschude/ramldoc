@@ -2,11 +2,13 @@
 displayName: DiscountedLineItemPriceForQuantity
 type: object
 (builtinType): object
+(package): "Cart"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#discountedlineitempriceforquantity"
 properties:
   quantity:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     required: true
   discountedPrice:
     type: DiscountedLineItemPrice

@@ -6,7 +6,9 @@ discriminatorValue: removePayment
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#remove-payment"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderRemovePaymentAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderRemovePaymentAction-postman.json
 properties:
   action:
     type: string

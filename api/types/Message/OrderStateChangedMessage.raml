@@ -3,6 +3,8 @@ displayName: OrderStateChangedMessage
 type: Message
 (builtinType): object
 discriminatorValue: OrderStateChanged
+(package): "Message"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-messages.html#orderstatechanged-message"
 properties:
   type:
     type: string
@@ -13,8 +15,18 @@ properties:
   orderState:
     type: OrderState
     (builtinType): string
+    enum:
+    - Open
+    - Confirmed
+    - Complete
+    - Cancelled
     required: true
   oldOrderState:
     type: OrderState
     (builtinType): string
+    enum:
+    - Open
+    - Confirmed
+    - Complete
+    - Cancelled
     required: true

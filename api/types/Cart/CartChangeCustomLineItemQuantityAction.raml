@@ -6,7 +6,9 @@ discriminatorValue: changeCustomLineItemQuantity
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#change-customlineitem-quantity"
 examples:
-  postman: !include ../../examples/Cart/CartChangeCustomLineItemQuantityAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartChangeCustomLineItemQuantityAction-postman.json
 properties:
   action:
     type: string
@@ -19,6 +21,6 @@ properties:
     (builtinType): string
     required: true
   quantity:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: true

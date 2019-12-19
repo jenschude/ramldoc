@@ -25,6 +25,16 @@ properties:
       * DELETED The import resource was deleted successfully.
       * REJECTED The import resource couldn't be imported or deleted after several retries.
       * SKIPPED the import resource was skipped because the skip predicate was evaluated to true.
+    enum:
+    - ACCEPTED
+    - VALIDATION_FAILED
+    - UNRESOLVED
+    - RESOLVED
+    - WAIT_FOR_MASTER_VARIANT
+    - IMPORTED
+    - DELETED
+    - REJECTED
+    - SKIPPED
     required: true
   newState:
     type: ProcessingState
@@ -41,4 +51,14 @@ properties:
       * DELETED The import resource was deleted successfully.
       * REJECTED The import resource couldn't be imported or deleted after several retries.
       * SKIPPED the import resource was skipped because the skip predicate was evaluated to true.
+    enum:
+    - ACCEPTED
+    - VALIDATION_FAILED
+    - UNRESOLVED
+    - RESOLVED
+    - WAIT_FOR_MASTER_VARIANT
+    - IMPORTED
+    - DELETED
+    - REJECTED
+    - SKIPPED
     required: true

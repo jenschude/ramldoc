@@ -6,7 +6,9 @@ discriminatorValue: setRating
 (package): "Review"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-reviews.html#set-rating"
 examples:
-  postman: !include ../../examples/Review/ReviewSetRatingAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Review/ReviewSetRatingAction-postman.json
 properties:
   action:
     type: string

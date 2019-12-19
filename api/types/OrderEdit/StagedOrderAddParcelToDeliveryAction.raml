@@ -6,7 +6,9 @@ discriminatorValue: addParcelToDelivery
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#add-parcel"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderAddParcelToDeliveryAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderAddParcelToDeliveryAction-postman.json
 properties:
   action:
     type: string

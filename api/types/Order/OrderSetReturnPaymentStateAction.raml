@@ -6,7 +6,9 @@ discriminatorValue: setReturnPaymentState
 (package): "Order"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-orders.html#set-returnpaymentstate"
 examples:
-  postman: !include ../../examples/Order/OrderSetReturnPaymentStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Order/OrderSetReturnPaymentStateAction-postman.json
 properties:
   action:
     type: string
@@ -21,4 +23,9 @@ properties:
   paymentState:
     type: ReturnPaymentState
     (builtinType): string
+    enum:
+    - NonRefundable
+    - Initial
+    - Refunded
+    - NotRefunded
     required: true

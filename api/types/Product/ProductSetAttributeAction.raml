@@ -6,7 +6,9 @@ discriminatorValue: setAttribute
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#set-attribute"
 examples:
-  postman: !include ../../examples/Product/ProductSetAttributeAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductSetAttributeAction-postman.json
 properties:
   action:
     type: string

@@ -6,7 +6,9 @@ discriminatorValue: changeTransactionState
 (package): "Payment"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-payments.html#change-transactionstate"
 examples:
-  postman: !include ../../examples/Payment/PaymentChangeTransactionStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Payment/PaymentChangeTransactionStateAction-postman.json
 properties:
   action:
     type: string
@@ -21,4 +23,9 @@ properties:
   state:
     type: TransactionState
     (builtinType): string
+    enum:
+    - Initial
+    - Pending
+    - Success
+    - Failure
     required: true

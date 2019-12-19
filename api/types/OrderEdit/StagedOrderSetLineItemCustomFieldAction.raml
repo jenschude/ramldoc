@@ -6,7 +6,9 @@ discriminatorValue: setLineItemCustomField
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#set-lineitem-customfield"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderSetLineItemCustomFieldAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderSetLineItemCustomFieldAction-postman.json
 properties:
   action:
     type: string

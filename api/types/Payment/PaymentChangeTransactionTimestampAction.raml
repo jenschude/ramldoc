@@ -6,7 +6,9 @@ discriminatorValue: changeTransactionTimestamp
 (package): "Payment"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-payments.html#change-transactiontimestamp"
 examples:
-  postman: !include ../../examples/Payment/PaymentChangeTransactionTimestampAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Payment/PaymentChangeTransactionTimestampAction-postman.json
 properties:
   action:
     type: string

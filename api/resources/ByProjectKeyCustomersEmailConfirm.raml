@@ -1,5 +1,6 @@
-#ByProjectKeyCustomersEmailConfirm
+(resourceName): ByProjectKeyCustomersEmailConfirm
 (resourcePathUri): /{projectKey}/customers/email/confirm
+displayName: Verify Customer's Email
 
 uriParameters:
   projectKey:
@@ -19,4 +20,6 @@ post:
       (builtinType): object
   responses:
     200:
+      description: |-
+        The email was verified.
       body:

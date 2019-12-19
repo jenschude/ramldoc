@@ -7,8 +7,13 @@ discriminator: type
 - FilteredFacetResult
 - RangeFacetResult
 - TermFacetResult
+(package): "Product"
 properties:
   type:
     type: FacetTypes
     (builtinType): string
+    enum:
+    - terms
+    - range
+    - filter
     required: true

@@ -6,7 +6,9 @@ discriminatorValue: removeDiscountCode
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#remove-discountcode"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderRemoveDiscountCodeAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderRemoveDiscountCodeAction-postman.json
 properties:
   action:
     type: string

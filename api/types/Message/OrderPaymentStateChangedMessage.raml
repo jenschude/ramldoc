@@ -3,6 +3,8 @@ displayName: OrderPaymentStateChangedMessage
 type: Message
 (builtinType): object
 discriminatorValue: OrderPaymentStateChanged
+(package): "Message"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-messages.html#orderpaymentstatechanged-message"
 properties:
   type:
     type: string
@@ -13,8 +15,20 @@ properties:
   paymentState:
     type: PaymentState
     (builtinType): string
+    enum:
+    - BalanceDue
+    - Failed
+    - Pending
+    - CreditOwed
+    - Paid
     required: true
   oldPaymentState:
     type: PaymentState
     (builtinType): string
+    enum:
+    - BalanceDue
+    - Failed
+    - Pending
+    - CreditOwed
+    - Paid
     required: false

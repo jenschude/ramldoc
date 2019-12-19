@@ -3,6 +3,8 @@ displayName: MyCartChangeTaxModeAction
 type: MyCartUpdateAction
 (builtinType): object
 discriminatorValue: changeTaxMode
+(package): "Me"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-me-carts#change-taxmode"
 properties:
   action:
     type: string
@@ -13,4 +15,9 @@ properties:
   taxMode:
     type: TaxMode
     (builtinType): string
+    enum:
+    - Platform
+    - External
+    - ExternalAmount
+    - Disabled
     required: true

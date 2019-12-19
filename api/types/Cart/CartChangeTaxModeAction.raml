@@ -6,7 +6,9 @@ discriminatorValue: changeTaxMode
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#change-taxmode"
 examples:
-  postman: !include ../../examples/Cart/CartChangeTaxModeAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartChangeTaxModeAction-postman.json
 properties:
   action:
     type: string
@@ -17,4 +19,9 @@ properties:
   taxMode:
     type: TaxMode
     (builtinType): string
+    enum:
+    - Platform
+    - External
+    - ExternalAmount
+    - Disabled
     required: true

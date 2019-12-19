@@ -1,4 +1,4 @@
-#ByProjectKeyImportSinksByImportSinkKeyRequests
+(resourceName): ByProjectKeyImportSinksByImportSinkKeyRequests
 (resourcePathUri): /{projectKey}/import-sinks/{importSinkKey}/requests
 
 uriParameters:
@@ -17,13 +17,9 @@ post:
     application/json:
       type: ImportRequest
       (builtinType): object
-      description: |-
-        Abstract base type for requesting the import of items.
   responses:
     201:
       body:
         application/json:
           type: ImportRequestState
           (builtinType): object
-          description: |-
-            Allows to retrieve the state of an ImportRequest.

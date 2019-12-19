@@ -6,7 +6,9 @@ discriminatorValue: changeName
 (package): "ShoppingList"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-shoppingLists.html#change-name"
 examples:
-  postman: !include ../../examples/ShoppingList/ShoppingListChangeNameAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/ShoppingList/ShoppingListChangeNameAction-postman.json
 properties:
   action:
     type: string

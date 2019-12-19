@@ -6,7 +6,9 @@ discriminatorValue: setRestockableInDays
 (package): "Inventory"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-inventory.html#set-restockableindays"
 examples:
-  postman: !include ../../examples/Inventory/InventoryEntrySetRestockableInDaysAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Inventory/InventoryEntrySetRestockableInDaysAction-postman.json
 properties:
   action:
     type: string

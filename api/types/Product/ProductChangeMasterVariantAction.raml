@@ -6,7 +6,9 @@ discriminatorValue: changeMasterVariant
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#change-master-variant"
 examples:
-  postman: !include ../../examples/Product/ProductChangeMasterVariantAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductChangeMasterVariantAction-postman.json
 properties:
   action:
     type: string

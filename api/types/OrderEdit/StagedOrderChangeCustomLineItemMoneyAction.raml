@@ -6,7 +6,9 @@ discriminatorValue: changeCustomLineItemMoney
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#change-customlineitem-money"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderChangeCustomLineItemMoneyAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderChangeCustomLineItemMoneyAction-postman.json
 properties:
   action:
     type: string

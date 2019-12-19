@@ -6,7 +6,9 @@ discriminatorValue: addVariant
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#add-productvariant"
 examples:
-  postman: !include ../../examples/Product/ProductAddVariantAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductAddVariantAction-postman.json
 properties:
   action:
     type: string

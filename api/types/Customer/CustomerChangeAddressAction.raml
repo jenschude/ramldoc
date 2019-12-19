@@ -6,7 +6,9 @@ discriminatorValue: changeAddress
 (package): "Customer"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-customers.html#change-address"
 examples:
-  postman: !include ../../examples/Customer/CustomerChangeAddressAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Customer/CustomerChangeAddressAction-postman.json
 properties:
   action:
     type: string

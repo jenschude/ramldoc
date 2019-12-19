@@ -6,8 +6,13 @@ discriminator: type
 (oneOf):
 - CustomTokenizer
 - WhitespaceTokenizer
+(package): "Product"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#product-search-keywords-suggest-examples"
 properties:
   type:
     type: string
     (builtinType): string
+    enum:
+    - whitespace
+    - custom
     required: true

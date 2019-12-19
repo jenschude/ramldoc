@@ -3,6 +3,8 @@ displayName: OrderDiscountCodeStateSetMessage
 type: Message
 (builtinType): object
 discriminatorValue: OrderDiscountCodeStateSet
+(package): "Message"
+(docs-uri): "https://docs.commercetools.com/http-api-message-types.html#orderdiscountcodestateset"
 properties:
   type:
     type: string
@@ -17,8 +19,18 @@ properties:
   state:
     type: DiscountCodeState
     (builtinType): string
+    enum:
+    - NotActive
+    - DoesNotMatchCart
+    - MatchesCart
+    - MaxApplicationReached
     required: true
   oldState:
     type: DiscountCodeState
     (builtinType): string
+    enum:
+    - NotActive
+    - DoesNotMatchCart
+    - MatchesCart
+    - MaxApplicationReached
     required: false

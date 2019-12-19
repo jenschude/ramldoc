@@ -6,7 +6,9 @@ discriminatorValue: setCartTotalTax
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#set-cart-total-tax"
 examples:
-  postman: !include ../../examples/Cart/CartSetCartTotalTaxAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartSetCartTotalTaxAction-postman.json
 properties:
   action:
     type: string

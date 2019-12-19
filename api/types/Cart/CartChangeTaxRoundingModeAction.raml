@@ -6,7 +6,9 @@ discriminatorValue: changeTaxRoundingMode
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#change-tax-roundingmode"
 examples:
-  postman: !include ../../examples/Cart/CartChangeTaxRoundingModeAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartChangeTaxRoundingModeAction-postman.json
 properties:
   action:
     type: string
@@ -17,4 +19,8 @@ properties:
   taxRoundingMode:
     type: RoundingMode
     (builtinType): string
+    enum:
+    - HalfEven
+    - HalfUp
+    - HalfDown
     required: true

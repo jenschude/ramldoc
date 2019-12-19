@@ -6,7 +6,9 @@ discriminatorValue: updateSyncInfo
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#update-syncinfo"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderUpdateSyncInfoAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderUpdateSyncInfoAction-postman.json
 properties:
   action:
     type: string

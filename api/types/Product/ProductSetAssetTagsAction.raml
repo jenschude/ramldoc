@@ -6,7 +6,9 @@ discriminatorValue: setAssetTags
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#set-asset-tags"
 examples:
-  postman: !include ../../examples/Product/ProductSetAssetTagsAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductSetAssetTagsAction-postman.json
 properties:
   action:
     type: string

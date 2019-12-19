@@ -6,7 +6,9 @@ discriminatorValue: changeCountries
 (package): "Project"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-project.html#change-countries"
 examples:
-  postman: !include ../../examples/Project/ProjectChangeCountriesAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Project/ProjectChangeCountriesAction-postman.json
 properties:
   action:
     type: string

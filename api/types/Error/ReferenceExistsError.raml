@@ -3,6 +3,7 @@ displayName: ReferenceExistsError
 type: ErrorObject
 (builtinType): object
 discriminatorValue: ReferenceExists
+(package): "Error"
 properties:
   code:
     type: string
@@ -13,4 +14,28 @@ properties:
   referencedBy:
     type: ReferenceTypeId
     (builtinType): string
+    enum:
+    - cart
+    - cart-discount
+    - category
+    - channel
+    - customer
+    - customer-group
+    - discount-code
+    - key-value-document
+    - payment
+    - product
+    - product-type
+    - product-discount
+    - order
+    - review
+    - shopping-list
+    - shipping-method
+    - state
+    - store
+    - tax-category
+    - type
+    - zone
+    - inventory-entry
+    - order-edit
     required: false

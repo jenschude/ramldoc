@@ -6,7 +6,9 @@ discriminatorValue: setAttributeInAllVariants
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#set-attribute-in-all-variants"
 examples:
-  postman: !include ../../examples/Product/ProductSetAttributeInAllVariantsAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductSetAttributeInAllVariantsAction-postman.json
 properties:
   action:
     type: string

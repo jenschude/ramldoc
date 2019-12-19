@@ -6,7 +6,9 @@ discriminatorValue: addCustomLineItem
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#add-customlineitem"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderAddCustomLineItemAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderAddCustomLineItemAction-postman.json
 properties:
   action:
     type: string
@@ -23,8 +25,8 @@ properties:
     (builtinType): object
     required: true
   quantity:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: false
   slug:
     type: string

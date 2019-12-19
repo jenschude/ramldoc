@@ -6,7 +6,9 @@ discriminatorValue: setCustomField
 (package): "Inventory"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-inventory.html#set-customfield"
 examples:
-  postman: !include ../../examples/Inventory/InventoryEntrySetCustomFieldAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Inventory/InventoryEntrySetCustomFieldAction-postman.json
 properties:
   action:
     type: string

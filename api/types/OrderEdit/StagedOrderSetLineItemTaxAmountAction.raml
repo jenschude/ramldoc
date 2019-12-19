@@ -6,7 +6,9 @@ discriminatorValue: setLineItemTaxAmount
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#set-lineitem-taxamount"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderSetLineItemTaxAmountAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderSetLineItemTaxAmountAction-postman.json
 properties:
   action:
     type: string

@@ -6,7 +6,9 @@ discriminatorValue: setLineItemTotalPrice
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#set-lineitem-totalprice"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderSetLineItemTotalPriceAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderSetLineItemTotalPriceAction-postman.json
 properties:
   action:
     type: string

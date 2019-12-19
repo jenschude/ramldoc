@@ -6,7 +6,9 @@ discriminatorValue: addLineItem
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#add-lineitem"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderAddLineItemAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderAddLineItemAction-postman.json
 properties:
   action:
     type: string
@@ -40,8 +42,8 @@ properties:
     (builtinType): string
     required: false
   quantity:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: false
   supplyChannel:
     type: ChannelResourceIdentifier

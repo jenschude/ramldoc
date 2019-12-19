@@ -1,5 +1,7 @@
-#ByProjectKeyShippingMethods
+(resourceName): ByProjectKeyShippingMethods
 (resourcePathUri): /{projectKey}/shipping-methods
+description: |-
+  Shipping Methods define where orders can be shipped and what the costs are.
 
 uriParameters:
   projectKey:
@@ -123,16 +125,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

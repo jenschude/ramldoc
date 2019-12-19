@@ -1,5 +1,7 @@
-#ByProjectKeyInStoreKeyByStoreKeyMeOrders
+(resourceName): ByProjectKeyInStoreKeyByStoreKeyMeOrders
 (resourcePathUri): /{projectKey}/in-store/key={storeKey}/me/orders
+description: |-
+  An order can be created from a order, usually after a checkout process has been completed.
 
 uriParameters:
   projectKey:
@@ -102,16 +104,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

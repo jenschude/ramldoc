@@ -6,7 +6,9 @@ discriminatorValue: setAnonymousId
 (package): "Payment"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-payments.html#set-anonymousid"
 examples:
-  postman: !include ../../examples/Payment/PaymentSetAnonymousIdAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Payment/PaymentSetAnonymousIdAction-postman.json
 properties:
   action:
     type: string

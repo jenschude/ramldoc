@@ -6,7 +6,9 @@ discriminatorValue: removeQuantity
 (package): "Inventory"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-inventory.html#remove-quantity"
 examples:
-  postman: !include ../../examples/Inventory/InventoryEntryRemoveQuantityAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Inventory/InventoryEntryRemoveQuantityAction-postman.json
 properties:
   action:
     type: string

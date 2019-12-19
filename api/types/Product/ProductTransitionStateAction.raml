@@ -6,7 +6,9 @@ discriminatorValue: transitionState
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#transition-state"
 examples:
-  postman: !include ../../examples/Product/ProductTransitionStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductTransitionStateAction-postman.json
 properties:
   action:
     type: string

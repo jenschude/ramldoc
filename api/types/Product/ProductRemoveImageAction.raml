@@ -6,7 +6,9 @@ discriminatorValue: removeImage
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#remove-image"
 examples:
-  postman: !include ../../examples/Product/ProductRemoveImageAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductRemoveImageAction-postman.json
 properties:
   action:
     type: string

@@ -6,7 +6,9 @@ discriminatorValue: transitionState
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#transition-state"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderTransitionStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderTransitionStateAction-postman.json
 properties:
   action:
     type: string

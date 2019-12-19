@@ -6,7 +6,9 @@ discriminatorValue: transitionLineItemState
 (package): "Order"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-orders.html#change-the-state-of-lineitem-according-to-allowed-transitions"
 examples:
-  postman: !include ../../examples/Order/OrderTransitionLineItemStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Order/OrderTransitionLineItemStateAction-postman.json
 properties:
   action:
     type: string

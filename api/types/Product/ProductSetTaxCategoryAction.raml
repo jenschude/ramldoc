@@ -6,7 +6,9 @@ discriminatorValue: setTaxCategory
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#set-taxcategory"
 examples:
-  postman: !include ../../examples/Product/ProductSetTaxCategoryAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductSetTaxCategoryAction-postman.json
 properties:
   action:
     type: string

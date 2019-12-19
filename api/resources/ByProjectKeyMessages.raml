@@ -1,5 +1,7 @@
-#ByProjectKeyMessages
+(resourceName): ByProjectKeyMessages
 (resourcePathUri): /{projectKey}/messages
+description: |-
+  A message represents a change or an action performed on a resource (like an Order or a Product).
 
 uriParameters:
   projectKey:
@@ -99,16 +101,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

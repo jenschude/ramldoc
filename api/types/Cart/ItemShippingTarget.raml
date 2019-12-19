@@ -2,6 +2,8 @@
 displayName: ItemShippingTarget
 type: object
 (builtinType): object
+(package): "Cart"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#itemshippingtarget"
 properties:
   addressKey:
     type: string
@@ -10,9 +12,9 @@ properties:
       The key of the address in the cart's `itemShippingAddresses`
     required: true
   quantity:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       The quantity of items that should go to the address with the specified `addressKey`.
       Only positive values are allowed.

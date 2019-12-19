@@ -6,7 +6,9 @@ discriminatorValue: removeFromCategory
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#remove-from-category"
 examples:
-  postman: !include ../../examples/Product/ProductRemoveFromCategoryAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductRemoveFromCategoryAction-postman.json
 properties:
   action:
     type: string

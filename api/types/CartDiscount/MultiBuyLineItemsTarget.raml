@@ -3,6 +3,7 @@ displayName: MultiBuyLineItemsTarget
 type: CartDiscountTarget
 (builtinType): object
 discriminatorValue: multiBuyLineItems
+(package): "CartDiscount"
 properties:
   type:
     type: string
@@ -17,21 +18,21 @@ properties:
       A valid line item target predicate. The discount will be applied to line items that are matched by the predicate.
     required: true
   triggerQuantity:
-    format: int16
+    format: int
     type: integer
     (builtinType): integer
     description: |-
       Quantity of line items that need to be present in order to trigger an application of this discount.
     required: true
   discountedQuantity:
-    format: int16
+    format: int
     type: integer
     (builtinType): integer
     description: |-
       Quantity of line items that are discounted per application of this discount.
     required: true
   maxOccurrence:
-    format: int16
+    format: int
     type: integer
     (builtinType): integer
     description: |-
@@ -40,4 +41,7 @@ properties:
   selectionMode:
     type: SelectionMode
     (builtinType): string
+    enum:
+    - Cheapest
+    - MostExpensive
     required: true

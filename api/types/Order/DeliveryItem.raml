@@ -2,13 +2,15 @@
 displayName: DeliveryItem
 type: object
 (builtinType): object
+(package): "Order"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-orders.html#deliveryitem"
 properties:
   id:
     type: string
     (builtinType): string
     required: true
   quantity:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     required: true

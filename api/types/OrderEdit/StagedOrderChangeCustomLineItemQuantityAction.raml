@@ -6,7 +6,9 @@ discriminatorValue: changeCustomLineItemQuantity
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#change-customlineitem-quantity"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderChangeCustomLineItemQuantityAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderChangeCustomLineItemQuantityAction-postman.json
 properties:
   action:
     type: string
@@ -19,6 +21,6 @@ properties:
     (builtinType): string
     required: true
   quantity:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: true

@@ -6,7 +6,9 @@ discriminatorValue: setCustomShippingMethod
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#set-custom-shipping-method"
 examples:
-  postman: !include ../../examples/Cart/CartSetCustomShippingMethodAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartSetCustomShippingMethodAction-postman.json
 properties:
   action:
     type: string

@@ -3,6 +3,7 @@ displayName: TermFacetResult
 type: FacetResult
 (builtinType): object
 discriminatorValue: terms
+(package): "Product"
 properties:
   type:
     type: FacetTypes
@@ -13,6 +14,13 @@ properties:
   dataType:
     type: TermFacetResultType
     (builtinType): string
+    enum:
+    - text
+    - date
+    - time
+    - datetime
+    - boolean
+    - number
     required: true
   missing:
     format: int64

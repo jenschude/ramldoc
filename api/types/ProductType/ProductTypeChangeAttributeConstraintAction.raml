@@ -3,6 +3,8 @@ displayName: ProductTypeChangeAttributeConstraintAction
 type: ProductTypeUpdateAction
 (builtinType): object
 discriminatorValue: changeAttributeConstraint
+(package): "ProductType"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-productTypes.html#change-attributedefinition-attributeconstraint"
 properties:
   action:
     type: string
@@ -17,4 +19,6 @@ properties:
   newValue:
     type: AttributeConstraintEnumDraft
     (builtinType): string
+    enum:
+    - None
     required: true

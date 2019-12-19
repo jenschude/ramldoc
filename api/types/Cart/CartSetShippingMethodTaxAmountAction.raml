@@ -6,7 +6,9 @@ discriminatorValue: setShippingMethodTaxAmount
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#set-shippingmethod-taxamount"
 examples:
-  postman: !include ../../examples/Cart/CartSetShippingMethodTaxAmountAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartSetShippingMethodTaxAmountAction-postman.json
 properties:
   action:
     type: string

@@ -2,6 +2,8 @@
 displayName: CustomLineItem
 type: object
 (builtinType): object
+(package): "Cart"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#customlineitem"
 properties:
   id:
     type: string
@@ -44,9 +46,9 @@ properties:
       A unique String in the cart to identify this CustomLineItem.
     required: true
   quantity:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       The amount of a CustomLineItem in the cart.
       Must be a positive integer.

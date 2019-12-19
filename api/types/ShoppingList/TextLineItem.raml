@@ -2,6 +2,7 @@
 displayName: TextLineItem
 type: object
 (builtinType): object
+(package): "ShoppingList"
 properties:
   addedAt:
     format: rfc3339
@@ -29,7 +30,7 @@ properties:
     (builtinType): object
     required: true
   quantity:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     required: true

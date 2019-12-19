@@ -6,7 +6,9 @@ discriminatorValue: setOrderNumber
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#set-order-number"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderSetOrderNumberAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderSetOrderNumberAction-postman.json
 properties:
   action:
     type: string

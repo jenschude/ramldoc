@@ -6,7 +6,9 @@ discriminatorValue: setAuthorName
 (package): "Review"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-reviews.html#set-author-name"
 examples:
-  postman: !include ../../examples/Review/ReviewSetAuthorNameAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Review/ReviewSetAuthorNameAction-postman.json
 properties:
   action:
     type: string

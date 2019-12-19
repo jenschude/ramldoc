@@ -6,7 +6,9 @@ discriminatorValue: addTaxRate
 (package): "TaxCategory"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-taxCategories.html#add-tax-rate"
 examples:
-  postman: !include ../../examples/TaxCategory/TaxCategoryAddTaxRateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/TaxCategory/TaxCategoryAddTaxRateAction-postman.json
 properties:
   action:
     type: string

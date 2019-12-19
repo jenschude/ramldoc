@@ -2,17 +2,19 @@
 displayName: TaxPortionDraft
 type: object
 (builtinType): object
+(package): "Cart"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#taxportion"
 properties:
   name:
     type: string
     (builtinType): string
     required: false
   rate:
-    format: int16
+    format: float
     minimum: 0
     maximum: 1
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: true
   amount:
     type: Money

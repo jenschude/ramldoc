@@ -6,7 +6,9 @@ discriminatorValue: setLineItemTaxRate
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#set-lineitem-taxrate"
 examples:
-  postman: !include ../../examples/Cart/CartSetLineItemTaxRateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartSetLineItemTaxRateAction-postman.json
 properties:
   action:
     type: string

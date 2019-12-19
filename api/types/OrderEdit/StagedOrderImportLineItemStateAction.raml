@@ -6,7 +6,9 @@ discriminatorValue: importLineItemState
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#import-state-for-lineitems"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderImportLineItemStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderImportLineItemStateAction-postman.json
 properties:
   action:
     type: string

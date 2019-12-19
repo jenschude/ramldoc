@@ -6,7 +6,9 @@ discriminatorValue: removeCustomLineItem
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#remove-customlineitem"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderRemoveCustomLineItemAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderRemoveCustomLineItemAction-postman.json
 properties:
   action:
     type: string

@@ -2,10 +2,16 @@
 displayName: ExtensionTrigger
 type: object
 (builtinType): object
+(package): "Extension"
 properties:
   resourceTypeId:
     type: ExtensionResourceTypeId
     (builtinType): string
+    enum:
+    - cart
+    - order
+    - payment
+    - customer
     required: true
   actions:
     type: array

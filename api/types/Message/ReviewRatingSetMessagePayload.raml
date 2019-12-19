@@ -3,6 +3,8 @@ displayName: ReviewRatingSetMessagePayload
 type: MessagePayload
 (builtinType): object
 discriminatorValue: ReviewRatingSet
+(package): "Message"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-messages.html#reviewratingset-message"
 properties:
   type:
     type: string
@@ -11,12 +13,12 @@ properties:
     - ReviewRatingSet
     required: true
   oldRating:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: false
   newRating:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: false
   includedInStatistics:
     type: boolean

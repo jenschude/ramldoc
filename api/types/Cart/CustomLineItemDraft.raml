@@ -2,15 +2,17 @@
 displayName: CustomLineItemDraft
 type: object
 (builtinType): object
+(package): "Cart"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#customlineitemdraft"
 properties:
   name:
     type: LocalizedString
     (builtinType): object
     required: true
   quantity:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       The amount of a CustomLineItemin the cart.
       Must be a positive integer.

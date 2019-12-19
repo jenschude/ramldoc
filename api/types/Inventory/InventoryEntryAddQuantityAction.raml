@@ -6,7 +6,9 @@ discriminatorValue: addQuantity
 (package): "Inventory"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-inventory.html#add-quantity"
 examples:
-  postman: !include ../../examples/Inventory/InventoryEntryAddQuantityAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Inventory/InventoryEntryAddQuantityAction-postman.json
 properties:
   action:
     type: string

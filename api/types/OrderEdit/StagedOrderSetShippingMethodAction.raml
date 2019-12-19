@@ -6,7 +6,9 @@ discriminatorValue: setShippingMethod
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#set-shipping-method"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderSetShippingMethodAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderSetShippingMethodAction-postman.json
 properties:
   action:
     type: string

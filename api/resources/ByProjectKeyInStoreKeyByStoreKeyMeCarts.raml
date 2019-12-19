@@ -1,5 +1,7 @@
-#ByProjectKeyInStoreKeyByStoreKeyMeCarts
+(resourceName): ByProjectKeyInStoreKeyByStoreKeyMeCarts
 (resourcePathUri): /{projectKey}/in-store/key={storeKey}/me/carts
+description: |-
+  A shopping cart holds product variants and can be ordered.
 
 uriParameters:
   projectKey:
@@ -102,16 +104,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

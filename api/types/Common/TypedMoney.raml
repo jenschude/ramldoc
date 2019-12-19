@@ -6,10 +6,15 @@ discriminator: type
 (oneOf):
 - CentPrecisionMoney
 - HighPrecisionMoney
+(package): "Common"
+(docs-uri): "https://docs.commercetools.com/http-api-types.html#money"
 properties:
   type:
     type: MoneyType
     (builtinType): string
+    enum:
+    - centPrecision
+    - highPrecision
     required: true
   fractionDigits:
     format: int32

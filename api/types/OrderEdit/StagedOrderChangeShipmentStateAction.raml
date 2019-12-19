@@ -6,7 +6,9 @@ discriminatorValue: changeShipmentState
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#change-shipmentstate"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderChangeShipmentStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderChangeShipmentStateAction-postman.json
 properties:
   action:
     type: string
@@ -17,4 +19,11 @@ properties:
   shipmentState:
     type: ShipmentState
     (builtinType): string
+    enum:
+    - Shipped
+    - Ready
+    - Pending
+    - Delayed
+    - Partial
+    - Backorder
     required: false

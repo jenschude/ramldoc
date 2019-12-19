@@ -6,7 +6,9 @@ discriminatorValue: removePrice
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#remove-price"
 examples:
-  postman: !include ../../examples/Product/ProductRemovePriceAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductRemovePriceAction-postman.json
 properties:
   action:
     type: string

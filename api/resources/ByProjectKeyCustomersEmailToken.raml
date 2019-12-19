@@ -1,5 +1,10 @@
-#ByProjectKeyCustomersEmailToken
+(resourceName): ByProjectKeyCustomersEmailToken
 (resourcePathUri): /{projectKey}/customers/email-token
+displayName: Customer's Email Verification
+description: |-
+  To verify a customer's email, an email token can be created. This should be embedded in a link and sent to the
+  customer via email. When the customer clicks on the link, the "verify customer's email" endpoint should be called,
+  which sets customer's isVerifiedEmail field to true.
 
 uriParameters:
   projectKey:

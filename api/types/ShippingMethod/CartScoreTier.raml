@@ -3,6 +3,8 @@ displayName: CartScoreTier
 type: ShippingRatePriceTier
 (builtinType): object
 discriminatorValue: CartScore
+(package): "ShippingMethod"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-shippingMethods.html#cartscore-with-fixed-price"
 properties:
   type:
     type: ShippingRateTierType
@@ -11,8 +13,8 @@ properties:
     - CartScore
     required: true
   score:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: true
   price:
     type: Money

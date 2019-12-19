@@ -1,4 +1,4 @@
-#ByProjectKeyMe
+(resourceName): ByProjectKeyMe
 (resourcePathUri): /{projectKey}/me
 
 uriParameters:
@@ -92,16 +92,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

@@ -6,30 +6,30 @@ description: |-
   This type represents a paged import item result.
 properties:
   limit:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       The maximun amount of impor items.
     required: true
   offset:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       The offset supplied by the client or the server default. It is the number of elements skipped.
     required: true
   count:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       The actual number of results returned in results.
     required: true
   total:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       The total number of results matching the query.
     required: true

@@ -6,7 +6,9 @@ discriminatorValue: setCountry
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#set-country"
 examples:
-  postman: !include ../../examples/Cart/CartSetCountryAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartSetCountryAction-postman.json
 properties:
   action:
     type: string

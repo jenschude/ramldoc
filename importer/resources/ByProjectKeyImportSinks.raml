@@ -1,4 +1,4 @@
-#ByProjectKeyImportSinks
+(resourceName): ByProjectKeyImportSinks
 (resourcePathUri): /{projectKey}/import-sinks
 
 uriParameters:
@@ -14,13 +14,9 @@ post:
     application/json:
       type: ImportSinkDraft
       (builtinType): object
-      description: |-
-        This type represents the read model of an ImportSink.
   responses:
     201:
       body:
         application/json:
           type: ImportSink
           (builtinType): object
-          description: |-
-            This type represents an import sink.

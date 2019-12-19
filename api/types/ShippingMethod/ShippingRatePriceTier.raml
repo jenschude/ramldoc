@@ -7,8 +7,14 @@ discriminator: type
 - CartClassificationTier
 - CartScoreTier
 - CartValueTier
+(package): "ShippingMethod"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-shippingMethods.html#shippingrate"
 properties:
   type:
     type: ShippingRateTierType
     (builtinType): string
+    enum:
+    - CartValue
+    - CartClassification
+    - CartScore
     required: true

@@ -1,5 +1,7 @@
-#ByProjectKeyDiscountCodes
+(resourceName): ByProjectKeyDiscountCodes
 (resourcePathUri): /{projectKey}/discount-codes
+description: |-
+  Discount codes can be added to a discount-code to enable certain discount-code discounts.
 
 uriParameters:
   projectKey:
@@ -99,16 +101,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

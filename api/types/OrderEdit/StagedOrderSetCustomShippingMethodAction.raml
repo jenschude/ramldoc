@@ -6,7 +6,9 @@ discriminatorValue: setCustomShippingMethod
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#set-custom-shipping-method"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderSetCustomShippingMethodAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderSetCustomShippingMethodAction-postman.json
 properties:
   action:
     type: string

@@ -3,6 +3,7 @@ displayName: OrderReturnShipmentStateChangedMessagePayload
 type: MessagePayload
 (builtinType): object
 discriminatorValue: OrderReturnShipmentStateChanged
+(package): "Message"
 properties:
   type:
     type: string
@@ -17,4 +18,9 @@ properties:
   returnShipmentState:
     type: ReturnShipmentState
     (builtinType): string
+    enum:
+    - Advised
+    - Returned
+    - BackInStock
+    - Unusable
     required: true

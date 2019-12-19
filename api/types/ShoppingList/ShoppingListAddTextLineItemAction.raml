@@ -6,7 +6,9 @@ discriminatorValue: addTextLineItem
 (package): "ShoppingList"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-shoppingLists.html#add-textlineitem"
 examples:
-  postman: !include ../../examples/ShoppingList/ShoppingListAddTextLineItemAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/ShoppingList/ShoppingListAddTextLineItemAction-postman.json
 properties:
   action:
     type: string

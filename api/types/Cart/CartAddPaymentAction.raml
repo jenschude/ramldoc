@@ -6,7 +6,9 @@ discriminatorValue: addPayment
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#add-payment"
 examples:
-  postman: !include ../../examples/Cart/CartAddPaymentAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartAddPaymentAction-postman.json
 properties:
   action:
     type: string

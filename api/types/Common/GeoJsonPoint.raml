@@ -3,6 +3,7 @@ displayName: GeoJsonPoint
 type: GeoJson
 (builtinType): object
 discriminatorValue: Point
+(package): "Common"
 properties:
   type:
     type: string
@@ -13,6 +14,6 @@ properties:
   coordinates:
     type: array
     items:
-      type: integer
+      type: number
     (builtinType): array
     required: true

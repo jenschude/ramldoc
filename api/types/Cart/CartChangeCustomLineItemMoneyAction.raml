@@ -6,7 +6,9 @@ discriminatorValue: changeCustomLineItemMoney
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#change-customlineitem-money"
 examples:
-  postman: !include ../../examples/Cart/CartChangeCustomLineItemMoneyAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartChangeCustomLineItemMoneyAction-postman.json
 properties:
   action:
     type: string

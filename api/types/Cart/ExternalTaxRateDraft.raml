@@ -2,15 +2,17 @@
 displayName: ExternalTaxRateDraft
 type: object
 (builtinType): object
+(package): "Cart"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#externaltaxratedraft"
 properties:
   name:
     type: string
     (builtinType): string
     required: true
   amount:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       Percentage in the range of [0..1].
       Must be supplied if no `subRates` are specified.

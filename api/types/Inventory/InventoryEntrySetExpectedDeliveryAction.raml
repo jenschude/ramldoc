@@ -6,7 +6,9 @@ discriminatorValue: setExpectedDelivery
 (package): "Inventory"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-inventory.html#set-expecteddelivery"
 examples:
-  postman: !include ../../examples/Inventory/InventoryEntrySetExpectedDeliveryAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Inventory/InventoryEntrySetExpectedDeliveryAction-postman.json
 properties:
   action:
     type: string

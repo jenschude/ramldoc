@@ -3,8 +3,12 @@ displayName: ImportItem
 type: object
 (builtinType): object
 examples:
-  accepted: !include ../../examples/importitems/ImportItem-accepted.json
-  validationFailed: !include ../../examples/importitems/ImportItem-validationFailed.json
+  accepted:
+    strict: true
+    value: !include ../../examples/importitems/ImportItem-accepted.json
+  validationFailed:
+    strict: true
+    value: !include ../../examples/importitems/ImportItem-validationFailed.json
 description: |-
   This type represents an import item.
 properties:
@@ -34,9 +38,9 @@ properties:
       The status of a single import request.
     required: true
   retryCount:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       The number of retries for this item.
     required: true

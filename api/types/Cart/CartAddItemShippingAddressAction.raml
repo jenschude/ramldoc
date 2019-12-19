@@ -6,7 +6,9 @@ discriminatorValue: addItemShippingAddress
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#add-itemshippingaddress"
 examples:
-  postman: !include ../../examples/Cart/CartAddItemShippingAddressAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartAddItemShippingAddressAction-postman.json
 properties:
   action:
     type: string

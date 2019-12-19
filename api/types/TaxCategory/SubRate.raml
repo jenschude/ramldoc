@@ -2,15 +2,17 @@
 displayName: SubRate
 type: object
 (builtinType): object
+(package): "TaxCategory"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-taxCategories.html#subrate"
 properties:
   name:
     type: string
     (builtinType): string
     required: true
   amount:
-    format: int16
+    format: float
     minimum: 0
     maximum: 1
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: true

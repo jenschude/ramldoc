@@ -6,7 +6,9 @@ discriminatorValue: changeType
 (package): "State"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-states.html#change-state-type"
 examples:
-  postman: !include ../../examples/State/StateChangeTypeAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/State/StateChangeTypeAction-postman.json
 properties:
   action:
     type: string
@@ -17,4 +19,10 @@ properties:
   type:
     type: StateTypeEnum
     (builtinType): string
+    enum:
+    - OrderState
+    - LineItemState
+    - ProductState
+    - ReviewState
+    - PaymentState
     required: true

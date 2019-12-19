@@ -3,6 +3,8 @@ displayName: DeliveryCloudEventsFormat
 type: DeliveryFormat
 (builtinType): object
 discriminatorValue: CloudEvents
+(package): "Subscription"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-subscriptions.html#cloudevents-format-preview"
 properties:
   type:
     type: string
@@ -13,4 +15,6 @@ properties:
   cloudEventsVersion:
     type: string
     (builtinType): string
+    enum:
+    - 0.1
     required: true

@@ -3,6 +3,8 @@ displayName: ScoreShippingRateInput
 type: ShippingRateInput
 (builtinType): object
 discriminatorValue: Score
+(package): "Cart"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#scoreshippingrateinput"
 properties:
   type:
     type: string
@@ -11,6 +13,6 @@ properties:
     - Score
     required: true
   score:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: true

@@ -6,7 +6,9 @@ discriminatorValue: addToCategory
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#add-to-category"
 examples:
-  postman: !include ../../examples/Product/ProductAddToCategoryAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductAddToCategoryAction-postman.json
 properties:
   action:
     type: string

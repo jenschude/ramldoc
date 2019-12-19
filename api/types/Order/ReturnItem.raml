@@ -6,6 +6,8 @@ discriminator: type
 (oneOf):
 - CustomLineItemReturnItem
 - LineItemReturnItem
+(package): "Order"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-orders.html#returnitem"
 properties:
   id:
     type: string
@@ -27,10 +29,20 @@ properties:
   shipmentState:
     type: ReturnShipmentState
     (builtinType): string
+    enum:
+    - Advised
+    - Returned
+    - BackInStock
+    - Unusable
     required: true
   paymentState:
     type: ReturnPaymentState
     (builtinType): string
+    enum:
+    - NonRefundable
+    - Initial
+    - Refunded
+    - NotRefunded
     required: true
   lastModifiedAt:
     type: datetime

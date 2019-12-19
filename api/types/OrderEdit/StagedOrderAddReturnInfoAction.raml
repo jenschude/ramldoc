@@ -6,7 +6,9 @@ discriminatorValue: addReturnInfo
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#add-returninfo"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderAddReturnInfoAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderAddReturnInfoAction-postman.json
 properties:
   action:
     type: string

@@ -6,7 +6,9 @@ discriminatorValue: setShippingMethodTaxAmount
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#set-shippingmethod-taxamount"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderSetShippingMethodTaxAmountAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderSetShippingMethodTaxAmountAction-postman.json
 properties:
   action:
     type: string

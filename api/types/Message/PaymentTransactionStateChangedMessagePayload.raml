@@ -3,6 +3,8 @@ displayName: PaymentTransactionStateChangedMessagePayload
 type: MessagePayload
 (builtinType): object
 discriminatorValue: PaymentTransactionStateChanged
+(package): "Message"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-messages.html#paymenttransactionstatechanged-message"
 properties:
   type:
     type: string
@@ -17,4 +19,9 @@ properties:
   state:
     type: TransactionState
     (builtinType): string
+    enum:
+    - Initial
+    - Pending
+    - Success
+    - Failure
     required: true

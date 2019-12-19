@@ -6,7 +6,9 @@ discriminatorValue: removeAsset
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#remove-asset"
 examples:
-  postman: !include ../../examples/Product/ProductRemoveAssetAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductRemoveAssetAction-postman.json
 properties:
   action:
     type: string

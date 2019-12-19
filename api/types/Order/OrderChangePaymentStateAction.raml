@@ -6,7 +6,9 @@ discriminatorValue: changePaymentState
 (package): "Order"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-orders.html#change-paymentstate"
 examples:
-  postman: !include ../../examples/Order/OrderChangePaymentStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Order/OrderChangePaymentStateAction-postman.json
 properties:
   action:
     type: string
@@ -17,4 +19,10 @@ properties:
   paymentState:
     type: PaymentState
     (builtinType): string
+    enum:
+    - BalanceDue
+    - Failed
+    - Pending
+    - CreditOwed
+    - Paid
     required: false

@@ -6,7 +6,9 @@ discriminatorValue: setDeliveryAddress
 (package): "Order"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-orders.html#set-delivery-address"
 examples:
-  postman: !include ../../examples/Order/OrderSetDeliveryAddressAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Order/OrderSetDeliveryAddressAction-postman.json
 properties:
   action:
     type: string

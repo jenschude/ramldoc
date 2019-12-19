@@ -6,7 +6,9 @@ discriminatorValue: updateItemShippingAddress
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#update-itemshippingaddress"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderUpdateItemShippingAddressAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderUpdateItemShippingAddressAction-postman.json
 properties:
   action:
     type: string

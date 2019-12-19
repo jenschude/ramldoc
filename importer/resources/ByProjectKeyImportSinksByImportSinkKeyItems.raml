@@ -1,4 +1,4 @@
-#ByProjectKeyImportSinksByImportSinkKeyItems
+(resourceName): ByProjectKeyImportSinksByImportSinkKeyItems
 (resourcePathUri): /{projectKey}/import-sinks/{importSinkKey}/items
 
 uriParameters:
@@ -16,17 +16,15 @@ get:
   queryParameters:
     limit:
       required: false
-      type: integer
-      (builtinType): integer
+      type: number
+      (builtinType): number
     offset:
       required: false
-      type: integer
-      (builtinType): integer
+      type: number
+      (builtinType): number
   responses:
     200:
       body:
         application/json:
           type: ImportItemPagedResponse
           (builtinType): object
-          description: |-
-            This type represents a paged import item result.

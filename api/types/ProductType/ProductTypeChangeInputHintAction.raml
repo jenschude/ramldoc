@@ -3,6 +3,8 @@ displayName: ProductTypeChangeInputHintAction
 type: ProductTypeUpdateAction
 (builtinType): object
 discriminatorValue: changeInputHint
+(package): "ProductType"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-productTypes.html#change-attributedefinition-inputhint"
 properties:
   action:
     type: string
@@ -17,4 +19,7 @@ properties:
   newValue:
     type: TextInputHint
     (builtinType): string
+    enum:
+    - SingleLine
+    - MultiLine
     required: true

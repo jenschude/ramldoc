@@ -1,5 +1,7 @@
-#ByProjectKeyMeShoppingLists
+(resourceName): ByProjectKeyMeShoppingLists
 (resourcePathUri): /{projectKey}/me/shopping-lists
+description: |-
+  The My Shopping Lists endpoint creates and provides access to shopping lists scoped to a specific user.
 
 uriParameters:
   projectKey:
@@ -98,16 +100,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

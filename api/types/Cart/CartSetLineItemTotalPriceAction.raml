@@ -6,7 +6,9 @@ discriminatorValue: setLineItemTotalPrice
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#set-lineitem-totalprice"
 examples:
-  postman: !include ../../examples/Cart/CartSetLineItemTotalPriceAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartSetLineItemTotalPriceAction-postman.json
 properties:
   action:
     type: string

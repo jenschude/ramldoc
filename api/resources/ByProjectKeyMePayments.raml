@@ -1,5 +1,7 @@
-#ByProjectKeyMePayments
+(resourceName): ByProjectKeyMePayments
 (resourcePathUri): /{projectKey}/me/payments
+description: |-
+  The My Payments endpoint creates and provides access to payments scoped to a specific user.
 
 uriParameters:
   projectKey:
@@ -98,16 +100,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

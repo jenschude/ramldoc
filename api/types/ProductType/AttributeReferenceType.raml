@@ -3,6 +3,8 @@ displayName: AttributeReferenceType
 type: AttributeType
 (builtinType): object
 discriminatorValue: reference
+(package): "ProductType"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-productTypes.html#referencetype"
 properties:
   name:
     type: string
@@ -13,4 +15,28 @@ properties:
   referenceTypeId:
     type: ReferenceTypeId
     (builtinType): string
+    enum:
+    - cart
+    - cart-discount
+    - category
+    - channel
+    - customer
+    - customer-group
+    - discount-code
+    - key-value-document
+    - payment
+    - product
+    - product-type
+    - product-discount
+    - order
+    - review
+    - shopping-list
+    - shipping-method
+    - state
+    - store
+    - tax-category
+    - type
+    - zone
+    - inventory-entry
+    - order-edit
     required: true

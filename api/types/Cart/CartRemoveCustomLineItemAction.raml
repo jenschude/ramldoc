@@ -6,7 +6,9 @@ discriminatorValue: removeCustomLineItem
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#remove-customlineitem"
 examples:
-  postman: !include ../../examples/Cart/CartRemoveCustomLineItemAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartRemoveCustomLineItemAction-postman.json
 properties:
   action:
     type: string

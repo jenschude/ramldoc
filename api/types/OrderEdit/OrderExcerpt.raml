@@ -2,6 +2,8 @@
 displayName: OrderExcerpt
 type: object
 (builtinType): object
+(package): "OrderEdit"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#orderexcerpt"
 properties:
   totalPrice:
     discriminator: "type"
@@ -13,7 +15,7 @@ properties:
     (builtinType): object
     required: false
   version:
-    format: int16
+    format: int
     type: integer
     (builtinType): integer
     required: true

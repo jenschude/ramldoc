@@ -6,7 +6,9 @@ discriminatorValue: changeAssetOrder
 (package): "Product"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-products.html#change-asset-order"
 examples:
-  postman: !include ../../examples/Product/ProductChangeAssetOrderAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Product/ProductChangeAssetOrderAction-postman.json
 properties:
   action:
     type: string

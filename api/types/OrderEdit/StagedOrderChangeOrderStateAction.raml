@@ -6,7 +6,9 @@ discriminatorValue: changeOrderState
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#change-orderstate"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderChangeOrderStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderChangeOrderStateAction-postman.json
 properties:
   action:
     type: string
@@ -17,4 +19,9 @@ properties:
   orderState:
     type: OrderState
     (builtinType): string
+    enum:
+    - Open
+    - Confirmed
+    - Complete
+    - Cancelled
     required: true

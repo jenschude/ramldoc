@@ -1,5 +1,7 @@
-#ByProjectKeyExtensions
+(resourceName): ByProjectKeyExtensions
 (resourcePathUri): /{projectKey}/extensions
+description: |-
+  Extend the behavior of an API with your business logic
 
 uriParameters:
   projectKey:
@@ -99,16 +101,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

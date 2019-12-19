@@ -6,7 +6,9 @@ discriminatorValue: setMiddleName
 (package): "Customer"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-customers.html#set-middle-name"
 examples:
-  postman: !include ../../examples/Customer/CustomerSetMiddleNameAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Customer/CustomerSetMiddleNameAction-postman.json
 properties:
   action:
     type: string

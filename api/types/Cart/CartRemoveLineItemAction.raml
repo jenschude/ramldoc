@@ -6,7 +6,9 @@ discriminatorValue: removeLineItem
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#remove-lineitem"
 examples:
-  postman: !include ../../examples/Cart/CartRemoveLineItemAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartRemoveLineItemAction-postman.json
 properties:
   action:
     type: string
@@ -19,8 +21,8 @@ properties:
     (builtinType): string
     required: true
   quantity:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: false
   externalPrice:
     type: Money

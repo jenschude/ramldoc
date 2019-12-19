@@ -2,6 +2,8 @@
 displayName: MyLineItemDraft
 type: object
 (builtinType): object
+(package): "Me"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-me-carts.html#mylineitemdraft"
 properties:
   productId:
     type: string
@@ -13,9 +15,9 @@ properties:
     (builtinType): integer
     required: true
   quantity:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     required: true
   supplyChannel:
     discriminatorValue: "channel"

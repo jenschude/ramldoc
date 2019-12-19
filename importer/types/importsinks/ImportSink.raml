@@ -3,8 +3,12 @@ displayName: ImportSink
 type: object
 (builtinType): object
 examples:
-  minimal: !include ../../examples/importsinks/ImportSink-minimal.json
-  with-skip-predicate: !include ../../examples/importsinks/ImportSink-with-skip-predicate.json
+  minimal:
+    strict: true
+    value: !include ../../examples/importsinks/ImportSink-minimal.json
+  with-skip-predicate:
+    strict: true
+    value: !include ../../examples/importsinks/ImportSink-with-skip-predicate.json
 description: |-
   This type represents an import sink.
 properties:

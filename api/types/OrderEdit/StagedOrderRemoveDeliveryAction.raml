@@ -6,7 +6,9 @@ discriminatorValue: removeDelivery
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#remove-delivery"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderRemoveDeliveryAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderRemoveDeliveryAction-postman.json
 properties:
   action:
     type: string

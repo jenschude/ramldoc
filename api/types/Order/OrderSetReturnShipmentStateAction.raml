@@ -6,7 +6,9 @@ discriminatorValue: setReturnShipmentState
 (package): "Order"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-orders.html#set-returnshipmentstate"
 examples:
-  postman: !include ../../examples/Order/OrderSetReturnShipmentStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Order/OrderSetReturnShipmentStateAction-postman.json
 properties:
   action:
     type: string
@@ -21,4 +23,9 @@ properties:
   shipmentState:
     type: ReturnShipmentState
     (builtinType): string
+    enum:
+    - Advised
+    - Returned
+    - BackInStock
+    - Unusable
     required: true

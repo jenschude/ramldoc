@@ -1,4 +1,4 @@
-#ByProjectKeyImportSinksByImportSinkKey
+(resourceName): ByProjectKeyImportSinksByImportSinkKey
 (resourcePathUri): /{projectKey}/import-sinks/{importSinkKey}
 
 uriParameters:
@@ -17,27 +17,25 @@ put:
     application/json:
       type: ImportSinkDraft
       (builtinType): object
-      description: |-
-        This type represents the read model of an ImportSink.
   responses:
     200:
+      description: |-
+        The import sink was successfully updated.
       body:
         application/json:
           type: ImportSink
           (builtinType): object
-          description: |-
-            This type represents an import sink.
 get:
   description: |-
     Retrieves the import sink given by the key.
   responses:
     200:
+      description: |-
+        The requested import sink was found.
       body:
         application/json:
           type: ImportSink
           (builtinType): object
-          description: |-
-            This type represents an import sink.
 delete:
   description: |-
     Deletes the import sink given by the key.
@@ -47,5 +45,3 @@ delete:
         application/json:
           type: ImportSink
           (builtinType): object
-          description: |-
-            This type represents an import sink.

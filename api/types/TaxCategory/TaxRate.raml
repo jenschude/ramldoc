@@ -2,6 +2,8 @@
 displayName: TaxRate
 type: object
 (builtinType): object
+(package): "TaxCategory"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-taxCategories.html#taxrate"
 properties:
   id:
     type: string
@@ -16,11 +18,11 @@ properties:
     (builtinType): string
     required: true
   amount:
-    format: int16
+    format: float
     minimum: 0
     maximum: 1
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     description: |-
       Percentage in the range of [0..1].
       The sum of the amounts of all `subRates`, if there are any.

@@ -6,7 +6,9 @@ discriminatorValue: changeTaxCalculationMode
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#change-taxcalculationmode"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderChangeTaxCalculationModeAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderChangeTaxCalculationModeAction-postman.json
 properties:
   action:
     type: string
@@ -17,4 +19,7 @@ properties:
   taxCalculationMode:
     type: TaxCalculationMode
     (builtinType): string
+    enum:
+    - LineItemLevel
+    - UnitPriceLevel
     required: true

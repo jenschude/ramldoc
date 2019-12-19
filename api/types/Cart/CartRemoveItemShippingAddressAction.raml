@@ -6,7 +6,9 @@ discriminatorValue: removeItemShippingAddress
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#remove-itemshippingaddress"
 examples:
-  postman: !include ../../examples/Cart/CartRemoveItemShippingAddressAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartRemoveItemShippingAddressAction-postman.json
 properties:
   action:
     type: string

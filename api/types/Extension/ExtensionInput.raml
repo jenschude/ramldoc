@@ -2,10 +2,14 @@
 displayName: ExtensionInput
 type: object
 (builtinType): object
+(package): "Extension"
 properties:
   action:
     type: ExtensionAction
     (builtinType): string
+    enum:
+    - Create
+    - Update
     required: true
   resource:
     type: Reference

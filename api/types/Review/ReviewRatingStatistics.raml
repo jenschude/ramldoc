@@ -2,31 +2,33 @@
 displayName: ReviewRatingStatistics
 type: object
 (builtinType): object
+(package): "Review"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-reviews.html#reviewratingstatistics"
 properties:
   averageRating:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       Average rating of one target
       This number is rounded with 5 decimals.
     required: true
   highestRating:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       Highest rating of one target
     required: true
   lowestRating:
-    format: int16
-    type: integer
-    (builtinType): integer
+    format: float
+    type: number
+    (builtinType): number
     description: |-
       Lowest rating of one target
     required: true
   count:
-    format: int16
+    format: int
     type: integer
     (builtinType): integer
     description: |-

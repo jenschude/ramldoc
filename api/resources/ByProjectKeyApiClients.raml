@@ -1,5 +1,7 @@
-#ByProjectKeyApiClients
+(resourceName): ByProjectKeyApiClients
 (resourcePathUri): /{projectKey}/api-clients
+description: |-
+  Manage your API Clients via an API. Useful for Infrastructure-as-Code tooling, and regularly rotating API secrets.
 
 uriParameters:
   projectKey:
@@ -99,16 +101,16 @@ get:
         Note: The sorting is case sensitive.
     limit:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results returned
     offset:
       required: false
-      format: int16
-      type: integer
-      (builtinType): integer
+      format: float
+      type: number
+      (builtinType): number
       description: |-
         Number of results skipped
     withTotal:

@@ -6,7 +6,9 @@ discriminatorValue: changeStackingMode
 (package): "CartDiscount"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-cartDiscounts.html#change-stacking-mode"
 examples:
-  postman: !include ../../examples/CartDiscount/CartDiscountChangeStackingModeAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/CartDiscount/CartDiscountChangeStackingModeAction-postman.json
 properties:
   action:
     type: string
@@ -17,4 +19,7 @@ properties:
   stackingMode:
     type: StackingMode
     (builtinType): string
+    enum:
+    - Stacking
+    - StopAfterThisDiscount
     required: true

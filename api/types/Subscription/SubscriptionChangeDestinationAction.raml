@@ -6,7 +6,9 @@ discriminatorValue: changeDestination
 (package): "Subscription"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-subscriptions.html#change-destination"
 examples:
-  postman: !include ../../examples/Subscription/SubscriptionChangeDestinationAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Subscription/SubscriptionChangeDestinationAction-postman.json
 properties:
   action:
     type: string

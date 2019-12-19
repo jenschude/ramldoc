@@ -6,7 +6,9 @@ discriminatorValue: changeTaxCalculationMode
 (package): "Cart"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-carts.html#change-taxcalculationmode"
 examples:
-  postman: !include ../../examples/Cart/CartChangeTaxCalculationModeAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Cart/CartChangeTaxCalculationModeAction-postman.json
 properties:
   action:
     type: string
@@ -17,4 +19,7 @@ properties:
   taxCalculationMode:
     type: TaxCalculationMode
     (builtinType): string
+    enum:
+    - LineItemLevel
+    - UnitPriceLevel
     required: true

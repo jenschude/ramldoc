@@ -6,7 +6,9 @@ discriminatorValue: addShoppingList
 (package): "OrderEdit"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-order-edits.html#add-shopping-list"
 examples:
-  postman: !include ../../examples/OrderEdit/StagedOrderAddShoppingListAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/OrderEdit/StagedOrderAddShoppingListAction-postman.json
 properties:
   action:
     type: string

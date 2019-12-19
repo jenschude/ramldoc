@@ -3,6 +3,8 @@ displayName: MyCartRemoveLineItemAction
 type: MyCartUpdateAction
 (builtinType): object
 discriminatorValue: removeLineItem
+(package): "Me"
+(docs-uri): "https://docs.commercetools.com/http-api-projects-me-carts#remove-lineitem"
 properties:
   action:
     type: string
@@ -15,8 +17,8 @@ properties:
     (builtinType): string
     required: true
   quantity:
-    type: integer
-    (builtinType): integer
+    type: number
+    (builtinType): number
     required: false
   externalPrice:
     type: Money

@@ -6,7 +6,9 @@ discriminatorValue: changeShipmentState
 (package): "Order"
 (docs-uri): "https://docs.commercetools.com/http-api-projects-orders.html#change-shipmentstate"
 examples:
-  postman: !include ../../examples/Order/OrderChangeShipmentStateAction-postman.json
+  postman:
+    strict: true
+    value: !include ../../examples/Order/OrderChangeShipmentStateAction-postman.json
 properties:
   action:
     type: string
@@ -17,4 +19,11 @@ properties:
   shipmentState:
     type: ShipmentState
     (builtinType): string
+    enum:
+    - Shipped
+    - Ready
+    - Pending
+    - Delayed
+    - Partial
+    - Backorder
     required: false
