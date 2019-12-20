@@ -19,11 +19,11 @@ post:
     Execute a GraphQL query
   body:
     application/graphql:
-      type: any
-      (builtinType): any
+      type: GraphQLRequest
+      (builtinType): object
   responses:
     200:
       body:
         application/json:
-          type: any
-          (builtinType): any
+          type: GraphQLResponse
+          (builtinType): object

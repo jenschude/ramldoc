@@ -89,7 +89,6 @@ properties:
     (builtinType): array
     required: true
   totalPrice:
-    discriminator: "type"
     type: TypedMoney
     (builtinType): object
     required: true
@@ -118,7 +117,6 @@ properties:
       When calculating taxes for `taxedPrice`, the selected mode is used for rouding.
     required: false
   customerGroup:
-    discriminatorValue: "customer-group"
     type: CustomerGroupReference
     (builtinType): object
     description: |-
@@ -185,7 +183,6 @@ properties:
       `0` means, that no messages were created yet.
     required: true
   cart:
-    discriminatorValue: "cart"
     type: CartReference
     (builtinType): object
     description: |-
@@ -219,7 +216,6 @@ properties:
       When calculating taxes for `taxedPrice`, the selected mode is used for calculating the price with LineItemLevel (horizontally) or UnitPriceLevel (vertically) calculation mode.
     required: false
   shippingRateInput:
-    discriminator: "type"
     type: ShippingRateInput
     (builtinType): object
     description: |-

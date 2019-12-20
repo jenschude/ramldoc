@@ -17,10 +17,15 @@ properties:
     - setValidFromAndUntil
     required: true
   validFrom:
+    format: rfc3339
     type: datetime
     (builtinType): datetime
     required: false
   validUntil:
+    format: rfc3339
     type: datetime
     (builtinType): datetime
+    description: |-
+      The timeframe for which the discount should be effective.
+      Please take Eventual Consistency into account for calculated undiscounted values.
     required: false

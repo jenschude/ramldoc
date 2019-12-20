@@ -55,8 +55,8 @@ annotationTypes:
      type: object
      (builtinType): object
   postman-example:
-     type: string
-     (builtinType): string
+     type: any
+     (builtinType): any
   hasSimpleUpdateAction:
      type: string
      (builtinType): string
@@ -463,6 +463,11 @@ types:
   GeoJson: !include types/Common/GeoJson.raml
   GeoJsonPoint: !include types/Common/GeoJsonPoint.raml
   GoogleCloudPubSubDestination: !include types/Subscription/GoogleCloudPubSubDestination.raml
+  GraphQLError: !include types/GraphQL/GraphQLError.raml
+  GraphQLErrorLocation: !include types/GraphQL/GraphQLErrorLocation.raml
+  GraphQLRequest: !include types/GraphQL/GraphQLRequest.raml
+  GraphQLResponse: !include types/GraphQL/GraphQLResponse.raml
+  GraphQLVariablesMap: !include types/GraphQL/GraphQLVariablesMap.raml
   HighPrecisionMoney: !include types/Common/HighPrecisionMoney.raml
   HighPrecisionMoneyDraft: !include types/Common/HighPrecisionMoneyDraft.raml
   Image: !include types/Common/Image.raml

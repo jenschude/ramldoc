@@ -1,0 +1,16 @@
+#%RAML 1.0 DataType
+displayName: GraphQLResponse
+type: object
+(builtinType): object
+(package): "GraphQL"
+properties:
+  data:
+    type: any
+    (builtinType): any
+    required: false
+  errors:
+    type: array
+    items:
+      type: GraphQLError
+    (builtinType): array
+    required: false

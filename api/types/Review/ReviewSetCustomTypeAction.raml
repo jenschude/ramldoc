@@ -19,8 +19,13 @@ properties:
   type:
     type: TypeResourceIdentifier
     (builtinType): object
+    description: |-
+      If absent, the custom type and any existing custom fields are removed.
     required: false
   fields:
     type: FieldContainer
     (builtinType): object
+    description: |-
+      A valid JSON object, based on the FieldDefinitions of the Type.
+      Sets the CustomFields to this value.
     required: false

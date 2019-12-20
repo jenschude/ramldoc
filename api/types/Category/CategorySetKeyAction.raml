@@ -19,4 +19,8 @@ properties:
   key:
     type: string
     (builtinType): string
+    description: |-
+      User-defined unique identifier for the category.
+      Keys can only contain alphanumeric characters (`a-Z, 0-9`), underscores and hyphens (`-, _`) and be between 2 and 256 characters.
+      If `key` is absent or `null`, this field will be removed if it exists.
     required: false

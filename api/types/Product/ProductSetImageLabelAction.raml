@@ -28,10 +28,15 @@ properties:
   imageUrl:
     type: string
     (builtinType): string
+    description: |-
+      The URL of the image.
     required: true
   label:
     type: string
     (builtinType): string
+    description: |-
+      The new image label.
+      If left blank or set to null, the label is removed.
     required: false
   staged:
     type: boolean

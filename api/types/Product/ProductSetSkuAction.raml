@@ -24,6 +24,9 @@ properties:
   sku:
     type: string
     (builtinType): string
+    description: |-
+      SKU must be unique.
+      If left blank or set to `null`, the sku is unset/removed.
     required: false
   staged:
     type: boolean

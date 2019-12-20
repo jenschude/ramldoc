@@ -20,7 +20,6 @@ properties:
     (builtinType): number
     required: true
   supplyChannel:
-    discriminatorValue: "channel"
     type: ChannelResourceIdentifier
     (builtinType): object
     description: |-
@@ -29,7 +28,6 @@ properties:
       The provided channel should have the InventorySupply role.
     required: false
   distributionChannel:
-    discriminatorValue: "channel"
     type: ChannelResourceIdentifier
     (builtinType): object
     description: |-

@@ -18,7 +18,6 @@ properties:
     (builtinType): integer
     required: true
   customer:
-    discriminatorValue: "customer"
     type: CustomerReference
     (builtinType): object
     description: |-
@@ -31,7 +30,6 @@ properties:
       Identifies payments belonging to an anonymous session (the customer has not signed up/in yet).
     required: false
   amountPlanned:
-    discriminator: "type"
     type: TypedMoney
     (builtinType): object
     description: |-

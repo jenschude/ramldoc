@@ -6,12 +6,10 @@ type: object
 (docs-uri): "https://docs.commercetools.com/http-api-projects-shippingMethods.html#shippingrate"
 properties:
   price:
-    discriminator: "type"
     type: TypedMoney
     (builtinType): object
     required: true
   freeAbove:
-    discriminator: "type"
     type: TypedMoney
     (builtinType): object
     description: |-

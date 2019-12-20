@@ -17,10 +17,16 @@ properties:
     - setValidFromAndUntil
     required: true
   validFrom:
+    format: rfc3339
     type: datetime
     (builtinType): datetime
+    description: |-
+      If absent, the field with the value is removed in case a value was set before.
     required: false
   validUntil:
+    format: rfc3339
     type: datetime
     (builtinType): datetime
+    description: |-
+      If absent, the field with the value is removed in case a value was set before.
     required: false

@@ -19,8 +19,13 @@ properties:
   type:
     type: TypeResourceIdentifier
     (builtinType): object
+    description: |-
+      If set, the custom type is set to this new value.
+      If absent, the custom type and any existing custom fields are removed.
     required: false
   fields:
     type: FieldContainer
     (builtinType): object
+    description: |-
+      If set, the custom fields are set to this new value.
     required: false

@@ -1,0 +1,18 @@
+#%RAML 1.0 DataType
+displayName: GraphQLRequest
+type: object
+(builtinType): object
+(package): "GraphQL"
+properties:
+  query:
+    type: string
+    (builtinType): string
+    required: true
+  operationName:
+    type: string
+    (builtinType): string
+    required: false
+  variables:
+    type: GraphQLVariablesMap
+    (builtinType): object
+    required: false

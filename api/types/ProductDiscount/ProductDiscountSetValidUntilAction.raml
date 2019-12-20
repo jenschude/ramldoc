@@ -17,6 +17,10 @@ properties:
     - setValidUntil
     required: true
   validUntil:
+    format: rfc3339
     type: datetime
     (builtinType): datetime
+    description: |-
+      The time from which the discount should be ineffective.
+      Please take Eventual Consistency into account for calculated undiscounted values.
     required: false

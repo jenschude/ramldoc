@@ -1,0 +1,22 @@
+#%RAML 1.0 DataType
+displayName: GraphQLError
+type: object
+(builtinType): object
+(package): "GraphQL"
+properties:
+  message:
+    type: string
+    (builtinType): string
+    required: true
+  locations:
+    type: array
+    items:
+      type: GraphQLErrorLocation
+    (builtinType): array
+    required: true
+  path:
+    type: array
+    items:
+      type: any
+    (builtinType): array
+    required: true
