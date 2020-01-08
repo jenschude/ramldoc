@@ -24,6 +24,7 @@ securitySchemes:
   oauth_2_0: !include oauth2.raml
 securedBy:
 - oauth_2_0
+baseUri: https://import.commercetools.com
 types:
   AccessDeniedError: !include types/errors/AccessDeniedError.raml
   Address: !include types/common/Address.raml
