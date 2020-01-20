@@ -6,29 +6,25 @@ examples:
   minimal:
     strict: true
     value: !include ../../examples/importsinks/ImportSinkDraft-minimal.json
-  with-skip-predicate:
-    strict: true
-    value: !include ../../examples/importsinks/ImportSinkDraft-with-skip-predicate.json
 description: |-
-  This type represents the read model of an ImportSink.
+  The representation sent to the server when creating or updating an import sink.
 properties:
+  version:
+    format: int64
+    type: integer
+    (builtinType): integer
+    description: |-
+      The version of this resource.
+    required: false
   key:
     type: string
     (builtinType): string
     description: |-
-      The key of import sink.
+      The unique key of the import sink.
     required: true
   resourceType:
-    type: ResourceType
+    type: ImportResourceType
     (builtinType): string
     description: |-
-      The type of the import resource sent to this import sink.
+      The type of import resource sent to this import sink.
     required: true
-  skipPredicate:
-    type: Predicate
-    (builtinType): object
-    description: |-
-      A predicate allows to check the current state of a CTP resource. And can be used to detect if an import should
-      be performed or should be skipped. And this abstract type allows us to support different syntaxes for our predicates
-      without any breaking changes to our api.
-    required: false

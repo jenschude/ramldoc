@@ -3,6 +3,9 @@ displayName: LocalizableEnumAttribute
 type: Attribute
 (builtinType): object
 discriminatorValue: lenum
+description: |-
+  This type represents an attribute which value is a localized enum.
+  The attribute value refers to the key of the enum value.
 properties:
   type:
     type: string
@@ -11,6 +14,6 @@ properties:
     - lenum
     required: true
   value:
-    type: LocalizedEnumValue
-    (builtinType): object
+    type: string
+    (builtinType): string
     required: true

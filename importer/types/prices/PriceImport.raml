@@ -2,6 +2,8 @@
 displayName: PriceImport
 type: ImportResource
 (builtinType): object
+description: |-
+  Imports a product variant's prices.
 properties:
   key:
     type: string
@@ -10,37 +12,69 @@ properties:
   value:
     type: Money
     (builtinType): object
+    description: |-
+      Maps to `Price.value`.
+      
+      The Import API **only** supports `centPrecision` prices.
     required: true
   country:
+    pattern: "^[A-Z]{2}$"
     type: CountryCode
     (builtinType): string
     description: |-
-      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+      Maps to `Price.county`.
     required: false
   validFrom:
+    format: rfc3339
     type: datetime
     (builtinType): datetime
+    description: |-
+      Maps to `Price.validFrom`.
     required: false
   validUntil:
+    format: rfc3339
     type: datetime
     (builtinType): datetime
+    description: |-
+      Maps to `Price.validUntil`.
     required: false
   customerGroup:
-    type: ImportReference
+    type: CustomerGroupKeyReference
     (builtinType): object
     description: |-
-      An import reference references a resource by its key.
+      References a customer group by its key. 
+      
+      The customer group referenced
+      must already exist in the commercetools project, or the 
+      import operation state is set to `Unresolved`.
     required: false
   channel:
-    type: ImportReference
+    type: ChannelKeyReference
     (builtinType): object
     description: |-
-      An import reference references a resource by its key.
+      References a channel by its key. 
+      
+      The channel referenced
+      must already exist in the commercetools project, or the 
+      import operation state is set to `Unresolved`.
     required: false
   productVariant:
-    type: ImportReference
+    type: ProductVariantKeyReference
     (builtinType): object
     description: |-
       The product variant in which this price is contained.
-    (ReferenceType): "product-variant"
+      
+      The product variant referenced
+      must already exist in the commercetools project, or the 
+      import operation state is set to `Unresolved`.
+    required: true
+  product:
+    type: ProductKeyReference
+    (builtinType): object
+    description: |-
+      The product in which this product variant containong the price is contained. Maps to `ProductVariant.product`.
+      
+      The product referenced
+      must already exist in the commercetools project, or the
+      import operation state is set to `Unresolved`.
     required: true

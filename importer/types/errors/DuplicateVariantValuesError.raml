@@ -3,6 +3,9 @@ displayName: DuplicateVariantValuesError
 type: ErrorObject
 (builtinType): object
 discriminatorValue: DuplicateVariantValues
+description: |-
+  A given combination of variant values conflicts with an existing one.
+  Every product variant must have a distinct combination of SKU, prices, and custom attribute values.
 properties:
   code:
     type: string
@@ -13,4 +16,6 @@ properties:
   variantValues:
     type: VariantValues
     (builtinType): object
+    description: |-
+      The offending variant values.
     required: true

@@ -3,6 +3,8 @@ displayName: RequiredFieldError
 type: ErrorObject
 (builtinType): object
 discriminatorValue: RequiredField
+description: |-
+  A required field is missing a value.
 properties:
   code:
     type: string
@@ -13,4 +15,6 @@ properties:
   field:
     type: string
     (builtinType): string
+    description: |-
+      The name of the field.
     required: true

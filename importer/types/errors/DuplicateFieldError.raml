@@ -3,6 +3,8 @@ displayName: DuplicateFieldError
 type: ErrorObject
 (builtinType): object
 discriminatorValue: DuplicateField
+description: |-
+  A value for a field conflicts with an existing duplicate value.
 properties:
   code:
     type: string
@@ -13,8 +15,12 @@ properties:
   field:
     type: string
     (builtinType): string
+    description: |-
+      The name of the field.
     required: false
   duplicateValue:
     type: any
     (builtinType): any
+    description: |-
+      The offending duplicate value.
     required: false

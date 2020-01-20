@@ -3,9 +3,10 @@ displayName: ProductImport
 type: ImportResource
 (builtinType): object
 description: |-
-  For now we just import the attributes that are required by the CTP product draft.
-  Later we will add more attributes, but overall the goal is to create a separate
-  product data model targeting the special needs of an import client.
+  Import representation for a prduct.
+  
+  The import representation for a product is the most minimal representation required
+  for creating a product in commercetools.
 properties:
   key:
     type: string
@@ -15,13 +16,17 @@ properties:
     type: LocalizedString
     (builtinType): object
     description: |-
-      The human readable name of the product.
+      Maps to `Product.name`.
     required: true
   productType:
-    type: ImportReference
+    type: ProductTypeKeyReference
     (builtinType): object
     description: |-
-      An import reference references a resource by its key.
+      The product's product type. Maps to `Product.productType`.
+      
+      The product type referenced
+      must already exist in the commercetools project, or the 
+      import operation state is set to `Unresolved`.
     required: true
   slug:
     type: LocalizedString
@@ -33,16 +38,20 @@ properties:
   description:
     type: LocalizedString
     (builtinType): object
+    description: |-
+      Maps to `Product.description`.
     required: false
   categories:
     type: array
     items:
-      type: ImportReference
+      type: CategoryKeyReference
     (builtinType): array
-    required: false
-  categoryOrderHints:
-    type: CategoryOrderHints
-    (builtinType): object
+    description: |-
+      An array of references to a categories by their keys. Maps to `Product.categories`. 
+      
+      The categories referenced
+      must already exist in the commercetools project, or the 
+      import operation state is set to `Unresolved`.
     required: false
   metaTitle:
     type: LocalizedString
@@ -57,18 +66,26 @@ properties:
     (builtinType): object
     required: false
   taxCategory:
-    type: ImportReference
+    type: TaxCategoryKeyReference
     (builtinType): object
     description: |-
-      An import reference references a resource by its key.
+      References a tax category by its key.
+      
+      The tax category referenced must already exist 
+      in the commercetools project, or the 
+      import operation state is set to `Unresolved`.
     required: false
   searchKeywords:
     type: SearchKeywords
     (builtinType): object
     required: false
   state:
-    type: ImportReference
+    type: StateKeyReference
     (builtinType): object
     description: |-
-      An import reference references a resource by its key.
+      References a state by its key.
+      
+      The tax category referenced must already exist 
+      in the commercetools project, or the 
+      import operation state is set to `Unresolved`.
     required: false

@@ -2,6 +2,8 @@
 displayName: ProductTypeImport
 type: ImportResource
 (builtinType): object
+description: |-
+  Import representation for a product type.
 properties:
   key:
     type: string
@@ -10,14 +12,20 @@ properties:
   name:
     type: string
     (builtinType): string
+    description: |-
+      Maps to `ProductType.name`.
     required: true
   description:
     type: string
     (builtinType): string
+    description: |-
+      Maps to `ProductType.description`.
     required: true
   attributes:
     type: array
     items:
       type: AttributeDefinition
     (builtinType): array
+    description: |-
+      The product type's attributes.
     required: false

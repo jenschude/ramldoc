@@ -1,8 +1,0 @@
-{
-  "key" : "product-variant-patch-sink",
-  "resourceType" : "product-variant-patch",
-  "skipPredicate" : {
-    "type" : "javascript",
-    "expression" : "!attributes.new"
-  }
-}

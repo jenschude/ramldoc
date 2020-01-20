@@ -4,29 +4,39 @@ type: object
 (builtinType): object
 discriminator: type
 (oneOf):
-- AnyAttribute
 - BooleanAttribute
+- BooleanSetAttribute
 - DateAttribute
+- DateSetAttribute
 - DateTimeAttribute
+- DateTimeSetAttribute
 - EnumAttribute
+- EnumSetAttribute
 - LocalizableEnumAttribute
+- LocalizableEnumSetAttribute
 - LocalizableTextAttribute
+- LocalizableTextSetAttribute
 - MoneyAttribute
+- MoneySetAttribute
 - NumberAttribute
+- NumberSetAttribute
+- ReferenceAttribute
+- ReferenceSetAttribute
 - TextAttribute
+- TextSetAttribute
 - TimeAttribute
+- TimeSetAttribute
 description: |-
-  This abstract type is the base for specific attribute types. The concrete type is derived
-  from the type discriminator.
-  An attribute matches an attribute definition of a CTP product type by name.
-  The value can have different types, but must match the type of the matching attribute defintion.
+  This type represents the value of an attribute of a product variant.
+  The name and type property must match the name and type property of an attribute definition of the product type.
 properties:
   name:
     type: string
     (builtinType): string
     description: |-
-      For now we reuse this type in two different context. And that's why the name is required when used in the full import.
-      And why the name isn't required when used in patch.
+      The name of this attribute must match a name of the product types attribute definitions.
+      The name is required if this type is used in a product variant and must not be set when
+      used in a product variant patch.
     required: false
   type:
     type: string

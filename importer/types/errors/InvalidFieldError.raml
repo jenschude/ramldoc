@@ -3,6 +3,8 @@ displayName: InvalidFieldError
 type: ErrorObject
 (builtinType): object
 discriminatorValue: InvalidField
+description: |-
+  A field has an invalid value.
 properties:
   code:
     type: string
@@ -13,14 +15,20 @@ properties:
   field:
     type: string
     (builtinType): string
+    description: |-
+      The name of the field.
     required: true
   invalidValue:
     type: any
     (builtinType): any
+    description: |-
+      The invalid value.
     required: true
   allowedValues:
     type: array
     items:
       type: any
     (builtinType): array
+    description: |-
+      A fixed set of allowed values for the field, if any.
     required: false

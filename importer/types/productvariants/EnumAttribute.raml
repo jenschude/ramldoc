@@ -3,6 +3,9 @@ displayName: EnumAttribute
 type: Attribute
 (builtinType): object
 discriminatorValue: enum
+description: |-
+  This type represents an attribute which value is an enum.
+  The attribute value refers to the key of the enum value.
 properties:
   type:
     type: string
@@ -11,6 +14,6 @@ properties:
     - enum
     required: true
   value:
-    type: EnumValue
-    (builtinType): object
+    type: string
+    (builtinType): string
     required: true

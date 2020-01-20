@@ -6,14 +6,18 @@ discriminator: code
 (oneOf):
 - AccessDeniedError
 - ConcurrentModificationError
+- ContentionError
 - DuplicateAttributeValueError
 - DuplicateAttributeValuesError
 - DuplicateFieldError
 - DuplicateVariantValuesError
+- GenericError
 - InsufficientScopeError
 - InvalidCredentialsError
 - InvalidFieldError
 - InvalidInput
+- InvalidJsonInput
+- InvalidScopeError
 - InvalidStateTransitionError
 - InvalidTokenError
 - RequiredFieldError
@@ -21,6 +25,8 @@ discriminator: code
 - ResourceDeletionError
 - ResourceNotFoundError
 - ResourceUpdateError
+description: |-
+  An error.
 properties:
   code:
     type: string
@@ -29,4 +35,6 @@ properties:
   message:
     type: string
     (builtinType): string
+    description: |-
+      The error's description.
     required: true

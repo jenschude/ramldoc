@@ -3,11 +3,15 @@ displayName: Asset
 type: object
 (builtinType): object
 properties:
-  id:
+  key:
     type: string
     (builtinType): string
+    description: |-
+      User-defined identifier for the asset.
+      Asset keys are unique inside their container (a product variant or a category).
     required: true
   sources:
+    minItems: 1
     type: array
     items:
       type: AssetSource

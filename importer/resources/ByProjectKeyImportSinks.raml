@@ -7,7 +7,7 @@ uriParameters:
     type: string
     (builtinType): string
     description: |-
-      The CTP project key.
+      The commercetools project key.
     required: true
 post:
   description: |-
@@ -21,4 +21,22 @@ post:
       body:
         application/json:
           type: ImportSink
+          (builtinType): object
+get:
+  description: |-
+    Retrieves all import sinks of a project key.
+  queryParameters:
+    limit:
+      required: true
+      type: number
+      (builtinType): number
+    offset:
+      required: true
+      type: number
+      (builtinType): number
+  responses:
+    200:
+      body:
+        application/json:
+          type: ImportSinkPagedResponse
           (builtinType): object
