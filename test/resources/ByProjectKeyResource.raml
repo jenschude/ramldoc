@@ -1,6 +1,5 @@
 # Resource
 (resourceName): ByProjectKeyResource
-(absoluteUri): https://subdomain-{exampleUriParameter}.example.com/{projectKey}/resource
 (resourcePathUri): /{projectKey}/resource
 
 uriParameters:
@@ -22,6 +21,11 @@ post:
     application/json:
       type: ObjectTestTypeDraft
       (builtinType): object
+      examples:
+        default:
+          strict: true
+          value: !include ../examples/ByProjectKeyResourcePost-default.json
+
   responses:
     201:
       description: |-
@@ -30,6 +34,11 @@ post:
         application/json:
           type: ObjectTestType
           (builtinType): object
+          examples:
+            default:
+              strict: true
+              value: !include ../examples/ByProjectKeyResourcePost-201-default.json
+
 get:
   securedBy:
   - oauth_2_0:
@@ -54,12 +63,20 @@ get:
       (builtinType): string
     limit:
       required: false
+      format: float
       type: number
       (builtinType): number
     offset:
       required: false
+      format: float
       type: number
       (builtinType): number
+    collection:
+      required: false
+      type: ObjectTestType
+      (builtinType): object
+      description: |-
+        A typical Object type with a non-scalar property.
   responses:
     200:
       description: |-
@@ -68,3 +85,7 @@ get:
         application/json:
           type: ArrayTestType
           (builtinType): object
+          examples:
+            default:
+              strict: true
+              value: !include ../examples/ByProjectKeyResourceGet-200-default.json

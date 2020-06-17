@@ -1,6 +1,5 @@
 # Resource
 (resourceName): ByProjectKeyResourceById
-(absoluteUri): https://subdomain-{exampleUriParameter}.example.com/{projectKey}/resource/{id}
 (resourcePathUri): /{projectKey}/resource/{id}
 
 uriParameters:
@@ -22,6 +21,11 @@ post:
     application/json:
       type: ExampleResourceUpdate
       (builtinType): object
+      examples:
+        default:
+          strict: true
+          value: !include ../examples/ByProjectKeyResourceByIdPost-default.json
+
 get:
   securedBy:
   - oauth_2_0:
@@ -50,6 +54,11 @@ get:
         application/json:
           type: ObjectTestType
           (builtinType): object
+          examples:
+            default:
+              strict: true
+              value: !include ../examples/ByProjectKeyResourceByIdGet-200-default.json
+
 delete:
   securedBy:
   - oauth_2_0:
@@ -66,3 +75,7 @@ delete:
         application/json:
           type: ObjectTestType
           (builtinType): object
+          examples:
+            default:
+              strict: true
+              value: !include ../examples/ByProjectKeyResourceByIdDelete-200-default.json

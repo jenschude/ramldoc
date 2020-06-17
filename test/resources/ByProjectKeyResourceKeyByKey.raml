@@ -1,6 +1,5 @@
 # Resource
 (resourceName): ByProjectKeyResourceKeyByKey
-(absoluteUri): https://subdomain-{exampleUriParameter}.example.com/{projectKey}/resource/key={key}
 (resourcePathUri): /{projectKey}/resource/key={key}
 
 uriParameters:
@@ -31,3 +30,7 @@ get:
         application/json:
           type: ObjectTestType
           (builtinType): object
+          examples:
+            default:
+              strict: true
+              value: !include ../examples/ByProjectKeyResourceKeyByKeyGet-200-default.json
