@@ -10,19 +10,36 @@ uriParameters:
       The commercetools project key.
     required: true
 post:
+  securedBy:
+  - oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_import_sinks:{projectKey}"
   description: |-
     Creates a new import sink.
   body:
     application/json:
       type: ImportSinkDraft
       (builtinType): object
+
   responses:
     201:
       body:
         application/json:
           type: ImportSink
           (builtinType): object
+          examples:
+            default:
+              strict: true
+              value: !include ../examples/ByProjectKeyImportSinksPost-201-default.json
+
 get:
+  securedBy:
+  - oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_import_sinks:{projectKey}"
+      - "view_import_sinks:{projectKey}"
   description: |-
     Retrieves all import sinks of a project key.
   queryParameters:

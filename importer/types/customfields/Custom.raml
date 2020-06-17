@@ -1,0 +1,19 @@
+#%RAML 1.0 DataType
+displayName: Custom
+type: object
+(builtinType): object
+description: |-
+  The representation to be sent to the server when creating a resource with custom fields.
+properties:
+  type:
+    type: TypeKeyReference
+    (builtinType): object
+    description: |-
+      The type that provides the field definitions for this object.
+    required: true
+  fields:
+    type: FieldContainer
+    (builtinType): object
+    description: |-
+      The custom fields of this object.
+    required: false

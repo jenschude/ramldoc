@@ -1,0 +1,20 @@
+#%RAML 1.0 DataType
+displayName: BooleanField
+type: CustomField
+(builtinType): object
+discriminatorValue: Boolean
+description: |-
+  A field with a boolean value.
+properties:
+  type:
+    type: string
+    (builtinType): string
+    description: |-
+      The type of this field.
+    enum:
+    - Boolean
+    required: true
+  value:
+    type: boolean
+    (builtinType): boolean
+    required: true

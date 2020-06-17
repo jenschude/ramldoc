@@ -1,0 +1,41 @@
+#%RAML 1.0 DataType
+displayName: PriceDraftImport
+type: object
+(builtinType): object
+properties:
+  value:
+    type: Money
+    (builtinType): object
+    required: true
+  country:
+    type: CountryCode
+    (builtinType): string
+    description: |-
+      A two-digit country code as per [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+    required: false
+  customerGroup:
+    type: CustomerGroupKeyReference
+    (builtinType): object
+    description: |-
+      References a customer group by its key.
+    required: false
+  channel:
+    type: ChannelKeyReference
+    (builtinType): object
+    description: |-
+      References a channel by its key.
+    required: false
+  validFrom:
+    type: datetime
+    (builtinType): datetime
+    required: false
+  validUntil:
+    type: datetime
+    (builtinType): datetime
+    required: false
+  custom:
+    type: Custom
+    (builtinType): object
+    description: |-
+      The custom fields for this category.
+    required: false

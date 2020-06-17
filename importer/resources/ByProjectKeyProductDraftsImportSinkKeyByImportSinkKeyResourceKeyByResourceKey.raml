@@ -1,0 +1,35 @@
+# Resource
+(resourceName): ByProjectKeyProductDraftsImportSinkKeyByImportSinkKeyResourceKeyByResourceKey
+(resourcePathUri): /{projectKey}/product-drafts/importSinkKey={importSinkKey}/resourceKey={resourceKey}
+
+uriParameters:
+  projectKey:
+    type: string
+    (builtinType): string
+    description: |-
+      The commercetools project key.
+    required: true
+  importSinkKey:
+    type: string
+    (builtinType): string
+    description: |-
+      The import sink used to create the new resource
+    required: true
+  resourceKey:
+    type: string
+    (builtinType): string
+    required: true
+delete:
+  securedBy:
+  - oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
+  description: |-
+    Deletes the product type given by the resource key.
+  responses:
+    200:
+      body:
+        application/json:
+          type: ImportOperationStatus
+          (builtinType): object

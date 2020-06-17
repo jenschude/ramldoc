@@ -1,0 +1,22 @@
+#%RAML 1.0 DataType
+displayName: LocalizedEnumSetField
+type: CustomField
+(builtinType): object
+discriminatorValue: LocalizedEnumSet
+description: |-
+  A field with a localized enum set value.
+properties:
+  type:
+    type: string
+    (builtinType): string
+    description: |-
+      The type of this field.
+    enum:
+    - LocalizedEnumSet
+    required: true
+  value:
+    type: array
+    items:
+      type: string
+    (builtinType): array
+    required: true

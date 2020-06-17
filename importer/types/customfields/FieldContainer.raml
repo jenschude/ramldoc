@@ -1,0 +1,13 @@
+#%RAML 1.0 DataType
+displayName: FieldContainer
+type: object
+(builtinType): object
+description: |-
+  Maps the custom field names to the actual values.
+properties:
+  //:
+    type: CustomField
+    (builtinType): object
+    description: |-
+      Mapping from the custom field name to the actual value.
+    required: true

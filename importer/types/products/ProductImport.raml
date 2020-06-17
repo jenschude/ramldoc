@@ -4,7 +4,7 @@ type: ImportResource
 (builtinType): object
 description: |-
   Import representation for a prduct.
-  
+
   The import representation for a product is the most minimal representation required
   for creating a product in commercetools.
 properties:
@@ -23,9 +23,9 @@ properties:
     (builtinType): object
     description: |-
       The product's product type. Maps to `Product.productType`.
-      
+
       The product type referenced
-      must already exist in the commercetools project, or the 
+      must already exist in the commercetools project, or the
       import operation state is set to `Unresolved`.
     required: true
   slug:
@@ -47,10 +47,10 @@ properties:
       type: CategoryKeyReference
     (builtinType): array
     description: |-
-      An array of references to a categories by their keys. Maps to `Product.categories`. 
-      
+      An array of references to a categories by their keys. Maps to `Product.categories`.
+
       The categories referenced
-      must already exist in the commercetools project, or the 
+      must already exist in the commercetools project, or the
       import operation state is set to `Unresolved`.
     required: false
   metaTitle:
@@ -70,9 +70,9 @@ properties:
     (builtinType): object
     description: |-
       References a tax category by its key.
-      
-      The tax category referenced must already exist 
-      in the commercetools project, or the 
+
+      The tax category referenced must already exist
+      in the commercetools project, or the
       import operation state is set to `Unresolved`.
     required: false
   searchKeywords:
@@ -84,8 +84,8 @@ properties:
     (builtinType): object
     description: |-
       References a state by its key.
-      
-      The tax category referenced must already exist 
-      in the commercetools project, or the 
+
+      The tax category referenced must already exist
+      in the commercetools project, or the
       import operation state is set to `Unresolved`.
     required: false

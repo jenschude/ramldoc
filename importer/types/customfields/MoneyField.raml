@@ -1,0 +1,20 @@
+#%RAML 1.0 DataType
+displayName: MoneyField
+type: CustomField
+(builtinType): object
+discriminatorValue: Money
+description: |-
+  A field with a money value.
+properties:
+  type:
+    type: string
+    (builtinType): string
+    description: |-
+      The type of this field.
+    enum:
+    - Money
+    required: true
+  value:
+    type: Money
+    (builtinType): object
+    required: true

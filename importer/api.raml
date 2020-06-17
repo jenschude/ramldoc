@@ -15,6 +15,33 @@ annotationTypes:
     type: array
     items: string
     allowedTargets: TypeDeclaration
+  asMap:
+     type: object
+     (builtinType): object
+     description: |-
+       When using map types the key type is usually specified as a string following a specific pattern,
+       somtimes it comes handy to specify the type of the key ( for example use enum inorder to limit the key scope)
+  package:
+     type: string
+     (builtinType): string
+     description: |-
+       Allows to specify a target package for a generator for a RAML library.
+       This package name should be a language indepedent logical name (e.g. "products"), which a generator then uses to
+       generate a language specific package name (e.g. "com.myapi.jvm.products") from its configuration.
+  enumDescriptions:
+     type: object
+     (builtinType): object
+     description: |-
+       Allows to describe the values of an enum type.
+  updateType:
+     type: string
+     (builtinType): string
+  identifier:
+     type: boolean
+     (builtinType): boolean
+  abstract:
+     type: boolean
+     (builtinType): boolean
 securitySchemes:
   oauth_2_0: !include oauth2.raml
 securedBy:
@@ -47,7 +74,9 @@ types:
   AttributeType: !include types/producttypes/AttributeType.raml
   Attributes: !include types/productvariants/Attributes.raml
   BooleanAttribute: !include types/productvariants/BooleanAttribute.raml
+  BooleanField: !include types/customfields/BooleanField.raml
   BooleanSetAttribute: !include types/productvariants/BooleanSetAttribute.raml
+  BooleanSetField: !include types/customfields/BooleanSetField.raml
   CartDiscountKeyReference: !include types/common/CartDiscountKeyReference.raml
   CategoryImport: !include types/categories/CategoryImport.raml
   CategoryImportRequest: !include types/importrequests/CategoryImportRequest.raml
@@ -57,22 +86,31 @@ types:
   ContentionError: !include types/errors/ContentionError.raml
   CountryCode: !include types/CountryCode.raml
   CurrencyCode: !include types/CurrencyCode.raml
+  Custom: !include types/customfields/Custom.raml
+  CustomField: !include types/customfields/CustomField.raml
   CustomTokenizer: !include types/products/CustomTokenizer.raml
   CustomerGroupKeyReference: !include types/common/CustomerGroupKeyReference.raml
   CustomerKeyReference: !include types/common/CustomerKeyReference.raml
   DateAttribute: !include types/productvariants/DateAttribute.raml
+  DateField: !include types/customfields/DateField.raml
   DateSetAttribute: !include types/productvariants/DateSetAttribute.raml
+  DateSetField: !include types/customfields/DateSetField.raml
   DateTimeAttribute: !include types/productvariants/DateTimeAttribute.raml
+  DateTimeField: !include types/customfields/DateTimeField.raml
   DateTimeSetAttribute: !include types/productvariants/DateTimeSetAttribute.raml
+  DateTimeSetField: !include types/customfields/DateTimeSetField.raml
   DuplicateAttributeValueError: !include types/errors/DuplicateAttributeValueError.raml
   DuplicateAttributeValuesError: !include types/errors/DuplicateAttributeValuesError.raml
   DuplicateFieldError: !include types/errors/DuplicateFieldError.raml
   DuplicateVariantValuesError: !include types/errors/DuplicateVariantValuesError.raml
   EnumAttribute: !include types/productvariants/EnumAttribute.raml
+  EnumField: !include types/customfields/EnumField.raml
   EnumSetAttribute: !include types/productvariants/EnumSetAttribute.raml
+  EnumSetField: !include types/customfields/EnumSetField.raml
   EnumValue: !include types/common/EnumValue.raml
   ErrorObject: !include types/errors/ErrorObject.raml
   ErrorResponse: !include types/errors/ErrorResponse.raml
+  FieldContainer: !include types/customfields/FieldContainer.raml
   GenericError: !include types/errors/GenericError.raml
   Image: !include types/common/Image.raml
   ImportOperation: !include types/importoperations/ImportOperation.raml
@@ -100,31 +138,45 @@ types:
   LocalizableEnumSetAttribute: !include types/productvariants/LocalizableEnumSetAttribute.raml
   LocalizableTextAttribute: !include types/productvariants/LocalizableTextAttribute.raml
   LocalizableTextSetAttribute: !include types/productvariants/LocalizableTextSetAttribute.raml
+  LocalizedEnumField: !include types/customfields/LocalizedEnumField.raml
+  LocalizedEnumSetField: !include types/customfields/LocalizedEnumSetField.raml
   LocalizedEnumValue: !include types/common/LocalizedEnumValue.raml
   LocalizedString: !include types/common/LocalizedString.raml
+  LocalizedStringField: !include types/customfields/LocalizedStringField.raml
+  LocalizedStringSetField: !include types/customfields/LocalizedStringSetField.raml
   Money: !include types/common/Money.raml
   MoneyAttribute: !include types/productvariants/MoneyAttribute.raml
+  MoneyField: !include types/customfields/MoneyField.raml
   MoneySetAttribute: !include types/productvariants/MoneySetAttribute.raml
+  MoneySetField: !include types/customfields/MoneySetField.raml
   NumberAttribute: !include types/productvariants/NumberAttribute.raml
+  NumberField: !include types/customfields/NumberField.raml
   NumberSetAttribute: !include types/productvariants/NumberSetAttribute.raml
+  NumberSetField: !include types/customfields/NumberSetField.raml
   OperationStates: !include types/importsummaries/OperationStates.raml
+  PriceDraftImport: !include types/productdrafts/PriceDraftImport.raml
   PriceImport: !include types/prices/PriceImport.raml
   PriceImportRequest: !include types/importrequests/PriceImportRequest.raml
   PriceKeyReference: !include types/common/PriceKeyReference.raml
   ProcessingState: !include types/common/ProcessingState.raml
+  ProductDraftImport: !include types/productdrafts/ProductDraftImport.raml
+  ProductDraftImportRequest: !include types/importrequests/ProductDraftImportRequest.raml
   ProductImport: !include types/products/ProductImport.raml
   ProductImportRequest: !include types/importrequests/ProductImportRequest.raml
   ProductKeyReference: !include types/common/ProductKeyReference.raml
   ProductTypeImport: !include types/producttypes/ProductTypeImport.raml
   ProductTypeImportRequest: !include types/importrequests/ProductTypeImportRequest.raml
   ProductTypeKeyReference: !include types/common/ProductTypeKeyReference.raml
+  ProductVariantDraftImport: !include types/productdrafts/ProductVariantDraftImport.raml
   ProductVariantImport: !include types/productvariants/ProductVariantImport.raml
   ProductVariantImportRequest: !include types/importrequests/ProductVariantImportRequest.raml
   ProductVariantKeyReference: !include types/common/ProductVariantKeyReference.raml
   ProductVariantPatch: !include types/productvariants/ProductVariantPatch.raml
   ProductVariantPatchRequest: !include types/importrequests/ProductVariantPatchRequest.raml
   ReferenceAttribute: !include types/productvariants/ReferenceAttribute.raml
+  ReferenceField: !include types/customfields/ReferenceField.raml
   ReferenceSetAttribute: !include types/productvariants/ReferenceSetAttribute.raml
+  ReferenceSetField: !include types/customfields/ReferenceSetField.raml
   ReferenceType: !include types/common/ReferenceType.raml
   RequiredFieldError: !include types/errors/RequiredFieldError.raml
   ResourceCreationError: !include types/errors/ResourceCreationError.raml
@@ -135,6 +187,8 @@ types:
   SearchKeywords: !include types/products/SearchKeywords.raml
   ShippingMethodKeyReference: !include types/common/ShippingMethodKeyReference.raml
   StateKeyReference: !include types/common/StateKeyReference.raml
+  StringField: !include types/customfields/StringField.raml
+  StringSetField: !include types/customfields/StringSetField.raml
   SubRate: !include types/prices/SubRate.raml
   SuggestTokenizer: !include types/products/SuggestTokenizer.raml
   TaxCategoryKeyReference: !include types/common/TaxCategoryKeyReference.raml
@@ -143,10 +197,13 @@ types:
   TextInputHint: !include types/producttypes/TextInputHint.raml
   TextSetAttribute: !include types/productvariants/TextSetAttribute.raml
   TimeAttribute: !include types/productvariants/TimeAttribute.raml
+  TimeField: !include types/customfields/TimeField.raml
   TimeSetAttribute: !include types/productvariants/TimeSetAttribute.raml
+  TimeSetField: !include types/customfields/TimeSetField.raml
+  TypeKeyReference: !include types/common/TypeKeyReference.raml
   VariantValues: !include types/errors/VariantValues.raml
   WhitespaceTokenizer: !include types/products/WhitespaceTokenizer.raml
-  
+
 /{projectKey}: !include resources/ByProjectKey.raml
 /{projectKey}/categories: !include resources/ByProjectKeyCategories.raml
 /{projectKey}/categories/importSinkKey={importSinkKey}: !include resources/ByProjectKeyCategoriesImportSinkKeyByImportSinkKey.raml
@@ -162,23 +219,25 @@ types:
 /{projectKey}/prices/importSinkKey={importSinkKey}/import-operations: !include resources/ByProjectKeyPricesImportSinkKeyByImportSinkKeyImportOperations.raml
 /{projectKey}/prices/importSinkKey={importSinkKey}/import-operations/{id}: !include resources/ByProjectKeyPricesImportSinkKeyByImportSinkKeyImportOperationsById.raml
 /{projectKey}/prices/importSinkKey={importSinkKey}/resourceKey={resourceKey}: !include resources/ByProjectKeyPricesImportSinkKeyByImportSinkKeyResourceKeyByResourceKey.raml
+/{projectKey}/product-drafts: !include resources/ByProjectKeyProductDrafts.raml
+/{projectKey}/product-drafts/importSinkKey={importSinkKey}: !include resources/ByProjectKeyProductDraftsImportSinkKeyByImportSinkKey.raml
+/{projectKey}/product-drafts/importSinkKey={importSinkKey}/import-operations: !include resources/ByProjectKeyProductDraftsImportSinkKeyByImportSinkKeyImportOperations.raml
+/{projectKey}/product-drafts/importSinkKey={importSinkKey}/import-operations/{id}: !include resources/ByProjectKeyProductDraftsImportSinkKeyByImportSinkKeyImportOperationsById.raml
+/{projectKey}/product-drafts/importSinkKey={importSinkKey}/resourceKey={resourceKey}: !include resources/ByProjectKeyProductDraftsImportSinkKeyByImportSinkKeyResourceKeyByResourceKey.raml
 /{projectKey}/product-types: !include resources/ByProjectKeyProductTypes.raml
 /{projectKey}/product-types/importSinkKey={importSinkKey}: !include resources/ByProjectKeyProductTypesImportSinkKeyByImportSinkKey.raml
 /{projectKey}/product-types/importSinkKey={importSinkKey}/import-operations: !include resources/ByProjectKeyProductTypesImportSinkKeyByImportSinkKeyImportOperations.raml
 /{projectKey}/product-types/importSinkKey={importSinkKey}/import-operations/{id}: !include resources/ByProjectKeyProductTypesImportSinkKeyByImportSinkKeyImportOperationsById.raml
 /{projectKey}/product-types/importSinkKey={importSinkKey}/resourceKey={resourceKey}: !include resources/ByProjectKeyProductTypesImportSinkKeyByImportSinkKeyResourceKeyByResourceKey.raml
-/{projectKey}/product-types/importSinkKey={importSinkKey}/resourceKey={resourceKey}/import-operation: !include resources/ByProjectKeyProductTypesImportSinkKeyByImportSinkKeyResourceKeyByResourceKeyImportOperation.raml
 /{projectKey}/product-variant-patches: !include resources/ByProjectKeyProductVariantPatches.raml
 /{projectKey}/product-variant-patches/importSinkKey={importSinkKey}: !include resources/ByProjectKeyProductVariantPatchesImportSinkKeyByImportSinkKey.raml
 /{projectKey}/product-variant-patches/importSinkKey={importSinkKey}/import-operations: !include resources/ByProjectKeyProductVariantPatchesImportSinkKeyByImportSinkKeyImportOperations.raml
 /{projectKey}/product-variant-patches/importSinkKey={importSinkKey}/import-operations/{id}: !include resources/ByProjectKeyProductVariantPatchesImportSinkKeyByImportSinkKeyImportOperationsById.raml
-/{projectKey}/product-variant-patches/importSinkKey={importSinkKey}/resourceKey={resourceKey}: !include resources/ByProjectKeyProductVariantPatchesImportSinkKeyByImportSinkKeyResourceKeyByResourceKey.raml
 /{projectKey}/product-variants: !include resources/ByProjectKeyProductVariants.raml
 /{projectKey}/product-variants/importSinkKey={importSinkKey}: !include resources/ByProjectKeyProductVariantsImportSinkKeyByImportSinkKey.raml
 /{projectKey}/product-variants/importSinkKey={importSinkKey}/import-operations: !include resources/ByProjectKeyProductVariantsImportSinkKeyByImportSinkKeyImportOperations.raml
 /{projectKey}/product-variants/importSinkKey={importSinkKey}/import-operations/{id}: !include resources/ByProjectKeyProductVariantsImportSinkKeyByImportSinkKeyImportOperationsById.raml
 /{projectKey}/product-variants/importSinkKey={importSinkKey}/resourceKey={resourceKey}: !include resources/ByProjectKeyProductVariantsImportSinkKeyByImportSinkKeyResourceKeyByResourceKey.raml
-/{projectKey}/product-variants/importSinkKey={importSinkKey}/resourceKey={resourceKey}/import-operation: !include resources/ByProjectKeyProductVariantsImportSinkKeyByImportSinkKeyResourceKeyByResourceKeyImportOperation.raml
 /{projectKey}/products: !include resources/ByProjectKeyProducts.raml
 /{projectKey}/products/importSinkKey={importSinkKey}: !include resources/ByProjectKeyProductsImportSinkKeyByImportSinkKey.raml
 /{projectKey}/products/importSinkKey={importSinkKey}/import-operations: !include resources/ByProjectKeyProductsImportSinkKeyByImportSinkKeyImportOperations.raml

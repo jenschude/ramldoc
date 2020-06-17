@@ -16,12 +16,18 @@ uriParameters:
       The key of the import sink.
     required: true
 put:
+  securedBy:
+  - oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_import_sinks:{projectKey}"
   description: |-
     Updates the import sink given by the key.
   body:
     application/json:
       type: ImportSinkDraft
       (builtinType): object
+
   responses:
     200:
       description: |-
@@ -30,7 +36,18 @@ put:
         application/json:
           type: ImportSink
           (builtinType): object
+          examples:
+            default:
+              strict: true
+              value: !include ../examples/ByProjectKeyImportSinksByImportSinkKeyPut-200-default.json
+
 get:
+  securedBy:
+  - oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_import_sinks:{projectKey}"
+      - "view_import_sinks:{projectKey}"
   description: |-
     Retrieves the import sink given by the key.
   responses:
@@ -41,7 +58,17 @@ get:
         application/json:
           type: ImportSink
           (builtinType): object
+          examples:
+            default:
+              strict: true
+              value: !include ../examples/ByProjectKeyImportSinksByImportSinkKeyGet-200-default.json
+
 delete:
+  securedBy:
+  - oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_import_sinks:{projectKey}"
   description: |-
     Deletes the import sink given by the key.
   responses:

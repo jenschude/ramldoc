@@ -16,6 +16,11 @@ uriParameters:
       The import sink used to create the new resource
     required: true
 get:
+  securedBy:
+  - oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
   description: |-
     Retrieves all category import operations of an import sink key.
   queryParameters:
@@ -45,3 +50,7 @@ get:
         application/json:
           type: ImportOperationPagedResponse
           (builtinType): object
+          examples:
+            default:
+              strict: true
+              value: !include ../examples/ByProjectKeyCategoriesImportSinkKeyByImportSinkKeyImportOperationsGet-200-default.json

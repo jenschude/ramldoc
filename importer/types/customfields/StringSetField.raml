@@ -1,0 +1,22 @@
+#%RAML 1.0 DataType
+displayName: StringSetField
+type: CustomField
+(builtinType): object
+discriminatorValue: StringSet
+description: |-
+  A field with a string set value.
+properties:
+  type:
+    type: string
+    (builtinType): string
+    description: |-
+      The type of this field.
+    enum:
+    - StringSet
+    required: true
+  value:
+    type: array
+    items:
+      type: string
+    (builtinType): array
+    required: true

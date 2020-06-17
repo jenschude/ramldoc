@@ -22,3 +22,9 @@ uriParameters:
 delete:
   description: |-
     Deletes the price given by the resource key.
+  responses:
+    200:
+      body:
+        application/json:
+          type: ImportOperationStatus
+          (builtinType): object

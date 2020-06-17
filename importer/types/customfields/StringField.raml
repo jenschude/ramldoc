@@ -1,0 +1,20 @@
+#%RAML 1.0 DataType
+displayName: StringField
+type: CustomField
+(builtinType): object
+discriminatorValue: String
+description: |-
+  A field with a string value.
+properties:
+  type:
+    type: string
+    (builtinType): string
+    description: |-
+      The type of this field.
+    enum:
+    - String
+    required: true
+  value:
+    type: string
+    (builtinType): string
+    required: true

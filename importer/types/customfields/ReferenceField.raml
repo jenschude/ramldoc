@@ -1,0 +1,22 @@
+#%RAML 1.0 DataType
+displayName: ReferenceField
+type: CustomField
+(builtinType): object
+discriminatorValue: Reference
+description: |-
+  A field with a reference value.
+properties:
+  type:
+    type: string
+    (builtinType): string
+    description: |-
+      The type of this field.
+    enum:
+    - Reference
+    required: true
+  value:
+    type: KeyReference
+    (builtinType): object
+    description: |-
+      References a resource by its key.
+    required: true

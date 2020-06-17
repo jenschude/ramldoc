@@ -1,0 +1,20 @@
+#%RAML 1.0 DataType
+displayName: DateField
+type: CustomField
+(builtinType): object
+discriminatorValue: Date
+description: |-
+  A field with a date value.
+properties:
+  type:
+    type: string
+    (builtinType): string
+    description: |-
+      The type of this field.
+    enum:
+    - Date
+    required: true
+  value:
+    type: date-only
+    (builtinType): date-only
+    required: true

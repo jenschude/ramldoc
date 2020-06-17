@@ -1,0 +1,22 @@
+#%RAML 1.0 DataType
+displayName: EnumSetField
+type: CustomField
+(builtinType): object
+discriminatorValue: EnumSet
+description: |-
+  A field with a enum set value.
+properties:
+  type:
+    type: string
+    (builtinType): string
+    description: |-
+      The type of this field.
+    enum:
+    - EnumSet
+    required: true
+  value:
+    type: array
+    items:
+      type: string
+    (builtinType): array
+    required: true

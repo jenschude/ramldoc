@@ -11,9 +11,9 @@ properties:
     (builtinType): object
     description: |-
       The product variant to which this patch is applied.
-      
+
       The product variant referenced
-      must already exist in the commercetools project, or the 
+      must already exist in the commercetools project, or the
       import operation state is set to `Unresolved`.
     required: true
   product:
@@ -21,7 +21,7 @@ properties:
     (builtinType): object
     description: |-
       The product in which the patched product variant resides. Maps to `ProductVariant.product`.
-      
+
       The product referenced
       must already exist in the commercetools project, or the
       import operation state is set to `Unresolved`.
@@ -31,7 +31,7 @@ properties:
     (builtinType): object
     description: |-
       Maps to `ProductVariant.attributes`.
-      
+
       Each attribute referenced must be defined
       in an already existing product type in the commercetools project, or the import
       operation state is set to `Unresolved`.

@@ -1,0 +1,22 @@
+#%RAML 1.0 DataType
+displayName: MoneySetField
+type: CustomField
+(builtinType): object
+discriminatorValue: MoneySet
+description: |-
+  A field with a money set value.
+properties:
+  type:
+    type: string
+    (builtinType): string
+    description: |-
+      The type of this field.
+    enum:
+    - MoneySet
+    required: true
+  value:
+    type: array
+    items:
+      type: Money
+    (builtinType): array
+    required: true

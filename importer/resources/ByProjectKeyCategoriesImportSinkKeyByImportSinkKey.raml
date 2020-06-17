@@ -16,15 +16,29 @@ uriParameters:
       The import sink used to create the new resource
     required: true
 post:
+  securedBy:
+  - oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
   description: |-
     Creates a new import request for a category
   body:
     application/json:
       type: CategoryImportRequest
       (builtinType): object
+      examples:
+        default:
+          strict: true
+          value: !include ../examples/ByProjectKeyCategoriesImportSinkKeyByImportSinkKeyPost-default.json
+
   responses:
     201:
       body:
         application/json:
           type: ImportResponse
           (builtinType): object
+          examples:
+            default:
+              strict: true
+              value: !include ../examples/ByProjectKeyCategoriesImportSinkKeyByImportSinkKeyPost-201-default.json

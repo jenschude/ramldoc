@@ -3,7 +3,7 @@ displayName: ProductVariantImport
 type: ImportResource
 (builtinType): object
 description: |-
-  Import representation for a product variant. Use this type for importing new product variants 
+  Import representation for a product variant. Use this type for importing new product variants
   into a commercetools project.
 properties:
   key:
@@ -28,9 +28,9 @@ properties:
       type: Attribute
     (builtinType): array
     description: |-
-      Maps to `ProductVariant.attributes`. 
-      
-      Each attribute referenced must be defined 
+      Maps to `ProductVariant.attributes`.
+
+      Each attribute referenced must be defined
       in an already existing product type in the commercetools project, or the import
       operation state is set to `Unresolved`.
     required: false
@@ -55,8 +55,8 @@ properties:
     (builtinType): object
     description: |-
       The product in which this product variant is contained. Maps to `ProductVariant.product`.
-      
+
       The product referenced
-      must already exist in the commercetools project, or the 
+      must already exist in the commercetools project, or the
       import operation state is set to `Unresolved`.
     required: true

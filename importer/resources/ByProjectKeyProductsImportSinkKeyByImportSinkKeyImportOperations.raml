@@ -16,6 +16,12 @@ uriParameters:
       The import sink used to create the new resource
     required: true
 get:
+  securedBy:
+  - oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_products:{projectKey}"
+      - "view_products:{projectKey}"
   description: |-
     Retrieves all product import operations of an import sink key.
   queryParameters:

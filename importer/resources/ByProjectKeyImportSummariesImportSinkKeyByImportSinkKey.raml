@@ -16,9 +16,15 @@ uriParameters:
       The key of the import sink.
     required: true
 get:
+  securedBy:
+  - oauth_2_0:
+      scopes:
+      - "manage_project:{projectKey}"
+      - "manage_import_sinks:{projectKey}"
+      - "view_import_sinks:{projectKey}"
   description: |-
     Retrieves an import summary for the given import sink.
-    
+
     The import summary is calculated on demand.
   responses:
     200:
