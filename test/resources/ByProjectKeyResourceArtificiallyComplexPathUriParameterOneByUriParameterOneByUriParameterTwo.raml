@@ -20,7 +20,7 @@ uriParameters:
     examples:
       default:
         strict: true
-        value: "lastName = "Doe""
+        value: "lastName = \"Doe\""
   uriParameterTwo:
     type: string
     (builtinType): string
@@ -42,10 +42,18 @@ post:
       (builtinType): number
       description: |-
         some parameter to construct a combination of URI and query params
+      examples:
+        default:
+          strict: true
+          value: 1
     queryParameterTwo:
       required: false
       type: string
       (builtinType): string
+      examples:
+        default:
+          strict: true
+          value: "string-path"
   body:
     application/json:
       type: OutOfOrderPropertiesTestType

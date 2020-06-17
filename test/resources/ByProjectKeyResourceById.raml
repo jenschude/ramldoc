@@ -42,12 +42,20 @@ get:
       (builtinType): string
       description: |-
         This is a query parameter.
+      examples:
+        default:
+          strict: true
+          value: "optional"
     secondOptionalQueryParameter:
       required: false
       type: string
       (builtinType): string
       description: |-
         This is another query parameter.
+      examples:
+        default:
+          strict: true
+          value: "second optional"
   responses:
     200:
       body:

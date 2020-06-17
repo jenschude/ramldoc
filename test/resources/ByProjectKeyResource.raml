@@ -53,24 +53,44 @@ get:
       required: false
       type: string
       (builtinType): string
+      examples:
+        default:
+          strict: true
+          value: "6 in arrayOfIntExample"
     sort:
       required: false
       type: string
       (builtinType): string
+      examples:
+        default:
+          strict: true
+          value: "DESC"
     expand:
       required: false
       type: string
       (builtinType): string
+      examples:
+        default:
+          strict: true
+          value: "arrayOfObjectType[*]"
     limit:
       required: false
       format: float
       type: number
       (builtinType): number
+      examples:
+        default:
+          strict: true
+          value: 50
     offset:
       required: false
       format: float
       type: number
       (builtinType): number
+      examples:
+        default:
+          strict: true
+          value: 5
     collection:
       required: false
       type: ObjectTestType
