@@ -1,6 +1,7 @@
 {
   "version" : 1,
   "state" : "Unresolved",
+  "inflight" : false,
   "importSinkKey" : "category-import-sink",
   "resourceKey" : "child-category",
   "resourceType" : "category",

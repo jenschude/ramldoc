@@ -1,6 +1,7 @@
 {
   "version" : 3,
   "state" : "ValidationFailed",
+  "inflight" : false,
   "errors" : [ {
     "code" : "RequiredField",
     "message" : "The required field 'key' is missing.",

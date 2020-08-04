@@ -15,6 +15,7 @@ post:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_import_sinks:{projectKey}"
+  displayName: Creates a new import sink.
   description: |-
     Creates a new import sink.
   body:
@@ -40,6 +41,7 @@ get:
       - "manage_project:{projectKey}"
       - "manage_import_sinks:{projectKey}"
       - "view_import_sinks:{projectKey}"
+  displayName: Query import-sinks
   description: |-
     Retrieves all import sinks of a project key.
   queryParameters:
@@ -57,3 +59,8 @@ get:
         application/json:
           type: ImportSinkPagedResponse
           (builtinType): object
+
+  (codeExamples):
+    curl: |-
+      curl -XGET /{projectKey}/import-sinks -i \
+      --header 'Authorization: Bearer YOUR_TOKEN'

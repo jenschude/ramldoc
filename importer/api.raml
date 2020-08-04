@@ -1,6 +1,6 @@
 #%RAML 1.0
 ---
-title: Commercetools Importer API
+title: Commercetools Import API
 annotationTypes:
   resourceName:
     type: string
@@ -15,6 +15,9 @@ annotationTypes:
     type: array
     items: string
     allowedTargets: TypeDeclaration
+  codeExamples:
+    type: object
+    allowedTargets: Method
   asMap:
      type: object
      (builtinType): object
@@ -42,11 +45,14 @@ annotationTypes:
   abstract:
      type: boolean
      (builtinType): boolean
+  paramName:
+     type: string
+     (builtinType): string
 securitySchemes:
   oauth_2_0: !include oauth2.raml
 securedBy:
 - oauth_2_0
-baseUri: https://import.commercetools.com
+baseUri: https://import.europe-west1.gcp.commercetools.com
 types:
   AccessDeniedError: !include types/errors/AccessDeniedError.raml
   Address: !include types/common/Address.raml
@@ -99,6 +105,7 @@ types:
   DateTimeField: !include types/customfields/DateTimeField.raml
   DateTimeSetAttribute: !include types/productvariants/DateTimeSetAttribute.raml
   DateTimeSetField: !include types/customfields/DateTimeSetField.raml
+  DiscountedPrice: !include types/common/DiscountedPrice.raml
   DuplicateAttributeValueError: !include types/errors/DuplicateAttributeValueError.raml
   DuplicateAttributeValuesError: !include types/errors/DuplicateAttributeValuesError.raml
   DuplicateFieldError: !include types/errors/DuplicateFieldError.raml
@@ -130,6 +137,7 @@ types:
   InvalidFieldError: !include types/errors/InvalidFieldError.raml
   InvalidInput: !include types/errors/InvalidInput.raml
   InvalidJsonInput: !include types/errors/InvalidJsonInput.raml
+  InvalidOperation: !include types/errors/InvalidOperation.raml
   InvalidScopeError: !include types/errors/InvalidScopeError.raml
   InvalidStateTransitionError: !include types/errors/InvalidStateTransitionError.raml
   InvalidTokenError: !include types/errors/InvalidTokenError.raml
@@ -159,6 +167,7 @@ types:
   PriceImportRequest: !include types/importrequests/PriceImportRequest.raml
   PriceKeyReference: !include types/common/PriceKeyReference.raml
   ProcessingState: !include types/common/ProcessingState.raml
+  ProductDiscountKeyReference: !include types/common/ProductDiscountKeyReference.raml
   ProductDraftImport: !include types/productdrafts/ProductDraftImport.raml
   ProductDraftImportRequest: !include types/importrequests/ProductDraftImportRequest.raml
   ProductImport: !include types/products/ProductImport.raml

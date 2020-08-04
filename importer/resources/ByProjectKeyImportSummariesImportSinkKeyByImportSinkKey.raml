@@ -22,6 +22,7 @@ get:
       - "manage_project:{projectKey}"
       - "manage_import_sinks:{projectKey}"
       - "view_import_sinks:{projectKey}"
+  displayName: Query import-summaries
   description: |-
     Retrieves an import summary for the given import sink.
 
@@ -32,3 +33,8 @@ get:
         application/json:
           type: ImportSummary
           (builtinType): object
+
+  (codeExamples):
+    curl: |-
+      curl -XGET /{projectKey}/import-summaries/importSinkKey={importSinkKey} -i \
+      --header 'Authorization: Bearer YOUR_TOKEN'

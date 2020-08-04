@@ -58,6 +58,12 @@ properties:
       must already exist in the commercetools project, or the
       import operation state is set to `Unresolved`.
     required: false
+  discounted:
+    type: DiscountedPrice
+    (builtinType): object
+    description: |-
+      Sets a discounted price from an external service.
+    required: false
   productVariant:
     type: ProductVariantKeyReference
     (builtinType): object

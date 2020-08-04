@@ -21,6 +21,7 @@ put:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_import_sinks:{projectKey}"
+  displayName: Update import-sink
   description: |-
     Updates the import sink given by the key.
   body:
@@ -48,6 +49,7 @@ get:
       - "manage_project:{projectKey}"
       - "manage_import_sinks:{projectKey}"
       - "view_import_sinks:{projectKey}"
+  displayName: Get import-sink
   description: |-
     Retrieves the import sink given by the key.
   responses:
@@ -63,12 +65,17 @@ get:
               strict: true
               value: !include ../examples/ByProjectKeyImportSinksByImportSinkKeyGet-200-default.json
 
+  (codeExamples):
+    curl: |-
+      curl -XGET /{projectKey}/import-sinks/{importSinkKey} -i \
+      --header 'Authorization: Bearer YOUR_TOKEN'
 delete:
   securedBy:
   - oauth_2_0:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_import_sinks:{projectKey}"
+  displayName: Delete import-sink
   description: |-
     Deletes the import sink given by the key.
   responses:
@@ -79,3 +86,8 @@ delete:
         application/json:
           type: ImportSink
           (builtinType): object
+
+  (codeExamples):
+    curl: |-
+      curl -XDELETE /{projectKey}/import-sinks/{importSinkKey} -i \
+      --header 'Authorization: Bearer YOUR_TOKEN'

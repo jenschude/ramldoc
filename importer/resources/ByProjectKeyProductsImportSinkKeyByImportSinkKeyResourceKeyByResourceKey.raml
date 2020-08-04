@@ -25,6 +25,7 @@ delete:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_products:{projectKey}"
+  displayName: Delete product
   description: |-
     Deletes the product given by the resource key.
   responses:
@@ -33,3 +34,8 @@ delete:
         application/json:
           type: ImportOperationStatus
           (builtinType): object
+
+  (codeExamples):
+    curl: |-
+      curl -XDELETE /{projectKey}/products/importSinkKey={importSinkKey}/resourceKey={resourceKey} -i \
+      --header 'Authorization: Bearer YOUR_TOKEN'

@@ -21,6 +21,8 @@ get:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_products:{projectKey}"
+      - "view_products:{projectKey}"
+  displayName: Query import-operations
   description: |-
     Retrieves all category import operations of an import sink key.
   queryParameters:
@@ -54,3 +56,8 @@ get:
             default:
               strict: true
               value: !include ../examples/ByProjectKeyCategoriesImportSinkKeyByImportSinkKeyImportOperationsGet-200-default.json
+
+  (codeExamples):
+    curl: |-
+      curl -XGET /{projectKey}/categories/importSinkKey={importSinkKey}/import-operations -i \
+      --header 'Authorization: Bearer YOUR_TOKEN'

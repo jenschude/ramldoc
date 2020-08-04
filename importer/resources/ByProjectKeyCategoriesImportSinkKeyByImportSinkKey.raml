@@ -21,6 +21,7 @@ post:
       scopes:
       - "manage_project:{projectKey}"
       - "manage_products:{projectKey}"
+  displayName: Import category
   description: |-
     Creates a new import request for a category
   body:
@@ -42,3 +43,23 @@ post:
             default:
               strict: true
               value: !include ../examples/ByProjectKeyCategoriesImportSinkKeyByImportSinkKeyPost-201-default.json
+
+  (codeExamples):
+    curl: |-
+      curl -XPOST /{projectKey}/categories/importSinkKey={importSinkKey} -i \
+      --header 'Authorization: Bearer YOUR_TOKEN \
+      --header 'Content-Type: application/json' \
+      --data-binary @- << EOF 
+      {
+        "type" : "category",
+        "resources" : [ {
+          "key" : "greatTestCat",
+          "name" : {
+            "en" : "greatTestCat"
+          },
+          "slug" : {
+            "en" : "great-slug"
+          }
+        } ]
+      }
+      EOF

@@ -28,6 +28,7 @@ get:
       - "manage_project:{projectKey}"
       - "manage_products:{projectKey}"
       - "view_products:{projectKey}"
+  displayName: Get import-operation
   description: |-
     Retrieves the import operation with the given id.
   responses:
@@ -36,3 +37,8 @@ get:
         application/json:
           type: ImportOperation
           (builtinType): object
+
+  (codeExamples):
+    curl: |-
+      curl -XGET /{projectKey}/product-drafts/importSinkKey={importSinkKey}/import-operations/{id} -i \
+      --header 'Authorization: Bearer YOUR_TOKEN'

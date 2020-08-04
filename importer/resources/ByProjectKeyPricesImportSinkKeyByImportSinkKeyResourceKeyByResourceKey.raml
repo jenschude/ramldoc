@@ -20,6 +20,7 @@ uriParameters:
     (builtinType): string
     required: true
 delete:
+  displayName: Delete price
   description: |-
     Deletes the price given by the resource key.
   responses:
@@ -28,3 +29,8 @@ delete:
         application/json:
           type: ImportOperationStatus
           (builtinType): object
+
+  (codeExamples):
+    curl: |-
+      curl -XDELETE /{projectKey}/prices/importSinkKey={importSinkKey}/resourceKey={resourceKey} -i \
+      --header 'Authorization: Bearer YOUR_TOKEN'

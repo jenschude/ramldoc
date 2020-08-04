@@ -1,0 +1,15 @@
+#%RAML 1.0 DataType
+displayName: InvalidOperation
+type: ErrorObject
+(builtinType): object
+discriminatorValue: InvalidOperation
+description: |-
+  The resources involved in the request are not in a valid state for the operation.
+  The client application should validate the constraints described in the error message before sending the request.
+properties:
+  code:
+    type: string
+    (builtinType): string
+    enum:
+    - InvalidOperation
+    required: true

@@ -22,6 +22,7 @@ get:
       - "manage_project:{projectKey}"
       - "manage_products:{projectKey}"
       - "view_products:{projectKey}"
+  displayName: Query import-operations
   description: |-
     Retrieves all product import operations of an import sink key.
   queryParameters:
@@ -51,3 +52,8 @@ get:
         application/json:
           type: ImportOperationPagedResponse
           (builtinType): object
+
+  (codeExamples):
+    curl: |-
+      curl -XGET /{projectKey}/products/importSinkKey={importSinkKey}/import-operations -i \
+      --header 'Authorization: Bearer YOUR_TOKEN'

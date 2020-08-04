@@ -1,0 +1,16 @@
+#%RAML 1.0 DataType
+displayName: ProductDiscountKeyReference
+type: KeyReference
+(builtinType): object
+discriminatorValue: product-discount
+description: |-
+  References a product discount by its key.
+properties:
+  typeId:
+    type: ReferenceType
+    (builtinType): string
+    description: |-
+      The type of the referenced resource.
+    enum:
+    - product-discount
+    required: true
