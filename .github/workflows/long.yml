@@ -8,6 +8,7 @@ jobs:
 
     steps:
       - name: trigger short runners
-        run: curl -u jenschude:${{ secrets.PAT }} -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/jenschude/ramldoc/dispatches -d '{"event_type":"parallelize"}'
+        run: |
+          curl -u jenschude:${{ secrets.PAT }} -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/jenschude/ramldoc/dispatches -d '{"event_type":"parallelize"}'
       - name: Long task
         run: echo "Hello long world"
