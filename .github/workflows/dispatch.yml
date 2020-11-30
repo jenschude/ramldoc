@@ -1,0 +1,12 @@
+on:
+  - workflow_dispatch
+  - repository_dispatch
+      types: [parallelize]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Short tasks
+        run: echo "Hello short world"

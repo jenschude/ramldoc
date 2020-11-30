@@ -1,0 +1,13 @@
+on:
+  - workflow_dispatch
+  - push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: trigger short runners
+        run: curl -u jenschude:${{ secrets.PAT }} -X POST -H \"Accept: application/vnd.github.v3+json\" https://api.github.com/repos/jenschude/ramldoc/dispatches -d '{"event_type":"parallelize"}'
+      - name: Long task
+        run: echo "Hello long world"
